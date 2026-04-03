@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T05:47:46Z",
+  "lastUpdated": "2026-04-03T07:37:49Z",
   "warAlert": {
-    "timestamp": "2026-04-03T05:47:46Z",
+    "timestamp": "2026-04-03T07:37:49Z",
     "fuelImpact": [
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
@@ -17,17 +17,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-03 Chris Bowen: 3.7bn litres of fuel confirmed en route to Australia; industry says not enough [ABC News] [HIGH]",
+      "2026-04-03 ABC live: 410 stations out of diesel, 145 out of petrol; Bowen confirms supply chain under stress but government says mid-April supply intact [ABC News] [MEDIUM]",
       "2026-04-03 STI Steadfast sailing east coast with South Korean jet fuel; South Korea caps exports at last-year levels, rules out redirect for now [ABC News] [HIGH]",
-      "2026-04-02 Australia government may cut fuel quality standards AGAIN \u2014 without diplomacy, flights cut and diesel redistribution to vital corridors from late April [Brisbane Times] [HIGH]",
-      "2026-04-02 FuelRadar live dashboard: 725 stations currently out of at least one fuel type (down from ~851 on Mar 31) [FuelRadar.com.au] [HIGH]",
-      "2026-04-01 Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1 [The Guardian] [MEDIUM]"
+      "2026-04-02 Australia government may cut fuel quality standards AGAIN \u2014 without diplomacy, flights cut and diesel redistribution to vital corridors from late April [Brisbane Times] [HIGH]"
     ]
   },
   "servoOutages": {
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T05:47:46Z",
+    "updated": "2026-04-03T07:37:49Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T05:47:46Z",
+    "weeklyItemsUpdated": "2026-04-03T07:37:49Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,8 +1167,34 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T05:47:46Z",
+  "dbLastUpdated": "2026-04-03T07:37:49Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Chris Bowen: 3.7bn litres of fuel confirmed en route to Australia; industry says not enough",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-03/chris-bowen-fuel-update-industry-concerned-not-enough/106530238",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T07:37:13Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "ABC live: 410 stations out of diesel, 145 out of petrol; Bowen confirms supply chain under stress but government says mid-April supply intact",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-03/iran-war-live-updates-us-trump-israel-australia/106529076",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T07:37:13Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-03",
       "domain": "australia",
@@ -1637,9 +1663,9 @@
     "servo_outages": "~725 nationally (FuelRadar live, 02/04/2026) \u2014 DOWN from ~851 on Mar 31"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T02:40:30Z",
-    "cron": "war-fuel-food",
-    "summary": "Ruwais refinery (922k bpd) struck; Brent hits $111.69; Iran claims peacetime Hormuz control; IEA warns April worse; Citi/JPM $95-130 forecast; Australia fuel quality standards may be cut again"
+    "sentAt": "2026-04-03T07:37:46Z",
+    "cron": "shipment-validator",
+    "summary": "Bowen confirms 3.7bn litres en route; 410 diesel + 145 petrol stations out; mid-April supply confirmed but post-mid-April risk unchanged"
   },
   "reviewPanels": {
     "feed": {
