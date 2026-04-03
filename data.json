@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T23:42:44Z",
+  "lastUpdated": "2026-04-03T23:43:56Z",
   "warAlert": {
-    "timestamp": "2026-04-03T23:42:44Z",
+    "timestamp": "2026-04-03T23:43:56Z",
     "fuelImpact": [
       "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
       "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T23:42:44Z",
+    "updated": "2026-04-03T23:43:56Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T23:42:44Z",
+    "weeklyItemsUpdated": "2026-04-03T23:43:56Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T23:42:44Z",
+  "dbLastUpdated": "2026-04-03T23:43:56Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
