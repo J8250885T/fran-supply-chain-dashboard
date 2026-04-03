@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-03T19:36:48Z",
+  "lastUpdated": "2026-04-03T19:43:44Z",
   "warAlert": {
-    "timestamp": "2026-04-03T19:36:48Z",
+    "timestamp": "2026-04-03T19:43:44Z",
     "fuelImpact": [
+      "2026-04-03 Kuwait Mina al-Ahmadi refinery drone strike: fires in multiple operating units, extent TBC [The National] [MEDIUM]",
+      "2026-04-03 Kuwait Mina al-Ahmadi refinery + desalination plant struck; 12 injured in UAE from intercepted missiles [Al Jazeera] [MEDIUM]",
       "2026-04-03 Iran launches multi-front refinery strikes \u2014 hits Kuwait Mina al-Ahmadi, Saudi Arabia, UAE, Israel in coordinated retaliation [NPR] [HIGH]",
       "2026-04-03 Pravda Singapore: Singapore refinery capacity utilization ~60% in March amid supply disruptions; China crude oil arrived via tanker New Merit from Dalian [Pravda Singapore] [LOW]",
       "2026-04-03 IBTimes: Australia imports >90% refined product from Asia; South Korea export caps, reduced refinery runs, cargo rerouting disrupting supply \u2014 mid-to-late April crunch still expected [IBTimes Australia] [MEDIUM]",
-      "2026-04-03 Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown [Reuters] [MEDIUM]",
-      "2026-04-02 Brent hits .69/bbl April 2 after Trump warns of more Iran attacks; WTI up 11% to .60 \u2014 highest since March 9 [Guardian] [HIGH]",
-      "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]"
+      "2026-04-03 Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown [Reuters] [MEDIUM]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T19:36:48Z",
+    "updated": "2026-04-03T19:43:44Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T19:36:48Z",
+    "weeklyItemsUpdated": "2026-04-03T19:43:44Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T19:36:48Z",
+  "dbLastUpdated": "2026-04-03T19:43:44Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -1181,6 +1181,32 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait Mina al-Ahmadi refinery drone strike: fires in multiple operating units, extent TBC",
+      "source": "The National",
+      "sourceUrl": "https://www.thenationalnews.com/news/mena/2026/04/03/kuwait-races-to-contain-damage-after-drone-strikes-oil-refinery/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T19:43:17Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait Mina al-Ahmadi refinery + desalination plant struck; 12 injured in UAE from intercepted missiles",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/3/kuwait-desalination-plant-oil-refinery-hit-by-missile-and-drone-strikes",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T19:43:17Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
     },
     {
       "dtg": "2026-04-03",
@@ -1613,6 +1639,19 @@
     },
     {
       "dtg": "2026-03-30",
+      "domain": "fuel",
+      "headline": "South Korea revives Russian naphtha imports for first time in 4 years; LG Chem buys 27,000mt under US waiver",
+      "source": "The Moscow Times",
+      "sourceUrl": "https://www.themoscowtimes.com/2026/03/30/south-korea-revives-naphtha-imports-from-russia-amid-looming-shortage-a92375",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T19:43:17Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-30",
       "domain": "australia",
       "headline": "National Cabinet convenes on fuel \u2014 rationing rejected, voluntary demand reduction preferred",
       "source": "ABC",
@@ -1832,9 +1871,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T19:36:45Z",
-    "cron": "shipment-validator",
-    "summary": "Saturday Paper: Bowen 'race' quote signals supply ceiling beyond mid-April; Guardian: petrol -20c after excise cut"
+    "sentAt": "2026-04-03T19:43:44Z",
+    "cron": "asian-refinery",
+    "summary": "Kuwait Mina al-Ahmadi refinery struck; SK reviving Russian naphtha imports; Australia forced to US/Europe supply"
   },
   "reviewPanels": {
     "feed": {
