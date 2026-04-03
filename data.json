@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T05:26:11Z",
+  "lastUpdated": "2026-04-03T05:29:31Z",
   "warAlert": {
-    "timestamp": "2026-04-03T05:26:11Z",
+    "timestamp": "2026-04-03T05:29:31Z",
     "fuelImpact": [
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T05:26:11Z",
+    "updated": "2026-04-03T05:29:31Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T05:26:11Z",
+    "weeklyItemsUpdated": "2026-04-03T05:29:31Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T05:26:11Z",
+  "dbLastUpdated": "2026-04-03T05:29:31Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
@@ -1650,7 +1650,9 @@
         "Fuel and shipping incidents remain the dominant source of new risk signals.",
         "Australian headlines increasingly shift from monitoring to contingency actions.",
         "Watch for repetition versus genuinely new deterioration in refinery throughput, outages, and cargo timing."
-      ]
+      ],
+      "mostLikelyCourse": "Continued dense event flow centred on fuel, shipping, and contingency policy actions, with signal overload becoming the main analytical challenge.",
+      "mostDangerousCourse": "A step-change from headline noise to confirmed systemic disruption in cargo timing, refinery output, or domestic rationing signals without enough warning time."
     },
     "supply": {
       "title": "Fran Review \u2014 Fuel Levels & Supply",
@@ -1660,7 +1662,9 @@
         "Fuel reserve depth is the key buffer, but not a long-run solution if refinery runs stay constrained.",
         "Fleet arrivals buy time, yet route disruption raises replacement cost and timing risk.",
         "Servo outages are the consumer-facing signal that wholesale stress is leaking into retail availability."
-      ]
+      ],
+      "mostLikelyCourse": "Supply remains tight but functioning, with rerouted cargoes and reserves preventing immediate collapse while outages and delays stay elevated.",
+      "mostDangerousCourse": "Replacement cargoes slip, Asian refinery output falls further, and servo outages broaden into sustained regional shortages before new imports land."
     },
     "markets": {
       "title": "Fran Review \u2014 Markets",
@@ -1670,7 +1674,9 @@
         "CPI projections imply the inflation wave is not finished even if spot panic eases.",
         "Item inflation since Jan 1 is strongest where fuel, freight, or perishability matter most.",
         "Household stress should be read as the dollar translation of these market moves, not a separate contradiction."
-      ]
+      ],
+      "mostLikelyCourse": "CPI continues climbing into May as fuel, freight, and perishables keep feeding through to retail prices even if the first panic spike eases.",
+      "mostDangerousCourse": "Inflation broadens from fuel and perishables into general goods and services, pushing regional CPI into crisis territory and locking in a longer second-round surge."
     },
     "households": {
       "title": "Fran Review \u2014 Households",
@@ -1680,7 +1686,9 @@
         "Scenario A shows how inflation and debt compound into rapid savings depletion.",
         "Scenario B isolates the pure cost-of-living shock and shows which groups remain vulnerable even without debt.",
         "The key analytical question is not just who has low income, but who lacks enough buffer to absorb sustained item-price increases."
-      ]
+      ],
+      "mostLikelyCourse": "Low-buffer households continue depleting first, while highly leveraged middle cohorts deteriorate fastest once debt service and inflation compound together.",
+      "mostDangerousCourse": "A prolonged inflation pulse plus delayed supply normalisation pushes even initially resilient households into rapid depletion, forcing distress selling or arrears."
     }
   }
 }
