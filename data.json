@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T02:40:30Z",
+  "lastUpdated": "2026-04-03T04:09:50Z",
   "warAlert": {
-    "timestamp": "2026-04-03T02:40:30Z",
+    "timestamp": "2026-04-03T04:09:50Z",
     "fuelImpact": [
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T02:40:30Z",
+    "updated": "2026-04-03T04:09:50Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -642,7 +642,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T02:40:30Z",
+  "dbLastUpdated": "2026-04-03T04:09:50Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
