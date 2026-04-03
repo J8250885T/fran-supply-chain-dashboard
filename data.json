@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T01:00:56Z",
+  "lastUpdated": "2026-04-03T01:05:47Z",
   "warAlert": {
-    "timestamp": "2026-04-03T01:00:56Z",
+    "timestamp": "2026-04-03T01:05:47Z",
     "fuelImpact": [
       "2026-04-02 Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction [NBC] [HIGH]",
       "2026-04-01 IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted [CNBC] [HIGH]",
@@ -25,7 +25,7 @@
     "total": 851,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T01:00:56Z",
+    "updated": "2026-04-03T01:05:47Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -577,7 +577,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T01:00:56Z",
+  "dbLastUpdated": "2026-04-03T01:05:47Z",
   "dbEvents": [
     {
       "dtg": "2026-04-02",
