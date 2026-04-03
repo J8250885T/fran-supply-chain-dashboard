@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-03T13:40:46Z",
+  "lastUpdated": "2026-04-03T13:43:59Z",
   "warAlert": {
-    "timestamp": "2026-04-03T13:40:46Z",
+    "timestamp": "2026-04-03T13:43:59Z",
     "fuelImpact": [
+      "2026-04-03 Pravda Singapore: Singapore refinery capacity utilization ~60% in March amid supply disruptions; China crude oil arrived via tanker New Merit from Dalian [Pravda Singapore] [LOW]",
+      "2026-04-03 IBTimes: Australia imports >90% refined product from Asia; South Korea export caps, reduced refinery runs, cargo rerouting disrupting supply \u2014 mid-to-late April crunch still expected [IBTimes Australia] [MEDIUM]",
       "2026-04-03 Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown [Reuters] [MEDIUM]",
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
-      "2026-04-02 Brent reaches $111.69/bbl April 2 \u2014 up $6.83 in one day, ~$41 above pre-war level [Fortune] [HIGH]",
-      "2026-04-02 Brent international benchmark hits ~$109/bbl as Iran war escalates; oil prices rose after Trump threat [NYT] [HIGH]",
-      "2026-04-02 Iran says it will oversee Strait of Hormuz traffic even in peacetime \u2014 selective transits for friendly nations only [NYT] [HIGH]"
+      "2026-04-02 Brent reaches $111.69/bbl April 2 \u2014 up $6.83 in one day, ~$41 above pre-war level [Fortune] [HIGH]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T13:40:46Z",
+    "updated": "2026-04-03T13:43:59Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T13:40:46Z",
+    "weeklyItemsUpdated": "2026-04-03T13:43:59Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,8 +1167,34 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T13:40:46Z",
+  "dbLastUpdated": "2026-04-03T13:43:59Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Pravda Singapore: Singapore refinery capacity utilization ~60% in March amid supply disruptions; China crude oil arrived via tanker New Merit from Dalian",
+      "source": "Pravda Singapore",
+      "sourceUrl": "https://singapore.news-pravda.com/singapore/2026/04/03/1749.html",
+      "impact": "",
+      "confidence": "LOW",
+      "addedAt": "2026-04-03T13:43:22Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "IBTimes: Australia imports >90% refined product from Asia; South Korea export caps, reduced refinery runs, cargo rerouting disrupting supply \u2014 mid-to-late April crunch still expected",
+      "source": "IBTimes Australia",
+      "sourceUrl": "https://www.ibtimes.com.au/australia-fuel-prices-ease-slightly-after-excise-cut-iran-war-keeps-oil-costs-high-aud-1865304",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T13:43:22Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-03",
       "domain": "australia",
@@ -1728,9 +1754,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T13:40:46Z",
-    "cron": "servo-tracker",
-    "summary": "787 stations out of fuel nationally (FuelRadar, Apr 3) \u2014 UP from 725 on Apr 2; Easter demand spike reversing improving trend"
+    "sentAt": "2026-04-03T13:43:59Z",
+    "cron": "asian-refinery",
+    "summary": "Singapore 50-60%, South Korea cap holds, Kuwait 3rd refinery hit, AU import crunch risk active mid-Apr"
   },
   "reviewPanels": {
     "feed": {
