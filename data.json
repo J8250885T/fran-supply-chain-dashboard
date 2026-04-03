@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-03T19:43:44Z",
+  "lastUpdated": "2026-04-03T20:38:48Z",
   "warAlert": {
-    "timestamp": "2026-04-03T19:43:44Z",
+    "timestamp": "2026-04-03T20:38:48Z",
     "fuelImpact": [
+      "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
+      "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
+      "2026-04-03 Iran hits Gulf refineries; Trump threatens Iranian bridges and power plants; Kuwait Mina al-Ahmadi still burning [KPBS] [HIGH]",
+      "2026-04-03 Brent hits .42/bbl on April 3 \u2014 new high of the war; WTI at .29 [Fortune] [HIGH]",
       "2026-04-03 Kuwait Mina al-Ahmadi refinery drone strike: fires in multiple operating units, extent TBC [The National] [MEDIUM]",
-      "2026-04-03 Kuwait Mina al-Ahmadi refinery + desalination plant struck; 12 injured in UAE from intercepted missiles [Al Jazeera] [MEDIUM]",
-      "2026-04-03 Iran launches multi-front refinery strikes \u2014 hits Kuwait Mina al-Ahmadi, Saudi Arabia, UAE, Israel in coordinated retaliation [NPR] [HIGH]",
-      "2026-04-03 Pravda Singapore: Singapore refinery capacity utilization ~60% in March amid supply disruptions; China crude oil arrived via tanker New Merit from Dalian [Pravda Singapore] [LOW]",
-      "2026-04-03 IBTimes: Australia imports >90% refined product from Asia; South Korea export caps, reduced refinery runs, cargo rerouting disrupting supply \u2014 mid-to-late April crunch still expected [IBTimes Australia] [MEDIUM]",
-      "2026-04-03 Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown [Reuters] [MEDIUM]"
+      "2026-04-03 Kuwait Mina al-Ahmadi refinery + desalination plant struck; 12 injured in UAE from intercepted missiles [Al Jazeera] [MEDIUM]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -18,16 +18,16 @@
     "australiaRisk": "HIGH",
     "watch": [
       "2026-04-04 Bowen interview: 'There's a race' \u2014 Australia faces supply challenge beyond mid-April as Asian partners restrict exports, US/Mexico shipments en route [The Saturday Paper] [HIGH]",
-      "2026-04-03 Australians cancel Easter travel as fuel crisis mounts \u2014 diesel above A/litre, petrol above A.50/litre [Reuters] [MEDIUM]",
-      "2026-04-03 Australians cancel road trips as fuel costs hit A/litre diesel \u2014 Easter travel demand destruction begins [Guardian] [MEDIUM]",
-      "2026-04-03 600+ stations out of fuel nationally as Easter travel spikes demand; trend reverses upward [IBTimes Australia] [MEDIUM]"
+      "2026-04-03 Australia has just over one month of diesel and petrol supplies if imports disrupted \u2014 government confirms in Parliament [Beef Central] [HIGH]",
+      "2026-04-03 Australia scrambling to diversify supply; 55 ships en route or arriving by end of April; Bowen says race to beat supply crunch [HeadTopics] [MEDIUM]",
+      "2026-04-03 Australians cancel Easter travel as fuel crisis mounts \u2014 diesel above A/litre, petrol above A.50/litre [Reuters] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T19:43:44Z",
+    "updated": "2026-04-03T20:38:48Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T19:43:44Z",
+    "weeklyItemsUpdated": "2026-04-03T20:38:48Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T19:43:44Z",
+  "dbLastUpdated": "2026-04-03T20:38:48Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -1181,6 +1181,84 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/2026/04/03/world/middleeast/infrastructure-attacked-gulf-kuwait-iran.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T20:38:17Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "shipping",
+      "headline": "Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T20:38:17Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australia has just over one month of diesel and petrol supplies if imports disrupted \u2014 government confirms in Parliament",
+      "source": "Beef Central",
+      "sourceUrl": "https://www.beefcentral.com/news/australias-diesel-reserves-sit-at-34-days-parliament-told/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T20:38:17Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Iran hits Gulf refineries; Trump threatens Iranian bridges and power plants; Kuwait Mina al-Ahmadi still burning",
+      "source": "KPBS",
+      "sourceUrl": "https://www.kpbs.org/news/international/2026/04/03/iran-hits-gulf-refineries-as-trump-warns-u-s-will-attack-iranian-bridges-power-plants",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T20:38:17Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australia scrambling to diversify supply; 55 ships en route or arriving by end of April; Bowen says race to beat supply crunch",
+      "source": "HeadTopics",
+      "sourceUrl": "https://au.headtopics.com/news/australia-faces-fuel-crisis-impacts-across-sectors-and-81801811",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T20:38:17Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Brent hits .42/bbl on April 3 \u2014 new high of the war; WTI at .29",
+      "source": "Fortune",
+      "sourceUrl": "https://fortune.com/article/price-of-oil-04-03-2026/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T20:38:17Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
     },
     {
       "dtg": "2026-04-03",
@@ -1871,9 +1949,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T19:43:44Z",
-    "cron": "asian-refinery",
-    "summary": "Kuwait Mina al-Ahmadi refinery struck; SK reviving Russian naphtha imports; Australia forced to US/Europe supply"
+    "sentAt": "2026-04-03T20:38:45Z",
+    "cron": "war-fuel-food",
+    "summary": "Brent hits new war high .42; Kuwait Ahmadi still burning; Athe Nova drone strike near Hormuz kills port worker; Australia 34-day reserves confirmed in Parliament; servo outages 787 and rising"
   },
   "reviewPanels": {
     "feed": {
