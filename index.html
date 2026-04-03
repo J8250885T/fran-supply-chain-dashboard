@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FRAN // 1EIGHT Supply Chain Intelligence</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#070b14;--surface:#0d1520;--surface-raised:#131e2e;--surface-high:#1a2840;
+  --border:#1c2a3e;--border-bright:#2a3f5a;
+  --text:#dce8f5;--text-dim:#7a94b0;--text-muted:#4a6278;
+  --red:#ff3b3b;--red-dim:#3d1010;--amber:#ffb020;--amber-dim:#3d2e08;
+  --green:#00e87a;--green-dim:#0a3d1e;--blue:#4a9eff;--blue-dim:#1a2e50;
+  --purple:#c084fc;--purple-dim:#2d1b4e;
+  --font:ui-monospace,'SF Mono',CascadiaCode,'Fira Code',Menlo,Consolas,monospace;
+}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13px;line-height:1.5;min-height:100vh}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border-bright);border-radius:3px}
+
+/* HEADER */
+.hdr{height:44px;background:linear-gradient(180deg,#0d1520 0%,#070b14 100%);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 16px;gap:12px;flex-wrap:wrap}
+.hdr-brand{font-size:14px;font-weight:700;letter-spacing:0.06em;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.hdr-brand span{color:var(--amber);font-weight:400}
+.crisis-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:0.08em;text-transform:uppercase}
+.crisis-0{background:var(--green-dim);color:var(--green)}
+.crisis-1{background:var(--amber-dim);color:var(--amber)}
+.crisis-2{background:#3d2008;color:#ff8c00}
+.crisis-3{background:var(--red-dim);color:var(--red)}
+.crisis-4{background:#2d0000;color:#ff0000}
+.hdr-right{margin-left:auto;display:flex;align-items:center;gap:14px}
+.hdr-fresh{font-size:10px;display:flex;align-items:center;gap:5px}
+.fresh-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.fresh-ok{background:var(--green)}
+.fresh-warn{background:var(--amber)}
+.fresh-stale{background:var(--red)}
+.hdr-dtg-wrap{display:flex;align-items:center;gap:6px}
+.dtg-label{font-size:10px;color:var(--text-muted);letter-spacing:0.1em}
+.dtg-value{color:var(--amber);font-size:12px;font-weight:700}
+.hdr-time{color:var(--text-dim);font-size:11px}
+.hdr-live{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--green)}
+.live-dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.25}}
+
+/* TIER-1 STRIP */
+.tier1-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:8px 16px;background:var(--surface);border-bottom:1px solid var(--border)}
+.t1-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 12px;display:flex;flex-direction:column;gap:2px}
+.t1-label{font-size:10px;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase}
+.t1-hero{font-size:2.2rem;font-weight:700;line-height:1.1}
+.t1-unit{font-size:11px;font-weight:400;color:var(--text-dim);margin-left:3px}
+.t1-sub{font-size:10px;color:var(--text-dim)}
+.t1-badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;width:fit-content;margin-top:2px}
+.t1-ok{background:var(--green-dim);color:var(--green)}
+.t1-warn{background:var(--amber-dim);color:var(--amber)}
+.t1-danger{background:var(--red-dim);color:var(--red)}
+
+/* MAIN GRID */
+.cmd-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;padding:10px 16px 20px}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.panel-col-span-2{grid-column:span 2}
+.panel-wide{grid-column:1/-1}
+
+/* PANEL HEADER */
+.p-hdr{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.p-title{font-size:11px;font-weight:700;letter-spacing:0.05em;flex:1;text-transform:uppercase}
+.p-dtg{font-size:10px;color:var(--amber)}
+
+/* WAR ALERT */
+.panel-alert{border-color:#2d1010;background:linear-gradient(180deg,#120808 0%,var(--surface) 60%)}
+.alert-inc{display:flex;gap:8px;padding:7px 9px;border-radius:6px;margin-bottom:4px;align-items:flex-start}
+.alert-inc.crit{background:rgba(255,59,59,0.06);border-left:3px solid var(--red)}
+.alert-inc.warn{background:rgba(255,176,32,0.06);border-left:3px solid var(--amber)}
+.alert-inc.info{background:var(--surface-raised);border-left:3px solid var(--blue)}
+.alert-inc.watch{background:rgba(255,176,32,0.04);border-left:3px solid var(--amber)}
+.alert-inc.aus{background:rgba(0,232,122,0.04);border-left:3px solid var(--green)}
+.alert-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.dot-red{background:var(--red)}.dot-amber{background:var(--amber)}.dot-blue{background:var(--blue)}.dot-green{background:var(--green)}
+.alert-body{flex:1}
+.alert-dtg{font-size:9px;color:var(--text-muted);font-weight:700;margin-bottom:2px}
+.alert-text{font-size:11px;color:var(--text-dim);line-height:1.4}
+.alert-src{font-size:9px;color:var(--text-muted);margin-top:1px}
+.aus-exp{background:var(--green-dim);border-radius:6px;padding:6px 10px;font-size:10px;color:#86efac;margin-top:4px}
+
+/* TRAJECTORY */
+.traj-section{border-top:1px solid var(--border);margin-top:4px;padding-top:8px}
+.traj-hdr{font-size:10px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px}
+.traj-row{font-size:11px;color:var(--text-dim);padding:3px 0;display:flex;gap:8px}
+.traj-lbl{font-size:10px;color:var(--text-muted);width:70px;flex-shrink:0}
+.traj-val{flex:1}
+.traj-scenarios{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:6px}
+.traj-sc{padding:6px 8px;border-radius:6px;border:1px solid var(--border)}
+.traj-sc.esc{border-color:#2d1010;background:rgba(255,59,59,0.04)}
+.traj-sc.hold{border-color:var(--amber-dim);background:rgba(255,176,32,0.03)}
+.traj-sc.desc{border-color:var(--green-dim);background:rgba(0,232,122,0.03)}
+.traj-sc-lbl{font-size:9px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:2px}
+.traj-sc-prob{font-size:1.2rem;font-weight:700;line-height:1}
+.traj-sc-txt{font-size:9px;color:var(--text-muted);margin-top:2px;line-height:1.4}
+
+/* EVENTS FEED */
+.events-feed{display:flex;flex-direction:column;gap:4px}
+.ev-row{display:flex;align-items:flex-start;gap:10px;padding:7px 9px;border-radius:6px;background:var(--surface-raised);border:1px solid var(--border)}
+.ev-row:hover{border-color:var(--border-bright);background:var(--surface-high)}
+.ev-domain{font-size:8px;font-weight:700;padding:2px 5px;border-radius:3px;letter-spacing:0.06em;flex-shrink:0;margin-top:2px;width:64px;text-align:center}
+.ev-body{flex:1;min-width:0}
+.ev-headline{font-size:11px;color:var(--text);line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev-meta{font-size:9px;color:var(--text-muted);margin-top:2px;display:flex;gap:8px}
+.ev-conf{font-size:9px;font-weight:700}
+.ev-conf-H{color:var(--red)}.ev-conf-M{color:var(--amber)}.ev-conf-L{color:var(--text-muted)}
+.ev-sent{font-size:9px;color:var(--green)}
+.ev-new{font-size:9px;color:var(--amber)}
+.events-empty{font-size:11px;color:var(--text-muted);padding:12px 0}
+
+/* SERVO */
+.servo-hero{text-align:center;padding:4px 0}
+.servo-num{font-size:2.8rem;font-weight:700;line-height:1;color:var(--red)}
+.servo-lbl{font-size:10px;color:var(--text-muted)}
+.servo-trend{font-size:10px;color:var(--amber);text-align:center;margin-top:4px}
+.servo-states{display:flex;flex-direction:column;gap:5px;margin-top:8px}
+.servo-st{display:flex;align-items:center;gap:8px;font-size:11px}
+.servo-st-n{width:26px;color:var(--text-dim);flex-shrink:0}
+.servo-bar{flex:1;height:5px;background:var(--surface-high);border-radius:3px;overflow:hidden}
+.servo-bar-fill{height:100%;background:var(--red);border-radius:3px;opacity:0.7}
+.servo-st-v{width:26px;text-align:right;color:var(--text-dim);font-size:10px}
+.servo-src{font-size:9px;color:var(--text-muted);margin-top:8px}
+
+/* FLEET */
+.fleet-arr{font-size:10px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.fleet-ship{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;border:1px solid var(--border);margin-bottom:4px}
+.fleet-ship.urg{border-color:var(--red);background:rgba(255,59,59,0.05);animation:urg-pulse 2.5s ease-in-out infinite}
+@keyframes urg-pulse{0%,100%{border-color:var(--red)}50%{border-color:#ff8888}}
+.fleet-days{font-size:10px;font-weight:700;width:36px;text-align:center;flex-shrink:0}
+.fleet-days.urg{color:var(--red)}.fleet-days.ok{color:var(--text-dim)}
+.fleet-body{flex:1}
+.fleet-name{font-size:11px;font-weight:700;color:var(--text)}
+.fleet-route{font-size:10px;color:var(--text-dim)}
+.fleet-meta{font-size:9px;color:var(--text-muted);text-align:right;flex-shrink:0}
+.fleet-next{font-size:9px;color:var(--text-muted);padding:4px 0 2px;border-top:1px solid var(--border);margin-top:4px}
+.fleet-next span{color:var(--text-dim)}
+.fleet-sum{font-size:9px;color:var(--text-muted);margin-top:6px;padding-top:6px;border-top:1px solid var(--border)}
+
+/* RESERVES */
+.res-gauge{display:flex;flex-direction:column;gap:9px}
+.res-row{display:grid;grid-template-columns:56px 1fr 44px;gap:10px;align-items:center}
+.res-label{font-size:10px;font-weight:700}
+.res-bar-wrap{height:9px;background:var(--surface-high);border-radius:5px;position:relative;overflow:hidden}
+.res-bar-fill{height:100%;border-radius:5px;transition:width 0.5s ease}
+.res-redline{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--red);opacity:0.9}
+.res-days{font-size:12px;font-weight:700;text-align:right;white-space:nowrap}
+.res-trigger{font-size:9px;color:var(--text-muted);padding:6px 0 2px;border-top:1px solid var(--border)}
+.res-trigger strong{color:var(--red)}
+.res-actions{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.res-badge{font-size:9px;padding:3px 7px;border-radius:4px;background:var(--surface-high);color:var(--text-dim);border:1px solid var(--border)}
+
+/* REFINERIES */
+.ref-list{display:flex;flex-direction:column;gap:8px}
+.ref-row{display:grid;grid-template-columns:22px 1fr 50px;gap:8px;align-items:center}
+.ref-flag{font-size:1rem;text-align:center;line-height:1}
+.ref-bar-wrap{height:5px;background:var(--surface-high);border-radius:3px;overflow:hidden;grid-column:2}
+.ref-bar-fill{height:100%;border-radius:3px}
+.ref-cap{font-size:11px;font-weight:700;text-align:right}
+.ref-note{font-size:9px;color:var(--text-muted);grid-column:2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ref-trend{font-size:11px;font-weight:700;text-align:right;flex-shrink:0}
+.ref-summary{font-size:10px;color:var(--text-dim);margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.ref-summary strong{color:var(--red)}
+
+/* ROUTES */
+.routes{display:flex;flex-direction:column;gap:5px}
+.route{display:grid;grid-template-columns:20px 1fr auto;gap:8px;align-items:center;padding:7px 9px;background:var(--surface-raised);border-radius:7px;border:1px solid var(--border)}
+.route-icon{font-size:1rem;text-align:center;line-height:1}
+.route-name{font-size:11px;font-weight:600}
+.route-traffic{font-size:9px;color:var(--text-muted)}
+.route-status{font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap}
+.rs-open{background:var(--green-dim);color:var(--green)}
+.rs-restricted{background:var(--amber-dim);color:var(--amber)}
+.rs-closed{background:var(--red-dim);color:var(--red)}
+.route-note{grid-column:1/-1;font-size:9px;color:var(--text-muted);padding-top:2px}
+
+/* CPI */
+.cpi-curr{display:flex;gap:16px;margin-bottom:6px}
+.cpi-stat{flex:1}
+.cpi-stat-lbl{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em}
+.cpi-stat-val{font-size:1.5rem;font-weight:700;line-height:1.1}
+.cpi-tier{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;width:fit-content;margin-top:2px}
+.tier-ok{background:var(--green-dim);color:var(--green)}
+.tier-warn{background:var(--amber-dim);color:var(--amber)}
+.tier-emerg{background:var(--red-dim);color:var(--red)}
+.cpi-canvas{width:100%;height:220px;display:block;border-radius:6px;background:rgba(0,0,0,0.2)}
+.cpi-legend{display:flex;gap:10px;font-size:9px;color:var(--text-muted);margin-top:4px;flex-wrap:wrap}
+.cpi-leg-item{display:flex;align-items:center;gap:4px}
+.cpi-leg-line{width:14px;height:2px;border-radius:1px}
+.cpi-states{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.cpi-st{font-size:9px;padding:2px 7px;border-radius:4px}
+.cpi-drv{font-size:9px;color:var(--text-muted);margin-top:6px;padding-top:6px;border-top:1px solid var(--border)}
+
+/* BANK */
+.bank-table{width:100%;border-collapse:collapse;font-size:10px}
+.bank-table th{text-align:left;padding:4px 7px;border-bottom:1px solid var(--border);color:var(--text-muted);font-size:9px;text-transform:uppercase;letter-spacing:0.06em}
+.bank-table td{padding:5px 7px;border-bottom:1px solid rgba(28,42,62,0.5);vertical-align:middle}
+.bank-table .num{text-align:right;font-variant-numeric:tabular-nums}
+.bank-table tr.crit-row td{background:rgba(255,59,59,0.05)}
+.bank-table tr.warn-row td{background:rgba(255,176,32,0.04)}
+.bank-note{font-size:9px;color:var(--text-muted);margin-top:8px;line-height:1.5}
+.bank-callout{font-size:10px;padding:6px 9px;border-radius:6px;margin-top:6px;background:var(--amber-dim);border:1px solid rgba(255,176,32,0.3);color:#fcd34d}
+.bank-gov{font-size:10px;color:var(--text-dim);margin-top:8px;padding-top:6px;border-top:1px solid var(--border)}
+
+/* FOOTER */
+.ftr{text-align:center;font-size:9px;color:var(--text-muted);padding:16px 20px 24px;border-top:1px solid var(--border);margin-top:4px}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.cmd-grid{grid-template-columns:1fr 1fr}.panel-col-span-2{grid-column:span 1}}
+@media(max-width:700px){.cmd-grid{grid-template-columns:1fr;padding:8px}.tier1-strip{grid-template-columns:1fr;gap:5px;padding:6px 8px}.t1-hero{font-size:1.8rem}.hdr{flex-wrap:wrap;height:auto;padding:8px;gap:6px}.traj-scenarios{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-brand">
+    <img src="/logo.webp" height="22" style="vertical-align:middle" alt="1EIGHT">
+    <span>1EIGHT</span> FRAN
+  </div>
+  <div class="crisis-badge crisis-3" id="crisis-badge">🔴 CRISIS MODE</div>
+  <div class="hdr-right">
+    <div class="hdr-fresh">
+      <div class="fresh-dot fresh-ok" id="fresh-dot"></div>
+      <span id="fresh-label" style="color:var(--text-muted);font-size:10px">Loading...</span>
+    </div>
+    <div class="hdr-dtg-wrap">
+      <span class="dtg-label">DTG</span>
+      <span class="dtg-value" id="hdr-dtg">——————</span>
+    </div>
+    <div class="hdr-time" id="hdr-time">——:—— GMT+10</div>
+    <div class="hdr-live"><div class="live-dot"></div> LIVE</div>
+  </div>
+</header>
+
+<div class="tier1-strip">
+  <div class="t1-card">
+    <div class="t1-label">⛽ DIESEL RESERVES</div>
+    <div class="t1-hero" id="t1-reserves">—<span class="t1-unit">DAYS</span></div>
+    <div class="t1-sub" id="t1-reserves-sub">—</div>
+    <div class="t1-badge t1-ok" id="t1-reserves-badge">LOADING</div>
+  </div>
+  <div class="t1-card">
+    <div class="t1-label">🏭 SINGAPORE REFINERY</div>
+    <div class="t1-hero" id="t1-refinery">—<span class="t1-unit">%</span></div>
+    <div class="t1-sub" id="t1-refinery-sub">—</div>
+    <div class="t1-badge t1-ok" id="t1-refinery-badge">LOADING</div>
+  </div>
+  <div class="t1-card">
+    <div class="t1-label">⛽ SERVO OUTAGES</div>
+    <div class="t1-hero" id="t1-servo">—</div>
+    <div class="t1-sub" id="t1-servo-sub">—</div>
+    <div class="t1-badge t1-ok" id="t1-servo-badge">LOADING</div>
+  </div>
+</div>
+
+<div class="cmd-grid">
+
+  <!-- WAR ALERT (2 col) -->
+  <section class="panel panel-alert panel-col-span-2" id="panel-alert">
+    <div class="p-hdr">
+      <span class="p-title">⚡ WAR + FUEL + FOOD</span>
+      <span class="p-dtg" id="alert-dtg">——————</span>
+    </div>
+    <div id="alert-content"><div class="alert-inc info"><div class="alert-body"><div class="alert-dtg">Loading...</div></div></div></div>
+    <div id="traj-content"></div>
+  </section>
+
+  <!-- SERVO (1 col) -->
+  <section class="panel" id="panel-servo">
+    <div class="p-hdr"><span class="p-title">⛽ SERVO OUTAGES</span><span class="p-dtg" id="servo-dtg">——</span></div>
+    <div id="servo-content"></div>
+  </section>
+
+  <!-- FLEET (1 col) -->
+  <section class="panel" id="panel-fleet">
+    <div class="p-hdr"><span class="p-title">🛢️ FLEET ARRIVALS</span></div>
+    <div id="fleet-content"></div>
+  </section>
+
+  <!-- RESERVES (2 col) -->
+  <section class="panel panel-col-span-2" id="panel-reserves">
+    <div class="p-hdr"><span class="p-title">🇦🇺 AUSTRALIAN FUEL RESERVES</span><span class="p-dtg" id="reserves-dtg">——</span></div>
+    <div id="reserves-content"></div>
+  </section>
+
+  <!-- REFINERIES (1 col) -->
+  <section class="panel" id="panel-refineries">
+    <div class="p-hdr"><span class="p-title">🏭 ASIAN REFINERIES</span></div>
+    <div id="refineries-content"></div>
+  </section>
+
+  <!-- ROUTES (1 col) -->
+  <section class="panel" id="panel-routes">
+    <div class="p-hdr"><span class="p-title">🚢 KEY ROUTES</span></div>
+    <div id="routes-content"></div>
+  </section>
+
+  <!-- EVENTS FEED (full width) -->
+  <section class="panel panel-wide" id="panel-events">
+    <div class="p-hdr">
+      <span class="p-title">📡 SUPPLY CHAIN EVENT FEED</span>
+      <span class="p-dtg" id="events-dtg">——</span>
+    </div>
+    <div id="events-content"><div class="events-empty">Loading events...</div></div>
+  </section>
+
+  <!-- CPI TRACKER (2 col) -->
+  <section class="panel panel-col-span-2" id="panel-cpi">
+    <div class="p-hdr"><span class="p-title">📊 CPI TRACKER</span><span class="p-dtg" id="cpi-dtg">——</span></div>
+    <div id="cpi-content"></div>
+  </section>
+
+  <!-- BANK (full width) -->
+  <section class="panel panel-wide" id="panel-bank">
+    <div class="p-hdr"><span class="p-title">🏦 HOUSEHOLD CASH FLOW — DEBT + CRISIS MODEL</span><span class="p-dtg" id="bank-dtg">——</span></div>
+    <div id="bank-content"></div>
+  </section>
+
+</div>
+
+<div class="ftr">
+  FRAN // 1EIGHT Supply Chain Intelligence &nbsp;|&nbsp;
+  Sources: FuelRadar, ABS, RBA, DCCEEW, IEA, Lloyd's, Bloomberg, Guardian, Reuters &nbsp;|&nbsp;
+  All data estimated — verify independently
+</div>
+
+<script>
+(function(){
+var REFRESH_MS = 30000;
+var _lastInf = null;
+
+function api(p){ return fetch(p+'?_='+Date.now()).then(function(r){return r.json();}); }
+
+function fmtDTG(iso){
+  if(!iso) return '——————';
+  try{
+    var d=new Date(iso);
+    var dd=String(d.getUTCDate()).padStart(2,'0');
+    var hh=String(d.getUTCHours()).padStart(2,'0');
+    var mm=String(d.getUTCMinutes()).padStart(2,'0');
+    var mo=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+    return dd+hh+mm+'Z '+mo[d.getUTCMonth()]+' '+String(d.getUTCFullYear()).slice(2);
+  }catch(e){return '——————';}
+}
+function fmtTime(iso){
+  if(!iso) return '——:—— GMT+10';
+  try{ return new Date(iso).toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit',timeZone:'Australia/Brisbane'})+' GMT+10'; }catch(e){return '——:—— GMT+10';}
+}
+
+// ── FRESHNESS ──
+function updateFreshness(dbLastUpdated){
+  var dot=document.getElementById('fresh-dot');
+  var lbl=document.getElementById('fresh-label');
+  if(!dbLastUpdated){lbl.textContent='No data';dot.className='fresh-dot fresh-stale';return;}
+  var ageMs=Date.now()-new Date(dbLastUpdated).getTime();
+  var ageH=ageMs/3600000;
+  var agoStr=ageMs<60000?'just now':ageMs<3600000?Math.round(ageMs/60000)+'m ago':Math.round(ageH)+'h ago';
+  if(ageH<8){dot.className='fresh-dot fresh-ok';lbl.textContent='Data: '+agoStr;}
+  else if(ageH<24){dot.className='fresh-dot fresh-warn';lbl.textContent='⚠ Data: '+agoStr;}
+  else{dot.className='fresh-dot fresh-stale';lbl.textContent='🔴 Stale: '+agoStr;}
+}
+
+// ── HEADER ──
+function updateHeader(data){
+  var dbEv=data.dbEvents||[];
+  var latestEv=dbEv[0];
+  var dtg=latestEv?fmtDTG(latestEv.addedAt||latestEv.dtg):fmtDTG(data.lastUpdated);
+  document.getElementById('hdr-dtg').textContent=dtg;
+  document.getElementById('hdr-time').textContent=fmtTime(data.dbLastUpdated||data.lastUpdated);
+  updateFreshness(data.dbLastUpdated||data.lastUpdated);
+  var inf=data.inflation, badge=document.getElementById('crisis-badge');
+  if(inf){
+    var reg=inf.regional?inf.regional.current:0;
+    if(reg>=12){badge.className='crisis-badge crisis-4';badge.textContent='💀 CRITICAL';}
+    else if(reg>=9){badge.className='crisis-badge crisis-3';badge.textContent='🔴 CRISIS MODE';}
+    else if(reg>=7){badge.className='crisis-badge crisis-2';badge.textContent='🟠 HIGH ALERT';}
+    else if(reg>=5){badge.className='crisis-badge crisis-1';badge.textContent='🟡 ALERT';}
+    else{badge.className='crisis-badge crisis-0';badge.textContent='🟢 NORMAL';}
+  }
+}
+
+// ── TIER-1 ──
+function renderTier1(data){
+  var res=data.reserves||{}, ref=(data.refineries||{}).singapore||{}, servo=data.servoOutages||{};
+  var diesel=res.diesel||0;
+  var dB=document.getElementById('t1-reserves-badge');
+  document.getElementById('t1-reserves').innerHTML=diesel+'<span class="t1-unit">DAYS</span>';
+  document.getElementById('t1-reserves-sub').textContent=(diesel-(res.rationingRedLine||10))+'d above rationing trigger';
+  if(diesel<20){dB.className='t1-badge t1-danger';dB.textContent='🔴 CRITICAL';}
+  else if(diesel<30){dB.className='t1-badge t1-warn';dB.textContent='⚠️ WARNING';}
+  else{dB.className='t1-badge t1-ok';dB.textContent='✅ OK';}
+  var cap=ref.capacity||0, rB=document.getElementById('t1-refinery-badge');
+  document.getElementById('t1-refinery').innerHTML='~'+cap+'<span class="t1-unit">%</span>';
+  document.getElementById('t1-refinery-sub').textContent='Jurong Island capacity';
+  if(cap<60){rB.className='t1-badge t1-danger';rB.textContent='🔴 CRITICAL';}
+  else if(cap<70){rB.className='t1-badge t1-warn';rB.textContent='⚠️ HIGH RISK';}
+  else{rB.className='t1-badge t1-ok';rB.textContent='✅ OK';}
+  var total=servo.total||0, byS=servo.byState||{}, sB=document.getElementById('t1-servo-badge');
+  document.getElementById('t1-servo').textContent=total.toLocaleString();
+  document.getElementById('t1-servo-sub').textContent='NSW '+(byS.NSW||'—')+' · QLD '+(byS.QLD||'—');
+  if(total>800){sB.className='t1-badge t1-danger';sB.textContent='🔴 CRITICAL';}
+  else if(total>400){sB.className='t1-badge t1-warn';sB.textContent='⚠️ WARNING';}
+  else{sB.className='t1-badge t1-ok';sB.textContent='✅ OK';}
+}
+
+// ── WAR ALERT ──
+function renderAlert(data){
+  var dbEv=data.dbEvents||[];
+  var war=data.warAlert||{};
+  var el=document.getElementById('alert-content');
+  document.getElementById('alert-dtg').textContent=fmtDTG(war.timestamp||data.lastUpdated);
+  var html='';
+  // Prefer DB events for recent events feed; fall back to warAlert arrays
+  var fuelEvs=dbEv.filter(function(e){return e.domain==='fuel'||e.domain==='shipping'||e.domain==='geopolitical';}).slice(0,5);
+  var ausEvs=dbEv.filter(function(e){return e.domain==='australia';}).slice(0,3);
+  if(fuelEvs.length){
+    fuelEvs.forEach(function(ev){
+      var dClass=ev.domain==='shipping'?'dot-blue':'dot-red';
+      var incClass=ev.domain==='shipping'?'warn':'crit';
+      html+='<div class="alert-inc '+incClass+'">';
+      html+='<div class="alert-dot '+dClass+'"></div>';
+      html+='<div class="alert-body">';
+      html+='<div class="alert-dtg">'+ev.dtg+'</div>';
+      html+='<div class="alert-text">'+escHtml(ev.headline)+'</div>';
+      if(ev.source) html+='<div class="alert-src">'+escHtml(ev.source)+' · '+ev.confidence+'</div>';
+      html+='</div></div>';
+    });
+  } else {
+    (war.fuelImpact||[]).forEach(function(f){
+      html+='<div class="alert-inc crit"><div class="alert-dot dot-red"></div><div class="alert-body"><div class="alert-text">'+escHtml(f)+'</div></div></div>';
+    });
+  }
+  if(ausEvs.length){
+    html+='<div class="aus-exp">🇦🇺 RECENT AU: ';
+    html+=ausEvs.map(function(e){return e.headline;}).join(' · ');
+    html+='</div>';
+  } else if(war.watch&&war.watch.length){
+    html+='<div class="aus-exp">🇦🇺 '+escHtml((war.watch||[]).join(' · '))+'</div>';
+  }
+  el.innerHTML=html||'<div class="alert-inc info"><div class="alert-body"><div class="alert-text">No recent alerts</div></div></div>';
+}
+
+// ── TRAJECTORY ──
+function renderTrajectory(traj){
+  var el=document.getElementById('traj-content');
+  if(!traj){el.innerHTML='';return;}
+  var html='<div class="traj-section"><div class="traj-hdr">📈 TRAJECTORY ANALYSIS</div>';
+  if(traj.trend) html+='<div class="traj-row"><span class="traj-lbl">Trend</span><span class="traj-val">'+escHtml(traj.trend)+'</span></div>';
+  if(traj.projection) html+='<div class="traj-row"><span class="traj-lbl">Projection</span><span class="traj-val">'+escHtml(traj.projection)+'</span></div>';
+  if(traj.keyRisk) html+='<div class="traj-row"><span class="traj-lbl">Key risk 72h</span><span class="traj-val" style="color:var(--amber)">'+escHtml(traj.keyRisk)+'</span></div>';
+  if(traj.scenarios){
+    var sc=traj.scenarios;
+    html+='<div class="traj-scenarios">';
+    if(sc.escalate){html+='<div class="traj-sc esc"><div class="traj-sc-lbl" style="color:var(--red)">Escalate</div><div class="traj-sc-prob" style="color:var(--red)">'+(sc.escalate.probability||'?')+'%</div><div class="traj-sc-txt">'+escHtml(sc.escalate.auImpact||sc.escalate.trigger||'')+'</div></div>';}
+    if(sc.hold){html+='<div class="traj-sc hold"><div class="traj-sc-lbl" style="color:var(--amber)">Hold</div><div class="traj-sc-prob" style="color:var(--amber)">'+(sc.hold.probability||'?')+'%</div><div class="traj-sc-txt">'+escHtml(sc.hold.auImpact||sc.hold.trigger||'')+'</div></div>';}
+    if(sc.deescalate){html+='<div class="traj-sc desc"><div class="traj-sc-lbl" style="color:var(--green)">De-escalate</div><div class="traj-sc-prob" style="color:var(--green)">'+(sc.deescalate.probability||'?')+'%</div><div class="traj-sc-txt">'+escHtml(sc.deescalate.auImpact||sc.deescalate.trigger||'')+'</div></div>';}
+    html+='</div>';
+  }
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+// ── EVENTS FEED ──
+function renderEvents(dbEvents, dbLastUpdated){
+  var el=document.getElementById('events-content');
+  document.getElementById('events-dtg').textContent=fmtDTG(dbLastUpdated);
+  if(!dbEvents||!dbEvents.length){el.innerHTML='<div class="events-empty">No events in feed yet</div>';return;}
+  var html='<div class="events-feed">';
+  dbEvents.forEach(function(ev){
+    var col=ev.color||'#7a94b0';
+    var conf=ev.confidence||'MEDIUM';
+    var confCls='ev-conf ev-conf-'+conf.charAt(0);
+    var sentMark=ev.sent?'<span class="ev-sent">✓ reported</span>':'<span class="ev-new">● new</span>';
+    html+='<div class="ev-row">';
+    html+='<div class="ev-domain" style="background:'+col+'22;color:'+col+';border:1px solid '+col+'44">'+escHtml(ev.label||ev.domain)+'</div>';
+    html+='<div class="ev-body">';
+    if(ev.sourceUrl&&ev.sourceUrl.startsWith('http')){
+      html+='<div class="ev-headline"><a href="'+escHtml(ev.sourceUrl)+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">'+escHtml(ev.headline)+'</a></div>';
+    } else {
+      html+='<div class="ev-headline">'+escHtml(ev.headline)+'</div>';
+    }
+    html+='<div class="ev-meta"><span>'+escHtml(ev.dtg||'')+'</span>';
+    if(ev.source) html+='<span>'+escHtml(ev.source)+'</span>';
+    html+='<span class="'+confCls+'">'+conf+'</span>';
+    html+=sentMark;
+    html+='</div></div></div>';
+  });
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+// ── SERVO ──
+function renderServo(data){
+  if(!data) return;
+  var el=document.getElementById('servo-content');
+  document.getElementById('servo-dtg').textContent=fmtDTG(data.updated);
+  var total=data.total||0, trend=data.trend||'—', byS=data.byState||{};
+  var states=['NSW','QLD','VIC','SA','WA','NT','ACT','TAS'];
+  var maxS=Math.max.apply(null,states.map(function(s){return byS[s]||0;}));
+  var html='<div class="servo-hero"><div class="servo-num">'+total.toLocaleString()+'</div><div class="servo-lbl">stations dry nationally</div><div class="servo-trend">▲ '+trend+' — '+(data.mostAffectedFuel||'PDSL')+' worst hit</div></div>';
+  html+='<div class="servo-states">';
+  states.forEach(function(s){
+    var v=byS[s]||0; if(!v) return;
+    var pct=maxS?(v/maxS*100):0;
+    html+='<div class="servo-st"><span class="servo-st-n">'+s+'</span><div class="servo-bar"><div class="servo-bar-fill" style="width:'+pct+'%"></div></div><span class="servo-st-v">'+v+'</span></div>';
+  });
+  html+='</div><div class="servo-src">Source: '+(data.source||'FuelRadar')+' · '+fmtDTG(data.updated)+'</div>';
+  el.innerHTML=html;
+}
+
+// ── FLEET ──
+function renderFleet(data){
+  if(!data) return;
+  var el=document.getElementById('fleet-content');
+  var ships=(data.ships||[]).map(function(s){
+    var e=new Date(s.eta); var d=Math.max(0,Math.ceil((e-Date.now())/86400000)); s._days=d; return s;
+  }).sort(function(a,b){return a._days-b._days;});
+  var urgent=ships.filter(function(s){return s._days<=7;});
+  var enRoute=ships.filter(function(s){return s.status==='en_route';});
+  var html='';
+  if(urgent.length){
+    html+='<div class="fleet-arr">⚠️ ARRIVING SOON</div>';
+    urgent.slice(0,3).forEach(function(s){
+      html+='<div class="fleet-ship urg"><span class="fleet-days urg">'+(s._days===0?'TODAY':s._days+'D')+'</span><div class="fleet-body"><div class="fleet-name">'+escHtml(s.name)+'</div><div class="fleet-route">'+escHtml(s.destination||s.dest||'Australia')+'</div></div><div class="fleet-meta">'+s.eta.replace('2026-','')+'</div></div>';
+    });
+  }
+  html+='<div class="fleet-arr">EN ROUTE</div>';
+  enRoute.slice(0,4).forEach(function(s){
+    html+='<div class="fleet-ship"><span class="fleet-days ok">'+s._days+'D</span><div class="fleet-body"><div class="fleet-name">'+escHtml(s.name)+'</div><div class="fleet-route">'+(s.positionNote||s.destination||'')+'</div></div><div class="fleet-meta"><div>'+s.eta.replace('2026-','')+'</div><div style="color:var(--text-muted)">'+escHtml(s.operator||'')+'</div></div></div>';
+  });
+  html+='<div class="fleet-sum"><strong>'+ships.length+'</strong> ships tracked · '+urgent.length+' arriving · '+enRoute.length+' en route</div>';
+  el.innerHTML=html;
+}
+
+// ── RESERVES ──
+function renderReserves(data){
+  if(!data) return;
+  var el=document.getElementById('reserves-content');
+  document.getElementById('reserves-dtg').textContent='DTG: '+fmtDTG(data.lastUpdated);
+  var rl=data.rationingRedLine||10, maxD=50;
+  function gaugeRow(lbl,emoji,days){
+    var pct=Math.min(100,(days/maxD)*100), rlPct=(rl/maxD)*100;
+    var col=days<20?'var(--red)':days<30?'var(--amber)':'var(--green)';
+    return '<div class="res-row"><div class="res-label">'+emoji+' '+lbl+'</div><div class="res-bar-wrap"><div class="res-bar-fill" style="width:'+pct+'%;background:'+col+'"></div><div class="res-redline" style="left:'+rlPct+'%"></div></div><div class="res-days" style="color:'+col+'">'+days+'d</div></div>';
+  }
+  var html='<div class="res-gauge">'+gaugeRow('DIESEL','⛽',data.diesel||0)+gaugeRow('PETROL','⛽',data.petrol||0)+gaugeRow('JET FUEL','✈️',data.jetFuel||0)+'</div>';
+  html+='<div class="res-trigger"><strong>Rationing trigger: '+rl+' days</strong> — current '+((data.diesel||0)-(rl))+' days above trigger</div>';
+  html+='<div class="res-actions">';
+  (data.governmentActions||[]).forEach(function(a){html+='<span class="res-badge">✅ '+escHtml(a)+'</span>';});
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+// ── REFINERIES ──
+function renderRefineries(data){
+  if(!data) return;
+  var el=document.getElementById('refineries-content');
+  var regions=[
+    {key:'singapore',name:'SG',flag:'🇸🇬'},{key:'southKorea',name:'SK',flag:'🇰🇷'},
+    {key:'taiwan',name:'TW',flag:'🇹🇼'},{key:'japan',name:'JP',flag:'🇯🇵'},
+  ];
+  var html='<div class="ref-list">';
+  var caps=[];
+  regions.forEach(function(r){
+    var d=data[r.key]||{}, cap=d.capacity||0; caps.push(cap);
+    var col=cap<60?'var(--red)':cap<75?'var(--amber)':'var(--green)';
+    var tArr=d.trend==='decreasing'?' ▼':d.trend==='increasing'?' ▲':' ➡';
+    html+='<div class="ref-row"><span class="ref-flag">'+r.flag+'</span><div class="ref-bar-wrap"><div class="ref-bar-fill" style="width:'+cap+'%;background:'+col+'"></div></div><span class="ref-cap" style="color:'+col+'">'+cap+'%</span><span class="ref-trend" style="color:'+col+'">'+tArr+'</span></div>';
+    html+='<div class="ref-note">'+escHtml(d.note||'')+'</div>';
+  });
+  var avg=caps.reduce(function(a,b){return a+b;},0)/caps.length;
+  html+='<div class="ref-summary">Regional avg: <strong>~'+Math.round(avg)+'%</strong> — Australian diesel imports <strong>TIGHT</strong></div>';
+  el.innerHTML=html;
+}
+
+// ── ROUTES ──
+function renderRoutes(data){
+  if(!data) return;
+  var el=document.getElementById('routes-content');
+  var routes=[
+    {key:'hormuz',name:'STRAIT OF HORMUZ',icon:'🌊',note:'Iran IRGC blockade · kinetic attacks on vessels'},
+    {key:'babMandeb',name:'BAB EL-MANDEB',icon:'🌊',note:'Houthis active · +14 days Cape route'},
+    {key:'redSea',name:'RED SEA',icon:'🌊',note:'All traffic rerouted · LNG costs +140%'},
+    {key:'suez',name:'SUEZ CANAL',icon:'🚢',note:'Insurance elevated · approach routes threatened'},
+    {key:'malacca',name:'STRAIT OF MALACCA',icon:'🚢',note:'Main Asia-Australia route — open'},
+  ];
+  var html='<div class="routes">';
+  routes.forEach(function(r){
+    var d=data[r.key]||{};
+    var status=(d.status||'unknown').toLowerCase();
+    var sCls=status==='open'?'rs-open':status==='closed'?'rs-closed':'rs-restricted';
+    var sLbl=status.charAt(0).toUpperCase()+status.slice(1);
+    html+='<div class="route"><span class="route-icon">'+r.icon+'</span><div><div class="route-name">'+r.name+'</div><div class="route-traffic">'+(d.traffic||'')+'</div></div><span class="route-status '+sCls+'">'+sLbl+'</span></div>';
+    html+='<div class="route-note" style="padding-left:28px">'+escHtml(d.note||r.note)+'</div>';
+  });
+  html+='</div>';
+  el.innerHTML=html;
+}
+
+// ── CPI CANVAS ──
+function drawCPIChart(inf){
+  var canvas=document.getElementById('cpiCanvas');
+  if(!canvas||!inf) return;
+  var dpr=window.devicePixelRatio||1, W=canvas.offsetWidth, H=220;
+  canvas.width=W*dpr; canvas.height=H*dpr; canvas.style.width=W+'px'; canvas.style.height=H+'px';
+  var ctx=canvas.getContext('2d'); ctx.scale(dpr,dpr);
+  var pL=38,pR=10,pT=12,pB=26, tW=W-pL-pR, cH=H-pT-pB;
+  function toX(d){return pL+(d/180)*tW;} function toY(v){return pT+cH-(v/15)*cH;}
+  // Tier bands
+  var bands=[{l:5,c:'rgba(245,158,11,0.09)'},{l:7,c:'rgba(249,115,22,0.10)'},{l:9,c:'rgba(239,68,68,0.12)'},{l:12,c:'rgba(220,38,38,0.14)'}];
+  var prev=pT+cH;
+  bands.forEach(function(b){var y=toY(b.l);if(y>pT){ctx.fillStyle=b.c;ctx.fillRect(pL,y,tW,prev-y);prev=y;}});
+  // Grid
+  ctx.strokeStyle='#1f2937';ctx.lineWidth=0.5;
+  [0,5,7,9,12,15].forEach(function(v){var y=toY(v);ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+tW,y);ctx.stroke();ctx.fillStyle='#4a6278';ctx.font='9px ui-monospace';ctx.textAlign='right';ctx.fillText(v+'%',pL-3,y+3);});
+  // Tier labels
+  var tlines=[{l:5,c:'rgba(245,158,11,0.5)',lbl:'5% Alert'},{l:7,c:'rgba(249,115,22,0.55)',lbl:'7% Warn'},{l:9,c:'rgba(239,68,68,0.6)',lbl:'9% Emerg'},{l:12,c:'rgba(220,38,38,0.6)',lbl:'12% Crisis'}];
+  tlines.forEach(function(t){var y=toY(t.l);ctx.save();ctx.strokeStyle=t.c;ctx.lineWidth=1;ctx.setLineDash([2,3]);ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+tW,y);ctx.stroke();ctx.setLineDash([]);ctx.restore();ctx.fillStyle=t.c;ctx.font='bold 8px ui-monospace';ctx.textAlign='left';ctx.fillText(t.lbl,pL+3,y-2);});
+  // Data
+  var mA=[{d:0,v:0.3},{d:30,v:1.8},{d:60,v:4.5},{d:90,v:7.2}];
+  var rA=[{d:0,v:0.4},{d:30,v:2.9},{d:60,v:6.8},{d:90,v:9.8}];
+  function lerp(a,day){if(day<=a[0].d)return a[0].v;if(day>=a[a.length-1].d)return a[a.length-1].v;for(var i=0;i<a.length-1;i++)if(day>=a[i].d&&day<=a[i+1].d){var t=(day-a[i].d)/(a[i+1].d-a[i].d);return a[i].v+t*(a[i+1].v-a[i].v);}return a[a.length-1].v;}
+  function fill(a,col){ctx.beginPath();for(var d=0;d<=90;d++){var x=toX(d),y=toY(lerp(a,d));d===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.lineTo(toX(90),pT+cH);ctx.lineTo(toX(0),pT+cH);ctx.closePath();ctx.fillStyle=col;ctx.fill();}
+  function line(a,col,w){ctx.beginPath();for(var d=0;d<=90;d++){var x=toX(d),y=toY(lerp(a,d));d===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.strokeStyle=col;ctx.lineWidth=w;ctx.stroke();}
+  fill(mA,'rgba(74,158,255,0.08)');fill(rA,'rgba(255,176,32,0.08)');
+  line(mA,'#4a9eff',1.8);line(rA,'#ffb020',1.8);
+  ctx.save();ctx.setLineDash([4,3]);
+  var mV=7.2,rV=9.8;
+  ctx.beginPath();for(var d=91;d<=180;d++){mV+=0.13*Math.pow(0.97,(d-90)/30);var x=toX(d),y=toY(mV);d===91?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.strokeStyle='rgba(74,158,255,0.65)';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.beginPath();for(var d=91;d<=180;d++){rV+=0.18*Math.pow(0.97,(d-90)/30);var x=toX(d),y=toY(rV);d===91?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.strokeStyle='rgba(255,176,32,0.65)';ctx.lineWidth=1.5;ctx.stroke();
+  ctx.setLineDash([]);ctx.restore();
+  // TODAY line
+  ctx.save();ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  var tx=toX(90);ctx.beginPath();ctx.moveTo(tx,pT);ctx.lineTo(tx,pT+cH);ctx.stroke();ctx.setLineDash([]);ctx.restore();
+  ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='bold 8px ui-monospace';ctx.textAlign='center';
+  ctx.fillText('TODAY',tx,pT+10);ctx.fillText('PROJECTED',pL+tW-45,pT+10);
+  // X-axis labels
+  ctx.fillStyle='#4a6278';ctx.font='8px ui-monospace';ctx.textAlign='center';
+  [{d:0,l:'Feb 1'},{d:30,l:'Mar 3'},{d:60,l:'Apr 2'},{d:90,l:'May 1'},{d:120,l:'May 31'},{d:150,l:'Jun 30'},{d:180,l:'Jul 30'}].forEach(function(x){ctx.fillText(x.l,toX(x.d),H-8);});
+}
+
+// ── CPI PANEL ──
+function renderCPI(inf){
+  if(!inf) return; _lastInf=inf;
+  var el=document.getElementById('cpi-content');
+  document.getElementById('cpi-dtg').textContent=fmtDTG(inf.lastUpdated);
+  var m=inf.metro||{}, r=inf.regional||{};
+  function tier(v){return v>=12?'crisis':v>=9?'emerg':v>=7?'warn':'ok';}
+  function tierCls(t){return t==='emerg'||t==='crisis'?'tier-emerg':t==='warn'?'tier-warn':'tier-ok';}
+  function tierLbl(t){return{ok:'OK',warn:'WARNING',emerg:'EMERGENCY',crisis:'CRISIS'}[t]||t.toUpperCase();}
+  var mT=tier(m.current||0), rT=tier(r.current||0);
+  var html='<div class="cpi-curr">';
+  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:'+(mT==='warn'?'var(--amber)':mT==='emerg'||mT==='crisis'?'var(--red)':'var(--green)')+'">'+m.current+'%</div><div class="cpi-tier '+tierCls(mT)+'">'+tierLbl(mT)+'</div></div>';
+  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Regional</div><div class="cpi-stat-val" style="color:'+(rT==='warn'?'var(--amber)':rT==='emerg'||rT==='crisis'?'var(--red)':'var(--green)')+'">'+r.current+'%</div><div class="cpi-tier '+tierCls(rT)+'">'+tierLbl(rT)+'</div></div>';
+  html+='</div>';
+  html+='<canvas id="cpiCanvas" class="cpi-canvas"></canvas>';
+  html+='<div class="cpi-legend"><div class="cpi-leg-item"><div class="cpi-leg-line" style="background:#4a9eff"></div>Metro</div><div class="cpi-leg-item"><div class="cpi-leg-line" style="background:#ffb020"></div>Regional</div><div class="cpi-leg-item"><div class="cpi-leg-line" style="background:rgba(255,100,100,0.5);border-top:1px dashed"></div>Projection</div></div>';
+  var states=inf.states||[];
+  html+='<div class="cpi-states">';
+  states.forEach(function(s){
+    var t=s.tier||'ok', bg=t==='crisis'?'rgba(255,59,59,0.2)':t==='emergency'?'rgba(255,59,59,0.1)':t==='warning'?'rgba(255,176,32,0.1)':'rgba(74,158,255,0.08)';
+    var col=t==='crisis'||t==='emergency'?'var(--red)':t==='warning'?'var(--amber)':'var(--green)';
+    var tArr=s.trend>=0.6?'▲▲':s.trend>=0.3?'▲':'➡';
+    html+='<span class="cpi-st" style="background:'+bg+';color:'+col+'">'+s.state+' '+(s.regional!==null?s.regional+'%':'—')+' '+tArr+' · '+s.daysToPeak+'d→'+s.projPeak+'%</span>';
+  });
+  html+='</div>';
+  var drivers=inf.drivers||[];
+  if(drivers.length){html+='<div class="cpi-drv">Drivers: '+drivers.map(function(d){return d.emoji+' '+d.label+' +'+d.contribution+'%';}).join(' · ')+'</div>';}
+  el.innerHTML=html;
+  setTimeout(function(){drawCPIChart(_lastInf);},50);
+}
+
+// ── BANK ──
+function renderBank(be){
+  if(!be||!be.household) return;
+  var el=document.getElementById('bank-content');
+  document.getElementById('bank-dtg').textContent=fmtDTG(be.lastUpdated);
+  var tiers=be.household.tiers||[], gov=be.government||{};
+  var html='<table class="bank-table"><thead><tr><th>Bracket</th><th>Income/mo</th><th>Debt Svc</th><th class="num">Crisis+</th><th class="num">Cash Flow</th><th class="num">Runway</th></tr></thead><tbody>';
+  tiers.forEach(function(t){
+    var cf=t.monthlyDeficit||0, rw=t.runwayMonths||999;
+    var rcls=rw<=3?'crit-row':rw<=12?'warn-row':'';
+    var cfCol=cf<0?'var(--red)':'var(--green)';
+    var rwCol=rw<=3?'var(--red)':rw<=12?'var(--amber)':'var(--green)';
+    html+='<tr class="'+rcls+'"><td style="color:'+(rcls==='crit-row'?'var(--red)':rcls==='warn-row'?'var(--amber)':'var(--green)')+';font-weight:700">'+t.name.split(' ')[0]+'</td>';
+    html+='<td class="num">$'+(t.income||0).toLocaleString()+'</td><td class="num">$'+(t.debtService||0).toLocaleString()+'</td>';
+    html+='<td class="num">+$'+(t.monthlyExtra||0)+'</td>';
+    html+='<td class="num" style="color:'+cfCol+';font-weight:700">'+(cf<0?'-$':'+$')+Math.abs(cf).toLocaleString()+'</td>';
+    html+='<td class="num" style="color:'+rwCol+';font-weight:700">'+(rw>=999?'∞':'~'+rw+' MO')+'</td></tr>';
+  });
+  html+='</tbody></table>';
+  html+='<div class="bank-note"><strong>Crisis+</strong> = direct fuel cost + 4% surcharge on food/transport/utilities/goods. <strong>Runway</strong> = liquid savings ÷ monthly deficit.</div>';
+  html+='<div class="bank-callout">⚠️ JOB-LOSS SCENARIO: Average household loses one earner ($2,750/mo) → income drops 50% → cash flow becomes -$925/mo → $15k savings = ~16 months.</div>';
+  html+='<div class="bank-gov">🏛️ Govt Fiscal: <strong>$'+(gov.totalBufferBn||4.75)+'bn</strong> committed · Excise cut expires <strong>Jun 30</strong> · Monthly burn: ~$<strong>'+((gov.monthlyBurnRateM||900)/1000).toFixed(1)+'bn</strong>. At Emergency CPI (9%+): +<strong>$2.2bn/mo</strong> additional fiscal cost.</div>';
+  el.innerHTML=html;
+}
+
+// ── UTILS ──
+function escHtml(s){if(!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+window.addEventListener('resize',function(){clearTimeout(window._rt);window._rt=setTimeout(function(){if(_lastInf)renderCPI(_lastInf);},150);});
+
+// ── MAIN ──
+function refresh(){
+  api('/data.json').then(function(data){
+    updateHeader(data);
+    renderTier1(data);
+    renderAlert(data);
+    renderTrajectory(data.trajectory||null);
+    renderEvents(data.dbEvents||[], data.dbLastUpdated);
+    renderServo(data.servoOutages);
+    renderFleet(data.shipments);
+    renderReserves(data.reserves);
+    renderRefineries(data.refineries);
+    renderRoutes(data.shippingRoutes);
+    renderCPI(data.inflation);
+    renderBank(data.bankEmpty);
+  }).catch(function(e){console.error('Refresh error:',e);});
+}
+refresh();
+setInterval(refresh,REFRESH_MS);
+})();
+</script>
+</body>
+</html>

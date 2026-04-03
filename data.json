@@ -1,0 +1,854 @@
+{
+  "lastUpdated": "2026-04-03T01:00:56Z",
+  "warAlert": {
+    "timestamp": "2026-04-03T01:00:56Z",
+    "fuelImpact": [
+      "2026-04-02 Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction [NBC] [HIGH]",
+      "2026-04-01 IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted [CNBC] [HIGH]",
+      "2026-04-01 US gasoline average tops $4/gallon \u2014 first time since 2022 [NBC] [HIGH]",
+      "2026-03-28 Houthis enter war \u2014 Bab el-Mandeb threatened, ~30 tankers idling near Yanbu [Reuters] [HIGH]"
+    ],
+    "foodImpact": [
+      "Grain shipments via Red Sea suspended",
+      "Fertiliser supply chain disrupted",
+      "Asian food export restrictions possible"
+    ],
+    "australiaRisk": "HIGH",
+    "watch": [
+      "2026-03-31 20% of national fuel reserves released; fuel excise halved 26.3c/litre for 3 months [9News] [HIGH]",
+      "2026-03-30 National Cabinet convenes on fuel \u2014 rationing rejected, voluntary demand reduction preferred [ABC] [HIGH]",
+      "2026-03-28 Albanese government enacts new fuel security powers \u2014 EFIC amendment active [Guardian] [HIGH]",
+      "2026-03-27 PM secures 6 jet fuel tankers from China \u2014 arriving 28 Mar through 8 Apr [SBS] [HIGH]"
+    ]
+  },
+  "servoOutages": {
+    "total": 851,
+    "trend": "increasing",
+    "source": "FuelRadar Australia",
+    "updated": "2026-04-03T01:00:56Z",
+    "byState": {
+      "NSW": 326,
+      "QLD": 176,
+      "VIC": 151,
+      "SA": 109,
+      "WA": 41,
+      "NT": 32,
+      "ACT": 8,
+      "TAS": 8
+    },
+    "mostAffectedFuel": "PDSL"
+  },
+  "shipments": {
+    "usOrigin": [
+      {
+        "name": "Largo Eagle",
+        "status": "en_route",
+        "eta": "2026-04-10"
+      },
+      {
+        "name": "Nord Ventura",
+        "status": "en_route",
+        "eta": "2026-04-12"
+      },
+      {
+        "name": "BP Tanker 1",
+        "status": "confirmed",
+        "eta": "2026-04-mid"
+      },
+      {
+        "name": "BP Tanker 2",
+        "status": "confirmed",
+        "eta": "2026-04-mid"
+      },
+      {
+        "name": "Vitol Tanker",
+        "status": "confirmed",
+        "eta": "2026-04-mid"
+      },
+      {
+        "name": "Exxon Tanker 3",
+        "status": "unconfirmed",
+        "eta": "unknown",
+        "note": "Name not confirmed"
+      }
+    ],
+    "asianReplacements": {
+      "status": "on_track",
+      "note": "6 tankers from China, 28 Mar \u2013 8 Apr"
+    },
+    "governmentCargoes": {
+      "status": "active",
+      "note": "EFIC mechanism live"
+    },
+    "ships": [
+      {
+        "name": "Largo Eagle",
+        "type": "vlcc",
+        "status": "en_route",
+        "origin": "Houston",
+        "originCoords": "gulf",
+        "destination": "Australia (TBA)",
+        "eta": "2026-04-10",
+        "cargo": "petrol/diesel",
+        "operator": "ExxonMobil",
+        "routeStyle": "dashed",
+        "routeColor": "#3b82f6",
+        "positionNote": "Indian Ocean \u2014 rounding Cape of Good Hope"
+      },
+      {
+        "name": "Nord Ventura",
+        "type": "vlcc",
+        "status": "en_route",
+        "origin": "Houston",
+        "originCoords": "gulf",
+        "destination": "Australia (TBA)",
+        "eta": "2026-04-12",
+        "cargo": "petrol/diesel",
+        "operator": "ExxonMobil",
+        "routeStyle": "dashed",
+        "routeColor": "#3b82f6",
+        "positionNote": "Mid-Atlantic \u2014 heading for Cape of Good Hope"
+      },
+      {
+        "name": "BP Tanker 1",
+        "type": "suezmax",
+        "status": "en_route",
+        "origin": "Thames, UK",
+        "originCoords": "uk",
+        "destination": "Australia",
+        "eta": "2026-04-mid",
+        "cargo": "diesel",
+        "operator": "BP",
+        "routeStyle": "dashed",
+        "routeColor": "#22c55e",
+        "positionNote": "Off West Africa \u2014 heading for Cape of Good Hope"
+      },
+      {
+        "name": "BP Tanker 2",
+        "type": "suezmax",
+        "status": "en_route",
+        "origin": "Thames, UK",
+        "originCoords": "uk",
+        "destination": "Australia",
+        "eta": "2026-04-mid",
+        "cargo": "diesel",
+        "operator": "BP",
+        "routeStyle": "dashed",
+        "routeColor": "#22c55e",
+        "positionNote": "English Channel \u2014 preparing Atlantic crossing"
+      },
+      {
+        "name": "Vitol Tanker",
+        "type": "aframax",
+        "status": "en_route",
+        "origin": "Unknown",
+        "originCoords": "unknown",
+        "destination": "Australia",
+        "eta": "2026-04-mid",
+        "cargo": "fuel",
+        "operator": "Vitol",
+        "routeStyle": "dashed",
+        "routeColor": "#f59e0b",
+        "positionNote": "Indian Ocean \u2014 position unconfirmed"
+      },
+      {
+        "name": "China Jet Tankers x6",
+        "type": "general",
+        "status": "arriving",
+        "origin": "China",
+        "originCoords": "china",
+        "destination": "Australia",
+        "eta": "2026-03-28 to 2026-04-08",
+        "cargo": "jet fuel",
+        "operator": "Various Chinese",
+        "routeStyle": "solid",
+        "routeColor": "#f97316",
+        "positionNote": "Approaching Australian coast / docked"
+      }
+    ],
+    "mapRoutes": {
+      "gulfCrude": {
+        "from": "Gulf (Kharg/Ahmadi/Ruwais)",
+        "to": "Singapore/Jurong",
+        "status": "disrupted",
+        "note": "90% reduction"
+      },
+      "gulfToAustralia": {
+        "from": "Singapore",
+        "to": "Australia",
+        "status": "reduced",
+        "note": "60% capacity"
+      },
+      "usToAustralia": {
+        "from": "Houston",
+        "to": "Australia",
+        "status": "active",
+        "note": "Cape of Good Hope route"
+      },
+      "chinaToAustralia": {
+        "from": "China",
+        "to": "Australia",
+        "status": "active",
+        "note": "Jet fuel replacements"
+      }
+    }
+  },
+  "refineries": {
+    "southKorea": {
+      "capacity": 55,
+      "trend": "decreasing",
+      "note": "Export cap in force since March 13",
+      "flag": "\ud83c\uddf0\ud83c\uddf7"
+    },
+    "singapore": {
+      "capacity": 60,
+      "trend": "decreasing",
+      "note": "SRC Jurong Island ~290k bpd",
+      "flag": "\ud83c\uddf8\ud83c\uddec"
+    },
+    "taiwan": {
+      "capacity": 70,
+      "trend": "decreasing",
+      "note": ">10% cuts since war began",
+      "flag": "\ud83c\uddf9\ud83c\uddfc"
+    },
+    "japan": {
+      "capacity": 80,
+      "trend": "stable",
+      "note": "254 days emergency reserves",
+      "flag": "\ud83c\uddef\ud83c\uddf5"
+    }
+  },
+  "reserves": {
+    "diesel": 25,
+    "petrol": 27,
+    "jetFuel": 26,
+    "rationingRedLine": 10,
+    "governmentActions": [
+      "Excise halved (-26.3c/L from Apr 1)",
+      "762M litres released from reserves",
+      "Diesel standard lowered"
+    ]
+  },
+  "shippingRoutes": {
+    "hormuz": {
+      "status": "closed",
+      "traffic": "~90% reduction",
+      "note": "CLOSED \u2014 IRGC blockade + kinetic attacks on vessels"
+    },
+    "babMandeb": {
+      "status": "restricted",
+      "traffic": "threatened",
+      "note": "THREATENED \u2014 Houthis active, ~30 tankers near Saudi Yanbu"
+    },
+    "suez": {
+      "status": "restricted",
+      "traffic": "rerouted",
+      "note": "All traffic around Cape of Good Hope"
+    },
+    "malacca": {
+      "status": "open",
+      "traffic": "normal",
+      "note": "OPEN"
+    },
+    "redSea": {
+      "status": "closed",
+      "traffic": "rerouted",
+      "note": "Houthi Yemen attacks"
+    }
+  },
+  "bankEmpty": {
+    "lastUpdated": "2026-03-31T11:38:00Z",
+    "household": {
+      "note": "Based on ABS 2023-24 Monthly Household Spending Indicator + 2022-23 HES. Crisis surcharge: 3-5% applied to transport, food, utilities, goods, health (not rent/mortgage). Includes direct fuel cost + indirect surcharge pass-through.",
+      "surgeSurcharge": 4,
+      "baseline": {
+        "avgMonthlySpend": 5800,
+        "food": 1100,
+        "transport": 900,
+        "utilities": 520,
+        "housing": 1400,
+        "health": 340,
+        "recreation": 480,
+        "goods": 620,
+        "other": 440
+      },
+      "directFuelExtra": 83,
+      "tiers": [
+        {
+          "name": "Pensioner / Concession",
+          "income": 1116,
+          "debt": 4200,
+          "debtService": 200,
+          "liquidSavings": 4200,
+          "monthlyDeficit": -1383,
+          "monthlyExtra": 83,
+          "runwayMonths": 3,
+          "spendCategories": {
+            "food": 650,
+            "transport": 220,
+            "utilities": 480,
+            "housing": 450,
+            "health": 180,
+            "recreation": 100,
+            "goods": 120,
+            "other": 0
+          },
+          "notes": "Pension $1,116/mo. Debt: $4,200 (rates/charges). Debt service: $200/mo. Crisis: -$1,383/mo. 3-month runway. Pensioner already below poverty line pre-crisis."
+        },
+        {
+          "name": "Low Income Worker",
+          "income": 2128,
+          "debt": 27500,
+          "debtService": 760,
+          "liquidSavings": 5800,
+          "monthlyDeficit": -1669,
+          "monthlyExtra": 116,
+          "runwayMonths": 3,
+          "spendCategories": {
+            "food": 750,
+            "transport": 400,
+            "utilities": 520,
+            "housing": 750,
+            "health": 200,
+            "recreation": 150,
+            "goods": 130,
+            "other": 0
+          },
+          "notes": "Min wage $2,128/mo after tax. Debt: $27,500 (personal credit/student loans). Debt service: $760/mo. Crisis: -$1,669/mo. 3.5-month runway."
+        },
+        {
+          "name": "Average Worker",
+          "income": 5500,
+          "debt": 488000,
+          "debtService": 3918,
+          "liquidSavings": 15000,
+          "monthlyDeficit": -4450,
+          "monthlyExtra": 232,
+          "runwayMonths": 3,
+          "spendCategories": {
+            "food": 1100,
+            "transport": 900,
+            "utilities": 520,
+            "housing": 1400,
+            "health": 340,
+            "recreation": 480,
+            "goods": 620,
+            "other": 440
+          },
+          "notes": "Median dual-income $5,500/mo after tax. Debt: ~$488K (housing + car loans + credit cards). Debt service: $3,918/mo. Crisis: -$4,450/mo. 3.4-month runway."
+        },
+        {
+          "name": "Middle Income",
+          "income": 8200,
+          "debt": 1053000,
+          "debtService": 8875,
+          "liquidSavings": 38000,
+          "monthlyDeficit": -8498,
+          "monthlyExtra": 299,
+          "runwayMonths": 4,
+          "spendCategories": {
+            "food": 1350,
+            "transport": 1100,
+            "utilities": 600,
+            "housing": 2100,
+            "health": 400,
+            "recreation": 700,
+            "goods": 750,
+            "other": 500
+          },
+          "notes": "$8,200/mo after tax. Debt: ~$1.05M (large mortgage + car loans). Debt service: $8,875/mo. Pre-crisis surplus gone. Crisis: -$8,498/mo. 4.5-month runway."
+        },
+        {
+          "name": "High Income",
+          "income": 13000,
+          "debt": 1182000,
+          "debtService": 10553,
+          "liquidSavings": 85000,
+          "monthlyDeficit": -8444,
+          "monthlyExtra": 391,
+          "runwayMonths": 10,
+          "spendCategories": {
+            "food": 1800,
+            "transport": 1500,
+            "utilities": 750,
+            "housing": 2800,
+            "health": 550,
+            "recreation": 1100,
+            "goods": 1000,
+            "other": 1000
+          },
+          "notes": "$13,000/mo after tax. Debt: ~$1.18M (investment property / large mortgage). Debt service: $10,553/mo. Despite high income, debt-heavy. Crisis: -$8,444/mo. 10-month runway."
+        }
+      ],
+      "computed": true
+    },
+    "government": {
+      "totalBufferBn": 4.75,
+      "exciseCutCostBn": 2.55,
+      "exciseCutMonths": 3,
+      "reserveReleaseBn": 1.4,
+      "underwritingBn": 0.8,
+      "monthlyBurnRateM": 900,
+      "cashBufferExpiry": "2026-06-30",
+      "cashBufferExpiryIfExtended": "2026-09-30",
+      "additionalFiscalCosts": {
+        "alert5": 0,
+        "warning7": 800,
+        "emergency9": 2200,
+        "crisis12": 5500
+      },
+      "note": "Excise cut expires Jun 30. Additional fiscal costs accelerate as CPI tiers rise. At Crisis (12%) tier: government faces $5.5bn/month additional intervention cost."
+    }
+  },
+  "inflation": {
+    "lastUpdated": "2026-03-31T05:27:00Z",
+    "trendDays": 90,
+    "currentStatus": "warning",
+    "cpiAlertTiers": [
+      {
+        "level": 5,
+        "label": "Alert",
+        "emoji": "\ud83d\udfe1",
+        "color": "#f59e0b",
+        "description": "Gov monitoring, strategic reserve monitoring activates",
+        "rbaAction": "Rate hiking cycle begins"
+      },
+      {
+        "level": 7,
+        "label": "Warning",
+        "emoji": "\ud83d\udfe0",
+        "color": "#f97316",
+        "description": "Reserve release triggers, national cabinet convenes",
+        "rbaAction": "Accelerated rate hikes"
+      },
+      {
+        "level": 9,
+        "label": "Emergency",
+        "emoji": "\ud83d\udd34",
+        "color": "#ef4444",
+        "description": "Rationing on table, supply prioritisation (hospitals/military/essential)",
+        "rbaAction": "Emergency rate settings"
+      },
+      {
+        "level": 12,
+        "label": "Crisis",
+        "emoji": "\ud83d\udc80",
+        "color": "#dc2626",
+        "description": "Widescale rationing, price controls, compulsory acquisition, irreversible economic damage",
+        "rbaAction": "Unconventional monetary policy"
+      }
+    ],
+    "metro": {
+      "current": 7.2,
+      "currentTier": "warning",
+      "30daysAgo": 2.1,
+      "60daysAgo": 0.8,
+      "90daysAgo": 0.3,
+      "peakMetro": 10.8,
+      "peakMetroDate": "2026-05-15"
+    },
+    "regional": {
+      "current": 9.8,
+      "currentTier": "emergency",
+      "30daysAgo": 3.4,
+      "60daysAgo": 1.1,
+      "90daysAgo": 0.4,
+      "peakRegional": 14.5,
+      "peakRegionalDate": "2026-05-20"
+    },
+    "states": [
+      {
+        "state": "NSW",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 7.2,
+        "regional": 9.1,
+        "trend": 0.4,
+        "daysSinceSpike": 12,
+        "projPeak": 11.5,
+        "daysToPeak": 45,
+        "tier": "emergency"
+      },
+      {
+        "state": "VIC",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 6.8,
+        "regional": 8.7,
+        "trend": 0.3,
+        "daysSinceSpike": 10,
+        "projPeak": 11.0,
+        "daysToPeak": 50,
+        "tier": "emergency"
+      },
+      {
+        "state": "QLD",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 8.1,
+        "regional": 11.2,
+        "trend": 0.7,
+        "daysSinceSpike": 18,
+        "projPeak": 15.2,
+        "daysToPeak": 30,
+        "tier": "crisis"
+      },
+      {
+        "state": "SA",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 7.5,
+        "regional": 10.4,
+        "trend": 0.5,
+        "daysSinceSpike": 14,
+        "projPeak": 13.8,
+        "daysToPeak": 40,
+        "tier": "crisis"
+      },
+      {
+        "state": "WA",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 6.1,
+        "regional": 7.8,
+        "trend": 0.2,
+        "daysSinceSpike": 8,
+        "projPeak": 10.2,
+        "daysToPeak": 55,
+        "tier": "emergency"
+      },
+      {
+        "state": "TAS",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 5.9,
+        "regional": 7.2,
+        "trend": 0.1,
+        "daysSinceSpike": 6,
+        "projPeak": 9.5,
+        "daysToPeak": 60,
+        "tier": "warning"
+      },
+      {
+        "state": "ACT",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 4.8,
+        "regional": null,
+        "trend": 0.1,
+        "daysSinceSpike": 5,
+        "projPeak": 7.0,
+        "daysToPeak": 65,
+        "tier": "warning"
+      },
+      {
+        "state": "NT",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "metro": 9.3,
+        "regional": 14.2,
+        "trend": 0.9,
+        "daysSinceSpike": 22,
+        "projPeak": 18.5,
+        "daysToPeak": 20,
+        "tier": "crisis"
+      }
+    ],
+    "drivers": [
+      {
+        "label": "Transport",
+        "emoji": "\ud83d\ude9b",
+        "contribution": 3.2
+      },
+      {
+        "label": "Fuel at pump",
+        "emoji": "\ud83d\udee2\ufe0f",
+        "contribution": 2.8
+      },
+      {
+        "label": "Food",
+        "emoji": "\ud83c\udf3e",
+        "contribution": 1.9
+      },
+      {
+        "label": "Energy",
+        "emoji": "\u26a1",
+        "contribution": 1.4
+      },
+      {
+        "label": "Manufacturing",
+        "emoji": "\ud83d\udce6",
+        "contribution": 0.8
+      }
+    ],
+    "rationingTrigger": 10,
+    "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
+  },
+  "dbLastUpdated": "2026-04-03T01:00:56Z",
+  "dbEvents": [
+    {
+      "dtg": "2026-04-02",
+      "domain": "shipping",
+      "headline": "Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction",
+      "source": "NBC",
+      "sourceUrl": "seed://tanker-attack-dubai-2026-04-02",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted",
+      "source": "CNBC",
+      "sourceUrl": "seed://iea-april-worse-2026-04-01",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "US gasoline average tops $4/gallon \u2014 first time since 2022",
+      "source": "NBC",
+      "sourceUrl": "seed://us-gas-4dollar-2026-04-01",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-31",
+      "domain": "australia",
+      "headline": "20% of national fuel reserves released; fuel excise halved 26.3c/litre for 3 months",
+      "source": "9News",
+      "sourceUrl": "seed://au-excise-halved-2026-03-31",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-30",
+      "domain": "australia",
+      "headline": "National Cabinet convenes on fuel \u2014 rationing rejected, voluntary demand reduction preferred",
+      "source": "ABC",
+      "sourceUrl": "seed://au-national-cabinet-2026-03-30",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-28",
+      "domain": "shipping",
+      "headline": "Houthis enter war \u2014 Bab el-Mandeb threatened, ~30 tankers idling near Yanbu",
+      "source": "Reuters",
+      "sourceUrl": "seed://houthi-war-2026-03-28",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-03-28",
+      "domain": "australia",
+      "headline": "Albanese government enacts new fuel security powers \u2014 EFIC amendment active",
+      "source": "Guardian",
+      "sourceUrl": "seed://albanese-fuel-powers-2026-03-28",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-27",
+      "domain": "australia",
+      "headline": "PM secures 6 jet fuel tankers from China \u2014 arriving 28 Mar through 8 Apr",
+      "source": "SBS",
+      "sourceUrl": "seed://au-6-china-tankers-2026-03-27",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-25",
+      "domain": "australia",
+      "headline": "China jet fuel export ban effective \u2014 removes key Australian backup supplier",
+      "source": "Reuters",
+      "sourceUrl": "seed://china-jet-ban-2026-03-25",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-24",
+      "domain": "australia",
+      "headline": "Seven charts: Australia unprepared for fuel crisis \u2014 service station dry rates surge",
+      "source": "Guardian",
+      "sourceUrl": "seed://au-guardian-unprepared-2026-03-24",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-24",
+      "domain": "australia",
+      "headline": "Australia lowers diesel standards to increase supply as stations run empty",
+      "source": "Guardian",
+      "sourceUrl": "seed://au-diesel-standard-lowered-2026-03-24",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-22",
+      "domain": "australia",
+      "headline": "Minister Bowen confirms 6 of 81 scheduled Asian ships cancelled \u2014 gap filled",
+      "source": "ABC",
+      "sourceUrl": "seed://bowen-6-cancelled-ships-2026-03-22",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-19",
+      "domain": "geopolitical",
+      "headline": "US Operation Epic Fury launched \u2014 attempting to reopen Strait of Hormuz",
+      "source": "Reuters",
+      "sourceUrl": "seed://us-epic-fury-2026-03-19",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-03-19",
+      "domain": "australia",
+      "headline": "ExxonMobil, BP, Vitol charter largest US-to-Australia fuel shipments in 30 years",
+      "source": "Reuters",
+      "sourceUrl": "seed://exxon-bp-vitol-ships-2026-03-19",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-16",
+      "domain": "fuel",
+      "headline": "Asian refineries and petchem firms cut runs \u2014 Middle East oil disruption",
+      "source": "Reuters",
+      "sourceUrl": "seed://asia-refineries-cut-run-2026-03-16",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-10",
+      "domain": "fuel",
+      "headline": "Southeast Asian refineries curb output \u2014 war-tightened crude supply",
+      "source": "Reuters",
+      "sourceUrl": "seed://asian-refineries-cut-2026-03-10",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-10",
+      "domain": "fuel",
+      "headline": "Singapore Refining Co (SRC) running at 60% utilisation \u2014 feedstock shortage",
+      "source": "Reuters",
+      "sourceUrl": "seed://sg-src-60pct-2026-03-10",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-10",
+      "domain": "fuel",
+      "headline": "Malaysia Pengerang 300k-bpd crude unit shut \u2014 derivative units halting",
+      "source": "Reuters",
+      "sourceUrl": "seed://malaysia-pengerang-shut-2026-03-10",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-04",
+      "domain": "shipping",
+      "headline": "Strait of Hormuz effectively closed \u2014 IRGC blockade begins",
+      "source": "Reuters",
+      "sourceUrl": "seed://hormuz-closed-2026-03-04",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-03-04",
+      "domain": "fuel",
+      "headline": "Qatar LNG Ras Laffan declares force majeure \u2014 17% capacity impaired",
+      "source": "Reuters",
+      "sourceUrl": "seed://qatar-force-majeure-2026-03-04",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T00:44:23Z",
+      "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    }
+  ],
+  "dbState": {
+    "monitoring_mode": "crisis",
+    "hormuz_status": "CLOSED \u2014 IRGC blockade + kinetic attacks on vessels",
+    "bab_el_mandeb_status": "THREATENED \u2014 Houthis active, ~30 tankers near Saudi Yanbu",
+    "malacca_status": "OPEN",
+    "diesel_reserves": "25-32 days (at CRITICAL threshold)",
+    "petrol_reserves": "27-36 days",
+    "jet_fuel_reserves": "26-29 days",
+    "servo_outages": "~851 nationally (FuelRadar, as of 2026-03-31)",
+    "supply_ceiling": "mid-April 2026 \u2014 reserve/excise relief exhausted after this"
+  }
+}
