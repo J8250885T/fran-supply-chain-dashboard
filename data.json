@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T07:44:11Z",
+  "lastUpdated": "2026-04-03T13:37:37Z",
   "warAlert": {
-    "timestamp": "2026-04-03T07:44:11Z",
+    "timestamp": "2026-04-03T13:37:37Z",
     "fuelImpact": [
       "2026-04-03 Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown [Reuters] [MEDIUM]",
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
@@ -17,17 +17,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
-      "2026-04-03 Chris Bowen: 3.7bn litres of fuel confirmed en route to Australia; industry says not enough [ABC News] [HIGH]",
-      "2026-04-03 ABC live: 410 stations out of diesel, 145 out of petrol; Bowen confirms supply chain under stress but government says mid-April supply intact [ABC News] [MEDIUM]",
-      "2026-04-03 STI Steadfast sailing east coast with South Korean jet fuel; South Korea caps exports at last-year levels, rules out redirect for now [ABC News] [HIGH]",
-      "2026-04-02 Australia government may cut fuel quality standards AGAIN \u2014 without diplomacy, flights cut and diesel redistribution to vital corridors from late April [Brisbane Times] [HIGH]"
+      "2026-04-03 WA servo chain dry at ALL locations; ASPI warns late April fuel crisis could trigger May food shortages [PerthNow] [MEDIUM]",
+      "2026-04-03 55 Australian-bound cargoes arrived or en route \u2014 more than previously scheduled; alternative sources secured from US, Europe [Brisbane Times] [HIGH]",
+      "2026-04-03 50+ tankers headed to Australian import terminals \u2014 major suppliers racing to head off shortfalls [Sydney Morning Herald] [HIGH]",
+      "2026-04-03 Chris Bowen: 3.7bn litres of fuel confirmed en route to Australia; industry says not enough [ABC News] [HIGH]"
     ]
   },
   "servoOutages": {
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T07:44:11Z",
+    "updated": "2026-04-03T13:37:37Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T07:44:11Z",
+    "weeklyItemsUpdated": "2026-04-03T13:37:37Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,8 +1167,47 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T07:44:11Z",
+  "dbLastUpdated": "2026-04-03T13:37:37Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "WA servo chain dry at ALL locations; ASPI warns late April fuel crisis could trigger May food shortages",
+      "source": "PerthNow",
+      "sourceUrl": "https://www.perthnow.com.au/wa/fuelwatch-see-the-list-of-wa-service-stations-with-no-petrol-or-diesel--c-22090736",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T13:37:07Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "55 Australian-bound cargoes arrived or en route \u2014 more than previously scheduled; alternative sources secured from US, Europe",
+      "source": "Brisbane Times",
+      "sourceUrl": "https://www.brisbanetimes.com.au/business/markets/australia-scoured-the-world-for-fuel-supplies-it-s-working-20260403-p5zl5h.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T13:36:27Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "50+ tankers headed to Australian import terminals \u2014 major suppliers racing to head off shortfalls",
+      "source": "Sydney Morning Herald",
+      "sourceUrl": "https://www.smh.com.au/business/markets/australia-scoured-the-world-for-fuel-supplies-it-s-working-20260403-p5zl5h.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T13:36:27Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-03",
       "domain": "fuel",
@@ -1676,9 +1715,9 @@
     "servo_outages": "~725 nationally (FuelRadar live, 02/04/2026) \u2014 DOWN from ~851 on Mar 31"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T07:44:07Z",
-    "cron": "asian-refinery",
-    "summary": "Kuwait Mina al-Ahmadi refinery drone strike (new \u2014 added); Asian utilisation unchanged: SRC 60%, Exxon Jurong 50%, SK export caps active"
+    "sentAt": "2026-04-03T13:37:33Z",
+    "cron": "shipment-validator",
+    "summary": "55 Australian-bound cargoes confirmed; Viva June crude secured; WA servo crisis worsening; ASPI late-April food warning"
   },
   "reviewPanels": {
     "feed": {
