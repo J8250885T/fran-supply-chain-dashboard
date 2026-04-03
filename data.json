@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T01:44:02Z",
+  "lastUpdated": "2026-04-03T01:50:22Z",
   "warAlert": {
-    "timestamp": "2026-04-03T01:44:02Z",
+    "timestamp": "2026-04-03T01:50:22Z",
     "fuelImpact": [
       "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]",
       "2026-04-02 ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts [Morningstar] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T01:44:02Z",
+    "updated": "2026-04-03T01:50:22Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -381,6 +381,27 @@
             "other": 1000
           },
           "notes": "$13,000/mo after tax. Debt: ~$1.18M (investment property / large mortgage). Debt service: $10,553/mo. Despite high income, debt-heavy. Crisis: -$8,444/mo. 10-month runway."
+        },
+        {
+          "name": "Retiree (Super)",
+          "income": 4900,
+          "debt": 0,
+          "debtService": 0,
+          "liquidSavings": 55000,
+          "monthlyDeficit": -400,
+          "monthlyExtra": 300,
+          "runwayMonths": 137,
+          "spendCategories": {
+            "food": 1000,
+            "transport": 650,
+            "utilities": 600,
+            "housing": 800,
+            "health": 950,
+            "recreation": 500,
+            "goods": 280,
+            "other": 220
+          },
+          "notes": "Super drawdown $3,800/mo + partial age pension $1,100/mo = $4,900 total. Owns home outright. Zero debt service. Crisis surcharge $300/mo (fuel price impact on transport, food, utilities). Liquid savings = accessible cash + super cash allocation. Runway reflects minimal draw-down rate."
         }
       ],
       "computed": true
@@ -579,7 +600,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T01:44:02Z",
+  "dbLastUpdated": "2026-04-03T01:50:22Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
