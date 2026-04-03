@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T02:23:08Z",
+  "lastUpdated": "2026-04-03T02:34:52Z",
   "warAlert": {
-    "timestamp": "2026-04-03T02:23:08Z",
+    "timestamp": "2026-04-03T02:34:52Z",
     "fuelImpact": [
       "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]",
       "2026-04-02 ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts [Morningstar] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T02:23:08Z",
+    "updated": "2026-04-03T02:34:52Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -282,10 +282,10 @@
           "income": 1116,
           "debt": 4200,
           "debtService": 200,
-          "liquidSavings": 4200,
+          "liquidSavings": 2500,
           "monthlyDeficit": -1383,
           "monthlyExtra": 325,
-          "runwayMonths": 3,
+          "runwayMonths": 2,
           "spendCategories": {
             "food": 650,
             "transport": 220,
@@ -296,23 +296,24 @@
             "goods": 120,
             "other": 0
           },
-          "notes": "Pension $1,116/mo. Debt: $4,200. Crisis surcharge +$325/mo (diesel +65% on transport $120/mo \u2192 +$117; food +12% on $650 \u2192 +$78; utilities +20% on $400 \u2192 +$80; other +$50). Pre-crisis deficit: -$1,058/mo. Crisis total: -$1,383/mo.",
+          "notes": "Pension $1,116/mo. Debt: $4,200. Liquid savings $2,500 \u2014 constrained by age pension assets test; 5yr cost erosion has depleted buffer. Crisis surcharge +$325/mo. Pre-crisis deficit: -$1,058/mo. Crisis total: -$1,383/mo. Depletes W9.7 \u2014 savings exhausted by war start.",
           "crisisBreakdown": {
             "fuel": 117,
             "food": 78,
             "utilities": 80,
             "indirect": 50
-          }
+          },
+          "savingsSource": "RBA 2024 Bulletin: many lower-income households hold liquid assets less than their fortnightly income. 65-74 median cash $15,829 (Westpac 2025) but pensioners face assets test constraints and 5yr cost-of-living erosion. Estimate: 2\u20133 weeks accessible cash buffer."
         },
         {
           "name": "Low Income Worker",
           "income": 2128,
           "debt": 27500,
           "debtService": 760,
-          "liquidSavings": 5800,
+          "liquidSavings": 1200,
           "monthlyDeficit": -1669,
           "monthlyExtra": 430,
-          "runwayMonths": 3,
+          "runwayMonths": 1,
           "spendCategories": {
             "food": 750,
             "transport": 400,
@@ -323,23 +324,24 @@
             "goods": 130,
             "other": 0
           },
-          "notes": "Min wage $2,128/mo. Debt: $27,500. Crisis surcharge +$430/mo (fuel +$165; food +15% on $700 \u2192 +$105; utilities +$80; indirect +$80). Pre-crisis deficit: -$1,239/mo. Crisis total: -$1,669/mo.",
+          "notes": "Min wage $2,128/mo. Debt: $27,500. Liquid savings $1,200 \u2014 near-zero buffer after 5yrs rental crisis. Crisis surcharge +$430/mo. Pre-crisis deficit: -$1,239/mo. Depletes W4.2 \u2014 runs out mid-February 2026, BEFORE the Iran war even begins.",
           "crisisBreakdown": {
             "fuel": 165,
             "food": 105,
             "utilities": 80,
             "indirect": 80
-          }
+          },
+          "savingsSource": "Savings.com.au 2025: 50.2% of renters have less than $5,000; 27.4% have less than $1,000. Westpac 2025 median 30-34 = $1,104. After 5yrs of rental increases (20-30%+ in major cities), near-zero buffer is the norm for min wage renters."
         },
         {
           "name": "Average Worker",
           "income": 5500,
           "debt": 488000,
           "debtService": 3918,
-          "liquidSavings": 15000,
+          "liquidSavings": 6500,
           "monthlyDeficit": -4450,
           "monthlyExtra": 700,
-          "runwayMonths": 3,
+          "runwayMonths": 2,
           "spendCategories": {
             "food": 1100,
             "transport": 900,
@@ -350,23 +352,24 @@
             "goods": 620,
             "other": 440
           },
-          "notes": "Median income $5,500/mo after tax. Debt: ~$488k. Crisis surcharge +$700/mo (diesel/petrol +65%/45% on $300/mo direct fuel \u2192 +$300; food +15% on $1,100 \u2192 +$165; utilities +25% on $520 \u2192 +$130; goods/services indirect +$105). Pre-crisis deficit: -$3,750/mo. Crisis total: -$4,450/mo.",
+          "notes": "Median income $5,500/mo after tax. Debt: ~$488k. Liquid savings $6,500 \u2014 5yr squeeze: 4.35% rates since May 2022, 7.8% peak CPI, mortgage repayments up 10% of income (RBA 2025). Westpac median 35-44 = $811 cash; average skewed by offset accounts. Crisis surcharge +$700/mo. Depletes W7.5 \u2014 exhausted before Iran war begins.",
           "crisisBreakdown": {
             "fuel": 300,
             "food": 165,
             "utilities": 130,
             "indirect": 105
-          }
+          },
+          "savingsSource": "Westpac 2025: median 35-44 liquid cash = $811. Mortgage holder average $38,692 (Money.com.au 2025) but this includes offset/redraw \u2014 not freely accessible. RBA: mortgagors drew down savings buffers 2022-2025 under 4.35% rate pressure. Accessible cash estimate: $5-8k."
         },
         {
           "name": "Middle Income",
           "income": 8200,
           "debt": 1053000,
           "debtService": 8875,
-          "liquidSavings": 38000,
+          "liquidSavings": 18000,
           "monthlyDeficit": -8498,
           "monthlyExtra": 900,
-          "runwayMonths": 4,
+          "runwayMonths": 2,
           "spendCategories": {
             "food": 1350,
             "transport": 1100,
@@ -377,23 +380,24 @@
             "goods": 750,
             "other": 500
           },
-          "notes": "$8,200/mo after tax. Debt: ~$1.05M. Crisis surcharge +$900/mo (fuel +$400; food +15% on $1,350 \u2192 +$200; utilities +20% on $600 \u2192 +$120; indirect +$180). Pre-crisis deficit: -$7,598/mo. Crisis total: -$8,498/mo.",
+          "notes": "$8,200/mo after tax. Debt: ~$1.05M. Liquid savings $18,000 \u2014 down from pre-pandemic buffer; debt service $8,875/mo exceeded income since 2022 rate rises, accelerating savings drawdown. Crisis surcharge +$900/mo. Pre-crisis deficit: -$7,598/mo. Depletes W10 \u2014 just after war start.",
           "crisisBreakdown": {
             "fuel": 400,
             "food": 200,
             "utilities": 120,
             "indirect": 180
-          }
+          },
+          "savingsSource": "ABS 2021-22 distribution; Money.com.au 2025 mortgage holder average $38,692. Adjusted down ~50% for 2022-2025 drawdown: high debt service at 4.35% on $1M+ mortgage consumed cash reserves. Dual income helped maintain some buffer vs lower brackets."
         },
         {
           "name": "High Income",
           "income": 13000,
           "debt": 1182000,
           "debtService": 10553,
-          "liquidSavings": 85000,
+          "liquidSavings": 42000,
           "monthlyDeficit": -8444,
           "monthlyExtra": 1200,
-          "runwayMonths": 10,
+          "runwayMonths": 5,
           "spendCategories": {
             "food": 1800,
             "transport": 1500,
@@ -404,23 +408,24 @@
             "goods": 1000,
             "other": 1000
           },
-          "notes": "$13,000/mo after tax. Debt: ~$1.18M. Crisis surcharge +$1,200/mo (fuel +$550; food +15% on $1,800 \u2192 +$270; utilities +20% on $750 \u2192 +$150; indirect/travel +$230). Pre-crisis deficit: -$7,244/mo. Crisis total: -$8,444/mo.",
+          "notes": "$13,000/mo after tax. Debt: ~$1.18M. Liquid savings $42,000 \u2014 down from higher pre-2022 buffer; $10,553/mo debt service consumed cash during 2022-2025 high-rate period. Asset-rich but cash-constrained (wealth is in property equity, not liquid). Crisis surcharge +$1,200/mo. Depletes W22.7 \u2014 survives longer but does not make it to W26.",
           "crisisBreakdown": {
             "fuel": 550,
             "food": 270,
             "utilities": 150,
             "indirect": 230
-          }
+          },
+          "savingsSource": "Money.com.au 2025: mortgage holders average $38,692. High income bracket adjusted upward but constrained by $10,553/mo debt service on investment property ($1.18M). Asset-rich, cash-constrained. Some recovery after 2025 RBA rate cuts. Estimate: $40-50k accessible cash."
         },
         {
           "name": "Retiree (Super)",
           "income": 4900,
           "debt": 0,
           "debtService": 0,
-          "liquidSavings": 55000,
+          "liquidSavings": 38000,
           "monthlyDeficit": -400,
           "monthlyExtra": 520,
-          "runwayMonths": 137,
+          "runwayMonths": 95,
           "spendCategories": {
             "food": 1000,
             "transport": 650,
@@ -431,13 +436,14 @@
             "goods": 280,
             "other": 220
           },
-          "notes": "Super drawdown $3,800/mo + partial pension $1,100/mo. Owns home. Zero debt. Crisis surcharge +$520/mo (fuel +$220; food +12% on $1,000 \u2192 +$120; utilities +20% on $600 \u2192 +$120; health/services indirect +$60). Pre-crisis position: +$120/mo surplus. Crisis deficit: -$400/mo.",
+          "notes": "Super drawdown $3,800/mo + partial pension $1,100/mo = $4,900. Owns home. Zero debt. Liquid savings $38,000 \u2014 cash portion of account-based pension. Relatively insulated vs working-age demographics. Crisis surcharge +$520/mo. Pre-crisis: +$120/mo surplus. Crisis deficit: -$400/mo. Survives W26 with $36,560 remaining \u2014 the most resilient demographic.",
           "crisisBreakdown": {
             "fuel": 220,
             "food": 120,
             "utilities": 120,
             "indirect": 60
-          }
+          },
+          "savingsSource": "Money.com.au 2025: 65+ Baby Boomers average savings $56,300 but includes managed funds. Westpac 65-74 median $15,829 cash. Account-based pension holders typically maintain 1yr drawdown as cash. Adjusted to $38k: 65+ average partially eroded after 5yr cost-of-living pressure."
         }
       ],
       "computed": true
@@ -636,7 +642,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T02:23:08Z",
+  "dbLastUpdated": "2026-04-03T02:34:52Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
