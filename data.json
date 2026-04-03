@@ -1,8 +1,9 @@
 {
-  "lastUpdated": "2026-04-03T01:05:47Z",
+  "lastUpdated": "2026-04-03T01:37:24Z",
   "warAlert": {
-    "timestamp": "2026-04-03T01:05:47Z",
+    "timestamp": "2026-04-03T01:37:24Z",
     "fuelImpact": [
+      "2026-04-02 April Asian arrivals to Australia on track for sharper drop; gasoil flows particularly affected; US-Europe rerouting partially fills gap [Argus Media] [HIGH]",
       "2026-04-02 Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction [NBC] [HIGH]",
       "2026-04-01 IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted [CNBC] [HIGH]",
       "2026-04-01 US gasoline average tops $4/gallon \u2014 first time since 2022 [NBC] [HIGH]",
@@ -15,17 +16,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-03 STI Steadfast sailing east coast with South Korean jet fuel; South Korea caps exports at last-year levels, rules out redirect for now [ABC News] [HIGH]",
+      "2026-04-01 Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1 [The Guardian] [MEDIUM]",
       "2026-03-31 20% of national fuel reserves released; fuel excise halved 26.3c/litre for 3 months [9News] [HIGH]",
-      "2026-03-30 National Cabinet convenes on fuel \u2014 rationing rejected, voluntary demand reduction preferred [ABC] [HIGH]",
-      "2026-03-28 Albanese government enacts new fuel security powers \u2014 EFIC amendment active [Guardian] [HIGH]",
-      "2026-03-27 PM secures 6 jet fuel tankers from China \u2014 arriving 28 Mar through 8 Apr [SBS] [HIGH]"
+      "2026-03-30 National Cabinet convenes on fuel \u2014 rationing rejected, voluntary demand reduction preferred [ABC] [HIGH]"
     ]
   },
   "servoOutages": {
     "total": 851,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T01:05:47Z",
+    "updated": "2026-04-03T01:37:24Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -577,8 +578,34 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T01:05:47Z",
+  "dbLastUpdated": "2026-04-03T01:37:24Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "STI Steadfast sailing east coast with South Korean jet fuel; South Korea caps exports at last-year levels, rules out redirect for now",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-03/asian-fuel-suppliers-restricting-exports-australia/106521808",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T01:36:57Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "April Asian arrivals to Australia on track for sharper drop; gasoil flows particularly affected; US-Europe rerouting partially fills gap",
+      "source": "Argus Media",
+      "sourceUrl": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2808708-asia-fuel-crunch-pushes-australia-to-us-europe",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T01:36:57Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-02",
       "domain": "shipping",
@@ -591,6 +618,19 @@
       "sent": true,
       "color": "#4a9eff",
       "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "australia",
+      "headline": "Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/01/australia-fuel-crisis-petrol-prices-graphs",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T01:36:57Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
     },
     {
       "dtg": "2026-04-01",
@@ -850,5 +890,10 @@
     "jet_fuel_reserves": "26-29 days",
     "servo_outages": "~851 nationally (FuelRadar, as of 2026-03-31)",
     "supply_ceiling": "mid-April 2026 \u2014 reserve/excise relief exhausted after this"
+  },
+  "lastReport": {
+    "sentAt": "2026-04-03T01:37:20Z",
+    "cron": "shipment-validator",
+    "summary": "STI Steadfast confirmed in transit + April Asian arrival drop confirmed by Argus"
   }
 }
