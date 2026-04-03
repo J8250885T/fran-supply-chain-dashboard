@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T20:38:48Z",
+  "lastUpdated": "2026-04-03T23:40:40Z",
   "warAlert": {
-    "timestamp": "2026-04-03T20:38:48Z",
+    "timestamp": "2026-04-03T23:40:40Z",
     "fuelImpact": [
       "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
       "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T20:38:48Z",
+    "updated": "2026-04-03T23:40:40Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -467,7 +467,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-03-31T05:27:00Z",
+    "lastUpdated": "2026-04-04T20:00:00Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T20:38:48Z",
+    "weeklyItemsUpdated": "2026-04-03T23:40:40Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T20:38:48Z",
+  "dbLastUpdated": "2026-04-03T23:40:40Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2001,6 +2001,269 @@
       ],
       "mostLikelyCourse": "Low-buffer households continue depleting first, while highly leveraged middle cohorts deteriorate fastest once debt service and inflation compound together.",
       "mostDangerousCourse": "A prolonged inflation pulse plus delayed supply normalisation pushes even initially resilient households into rapid depletion, forcing distress selling or arrears."
+    }
+  },
+  "troopDeployments": {
+    "lastUpdated": "2026-04-04T21:30:00Z",
+    "phase": "PRE-DEPLOYMENT",
+    "phaseReason": "US has 50,000+ troops in Middle East (+10,000 above normal). Ground troops have arrived. Spec ops and limited ground ops confirmed. Full invasion pending political decision. UK/Australia explicitly not committing ground forces. 35-nation coalition is naval blockade, not ground force.",
+    "invasionIndicator": "ELEVATED",
+    "invasionIndicatorReason": "US spec ops inside Iran (confirmed). IDF spec ops inside Iran (confirmed). 50,000+ US troops in region. But UK/Australia explicitly refusing ground invasion. Major conventional invasion: not yet ordered. Decision pending Trump.",
+    "supplyChainImplication": "Ground invasion would extend war months = Hormuz/Bab el-Mandeb contested long-term = Australian fuel supply ceiling extends to Q3. Current buildup alone suggests sustained disruption regardless of invasion outcome.",
+    "invasionTimeline": {
+      "description": "Pre-deployment. US has real-time option for ground raids (spec ops on ground). Major allies UK/Australia refusing ground role. IDF spec ops inside Iran (confirmed). Full conventional invasion: not yet ordered.",
+      "earliestGroundOps": "Now \u2014 spec ops are already operating inside Iran (Al Arabiya/Wiki). Conventional ground invasion: decision pending.",
+      "scenario": "Two-track: US spec ops raids (active now) vs. full conventional invasion (not ordered). UK/Australia explicitly defensive-only. IDF limited ground ops confirmed."
+    },
+    "countries": {
+      "us": {
+        "name": "United States",
+        "flag": "\ud83c\uddfa\ud83c\uddf8",
+        "status": "ACTIVE",
+        "totalEstimate": "~50,000+ in Middle East",
+        "deployed": [
+          {
+            "unit": "USS Tripoli (LHA 7) \u2014 31st MEU",
+            "count": "~2,500 Marines + ~2,500 sailors",
+            "location": "CENTCOM AOR (arrived ~27 Mar 26)",
+            "source": "Military.com / NYT",
+            "dtg": "2026-03-27"
+          },
+          {
+            "unit": "US Special Operations \u2014 Rangers, SEALs",
+            "count": "Several hundred",
+            "location": "Middle East (undisclosed locations)",
+            "source": "NYT / Reuters",
+            "dtg": "2026-03-29"
+          },
+          {
+            "unit": "USS Abraham Lincoln Carrier Strike Group",
+            "count": "~5,000-7,000 (carrier + escorts)",
+            "location": "Middle East (arrived Feb-Mar 26)",
+            "source": "Wikipedia / Pentagon",
+            "dtg": "2026-02-13"
+          }
+        ],
+        "enRoute": [
+          {
+            "unit": "Additional ground troops",
+            "count": "Thousands (Pentagon considering up to 10,000 more)",
+            "location": "En route to Middle East",
+            "source": "AP / Fox News / WaPo",
+            "dtg": "2026-03-28"
+          }
+        ],
+        "planned": [
+          {
+            "unit": "Ground raids \u2014 spec ops + conventional",
+            "status": "OPTIONS READY \u2014 Trump decision pending",
+            "source": "NYT / Washington Post",
+            "dtg": "2026-03-29"
+          }
+        ],
+        "note": "NYT (29 Mar): US troop levels in Middle East now exceed 50,000 \u2014 10,000 above pre-war baseline. Ground troops HAVE arrived per Military.com (30 Mar). Spec ops operating. Decision on expanded ground ops pending Trump."
+      },
+      "uk": {
+        "name": "United Kingdom",
+        "flag": "\ud83c\uddec\ud83c\udde7",
+        "status": "ACTIVE",
+        "totalEstimate": "~1,000+ in Middle East",
+        "deployed": [
+          {
+            "unit": "Royal Navy \u2014 35-nation coalition escort force",
+            "count": "Multiple warships",
+            "location": "Gulf of Oman / Hormuz approaches",
+            "source": "GOV.UK / AP",
+            "dtg": "2026-03-30"
+          },
+          {
+            "unit": "UK Armed Forces \u2014 base reinforcement",
+            "count": "~1,000 across Middle East",
+            "location": "Reinforcing UK bases and Gulf allies",
+            "source": "The Guardian / Defence Secretary Healey",
+            "dtg": "2026-03-31"
+          }
+        ],
+        "enRoute": [
+          {
+            "unit": "HMS Prince of Wales CSG",
+            "count": "~1,500 (carrier + escorts)",
+            "location": "En route to Middle East",
+            "source": "Wikipedia / BBC",
+            "dtg": "2026-03-25"
+          }
+        ],
+        "planned": [
+          {
+            "unit": "UK ground forces to Iran invasion",
+            "status": "REFUSED \u2014 UK NOT joining invasion. Trump publicly criticized UK for this.",
+            "source": "The Guardian / Trump Truth Social",
+            "dtg": "2026-03-31"
+          }
+        ],
+        "note": "UK is naval/logistics only. Defence Secretary Healey confirmed ~1,000 UK troops in region but explicitly NOT committing to ground invasion. Trump jibed UK for refusing to 'get involved in the decapitation of Iran.'"
+      },
+      "australia": {
+        "name": "Australia",
+        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "status": "DEFENSIVE-ONLY",
+        "totalEstimate": "~85+ personnel",
+        "deployed": [
+          {
+            "unit": "ADF \u2014 85 personnel + Boeing E-7 Wedgetail + AMRAAM missiles",
+            "count": "85 personnel",
+            "location": "UAE (deployed to defend Gulf states + Australian bases at UAE request)",
+            "source": "Wikipedia / ABC News",
+            "dtg": "2026-03-10"
+          }
+        ],
+        "enRoute": [],
+        "planned": [
+          {
+            "unit": "ADF ground troops to Iran",
+            "status": "RULED OUT \u2014 Albanese: purely defensive action only",
+            "source": "Wikipedia / ABC News",
+            "dtg": "2026-03-10"
+          }
+        ],
+        "note": "Albanese government explicitly ruled out ground troops. Australia is providing air defence (E-7 Wedgetail) and missiles to UAE \u2014 defensive posture only. No combat troops in Iran."
+      },
+      "israel": {
+        "name": "Israel",
+        "flag": "\ud83c\uddee\ud83c\uddf1",
+        "status": "DEPLOYING",
+        "totalEstimate": "Unknown (limited ground ops confirmed)",
+        "deployed": [
+          {
+            "unit": "IDF Special Forces + Mossad operatives",
+            "count": "Unknown (small scale)",
+            "location": "Inside Iran (confirmed by Al Arabiya)",
+            "source": "Wikipedia Timeline / Al Arabiya",
+            "dtg": "2026-03-29"
+          }
+        ],
+        "enRoute": [
+          {
+            "unit": "IDF \u2014 prepared for multi-front war",
+            "count": "Unknown",
+            "location": "Israeli positions / Iran border regions",
+            "source": "CNN / IDF Spokesperson",
+            "dtg": "2026-03-28"
+          }
+        ],
+        "planned": [
+          {
+            "unit": "IDF full ground invasion of Iran",
+            "status": "AUTHORISED \u2014 awaiting execution order from Netanyahu",
+            "source": "ISW / Jerusalem Post",
+            "dtg": "2026-04-02"
+          }
+        ],
+        "note": "IDF spec ops confirmed inside Iran (Al Arabiya, 29 Mar). Large-scale invasion authorised but not yet executed. Iran's parliament speaker said Iranian forces are 'waiting' for a US invasion. IDF prepared for multi-front war per CNN (28 Mar)."
+      },
+      "saudi": {
+        "name": "Saudi Arabia",
+        "flag": "\ud83c\uddf8\ud83c\udde6",
+        "status": "ACTIVE-DEFENSIVE",
+        "totalEstimate": "Defensive posture",
+        "deployed": [
+          {
+            "unit": "Saudi Armed Forces \u2014 air/missile defence",
+            "count": "Patriot batteries + forces",
+            "location": "Saudi eastern province / Yanbu",
+            "source": "Arab News",
+            "dtg": "2026-03-28"
+          }
+        ],
+        "enRoute": [],
+        "planned": [
+          {
+            "unit": "Saudi ground forces to Iran",
+            "status": "NOT CONFIRMED \u2014 providing basing/defence only",
+            "source": "Arab News / Al Jazeera",
+            "dtg": "2026-03-28"
+          }
+        ],
+        "note": "Saudi Arabia providing basing and defensive support. No confirmed offensive ground deployment to Iran. Yanbu is a key staging area for coalition naval operations."
+      },
+      "uae": {
+        "name": "UAE",
+        "flag": "\ud83c\udde6\ud83c\uddea",
+        "status": "ACTIVE-DEFENSIVE",
+        "totalEstimate": "Defensive posture",
+        "deployed": [
+          {
+            "unit": "UAE Armed Forces \u2014 air defence",
+            "count": "Est. hundreds",
+            "location": "Al Dhafra Air Base / Fujairah",
+            "source": "The National UAE",
+            "dtg": "2026-03-27"
+          },
+          {
+            "unit": "Australian ADF E-7 Wedgetail + missiles deployed here",
+            "count": "85 ADF personnel",
+            "location": "UAE",
+            "source": "Wikipedia",
+            "dtg": "2026-03-10"
+          }
+        ],
+        "enRoute": [],
+        "planned": [
+          {
+            "unit": "UAE ground forces to Iran",
+            "status": "NOT CONFIRMED",
+            "source": "The National UAE",
+            "dtg": "2026-04-01"
+          }
+        ],
+        "note": "UAE hosting Australian/coalition forces. UAE itself is in defensive posture. Ruwais refinery hit by Iran (2 Apr) \u2014 UAE is a target, not an aggressor."
+      },
+      "other": {
+        "name": "Other Coalition (34 nations)",
+        "flag": "\ud83c\udf10",
+        "status": "NAVAL-ONLY",
+        "totalEstimate": "~20+ warships (naval primarily)",
+        "deployed": [
+          {
+            "unit": "35-nation coalition \u2014 naval escort force",
+            "count": "~20+ warships from various nations",
+            "location": "Gulf of Oman / Hormuz approaches / Arabian Sea",
+            "source": "AP / GOV.UK",
+            "dtg": "2026-03-30"
+          }
+        ],
+        "enRoute": [
+          {
+            "unit": "France \u2014 Charles de Gaulle CSG",
+            "count": "~2,000 (carrier + escorts)",
+            "location": "En route to Indian Ocean",
+            "source": "Le Figaro / Reuters",
+            "dtg": "2026-03-28"
+          },
+          {
+            "unit": "Canada \u2014 naval contribution",
+            "count": "1 frigate + support (est.)",
+            "location": "Assigned to coalition",
+            "source": "CBC / Global News",
+            "dtg": "2026-03-28"
+          }
+        ],
+        "planned": [
+          {
+            "unit": "Germany \u2014\u540e\u52e4/logistics support",
+            "status": "PARLIAMENT APPROVAL PENDING",
+            "source": "Der Spiegel",
+            "dtg": "2026-03-31"
+          },
+          {
+            "unit": "Netherlands / Belgium \u2014 naval",
+            "status": "COMMITTED \u2014 details TBC",
+            "source": "NL Times",
+            "dtg": "2026-04-01"
+          }
+        ],
+        "note": "35-nation coalition is primarily a NAVAL escort/blockade force. Ground contributions from non-US nations are minimal to none. France is the most significant additional European deployer but focused on naval power projection."
+      }
     }
   }
 }
