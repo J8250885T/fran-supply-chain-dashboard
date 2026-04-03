@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T23:40:40Z",
+  "lastUpdated": "2026-04-03T23:42:44Z",
   "warAlert": {
-    "timestamp": "2026-04-03T23:40:40Z",
+    "timestamp": "2026-04-03T23:42:44Z",
     "fuelImpact": [
       "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
       "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T23:40:40Z",
+    "updated": "2026-04-03T23:42:44Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T23:40:40Z",
+    "weeklyItemsUpdated": "2026-04-03T23:42:44Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T23:40:40Z",
+  "dbLastUpdated": "2026-04-03T23:42:44Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2004,7 +2004,7 @@
     }
   },
   "troopDeployments": {
-    "lastUpdated": "2026-04-04T21:30:00Z",
+    "lastUpdated": "2026-04-04T21:40:00Z",
     "phase": "PRE-DEPLOYMENT",
     "phaseReason": "US has 50,000+ troops in Middle East (+10,000 above normal). Ground troops have arrived. Spec ops and limited ground ops confirmed. Full invasion pending political decision. UK/Australia explicitly not committing ground forces. 35-nation coalition is naval blockade, not ground force.",
     "invasionIndicator": "ELEVATED",
@@ -2106,18 +2106,36 @@
       "australia": {
         "name": "Australia",
         "flag": "\ud83c\udde6\ud83c\uddfa",
-        "status": "DEFENSIVE-ONLY",
-        "totalEstimate": "~85+ personnel",
+        "status": "DEFENSIVE-STAGING",
+        "totalEstimate": "~300+ personnel (classified)",
         "deployed": [
           {
             "unit": "ADF \u2014 85 personnel + Boeing E-7 Wedgetail + AMRAAM missiles",
             "count": "85 personnel",
-            "location": "UAE (deployed to defend Gulf states + Australian bases at UAE request)",
+            "location": "UAE (Al Minhad Air Base area)",
             "source": "Wikipedia / ABC News",
-            "dtg": "2026-03-10"
+            "dtg": "2026-03-10",
+            "type": "AIR DEFENCE"
+          },
+          {
+            "unit": "ADF SAS Regiment \u2014 Special Forces",
+            "count": "Classified (small team)",
+            "location": "Al Minhad Air Base, UAE",
+            "source": "Direct intelligence (Douglas Tait)",
+            "dtg": "2026-04-04",
+            "type": "SPECIAL FORCES"
           }
         ],
-        "enRoute": [],
+        "enRoute": [
+          {
+            "unit": "ADF \u2014 logistics / support element",
+            "count": "Est. 100-200",
+            "location": "Being positioned \u2014 Middle East",
+            "source": "ABC News",
+            "dtg": "2026-03-31",
+            "type": "LOGISTICS"
+          }
+        ],
         "planned": [
           {
             "unit": "ADF ground troops to Iran",
@@ -2126,7 +2144,7 @@
             "dtg": "2026-03-10"
           }
         ],
-        "note": "Albanese government explicitly ruled out ground troops. Australia is providing air defence (E-7 Wedgetail) and missiles to UAE \u2014 defensive posture only. No combat troops in Iran."
+        "note": "Albanese explicitly ruled out combat ground troops. ADF SAS confirmed at Al Minhad (UAE). E-7 Wedgetail airborne early warning deployed to same area. HMAS Sydney also deployed to Gulf region."
       },
       "israel": {
         "name": "Israel",
