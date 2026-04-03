@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T01:37:24Z",
+  "lastUpdated": "2026-04-03T01:41:26Z",
   "warAlert": {
-    "timestamp": "2026-04-03T01:37:24Z",
+    "timestamp": "2026-04-03T01:41:26Z",
     "fuelImpact": [
       "2026-04-02 April Asian arrivals to Australia on track for sharper drop; gasoil flows particularly affected; US-Europe rerouting partially fills gap [Argus Media] [HIGH]",
       "2026-04-02 Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction [NBC] [HIGH]",
@@ -17,16 +17,16 @@
     "australiaRisk": "HIGH",
     "watch": [
       "2026-04-03 STI Steadfast sailing east coast with South Korean jet fuel; South Korea caps exports at last-year levels, rules out redirect for now [ABC News] [HIGH]",
+      "2026-04-02 FuelRadar live dashboard: 725 stations currently out of at least one fuel type (down from ~851 on Mar 31) [FuelRadar.com.au] [HIGH]",
       "2026-04-01 Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1 [The Guardian] [MEDIUM]",
-      "2026-03-31 20% of national fuel reserves released; fuel excise halved 26.3c/litre for 3 months [9News] [HIGH]",
-      "2026-03-30 National Cabinet convenes on fuel \u2014 rationing rejected, voluntary demand reduction preferred [ABC] [HIGH]"
+      "2026-03-31 20% of national fuel reserves released; fuel excise halved 26.3c/litre for 3 months [9News] [HIGH]"
     ]
   },
   "servoOutages": {
-    "total": 851,
+    "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T01:37:24Z",
+    "updated": "2026-04-03T01:41:26Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -578,7 +578,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T01:37:24Z",
+  "dbLastUpdated": "2026-04-03T01:41:26Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
@@ -589,6 +589,19 @@
       "impact": "",
       "confidence": "HIGH",
       "addedAt": "2026-04-03T01:36:57Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "australia",
+      "headline": "FuelRadar live dashboard: 725 stations currently out of at least one fuel type (down from ~851 on Mar 31)",
+      "source": "FuelRadar.com.au",
+      "sourceUrl": "https://fuelradar.com.au/stations-running-dry",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T01:40:54Z",
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
@@ -888,12 +901,12 @@
     "diesel_reserves": "25-32 days (at CRITICAL threshold)",
     "petrol_reserves": "27-36 days",
     "jet_fuel_reserves": "26-29 days",
-    "servo_outages": "~851 nationally (FuelRadar, as of 2026-03-31)",
-    "supply_ceiling": "mid-April 2026 \u2014 reserve/excise relief exhausted after this"
+    "supply_ceiling": "mid-April 2026 \u2014 reserve/excise relief exhausted after this",
+    "servo_outages": "~725 nationally (FuelRadar live, 02/04/2026) \u2014 DOWN from ~851 on Mar 31"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T01:37:20Z",
-    "cron": "shipment-validator",
-    "summary": "STI Steadfast confirmed in transit + April Asian arrival drop confirmed by Argus"
+    "sentAt": "2026-04-03T01:41:20Z",
+    "cron": "servo-tracker",
+    "summary": "FuelRadar live: 725 stations out of at least one fuel type \u2014 down ~126 from 851 on Mar 31. Improving trend."
   }
 }
