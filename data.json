@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T04:35:56Z",
+  "lastUpdated": "2026-04-03T04:47:02Z",
   "warAlert": {
-    "timestamp": "2026-04-03T04:35:56Z",
+    "timestamp": "2026-04-03T04:47:02Z",
     "fuelImpact": [
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T04:35:56Z",
+    "updated": "2026-04-03T04:47:02Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -640,9 +640,68 @@
       }
     ],
     "rationingTrigger": 10,
-    "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
+    "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026.",
+    "weeklyItems": [
+      {
+        "label": "Diesel",
+        "emoji": "\u26fd",
+        "category": "Transport fuel",
+        "weeklyChange": 18.4,
+        "basis": "Wholesale/import squeeze"
+      },
+      {
+        "label": "LPG / Autogas",
+        "emoji": "\ud83d\udd25",
+        "category": "Energy",
+        "weeklyChange": 14.1,
+        "basis": "Gas market pass-through"
+      },
+      {
+        "label": "Tomatoes",
+        "emoji": "\ud83c\udf45",
+        "category": "Fresh food",
+        "weeklyChange": 12.8,
+        "basis": "Freight + spoilage + farm inputs"
+      },
+      {
+        "label": "Lettuce",
+        "emoji": "\ud83e\udd6c",
+        "category": "Fresh food",
+        "weeklyChange": 11.6,
+        "basis": "Cold-chain + distribution costs"
+      },
+      {
+        "label": "Domestic airfares",
+        "emoji": "\u2708\ufe0f",
+        "category": "Services",
+        "weeklyChange": 10.9,
+        "basis": "Jet fuel + route repricing"
+      },
+      {
+        "label": "Courier freight",
+        "emoji": "\ud83d\udce6",
+        "category": "Services",
+        "weeklyChange": 9.7,
+        "basis": "Last-mile fuel surcharge"
+      },
+      {
+        "label": "Electricity peak tariff",
+        "emoji": "\u26a1",
+        "category": "Utilities",
+        "weeklyChange": 8.8,
+        "basis": "Gas-linked generation costs"
+      },
+      {
+        "label": "Bread",
+        "emoji": "\ud83c\udf5e",
+        "category": "Staples",
+        "weeklyChange": 8.1,
+        "basis": "Milling + transport + packaging"
+      }
+    ],
+    "weeklyItemsUpdated": "2026-04-03T04:47:02Z"
   },
-  "dbLastUpdated": "2026-04-03T04:35:56Z",
+  "dbLastUpdated": "2026-04-03T04:47:02Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
