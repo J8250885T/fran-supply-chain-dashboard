@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T02:14:53Z",
+  "lastUpdated": "2026-04-03T02:23:08Z",
   "warAlert": {
-    "timestamp": "2026-04-03T02:14:53Z",
+    "timestamp": "2026-04-03T02:23:08Z",
     "fuelImpact": [
       "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]",
       "2026-04-02 ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts [Morningstar] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T02:14:53Z",
+    "updated": "2026-04-03T02:23:08Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -284,7 +284,7 @@
           "debtService": 200,
           "liquidSavings": 4200,
           "monthlyDeficit": -1383,
-          "monthlyExtra": 83,
+          "monthlyExtra": 325,
           "runwayMonths": 3,
           "spendCategories": {
             "food": 650,
@@ -296,7 +296,13 @@
             "goods": 120,
             "other": 0
           },
-          "notes": "Pension $1,116/mo. Debt: $4,200 (rates/charges). Debt service: $200/mo. Crisis: -$1,383/mo. 3-month runway. Pensioner already below poverty line pre-crisis."
+          "notes": "Pension $1,116/mo. Debt: $4,200. Crisis surcharge +$325/mo (diesel +65% on transport $120/mo \u2192 +$117; food +12% on $650 \u2192 +$78; utilities +20% on $400 \u2192 +$80; other +$50). Pre-crisis deficit: -$1,058/mo. Crisis total: -$1,383/mo.",
+          "crisisBreakdown": {
+            "fuel": 117,
+            "food": 78,
+            "utilities": 80,
+            "indirect": 50
+          }
         },
         {
           "name": "Low Income Worker",
@@ -305,7 +311,7 @@
           "debtService": 760,
           "liquidSavings": 5800,
           "monthlyDeficit": -1669,
-          "monthlyExtra": 116,
+          "monthlyExtra": 430,
           "runwayMonths": 3,
           "spendCategories": {
             "food": 750,
@@ -317,7 +323,13 @@
             "goods": 130,
             "other": 0
           },
-          "notes": "Min wage $2,128/mo after tax. Debt: $27,500 (personal credit/student loans). Debt service: $760/mo. Crisis: -$1,669/mo. 3.5-month runway."
+          "notes": "Min wage $2,128/mo. Debt: $27,500. Crisis surcharge +$430/mo (fuel +$165; food +15% on $700 \u2192 +$105; utilities +$80; indirect +$80). Pre-crisis deficit: -$1,239/mo. Crisis total: -$1,669/mo.",
+          "crisisBreakdown": {
+            "fuel": 165,
+            "food": 105,
+            "utilities": 80,
+            "indirect": 80
+          }
         },
         {
           "name": "Average Worker",
@@ -326,7 +338,7 @@
           "debtService": 3918,
           "liquidSavings": 15000,
           "monthlyDeficit": -4450,
-          "monthlyExtra": 232,
+          "monthlyExtra": 700,
           "runwayMonths": 3,
           "spendCategories": {
             "food": 1100,
@@ -338,7 +350,13 @@
             "goods": 620,
             "other": 440
           },
-          "notes": "Median dual-income $5,500/mo after tax. Debt: ~$488K (housing + car loans + credit cards). Debt service: $3,918/mo. Crisis: -$4,450/mo. 3.4-month runway."
+          "notes": "Median income $5,500/mo after tax. Debt: ~$488k. Crisis surcharge +$700/mo (diesel/petrol +65%/45% on $300/mo direct fuel \u2192 +$300; food +15% on $1,100 \u2192 +$165; utilities +25% on $520 \u2192 +$130; goods/services indirect +$105). Pre-crisis deficit: -$3,750/mo. Crisis total: -$4,450/mo.",
+          "crisisBreakdown": {
+            "fuel": 300,
+            "food": 165,
+            "utilities": 130,
+            "indirect": 105
+          }
         },
         {
           "name": "Middle Income",
@@ -347,7 +365,7 @@
           "debtService": 8875,
           "liquidSavings": 38000,
           "monthlyDeficit": -8498,
-          "monthlyExtra": 299,
+          "monthlyExtra": 900,
           "runwayMonths": 4,
           "spendCategories": {
             "food": 1350,
@@ -359,7 +377,13 @@
             "goods": 750,
             "other": 500
           },
-          "notes": "$8,200/mo after tax. Debt: ~$1.05M (large mortgage + car loans). Debt service: $8,875/mo. Pre-crisis surplus gone. Crisis: -$8,498/mo. 4.5-month runway."
+          "notes": "$8,200/mo after tax. Debt: ~$1.05M. Crisis surcharge +$900/mo (fuel +$400; food +15% on $1,350 \u2192 +$200; utilities +20% on $600 \u2192 +$120; indirect +$180). Pre-crisis deficit: -$7,598/mo. Crisis total: -$8,498/mo.",
+          "crisisBreakdown": {
+            "fuel": 400,
+            "food": 200,
+            "utilities": 120,
+            "indirect": 180
+          }
         },
         {
           "name": "High Income",
@@ -368,7 +392,7 @@
           "debtService": 10553,
           "liquidSavings": 85000,
           "monthlyDeficit": -8444,
-          "monthlyExtra": 391,
+          "monthlyExtra": 1200,
           "runwayMonths": 10,
           "spendCategories": {
             "food": 1800,
@@ -380,7 +404,13 @@
             "goods": 1000,
             "other": 1000
           },
-          "notes": "$13,000/mo after tax. Debt: ~$1.18M (investment property / large mortgage). Debt service: $10,553/mo. Despite high income, debt-heavy. Crisis: -$8,444/mo. 10-month runway."
+          "notes": "$13,000/mo after tax. Debt: ~$1.18M. Crisis surcharge +$1,200/mo (fuel +$550; food +15% on $1,800 \u2192 +$270; utilities +20% on $750 \u2192 +$150; indirect/travel +$230). Pre-crisis deficit: -$7,244/mo. Crisis total: -$8,444/mo.",
+          "crisisBreakdown": {
+            "fuel": 550,
+            "food": 270,
+            "utilities": 150,
+            "indirect": 230
+          }
         },
         {
           "name": "Retiree (Super)",
@@ -389,7 +419,7 @@
           "debtService": 0,
           "liquidSavings": 55000,
           "monthlyDeficit": -400,
-          "monthlyExtra": 300,
+          "monthlyExtra": 520,
           "runwayMonths": 137,
           "spendCategories": {
             "food": 1000,
@@ -401,7 +431,13 @@
             "goods": 280,
             "other": 220
           },
-          "notes": "Super drawdown $3,800/mo + partial age pension $1,100/mo = $4,900 total. Owns home outright. Zero debt service. Crisis surcharge $300/mo (fuel price impact on transport, food, utilities). Liquid savings = accessible cash + super cash allocation. Runway reflects minimal draw-down rate."
+          "notes": "Super drawdown $3,800/mo + partial pension $1,100/mo. Owns home. Zero debt. Crisis surcharge +$520/mo (fuel +$220; food +12% on $1,000 \u2192 +$120; utilities +20% on $600 \u2192 +$120; health/services indirect +$60). Pre-crisis position: +$120/mo surplus. Crisis deficit: -$400/mo.",
+          "crisisBreakdown": {
+            "fuel": 220,
+            "food": 120,
+            "utilities": 120,
+            "indirect": 60
+          }
         }
       ],
       "computed": true
@@ -600,7 +636,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T02:14:53Z",
+  "dbLastUpdated": "2026-04-03T02:23:08Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
