@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T14:40:00Z",
+  "lastUpdated": "2026-04-03T19:36:48Z",
   "warAlert": {
-    "timestamp": "2026-04-03T14:40:00Z",
+    "timestamp": "2026-04-03T19:36:48Z",
     "fuelImpact": [
       "2026-04-03 Iran launches multi-front refinery strikes \u2014 hits Kuwait Mina al-Ahmadi, Saudi Arabia, UAE, Israel in coordinated retaliation [NPR] [HIGH]",
       "2026-04-03 Pravda Singapore: Singapore refinery capacity utilization ~60% in March amid supply disruptions; China crude oil arrived via tanker New Merit from Dalian [Pravda Singapore] [LOW]",
@@ -17,17 +17,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-04 Bowen interview: 'There's a race' \u2014 Australia faces supply challenge beyond mid-April as Asian partners restrict exports, US/Mexico shipments en route [The Saturday Paper] [HIGH]",
       "2026-04-03 Australians cancel Easter travel as fuel crisis mounts \u2014 diesel above A/litre, petrol above A.50/litre [Reuters] [MEDIUM]",
       "2026-04-03 Australians cancel road trips as fuel costs hit A/litre diesel \u2014 Easter travel demand destruction begins [Guardian] [MEDIUM]",
-      "2026-04-03 600+ stations out of fuel nationally as Easter travel spikes demand; trend reverses upward [IBTimes Australia] [MEDIUM]",
-      "2026-04-03 WA servo chain dry at ALL locations; ASPI warns late April fuel crisis could trigger May food shortages [PerthNow] [MEDIUM]"
+      "2026-04-03 600+ stations out of fuel nationally as Easter travel spikes demand; trend reverses upward [IBTimes Australia] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T14:40:00Z",
+    "updated": "2026-04-03T19:36:48Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T14:40:00Z",
+    "weeklyItemsUpdated": "2026-04-03T19:36:48Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,8 +1167,21 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T14:40:00Z",
+  "dbLastUpdated": "2026-04-03T19:36:48Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Bowen interview: 'There's a race' \u2014 Australia faces supply challenge beyond mid-April as Asian partners restrict exports, US/Mexico shipments en route",
+      "source": "The Saturday Paper",
+      "sourceUrl": "https://www.thesaturdaypaper.com.au/news/politics/2026/04/04/chris-bowen-fuel-supply-theres-race",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T19:36:23Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-03",
       "domain": "australia",
@@ -1334,6 +1347,19 @@
       "impact": "",
       "confidence": "HIGH",
       "addedAt": "2026-04-03T01:36:57Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "australia",
+      "headline": "Petrol prices fall ~20 cents across capitals after excise cut \u2014 first decline since crisis began; 53 ships still en route",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/live/2026/apr/02/anthony-albanese-fuel-crisis-angus-taylor-middle-east-labor-liberals-easter-travel-press-club-ntwnfb",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T19:36:23Z",
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
@@ -1806,9 +1832,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T14:39:56Z",
-    "cron": "war-fuel-food",
-    "summary": "Iran multi-front refinery strikes; Brent ; servo outages deteriorate to 787 into Easter; 40+ nation Hormuz coalition launches"
+    "sentAt": "2026-04-03T19:36:45Z",
+    "cron": "shipment-validator",
+    "summary": "Saturday Paper: Bowen 'race' quote signals supply ceiling beyond mid-April; Guardian: petrol -20c after excise cut"
   },
   "reviewPanels": {
     "feed": {
