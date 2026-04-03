@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-03T13:43:59Z",
+  "lastUpdated": "2026-04-03T14:40:00Z",
   "warAlert": {
-    "timestamp": "2026-04-03T13:43:59Z",
+    "timestamp": "2026-04-03T14:40:00Z",
     "fuelImpact": [
+      "2026-04-03 Iran launches multi-front refinery strikes \u2014 hits Kuwait Mina al-Ahmadi, Saudi Arabia, UAE, Israel in coordinated retaliation [NPR] [HIGH]",
       "2026-04-03 Pravda Singapore: Singapore refinery capacity utilization ~60% in March amid supply disruptions; China crude oil arrived via tanker New Merit from Dalian [Pravda Singapore] [LOW]",
       "2026-04-03 IBTimes: Australia imports >90% refined product from Asia; South Korea export caps, reduced refinery runs, cargo rerouting disrupting supply \u2014 mid-to-late April crunch still expected [IBTimes Australia] [MEDIUM]",
       "2026-04-03 Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown [Reuters] [MEDIUM]",
-      "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
-      "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
-      "2026-04-02 Brent reaches $111.69/bbl April 2 \u2014 up $6.83 in one day, ~$41 above pre-war level [Fortune] [HIGH]"
+      "2026-04-02 Brent hits .69/bbl April 2 after Trump warns of more Iran attacks; WTI up 11% to .60 \u2014 highest since March 9 [Guardian] [HIGH]",
+      "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -17,17 +17,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-03 Australians cancel Easter travel as fuel crisis mounts \u2014 diesel above A/litre, petrol above A.50/litre [Reuters] [MEDIUM]",
+      "2026-04-03 Australians cancel road trips as fuel costs hit A/litre diesel \u2014 Easter travel demand destruction begins [Guardian] [MEDIUM]",
       "2026-04-03 600+ stations out of fuel nationally as Easter travel spikes demand; trend reverses upward [IBTimes Australia] [MEDIUM]",
-      "2026-04-03 WA servo chain dry at ALL locations; ASPI warns late April fuel crisis could trigger May food shortages [PerthNow] [MEDIUM]",
-      "2026-04-03 55 Australian-bound cargoes arrived or en route \u2014 more than previously scheduled; alternative sources secured from US, Europe [Brisbane Times] [HIGH]",
-      "2026-04-03 50+ tankers headed to Australian import terminals \u2014 major suppliers racing to head off shortfalls [Sydney Morning Herald] [HIGH]"
+      "2026-04-03 WA servo chain dry at ALL locations; ASPI warns late April fuel crisis could trigger May food shortages [PerthNow] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T13:43:59Z",
+    "updated": "2026-04-03T14:40:00Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T13:43:59Z",
+    "weeklyItemsUpdated": "2026-04-03T14:40:00Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,8 +1167,47 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T13:43:59Z",
+  "dbLastUpdated": "2026-04-03T14:40:00Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australians cancel Easter travel as fuel crisis mounts \u2014 diesel above A/litre, petrol above A.50/litre",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/australians-cancel-easter-travel-worries-mount-over-fuel-crisis-2026-04-03/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T14:38:57Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Iran launches multi-front refinery strikes \u2014 hits Kuwait Mina al-Ahmadi, Saudi Arabia, UAE, Israel in coordinated retaliation",
+      "source": "NPR",
+      "sourceUrl": "https://www.npr.org/2026/04/03/g-s1-116314/iran-hits-gulf-refineries-as-trump-warns-u-s-will-attack-iranian-bridges-power-plants",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T14:38:57Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australians cancel road trips as fuel costs hit A/litre diesel \u2014 Easter travel demand destruction begins",
+      "source": "Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/03/fuel-crisis-australia-travel-train-easter-break",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T14:38:57Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-03",
       "domain": "fuel",
@@ -1298,6 +1337,19 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent hits .69/bbl April 2 after Trump warns of more Iran attacks; WTI up 11% to .60 \u2014 highest since March 9",
+      "source": "Guardian",
+      "sourceUrl": "https://www.theguardian.com/business/2026/apr/02/oil-price-rises-markets-slide-following-trump-iran-war-address",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T14:38:57Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
     },
     {
       "dtg": "2026-04-02",
@@ -1750,13 +1802,13 @@
     "diesel_reserves": "25-32 days (at CRITICAL threshold)",
     "petrol_reserves": "27-36 days",
     "jet_fuel_reserves": "26-29 days",
-    "supply_ceiling": "mid-April 2026 \u2014 reserve/excise relief exhausted after this",
-    "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend"
+    "supply_ceiling": "mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless",
+    "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T13:43:59Z",
-    "cron": "asian-refinery",
-    "summary": "Singapore 50-60%, South Korea cap holds, Kuwait 3rd refinery hit, AU import crunch risk active mid-Apr"
+    "sentAt": "2026-04-03T14:39:56Z",
+    "cron": "war-fuel-food",
+    "summary": "Iran multi-front refinery strikes; Brent ; servo outages deteriorate to 787 into Easter; 40+ nation Hormuz coalition launches"
   },
   "reviewPanels": {
     "feed": {
