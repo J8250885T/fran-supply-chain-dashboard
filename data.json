@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-03T07:37:49Z",
+  "lastUpdated": "2026-04-03T07:44:11Z",
   "warAlert": {
-    "timestamp": "2026-04-03T07:37:49Z",
+    "timestamp": "2026-04-03T07:44:11Z",
     "fuelImpact": [
+      "2026-04-03 Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown [Reuters] [MEDIUM]",
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
       "2026-04-02 Brent reaches $111.69/bbl April 2 \u2014 up $6.83 in one day, ~$41 above pre-war level [Fortune] [HIGH]",
       "2026-04-02 Brent international benchmark hits ~$109/bbl as Iran war escalates; oil prices rose after Trump threat [NYT] [HIGH]",
-      "2026-04-02 Iran says it will oversee Strait of Hormuz traffic even in peacetime \u2014 selective transits for friendly nations only [NYT] [HIGH]",
-      "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]"
+      "2026-04-02 Iran says it will oversee Strait of Hormuz traffic even in peacetime \u2014 selective transits for friendly nations only [NYT] [HIGH]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T07:37:49Z",
+    "updated": "2026-04-03T07:44:11Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T07:37:49Z",
+    "weeklyItemsUpdated": "2026-04-03T07:44:11Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,8 +1167,21 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T07:37:49Z",
+  "dbLastUpdated": "2026-04-03T07:44:11Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/middle-east/drones-hit-kuwaits-mina-al-ahmadi-refinery-fires-reported-no-injuries-2026-04-03/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T07:43:47Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-03",
       "domain": "australia",
@@ -1663,9 +1676,9 @@
     "servo_outages": "~725 nationally (FuelRadar live, 02/04/2026) \u2014 DOWN from ~851 on Mar 31"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T07:37:46Z",
-    "cron": "shipment-validator",
-    "summary": "Bowen confirms 3.7bn litres en route; 410 diesel + 145 petrol stations out; mid-April supply confirmed but post-mid-April risk unchanged"
+    "sentAt": "2026-04-03T07:44:07Z",
+    "cron": "asian-refinery",
+    "summary": "Kuwait Mina al-Ahmadi refinery drone strike (new \u2014 added); Asian utilisation unchanged: SRC 60%, Exxon Jurong 50%, SK export caps active"
   },
   "reviewPanels": {
     "feed": {
