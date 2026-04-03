@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T01:50:22Z",
+  "lastUpdated": "2026-04-03T02:08:17Z",
   "warAlert": {
-    "timestamp": "2026-04-03T01:50:22Z",
+    "timestamp": "2026-04-03T02:08:17Z",
     "fuelImpact": [
       "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]",
       "2026-04-02 ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts [Morningstar] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T01:50:22Z",
+    "updated": "2026-04-03T02:08:17Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -600,7 +600,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T01:50:22Z",
+  "dbLastUpdated": "2026-04-03T02:08:17Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
