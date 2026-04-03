@@ -1,13 +1,14 @@
 {
-  "lastUpdated": "2026-04-03T01:41:26Z",
+  "lastUpdated": "2026-04-03T01:44:02Z",
   "warAlert": {
-    "timestamp": "2026-04-03T01:41:26Z",
+    "timestamp": "2026-04-03T01:44:02Z",
     "fuelImpact": [
+      "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]",
+      "2026-04-02 ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts [Morningstar] [MEDIUM]",
       "2026-04-02 April Asian arrivals to Australia on track for sharper drop; gasoil flows particularly affected; US-Europe rerouting partially fills gap [Argus Media] [HIGH]",
       "2026-04-02 Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction [NBC] [HIGH]",
-      "2026-04-01 IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted [CNBC] [HIGH]",
-      "2026-04-01 US gasoline average tops $4/gallon \u2014 first time since 2022 [NBC] [HIGH]",
-      "2026-03-28 Houthis enter war \u2014 Bab el-Mandeb threatened, ~30 tankers idling near Yanbu [Reuters] [HIGH]"
+      "2026-04-01 PetroChina supplies 2M barrels from China storage to Singapore Refining Co as feedstock shortage bites [Reuters] [HIGH]",
+      "2026-04-01 IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted [CNBC] [HIGH]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -26,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T01:41:26Z",
+    "updated": "2026-04-03T01:44:02Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -578,7 +579,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T01:41:26Z",
+  "dbLastUpdated": "2026-04-03T01:44:02Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
@@ -592,6 +593,32 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-02/singapore-oil-refineries-energy-shock-response/106504438",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T01:43:23Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts",
+      "source": "Morningstar",
+      "sourceUrl": "https://www.morningstar.com.au/markets/refinery-problem-different-kind-energy-crisis-2026",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-03T01:43:23Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
     },
     {
       "dtg": "2026-04-02",
@@ -634,6 +661,19 @@
     },
     {
       "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "PetroChina supplies 2M barrels from China storage to Singapore Refining Co as feedstock shortage bites",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/petrochina-plugs-singapore-plants-shortfall-with-crude-china-storage-trackers-2026-04-01/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T01:43:23Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-01",
       "domain": "australia",
       "headline": "Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1",
       "source": "The Guardian",
@@ -668,6 +708,19 @@
       "confidence": "HIGH",
       "addedAt": "2026-04-03T00:44:23Z",
       "sent": true,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-31",
+      "domain": "fuel",
+      "headline": "South Korea to release strategic oil reserves to refiners via 2-month stockpile swap program (April-May)",
+      "source": "KED Global",
+      "sourceUrl": "https://www.kedglobal.com/business-politics/newsView/ked202603310008",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T01:43:23Z",
+      "sent": false,
       "color": "#ff3b3b",
       "label": "FUEL"
     },
@@ -905,8 +958,8 @@
     "servo_outages": "~725 nationally (FuelRadar live, 02/04/2026) \u2014 DOWN from ~851 on Mar 31"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T01:41:20Z",
-    "cron": "servo-tracker",
-    "summary": "FuelRadar live: 725 stations out of at least one fuel type \u2014 down ~126 from 851 on Mar 31. Improving trend."
+    "sentAt": "2026-04-03T01:43:59Z",
+    "cron": "asian-refinery",
+    "summary": "Exxon Jurong deepened to 50%; SRC 60% with PetroChina China reserve draw; South Korea reserve release; 4-5mbpd Asian run cuts; April Australia arrivals on sharper decline"
   }
 }
