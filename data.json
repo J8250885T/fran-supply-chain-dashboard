@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T04:13:30Z",
+  "lastUpdated": "2026-04-03T04:19:31Z",
   "warAlert": {
-    "timestamp": "2026-04-03T04:13:30Z",
+    "timestamp": "2026-04-03T04:19:31Z",
     "fuelImpact": [
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T04:13:30Z",
+    "updated": "2026-04-03T04:19:31Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -420,12 +420,12 @@
         {
           "name": "Retiree (Super)",
           "income": 4900,
-          "debt": 0,
-          "debtService": 0,
+          "debt": 32000,
+          "debtService": 450,
           "liquidSavings": 38000,
-          "monthlyDeficit": -400,
+          "monthlyDeficit": -850,
           "monthlyExtra": 520,
-          "runwayMonths": 95,
+          "runwayMonths": 45,
           "spendCategories": {
             "food": 1000,
             "transport": 650,
@@ -436,14 +436,14 @@
             "goods": 280,
             "other": 220
           },
-          "notes": "Super drawdown $3,800/mo + partial pension $1,100/mo = $4,900. Owns home. Zero debt. Liquid savings $38,000 \u2014 cash portion of account-based pension. Relatively insulated vs working-age demographics. Crisis surcharge +$520/mo. Pre-crisis: +$120/mo surplus. Crisis deficit: -$400/mo. Survives W26 with $36,560 remaining \u2014 the most resilient demographic.",
+          "notes": "Super drawdown $3,800/mo + partial pension $1,100/mo = $4,900. Owns home. Debt: $32k (residual mortgage $22k nearly paid off + credit card $7k + BNPL $3k) \u2192 debt service $450/mo. 15% of 65+ carry housing debt; 39% carry credit card balance (Morningstar/NAB/RBA 2024-25). Crisis surcharge +$520/mo. Pre-crisis deficit: -$330/mo (debt service). Crisis total: -$850/mo. Still most resilient demographic \u2014 survives W26 with $33,860.",
           "crisisBreakdown": {
             "fuel": 220,
             "food": 120,
             "utilities": 120,
             "indirect": 60
           },
-          "savingsSource": "Money.com.au 2025: 65+ Baby Boomers average savings $56,300 but includes managed funds. Westpac 65-74 median $15,829 cash. Account-based pension holders typically maintain 1yr drawdown as cash. Adjusted to $38k: 65+ average partially eroded after 5yr cost-of-living pressure."
+          "savingsSource": "Morningstar Nov 2025: 15% of 65+ carry housing debt (double 1990 rate). Jacaranda/NAB 2024: 9% have active mortgage; 39% of 65+ carry outstanding credit card balance (highest of any age group). RBA: avg credit card balance $3,300. HILDA: 55+ household debt quadrupled 20yrs to $242k. Revised from $0 to $32k: residual mortgage $22k + credit card $7k + BNPL/personal $3k."
         }
       ],
       "computed": true
@@ -642,7 +642,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T04:13:30Z",
+  "dbLastUpdated": "2026-04-03T04:19:31Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
