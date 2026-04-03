@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-03T02:36:08Z",
+  "lastUpdated": "2026-04-03T02:40:30Z",
   "warAlert": {
-    "timestamp": "2026-04-03T02:36:08Z",
+    "timestamp": "2026-04-03T02:40:30Z",
     "fuelImpact": [
-      "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]",
-      "2026-04-02 ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts [Morningstar] [MEDIUM]",
-      "2026-04-02 April Asian arrivals to Australia on track for sharper drop; gasoil flows particularly affected; US-Europe rerouting partially fills gap [Argus Media] [HIGH]",
-      "2026-04-02 Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction [NBC] [HIGH]",
-      "2026-04-01 PetroChina supplies 2M barrels from China storage to Singapore Refining Co as feedstock shortage bites [Reuters] [HIGH]",
-      "2026-04-01 IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted [CNBC] [HIGH]"
+      "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
+      "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
+      "2026-04-02 Brent reaches $111.69/bbl April 2 \u2014 up $6.83 in one day, ~$41 above pre-war level [Fortune] [HIGH]",
+      "2026-04-02 Brent international benchmark hits ~$109/bbl as Iran war escalates; oil prices rose after Trump threat [NYT] [HIGH]",
+      "2026-04-02 Iran says it will oversee Strait of Hormuz traffic even in peacetime \u2014 selective transits for friendly nations only [NYT] [HIGH]",
+      "2026-04-02 Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch [ABC News] [MEDIUM]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -18,16 +18,16 @@
     "australiaRisk": "HIGH",
     "watch": [
       "2026-04-03 STI Steadfast sailing east coast with South Korean jet fuel; South Korea caps exports at last-year levels, rules out redirect for now [ABC News] [HIGH]",
+      "2026-04-02 Australia government may cut fuel quality standards AGAIN \u2014 without diplomacy, flights cut and diesel redistribution to vital corridors from late April [Brisbane Times] [HIGH]",
       "2026-04-02 FuelRadar live dashboard: 725 stations currently out of at least one fuel type (down from ~851 on Mar 31) [FuelRadar.com.au] [HIGH]",
-      "2026-04-01 Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1 [The Guardian] [MEDIUM]",
-      "2026-03-31 20% of national fuel reserves released; fuel excise halved 26.3c/litre for 3 months [9News] [HIGH]"
+      "2026-04-01 Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1 [The Guardian] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T02:36:08Z",
+    "updated": "2026-04-03T02:40:30Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -642,7 +642,7 @@
     "rationingTrigger": 10,
     "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026."
   },
-  "dbLastUpdated": "2026-04-03T02:36:08Z",
+  "dbLastUpdated": "2026-04-03T02:40:30Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
@@ -656,6 +656,84 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "australia",
+      "headline": "Australia government may cut fuel quality standards AGAIN \u2014 without diplomacy, flights cut and diesel redistribution to vital corridors from late April",
+      "source": "Brisbane Times",
+      "sourceUrl": "https://www.brisbanetimes.com.au/business/markets/fuel-quality-standards-could-be-cut-again-to-stave-off-shortages-20260402-p5zkuh.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T02:39:02Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained",
+      "source": "Wikipedia/ADNOC",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Iranian_strikes_on_the_United_Arab_Emirates",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T02:39:02Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/oil-prices-drop-hopes-us-pullback-iran-war-2026-04-02/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T02:39:02Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent reaches $111.69/bbl April 2 \u2014 up $6.83 in one day, ~$41 above pre-war level",
+      "source": "Fortune",
+      "sourceUrl": "https://fortune.com/article/price-of-oil-04-02-2026/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T02:39:02Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent international benchmark hits ~$109/bbl as Iran war escalates; oil prices rose after Trump threat",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/live/2026/04/02/world/iran-war-trump-news",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T02:39:02Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "geopolitical",
+      "headline": "Iran says it will oversee Strait of Hormuz traffic even in peacetime \u2014 selective transits for friendly nations only",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/2026/04/02/world/middleeast/iran-oman-hormuz-control.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T02:39:02Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
     },
     {
       "dtg": "2026-04-02",
@@ -721,6 +799,19 @@
       "sent": true,
       "color": "#4a9eff",
       "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "IEA Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted; oil supply crunch will worsen",
+      "source": "CNBC",
+      "sourceUrl": "https://www.cnbc.com/2026/04/01/oil-price-iea-fatih-birol-brent-iran-strait-hormuz.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-03T02:39:02Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
     },
     {
       "dtg": "2026-04-01",
@@ -1021,8 +1112,8 @@
     "servo_outages": "~725 nationally (FuelRadar live, 02/04/2026) \u2014 DOWN from ~851 on Mar 31"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T01:43:59Z",
-    "cron": "asian-refinery",
-    "summary": "Exxon Jurong deepened to 50%; SRC 60% with PetroChina China reserve draw; South Korea reserve release; 4-5mbpd Asian run cuts; April Australia arrivals on sharper decline"
+    "sentAt": "2026-04-03T02:40:30Z",
+    "cron": "war-fuel-food",
+    "summary": "Ruwais refinery (922k bpd) struck; Brent hits $111.69; Iran claims peacetime Hormuz control; IEA warns April worse; Citi/JPM $95-130 forecast; Australia fuel quality standards may be cut again"
   }
 }
