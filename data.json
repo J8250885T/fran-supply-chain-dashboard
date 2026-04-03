@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-03T05:18:37Z",
+  "lastUpdated": "2026-04-03T05:24:12Z",
   "warAlert": {
-    "timestamp": "2026-04-03T05:18:37Z",
+    "timestamp": "2026-04-03T05:24:12Z",
     "fuelImpact": [
       "2026-04-02 Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained [Wikipedia/ADNOC] [HIGH]",
       "2026-04-02 Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term [Reuters] [HIGH]",
@@ -27,7 +27,7 @@
     "total": 725,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-03T05:18:37Z",
+    "updated": "2026-04-03T05:24:12Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -699,7 +699,7 @@
         "basis": "Milling + transport + packaging"
       }
     ],
-    "weeklyItemsUpdated": "2026-04-03T05:18:37Z",
+    "weeklyItemsUpdated": "2026-04-03T05:24:12Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-03T05:18:37Z",
+  "dbLastUpdated": "2026-04-03T05:24:12Z",
   "dbEvents": [
     {
       "dtg": "2026-04-03",
@@ -1640,5 +1640,47 @@
     "sentAt": "2026-04-03T02:40:30Z",
     "cron": "war-fuel-food",
     "summary": "Ruwais refinery (922k bpd) struck; Brent hits $111.69; Iran claims peacetime Hormuz control; IEA warns April worse; Citi/JPM $95-130 forecast; Australia fuel quality standards may be cut again"
+  },
+  "reviewPanels": {
+    "feed": {
+      "title": "Fran Review \u2014 Feed",
+      "updatedAt": "2026-04-03T05:24:04Z",
+      "summary": "Event flow is accelerating around fuel, refinery disruption, and Australian contingency measures. Priority is to separate transient headlines from structural deterioration.",
+      "bullets": [
+        "Fuel and shipping incidents remain the dominant source of new risk signals.",
+        "Australian headlines increasingly shift from monitoring to contingency actions.",
+        "Watch for repetition versus genuinely new deterioration in refinery throughput, outages, and cargo timing."
+      ]
+    },
+    "supply": {
+      "title": "Fran Review \u2014 Fuel Levels & Supply",
+      "updatedAt": "2026-04-03T05:24:04Z",
+      "summary": "Australia is still being supported by rerouted cargoes and reserve releases, but refinery weakness and route disruption keep the system tight.",
+      "bullets": [
+        "Fuel reserve depth is the key buffer, but not a long-run solution if refinery runs stay constrained.",
+        "Fleet arrivals buy time, yet route disruption raises replacement cost and timing risk.",
+        "Servo outages are the consumer-facing signal that wholesale stress is leaking into retail availability."
+      ]
+    },
+    "markets": {
+      "title": "Fran Review \u2014 Markets",
+      "updatedAt": "2026-04-03T05:24:04Z",
+      "summary": "Markets are now showing a two-layer shock: broad CPI acceleration plus sharp item-level inflation in fuel, fresh food, and transport-linked services.",
+      "bullets": [
+        "CPI projections imply the inflation wave is not finished even if spot panic eases.",
+        "Item inflation since Jan 1 is strongest where fuel, freight, or perishability matter most.",
+        "Household stress should be read as the dollar translation of these market moves, not a separate contradiction."
+      ]
+    },
+    "households": {
+      "title": "Fran Review \u2014 Households",
+      "updatedAt": "2026-04-03T05:24:04Z",
+      "summary": "The household model shows that debt amplifies the inflation shock. Low-liquidity households fail first, but leveraged middle cohorts are structurally exposed once debt service dominates cash flow.",
+      "bullets": [
+        "Scenario A shows how inflation and debt compound into rapid savings depletion.",
+        "Scenario B isolates the pure cost-of-living shock and shows which groups remain vulnerable even without debt.",
+        "The key analytical question is not just who has low income, but who lacks enough buffer to absorb sustained item-price increases."
+      ]
+    }
   }
 }
