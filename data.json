@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-04T02:19:09Z",
+  "lastUpdated": "2026-04-04T02:41:14Z",
   "warAlert": {
-    "timestamp": "2026-04-04T02:19:09Z",
+    "timestamp": "2026-04-04T02:41:14Z",
     "fuelImpact": [
-      "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
-      "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
-      "2026-04-03 Iran hits Gulf refineries; Trump threatens Iranian bridges and power plants; Kuwait Mina al-Ahmadi still burning [KPBS] [HIGH]",
-      "2026-04-03 Brent hits .42/bbl on April 3 \u2014 new high of the war; WTI at .29 [Fortune] [HIGH]",
-      "2026-04-03 Kuwait Mina al-Ahmadi refinery drone strike: fires in multiple operating units, extent TBC [The National] [MEDIUM]",
-      "2026-04-03 Kuwait Mina al-Ahmadi refinery + desalination plant struck; 12 injured in UAE from intercepted missiles [Al Jazeera] [MEDIUM]"
+      "2026-04-04 US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations [Signals CV] [MEDIUM]",
+      "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]",
+      "2026-04-03 Government denies SAS deployment; Wong: Australia not taking offensive action against Iran, not deploying ground troops [SBS] [HIGH]",
+      "2026-04-03 Reports Australian SAS deployed to Middle East on standby; Albanese government refuses to confirm or deny [Canberra Times] [MEDIUM]",
+      "2026-04-03 UK deploys Rapid Sentry anti-drone air defence system to Kuwait \u2014 protecting British/Kuwaiti personnel and interests [Middle East Eye] [HIGH]",
+      "2026-04-03 CMA CGM European container ship transits Strait of Hormuz \u2014 second European vessel through this week [WorldCargo News] [HIGH]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -17,17 +17,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-04 Australians making DIY biodiesel from cooking oil as fuel crisis drags on \u2014 indicative of supply desperation at household level [9News] [MEDIUM]",
       "2026-04-04 Bowen interview: 'There's a race' \u2014 Australia faces supply challenge beyond mid-April as Asian partners restrict exports, US/Mexico shipments en route [The Saturday Paper] [HIGH]",
       "2026-04-03 Australia has just over one month of diesel and petrol supplies if imports disrupted \u2014 government confirms in Parliament [Beef Central] [HIGH]",
-      "2026-04-03 Australia scrambling to diversify supply; 55 ships en route or arriving by end of April; Bowen says race to beat supply crunch [HeadTopics] [MEDIUM]",
-      "2026-04-03 Australians cancel Easter travel as fuel crisis mounts \u2014 diesel above A/litre, petrol above A.50/litre [Reuters] [MEDIUM]"
+      "2026-04-03 Australia scrambling to diversify supply; 55 ships en route or arriving by end of April; Bowen says race to beat supply crunch [HeadTopics] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T02:19:09Z",
+    "updated": "2026-04-04T02:41:14Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,8 +1167,34 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T02:19:09Z",
+  "dbLastUpdated": "2026-04-04T02:41:14Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations",
+      "source": "Signals CV",
+      "sourceUrl": "https://signalscv.com/2026/04/us-deployments-fuel-speculation-of-ground-combat-against-iran/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T02:39:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Australians making DIY biodiesel from cooking oil as fuel crisis drags on \u2014 indicative of supply desperation at household level",
+      "source": "9News",
+      "sourceUrl": "https://www.9news.com.au/national/fuel-shortage-rising-petrol-prices-biodiesel-aussies-making-diesel-from-cooking-oil/3c203d33-f5c5-415c-8f9e-4edf636f64aa",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T02:39:40Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-04",
       "domain": "australia",
@@ -1181,6 +1207,110 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/3/iran-war-what-is-happening-on-day-35-of-us-israeli-attacks",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "Government denies SAS deployment; Wong: Australia not taking offensive action against Iran, not deploying ground troops",
+      "source": "SBS",
+      "sourceUrl": "https://www.sbs.com.au/news/podcast-episode/government-denies-claims-australian-sas-troops-sent-to-the-middle-east-evening-news-bulletin-3-april-2026/zbophc6xa",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "Reports Australian SAS deployed to Middle East on standby; Albanese government refuses to confirm or deny",
+      "source": "Canberra Times",
+      "sourceUrl": "https://www.canberratimes.com.au/story/9213617/reports-sas-troops-sent-to-middle-east-region-by-australia/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T02:39:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "UK deploys Rapid Sentry anti-drone air defence system to Kuwait \u2014 protecting British/Kuwaiti personnel and interests",
+      "source": "Middle East Eye",
+      "sourceUrl": "https://www.middleeasteye.net/news/uk-deploys-rapid-sentry-anti-drone-air-defence-system-kuwait",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "shipping",
+      "headline": "CMA CGM European container ship transits Strait of Hormuz \u2014 second European vessel through this week",
+      "source": "WorldCargo News",
+      "sourceUrl": "https://www.worldcargonews.com/news/2026/04/cma-cgm-container-ship-transits-strait-of-hormuz/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:40Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "shipping",
+      "headline": "Japanese/French/Omani vessels cross Hormuz \u2014 Iran selectively allowing some transit including first outbound LNG tanker",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/japanese-owned-lng-tanker-crosses-strait-hormuz-2026-04-03/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:40Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "India joins UK-convened 35+ nation summit on Hormuz; diplomatic efforts to reopen strait intensifying",
+      "source": "News Today",
+      "sourceUrl": "https://newstodaynet.com/2026/04/03/india-joins-uk-led-hormuz-talks-with-40-nations/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:40Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "Trump sets April 6 deadline: Iran must reopen Hormuz or US strikes Iranian energy sites; more US troops to enter region",
+      "source": "UK Parliament Library",
+      "sourceUrl": "https://commonslibrary.parliament.uk/research-briefings/cbp-10521/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:40Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
     },
     {
       "dtg": "2026-04-03",
@@ -1454,6 +1584,19 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "geopolitical",
+      "headline": "40+ nations launch coalition to secure Hormuz \u2014 post-war free passage agreement; Australia joined",
+      "source": "Euronews",
+      "sourceUrl": "https://www.euronews.com/my-europe/2026/04/02/over-40-countries-launch-coalition-to-secure-strait-of-hormuz-after-the-war",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T02:39:40Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
     },
     {
       "dtg": "2026-04-02",
@@ -1949,9 +2092,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-04T01:40:33Z",
-    "cron": "servo-tracker",
-    "summary": "No material change \u2014 FuelRadar still showing 787 nationally, last update 03/04 4:46pm AEST. No new data available."
+    "sentAt": "2026-04-04T02:41:08Z",
+    "cron": "war-fuel-food",
+    "summary": "Trump April 6 Hormuz deadline \u2014 11 new events: 40+ nation coalition, UK Rapid Sentry to Kuwait, AU SAS reports, US 10k troops considered, selective Hormuz transits, Brent .42 new war high, IDF 70+ strikes, DIY biodiesel in AU"
   },
   "reviewPanels": {
     "feed": {
@@ -2286,7 +2429,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T02:19:09Z",
+    "updatedAt": "2026-04-04T02:41:14Z",
     "scenarios": [
       {
         "id": "base",
