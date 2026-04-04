@@ -925,151 +925,131 @@ function renderDominoModel(dm){
   if(!el) return;
 
   var scenarios=dm.scenarios||[];
-  var probs=dm.probabilitySummary||{};
+  var scColors={base:'amber',escalation:'red',resolution:'green'};
+  var monthIdx={now:0,month1:1,month2:2,month3:3,month6:6};
+  var monthLabels={0:'NOW<br><span style="font-size:7px;">Apr 4</span>',1:'MONTH 1<br><span style="font-size:7px;">May</span>',2:'MONTH 2<br><span style="font-size:7px;">Jun</span>',3:'MONTH 3<br><span style="font-size:7px;">Jul</span>',6:'MONTH 6<br><span style="font-size:7px;">Oct</span>'};
+  var monthKeys=[0,1,2,3,6];
 
-  var html='<div style="font-size:9px;color:var(--text-muted);margin-bottom:8px;">6-month cascade: Iran War → Fuel Supply → Travel Restrictions → Work Productivity → Food Prices. Probabilities updated monthly.</div>';
+  var html='<div style="font-size:9px;color:var(--text-muted);margin-bottom:10px;">6-month cascade: Iran War → Fuel Supply → Travel Restrictions → Work Productivity → Food Prices. Click each scenario bar for detail.</div>';
 
   // ── Scenario probability bar ──
-  html+='<div style="margin-bottom:12px;">';
+  html+='<div style="margin-bottom:14px;">';
   html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">SCENARIO PROBABILITIES — NEXT 6 MONTHS</div>';
-  html+='<div style="display:flex;border-radius:6px;overflow:hidden;height:22px;">';
-  var scMap={base:'amber',escalation:'red',resolution:'green'};
-  var scLabel={base:'Base Case (Stalemate)',escalation:'Escalation (Ground War)',resolution:'Resolution (Ceasefire)'};
+  html+='<div style="display:flex;border-radius:6px;overflow:hidden;height:24px;cursor:pointer;">';
   scenarios.forEach(function(s){
-    var col=s.color==='amber'?'rgba(245,158,11,0.8)':s.color==='red'?'rgba(220,38,38,0.8)':'rgba(34,197,94,0.8)';
-    html+='<div style="width:'+s.probability+'%;background:'+col+';display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff;cursor:pointer;" title="'+s.name+': '+s.summary+'" onclick="alert(\''+s.name+': '+s.summary.replace(/'/g,"\\'")+'\')">'+s.probability+'%</div>';
+    var col=s.color==='#4a9eff'?'rgba(74,158,255,0.85)':s.color==='#ff3b3b'?'rgba(255,59,59,0.85)':'rgba(0,232,122,0.85)';
+    var rgb=s.id==='escalation'?'220,38,38':s.id==='base'?'245,158,11':'34,197,94';
+    html+='<div onclick="showScenario(\''+s.id+'\')" title="'+s.name+'\n'+s.description+'" style="width:'+s.probability+'%;background:'+col+';display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;padding:0 4px;box-sizing:border-box;">'+(s.probability>=12?s.probability+'%':'')+'</div>';
   });
   html+='</div>';
-  html+='<div style="display:flex;gap:10px;margin-top:4px;font-size:8px;">';
+  html+='<div style="display:flex;gap:10px;margin-top:5px;font-size:8px;flex-wrap:wrap;">';
   scenarios.forEach(function(s){
-    var col=s.color==='amber'?'var(--amber)':s.color==='red'?'var(--red)':'var(--green)';
-    html+='<span style="color:'+col+';font-weight:700;">●</span><span style="color:var(--text-muted);margin-right:8px;">'+s.name+'</span>';
+    var rgb=s.id==='escalation'?'220,38,38':s.id==='base'?'245,158,11':'34,197,94';
+    html+='<span style="color:rgb('+rgb+');font-weight:700;">●</span><span style="color:var(--text-muted);margin-right:8px;">'+s.name+' <span style="color:var(--text-dim);">'+s.probability+'%</span></span>';
   });
   html+='</div></div>';
 
-  // ── Decision point timeline ──
+  // ── Key decision points timeline ──
   var dpts=dm.keyDecisionPoints||[];
-  html+='<div style="margin-bottom:12px;">';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">KEY DECISION POINTS</div>';
-  html+='<div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;">';
-  dpts.forEach(function(dp){
-    var months=['NOW','MONTH 1','MONTH 2','MONTH 3','MONTH 6'];
-    var bg=dp.month===0?'rgba(220,38,38,0.15)':dp.month<=1?'rgba(245,158,11,0.12)':'rgba(34,197,94,0.08)';
-    var border=dp.month===0?'rgba(220,38,38,0.3)':dp.month<=1?'rgba(245,158,11,0.3)':'rgba(34,197,94,0.3)';
-    html+='<div style="flex:1;min-width:100px;padding:7px 8px;background:'+bg+';border:1px solid '+border+';border-radius:6px;">';
-    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);margin-bottom:2px;">'+months[dp.month]+'</div>';
-    html+='<div style="font-size:9px;font-weight:700;color:var(--text);margin-bottom:3px;">'+escHtml(dp.event)+'</div>';
-    html+='<div style="font-size:8px;color:var(--amber);">'+escHtml(dp.question)+'</div>';
-    html+='<div style="font-size:7px;color:var(--text-muted);margin-top:2px;">'+escHtml(dp.date)+'</div></div>';
+  if(dpts.length>0){
+    html+='<div style="margin-bottom:14px;">';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">KEY DECISION POINTS</div>';
+    html+='<div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;">';
+    dpts.forEach(function(dp){
+      var scenarioColor=dp.scenario==='Escalation'?'rgba(220,38,38,0.15)':dp.scenario==='Resolution'?'rgba(34,197,94,0.08)':'rgba(245,158,11,0.12)';
+      var scenarioBorder=dp.scenario==='Escalation'?'rgba(220,38,38,0.3)':dp.scenario==='Resolution'?'rgba(34,197,94,0.3)':'rgba(245,158,11,0.3)';
+      html+='<div style="flex:1;min-width:110px;padding:8px 9px;background:'+scenarioColor+';border:1px solid '+scenarioBorder+';border-radius:6px;">';
+      html+='<div style="font-size:8px;font-weight:700;color:var(--text-dim);margin-bottom:3px;">'+escHtml(dp.date)+'</div>';
+      html+='<div style="font-size:9px;font-weight:700;color:var(--text);margin-bottom:3px;">'+escHtml(dp.label)+'</div>';
+      html+='<div style="font-size:8px;color:var(--text-muted);line-height:1.3;">'+escHtml(dp.description||'')+'</div>';
+      html+='</div>';
+    });
+    html+='</div></div>';
+  }
+
+  // ── Monthly cascade matrix ──
+  html+='<div style="margin-bottom:14px;">';
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">CASCADE MATRIX — FUEL / TRAVEL / PRODUCTIVITY / FOOD</div>';
+  html+='<div style="overflow-x:auto;">';
+  html+='<div style="display:grid;grid-template-columns:70px repeat(5,1fr);gap:4px;min-width:500px;">';
+
+  // Header row
+  ['TIMELINE','NOW','MONTH 1','MONTH 2','MONTH 3','MONTH 6'].forEach(function(h,i){
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);padding:4px 6px;'+(i>0?'border-left:1px solid var(--border);':'')+'">'+h+'</div>';
   });
-  html+='</div></div>';
 
-  // ── Monthly cascade timeline ──
-  var monthLabels={0:'NOW<br><span style="font-size:7px;">Apr 4</span>',1:'MONTH 1<br><span style="font-size:7px;">May</span>',2:'MONTH 2<br><span style="font-size:7px;">Jun</span>',3:'MONTH 3<br><span style="font-size:7px;">Jul</span>',6:'MONTH 6<br><span style="font-size:7px;">Oct</span>'};
-  html+='<div style="margin-bottom:12px;">';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">CASCADE TIMELINE</div>';
-  html+='<div style="display:grid;grid-template-columns:70px 1fr 1fr 1fr;gap:6px;align-items:start;">';
-
-  // Headers
-  var hdrs=['Timeline','FUEL','TRAVEL','PRODUCTIVITY','FOOD'];
-  hdrs.forEach(function(h,i){
-    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);padding:4px 0;'+(i>0?'border-left:1px solid var(--border);padding-left:6px;':'')+'">'+h+'</div>';
+  // Cascade rows for each domain
+  ['fuel','travel','productivity','food'].forEach(function(domain){
+    var domainLabel=domain==='fuel'?'⛽ FUEL':domain==='travel'?'✈️ TRAVEL':domain==='productivity'?'🏭 PRODUCT.':'🌾 FOOD';
+    var domainColor=domain==='fuel'?'var(--amber)':domain==='travel'?'#4a9eff':domain==='productivity'?'#c084fc':'var(--green)';
+    html+='<div style="font-size:8px;font-weight:700;color:'+domainColor+';padding:7px 6px;border-top:1px solid var(--border);display:flex;align-items:center;">'+domainLabel+'</div>';
+    monthKeys.forEach(function(m){
+      var vals=scenarios.map(function(s){
+        var c=s.cascade||{};
+        var mo=c['month'+m]||c[Object.keys(c)[m]]||'';
+        if(typeof mo==='object') return mo[domain]||'?';
+        return '?';
+      });
+      var val=vals[0]||'?';
+      var col=val.indexOf&&val.indexOf('Ration')>=0?'var(--red)':val.indexOf&&(val.indexOf('Essential')>=0||val.indexOf('Severely')>=0||val.indexOf('Rationed')>=0||val.indexOf('Structural')>=0)?'var(--red)':val.indexOf&&(val.indexOf('Plateau')>=0||val.indexOf('Elevated')>=0||val.indexOf('limited')>=0||val.indexOf('Restricted')>=0||val.indexOf('cut')>=0)?'var(--amber)':val.indexOf&&(val.indexOf('Normal')>=0||val.indexOf('Easing')>=0||val.indexOf('Stable')>=0||val.indexOf('recovery')>=0||val.indexOf('Recover')>=0)?'var(--green)':'var(--text-muted)';
+      html+='<div style="font-size:8px;font-weight:600;color:'+col+';padding:7px 6px;border-top:1px solid var(--border);line-height:1.3;">'+escHtml(String(val))+'</div>';
+    });
   });
+  html+='</div></div></div>';
 
-  // Rows by month
-  [0,1,2,3,6].forEach(function(m){
-    var outcomes={};
+  // ── GDP impact + food price side by side ──
+  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">';
+  ['GDP IMPACT (PEAK % CHANGE)','FOOD PRICE INFLATION (ABOVE PRE-WAR)'].forEach(function(sectionTitle,si){
+    html+='<div style="padding:10px;background:rgba(0,0,0,0.12);border:1px solid var(--border);border-radius:6px;">';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">'+sectionTitle+'</div>';
     scenarios.forEach(function(s){
-      var mo=s.monthlyOutcomes[m];
-      if(mo) outcomes[s.id]=mo;
+      var val=si===0?s.peakGdpImpact:s.foodPriceRise;
+      var unit=si===0?'%':'%';
+      var sign=val>=0?'+':'';
+      var rgb=s.id==='escalation'?'220,38,38':s.id==='base'?'245,158,11':'34,197,94';
+      var barPct=si===0?Math.min(Math.abs(val)*10,100):Math.min(val*2,100);
+      html+='<div style="margin-bottom:6px;">';
+      html+='<div style="font-size:8px;color:rgb('+rgb+');font-weight:700;margin-bottom:2px;">'+escHtml(s.name)+'</div>';
+      html+='<div style="display:flex;align-items:center;gap:6px;">';
+      html+='<div style="flex:1;height:12px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;">';
+      html+='<div style="width:'+barPct+'%;height:100%;background:rgba('+rgb+',0.7);border-radius:3px;"></div>';
+      html+='</div>';
+      html+='<div style="font-size:9px;color:var(--text);width:50px;text-align:right;font-weight:700;">'+sign+val+unit+'</div>';
+      html+='</div>';
+      if(si===0){
+        html+='<div style="font-size:7px;color:var(--text-dim);margin-top:1px;">Recovery: '+escHtml(s.recovery||'TBD')+'</div>';
+      } else {
+        html+='<div style="font-size:7px;color:var(--text-dim);margin-top:1px;">'+(s.foodPermanent?'Permanent':'Temporary')+' · '+escHtml(s.duration||'')+'</div>';
+      }
+      html+='</div>';
     });
-
-    var rowBg=m===0?'rgba(220,38,38,0.06)':'rgba(255,255,255,0.02)';
-    html+='<div style="padding:7px 0;font-size:9px;font-weight:700;color:var(--text);border-top:1px solid var(--border);">'+monthLabels[m]+'</div>';
-
-    var fuelSt=Object.values(outcomes).map(function(o){return o.fuelStatus||'?';})[0]||'?';
-    var travSt=Object.values(outcomes).map(function(o){return o.travelStatus||'?';})[0]||'?';
-    var prodSt=Object.values(outcomes).map(function(o){return o.productivityStatus||'?';})[0]||'?';
-    var foodSt=Object.values(outcomes).map(function(o){return o.foodStatus||'?';})[0]||'?';
-
-    var fuelCol=fuelSt==='NORMAL'||fuelSt==='NORMALISING'?'var(--green)':fuelSt==='EXPENSIVE'||fuelSt==='ELEVATED'?'var(--amber)':fuelSt==='SHORTAGE'||fuelSt==='TIGHT'||fuelSt==='EASING'?'rgba(245,158,11,0.9)':'var(--red)';
-    var travCol=travSt==='NORMAL'||travSt==='NORMALISED'?'var(--green)':travSt==='DISRUPTED'?'var(--amber)':travSt==='LIMITED'||travSt==='RESTRICTED'?'rgba(245,158,11,0.9)':travSt==='ESSENTIAL ONLY'?'var(--red)':'var(--red)';
-    var prodCol=prodSt.indexOf('LOW')>=0||prodSt.indexOf('SEVERE')>=0||prodSt.indexOf('CRISIS')>=0?'var(--red)':prodSt.indexOf('MODERATE')>=0?'var(--amber)':'var(--green)';
-    var foodCol=foodSt.indexOf('SPIKE')>=0||foodSt.indexOf('SURGING')>=0?'var(--red)':foodSt.indexOf('HIGH')>=0||foodSt.indexOf('ELEVATED')>=0?'var(--amber)':'var(--green)';
-
-    var cells=[fuelSt,travSt,prodSt,foodSt];
-    var cols=[fuelCol,travCol,prodCol,foodCol];
-    cells.forEach(function(cell,i){
-      html+='<div style="padding:7px 0 7px 6px;border-top:1px solid var(--border);font-size:9px;font-weight:700;color:'+cols[i]+';">'+escHtml(cell)+'</div>';
-    });
+    html+='</div>';
   });
-  html+='</div></div>';
-
-  // ── GDP and food price impact ──
-  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">';
-
-  var gdp=dm.gdpImpactSummary||{};
-  html+='<div>';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">GDP IMPACT (% CHANGE FROM BASELINE)</div>';
-  ['base','escalation','resolution'].forEach(function(id){
-    var s=scenarios.find(function(x){return x.id===id;});
-    if(!s) return;
-    var g=gdp[id]||{};
-    var col=s.color==='amber'?'var(--amber)':s.color==='red'?'var(--red)':'var(--green)';
-    var val=g.peak||0;
-    var sign=val>=0?'+':'';
-    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">';
-    html+='<div style="font-size:9px;color:'+col+';width:70px;font-weight:700;">'+s.name+'</div>';
-    html+='<div style="flex:1;height:14px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;">';
-    var barW=Math.min(Math.abs(val)*10,100);
-    var barCol=val<0?'rgba(220,38,38,0.7)':'rgba(34,197,94,0.7)';
-    html+='<div style="width:'+barW+'%;height:100%;background:'+barCol+';"></div>';
-    html+='</div>';
-    html+='<div style="font-size:9px;color:var(--text);width:55px;text-align:right;">'+sign+val.toFixed(1)+'%</div>';
-    html+='</div>';
-    html+='<div style="font-size:8px;color:var(--text-muted);padding-left:78px;margin-bottom:6px;">Recovery: '+escHtml(g.recovery||'TBD')+'</div>';
-  });
-  html+='</div>';
-
-  var fp=dm.foodPriceImpact||{};
-  html+='<div>';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">FOOD PRICE INFLATION (% ABOVE PRE-WAR)</div>';
-  ['base','escalation','resolution'].forEach(function(id){
-    var s=scenarios.find(function(x){return x.id===id;});
-    if(!s) return;
-    var f=fp[id]||{};
-    var col=s.color==='amber'?'var(--amber)':s.color==='red'?'var(--red)':'var(--green)';
-    var val=f.peakPct||0;
-    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">';
-    html+='<div style="font-size:9px;color:'+col+';width:70px;font-weight:700;">'+s.name+'</div>';
-    html+='<div style="flex:1;height:14px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;">';
-    html+='<div style="width:'+Math.min(val*2,100)+'%;height:100%;background:rgba(245,158,11,0.6);border-radius:3px;"></div>';
-    html+='</div>';
-    html+='<div style="font-size:9px;color:var(--text);width:55px;text-align:right;">+'+val+'%</div>';
-    html+='</div>';
-    html+='<div style="font-size:8px;color:var(--text-muted);padding-left:78px;margin-bottom:6px;">Month '+escHtml(f.timing||'TBD')+' · '+(f.permanent?'Permanent':'Temporary')+'</div>';
-  });
-  html+='</div>';
   html+='</div>';
 
   // ── Essential travel thresholds ──
-  var th=dm.essentialTravelThresholds||{};
-  html+='<div style="margin-top:10px;padding:8px 10px;background:rgba(0,0,0,0.15);border:1px solid var(--border);border-radius:6px;">';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">ESSENTIAL TRAVEL THRESHOLDS — AUSTRALIA FUEL RESERVE LEVELS</div>';
-  html+='<div style="display:flex;gap:12px;font-size:9px;">';
-  var thresh=[
-    {days:th.rationingTriggersFuelLevel||10,label:'Rationing considered',col:'rgba(245,158,11,0.8)'},
-    {days:th.essentialOnlyTriggersFuelLevel||7,label:'Essential travel only',col:'rgba(220,38,38,0.7)'},
-    {days:th.completeShutdownFuelLevel||5,label:'Complete shutdown',col:'rgba(220,38,38,0.9)'},
+  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.15);border:1px solid var(--border);border-radius:6px;">';
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">ESSENTIAL TRAVEL THRESHOLDS — AUSTRALIA DIESEL RESERVES</div>';
+  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">';
+  var thresholds=[
+    {days:'10',label:'Non-essential\ntravel restricted',col:'rgba(245,158,11,0.85)',rgb:'245,158,11'},
+    {days:'7',label:'Private vehicles\nlimited 50km/day',col:'rgba(220,38,38,0.75)',rgb:'220,38,38'},
+    {days:'5',label:'Essential\nmovement only',col:'rgba(220,38,38,0.9)',rgb:'220,38,38'},
   ];
-  thresh.forEach(function(t){
-    html+='<div style="flex:1;padding:5px 8px;background:rgba(0,0,0,0.2);border-radius:4px;text-align:center;">';
-    html+='<div style="font-size:16px;font-weight:700;color:'+t.col+';">'+t.days+'</div>';
-    html+='<div style="font-size:8px;color:var(--text-muted);">days diesel</div>';
-    html+='<div style="font-size:9px;color:var(--text);font-weight:700;margin-top:2px;">'+escHtml(t.label)+'</div>';
+  thresholds.forEach(function(t){
+    html+='<div style="padding:8px;background:rgba(0,0,0,0.2);border-radius:5px;text-align:center;border:1px solid rgba(255,255,255,0.05);">';
+    html+='<div style="font-size:22px;font-weight:700;color:rgb('+t.rgb+');line-height:1;">'+t.days+'</div>';
+    html+='<div style="font-size:7px;color:var(--text-dim);margin:2px 0 3px;">days diesel</div>';
+    html+='<div style="font-size:8px;color:var(--text);font-weight:700;line-height:1.3;white-space:pre-line;">'+escHtml(t.label)+'</div>';
     html+='</div>';
   });
   html+='</div></div>';
+
+  // ── Scenario detail modal trigger ──
+  html+='<div id="domino-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target.id==\'domino-modal\')document.getElementById(\'domino-modal\').style.display=\'none\'">';
+  html+='<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:12px;max-width:520px;width:100%;padding:20px;max-height:80vh;overflow-y:auto;" id="domino-modal-content"></div>';
+  html+='</div>';
+  html+='<script>function showScenario(id){var s=(window._dominoScenarios||[]).find(function(x){return x.id===id;});if(!s)return;var m=document.getElementById(\'domino-modal\'),c=document.getElementById(\'domino-modal-content\');var rgb=s.id===\'escalation\'?\'220,38,38\':s.id===\'base\'?\'245,158,11\':\'34,197,94\';c.innerHTML=\'<div style="font-size:11px;font-weight:700;color:rgb(\'+rgb+\');margin-bottom:2px;">\'+s.name+\' (\'+s.probability+\'%)\'+ \'</div><div style="font-size:8px;color:var(--text-muted);margin-bottom:10px;">\'+s.description+\'</div><div style="font-size:8px;color:var(--text-muted);line-height:1.6;">\'+(s.keyTriggers||[]).map(function(t){return\'• \'+t;}).join(\'<br>\')+\'</div>\';m.style.display=\'flex\';}window._dominoScenarios=arguments[0].scenarios;</script>';
 
   el.innerHTML=html;
 }

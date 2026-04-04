@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T02:09:22Z",
+  "lastUpdated": "2026-04-04T02:13:36Z",
   "warAlert": {
-    "timestamp": "2026-04-04T02:09:22Z",
+    "timestamp": "2026-04-04T02:13:36Z",
     "fuelImpact": [
       "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
       "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T02:09:22Z",
+    "updated": "2026-04-04T02:13:36Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T02:09:22Z",
+  "dbLastUpdated": "2026-04-04T02:13:36Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2286,7 +2286,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T02:09:22Z",
+    "updatedAt": "2026-04-04T02:13:36Z",
     "scenarios": [
       {
         "id": "base",
@@ -2310,7 +2310,7 @@
           "dieselReserveDay5": "Essential movement only"
         },
         "cascade": {
-          "now": {
+          "month0": {
             "fuel": "Tight \u2014 price spike",
             "travel": "Normal",
             "productivity": "Normal",
@@ -2364,7 +2364,7 @@
           "dieselReserveDay5": "Rationing enforced"
         },
         "cascade": {
-          "now": {
+          "month0": {
             "fuel": "Spike \u2014 diesel +30%",
             "travel": "Airfreight disruption",
             "productivity": "uncertainty shock",
@@ -2418,7 +2418,7 @@
           "dieselReserveDay5": "Voluntary conservation"
         },
         "cascade": {
-          "now": {
+          "month0": {
             "fuel": "Peak uncertainty",
             "travel": "Air bookings cancel",
             "productivity": "Hold",
@@ -2426,7 +2426,7 @@
           },
           "month1": {
             "fuel": "Easing \u2014 Hormuz open",
-            "travel": " bookings recover",
+            "travel": "Bookings recover",
             "productivity": "Normal",
             "food": "+5%"
           },
