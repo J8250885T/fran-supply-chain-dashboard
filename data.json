@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T06:09:01Z",
+  "lastUpdated": "2026-04-04T07:37:24Z",
   "warAlert": {
-    "timestamp": "2026-04-04T06:09:01Z",
+    "timestamp": "2026-04-04T07:37:24Z",
     "fuelImpact": [
       "2026-04-04 US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations [Signals CV] [MEDIUM]",
       "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]",
@@ -17,17 +17,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
-      "2026-04-04 Australians making DIY biodiesel from cooking oil as fuel crisis drags on \u2014 indicative of supply desperation at household level [9News] [MEDIUM]",
-      "2026-04-04 Bowen interview: 'There's a race' \u2014 Australia faces supply challenge beyond mid-April as Asian partners restrict exports, US/Mexico shipments en route [The Saturday Paper] [HIGH]",
-      "2026-04-03 Australia has just over one month of diesel and petrol supplies if imports disrupted \u2014 government confirms in Parliament [Beef Central] [HIGH]",
-      "2026-04-03 Australia scrambling to diversify supply; 55 ships en route or arriving by end of April; Bowen says race to beat supply crunch [HeadTopics] [MEDIUM]"
+      "2026-04-04 The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate [The Age] [HIGH]",
+      "2026-04-04 Guardian: Bowen says fewer stations running dry \u2014 3.7bn litres booked for April and into May; industry confident in supply [The Guardian] [HIGH]",
+      "2026-04-04 ABC: Reserve stocks steady \u2014 39 days petrol, 29 days diesel, 30 days jet fuel; STI Steadfast jet fuel docking Victoria in coming days [ABC News] [HIGH]",
+      "2026-04-04 Australians making DIY biodiesel from cooking oil as fuel crisis drags on \u2014 indicative of supply desperation at household level [9News] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T06:09:01Z",
+    "updated": "2026-04-04T07:37:24Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -352,7 +352,7 @@
             "goods": 620,
             "other": 440
           },
-          "notes": "Median income $5,500/mo after tax. Debt: ~$488k. Liquid savings $6,500 \u2014 5yr squeeze: 4.35% rates since May 2022, 7.8% peak CPI, mortgage repayments up 10% of income (RBA 2025). Westpac median 35-44 = $811 cash; average skewed by offset accounts. Crisis surcharge +$700/mo. Depletes W7.5 \u2014 exhausted before Iran war begins.",
+          "notes": "Median income $5,500/mo after tax. Debt: ~$488k. Liquid savings $6,500 \u2014 5yr squeeze: 4.35% rates since May 2022, 7.8% peak inflation, mortgage repayments up 10% of income (RBA 2025). Westpac median 35-44 = $811 cash; average skewed by offset accounts. Crisis surcharge +$700/mo. Depletes W7.5 \u2014 exhausted before Iran war begins.",
           "crisisBreakdown": {
             "fuel": 300,
             "food": 165,
@@ -463,7 +463,7 @@
         "emergency9": 2200,
         "crisis12": 5500
       },
-      "note": "Excise cut expires Jun 30. Additional fiscal costs accelerate as CPI tiers rise. At Crisis (12%) tier: government faces $5.5bn/month additional intervention cost."
+      "note": "Excise cut expires Jun 30. Additional fiscal costs accelerate as price-shock tiers rise. At Crisis (12%) price-shock tier: government faces $5.5bn/month additional intervention cost."
     }
   },
   "inflation": {
@@ -640,7 +640,7 @@
       }
     ],
     "rationingTrigger": 10,
-    "note": "4-tier CPI Alert Framework. Regional CPI (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National Metro (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026.",
+    "note": "4-tier Price Shock Alert Framework. Regional price increase (9.8%) already in Emergency tier. NT Regional (14.2%) already in Crisis. National metro price increase (7.2%) in Warning. Peak expected May 2026. Food/fertiliser lag effect means worst still ahead \u2014 peak June-July 2026.",
     "weeklyItems": [
       {
         "label": "Diesel",
@@ -1167,8 +1167,47 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T06:09:01Z",
+  "dbLastUpdated": "2026-04-04T07:37:24Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate",
+      "source": "The Age",
+      "sourceUrl": "https://www.theage.com.au/world/middle-east/us-iran-war-live-updates-us-fighter-jet-shot-down-by-iran-one-crew-member-rescued-iranian-speaker-mocks-search-trump-wants-1-5-trillion-defence-budget-20260403-p5zl9i.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T07:36:53Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Guardian: Bowen says fewer stations running dry \u2014 3.7bn litres booked for April and into May; industry confident in supply",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/04/fewer-service-stations-running-out-of-petrol-and-diesel-as-australias-fuel-supplies-remain-strong-energy-minister-says",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T07:36:26Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "ABC: Reserve stocks steady \u2014 39 days petrol, 29 days diesel, 30 days jet fuel; STI Steadfast jet fuel docking Victoria in coming days",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-04/fuel-shortage-fears-keep-demand-high-in-australia-despite-supply/106531446",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T07:36:26Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-04",
       "domain": "geopolitical",
@@ -2092,9 +2131,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-04T02:41:08Z",
-    "cron": "war-fuel-food",
-    "summary": "Trump April 6 Hormuz deadline \u2014 11 new events: 40+ nation coalition, UK Rapid Sentry to Kuwait, AU SAS reports, US 10k troops considered, selective Hormuz transits, Brent .42 new war high, IDF 70+ strikes, DIY biodiesel in AU"
+    "sentAt": "2026-04-04T07:37:19Z",
+    "cron": "shipment-validator",
+    "summary": "3 new events \u2014 STI Steadfast arrival + reserve stocks steady (39d petrol/29d diesel/30d jet) + Bowen throughput balanced"
   },
   "reviewPanels": {
     "feed": {
@@ -2124,14 +2163,14 @@
     "markets": {
       "title": "Fran Review \u2014 Markets",
       "updatedAt": "2026-04-03T05:24:04Z",
-      "summary": "Markets are now showing a two-layer shock: broad CPI acceleration plus sharp item-level inflation in fuel, fresh food, and transport-linked services.",
+      "summary": "Markets are now showing a two-layer shock: broad price increase acceleration plus sharp item-level inflation in fuel, fresh food, and transport-linked services.",
       "bullets": [
-        "CPI projections imply the inflation wave is not finished even if spot panic eases.",
+        "price increase projections imply the inflation wave is not finished even if spot panic eases.",
         "Item inflation since Jan 1 is strongest where fuel, freight, or perishability matter most.",
         "Household stress should be read as the dollar translation of these market moves, not a separate contradiction."
       ],
-      "mostLikelyCourse": "CPI continues climbing into May as fuel, freight, and perishables keep feeding through to retail prices even if the first panic spike eases.",
-      "mostDangerousCourse": "Inflation broadens from fuel and perishables into general goods and services, pushing regional CPI into crisis territory and locking in a longer second-round surge."
+      "mostLikelyCourse": "price increase continues climbing into May as fuel, freight, and perishables keep feeding through to retail prices even if the first panic spike eases.",
+      "mostDangerousCourse": "Inflation broadens from fuel and perishables into general goods and services, pushing regional price increase into crisis territory and locking in a longer second-round surge."
     },
     "households": {
       "title": "Fran Review \u2014 Households",
@@ -2155,6 +2194,18 @@
         "Domino scenarios are useful because they connect tactical events to civilian economic outcomes.",
         "The biggest swing factor is whether shipping disruption remains partial or becomes a sustained closure problem.",
         "Watch trigger events closely: ground-force entry, refinery attrition, and transport rationing signals."
+      ]
+    },
+    "troops": {
+      "title": "Fran Review \u2014 Troop Deployments",
+      "updatedAt": "2026-04-04T06:10:32Z",
+      "summary": "The troop panel tracks whether the conflict is moving from coercive signalling into a posture consistent with sustained offensive operations or direct intervention.",
+      "mostLikelyCourse": "Force movements remain in a high-readiness deterrence posture, increasing pressure and signalling risk without immediately crossing into full ground-war deployment.",
+      "mostDangerousCourse": "A rapid transition from pre-deployment to committed operational staging shortens warning time and strongly increases the probability of a wider regional war.",
+      "bullets": [
+        "Troop posture matters because it can convert market stress into a full escalation pathway very quickly.",
+        "The key issue is not only force size, but whether logistics, basing, and air/sea cover indicate intent to sustain operations.",
+        "Watch for changes in phase, transport tempo, and forward positioning around Gulf and regional bases."
       ]
     }
   },
@@ -2441,15 +2492,45 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T06:09:01Z",
+    "updatedAt": "2026-04-04T07:37:24Z",
+    "formula": {
+      "inputs": {
+        "T": 0.1,
+        "H": 1.0,
+        "R": 0.46,
+        "S": 0.79,
+        "M": 0.65,
+        "D": 0.25,
+        "avgRefineryCapacity": 66.2,
+        "servoOutages": 787,
+        "dieselDays": 25,
+        "regionalPriceIncrease": 9.8,
+        "troopPhase": "PRE-DEPLOYMENT",
+        "hormuzStatus": "closed"
+      },
+      "equations": [
+        "Escalation raw = 0.25*T + 0.30*H + 0.15*R + 0.15*S + 0.15*M",
+        "Base raw = 0.40 + 0.15*H + 0.10*R + 0.10*S + 0.05*M - 0.08*T",
+        "Resolution raw = 0.35*(1-H) + 0.25*(1-T) + 0.15*(1-R) + 0.15*(1-S) + 0.10*(1-M)",
+        "Probability_i = raw_i / \u03a3(raw) \u00d7 100",
+        "Scenario severity \u03bb: resolution = 0, base = 1/3, escalation = 1",
+        "Peak GDP impact % = -(1 + 3\u03bb + \u03bb\u00b2)",
+        "Food price rise % = 10 + 30\u03bb"
+      ],
+      "rawScores": {
+        "base": 0.699,
+        "escalation": 0.61,
+        "resolution": 0.373
+      }
+    },
     "scenarios": [
       {
         "id": "base",
         "name": "Base Case \u2014 Stalemate",
-        "probability": 45,
+        "probability": 42,
         "color": "#4a9eff",
         "description": "Neither side achieves decisive advantage. US/Iran settle into attritional standoff without ground invasion. Impact remains channeled through fuel prices and shipping disruption only.",
-        "peakGdpImpact": -2.0,
+        "peakGdpImpact": -2.1,
         "foodPriceRise": 20,
         "foodPermanent": false,
         "duration": "Transient",
@@ -2500,7 +2581,7 @@
       {
         "id": "escalation",
         "name": "Escalation \u2014 Ground War",
-        "probability": 30,
+        "probability": 36,
         "color": "#ff3b3b",
         "description": "US deploys ground forces. Iran closes Hormuz. Full fuel shock, travel restrictions cascade into productivity and food. Food prices peak at +40% with permanent structural change.",
         "peakGdpImpact": -5.0,
@@ -2554,7 +2635,7 @@
       {
         "id": "resolution",
         "name": "Resolution \u2014 Ceasefire",
-        "probability": 25,
+        "probability": 22,
         "color": "#00e87a",
         "description": "Trump-Khamenei back-channel holds. Temporary ceasefire agreed. Fuel prices ease within weeks. Food impact stays below +10%.",
         "peakGdpImpact": -1.0,

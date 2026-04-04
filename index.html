@@ -182,7 +182,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .ev-sent{color:var(--green);font-size:9px}
 .ev-new{color:var(--amber);font-size:9px}
 
-/* ══ CPI ══ */
+/* ══ PRICE SHOCK ══ */
 .cpi-curr{display:flex;gap:16px;margin-bottom:6px}
 .cpi-stat{flex:1}
 .cpi-stat-lbl{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em}
@@ -347,7 +347,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <section class="section" id="sec-supply">
 
     <div class="panel" id="panel-review-supply">
-      <div class="p-hdr"><span class="p-title">🧠 Research Review</span><span class="p-dtg" id="review-dtg-supply">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-supply">——</span></div>
       <div id="review-content-supply"></div>
     </div>
 
@@ -382,6 +382,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 
   <!-- ── TROOPS ── -->
   <section class="section" id="sec-troops">
+    <div class="panel" id="panel-review-troops">
+      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-troops">——</span></div>
+      <div id="review-content-troops"></div>
+    </div>
     <div class="panel">
       <div class="p-hdr">
         <span class="p-title">🎯 Invasion Watch — Troop Deployments</span>
@@ -394,8 +398,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <!-- ── DOMINO ── -->
   <section class="section" id="sec-domino">
     <div class="panel" id="panel-review-domino">
-      <div class="p-hdr"><span class="p-title">🧠 Research Review</span><span class="p-dtg" id="review-dtg-domino">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-domino">——</span></div>
       <div id="review-content-domino"></div>
+    </div>
+    <div class="panel" id="panel-domino-howto">
+      <div class="p-hdr"><span class="p-title">ℹ️ How to Use</span></div>
+      <div style="font-size:10px;line-height:1.6;color:var(--text-dim)">
+        <div style="margin-bottom:6px"><strong style="color:var(--text)">1.</strong> Start with the <strong>scenario probability bar</strong> to understand the current balance of outcomes.</div>
+        <div style="margin-bottom:6px"><strong style="color:var(--text)">2.</strong> Read the <strong>cascade matrix</strong> left to right: fuel → travel → productivity → food across the next 6 months.</div>
+        <div style="margin-bottom:6px"><strong style="color:var(--text)">3.</strong> <strong>Click the scenario probability bars</strong> to change the active scenario, then use the <strong>GDP and food inflation panels</strong> to compare economic severity between outcomes.</div>
+        <div style="margin-bottom:0"><strong style="color:var(--text)">4.</strong> Treat this tab as a <strong>scenario framework</strong>: it shows what likely follows if escalation deepens, holds, or eases.</div>
+      </div>
     </div>
     <div class="panel">
       <div class="p-hdr">
@@ -408,7 +421,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <!-- ── MARKETS ── -->
   <section class="section" id="sec-markets">
     <div class="panel" id="panel-review-markets">
-      <div class="p-hdr"><span class="p-title">🧠 Research Review</span><span class="p-dtg" id="review-dtg-markets">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-markets">——</span></div>
       <div id="review-content-markets"></div>
     </div>
     <div class="panel-row panel-row-2">
@@ -427,7 +440,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <section class="section" id="sec-households">
 
     <div class="panel" id="panel-review-households">
-      <div class="p-hdr"><span class="p-title">🧠 Research Review</span><span class="p-dtg" id="review-dtg-households">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-households">——</span></div>
       <div id="review-content-households"></div>
     </div>
 
@@ -442,7 +455,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <section class="section active" id="sec-feed">
 
     <div class="panel" id="panel-review-feed">
-      <div class="p-hdr"><span class="p-title">🧠 Research Review</span><span class="p-dtg" id="review-dtg-feed">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-feed">——</span></div>
       <div id="review-content-feed"></div>
     </div>
 
@@ -464,6 +477,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 (function(){
 var REFRESH_MS = 30000;
 var _lastInf = null;
+var _lastDomino = null;
+var _dominoSelected = 'base';
 
 function api(p){ return fetch(p+'?_='+Date.now()).then(function(r){return r.json();}); }
 
@@ -637,7 +652,7 @@ function renderTrajectory(traj){
 
 function renderReviewPanels(data){
   var rp=data.reviewPanels||{};
-  ['feed','supply','domino','markets','households'].forEach(function(key){
+  ['feed','supply','troops','domino','markets','households'].forEach(function(key){
     var box=rp[key]||{};
     var el=document.getElementById('review-content-'+key);
     var dtg=document.getElementById('review-dtg-'+key);
@@ -930,47 +945,99 @@ function renderTroopDeployments(td){
   }
 }
 // ── DOMINO CASCADE MODEL ──
+function dominoRGB(id){
+  return id==='escalation'?'220,38,38':id==='base'?'245,158,11':'34,197,94';
+}
+function openDominoScenario(id){
+  var s=((window._dominoScenarios)||[]).find(function(x){return x.id===id;});
+  if(!s) return;
+  var m=document.getElementById('domino-modal'), c=document.getElementById('domino-modal-content');
+  if(!m||!c) return;
+  var rgb=dominoRGB(s.id);
+  c.innerHTML='<div style="font-size:11px;font-weight:700;color:rgb('+rgb+');margin-bottom:2px;">'+escHtml(s.name)+' ('+s.probability+'%)</div>'+
+    '<div style="font-size:8px;color:var(--text-muted);margin-bottom:10px;">'+escHtml(s.description||'')+'</div>'+
+    '<div style="font-size:8px;color:var(--text-muted);line-height:1.6;">'+(s.keyTriggers||[]).map(function(t){return '• '+escHtml(t);}).join('<br>')+'</div>';
+  m.style.display='flex';
+}
+function selectDominoScenario(id){
+  _dominoSelected=id;
+  if(_lastDomino) renderDominoModel(_lastDomino);
+}
 function renderDominoModel(dm){
   if(!dm) return;
+  _lastDomino=dm;
   var el=document.getElementById('domino-content');
   if(!el) return;
 
   var scenarios=dm.scenarios||[];
-  var scColors={base:'amber',escalation:'red',resolution:'green'};
-  var monthIdx={now:0,month1:1,month2:2,month3:3,month6:6};
-  var monthLabels={0:'NOW<br><span style="font-size:7px;">Apr 4</span>',1:'MONTH 1<br><span style="font-size:7px;">May</span>',2:'MONTH 2<br><span style="font-size:7px;">Jun</span>',3:'MONTH 3<br><span style="font-size:7px;">Jul</span>',6:'MONTH 6<br><span style="font-size:7px;">Oct</span>'};
+  window._dominoScenarios=scenarios;
+  if(!scenarios.length){el.innerHTML='';return;}
   var monthKeys=[0,1,2,3,6];
+  var selected=scenarios.find(function(s){return s.id===_dominoSelected;})||scenarios[0];
+  _dominoSelected=selected.id;
+  var formula=dm.formula||{}, fi=formula.inputs||{}, raw=formula.rawScores||{};
 
-  var html='<div style="font-size:9px;color:var(--text-muted);margin-bottom:10px;">6-month cascade: Iran War → Fuel Supply → Travel Restrictions → Work Productivity → Food Prices. Click each scenario bar for detail.</div>';
+  var html='<div style="font-size:9px;color:var(--text-muted);margin-bottom:10px;">6-month cascade: Iran War → Fuel Supply → Travel Restrictions → Work Productivity → Food Prices. <strong>Click the scenario probability bars</strong> to switch the active scenario, then read the matrix and impact panels across the timeline.</div>';
+  if(formula.equations&&formula.equations.length){
+    html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.14);border:1px solid var(--border);border-radius:6px;margin-bottom:14px;">';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:6px;">FORMULA — HOW THE % VALUES ARE DERIVED</div>';
+    html+='<div style="font-size:8px;color:var(--text-dim);line-height:1.6;margin-bottom:8px">';
+    html+='Inputs now: T='+escHtml(fi.T)+' · H='+escHtml(fi.H)+' · R='+escHtml(fi.R)+' · S='+escHtml(fi.S)+' · M='+escHtml(fi.M)+' · D='+escHtml(fi.D)+'<br>';
+    html+='(Troop phase='+escHtml(fi.troopPhase||'')+' · Hormuz='+escHtml(fi.hormuzStatus||'')+' · Avg refinery='+escHtml(fi.avgRefineryCapacity)+'% · Servo outages='+escHtml(fi.servoOutages)+' · Diesel='+escHtml(fi.dieselDays)+'d · Regional price increase='+escHtml(fi.regionalPriceIncrease||fi.regionalCPI)+'%)';
+    html+='</div>';
+    html+='<div style="display:flex;flex-direction:column;gap:4px;font-size:8px;color:var(--text-muted);margin-bottom:8px">';
+    formula.equations.forEach(function(eq){ html+='<div>• '+escHtml(eq)+'</div>'; });
+    html+='</div>';
+    html+='<div style="font-size:8px;color:var(--text-dim);line-height:1.6">';
+    html+='Raw scores → Base '+escHtml(raw.base)+' · Escalation '+escHtml(raw.escalation)+' · Resolution '+escHtml(raw.resolution)+'<br>';
+    html+='Normalised probabilities → Base '+escHtml(scenarios.find(function(x){return x.id==='base';}).probability)+'% · Escalation '+escHtml(scenarios.find(function(x){return x.id==='escalation';}).probability)+'% · Resolution '+escHtml(scenarios.find(function(x){return x.id==='resolution';}).probability)+'%';
+    html+='</div></div>';
+  }
 
-  // ── Scenario probability bar ──
   html+='<div style="margin-bottom:14px;">';
   html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">SCENARIO PROBABILITIES — NEXT 6 MONTHS</div>';
   html+='<div style="display:flex;border-radius:6px;overflow:hidden;height:24px;cursor:pointer;">';
   scenarios.forEach(function(s){
-    var col=s.color==='#4a9eff'?'rgba(74,158,255,0.85)':s.color==='#ff3b3b'?'rgba(255,59,59,0.85)':'rgba(0,232,122,0.85)';
-    var rgb=s.id==='escalation'?'220,38,38':s.id==='base'?'245,158,11':'34,197,94';
-    html+='<div onclick="showScenario(\''+s.id+'\')" title="'+s.name+'\n'+s.description+'" style="width:'+s.probability+'%;background:'+col+';display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;padding:0 4px;box-sizing:border-box;">'+(s.probability>=12?s.probability+'%':'')+'</div>';
+    var active=s.id===selected.id;
+    var rgb=dominoRGB(s.id);
+    var col='rgba('+rgb+','+(active?'0.95':'0.72')+')';
+    html+='<div onclick="selectDominoScenario(\''+s.id+'\')" title="'+escHtml(s.name)+'" style="width:'+s.probability+'%;background:'+col+';display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;padding:0 4px;box-sizing:border-box;'+(active?'outline:2px solid rgba(255,255,255,0.55);outline-offset:-2px;':'')+'">'+(s.probability>=12?s.probability+'%':'')+'</div>';
   });
   html+='</div>';
   html+='<div style="display:flex;gap:10px;margin-top:5px;font-size:8px;flex-wrap:wrap;">';
   scenarios.forEach(function(s){
-    var rgb=s.id==='escalation'?'220,38,38':s.id==='base'?'245,158,11':'34,197,94';
-    html+='<span style="color:rgb('+rgb+');font-weight:700;">●</span><span style="color:var(--text-muted);margin-right:8px;">'+s.name+' <span style="color:var(--text-dim);">'+s.probability+'%</span></span>';
+    var rgb=dominoRGB(s.id), active=s.id===selected.id;
+    html+='<button onclick="openDominoScenario(\''+s.id+'\')" style="background:'+(active?'rgba('+rgb+',0.12)':'transparent')+';border:1px solid '+(active?'rgba('+rgb+',0.35)':'transparent')+';border-radius:14px;padding:3px 8px;cursor:pointer;color:var(--text-muted)"><span style="color:rgb('+rgb+');font-weight:700;">●</span> '+escHtml(s.name)+' <span style="color:var(--text-dim);">'+s.probability+'%</span></button>';
   });
   html+='</div></div>';
 
-  // ── Key decision points timeline ──
-  var dpts=dm.keyDecisionPoints||[];
+  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.14);border:1px solid var(--border);border-left:3px solid rgb('+dominoRGB(selected.id)+');border-radius:6px;margin-bottom:14px;">';
+  html+='<div style="font-size:8px;font-weight:700;letter-spacing:0.08em;color:rgb('+dominoRGB(selected.id)+');margin-bottom:4px;">ACTIVE SCENARIO</div>';
+  html+='<div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">'+escHtml(selected.name)+' ('+selected.probability+'%)</div>';
+  html+='<div style="font-size:8px;color:var(--text-muted);line-height:1.5;margin-bottom:8px;">'+escHtml(selected.description||'')+'</div>';
+  html+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:8px;">';
+  html+='<div><div style="color:var(--text-dim);margin-bottom:2px;">Peak GDP impact</div><div style="font-weight:700;color:var(--text)">'+selected.peakGdpImpact+'%</div></div>';
+  html+='<div><div style="color:var(--text-dim);margin-bottom:2px;">Food rise</div><div style="font-weight:700;color:var(--text)">+'+selected.foodPriceRise+'%</div></div>';
+  html+='<div><div style="color:var(--text-dim);margin-bottom:2px;">Recovery</div><div style="font-weight:700;color:var(--text)">'+escHtml(selected.recovery||'TBD')+'</div></div>';
+  html+='</div></div>';
+
+  var dpts=(dm.keyDecisionPoints||[]).filter(function(dp){
+    var sc=(dp.scenario||'').toLowerCase();
+    return sc==='all' || sc===selected.id || (selected.id==='base' && sc==='base case') || (selected.id==='resolution' && sc==='resolution') || (selected.id==='escalation' && sc==='escalation');
+  });
   if(dpts.length>0){
     html+='<div style="margin-bottom:14px;">';
-    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">KEY DECISION POINTS</div>';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">KEY DECISION POINTS — '+escHtml(selected.name.toUpperCase())+'</div>';
     html+='<div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;">';
     dpts.forEach(function(dp){
-      var scenarioColor=dp.scenario==='Escalation'?'rgba(220,38,38,0.15)':dp.scenario==='Resolution'?'rgba(34,197,94,0.08)':'rgba(245,158,11,0.12)';
-      var scenarioBorder=dp.scenario==='Escalation'?'rgba(220,38,38,0.3)':dp.scenario==='Resolution'?'rgba(34,197,94,0.3)':'rgba(245,158,11,0.3)';
-      html+='<div style="flex:1;min-width:110px;padding:8px 9px;background:'+scenarioColor+';border:1px solid '+scenarioBorder+';border-radius:6px;">';
-      html+='<div style="font-size:8px;font-weight:700;color:var(--text-dim);margin-bottom:3px;">'+escHtml(dp.date)+'</div>';
+      var scenarioColor=selected.id==='escalation'?'rgba(220,38,38,0.15)':selected.id==='resolution'?'rgba(34,197,94,0.08)':'rgba(245,158,11,0.12)';
+      var scenarioBorder=selected.id==='escalation'?'rgba(220,38,38,0.3)':selected.id==='resolution'?'rgba(34,197,94,0.3)':'rgba(245,158,11,0.3)';
+      if((dp.scenario||'').toLowerCase()==='all'){
+        scenarioColor='rgba(74,158,255,0.08)';
+        scenarioBorder='rgba(74,158,255,0.25)';
+      }
+      html+='<div style="flex:1;min-width:120px;padding:8px 9px;background:'+scenarioColor+';border:1px solid '+scenarioBorder+';border-radius:6px;">';
+      html+='<div style="font-size:8px;font-weight:700;color:var(--text-dim);margin-bottom:3px;">'+escHtml(dp.date)+(String(dp.scenario||'').toLowerCase()==='all'?' · shared':'')+'</div>';
       html+='<div style="font-size:9px;font-weight:700;color:var(--text);margin-bottom:3px;">'+escHtml(dp.label)+'</div>';
       html+='<div style="font-size:8px;color:var(--text-muted);line-height:1.3;">'+escHtml(dp.description||'')+'</div>';
       html+='</div>';
@@ -978,94 +1045,69 @@ function renderDominoModel(dm){
     html+='</div></div>';
   }
 
-  // ── Monthly cascade matrix ──
   html+='<div style="margin-bottom:14px;">';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">CASCADE MATRIX — FUEL / TRAVEL / PRODUCTIVITY / FOOD</div>';
-  html+='<div style="overflow-x:auto;">';
-  html+='<div style="display:grid;grid-template-columns:70px repeat(5,1fr);gap:4px;min-width:500px;">';
-
-  // Header row
-  ['TIMELINE','NOW','MONTH 1','MONTH 2','MONTH 3','MONTH 6'].forEach(function(h,i){
-    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);padding:4px 6px;'+(i>0?'border-left:1px solid var(--border);':'')+'">'+h+'</div>';
-  });
-
-  // Cascade rows for each domain
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">CASCADE MATRIX — ACTIVE SCENARIO</div>';
+  html+='<div style="overflow-x:auto;"><div style="display:grid;grid-template-columns:70px repeat(5,1fr);gap:4px;min-width:500px;">';
+  ['TIMELINE','NOW','MONTH 1','MONTH 2','MONTH 3','MONTH 6'].forEach(function(h,i){ html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);padding:4px 6px;'+(i>0?'border-left:1px solid var(--border);':'')+'">'+h+'</div>'; });
   ['fuel','travel','productivity','food'].forEach(function(domain){
     var domainLabel=domain==='fuel'?'⛽ FUEL':domain==='travel'?'✈️ TRAVEL':domain==='productivity'?'🏭 PRODUCT.':'🌾 FOOD';
     var domainColor=domain==='fuel'?'var(--amber)':domain==='travel'?'#4a9eff':domain==='productivity'?'#c084fc':'var(--green)';
     html+='<div style="font-size:8px;font-weight:700;color:'+domainColor+';padding:7px 6px;border-top:1px solid var(--border);display:flex;align-items:center;">'+domainLabel+'</div>';
     monthKeys.forEach(function(m){
-      var vals=scenarios.map(function(s){
-        var c=s.cascade||{};
-        var mo=c['month'+m]||c[Object.keys(c)[m]]||'';
-        if(typeof mo==='object') return mo[domain]||'?';
-        return '?';
-      });
-      var val=vals[0]||'?';
-      var col=val.indexOf&&val.indexOf('Ration')>=0?'var(--red)':val.indexOf&&(val.indexOf('Essential')>=0||val.indexOf('Severely')>=0||val.indexOf('Rationed')>=0||val.indexOf('Structural')>=0)?'var(--red)':val.indexOf&&(val.indexOf('Plateau')>=0||val.indexOf('Elevated')>=0||val.indexOf('limited')>=0||val.indexOf('Restricted')>=0||val.indexOf('cut')>=0)?'var(--amber)':val.indexOf&&(val.indexOf('Normal')>=0||val.indexOf('Easing')>=0||val.indexOf('Stable')>=0||val.indexOf('recovery')>=0||val.indexOf('Recover')>=0)?'var(--green)':'var(--text-muted)';
-      html+='<div style="font-size:8px;font-weight:600;color:'+col+';padding:7px 6px;border-top:1px solid var(--border);line-height:1.3;">'+escHtml(String(val))+'</div>';
+      var mo=(selected.cascade||{})['month'+m]||{};
+      var val=(typeof mo==='object')?(mo[domain]||'?'):'?';
+      var vs=String(val);
+      var col=vs.indexOf('Ration')>=0?'var(--red)':/Essential|Severely|Rationed|Structural/i.test(vs)?'var(--red)':/Plateau|Elevated|limited|Restricted|cut|spike/i.test(vs)?'var(--amber)':/Normal|Easing|Stable|Near-normal|Normalising/i.test(vs)?'var(--green)':'var(--text-muted)';
+      html+='<div style="font-size:8px;font-weight:600;color:'+col+';padding:7px 6px;border-top:1px solid var(--border);line-height:1.3;">'+escHtml(vs)+'</div>';
     });
   });
   html+='</div></div></div>';
 
-  // ── GDP impact + food price side by side ──
   html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">';
-  ['GDP IMPACT (PEAK % CHANGE)','FOOD PRICE INFLATION (ABOVE PRE-WAR)'].forEach(function(sectionTitle,si){
+  ['GDP IMPACT (PEAK % CHANGE)','FOOD PRICE INFLATION (ABOVE PRE-WAR)'].forEach(function(title,si){
     html+='<div style="padding:10px;background:rgba(0,0,0,0.12);border:1px solid var(--border);border-radius:6px;">';
-    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">'+sectionTitle+'</div>';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">'+title+'</div>';
     scenarios.forEach(function(s){
+      var rgb=dominoRGB(s.id), active=s.id===selected.id;
       var val=si===0?s.peakGdpImpact:s.foodPriceRise;
-      var unit=si===0?'%':'%';
-      var sign=val>=0?'+':'';
-      var rgb=s.id==='escalation'?'220,38,38':s.id==='base'?'245,158,11':'34,197,94';
       var barPct=si===0?Math.min(Math.abs(val)*10,100):Math.min(val*2,100);
-      html+='<div style="margin-bottom:6px;">';
-      html+='<div style="font-size:8px;color:rgb('+rgb+');font-weight:700;margin-bottom:2px;">'+escHtml(s.name)+'</div>';
-      html+='<div style="display:flex;align-items:center;gap:6px;">';
-      html+='<div style="flex:1;height:12px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;">';
-      html+='<div style="width:'+barPct+'%;height:100%;background:rgba('+rgb+',0.7);border-radius:3px;"></div>';
-      html+='</div>';
-      html+='<div style="font-size:9px;color:var(--text);width:50px;text-align:right;font-weight:700;">'+sign+val+unit+'</div>';
-      html+='</div>';
-      if(si===0){
-        html+='<div style="font-size:7px;color:var(--text-dim);margin-top:1px;">Recovery: '+escHtml(s.recovery||'TBD')+'</div>';
-      } else {
-        html+='<div style="font-size:7px;color:var(--text-dim);margin-top:1px;">'+(s.foodPermanent?'Permanent':'Temporary')+' · '+escHtml(s.duration||'')+'</div>';
-      }
+      html+='<div style="margin-bottom:6px;opacity:'+(active?1:0.7)+'">';
+      html+='<div style="font-size:8px;color:rgb('+rgb+');font-weight:700;margin-bottom:2px;">'+escHtml(s.name)+(active?' ★':'')+'</div>';
+      html+='<div style="display:flex;align-items:center;gap:6px;"><div style="flex:1;height:12px;background:rgba(255,255,255,0.05);border-radius:3px;overflow:hidden;"><div style="width:'+barPct+'%;height:100%;background:rgba('+rgb+','+(active?0.85:0.55)+');border-radius:3px;"></div></div><div style="font-size:9px;color:var(--text);width:50px;text-align:right;font-weight:700;">'+(si===0?val:'+'+val)+'%</div></div>';
+      html+='<div style="font-size:7px;color:var(--text-dim);margin-top:1px;">'+(si===0?('Recovery: '+escHtml(s.recovery||'TBD')):((s.foodPermanent?'Permanent':'Temporary')+' · '+escHtml(s.duration||'')))+'</div>';
       html+='</div>';
     });
     html+='</div>';
   });
   html+='</div>';
 
-  // ── Essential travel thresholds ──
-  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.15);border:1px solid var(--border);border-radius:6px;">';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">ESSENTIAL TRAVEL THRESHOLDS — AUSTRALIA DIESEL RESERVES</div>';
-  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">';
+  var th=selected.essentialTravelThresholds||{};
   var thresholds=[
-    {days:'10',label:'Non-essential\ntravel restricted',col:'rgba(245,158,11,0.85)',rgb:'245,158,11'},
-    {days:'7',label:'Private vehicles\nlimited 50km/day',col:'rgba(220,38,38,0.75)',rgb:'220,38,38'},
-    {days:'5',label:'Essential\nmovement only',col:'rgba(220,38,38,0.9)',rgb:'220,38,38'},
+    {days:'10',label:th.dieselReserveDay10||'Non-essential travel restricted',rgb:'245,158,11'},
+    {days:'7',label:th.dieselReserveDay7||'Private vehicles limited 50km/day',rgb:'220,38,38'},
+    {days:'5',label:th.dieselReserveDay5||'Essential movement only',rgb:'220,38,38'}
   ];
+  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.15);border:1px solid var(--border);border-radius:6px;">';
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">ESSENTIAL TRAVEL THRESHOLDS — ACTIVE SCENARIO</div>';
+  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">';
   thresholds.forEach(function(t){
     html+='<div style="padding:8px;background:rgba(0,0,0,0.2);border-radius:5px;text-align:center;border:1px solid rgba(255,255,255,0.05);">';
     html+='<div style="font-size:22px;font-weight:700;color:rgb('+t.rgb+');line-height:1;">'+t.days+'</div>';
     html+='<div style="font-size:7px;color:var(--text-dim);margin:2px 0 3px;">days diesel</div>';
-    html+='<div style="font-size:8px;color:var(--text);font-weight:700;line-height:1.3;white-space:pre-line;">'+escHtml(t.label)+'</div>';
+    html+='<div style="font-size:8px;color:var(--text);font-weight:700;line-height:1.3;">'+escHtml(t.label)+'</div>';
     html+='</div>';
   });
   html+='</div></div>';
 
-  // ── Scenario detail modal trigger ──
   html+='<div id="domino-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target.id==\'domino-modal\')document.getElementById(\'domino-modal\').style.display=\'none\'">';
   html+='<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:12px;max-width:520px;width:100%;padding:20px;max-height:80vh;overflow-y:auto;" id="domino-modal-content"></div>';
   html+='</div>';
-  html+='<script>function showScenario(id){var s=(window._dominoScenarios||[]).find(function(x){return x.id===id;});if(!s)return;var m=document.getElementById(\'domino-modal\'),c=document.getElementById(\'domino-modal-content\');var rgb=s.id===\'escalation\'?\'220,38,38\':s.id===\'base\'?\'245,158,11\':\'34,197,94\';c.innerHTML=\'<div style="font-size:11px;font-weight:700;color:rgb(\'+rgb+\');margin-bottom:2px;">\'+s.name+\' (\'+s.probability+\'%)\'+ \'</div><div style="font-size:8px;color:var(--text-muted);margin-bottom:10px;">\'+s.description+\'</div><div style="font-size:8px;color:var(--text-muted);line-height:1.6;">\'+(s.keyTriggers||[]).map(function(t){return\'• \'+t;}).join(\'<br>\')+\'</div>\';m.style.display=\'flex\';}window._dominoScenarios=arguments[0].scenarios;<\/script>';
 
   el.innerHTML=html;
 }
-
-// ── CPI CANVAS ──
+window.selectDominoScenario=selectDominoScenario;
+window.openDominoScenario=openDominoScenario;
+// ── PRICE SHOCK CANVAS ──
 function drawCPIChart(inf){
   var canvas=document.getElementById('cpiCanvas');
   if(!canvas||!inf) return;
@@ -1237,7 +1279,7 @@ function drawItemInflationChart(inf){
   });
 }
 
-// ── CPI PANEL ──
+// ── PRICE SHOCK PANEL ──
 function renderCPI(inf){
   if(!inf) return;_lastInf=inf;
   var el=document.getElementById('cpi-content');
@@ -1247,7 +1289,20 @@ function renderCPI(inf){
   function tierCls(t){return t==='emerg'||t==='crisis'?'tier-emerg':t==='warn'?'tier-warn':'tier-ok';}
   function tierLbl(t){return{ok:'OK',warn:'WARNING',emerg:'EMERGENCY',crisis:'CRISIS'}[t]||t.toUpperCase();}
   var mT=tier(m.current||0),rT=tier(r.current||0);
-  var html='<div class="cpi-curr">';
+  var html='';
+  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.14);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;">';
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:6px;">FORMULA — MARKETS</div>';
+  html+='<div style="font-size:8px;color:var(--text-dim);line-height:1.6;margin-bottom:6px">';
+  html+='Price shock chart uses historical points at 60d ago, 30d ago, and today, then projects to peak dates from the live data file.<br>';
+  html+='Metro projection: current '+(m.current||0)+'% → peak '+(m.peakMetro||0)+'% by '+escHtml((m.peakMetroDate||'').replace('2026-',''))+'. '; 
+  html+='Regional projection: current '+(r.current||0)+'% → peak '+(r.peakRegional||0)+'% by '+escHtml((r.peakRegionalDate||'').replace('2026-',''))+'.';
+  html+='</div>';
+  html+='<div style="display:flex;flex-direction:column;gap:4px;font-size:8px;color:var(--text-muted)">';
+  html+='<div>• Y-axis max = 1.12 × max(15, projected metro peak, projected regional peak)</div>';
+  html+='<div>• Historical item lines = cumulative % increase since Jan 1</div>';
+  html+='<div>• 2-week dashed item projection = last weekly slope extended to W15</div>';
+  html+='</div></div>';
+  html+='<div class="cpi-curr">';
   html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:'+(mT==='warn'?'var(--amber)':mT==='emerg'||mT==='crisis'?'var(--red)':'var(--green)')+'">'+m.current+'%</div><div class="cpi-tier '+tierCls(mT)+'">'+tierLbl(mT)+'</div></div>';
   html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Regional</div><div class="cpi-stat-val" style="color:'+(rT==='warn'?'var(--amber)':rT==='emerg'||rT==='crisis'?'var(--red)':'var(--green)')+'">'+r.current+'%</div><div class="cpi-tier '+tierCls(rT)+'">'+tierLbl(rT)+'</div></div>';
   html+='</div><canvas id="cpiCanvas" class="cpi-canvas"></canvas>';
@@ -1267,7 +1322,7 @@ function renderCPI(inf){
   var dEl = document.getElementById('drivers-content');
   var items = (inf.weeklyItems&&inf.weeklyItems.length)?inf.weeklyItems:null;
   if(dEl && items){
-    var dHtml = '<div style="font-size:10px;color:var(--text-muted);margin-bottom:8px;">Observed retail price increases since pre-war baseline (late Feb 26). Not official CPI — these are market price movements. Y-axis = % change from pre-war.</div>';
+    var dHtml = '<div style="font-size:10px;color:var(--text-muted);margin-bottom:8px;">Observed retail price increases since Jan 1, 2026. Not an official ABS index — these are market price movements. Y-axis = % change since Jan 1.</div>';
     dHtml += '<div style="display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px;">';
     dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:8px;background:rgba(255,255,255,0.02)"><div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:6px;">⛽ Fuel / Energy</div><canvas id="itemInflationCanvas-fuel" class="cpi-canvas" style="height:150px"></canvas></div>';
     dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:8px;background:rgba(255,255,255,0.02)"><div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:6px;">🥬 Food</div><canvas id="itemInflationCanvas-food" class="cpi-canvas" style="height:150px"></canvas></div>';
@@ -1474,6 +1529,19 @@ function buildAssumptions(tiers,noDebt){
     'Morningstar 2025: 15% of 65+ carry housing debt; 39% carry credit card balance'
   ];
   var html='<div class="cf-assumptions">';
+
+  html+='<div style="background:rgba(0,0,0,0.14);border:1px solid var(--border);border-radius:6px;padding:8px 11px;margin-bottom:8px;font-size:8px;line-height:1.65;color:var(--text-dim)">';
+  html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px">Formula — Households</div>';
+  html+='<div><strong>Living</strong> = Income + |Net (crisis)| − Debt Service − Surcharge</div>';
+  html+='<div><strong>Net (pre-war)</strong> = Net (crisis) + Surcharge</div>';
+  html+='<div><strong>Net (crisis)</strong> = Income − Debt Service − Living − Surcharge</div>';
+  html+='<div><strong>Surcharge</strong> = Fuel + Food + Utilities + Indirect</div>';
+  if(noDebt){
+    html+='<div><strong>Scenario B</strong>: Debt Service = 0 and Total Debt = 0 for all cohorts, so the remaining deficit is pure cost-of-living pressure.</div>';
+  } else {
+    html+='<div><strong>Scenario A</strong>: Debt Service remains in place, so the observed burn rate reflects both inflation and pre-existing leverage.</div>';
+  }
+  html+='</div>';
 
   // ── EXPLAINER: Why burn > income ──
   html+='<div style="background:rgba(255,176,32,0.06);border:1px solid rgba(255,176,32,0.25);border-radius:6px;padding:8px 11px;margin-bottom:8px;font-size:9px;line-height:1.6;color:var(--text-dim)">';
