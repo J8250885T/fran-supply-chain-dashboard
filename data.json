@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T07:37:24Z",
+  "lastUpdated": "2026-04-04T07:40:39Z",
   "warAlert": {
-    "timestamp": "2026-04-04T07:37:24Z",
+    "timestamp": "2026-04-04T07:40:39Z",
     "fuelImpact": [
       "2026-04-04 US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations [Signals CV] [MEDIUM]",
       "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]",
@@ -17,17 +17,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-04 Bowen: 312 stations without diesel nationally (down from 410 on Apr 3); fewer stations running dry as Easter demand peaks [MarketScreener/Chris Bowen] [HIGH]",
       "2026-04-04 The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate [The Age] [HIGH]",
       "2026-04-04 Guardian: Bowen says fewer stations running dry \u2014 3.7bn litres booked for April and into May; industry confident in supply [The Guardian] [HIGH]",
-      "2026-04-04 ABC: Reserve stocks steady \u2014 39 days petrol, 29 days diesel, 30 days jet fuel; STI Steadfast jet fuel docking Victoria in coming days [ABC News] [HIGH]",
-      "2026-04-04 Australians making DIY biodiesel from cooking oil as fuel crisis drags on \u2014 indicative of supply desperation at household level [9News] [MEDIUM]"
+      "2026-04-04 ABC: Reserve stocks steady \u2014 39 days petrol, 29 days diesel, 30 days jet fuel; STI Steadfast jet fuel docking Victoria in coming days [ABC News] [HIGH]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T07:37:24Z",
+    "updated": "2026-04-04T07:40:39Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,8 +1167,21 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T07:37:24Z",
+  "dbLastUpdated": "2026-04-04T07:40:39Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Bowen: 312 stations without diesel nationally (down from 410 on Apr 3); fewer stations running dry as Easter demand peaks",
+      "source": "MarketScreener/Chris Bowen",
+      "sourceUrl": "https://www.marketscreener.com/news/stick-to-easter-travel-australians-told-though-hundreds-of-petrol-stations-dry-ce7e51d2db80f027",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T07:40:22Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-04",
       "domain": "australia",
@@ -2492,7 +2505,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T07:37:24Z",
+    "updatedAt": "2026-04-04T07:40:39Z",
     "formula": {
       "inputs": {
         "T": 0.1,
