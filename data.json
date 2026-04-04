@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T23:50:22Z",
+  "lastUpdated": "2026-04-04T23:50:43Z",
   "warAlert": {
-    "timestamp": "2026-04-04T23:50:22Z",
+    "timestamp": "2026-04-04T23:50:43Z",
     "fuelImpact": [
       "2026-04-04 Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role [Pravda Australia] [MEDIUM]",
       "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]",
@@ -26,7 +26,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T23:50:22Z",
+    "updated": "2026-04-04T23:50:43Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1166,7 +1166,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T23:50:22Z",
+  "dbLastUpdated": "2026-04-04T23:50:43Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2660,7 +2660,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T23:50:22Z",
+    "updatedAt": "2026-04-04T23:50:43Z",
     "formula": {
       "inputs": {
         "T": 0.1,
