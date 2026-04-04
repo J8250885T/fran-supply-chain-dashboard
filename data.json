@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T06:03:32Z",
+  "lastUpdated": "2026-04-04T06:09:01Z",
   "warAlert": {
-    "timestamp": "2026-04-04T06:03:32Z",
+    "timestamp": "2026-04-04T06:09:01Z",
     "fuelImpact": [
       "2026-04-04 US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations [Signals CV] [MEDIUM]",
       "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T06:03:32Z",
+    "updated": "2026-04-04T06:09:01Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T06:03:32Z",
+  "dbLastUpdated": "2026-04-04T06:09:01Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2144,6 +2144,18 @@
       ],
       "mostLikelyCourse": "Low-buffer households continue depleting first, while highly leveraged middle cohorts deteriorate fastest once debt service and inflation compound together.",
       "mostDangerousCourse": "A prolonged inflation pulse plus delayed supply normalisation pushes even initially resilient households into rapid depletion, forcing distress selling or arrears."
+    },
+    "domino": {
+      "title": "Fran Review \u2014 Domino Cascade",
+      "updatedAt": "2026-04-04T06:09:01Z",
+      "summary": "The domino model translates the conflict into second- and third-order Australian effects over six months, linking military escalation to fuel, food, travel, and productivity outcomes.",
+      "mostLikelyCourse": "The base-case path remains a prolonged standoff where fuel and logistics stay disrupted long enough to drive inflation and slower productivity, but stop short of full systemic breakdown.",
+      "mostDangerousCourse": "A shift to ground war or a harder Hormuz closure forces the escalation path, making fuel rationing, essential-travel limits, and structurally higher food prices much more likely.",
+      "bullets": [
+        "Domino scenarios are useful because they connect tactical events to civilian economic outcomes.",
+        "The biggest swing factor is whether shipping disruption remains partial or becomes a sustained closure problem.",
+        "Watch trigger events closely: ground-force entry, refinery attrition, and transport rationing signals."
+      ]
     }
   },
   "troopDeployments": {
@@ -2429,7 +2441,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T06:03:32Z",
+    "updatedAt": "2026-04-04T06:09:01Z",
     "scenarios": [
       {
         "id": "base",
