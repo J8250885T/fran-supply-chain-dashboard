@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T08:40:47Z",
+  "lastUpdated": "2026-04-04T23:50:22Z",
   "warAlert": {
-    "timestamp": "2026-04-04T08:40:47Z",
+    "timestamp": "2026-04-04T23:50:22Z",
     "fuelImpact": [
       "2026-04-04 Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role [Pravda Australia] [MEDIUM]",
       "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]",
@@ -26,7 +26,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T08:40:47Z",
+    "updated": "2026-04-04T23:50:22Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1166,7 +1166,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T08:40:47Z",
+  "dbLastUpdated": "2026-04-04T23:50:22Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2305,7 +2305,7 @@
   },
   "reviewPanels": {
     "feed": {
-      "title": "Fran Review \u2014 Feed",
+      "title": "FRAN Review \u2014 Feed",
       "updatedAt": "2026-04-03T05:24:04Z",
       "summary": "Event flow is accelerating around fuel, refinery disruption, and Australian contingency measures. Priority is to separate transient headlines from structural deterioration.",
       "bullets": [
@@ -2317,7 +2317,7 @@
       "mostDangerousCourse": "A step-change from headline noise to confirmed systemic disruption in cargo timing, refinery output, or domestic rationing signals without enough warning time."
     },
     "supply": {
-      "title": "Fran Review \u2014 Fuel Levels & Supply",
+      "title": "FRAN Review \u2014 Fuel Levels & Supply",
       "updatedAt": "2026-04-03T05:24:04Z",
       "summary": "Australia is still being supported by rerouted cargoes and reserve releases, but refinery weakness and route disruption keep the system tight.",
       "bullets": [
@@ -2329,7 +2329,7 @@
       "mostDangerousCourse": "Replacement cargoes slip, Asian refinery output falls further, and servo outages broaden into sustained regional shortages before new imports land."
     },
     "markets": {
-      "title": "Fran Review \u2014 Markets",
+      "title": "FRAN Review \u2014 Markets",
       "updatedAt": "2026-04-03T05:24:04Z",
       "summary": "Markets are now showing a two-layer shock: broad price increase acceleration plus sharp item-level inflation in fuel, fresh food, and transport-linked services.",
       "bullets": [
@@ -2341,7 +2341,7 @@
       "mostDangerousCourse": "Inflation broadens from fuel and perishables into general goods and services, pushing regional price increase into crisis territory and locking in a longer second-round surge."
     },
     "households": {
-      "title": "Fran Review \u2014 Households",
+      "title": "FRAN Review \u2014 Households",
       "updatedAt": "2026-04-03T05:24:04Z",
       "summary": "The household model shows that debt amplifies the inflation shock. Low-liquidity households fail first, but leveraged middle cohorts are structurally exposed once debt service dominates cash flow.",
       "bullets": [
@@ -2353,7 +2353,7 @@
       "mostDangerousCourse": "A prolonged inflation pulse plus delayed supply normalisation pushes even initially resilient households into rapid depletion, forcing distress selling or arrears."
     },
     "domino": {
-      "title": "Fran Review \u2014 Domino Cascade",
+      "title": "FRAN Review \u2014 Domino Cascade",
       "updatedAt": "2026-04-04T06:09:01Z",
       "summary": "The domino model translates the conflict into second- and third-order Australian effects over six months, linking military escalation to fuel, food, travel, and productivity outcomes.",
       "mostLikelyCourse": "The base-case path remains a prolonged standoff where fuel and logistics stay disrupted long enough to drive inflation and slower productivity, but stop short of full systemic breakdown.",
@@ -2365,7 +2365,7 @@
       ]
     },
     "troops": {
-      "title": "Fran Review \u2014 Troop Deployments",
+      "title": "FRAN Review \u2014 Troop Deployments",
       "updatedAt": "2026-04-04T06:10:32Z",
       "summary": "The troop panel tracks whether the conflict is moving from coercive signalling into a posture consistent with sustained offensive operations or direct intervention.",
       "mostLikelyCourse": "Force movements remain in a high-readiness deterrence posture, increasing pressure and signalling risk without immediately crossing into full ground-war deployment.",
@@ -2660,7 +2660,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T08:40:47Z",
+    "updatedAt": "2026-04-04T23:50:22Z",
     "formula": {
       "inputs": {
         "T": 0.1,

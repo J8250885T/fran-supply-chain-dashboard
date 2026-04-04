@@ -24,9 +24,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .hdr{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--bg);border-bottom:1px solid var(--border-bright)}
 
 /* Row 1: brand + status */
-.hdr-brand-row{height:42px;display:flex;align-items:center;padding:0 16px;gap:10px;background:linear-gradient(180deg,#0f1825 0%,#070b14 100%)}
+.hdr-brand-row{min-height:58px;display:flex;align-items:center;padding:8px 16px;gap:10px;background:linear-gradient(180deg,#0f1825 0%,#070b14 100%)}
 .hdr-logo{display:flex;align-items:center;gap:8px;text-decoration:none}
-.hdr-logo img{height:20px;flex-shrink:0}
+.hdr-logo img{height:30px;flex-shrink:0}
 .hdr-title{font-size:13px;font-weight:700;letter-spacing:0.05em;color:var(--text)}
 .hdr-title span{color:var(--text-muted);font-weight:400;font-size:11px;margin-left:4px}
 .hdr-status{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}
@@ -267,7 +267,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <div class="hdr-brand-row">
     <div class="hdr-logo">
       <img src="/logo.webp" alt="FRAN">
-      <span class="hdr-title">FRAN <span>Supply Chain Intelligence</span></span>
+      <span class="hdr-title">Future Resource Allocation Nexus (FRAN)</span>
     </div>
     <div class="hdr-status">
       <div class="hdr-dtg" id="hdr-dtg">Last updated ——————</div>
@@ -331,7 +331,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
     <div class="panel panel-alert" id="panel-alert">
       <div class="p-hdr">
         <span class="p-title">⚡ War + Fuel + Food</span>
-        <span class="p-dtg" id="alert-dtg">——</span>
       </div>
       <div id="alert-content"><div class="alert-inc info"><div class="alert-body"><div class="alert-dtg">Loading...</div></div></div></div>
       <div id="traj-content"></div>
@@ -343,12 +342,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <section class="section" id="sec-supply">
 
     <div class="panel" id="panel-review-supply">
-      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-supply">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span></div>
       <div id="review-content-supply"></div>
     </div>
 
     <div class="panel" id="panel-reserves">
-      <div class="p-hdr"><span class="p-title">⛽ Fuel Levels</span><span class="p-dtg" id="reserves-dtg">——</span></div>
+      <div class="p-hdr"><span class="p-title">⛽ Fuel Levels</span></div>
       <div id="reserves-content"></div>
     </div>
 
@@ -358,7 +357,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
         <div id="fleet-content"></div>
       </div>
       <div class="panel" id="panel-servo">
-        <div class="p-hdr"><span class="p-title">⛽ Servo Outages</span><span class="p-dtg" id="servo-dtg">——</span></div>
+        <div class="p-hdr"><span class="p-title">⛽ Servo Outages</span></div>
         <div id="servo-content"></div>
       </div>
     </div>
@@ -379,7 +378,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <!-- ── TROOPS ── -->
   <section class="section" id="sec-troops">
     <div class="panel" id="panel-review-troops">
-      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-troops">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span></div>
       <div id="review-content-troops"></div>
     </div>
     <div class="panel">
@@ -394,7 +393,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <!-- ── DOMINO ── -->
   <section class="section" id="sec-domino">
     <div class="panel" id="panel-review-domino">
-      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-domino">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span></div>
       <div id="review-content-domino"></div>
     </div>
     <div class="panel" id="panel-domino-howto">
@@ -417,12 +416,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <!-- ── MARKETS ── -->
   <section class="section" id="sec-markets">
     <div class="panel" id="panel-review-markets">
-      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-markets">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span></div>
       <div id="review-content-markets"></div>
     </div>
     <div class="panel-row panel-row-2">
       <div class="panel" id="panel-cpi">
-        <div class="p-hdr"><span class="p-title">📊 Price Shock Monitor</span><span class="p-dtg" id="cpi-dtg">——</span></div>
+        <div class="p-hdr"><span class="p-title">📊 Price Shock Monitor</span></div>
         <div id="cpi-content"></div>
       </div>
       <div class="panel" id="panel-drivers">
@@ -436,12 +435,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <section class="section" id="sec-households">
 
     <div class="panel" id="panel-review-households">
-      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-households">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span></div>
       <div id="review-content-households"></div>
     </div>
 
     <div class="panel" id="panel-bank">
-      <div class="p-hdr"><span class="p-title">🏦 Household Savings Trajectory — W1→W26</span><span class="p-dtg" id="bank-dtg">——</span></div>
+      <div class="p-hdr"><span class="p-title">🏦 Household Savings Trajectory — W1→W26</span></div>
       <div id="bank-content"></div>
     </div>
 
@@ -451,14 +450,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <section class="section active" id="sec-feed">
 
     <div class="panel" id="panel-review-feed">
-      <div class="p-hdr"><span class="p-title">🧠 Review</span><span class="p-dtg" id="review-dtg-feed">——</span></div>
+      <div class="p-hdr"><span class="p-title">🧠 Review</span></div>
       <div id="review-content-feed"></div>
     </div>
 
     <div class="panel" id="panel-events">
       <div class="p-hdr">
         <span class="p-title">📡 Supply Chain Event Feed</span>
-        <span class="p-dtg" id="events-dtg">——</span>
       </div>
       <div id="events-content"><div style="color:var(--text-muted);font-size:11px;padding:12px 0">Loading events...</div></div>
     </div>
@@ -492,6 +490,19 @@ function fmtDTG(iso){
 function fmtTime(iso){
   if(!iso) return '——:——';
   try{ return new Date(iso).toLocaleTimeString('en-AU',{hour:'2-digit',minute:'2-digit',timeZone:'Australia/Brisbane'})+' AEST'; }catch(e){return '——:——';}
+}
+function fmtAESTDateTime(iso){
+  if(!iso) return '—';
+  try{
+    return new Date(iso).toLocaleString('en-AU',{
+      timeZone:'Australia/Brisbane',
+      day:'2-digit',
+      month:'short',
+      year:'numeric',
+      hour:'2-digit',
+      minute:'2-digit'
+    })+' AEST';
+  }catch(e){return '—';}
 }
 
 // ── SECTION NAV ──
@@ -547,8 +558,7 @@ function updateFreshness(dbLastUpdated){
 function updateHeader(data){
   var dbEv=data.dbEvents||[];
   var updatedAt=data.dbLastUpdated||data.lastUpdated;
-  var dtg=fmtDTG(updatedAt);
-  document.getElementById('hdr-dtg').textContent='Last updated '+dtg;
+  document.getElementById('hdr-dtg').textContent='Last updated '+fmtAESTDateTime(updatedAt);
   updateFreshness(updatedAt);
   // Feed badge
   var newEvs=dbEv.filter(function(e){return !e.sent;}).length;
@@ -590,7 +600,7 @@ function renderTier1(data){
 function renderAlert(data){
   var dbEv=data.dbEvents||[],war=data.warAlert||{};
   var el=document.getElementById('alert-content');
-  document.getElementById('alert-dtg').textContent=fmtDTG(war.timestamp||data.lastUpdated);
+
   var html='';
   var fuelEvs=dbEv.filter(function(e){return e.domain==='fuel'||e.domain==='shipping'||e.domain==='geopolitical';}).slice(0,5);
   var ausEvs=dbEv.filter(function(e){return e.domain==='australia';}).slice(0,3);
@@ -599,7 +609,7 @@ function renderAlert(data){
       var dClass=ev.domain==='shipping'?'dot-blue':'dot-red';
       var incClass=ev.domain==='shipping'?'warn':'crit';
       html+='<div class="alert-inc '+incClass+'"><div class="alert-dot '+dClass+'"></div><div class="alert-body">';
-      html+='<div class="alert-dtg">'+ev.dtg+'</div>';
+
       html+='<div class="alert-text">'+escHtml(ev.headline)+'</div>';
       if(ev.source) html+='<div class="alert-src">'+escHtml(ev.source)+' · '+ev.confidence+'</div>';
       html+='</div></div>';
@@ -644,9 +654,9 @@ function renderReviewPanels(data){
     var el=document.getElementById('review-content-'+key);
     var dtg=document.getElementById('review-dtg-'+key);
     if(!el) return;
-    if(dtg) dtg.textContent=fmtDTG(box.updatedAt||data.dbLastUpdated||data.lastUpdated);
+
     var html='';
-    html+='<div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:6px">'+escHtml(box.title||'Fran Review')+'</div>';
+    html+='<div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:6px">'+escHtml(box.title||'FRAN Review')+'</div>';
     if(box.summary) html+='<div style="font-size:11px;line-height:1.55;color:var(--text-dim);margin-bottom:8px">'+escHtml(box.summary)+'</div>';
     if(box.mostLikelyCourse || box.mostDangerousCourse){
       html+='<div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px">';
@@ -666,7 +676,7 @@ function renderReviewPanels(data){
 // ── EVENTS FEED ──
 function renderEvents(dbEvents,dbLastUpdated){
   var el=document.getElementById('events-content');
-  document.getElementById('events-dtg').textContent=fmtDTG(dbLastUpdated);
+
   if(!dbEvents||!dbEvents.length){el.innerHTML='<div style="color:var(--text-muted);font-size:11px;padding:12px 0">No events in feed</div>';return;}
   var html='<div class="events-feed">';
   dbEvents.forEach(function(ev){
@@ -692,7 +702,7 @@ function renderEvents(dbEvents,dbLastUpdated){
 function renderServo(data){
   if(!data) return;
   var el=document.getElementById('servo-content');
-  document.getElementById('servo-dtg').textContent=fmtDTG(data.updated);
+
   var total=data.total||0,trend=data.trend||'—',byS=data.byState||{};
   var states=['NSW','QLD','VIC','SA','WA','NT','ACT','TAS'];
   var maxS=Math.max.apply(null,states.map(function(s){return byS[s]||0;}));
@@ -733,7 +743,7 @@ function renderFleet(data){
 function renderReserves(data){
   if(!data) return;
   var el=document.getElementById('reserves-content');
-  document.getElementById('reserves-dtg').textContent='DTG: '+fmtDTG(data.lastUpdated);
+
   var rl=data.rationingRedLine||10,maxD=50;
   function gaugeRow(lbl,emoji,days){
     var pct=Math.min(100,(days/maxD)*100),rlPct=(rl/maxD)*100;
@@ -909,7 +919,7 @@ function renderTroopDeployments(td){
         if(u.status){
           html+='<div style="font-size:8px;color:'+sc+';font-style:italic;">'+escHtml(u.status)+'</div>';
         }
-        html+='<div style="font-size:7px;color:var(--text-muted);">'+escHtml(u.source||'')+' · DTG: '+escHtml(u.dtg||'')+'</div>';
+        html+='<div style="font-size:7px;color:var(--text-muted);">'+escHtml(u.source||'')+'</div>';
         html+='</div>';
       });
     }
@@ -1068,23 +1078,6 @@ function renderDominoModel(dm){
   });
   html+='</div>';
 
-  var th=selected.essentialTravelThresholds||{};
-  var thresholds=[
-    {days:'10',label:th.dieselReserveDay10||'Non-essential travel restricted',rgb:'245,158,11'},
-    {days:'7',label:th.dieselReserveDay7||'Private vehicles limited 50km/day',rgb:'220,38,38'},
-    {days:'5',label:th.dieselReserveDay5||'Essential movement only',rgb:'220,38,38'}
-  ];
-  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.15);border:1px solid var(--border);border-radius:6px;">';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">ESSENTIAL TRAVEL THRESHOLDS — ACTIVE SCENARIO</div>';
-  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">';
-  thresholds.forEach(function(t){
-    html+='<div style="padding:8px;background:rgba(0,0,0,0.2);border-radius:5px;text-align:center;border:1px solid rgba(255,255,255,0.05);">';
-    html+='<div style="font-size:22px;font-weight:700;color:rgb('+t.rgb+');line-height:1;">'+t.days+'</div>';
-    html+='<div style="font-size:7px;color:var(--text-dim);margin:2px 0 3px;">days diesel</div>';
-    html+='<div style="font-size:8px;color:var(--text);font-weight:700;line-height:1.3;">'+escHtml(t.label)+'</div>';
-    html+='</div>';
-  });
-  html+='</div></div>';
 
   html+='<div id="domino-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target.id==\'domino-modal\')document.getElementById(\'domino-modal\').style.display=\'none\'">';
   html+='<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:12px;max-width:520px;width:100%;padding:20px;max-height:80vh;overflow-y:auto;" id="domino-modal-content"></div>';
@@ -1270,7 +1263,7 @@ function drawItemInflationChart(inf){
 function renderCPI(inf){
   if(!inf) return;_lastInf=inf;
   var el=document.getElementById('cpi-content');
-  document.getElementById('cpi-dtg').textContent=fmtDTG(inf.lastUpdated);
+
   var m=inf.metro||{},r=inf.regional||{};
   function tier(v){return v>=12?'crisis':v>=9?'emerg':v>=7?'warn':'ok';}
   function tierCls(t){return t==='emerg'||t==='crisis'?'tier-emerg':t==='warn'?'tier-warn':'tier-ok';}
@@ -1621,7 +1614,7 @@ var _lastBankTiers=null,_lastBankTiersND=null;
 function renderBank(be){
   if(!be||!be.household) return;
   var el=document.getElementById('bank-content');
-  document.getElementById('bank-dtg').textContent=fmtDTG(be.lastUpdated);
+
   var tiers=be.household.tiers||[],gov=be.government||{};
   var hasRetiree=tiers.some(function(t){return t.name.indexOf('Retiree')>=0;});
   if(!hasRetiree) tiers=tiers.concat([{name:'Retiree (Super)',income:4900,debt:0,debtService:0,liquidSavings:55000,monthlyDeficit:-400,monthlyExtra:300,runwayMonths:137}]);
