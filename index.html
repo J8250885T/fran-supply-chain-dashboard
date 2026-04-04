@@ -29,14 +29,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .hdr-logo img{height:20px;flex-shrink:0}
 .hdr-title{font-size:13px;font-weight:700;letter-spacing:0.05em;color:var(--text)}
 .hdr-title span{color:var(--text-muted);font-weight:400;font-size:11px;margin-left:4px}
-.hdr-status{margin-left:auto;display:flex;align-items:center;gap:14px}
+.hdr-status{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}
 .hdr-fresh{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text-muted)}
 .fresh-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 .fresh-ok{background:var(--green);box-shadow:0 0 6px var(--green)}
 .fresh-warn{background:var(--amber)}
 .fresh-stale{background:var(--red);animation:pulse 1.5s ease-in-out infinite}
 .hdr-dtg{font-size:11px;color:var(--amber);font-weight:700;letter-spacing:0.04em}
-.hdr-time{font-size:10px;color:var(--text-muted)}
+.hdr-credit{font-size:9px;color:var(--text-muted);max-width:360px}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
 
 /* Row 2: nav tabs */
@@ -270,12 +270,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       <span class="hdr-title">FRAN <span>Supply Chain Intelligence</span></span>
     </div>
     <div class="hdr-status">
-      <div class="hdr-fresh">
-        <div class="fresh-dot fresh-ok" id="fresh-dot"></div>
-        <span id="fresh-label">Loading...</span>
-      </div>
-      <div class="hdr-dtg" id="hdr-dtg">——————</div>
-      <div class="hdr-time" id="hdr-time">——:——</div>
+      <div class="hdr-dtg" id="hdr-dtg">Last updated ——————</div>
+      <div class="hdr-credit">Research, information collation and analysis prepared by 1EIGHT.</div>
     </div>
   </div>
 
@@ -544,25 +540,16 @@ window.addEventListener('hashchange',applyHashSection);
 
 // ── FRESHNESS ──
 function updateFreshness(dbLastUpdated){
-  var dot=document.getElementById('fresh-dot');
-  var lbl=document.getElementById('fresh-label');
-  if(!dbLastUpdated){lbl.textContent='No data';dot.className='fresh-dot fresh-stale';return;}
-  var ageMs=Date.now()-new Date(dbLastUpdated).getTime();
-  var ageH=ageMs/3600000;
-  var agoStr=ageMs<60000?'just now':ageMs<3600000?Math.round(ageMs/60000)+'m ago':Math.round(ageH)+'h ago';
-  if(ageH<8){dot.className='fresh-dot fresh-ok';lbl.textContent=agoStr;}
-  else if(ageH<24){dot.className='fresh-dot fresh-warn';lbl.textContent='⚠ '+agoStr;}
-  else{dot.className='fresh-dot fresh-stale';lbl.textContent='🔴 '+agoStr;}
+  return;
 }
 
 // ── HEADER ──
 function updateHeader(data){
   var dbEv=data.dbEvents||[];
-  var latestEv=dbEv[0];
-  var dtg=latestEv?fmtDTG(latestEv.addedAt||latestEv.dtg):fmtDTG(data.lastUpdated);
-  document.getElementById('hdr-dtg').textContent=dtg;
-  document.getElementById('hdr-time').textContent=fmtTime(data.dbLastUpdated||data.lastUpdated);
-  updateFreshness(data.dbLastUpdated||data.lastUpdated);
+  var updatedAt=data.dbLastUpdated||data.lastUpdated;
+  var dtg=fmtDTG(updatedAt);
+  document.getElementById('hdr-dtg').textContent='Last updated '+dtg;
+  updateFreshness(updatedAt);
   // Feed badge
   var newEvs=dbEv.filter(function(e){return !e.sent;}).length;
   var badge=document.getElementById('feed-badge');

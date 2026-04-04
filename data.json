@@ -1,33 +1,32 @@
 {
-  "lastUpdated": "2026-04-04T07:44:30Z",
+  "lastUpdated": "2026-04-04T08:40:47Z",
   "warAlert": {
-    "timestamp": "2026-04-04T07:44:30Z",
+    "timestamp": "2026-04-04T08:40:47Z",
     "fuelImpact": [
+      "2026-04-04 Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role [Pravda Australia] [MEDIUM]",
+      "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]",
       "2026-04-04 US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations [Signals CV] [MEDIUM]",
+      "2026-04-03 40+ nations convene virtually Thu Apr 2 to launch multinational coalition dedicated to securing free passage through Strait of Hormuz [QuantoSei News] [MEDIUM]",
       "2026-04-03 South Korea secures ~50 million barrels alternative crude; export caps + demand cuts in force amid Hormuz closure [Korea Pro] [HIGH]",
-      "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]",
-      "2026-04-03 Government denies SAS deployment; Wong: Australia not taking offensive action against Iran, not deploying ground troops [SBS] [HIGH]",
-      "2026-04-03 Reports Australian SAS deployed to Middle East on standby; Albanese government refuses to confirm or deny [Canberra Times] [MEDIUM]",
-      "2026-04-03 UK deploys Rapid Sentry anti-drone air defence system to Kuwait \u2014 protecting British/Kuwaiti personnel and interests [Middle East Eye] [HIGH]"
+      "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]"
     ],
     "foodImpact": [
-      "Grain shipments via Red Sea suspended",
-      "Fertiliser supply chain disrupted",
-      "Asian food export restrictions possible"
+      "2026-04-03 Guardian visual guide: Hormuz blockade disrupting Gulf fertiliser/urea exports; buyers waiting it out; supply bad but not catastrophic yet \u2014 worst case if conflict extends [The Guardian] [MEDIUM]",
+      "2026-04-03 FAO: World food prices rise to 6-month high; if Iran war exceeds 40 days and input costs stay high, farmers may reduce fertiliser use, plant less, switch crops \u2014 threatening 2026/27 supply [Reuters] [HIGH]"
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-04 Queensland canegrowers pushing E10 ethanol blend as diesel alternative amid fuel crisis; QLD fuel availability tightening; prices up [Queensland Country Life] [MEDIUM]",
       "2026-04-04 Bowen: 312 stations without diesel nationally (down from 410 on Apr 3); fewer stations running dry as Easter demand peaks [MarketScreener/Chris Bowen] [HIGH]",
       "2026-04-04 The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate [The Age] [HIGH]",
-      "2026-04-04 Guardian: Bowen says fewer stations running dry \u2014 3.7bn litres booked for April and into May; industry confident in supply [The Guardian] [HIGH]",
-      "2026-04-04 ABC: Reserve stocks steady \u2014 39 days petrol, 29 days diesel, 30 days jet fuel; STI Steadfast jet fuel docking Victoria in coming days [ABC News] [HIGH]"
+      "2026-04-04 Guardian: Bowen says fewer stations running dry \u2014 3.7bn litres booked for April and into May; industry confident in supply [The Guardian] [HIGH]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T07:44:30Z",
+    "updated": "2026-04-04T08:40:47Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,8 +1166,47 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T07:44:30Z",
+  "dbLastUpdated": "2026-04-04T08:40:47Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role",
+      "source": "Pravda Australia",
+      "sourceUrl": "https://au.news-pravda.com/australia/2026/04/04/29556.html",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T08:39:33Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Queensland canegrowers pushing E10 ethanol blend as diesel alternative amid fuel crisis; QLD fuel availability tightening; prices up",
+      "source": "Queensland Country Life",
+      "sourceUrl": "https://www.queenslandcountrylife.com.au/story/9209911/australia-faces-fuel-crisis-canegrowers-pushes-e10-solution/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T08:39:26Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded",
+      "source": "IBT Australia",
+      "sourceUrl": "https://www.ibtimes.com.au/10-key-things-know-about-oil-petrol-prices-australia-right-now-2026-1865367",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T08:39:26Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-04",
       "domain": "australia",
@@ -1259,6 +1297,45 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "40+ nations convene virtually Thu Apr 2 to launch multinational coalition dedicated to securing free passage through Strait of Hormuz",
+      "source": "QuantoSei News",
+      "sourceUrl": "https://news.quantosei.com/2026/04/03/over-40-countries-launch-coalition-to-secure-strait-of-hormuz/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T08:39:26Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "food",
+      "headline": "Guardian visual guide: Hormuz blockade disrupting Gulf fertiliser/urea exports; buyers waiting it out; supply bad but not catastrophic yet \u2014 worst case if conflict extends",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/world/2026/apr/03/visual-guide-gulf-fertiliser-blockade",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T08:39:26Z",
+      "sent": false,
+      "color": "#ffb020",
+      "label": "FOOD"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "food",
+      "headline": "FAO: World food prices rise to 6-month high; if Iran war exceeds 40 days and input costs stay high, farmers may reduce fertiliser use, plant less, switch crops \u2014 threatening 2026/27 supply",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/markets/us/world-food-prices-extend-rise-march-united-nations-fao-says-2026-04-03/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T08:39:26Z",
+      "sent": false,
+      "color": "#ffb020",
+      "label": "FOOD"
     },
     {
       "dtg": "2026-04-03",
@@ -1649,6 +1726,19 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "geopolitical",
+      "headline": "UN Hormuz vote delayed; China opposes authorisation of force; Britain hosted 40+ nation summit Thu Apr 2; resolution now expected next week",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/middle-east/bahrain-hopes-vote-revised-hormuz-resolution-friday-2026-04-02/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T08:39:26Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
     },
     {
       "dtg": "2026-04-02",
@@ -2209,9 +2299,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-04T07:44:30Z",
-    "cron": "asian-refinery",
-    "summary": "5 new events \u2014 South Korea export caps formalised, Singapore SRC ~60%, alternative crude sourcing underway"
+    "sentAt": "2026-04-04T08:40:43Z",
+    "cron": "war-fuel-food",
+    "summary": "40+ nation Hormuz coalition; AU SAS deployment; FAO food price warning; servo outages worsened to 787 over Easter"
   },
   "reviewPanels": {
     "feed": {
@@ -2570,7 +2660,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T07:44:30Z",
+    "updatedAt": "2026-04-04T08:40:47Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -2579,9 +2669,14 @@
         "S": 0.79,
         "M": 0.65,
         "D": 0.25,
+        "P": 0.15,
+        "J": 0.2,
+        "routeStress": 0.86,
         "avgRefineryCapacity": 66.2,
         "servoOutages": 787,
         "dieselDays": 25,
+        "petrolDays": 27,
+        "jetFuelDays": 26,
         "regionalPriceIncrease": 9.8,
         "troopPhase": "PRE-DEPLOYMENT",
         "hormuzStatus": "closed"
@@ -2593,7 +2688,11 @@
         "Probability_i = raw_i / \u03a3(raw) \u00d7 100",
         "Scenario severity \u03bb: resolution = 0, base = 1/3, escalation = 1",
         "Peak GDP impact % = -(1 + 3\u03bb + \u03bb\u00b2)",
-        "Food price rise % = 10 + 30\u03bb"
+        "Food price rise % = 10 + 30\u03bb",
+        "Freight constraint = 0.35*D + 0.20*Route + 0.20*R + 0.15*S + 0.10*\u03bb",
+        "Household mobility = 0.40*P + 0.30*S + 0.20*\u03bb + 0.10*M",
+        "Aviation constraint = 0.45*J + 0.30*Route + 0.25*\u03bb",
+        "Rationing risk = 0.35*D + 0.20*P + 0.20*S + 0.15*R + 0.10*\u03bb"
       ],
       "rawScores": {
         "base": 0.699,
@@ -2618,10 +2717,42 @@
           "Gulf shipping lanes remain open",
           "Taiwan strait remains stable"
         ],
-        "essentialTravelThresholds": {
-          "dieselReserveDay10": "Non-essential travel restricted",
-          "dieselReserveDay7": "Private vehicles limited to 50km/day",
-          "dieselReserveDay5": "Essential movement only"
+        "mobilityOutlook": {
+          "summary": "Mobility shifts into managed constraint: freight first, patchy regional fuel access, reduced discretionary travel, and persistent aviation disruption.",
+          "scores": {
+            "freight": {
+              "value": 0.5,
+              "label": "Restricted",
+              "band": "amber"
+            },
+            "household": {
+              "value": 0.43,
+              "label": "Constrained",
+              "band": "yellow"
+            },
+            "aviation": {
+              "value": 0.43,
+              "label": "Constrained",
+              "band": "yellow"
+            },
+            "rationing": {
+              "value": 0.38,
+              "label": "Constrained",
+              "band": "yellow"
+            }
+          },
+          "consequences": [
+            "Freight and essential services are prioritised before private mobility.",
+            "Regional shortages stay uneven even if metro supply holds.",
+            "Domestic aviation remains reduced and expensive for longer.",
+            "Households feel availability and price pain before formal controls."
+          ],
+          "failureOrder": [
+            "Regional freight reliability",
+            "Domestic aviation and airfreight",
+            "Household/private vehicle mobility",
+            "Formal rationing controls"
+          ]
         },
         "cascade": {
           "month0": {
@@ -2672,10 +2803,42 @@
           "IRGC closes Strait of Hormuz",
           "Iranian retaliation hits Gulf infrastructure"
         ],
-        "essentialTravelThresholds": {
-          "dieselReserveDay10": "Essential services only",
-          "dieselReserveDay7": "Public transport prioritised",
-          "dieselReserveDay5": "Rationing enforced"
+        "mobilityOutlook": {
+          "summary": "Mobility risk becomes systemic. Freight gets protected, aviation shrinks, regional access degrades, and rationing becomes a live policy option.",
+          "scores": {
+            "freight": {
+              "value": 0.57,
+              "label": "Restricted",
+              "band": "amber"
+            },
+            "household": {
+              "value": 0.56,
+              "label": "Restricted",
+              "band": "amber"
+            },
+            "aviation": {
+              "value": 0.6,
+              "label": "Restricted",
+              "band": "amber"
+            },
+            "rationing": {
+              "value": 0.44,
+              "label": "Constrained",
+              "band": "yellow"
+            }
+          },
+          "consequences": [
+            "Freight corridors, agriculture, emergency services and buses get priority access.",
+            "Domestic aviation and airfreight contract quickly if jet fuel tightens.",
+            "Regional household fuel access becomes patchy before metro rationing.",
+            "Formal allocation and movement controls become plausible if shortages deepen."
+          ],
+          "failureOrder": [
+            "Domestic aviation and airfreight",
+            "Regional freight reliability",
+            "Household/private vehicle mobility",
+            "Formal rationing controls"
+          ]
         },
         "cascade": {
           "month0": {
@@ -2726,10 +2889,42 @@
           "Ceasefire agreed within 72 hours",
           "Sanctions eased temporarily"
         ],
-        "essentialTravelThresholds": {
-          "dieselReserveDay10": "No restrictions",
-          "dieselReserveDay7": "Monitor only",
-          "dieselReserveDay5": "Voluntary conservation"
+        "mobilityOutlook": {
+          "summary": "Mobility remains stressed but functional. Expect delays, higher prices, and selective conservation rather than formal restrictions.",
+          "scores": {
+            "freight": {
+              "value": 0.47,
+              "label": "Constrained",
+              "band": "yellow"
+            },
+            "household": {
+              "value": 0.36,
+              "label": "Constrained",
+              "band": "yellow"
+            },
+            "aviation": {
+              "value": 0.35,
+              "label": "Constrained",
+              "band": "yellow"
+            },
+            "rationing": {
+              "value": 0.34,
+              "label": "Constrained",
+              "band": "yellow"
+            }
+          },
+          "consequences": [
+            "No formal movement controls expected.",
+            "Domestic flights remain expensive and patchy before recovering.",
+            "Voluntary fuel conservation is more likely than rationing.",
+            "Regional freight delays ease first if routes reopen."
+          ],
+          "failureOrder": [
+            "Regional freight reliability",
+            "Household/private vehicle mobility",
+            "Domestic aviation and airfreight",
+            "Formal rationing controls"
+          ]
         },
         "cascade": {
           "month0": {
