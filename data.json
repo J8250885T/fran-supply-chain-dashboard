@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T02:13:36Z",
+  "lastUpdated": "2026-04-04T02:19:09Z",
   "warAlert": {
-    "timestamp": "2026-04-04T02:13:36Z",
+    "timestamp": "2026-04-04T02:19:09Z",
     "fuelImpact": [
       "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
       "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T02:13:36Z",
+    "updated": "2026-04-04T02:19:09Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T02:13:36Z",
+  "dbLastUpdated": "2026-04-04T02:19:09Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2286,7 +2286,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T02:13:36Z",
+    "updatedAt": "2026-04-04T02:19:09Z",
     "scenarios": [
       {
         "id": "base",
