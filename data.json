@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T01:40:14Z",
+  "lastUpdated": "2026-04-04T01:41:14Z",
   "warAlert": {
-    "timestamp": "2026-04-04T01:40:14Z",
+    "timestamp": "2026-04-04T01:41:14Z",
     "fuelImpact": [
       "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
       "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T01:40:14Z",
+    "updated": "2026-04-04T01:41:14Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T01:40:14Z",
+  "dbLastUpdated": "2026-04-04T01:41:14Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -1949,9 +1949,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-03T20:38:45Z",
-    "cron": "war-fuel-food",
-    "summary": "Brent hits new war high .42; Kuwait Ahmadi still burning; Athe Nova drone strike near Hormuz kills port worker; Australia 34-day reserves confirmed in Parliament; servo outages 787 and rising"
+    "sentAt": "2026-04-04T01:40:33Z",
+    "cron": "servo-tracker",
+    "summary": "No material change \u2014 FuelRadar still showing 787 nationally, last update 03/04 4:46pm AEST. No new data available."
   },
   "reviewPanels": {
     "feed": {
