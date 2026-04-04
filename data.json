@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-04T07:40:39Z",
+  "lastUpdated": "2026-04-04T07:44:30Z",
   "warAlert": {
-    "timestamp": "2026-04-04T07:40:39Z",
+    "timestamp": "2026-04-04T07:44:30Z",
     "fuelImpact": [
       "2026-04-04 US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations [Signals CV] [MEDIUM]",
+      "2026-04-03 South Korea secures ~50 million barrels alternative crude; export caps + demand cuts in force amid Hormuz closure [Korea Pro] [HIGH]",
       "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]",
       "2026-04-03 Government denies SAS deployment; Wong: Australia not taking offensive action against Iran, not deploying ground troops [SBS] [HIGH]",
       "2026-04-03 Reports Australian SAS deployed to Middle East on standby; Albanese government refuses to confirm or deny [Canberra Times] [MEDIUM]",
-      "2026-04-03 UK deploys Rapid Sentry anti-drone air defence system to Kuwait \u2014 protecting British/Kuwaiti personnel and interests [Middle East Eye] [HIGH]",
-      "2026-04-03 CMA CGM European container ship transits Strait of Hormuz \u2014 second European vessel through this week [WorldCargo News] [HIGH]"
+      "2026-04-03 UK deploys Rapid Sentry anti-drone air defence system to Kuwait \u2014 protecting British/Kuwaiti personnel and interests [Middle East Eye] [HIGH]"
     ],
     "foodImpact": [
       "Grain shipments via Red Sea suspended",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T07:40:39Z",
+    "updated": "2026-04-04T07:44:30Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T07:40:39Z",
+  "dbLastUpdated": "2026-04-04T07:44:30Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -1259,6 +1259,19 @@
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "South Korea secures ~50 million barrels alternative crude; export caps + demand cuts in force amid Hormuz closure",
+      "source": "Korea Pro",
+      "sourceUrl": "https://koreapro.org/2026/04/south-korea-secures-50-million-barrels-as-oil-shock-forces-demand-cuts/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T07:43:02Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
     },
     {
       "dtg": "2026-04-03",
@@ -1938,6 +1951,19 @@
     },
     {
       "dtg": "2026-03-28",
+      "domain": "fuel",
+      "headline": "Asian refiners scrambling for non-Middle East crude as Hormuz flows halted; Singapore/South Korea actively sourcing alternatives",
+      "source": "Business Times Singapore",
+      "sourceUrl": "https://www.businesstimes.com.sg/international/asean/asian-refiners-scour-world-oil-hormuz-flows-halted",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T07:43:02Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-28",
       "domain": "shipping",
       "headline": "Houthis enter war \u2014 Bab el-Mandeb threatened, ~30 tankers idling near Yanbu",
       "source": "Reuters",
@@ -1964,6 +1990,19 @@
     },
     {
       "dtg": "2026-03-27",
+      "domain": "fuel",
+      "headline": "South Korea imposes naphtha export ban + second-round gasoline price cap; naphtha <10% of refiner output but signals supply stress tightening",
+      "source": "Korea Joongang Daily",
+      "sourceUrl": "https://koreajoongangdaily.joins.com/news/2026-03-27/business/industry/Korea-imposes-naphtha-export-ban-sets-secondround-price-cap-on-gasoline-in-face-of-energy-disruptions/2554735",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T07:43:42Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-27",
       "domain": "australia",
       "headline": "PM secures 6 jet fuel tankers from China \u2014 arriving 28 Mar through 8 Apr",
       "source": "SBS",
@@ -1977,6 +2016,19 @@
     },
     {
       "dtg": "2026-03-25",
+      "domain": "fuel",
+      "headline": "Singapore + Malaysia refineries cutting output as crude supplies tighten from Hormuz closure; SRC at ~60% utilisation",
+      "source": "Media Selangor",
+      "sourceUrl": "https://mediaselangor.com/en/2026/03/347271",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-04T07:43:24Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-25",
       "domain": "australia",
       "headline": "China jet fuel export ban effective \u2014 removes key Australian backup supplier",
       "source": "Reuters",
@@ -1987,6 +2039,19 @@
       "sent": true,
       "color": "#00e87a",
       "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-24",
+      "domain": "fuel",
+      "headline": "South Korea caps fuel exports; Hyundai Oilbank reducing jet fuel exports due to Daesan 520kbd maintenance; Korean refiners already in tight run mode",
+      "source": "Argus Media",
+      "sourceUrl": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2801979-south-korea-caps-fuel-exports-to-safeguard-supply",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-04T07:43:24Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
     },
     {
       "dtg": "2026-03-24",
@@ -2144,9 +2209,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-04T07:37:19Z",
-    "cron": "shipment-validator",
-    "summary": "3 new events \u2014 STI Steadfast arrival + reserve stocks steady (39d petrol/29d diesel/30d jet) + Bowen throughput balanced"
+    "sentAt": "2026-04-04T07:44:30Z",
+    "cron": "asian-refinery",
+    "summary": "5 new events \u2014 South Korea export caps formalised, Singapore SRC ~60%, alternative crude sourcing underway"
   },
   "reviewPanels": {
     "feed": {
@@ -2505,7 +2570,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T07:40:39Z",
+    "updatedAt": "2026-04-04T07:44:30Z",
     "formula": {
       "inputs": {
         "T": 0.1,
