@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T02:02:39Z",
+  "lastUpdated": "2026-04-04T02:09:22Z",
   "warAlert": {
-    "timestamp": "2026-04-04T02:02:39Z",
+    "timestamp": "2026-04-04T02:09:22Z",
     "fuelImpact": [
       "2026-04-03 Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception [NYT] [HIGH]",
       "2026-04-03 Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt [Wikipedia] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T02:02:39Z",
+    "updated": "2026-04-04T02:09:22Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T02:02:39Z",
+  "dbLastUpdated": "2026-04-04T02:09:22Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2281,6 +2281,265 @@
           }
         ],
         "note": "35-nation coalition is primarily a NAVAL escort/blockade force. Ground contributions from non-US nations are minimal to none. France is the most significant additional European deployer but focused on naval power projection."
+      }
+    }
+  },
+  "dominoModel": {
+    "title": "Iran War Cascade \u2014 3-Scenario Model",
+    "updatedAt": "2026-04-04T02:09:22Z",
+    "scenarios": [
+      {
+        "id": "base",
+        "name": "Base Case \u2014 Stalemate",
+        "probability": 45,
+        "color": "#4a9eff",
+        "description": "Neither side achieves decisive advantage. US/Iran settle into attritional standoff without ground invasion. Impact remains channeled through fuel prices and shipping disruption only.",
+        "peakGdpImpact": -2.0,
+        "foodPriceRise": 20,
+        "foodPermanent": false,
+        "duration": "Transient",
+        "recovery": "3\u20136 months",
+        "keyTriggers": [
+          "No US/Iran ground invasion in 72hrs",
+          "Gulf shipping lanes remain open",
+          "Taiwan strait remains stable"
+        ],
+        "essentialTravelThresholds": {
+          "dieselReserveDay10": "Non-essential travel restricted",
+          "dieselReserveDay7": "Private vehicles limited to 50km/day",
+          "dieselReserveDay5": "Essential movement only"
+        },
+        "cascade": {
+          "now": {
+            "fuel": "Tight \u2014 price spike",
+            "travel": "Normal",
+            "productivity": "Normal",
+            "food": "Stable"
+          },
+          "month1": {
+            "fuel": "Elevated +20%",
+            "travel": "Recreational down",
+            "productivity": "Mild",
+            "food": "+5%"
+          },
+          "month2": {
+            "fuel": "Plateau",
+            "travel": "Discretionary air down 20%",
+            "productivity": "Stable",
+            "food": "+10%"
+          },
+          "month3": {
+            "fuel": "Easing",
+            "travel": "Normalising",
+            "productivity": "Normal",
+            "food": "+15%"
+          },
+          "month6": {
+            "fuel": "Near-normal",
+            "travel": "Normal",
+            "productivity": "Normal",
+            "food": "+20%"
+          }
+        }
+      },
+      {
+        "id": "escalation",
+        "name": "Escalation \u2014 Ground War",
+        "probability": 30,
+        "color": "#ff3b3b",
+        "description": "US deploys ground forces. Iran closes Hormuz. Full fuel shock, travel restrictions cascade into productivity and food. Food prices peak at +40% with permanent structural change.",
+        "peakGdpImpact": -5.0,
+        "foodPriceRise": 40,
+        "foodPermanent": true,
+        "duration": "6+ months",
+        "recovery": "12\u201324 months",
+        "keyTriggers": [
+          "US ground forces enter Iran",
+          "IRGC closes Strait of Hormuz",
+          "Iranian retaliation hits Gulf infrastructure"
+        ],
+        "essentialTravelThresholds": {
+          "dieselReserveDay10": "Essential services only",
+          "dieselReserveDay7": "Public transport prioritised",
+          "dieselReserveDay5": "Rationing enforced"
+        },
+        "cascade": {
+          "now": {
+            "fuel": "Spike \u2014 diesel +30%",
+            "travel": "Airfreight disruption",
+            "productivity": "uncertainty shock",
+            "food": "Freight spike"
+          },
+          "month1": {
+            "fuel": "+50\u201370%",
+            "travel": "Air routes cut 40%",
+            "productivity": "-15%",
+            "food": "+20%"
+          },
+          "month2": {
+            "fuel": "Plateau at high",
+            "travel": "Essential travel only",
+            "productivity": "-25%",
+            "food": "+30%"
+          },
+          "month3": {
+            "fuel": "Structural tight",
+            "travel": "Freight quotas",
+            "productivity": "-30%",
+            "food": "+40%"
+          },
+          "month6": {
+            "fuel": "Rationed",
+            "travel": "Severely limited",
+            "productivity": "-35%",
+            "food": "+40% (structural)"
+          }
+        }
+      },
+      {
+        "id": "resolution",
+        "name": "Resolution \u2014 Ceasefire",
+        "probability": 25,
+        "color": "#00e87a",
+        "description": "Trump-Khamenei back-channel holds. Temporary ceasefire agreed. Fuel prices ease within weeks. Food impact stays below +10%.",
+        "peakGdpImpact": -1.0,
+        "foodPriceRise": 10,
+        "foodPermanent": false,
+        "duration": "2\u20133 months",
+        "recovery": "1\u20133 months",
+        "keyTriggers": [
+          "Trump-Khamenei back-channel deal",
+          "Ceasefire agreed within 72 hours",
+          "Sanctions eased temporarily"
+        ],
+        "essentialTravelThresholds": {
+          "dieselReserveDay10": "No restrictions",
+          "dieselReserveDay7": "Monitor only",
+          "dieselReserveDay5": "Voluntary conservation"
+        },
+        "cascade": {
+          "now": {
+            "fuel": "Peak uncertainty",
+            "travel": "Air bookings cancel",
+            "productivity": "Hold",
+            "food": "Mild spike"
+          },
+          "month1": {
+            "fuel": "Easing \u2014 Hormuz open",
+            "travel": " bookings recover",
+            "productivity": "Normal",
+            "food": "+5%"
+          },
+          "month2": {
+            "fuel": "Normalising",
+            "travel": "Normal",
+            "productivity": "Normal",
+            "food": "+8%"
+          },
+          "month3": {
+            "fuel": "Pre-war levels",
+            "travel": "Normal",
+            "productivity": "Normal",
+            "food": "+10%"
+          },
+          "month6": {
+            "fuel": "Normal",
+            "travel": "Normal",
+            "productivity": "Normal",
+            "food": "Stable"
+          }
+        }
+      }
+    ],
+    "nodes": [
+      {
+        "id": "war",
+        "label": "\ud83c\uddee\ud83c\uddf7 Iran War",
+        "status": "ACTIVE",
+        "note": "Ongoing since Oct 2025"
+      },
+      {
+        "id": "fuel",
+        "label": "\u26fd Fuel Supply",
+        "status": "TIGHT",
+        "note": "Gulf disruption + refinery cuts"
+      },
+      {
+        "id": "travel",
+        "label": "\u2708\ufe0f Travel",
+        "status": "DISRUPTED",
+        "note": "Air routes cut, freight disrupted"
+      },
+      {
+        "id": "productivity",
+        "label": "\ud83c\udfed Productivity",
+        "status": "UNCERTAIN",
+        "note": "Energy cost shock"
+      },
+      {
+        "id": "food",
+        "label": "\ud83c\udf3e Food Prices",
+        "status": "RISING",
+        "note": "Freight + fertiliser + packaging"
+      }
+    ],
+    "keyDecisionPoints": [
+      {
+        "date": "Apr 6",
+        "label": "Trump decision",
+        "description": "US ground invasion vote \u2014 most critical fork",
+        "scenario": "Escalation"
+      },
+      {
+        "date": "Month 1",
+        "label": "Rationing trigger",
+        "description": "Diesel reserves <10 days \u2014 travel restrictions activate",
+        "scenario": "Escalation"
+      },
+      {
+        "date": "Month 2",
+        "label": "Essential travel",
+        "description": "Diesel reserves <7 days \u2014 non-essential movement prohibited",
+        "scenario": "Escalation"
+      },
+      {
+        "date": "Month 3",
+        "label": "Ceasefire window",
+        "description": "Historical pattern suggests back-channel talks begin Month 3 if stalemate holds",
+        "scenario": "Resolution"
+      },
+      {
+        "date": "Month 6",
+        "label": "Supply reset",
+        "description": "New normal established regardless of scenario",
+        "scenario": "All"
+      }
+    ],
+    "monthlyOutcomes": {
+      "now": {
+        "base": "Normal ops",
+        "escalation": "Peak shock",
+        "resolution": "Easing"
+      },
+      "month1": {
+        "base": "Elevated",
+        "escalation": "Restricted",
+        "resolution": "Recovery"
+      },
+      "month2": {
+        "base": "Plateau",
+        "escalation": "Rationed",
+        "resolution": "Normal"
+      },
+      "month3": {
+        "base": "Easing",
+        "escalation": "Structural",
+        "resolution": "Done"
+      },
+      "month6": {
+        "base": "Near-normal",
+        "escalation": "Chronic",
+        "resolution": "Stable"
       }
     }
   }
