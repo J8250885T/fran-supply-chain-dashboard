@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRAN // 1EIGHT Supply Chain Intelligence</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --bg: #070b14;
+      --surface: #0d1520;
+      --surface-raised: #131e2e;
+      --surface-high: #1a2840;
+      --border: #1c2a3e;
+      --border-bright: #2a3f5a;
+      --text: #dce8f5;
+      --text-dim: #7a94b0;
+      --text-muted: #4a6278;
+      --red: #ff3b3b;
+      --red-dim: #3d1010;
+      --amber: #ffb020;
+      --amber-dim: #3d2e08;
+      --green: #00e87a;
+      --green-dim: #0a3d1e;
+      --blue: #4a9eff;
+      --blue-dim: #1a2e50;
+      --font: ui-monospace, 'SF Mono', CascadiaCode, 'Fira Code', Menlo, Consolas, monospace;
+    }
+
+    html {
+      -webkit-font-smoothing: antialiased
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      line-height: 1.5;
+      min-height: 100vh
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-bright);
+      border-radius: 3px
+    }
+
+    /* ── HEADER ── */
+    .hdr {
+      z-index: 200;
+      height: 44px;
+      background: linear-gradient(180deg, #0d1520 0%, #070b14 100%);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 18px;
+      flex-wrap: wrap
+    }
+
+    .hdr-brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      white-space: nowrap
+    }
+
+    .hdr-brand span {
+      color: var(--amber);
+      font-weight: 400
+    }
+
+    .crisis-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase
+    }
+
+    .crisis-0 {
+      background: var(--green-dim);
+      color: var(--green)
+    }
+
+    .crisis-1 {
+      background: var(--amber-dim);
+      color: var(--amber)
+    }
+
+    .crisis-2 {
+      background: #3d2008;
+      color: #ff8c00
+    }
+
+    .crisis-3 {
+      background: var(--red-dim);
+      color: var(--red)
+    }
+
+    .crisis-4 {
+      background: #2d0000;
+      color: #ff0000
+    }
+
+    .hdr-dtg {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px
+    }
+
+    .dtg-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em
+    }
+
+    .dtg-value {
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 700
+    }
+
+    .hdr-time {
+      color: var(--text-dim);
+      font-size: 11px
+    }
+
+    .hdr-live {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      color: var(--green)
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.25
+      }
+    }
+
+    /* ── TIER-1 STRIP ── */
+    .tier1-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border)
+    }
+
+    .t1-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px
+    }
+
+    .t1-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase
+    }
+
+    .t1-hero {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.1
+    }
+
+    .t1-unit {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-dim);
+      margin-left: 3px
+    }
+
+    .t1-sub {
+      font-size: 10px;
+      color: var(--text-dim)
+    }
+
+    .t1-badge {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+      width: fit-content;
+      margin-top: 2px
+    }
+
+    .t1-ok {
+      background: var(--green-dim);
+      color: var(--green)
+    }
+
+    .t1-warn {
+      background: var(--amber-dim);
+      color: var(--amber)
+    }
+
+    .t1-danger {
+      background: var(--red-dim);
+      color: var(--red)
+    }
+
+    /* ── MAIN GRID ── */
+    .cmd-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 10px;
+      padding: 10px 16px 20px
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .panel-col-span-2 {
+      grid-column: span 2
+    }
+
+    .panel-wide {
+      grid-column: 1/-1
+    }
+
+    /* ── PANEL HEADER ── */
+    .p-hdr {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .p-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      flex: 1;
+      text-transform: uppercase
+    }
+
+    .p-dtg {
+      font-size: 10px;
+      color: var(--amber)
+    }
+
+    /* ── WAR ALERT ── */
+    .panel-alert {
+      border-color: #2d1010;
+      background: linear-gradient(180deg, #120808 0%, var(--surface) 60%)
+    }
+
+    .alert-inc {
+      display: flex;
+      gap: 8px;
+      padding: 7px 9px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+      align-items: flex-start
+    }
+
+    .alert-inc.crit {
+      background: rgba(255, 59, 59, 0.06);
+      border-left: 3px solid var(--red)
+    }
+
+    .alert-inc.warn {
+      background: rgba(255, 176, 32, 0.06);
+      border-left: 3px solid var(--amber)
+    }
+
+    .alert-inc.info {
+      background: var(--surface-raised);
+      border-left: 3px solid var(--blue)
+    }
+
+    .alert-inc.watch {
+      background: rgba(255, 176, 32, 0.06);
+      border-left: 3px solid var(--amber)
+    }
+
+    .alert-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px
+    }
+
+    .dot-red {
+      background: var(--red)
+    }
+
+    .dot-amber {
+      background: var(--amber)
+    }
+
+    .dot-blue {
+      background: var(--blue)
+    }
+
+    .alert-body {
+      flex: 1
+    }
+
+    .alert-dtg {
+      font-size: 9px;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 2px;
+      letter-spacing: 0.04em
+    }
+
+    .alert-text {
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.4
+    }
+
+    .alert-src {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 2px
+    }
+
+    .alert-impact {
+      font-size: 10px;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      margin-top: 4px;
+      padding-top: 4px
+    }
+
+    .aus-exp {
+      background: var(--green-dim);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 10px;
+      color: #86efac;
+      margin-top: 4px
+    }
+
+    /* ── SERVO ── */
+    .servo-hero {
+      text-align: center;
+      padding: 4px 0
+    }
+
+    .servo-num {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--red)
+    }
+
+    .servo-lbl {
+      font-size: 10px;
+      color: var(--text-muted)
+    }
+
+    .servo-trend {
+      font-size: 10px;
+      color: var(--amber);
+      text-align: center;
+      margin-top: 4px
+    }
+
+    .servo-states {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: 8px
+    }
+
+    .servo-st {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px
+    }
+
+    .servo-st-n {
+      width: 26px;
+      color: var(--text-dim);
+      flex-shrink: 0
+    }
+
+    .servo-bar {
+      flex: 1;
+      height: 5px;
+      background: var(--surface-high);
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .servo-bar-fill {
+      height: 100%;
+      background: var(--red);
+      border-radius: 3px;
+      opacity: 0.7
+    }
+
+    .servo-st-v {
+      width: 26px;
+      text-align: right;
+      color: var(--text-dim);
+      font-size: 10px
+    }
+
+    .servo-src {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 8px
+    }
+
+    /* ── FLEET ── */
+    .fleet-arr {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px
+    }
+
+    .fleet-ship {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      margin-bottom: 4px
+    }
+
+    .fleet-ship.urg {
+      border-color: var(--red);
+      background: rgba(255, 59, 59, 0.05);
+      animation: urg-pulse 2.5s ease-in-out infinite
+    }
+
+    @keyframes urg-pulse {
+
+      0%,
+      100% {
+        border-color: var(--red)
+      }
+
+      50% {
+        border-color: #ff8888
+      }
+    }
+
+    .fleet-days {
+      font-size: 10px;
+      font-weight: 700;
+      width: 36px;
+      text-align: center;
+      flex-shrink: 0
+    }
+
+    .fleet-days.urg {
+      color: var(--red)
+    }
+
+    .fleet-days.ok {
+      color: var(--text-dim)
+    }
+
+    .fleet-body {
+      flex: 1
+    }
+
+    .fleet-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text)
+    }
+
+    .fleet-route {
+      font-size: 10px;
+      color: var(--text-dim)
+    }
+
+    .fleet-meta {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-align: right;
+      flex-shrink: 0
+    }
+
+    .fleet-next {
+      font-size: 9px;
+      color: var(--text-muted);
+      padding: 4px 0 2px;
+      border-top: 1px solid var(--border);
+      margin-top: 4px
+    }
+
+    .fleet-next span {
+      color: var(--text-dim)
+    }
+
+    .fleet-sum {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border)
+    }
+
+    /* ── RESERVES ── */
+    .res-gauge {
+      display: flex;
+      flex-direction: column;
+      gap: 9px
+    }
+
+    .res-row {
+      display: grid;
+      grid-template-columns: 56px 1fr 44px;
+      gap: 10px;
+      align-items: center
+    }
+
+    .res-label {
+      font-size: 10px;
+      font-weight: 700
+    }
+
+    .res-bar-wrap {
+      height: 9px;
+      background: var(--surface-high);
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .res-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 0.5s ease
+    }
+
+    .res-redline {
+      position: absolute;
+      top: -2px;
+      bottom: -2px;
+      width: 2px;
+      background: var(--red);
+      opacity: 0.9
+    }
+
+    .res-days {
+      font-size: 12px;
+      font-weight: 700;
+      text-align: right;
+      white-space: nowrap
+    }
+
+    .res-trigger {
+      font-size: 9px;
+      color: var(--text-muted);
+      padding: 6px 0 2px;
+      border-top: 1px solid var(--border)
+    }
+
+    .res-trigger strong {
+      color: var(--red)
+    }
+
+    .res-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 4px
+    }
+
+    .res-badge {
+      font-size: 9px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      background: var(--surface-high);
+      color: var(--text-dim);
+      border: 1px solid var(--border)
+    }
+
+    /* ── REFINERIES ── */
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .ref-row {
+      display: grid;
+      grid-template-columns: 22px 1fr 50px;
+      gap: 8px;
+      align-items: center
+    }
+
+    .ref-flag {
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1
+    }
+
+    .ref-name {
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .ref-bar-wrap {
+      height: 5px;
+      background: var(--surface-high);
+      border-radius: 3px;
+      overflow: hidden;
+      grid-column: 2
+    }
+
+    .ref-bar-fill {
+      height: 100%;
+      border-radius: 3px
+    }
+
+    .ref-cap {
+      font-size: 11px;
+      font-weight: 700;
+      text-align: right
+    }
+
+    .ref-note {
+      font-size: 9px;
+      color: var(--text-muted);
+      grid-column: 2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .ref-trend {
+      font-size: 11px;
+      font-weight: 700;
+      text-align: right;
+      flex-shrink: 0
+    }
+
+    .ref-summary {
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border)
+    }
+
+    .ref-summary strong {
+      color: var(--red)
+    }
+
+    /* ── ROUTES ── */
+    .routes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: 20px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 9px;
+      background: var(--surface-raised);
+      border-radius: 7px;
+      border: 1px solid var(--border)
+    }
+
+    .route-icon {
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1
+    }
+
+    .route-name {
+      font-size: 11px;
+      font-weight: 600
+    }
+
+    .route-traffic {
+      font-size: 9px;
+      color: var(--text-muted)
+    }
+
+    .route-status {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 3px;
+      white-space: nowrap
+    }
+
+    .rs-open {
+      background: var(--green-dim);
+      color: var(--green)
+    }
+
+    .rs-restricted {
+      background: var(--amber-dim);
+      color: var(--amber)
+    }
+
+    .rs-closed {
+      background: var(--red-dim);
+      color: var(--red)
+    }
+
+    .route-note {
+      grid-column: 1/-1;
+      font-size: 9px;
+      color: var(--text-muted);
+      padding-top: 2px
+    }
+
+    .route-risk {
+      color: var(--amber)
+    }
+
+    /* ── CPI ── */
+    .cpi-curr {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 6px
+    }
+
+    .cpi-stat {
+      flex: 1
+    }
+
+    .cpi-stat-lbl {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em
+    }
+
+    .cpi-stat-val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 1.1
+    }
+
+    .cpi-tier {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+      width: fit-content;
+      margin-top: 2px
+    }
+
+    .tier-ok {
+      background: var(--green-dim);
+      color: var(--green)
+    }
+
+    .tier-warn {
+      background: var(--amber-dim);
+      color: var(--amber)
+    }
+
+    .tier-emerg {
+      background: var(--red-dim);
+      color: var(--red)
+    }
+
+    .cpi-canvas {
+      width: 100%;
+      height: 220px;
+      display: block;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.2)
+    }
+
+    .cpi-legend {
+      display: flex;
+      gap: 10px;
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      flex-wrap: wrap
+    }
+
+    .cpi-leg-item {
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    .cpi-leg-line {
+      width: 14px;
+      height: 2px;
+      border-radius: 1px
+    }
+
+    .cpi-states {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px
+    }
+
+    .cpi-st {
+      font-size: 9px;
+      padding: 2px 7px;
+      border-radius: 4px
+    }
+
+    .cpi-drv {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border)
+    }
+
+    /* ── BANK ── */
+    .bank-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px
+    }
+
+    .bank-table th {
+      text-align: left;
+      padding: 4px 7px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em
+    }
+
+    .bank-table td {
+      padding: 5px 7px;
+      border-bottom: 1px solid rgba(28, 42, 62, 0.5);
+      vertical-align: middle
+    }
+
+    .bank-table .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums
+    }
+
+    .bank-table tr.crit-row td {
+      background: rgba(255, 59, 59, 0.05)
+    }
+
+    .bank-table tr.warn-row td {
+      background: rgba(255, 176, 32, 0.04)
+    }
+
+    .bank-note {
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.5
+    }
+
+    .bank-callout {
+      font-size: 10px;
+      padding: 6px 9px;
+      border-radius: 6px;
+      margin-top: 6px;
+      background: var(--amber-dim);
+      border: 1px solid rgba(255, 176, 32, 0.3);
+      color: #fcd34d
+    }
+
+    .bank-gov {
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border)
+    }
+
+    /* ── FOOTER ── */
+    .ftr {
+      text-align: center;
+      font-size: 9px;
+      color: var(--text-muted);
+      padding: 16px 20px 24px;
+      border-top: 1px solid var(--border);
+      margin-top: 4px
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1100px) {
+      .cmd-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .panel-col-span-2 {
+        grid-column: span 1
+      }
+    }
+
+    @media(max-width:700px) {
+      .cmd-grid {
+        grid-template-columns: 1fr;
+        padding: 8px
+      }
+
+      .tier1-strip {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 6px 8px
+      }
+
+      .t1-hero {
+        font-size: 1.8rem
+      }
+
+      .hdr {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 8px;
+        gap: 6px
+      }
+
+      .hdr-brand {
+        width: 100%
+      }
+
+      .panel-col-span-2 {
+        grid-column: 1
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-brand"><img src="/logo.webp" height="22" style="vertical-align:middle;margin-right:8px"></div>
+    <div class="hdr-dtg">
+      <span class="dtg-label">DTG</span>
+      <span class="dtg-value" id="hdr-dtg">——————</span>
+    </div>
+    <div class="hdr-time" id="hdr-time">——:—— GMT+10</div>
+    <div class="hdr-live">
+      <div class="live-dot"></div> LIVE
+    </div>
+  </header>
+
+  <!-- TIER-1 STRIP -->
+  <div class="tier1-strip">
+    <div class="t1-card">
+      <div class="t1-label">⛽ DIESEL RESERVES</div>
+      <div class="t1-hero" id="t1-reserves">—<span class="t1-unit">DAYS</span></div>
+      <div class="t1-sub" id="t1-reserves-sub">—</div>
+      <div class="t1-badge t1-ok" id="t1-reserves-badge">LOADING</div>
+    </div>
+    <div class="t1-card">
+      <div class="t1-label">🏭 SINGAPORE REFINERY</div>
+      <div class="t1-hero" id="t1-refinery">—<span class="t1-unit">%</span></div>
+      <div class="t1-sub" id="t1-refinery-sub">—</div>
+      <div class="t1-badge t1-ok" id="t1-refinery-badge">LOADING</div>
+    </div>
+    <div class="t1-card">
+      <div class="t1-label">⛽ SERVO OUTAGES</div>
+      <div class="t1-hero" id="t1-servo">—</div>
+      <div class="t1-sub" id="t1-servo-sub">—</div>
+      <div class="t1-badge t1-ok" id="t1-servo-badge">LOADING</div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="cmd-grid">
+
+    <!-- WAR ALERT (2-col wide) -->
+    <section class="panel panel-alert panel-col-span-2" id="panel-alert">
+      <div class="p-hdr">
+        <span class="p-title">⚡ WAR + FUEL + FOOD</span>
+        <span class="p-dtg" id="alert-dtg">——————</span>
+      </div>
+      <div id="alert-content">
+        <div class="alert-inc info">
+          <div class="alert-body">
+            <div class="alert-dtg">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVO (1 col) -->
+    <section class="panel" id="panel-servo">
+      <div class="p-hdr"><span class="p-title">⛽ SERVO OUTAGES</span><span class="p-dtg" id="servo-dtg">——</span></div>
+      <div id="servo-content"></div>
+    </section>
+
+    <!-- FLEET (1 col) -->
+    <section class="panel" id="panel-fleet">
+      <div class="p-hdr"><span class="p-title">🛢️ FLEET ARRIVALS</span><span class="p-dtg" id="fleet-dtg">——</span>
+      </div>
+      <div id="fleet-content"></div>
+    </section>
+
+    <!-- RESERVES (2-col wide) -->
+    <section class="panel panel-col-span-2" id="panel-reserves">
+      <div class="p-hdr"><span class="p-title">🇦🇺 AUSTRALIAN FUEL RESERVES</span><span class="p-dtg"
+          id="reserves-dtg">——</span></div>
+      <div id="reserves-content"></div>
+    </section>
+
+    <!-- REFINERIES (1 col) -->
+    <section class="panel" id="panel-refineries">
+      <div class="p-hdr"><span class="p-title">🏭 ASIAN REFINERIES</span><span class="p-dtg"
+          id="refineries-dtg">——</span></div>
+      <div id="refineries-content"></div>
+    </section>
+
+    <!-- ROUTES (1 col) -->
+    <section class="panel" id="panel-routes">
+      <div class="p-hdr"><span class="p-title">🚢 KEY ROUTES</span><span class="p-dtg" id="routes-dtg">——</span></div>
+      <div id="routes-content"></div>
+    </section>
+
+    <!-- CPI TRACKER (2-col wide) -->
+    <section class="panel panel-col-span-2" id="panel-cpi">
+      <div class="p-hdr"><span class="p-title">📊 CPI TRACKER</span><span class="p-dtg" id="cpi-dtg">——</span></div>
+      <div id="cpi-content"></div>
+    </section>
+
+    <!-- BANK EMPTY (2-col wide) -->
+    <section class="panel panel-wide" id="panel-bank">
+      <div class="p-hdr"><span class="p-title">🏦 HOUSEHOLD CASH FLOW — DEBT + CRISIS MODEL</span><span class="p-dtg"
+          id="bank-dtg">——</span></div>
+      <div id="bank-content"></div>
+    </section>
+
+  </div>
+
+  <div class="ftr">
+    FRAN // 1EIGHT Supply Chain Intelligence &nbsp;|&nbsp; Sources: FuelRadar, ABS, RBA, DCCEEW, IEA, Lloyd's,
+    Bloomberg, Guardian, Reuters &nbsp;|&nbsp; All data estimated — verify independently
+  </div>
+
+  <script>
+    (function () {
+      var REFRESH_MS = 30000;
+      var _lastInf = null;
+
+      // ── API ──
+      function api(path) {
+        return new Promise(function (res, rej) {
+          var x = new XMLHttpRequest();
+          x.open('GET', path + (path.indexOf('?') > -1 ? '&' : '?') + Date.now(), true);
+          x.onload = function () { try { res(JSON.parse(x.responseText)); } catch (e) { rej(e); } };
+          x.onerror = rej;
+          x.send();
+        });
+      }
+
+      // ── DTG FORMATTING ──
+      function fmtDTG(iso) {
+        if (!iso) return '——————';
+        try {
+          var d = new Date(iso);
+          var dd = String(d.getUTCDate()).padStart(2, '0');
+          var hh = String(d.getUTCHours()).padStart(2, '0');
+          var mm = String(d.getUTCMinutes()).padStart(2, '0');
+          var mo = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+          return dd + hh + mm + 'Z ' + mo[d.getUTCMonth()] + ' ' + d.getUTCFullYear();
+        } catch (e) { return '——————'; }
+      }
+      function fmtTime(iso) {
+        if (!iso) return '——:—— GMT+10';
+        try {
+          return new Date(iso).toLocaleTimeString('en-AU', { hour: '2-digit', minute: '2-digit', timeZone: 'Australia/Brisbane' }) + ' GMT+10';
+        } catch (e) { return '——:—— GMT+10'; }
+      }
+
+      // ── HEADER ──
+      function updateHeader(data) {
+        var war = data.warAlert;
+        var dtg = war && war.timestamp ? fmtDTG(war.timestamp) : '——————';
+        document.getElementById('hdr-dtg').textContent = dtg;
+        document.getElementById('hdr-time').textContent = fmtTime(data.lastUpdated);
+
+        // Crisis tier
+        var inf = data.inflation;
+        var badge = document.getElementById('crisis-badge');
+        if (inf) {
+          var reg = inf.regional ? inf.regional.current : 0;
+          if (reg >= 12) { badge.className = 'crisis-badge crisis-4'; badge.textContent = '💀 CRITICAL'; }
+          else if (reg >= 9) { badge.className = 'crisis-badge crisis-3'; badge.textContent = '🔴 CRISIS MODE'; }
+          else if (reg >= 7) { badge.className = 'crisis-badge crisis-2'; badge.textContent = '🟠 HIGH ALERT'; }
+          else if (reg >= 5) { badge.className = 'crisis-badge crisis-1'; badge.textContent = '🟡 ALERT'; }
+          else { badge.className = 'crisis-badge crisis-0'; badge.textContent = '🟢 NORMAL'; }
+        }
+      }
+
+      // ── TIER-1 STRIP ──
+      function renderTier1(data) {
+        var res = data.reserves || {};
+        var ref = (data.refineries || {}).singapore || {};
+        var servo = data.servoOutages || {};
+
+        // Diesel
+        var diesel = res.diesel || 0;
+        var dBadge = document.getElementById('t1-reserves-badge');
+        document.getElementById('t1-reserves').innerHTML = diesel + '<span class="t1-unit">DAYS</span>';
+        document.getElementById('t1-reserves-sub').textContent = (diesel - (res.rationingRedLine || 10)) + 'd above rationing trigger';
+        if (diesel < 20) { dBadge.className = 't1-badge t1-danger'; dBadge.textContent = '🔴 CRITICAL'; }
+        else if (diesel < 30) { dBadge.className = 't1-badge t1-warn'; dBadge.textContent = '⚠️ WARNING'; }
+        else { dBadge.className = 't1-badge t1-ok'; dBadge.textContent = '✅ OK'; }
+
+        // Refinery
+        var cap = ref.capacity || 0;
+        var rBadge = document.getElementById('t1-refinery-badge');
+        document.getElementById('t1-refinery').innerHTML = '~' + cap + '<span class="t1-unit">%</span>';
+        document.getElementById('t1-refinery-sub').textContent = 'Jurong Island capacity';
+        if (cap < 60) { rBadge.className = 't1-badge t1-danger'; rBadge.textContent = '🔴 CRITICAL'; }
+        else if (cap < 70) { rBadge.className = 't1-badge t1-warn'; rBadge.textContent = '⚠️ HIGH RISK'; }
+        else { rBadge.className = 't1-badge t1-ok'; rBadge.textContent = '✅ OK'; }
+
+        // Servo
+        var total = servo.total || 0;
+        var byS = servo.byState || {};
+        var sBadge = document.getElementById('t1-servo-badge');
+        document.getElementById('t1-servo').textContent = total;
+        document.getElementById('t1-servo-sub').textContent = 'NSW ' + (byS.NSW || '—') + ' · QLD ' + (byS.QLD || '—');
+        if (total > 500) { sBadge.className = 't1-badge t1-danger'; sBadge.textContent = '🔴 CRITICAL'; }
+        else if (total > 200) { sBadge.className = 't1-badge t1-warn'; sBadge.textContent = '⚠️ WARNING'; }
+        else { sBadge.className = 't1-badge t1-ok'; sBadge.textContent = '✅ OK'; }
+      }
+
+      // ── WAR ALERT ──
+      function renderAlert(data) {
+        if (!data) return;
+        var el = document.getElementById('alert-content');
+        document.getElementById('alert-dtg').textContent = fmtDTG(data.timestamp || data.lastUpdated);
+
+        var fuel = data.fuelImpact || [];
+        var food = data.foodImpact || [];
+        var watch = data.watch || [];
+        var html = '';
+
+        fuel.forEach(function (f) {
+          var dtg = f.match(/\d{6,8}Z?/);
+          var txt = f;
+          if (dtg) { txt = f.replace(dtg[0], '').trim(); }
+          html += '<div class="alert-inc crit">';
+          html += '<div class="alert-dot dot-red"></div>';
+          html += '<div class="alert-body">';
+          html += '<div class="alert-dtg">' + (dtg ? dtg[0] : '') + '</div>';
+          html += '<div class="alert-text">' + txt + '</div>';
+          html += '</div></div>';
+        });
+
+        food.forEach(function (f) {
+          var dtg = f.match(/\d{6,8}Z?/);
+          var txt = f;
+          if (dtg) { txt = f.replace(dtg[0], '').trim(); }
+          html += '<div class="alert-inc warn">';
+          html += '<div class="alert-dot dot-amber"></div>';
+          html += '<div class="alert-body">';
+          html += '<div class="alert-dtg">' + (dtg ? dtg[0] : '') + '</div>';
+          html += '<div class="alert-text">' + txt + '</div>';
+          html += '</div></div>';
+        });
+
+        watch.forEach(function (f) {
+          html += '<div class="alert-inc watch">';
+          html += '<div class="alert-dot dot-amber"></div>';
+          html += '<div class="alert-body">';
+          html += '<div class="alert-dtg">👁 WATCH</div>';
+          html += '<div class="alert-text">' + f + '</div>';
+          html += '</div></div>';
+        });
+
+        html += '<div class="aus-exp">🇦🇺 AUS: 30d diesel · NSW 326 stations dry · May shipments confirmed · Bowen: rationing not imminent</div>';
+        el.innerHTML = html || '<div class="alert-inc info"><div class="alert-body"><div class="alert-text">No current alerts</div></div></div>';
+      }
+
+      // ── SERVO ──
+      function renderServo(data) {
+        if (!data) return;
+        var el = document.getElementById('servo-content');
+        document.getElementById('servo-dtg').textContent = fmtDTG(data.updated);
+        var total = data.total || 0;
+        var trend = data.trend || '—';
+        var byS = data.byState || {};
+        var states = ['NSW', 'QLD', 'VIC', 'SA', 'WA', 'NT', 'ACT', 'TAS'];
+        var maxS = Math.max.apply(null, states.map(function (s) { return byS[s] || 0; }));
+
+        var html = '<div class="servo-hero">';
+        html += '<div class="servo-num">' + total + '</div>';
+        html += '<div class="servo-lbl">stations dry nationally</div>';
+        html += '<div class="servo-trend">▲ ' + trend + ' — ' + (data.mostAffectedFuel || '—') + ' worst hit</div></div>';
+        html += '<div class="servo-states">';
+        states.forEach(function (s) {
+          var v = byS[s] || 0;
+          if (!v) return;
+          var pct = maxS ? (v / maxS * 100) : 0;
+          html += '<div class="servo-st">';
+          html += '<span class="servo-st-n">' + s + '</span>';
+          html += '<div class="servo-bar"><div class="servo-bar-fill" style="width:' + pct + '%"></div></div>';
+          html += '<span class="servo-st-v">' + v + '</span></div>';
+        });
+        html += '</div>';
+        html += '<div class="servo-src">Source: ' + (data.source || '—') + ' · ' + fmtDTG(data.updated) + '</div>';
+        el.innerHTML = html;
+      }
+
+      // ── FLEET ──
+      function renderFleet(data) {
+        if (!data) return;
+        var el = document.getElementById('fleet-content');
+        document.getElementById('fleet-dtg').textContent = 'DTG: ——————';
+        var ships = data.ships || [];
+        var today = new Date();
+
+        // Sort by ETA
+        ships.sort(function (a, b) {
+          return new Date(a.eta) - new Date(b.eta);
+        });
+
+        var arriving = ships.filter(function (s) { return s.status === 'arriving'; });
+        var enRoute = ships.filter(function (s) { return s.status === 'en_route'; });
+        var urgent = [];
+
+        ships.forEach(function (s) {
+          var e = new Date(s.eta);
+          var d = Math.max(0, Math.ceil((e - today) / 86400000));
+          s._days = d;
+          if (d <= 5) urgent.push(s);
+        });
+
+        var html = '';
+
+        if (urgent.length) {
+          html += '<div class="fleet-arr">⚠️ ARRIVING SOON</div>';
+          urgent.slice(0, 3).forEach(function (s) {
+            html += '<div class="fleet-ship urg">';
+            html += '<span class="fleet-days urg">' + (s._days === 0 ? 'TODAY' : s._days + 'D') + '</span>';
+            html += '<div class="fleet-body"><div class="fleet-name">' + s.name + '</div><div class="fleet-route">' + s.dest + '</div></div>';
+            html += '<div class="fleet-meta"><div>' + s.eta.replace('2026-', '') + '</div><div class="fleet-meta-lbl" style="color:var(--text-muted)">' + s.origin + '</div></div>';
+            html += '</div>';
+          });
+        }
+
+        html += '<div class="fleet-next">NEXT IN QUEUE';
+        enRoute.slice(0, 5).forEach(function (s) {
+          html += '<div>' + s.name + ' → ' + s.dest + ' <span>' + s._days + 'd</span></div>';
+        });
+        html += '</div>';
+
+        html += '<div class="fleet-sum">';
+        html += '<strong>' + ships.length + '</strong> ships tracked · ';
+        html += arriving.length + ' arriving · ';
+        html += enRoute.length + ' en route · ';
+        html += '0 cancelled';
+        html += '</div>';
+        el.innerHTML = html;
+      }
+
+      // ── RESERVES ──
+      function renderReserves(data) {
+        if (!data) return;
+        var el = document.getElementById('reserves-content');
+        document.getElementById('reserves-dtg').textContent = 'DTG: ' + fmtDTG(data.lastUpdated);
+        var rl = data.rationingRedLine || 10;
+        var maxD = 50;
+
+        function gaugeRow(label, emoji, days) {
+          var pct = Math.min(100, (days / maxD) * 100);
+          var rlPct = (rl / maxD) * 100;
+          var col = days < 20 ? 'var(--red)' : days < 30 ? 'var(--amber)' : 'var(--green)';
+          return '<div class="res-row">' +
+            '<div class="res-label">' + emoji + ' ' + label + '</div>' +
+            '<div class="res-bar-wrap">' +
+            '<div class="res-bar-fill" style="width:' + pct + '%;background:' + col + '"></div>' +
+            '<div class="res-redline" style="left:' + rlPct + '%"></div>' +
+            '</div>' +
+            '<div class="res-days" style="color:' + col + '">' + days + 'd</div></div>';
+        }
+
+        var html = '<div class="res-gauge">';
+        html += gaugeRow('DIESEL', '⛽', data.diesel || 0);
+        html += gaugeRow('PETROL', '⛽', data.petrol || 0);
+        html += gaugeRow('JET FUEL', '✈️', data.jetFuel || 0);
+        html += '</div>';
+        html += '<div class="res-trigger"><strong>Rationing trigger: ' + rl + ' days</strong> — ' + (data.diesel || 0) + 'd current = ' + Math.max(0, (data.diesel || 0) - rl) + 'd above trigger</div>';
+        html += '<div class="res-actions">';
+        (data.governmentActions || []).forEach(function (a) {
+          html += '<span class="res-badge">✅ ' + a + '</span>';
+        });
+        html += '</div>';
+        el.innerHTML = html;
+      }
+
+      // ── REFINERIES ──
+      function renderRefineries(data) {
+        if (!data) return;
+        var el = document.getElementById('refineries-content');
+        document.getElementById('refineries-dtg').textContent = 'DTG: ——————';
+        var regions = [
+          { key: 'singapore', name: 'SG', flag: '🇸🇬', note: 'Jurong Island · ▼' },
+          { key: 'southKorea', name: 'SK', flag: '🇰🇷', note: 'Export cap · ▼' },
+          { key: 'taiwan', name: 'TW', flag: '🇹🇼', note: '>10% cuts · ▼' },
+          { key: 'japan', name: 'JP', flag: '🇯🇵', note: 'Stable · ➡' },
+        ];
+        var html = '<div class="ref-list">';
+        var caps = [];
+        regions.forEach(function (r) {
+          var d = data[r.key] || {};
+          var cap = d.capacity || 0;
+          caps.push(cap);
+          var col = cap < 60 ? 'var(--red)' : cap < 75 ? 'var(--amber)' : 'var(--green)';
+          var tArr = (d.trend || '') === 'decreasing' ? ' ▼' : (d.trend || '') === 'increasing' ? ' ▲' : ' ➡';
+          html += '<div class="ref-row">';
+          html += '<span class="ref-flag">' + r.flag + '</span>';
+          html += '<div class="ref-bar-wrap"><div class="ref-bar-fill" style="width:' + cap + '%;background:' + col + '"></div></div>';
+          html += '<span class="ref-cap" style="color:' + col + '">' + cap + '%</span>';
+          html += '<span class="ref-trend" style="color:' + (col) + '">' + tArr + '</span>';
+          html += '</div>';
+          html += '<div class="ref-note" style="color:var(--text-muted)">' + (d.note || '') + '</div>';
+        });
+        var avg = caps.reduce(function (a, b) { return a + b; }, 0) / caps.length;
+        html += '<div class="ref-summary">Regional avg: <strong>~' + Math.round(avg) + '%</strong> — Australian diesel imports <strong>TIGHT</strong></div>';
+        el.innerHTML = html;
+      }
+
+      // ── ROUTES ──
+      function renderRoutes(data) {
+        if (!data) return;
+        var el = document.getElementById('routes-content');
+        document.getElementById('routes-dtg').textContent = 'DTG: ——————';
+        var routes = [
+          { key: 'hormuz', name: 'STRAIT OF HORMUZ', icon: '🌊', sClass: 'rs-closed', note: 'Iran ban since 28 Feb · Mine-lay risk if escalation' },
+          { key: 'redSea', name: 'RED SEA', icon: '🌊', sClass: 'rs-closed', note: 'Houthis resumed Feb 28 · Suez traffic rerouted' },
+          { key: 'babMandeb', name: 'BAB EL-MANDEB', icon: '🌊', sClass: 'rs-restricted', note: 'Houthi high-ground positions · +14 days Cape route' },
+          { key: 'suez', name: 'SUEZ CANAL', icon: '🚢', sClass: 'rs-restricted', note: 'All traffic rerouted · LNG costs +140%' },
+          { key: 'malacca', name: 'STRAIT OF MALACCA', icon: '🚢', sClass: 'rs-open', note: 'Main Australia route · open' },
+        ];
+        var html = '<div class="routes">';
+        routes.forEach(function (r) {
+          var d = data[r.key] || {};
+          var status = (d.status || 'unknown').toLowerCase();
+          var sCls = status === 'open' ? 'rs-open' : status === 'closed' ? 'rs-closed' : 'rs-restricted';
+          var sLbl = status.charAt(0).toUpperCase() + status.slice(1);
+          html += '<div class="route">';
+          html += '<span class="route-icon">' + r.icon + '</span>';
+          html += '<div><div class="route-name">' + r.name + '</div><div class="route-traffic">' + (d.traffic || '') + '</div></div>';
+          html += '<span class="route-status ' + sCls + '">' + sLbl + '</span>';
+          html += '</div>';
+          html += '<div class="route-note" style="padding-left:28px">' + r.note + '</div>';
+        });
+        el.innerHTML = html;
+      }
+
+      // ── CPI CHART ──
+      function drawCPIChart(inf) {
+        var canvas = document.getElementById('cpiCanvas');
+        if (!canvas || !inf) return;
+        var dpr = window.devicePixelRatio || 1;
+        var W = canvas.offsetWidth;
+        var H = 220;
+        canvas.width = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width = W + 'px';
+        canvas.style.height = H + 'px';
+        var ctx = canvas.getContext('2d');
+        ctx.scale(dpr, dpr);
+
+        var padL = 38, padR = 10, padT = 12, padB = 26;
+        var totalW = W - padL - padR;
+        var chartH = H - padT - padB;
+        var leftEnd = padL + totalW * 0.5; // TODAY
+
+        function toX(d) { return padL + (d / 180) * totalW; }
+        function toY(v) { return padT + chartH - (v / 15) * chartH; }
+
+        // Tier bands
+        var tiers = [
+          { l: 5, c: 'rgba(245,158,11,0.09)', lc: 'rgba(245,158,11,0.5)' },
+          { l: 7, c: 'rgba(249,115,22,0.10)', lc: 'rgba(249,115,22,0.55)' },
+          { l: 9, c: 'rgba(239,68,68,0.12)', lc: 'rgba(239,68,68,0.6)' },
+          { l: 12, c: 'rgba(220,38,38,0.14)', lc: 'rgba(220,38,38,0.6)' },
+        ];
+        var prevY = padT + chartH;
+        tiers.forEach(function (t) {
+          var y = toY(t.level);
+          if (y > padT) {
+            ctx.fillStyle = t.c;
+            ctx.fillRect(padL, y, totalW, prevY - y);
+            prevY = y;
+          }
+        });
+
+        // Grid
+        ctx.strokeStyle = '#1f2937'; ctx.lineWidth = 0.5;
+        [0, 5, 7, 9, 12, 15].forEach(function (v) {
+          var y = toY(v);
+          ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + totalW, y); ctx.stroke();
+          ctx.fillStyle = '#4a6278'; ctx.font = '9px ui-monospace'; ctx.textAlign = 'right';
+          ctx.fillText(v + '%', padL - 3, y + 3);
+        });
+
+        // Tier lines + labels
+        tiers.forEach(function (t) {
+          var y = toY(t.level);
+          if (y < padT || y > padT + chartH) return;
+          ctx.save();
+          ctx.strokeStyle = t.lc; ctx.lineWidth = t.l >= 9 ? 1.5 : 1;
+          ctx.setLineDash(t.l >= 9 ? [3, 3] : [2, 3]);
+          ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + totalW, y); ctx.stroke();
+          ctx.setLineDash([]); ctx.restore();
+          ctx.fillStyle = t.lc; ctx.font = 'bold 8px ui-monospace'; ctx.textAlign = 'left';
+          var lbl = t.l === 5 ? '🟡 Alert' : t.l === 7 ? '🟠 Warn' : t.l === 9 ? '🔴 Emerg' : '💀 Crisis';
+          ctx.fillText(t.l + '% ' + lbl, padL + 3, y - 2);
+        });
+
+        // Anchor points
+        var mA = [{ d: 0, v: 0.3 }, { d: 30, v: 1.8 }, { d: 60, v: 4.5 }, { d: 90, v: 7.2 }];
+        var rA = [{ d: 0, v: 0.4 }, { d: 30, v: 2.9 }, { d: 60, v: 6.8 }, { d: 90, v: 9.8 }];
+        function lerpA(a, day) {
+          if (day <= a[0].d) return a[0].v;
+          if (day >= a[a.length - 1].d) return a[a.length - 1].v;
+          for (var i = 0; i < a.length - 1; i++) if (day >= a[i].d && day <= a[i + 1].d) {
+            var t = (day - a[i].d) / (a[i + 1].d - a[i].d);
+            return a[i].v + t * (a[i + 1].v - a[i].v);
+          }
+          return a[a.length - 1].v;
+        }
+
+        // Filled areas (left half)
+        function drawFill(a, color) {
+          ctx.beginPath();
+          for (var d = 0; d <= 90; d++) { var x = toX(d), y = toY(lerpA(a, d)); d === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
+          ctx.lineTo(toX(90), padT + chartH); ctx.lineTo(toX(0), padT + chartH); ctx.closePath();
+          ctx.fillStyle = color; ctx.fill();
+        }
+        drawFill(mA, 'rgba(74,158,255,0.08)');
+        drawFill(rA, 'rgba(255,176,32,0.08)');
+
+        // Metro line (solid left)
+        ctx.beginPath();
+        for (var d = 0; d <= 90; d++) { var x = toX(d), y = toY(lerpA(mA, d)); d === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
+        ctx.strokeStyle = '#4a9eff'; ctx.lineWidth = 1.8; ctx.stroke();
+
+        // Metro end label (solid, at day 90)
+        (function () {
+          var lx = toX(90), ly = toY(lerpA(mA, 90));
+          ctx.save();
+          ctx.fillStyle = '#4a9eff';
+          ctx.font = 'bold 8px ui-monospace';
+          ctx.textAlign = 'left';
+          ctx.fillText('Metro ' + lerpA(mA, 90).toFixed(1) + '%', lx + 4, ly + 3);
+          ctx.restore();
+        })();
+
+        // Regional line (solid left)
+        ctx.beginPath();
+        for (var d = 0; d <= 90; d++) { var x = toX(d), y = toY(lerpA(rA, d)); d === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
+        ctx.strokeStyle = '#ffb020'; ctx.lineWidth = 1.8; ctx.stroke();
+
+        // Regional end label (solid, at day 90) — HIGHEST
+        (function () {
+          var lx = toX(90), ly = toY(lerpA(rA, 90));
+          ctx.save();
+          // pill background
+          ctx.fillStyle = 'rgba(255,176,32,0.18)';
+          ctx.beginPath();
+          ctx.roundRect(lx + 3, ly - 9, 92, 13, 3);
+          ctx.fill();
+          ctx.fillStyle = '#ffb020';
+          ctx.font = 'bold 8px ui-monospace';
+          ctx.textAlign = 'left';
+          ctx.fillText('▲ HIGHEST  Regional ' + lerpA(rA, 90).toFixed(1) + '%', lx + 6, ly + 1);
+          ctx.restore();
+        })();
+
+        // Projections (dashed right)
+        ctx.save(); ctx.setLineDash([4, 3]);
+        var mV = 7.2, rV = 9.8, mR0 = 0.13, rR0 = 0.18;
+        ctx.beginPath();
+        for (var d = 91; d <= 180; d++) {
+          mV += mR0 * Math.pow(0.97, (d - 90) / 30);
+          var x = toX(d), y = toY(mV); d === 91 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = 'rgba(74,158,255,0.65)'; ctx.lineWidth = 1.5; ctx.stroke();
+        ctx.beginPath();
+        for (var d = 91; d <= 180; d++) {
+          rV += rR0 * Math.pow(0.97, (d - 90) / 30);
+          var x = toX(d), y = toY(rV); d === 91 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = 'rgba(255,176,32,0.65)'; ctx.stroke();
+        ctx.setLineDash([]); ctx.restore();
+
+        // Projected end labels (at day 180)
+        (function () {
+          var mFinalX = toX(180), mFinalY = toY(mV);
+          ctx.save();
+          ctx.fillStyle = 'rgba(74,158,255,0.75)';
+          ctx.font = 'bold 8px ui-monospace';
+          ctx.textAlign = 'right';
+          ctx.fillText('Metro ~' + mV.toFixed(1) + '%', mFinalX - 3, mFinalY - 4);
+          ctx.restore();
+        })();
+        (function () {
+          var rFinalX = toX(180), rFinalY = toY(rV);
+          ctx.save();
+          // pill background for regional projected label
+          ctx.fillStyle = 'rgba(255,176,32,0.15)';
+          ctx.beginPath();
+          ctx.roundRect(rFinalX - 98, rFinalY - 11, 95, 13, 3);
+          ctx.fill();
+          ctx.fillStyle = 'rgba(255,176,32,0.9)';
+          ctx.font = 'bold 8px ui-monospace';
+          ctx.textAlign = 'right';
+          ctx.fillText('▲ Regional ~' + rV.toFixed(1) + '%', rFinalX - 5, rFinalY - 1);
+          ctx.restore();
+        })();
+
+        // TODAY divider
+        ctx.save(); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 1; ctx.setLineDash([3, 3]);
+        ctx.beginPath(); ctx.moveTo(leftEnd, padT); ctx.lineTo(leftEnd, padT + chartH); ctx.stroke(); ctx.setLineDash([]); ctx.restore();
+        ctx.fillStyle = 'rgba(255,255,255,0.45)'; ctx.font = 'bold 8px ui-monospace'; ctx.textAlign = 'center';
+        ctx.fillText('TODAY', leftEnd, padT + 10);
+        ctx.fillText('PROJECTED', padL + totalW - 45, padT + 10);
+
+        // X-axis
+        ctx.fillStyle = '#4a6278'; ctx.font = '8px ui-monospace'; ctx.textAlign = 'center';
+        [{ d: 0, l: 'Feb 1' }, { d: 30, l: 'Mar 3' }, { d: 60, l: 'Apr 2' }, { d: 90, l: 'May 1' }, { d: 120, l: 'May 31' }, { d: 150, l: 'Jun 30' }, { d: 180, l: 'Jul 30' }].forEach(function (x) {
+          var cx = toX(x.d);
+          ctx.fillText(x.l, cx, H - 8);
+        });
+      }
+
+      // ── CPI PANEL ──
+      function renderCPI(inf) {
+        if (!inf) return;
+        _lastInf = inf;
+        var el = document.getElementById('cpi-content');
+        document.getElementById('cpi-dtg').textContent = fmtDTG(inf.lastUpdated);
+
+        var m = inf.metro || {};
+        var r = inf.regional || {};
+        var mTier = m.current >= 12 ? 'crisis' : m.current >= 9 ? 'emerg' : m.current >= 7 ? 'warn' : 'ok';
+        var rTier = r.current >= 12 ? 'crisis' : r.current >= 9 ? 'emerg' : r.current >= 7 ? 'warn' : 'ok';
+        var tierCls = { ok: 'tier-ok', warn: 'tier-warn', emerg: 'tier-emerg', crisis: 'tier-crisis' };
+        var tierLbl = { ok: 'OK', warn: 'WARNING', emerg: 'EMERGENCY', crisis: 'CRISIS' };
+
+        var html = '';
+        html += '<div class="cpi-curr">';
+        html += '<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:' + (mTier === 'warn' ? 'var(--amber)' : mTier === 'emerg' ? 'var(--red)' : 'var(--green)') + '">' + (m.current || '—') + '%</div><div class="cpi-tier ' + tierCls[mTier] + '">' + tierLbl[mTier] + '</div></div>';
+        html += '<div class="cpi-stat"><div class="cpi-stat-lbl">Regional</div><div class="cpi-stat-val" style="color:' + (rTier === 'warn' ? 'var(--amber)' : rTier === 'emerg' ? 'var(--red)' : 'var(--amber)') + '">' + (r.current || '—') + '%</div><div class="cpi-tier ' + tierCls[rTier] + '">' + tierLbl[rTier] + '</div></div>';
+        html += '</div>';
+        html += '<canvas id="cpiCanvas" class="cpi-canvas"></canvas>';
+        html += '<div class="cpi-legend">';
+        html += '<div class="cpi-leg-item"><div class="cpi-leg-line" style="background:#4a9eff"></div>Metro</div>';
+        html += '<div class="cpi-leg-item"><div class="cpi-leg-line" style="background:#ffb020"></div>Regional</div>';
+        html += '<div class="cpi-leg-item"><div class="cpi-leg-line" style="background:#ef4444"></div>Dashed = projection</div>';
+        html += '</div>';
+
+        // State peaks
+        var states = inf.states || [];
+        html += '<div class="cpi-states">';
+        states.forEach(function (s) {
+          var tier = s.tier || 'ok';
+          var bg = tier === 'crisis' ? 'rgba(255,59,59,0.2)' : tier === 'emergency' ? 'rgba(255,59,59,0.1)' : tier === 'warning' ? 'rgba(255,176,32,0.1)' : 'rgba(74,158,255,0.08)';
+          var col = tier === 'crisis' || tier === 'emergency' ? 'var(--red)' : tier === 'warning' ? 'var(--amber)' : 'var(--green)';
+          var tArr = s.trend >= 0.6 ? '▲▲' : s.trend >= 0.3 ? '▲' : '➡';
+          html += '<span class="cpi-st" style="background:' + bg + ';color:' + col + '">' + (s.flag || '') + ' ' + s.state + ' ' + (s.regional !== null ? s.regional + '%' : '—') + ' ' + tArr + ' · ' + (s.daysToPeak || '—') + 'd → ' + (s.projPeak || '—') + '%</span>';
+        });
+        html += '</div>';
+
+        // Drivers
+        var drivers = inf.drivers || [];
+        var maxD = Math.max.apply(null, drivers.map(function (d) { return d.contribution; }));
+        html += '<div class="cpi-drv">Drivers: ';
+        drivers.forEach(function (d) {
+          var w = (d.contribution / maxD) * 100;
+          html += d.emoji + ' ' + d.label + ' +' + d.contribution + '% ';
+        });
+        html += '</div>';
+
+        el.innerHTML = html;
+        setTimeout(function () { drawCPIChart(_lastInf); }, 50);
+      }
+
+      // ── BANK PANEL ──
+      function renderBank(be) {
+        if (!be || !be.household) return;
+        var el = document.getElementById('bank-content');
+        document.getElementById('bank-dtg').textContent = fmtDTG(be.lastUpdated);
+
+        var tiers = be.household.tiers || [];
+        var gov = be.government || {};
+
+        var html = '';
+        html += '<table class="bank-table"><thead><tr>';
+        html += '<th>Bracket</th><th>Income/mo</th><th>Debt Svc</th><th class="num">Crisis+</th><th class="num">Cash Flow</th><th class="num">Runway</th>';
+        html += '</tr></thead><tbody>';
+
+        tiers.forEach(function (t) {
+          var rowClass = '';
+          var cashFlow = t.monthlyDeficit || 0;
+          var runway = t.runwayMonths || 999;
+          var cashCol = cashFlow < 0 ? 'var(--red)' : 'var(--green)';
+          var runCol = 'var(--green)';
+          if (runway <= 2) { rowClass = 'crit-row'; runCol = 'var(--red)'; }
+          else if (runway <= 12) { rowClass = 'warn-row'; runCol = 'var(--amber)'; }
+          var tierLbl = t.name.split(' ')[0];
+          var tierColor = rowClass === 'crit-row' ? 'var(--red)' : rowClass === 'warn-row' ? 'var(--amber)' : 'var(--green)';
+          html += '<tr class="' + rowClass + '">';
+          html += '<td style="color:' + tierColor + ';font-weight:700">' + tierLbl + '</td>';
+          html += '<td class="num">$' + (t.income || 0).toLocaleString() + '</td>';
+          html += '<td class="num">$' + (t.debtService || 0).toLocaleString() + '</td>';
+          html += '<td class="num">+$' + (t.monthlyExtra || 0) + '</td>';
+          html += '<td class="num" style="color:' + cashCol + ';font-weight:700">' + (cashFlow < 0 ? '-$' : '+$') + Math.abs(cashFlow).toLocaleString() + '</td>';
+          html += '<td class="num runway" style="color:' + runCol + ';font-weight:700">' + (runway >= 999 ? '∞' : '~' + runway + ' MO') + '</td>';
+          html += '</tr>';
+        });
+        html += '</tbody></table>';
+
+        html += '<div class="bank-note">';
+        html += '<strong>Crisis+</strong> = direct fuel cost + 4% surcharge on food/transport/utilities/goods. ';
+        html += '<strong>Debt Service</strong> = mortgage + car loan + credit card minimums + HECS. ';
+        html += '<strong>Cash Flow</strong> = income - spend - debt svc - crisis+. ';
+        html += '<strong>Runway</strong> = liquid savings ÷ monthly deficit (monthly deficit assumes no income change).';
+        html += '</div>';
+
+        html += '<div class="bank-callout">';
+        html += '⚠️ JOB-LOSS SCENARIO: Average household loses one earner ($2,750/mo) → income drops 50% → cash flow becomes -$925/mo → $15k savings = ~16 months. Middle income: $38k ÷ ($3,900 debt svc + $226 crisis+) = ~9 months.';
+        html += '</div>';
+
+        html += '<div class="bank-gov">';
+        html += '🏛️ Govt Fiscal: <strong>$' + (gov.totalBufferBn || 4.75) + 'bn</strong> committed · Excise cut expires <strong>Jun 30</strong> · ';
+        html += 'Monthly burn: ~$<strong>' + ((gov.monthlyBurnRateM || 900) / 1000).toFixed(1) + 'bn</strong>. ';
+        html += 'At Emergency CPI (9%+): +<strong>$2.2bn/mo</strong> additional fiscal cost.';
+        html += '</div>';
+
+        el.innerHTML = html;
+      }
+
+      // ── RESIZE ──
+      window.addEventListener('resize', function () {
+        clearTimeout(window._resizeTimer);
+        window._resizeTimer = setTimeout(function () {
+          if (_lastInf) renderCPI(_lastInf);
+        }, 150);
+      });
+
+      // ── MAIN ──
+      async function refresh() {
+        try {
+          var data = await api('/data.json');
+          updateHeader(data);
+          renderTier1(data);
+          renderAlert(data.warAlert);
+          renderServo(data.servoOutages);
+          renderFleet(data.shipments);
+          renderReserves(data.reserves);
+          renderRefineries(data.refineries);
+          renderRoutes(data.shippingRoutes);
+          renderCPI(data.inflation);
+          renderBank(data.bankEmpty);
+        } catch (e) {
+          console.error('Refresh error:', e);
+        }
+      }
+
+      refresh();
+      setInterval(refresh, REFRESH_MS);
+    })();
+  </script>
+</body>
+
+</html>
