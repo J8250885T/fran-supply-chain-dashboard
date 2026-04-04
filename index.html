@@ -508,13 +508,20 @@ function showSection(id){
     });
   });
 }
-// Restore from hash on load
-(function(){
-  var hash=(window.location.hash||'').replace('#','');
-  if(hash==='australia'||hash==='routes'||hash==='live') hash='feed';
+function normalizeSectionHash(hash){
+  hash=(hash||'').replace('#','');
+  if(hash==='australia'||hash==='routes') hash='supply';
+  if(hash==='live') hash='feed';
+  return hash;
+}
+function applyHashSection(){
+  var hash=normalizeSectionHash(window.location.hash||'');
   var valid=['feed','supply','markets','households'];
-  if(hash&&valid.indexOf(hash)>=0) setTimeout(function(){showSection(hash);},100);
-})();
+  if(hash&&valid.indexOf(hash)>=0) showSection(hash);
+}
+// Restore from hash on load + when hash changes
+applyHashSection();
+window.addEventListener('hashchange',applyHashSection);
 
 // ── FRESHNESS ──
 function updateFreshness(dbLastUpdated){
