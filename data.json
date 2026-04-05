@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-04T23:50:43Z",
+  "lastUpdated": "2026-04-05T01:36:55Z",
   "warAlert": {
-    "timestamp": "2026-04-04T23:50:43Z",
+    "timestamp": "2026-04-05T01:36:55Z",
     "fuelImpact": [
       "2026-04-04 Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role [Pravda Australia] [MEDIUM]",
       "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]",
@@ -16,17 +16,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-04 Xinhua: Bowen says Australia's fuel supply 'remains strong' \u2014 more petrol getting to service stations [Xinhua] [MEDIUM]",
       "2026-04-04 Queensland canegrowers pushing E10 ethanol blend as diesel alternative amid fuel crisis; QLD fuel availability tightening; prices up [Queensland Country Life] [MEDIUM]",
       "2026-04-04 Bowen: 312 stations without diesel nationally (down from 410 on Apr 3); fewer stations running dry as Easter demand peaks [MarketScreener/Chris Bowen] [HIGH]",
-      "2026-04-04 The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate [The Age] [HIGH]",
-      "2026-04-04 Guardian: Bowen says fewer stations running dry \u2014 3.7bn litres booked for April and into May; industry confident in supply [The Guardian] [HIGH]"
+      "2026-04-04 The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate [The Age] [HIGH]"
     ]
   },
   "servoOutages": {
     "total": 787,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-04T23:50:43Z",
+    "updated": "2026-04-05T01:36:55Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1166,8 +1166,21 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-04T23:50:43Z",
+  "dbLastUpdated": "2026-04-05T01:36:55Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Xinhua: Bowen says Australia's fuel supply 'remains strong' \u2014 more petrol getting to service stations",
+      "source": "Xinhua",
+      "sourceUrl": "https://english.news.cn/asiapacific/20260404/42cd2f14e10440eca25c52bb7c7aa58b/c.html",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T01:36:25Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-04",
       "domain": "geopolitical",
@@ -2299,9 +2312,9 @@
     "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
   },
   "lastReport": {
-    "sentAt": "2026-04-04T08:40:43Z",
-    "cron": "war-fuel-food",
-    "summary": "40+ nation Hormuz coalition; AU SAS deployment; FAO food price warning; servo outages worsened to 787 over Easter"
+    "sentAt": "2026-04-05T01:36:50Z",
+    "cron": "shipment-validator",
+    "summary": "Xinhua: Bowen supply remains strong; STI Steadfast jet fuel imminent; servo outages up to 787 (Easter spike)"
   },
   "reviewPanels": {
     "feed": {
@@ -2660,7 +2673,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-04T23:50:43Z",
+    "updatedAt": "2026-04-05T01:36:55Z",
     "formula": {
       "inputs": {
         "T": 0.1,
