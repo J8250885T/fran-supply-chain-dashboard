@@ -767,65 +767,6 @@ function renderFeedReview(fr){
   });
   html+='</div>';
 
-  // ── Top stories (last 48h HIGH confidence) ──
-  if(fr.topEvents&&fr.topEvents.length){
-    html+='<div style="margin-bottom:14px">';
-    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Key stories — last 48 hours (HIGH confidence)</div>';
-    fr.topEvents.forEach(function(ev){
-      var col=ev.color||'#7a94b0';
-      html+='<div style="display:flex;gap:8px;align-items:flex-start;padding:8px 10px;margin-bottom:5px;background:var(--surface-raised);border:1px solid var(--border);border-left:3px solid '+col+';border-radius:6px">';
-      html+='<div style="min-width:64px;flex-shrink:0">';
-      html+='<div style="font-size:7px;font-weight:700;padding:2px 5px;border-radius:3px;background:'+col+'22;color:'+col+';border:1px solid '+col+'44;text-align:center;letter-spacing:0.05em">'+escHtml(ev.emoji+' '+(ev.label||ev.domain).toUpperCase())+'</div>';
-      html+='<div style="font-size:8px;color:var(--text-muted);margin-top:3px;text-align:center">'+escHtml(ev.dtg||'')+'</div>';
-      html+='</div>';
-      html+='<div style="flex:1;min-width:0">';
-      html+='<div style="font-size:11px;color:var(--text);line-height:1.4;margin-bottom:3px">'+escHtml(ev.headline)+'</div>';
-      html+='<div style="font-size:9px;color:var(--text-muted)">Source: '+escHtml(ev.source||'')+'</div>';
-      html+='</div>';
-      html+='</div>';
-    });
-    html+='</div>';
-  }
-
-  // ── Australian impact box ──
-  var ai=fr.australianImpact||{};
-  html+='<div style="border:1px solid rgba(0,232,122,0.25);background:rgba(0,232,122,0.04);border-radius:8px;padding:12px;margin-bottom:14px">';
-  html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--green);text-transform:uppercase;margin-bottom:10px">🇦🇺 What this means for Australians</div>';
-
-  // Reserves row
-  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">';
-  var dieselCol = fr.dieselStatus && fr.dieselStatus.indexOf('CRITICAL')>=0 ? 'var(--red)'
-                : fr.dieselStatus && fr.dieselStatus.indexOf('THRESHOLD')>=0 ? 'var(--amber)' : 'var(--green)';
-  html+='<div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:8px">';
-  html+='<div style="font-size:8px;color:var(--text-muted);margin-bottom:3px">FUEL RESERVES</div>';
-  html+='<div style="font-size:11px;font-weight:700;color:var(--text)">'+escHtml(ai.reserves||fr.reserveSummary||'—')+'</div>';
-  html+='<div style="font-size:9px;margin-top:2px;color:'+dieselCol+'">Diesel: '+escHtml(fr.dieselStatus||'')+'</div>';
-  html+='</div>';
-  html+='<div style="background:rgba(0,0,0,0.2);border-radius:6px;padding:8px">';
-  html+='<div style="font-size:8px;color:var(--text-muted);margin-bottom:3px">CHOKEPOINTS</div>';
-  html+='<div style="font-size:10px;font-weight:700;color:var(--text)">'+escHtml(ai.chokepoints||fr.routeSummary||'—')+'</div>';
-  var servoCount=fr.servoCount||0;
-  html+='<div style="font-size:9px;margin-top:2px;color:var(--amber)">'+(servoCount?servoCount.toLocaleString()+' stations dry nationally':'')+'</div>';
-  html+='</div>';
-  html+='</div>';
-
-  // Impact rows
-  var impacts=[
-    {icon:'⛽',label:'At the pump',text:ai.atPump},
-    {icon:'🛒',label:'Groceries',text:ai.groceries},
-    {icon:'✈️',label:'Travel',text:ai.travel},
-    {icon:'🏠',label:'Household budget',text:ai.household},
-  ];
-  impacts.forEach(function(item){
-    if(!item.text) return;
-    html+='<div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:7px">';
-    html+='<span style="font-size:14px;flex-shrink:0;margin-top:1px">'+item.icon+'</span>';
-    html+='<div><div style="font-size:9px;font-weight:700;color:var(--text);margin-bottom:1px">'+escHtml(item.label)+'</div>';
-    html+='<div style="font-size:10px;line-height:1.5;color:var(--text-muted)">'+escHtml(item.text)+'</div></div>';
-    html+='</div>';
-  });
-  html+='</div>';
-
   // ── MLCOA / MDCOA ──
   html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">';
   if(fr.mostLikelyCourse){
