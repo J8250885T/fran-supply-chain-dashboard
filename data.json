@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T01:36:55Z",
+  "lastUpdated": "2026-04-05T01:40:42Z",
   "warAlert": {
-    "timestamp": "2026-04-05T01:36:55Z",
+    "timestamp": "2026-04-05T01:40:42Z",
     "fuelImpact": [
       "2026-04-04 Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role [Pravda Australia] [MEDIUM]",
       "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]",
@@ -23,10 +23,10 @@
     ]
   },
   "servoOutages": {
-    "total": 787,
+    "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T01:36:55Z",
+    "updated": "2026-04-05T01:40:42Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1166,7 +1166,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T01:36:55Z",
+  "dbLastUpdated": "2026-04-05T01:40:42Z",
   "dbEvents": [
     {
       "dtg": "2026-04-04",
@@ -2309,12 +2309,12 @@
     "petrol_reserves": "27-36 days",
     "jet_fuel_reserves": "26-29 days",
     "supply_ceiling": "mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless",
-    "servo_outages": "~787 nationally (FuelRadar live, 03/04/2026) \u2014 UP from ~725 on Apr 2, reversing improving trend \u2014 Easter demand spike compounding supply crunch"
+    "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T01:36:50Z",
-    "cron": "shipment-validator",
-    "summary": "Xinhua: Bowen supply remains strong; STI Steadfast jet fuel imminent; servo outages up to 787 (Easter spike)"
+    "sentAt": "2026-04-05T01:40:42Z",
+    "cron": "servo-tracker",
+    "summary": "FuelRadar live: 687 stations affected (\u2193 from 787 on Apr 3); diesel outages halved to 162 nationally; improving trend confirmed"
   },
   "reviewPanels": {
     "feed": {
@@ -2673,20 +2673,20 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T01:36:55Z",
+    "updatedAt": "2026-04-05T01:40:42Z",
     "formula": {
       "inputs": {
         "T": 0.1,
         "H": 1.0,
         "R": 0.46,
-        "S": 0.79,
+        "S": 0.69,
         "M": 0.65,
         "D": 0.25,
         "P": 0.15,
         "J": 0.2,
         "routeStress": 0.86,
         "avgRefineryCapacity": 66.2,
-        "servoOutages": 787,
+        "servoOutages": 687,
         "dieselDays": 25,
         "petrolDays": 27,
         "jetFuelDays": 26,
@@ -2708,16 +2708,16 @@
         "Rationing risk = 0.35*D + 0.20*P + 0.20*S + 0.15*R + 0.10*\u03bb"
       ],
       "rawScores": {
-        "base": 0.699,
-        "escalation": 0.61,
-        "resolution": 0.373
+        "base": 0.689,
+        "escalation": 0.595,
+        "resolution": 0.388
       }
     },
     "scenarios": [
       {
         "id": "base",
         "name": "Base Case \u2014 Stalemate",
-        "probability": 42,
+        "probability": 41,
         "color": "#4a9eff",
         "description": "Neither side achieves decisive advantage. US/Iran settle into attritional standoff without ground invasion. Impact remains channeled through fuel prices and shipping disruption only.",
         "peakGdpImpact": -2.1,
@@ -2734,12 +2734,12 @@
           "summary": "Mobility shifts into managed constraint: freight first, patchy regional fuel access, reduced discretionary travel, and persistent aviation disruption.",
           "scores": {
             "freight": {
-              "value": 0.5,
-              "label": "Restricted",
-              "band": "amber"
+              "value": 0.49,
+              "label": "Constrained",
+              "band": "yellow"
             },
             "household": {
-              "value": 0.43,
+              "value": 0.4,
               "label": "Constrained",
               "band": "yellow"
             },
@@ -2749,7 +2749,7 @@
               "band": "yellow"
             },
             "rationing": {
-              "value": 0.38,
+              "value": 0.36,
               "label": "Constrained",
               "band": "yellow"
             }
@@ -2820,12 +2820,12 @@
           "summary": "Mobility risk becomes systemic. Freight gets protected, aviation shrinks, regional access degrades, and rationing becomes a live policy option.",
           "scores": {
             "freight": {
-              "value": 0.57,
+              "value": 0.55,
               "label": "Restricted",
               "band": "amber"
             },
             "household": {
-              "value": 0.56,
+              "value": 0.53,
               "label": "Restricted",
               "band": "amber"
             },
@@ -2835,7 +2835,7 @@
               "band": "amber"
             },
             "rationing": {
-              "value": 0.44,
+              "value": 0.42,
               "label": "Constrained",
               "band": "yellow"
             }
@@ -2889,7 +2889,7 @@
       {
         "id": "resolution",
         "name": "Resolution \u2014 Ceasefire",
-        "probability": 22,
+        "probability": 23,
         "color": "#00e87a",
         "description": "Trump-Khamenei back-channel holds. Temporary ceasefire agreed. Fuel prices ease within weeks. Food impact stays below +10%.",
         "peakGdpImpact": -1.0,
@@ -2906,12 +2906,12 @@
           "summary": "Mobility remains stressed but functional. Expect delays, higher prices, and selective conservation rather than formal restrictions.",
           "scores": {
             "freight": {
-              "value": 0.47,
+              "value": 0.45,
               "label": "Constrained",
               "band": "yellow"
             },
             "household": {
-              "value": 0.36,
+              "value": 0.33,
               "label": "Constrained",
               "band": "yellow"
             },
@@ -2921,7 +2921,7 @@
               "band": "yellow"
             },
             "rationing": {
-              "value": 0.34,
+              "value": 0.32,
               "label": "Constrained",
               "band": "yellow"
             }
@@ -2934,8 +2934,8 @@
           ],
           "failureOrder": [
             "Regional freight reliability",
-            "Household/private vehicle mobility",
             "Domestic aviation and airfreight",
+            "Household/private vehicle mobility",
             "Formal rationing controls"
           ]
         },
