@@ -170,17 +170,27 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 
 /* ══ SENTIMENT CHART ══ */
 .sentiment-canvas{width:100%;height:240px;display:block;border-radius:6px;background:rgba(0,0,0,0.2)}
-.sentiment-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
-.sentiment-legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text-muted);cursor:pointer}
-.sentiment-legend-item .sl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.sentiment-legend-item .sl-score{font-weight:700;font-size:10px}
-.sentiment-legend-item .sl-trend{font-size:8px;opacity:0.7}
-.sentiment-current-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}
-.sentiment-current-cell{background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;padding:6px 8px;display:flex;flex-direction:column;gap:2px}
-.sc-emoji{font-size:12px;line-height:1}
-.sc-label{font-size:8px;color:var(--text-muted);line-height:1.2}
-.sc-score{font-size:14px;font-weight:700;line-height:1}
-.sc-trend{font-size:8px;opacity:0.7}
+.sentiment-legend{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:10px}
+@media(max-width:600px){.sentiment-legend{grid-template-columns:1fr 1fr}}
+.sentiment-legend-item{
+  display:flex;flex-direction:column;gap:4px;
+  padding:8px 10px;border-radius:7px;
+  border:1px solid var(--border);
+  background:var(--surface-raised);
+  cursor:pointer;transition:border-color 0.15s,opacity 0.15s;
+  position:relative;overflow:hidden;
+}
+.sentiment-legend-item:hover{border-color:var(--border-bright)}
+.sentiment-legend-item.sl-hidden{opacity:0.35}
+.sl-swatch{display:flex;align-items:center;gap:5px;margin-bottom:1px}
+.sl-line{height:2px;width:22px;border-radius:2px;flex-shrink:0}
+.sl-dot-end{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-left:-4px}
+.sl-label{font-size:9px;font-weight:700;color:var(--text);letter-spacing:0.02em;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sl-score-row{display:flex;align-items:baseline;gap:5px}
+.sl-score{font-size:16px;font-weight:700;line-height:1}
+.sl-trend{font-size:9px;font-weight:600;letter-spacing:0.03em}
+.sl-toggle-hint{font-size:7px;color:var(--text-muted);margin-top:1px;opacity:0.6}
+.sl-accent-bar{position:absolute;top:0;left:0;right:0;height:2px;border-radius:7px 7px 0 0}
 /* ══ EVENTS FEED ══ */
 .events-feed{display:flex;flex-direction:column;gap:4px}
 .ev-row{display:flex;align-items:flex-start;gap:10px;padding:7px 9px;border-radius:6px;background:var(--surface-raised);border:1px solid var(--border)}
@@ -474,7 +484,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       </div>
       <div style="font-size:9px;color:var(--text-muted);margin-bottom:8px">14-day rolling score derived from event feed headlines. Scale: <span style="color:var(--red)">−10 extreme stress</span> → <span style="color:var(--text-muted)">0 neutral</span> → <span style="color:var(--green)">+10 recovery</span>. 3-day smoothed.</div>
       <canvas id="sentimentCanvas" class="sentiment-canvas"></canvas>
-      <div class="sentiment-current-row" id="sentiment-current-row"></div>
       <div class="sentiment-legend" id="sentiment-legend"></div>
     </div>
 
@@ -737,36 +746,48 @@ function renderSentiment(sentiment) {
   var dtgEl = document.getElementById('sentiment-dtg');
   if (dtgEl) dtgEl.textContent = fmtAESTDateTime(sentiment.updatedAt);
 
-  // Current score cells
-  var row = document.getElementById('sentiment-current-row');
-  if (row) {
-    var html = '';
-    sentiment.areas.forEach(function(a) {
-      var sc = a.current;
-      var col = sc >= 0 ? 'var(--green)' : sc > -3 ? 'var(--amber)' : 'var(--red)';
-      var trendArrow = a.trend === 'improving' ? '▲' : a.trend === 'deteriorating' ? '▼' : '→';
-      var trendCol   = a.trend === 'improving' ? 'var(--green)' : a.trend === 'deteriorating' ? 'var(--red)' : 'var(--text-muted)';
-      html += '<div class="sentiment-current-cell" style="border-color:' + a.color + '33">';
-      html += '<div class="sc-emoji">' + a.emoji + '</div>';
-      html += '<div class="sc-label">' + escHtml(a.label) + '</div>';
-      html += '<div class="sc-score" style="color:' + col + '">' + (sc >= 0 ? '+' : '') + sc.toFixed(1) + '</div>';
-      html += '<div class="sc-trend" style="color:' + trendCol + '">' + trendArrow + ' ' + escHtml(a.trend) + '</div>';
-      html += '</div>';
-    });
-    row.innerHTML = html;
-  }
-
-  // Legend
+  // Combined legend — line swatch + label + score + trend, click to toggle
   var leg = document.getElementById('sentiment-legend');
   if (leg) {
     var lhtml = '';
     sentiment.areas.forEach(function(a) {
-      var hidden = _sentimentHidden[a.id];
-      var opacity = hidden ? '0.35' : '1';
-      lhtml += '<div class="sentiment-legend-item" style="opacity:' + opacity + '" onclick="toggleSentimentLine(\'' + a.id + '\')">'
-             + '<div class="sl-dot" style="background:' + a.color + '"></div>'
-             + '<span>' + a.emoji + ' ' + escHtml(a.label) + '</span>'
-             + '</div>';
+      var hidden  = !!_sentimentHidden[a.id];
+      var sc      = a.current;
+      var scoreCol = sc >= 0 ? 'var(--green)' : sc > -3 ? 'var(--amber)' : 'var(--red)';
+      var trendArrow = a.trend === 'improving'     ? '▲ improving'
+                     : a.trend === 'deteriorating' ? '▼ deteriorating'
+                     : '→ stable';
+      var trendCol = a.trend === 'improving'     ? 'var(--green)'
+                   : a.trend === 'deteriorating' ? 'var(--red)'
+                   : 'var(--text-muted)';
+      var scoreStr = (sc >= 0 ? '+' : '') + sc.toFixed(1);
+
+      lhtml += '<div class="sentiment-legend-item' + (hidden ? ' sl-hidden' : '') + '"'
+             + ' onclick="toggleSentimentLine(\'' + a.id + '\')"'
+             + ' title="Click to ' + (hidden ? 'show' : 'hide') + ' this line">';
+
+      // Accent bar at top matches line colour
+      lhtml += '<div class="sl-accent-bar" style="background:' + a.color + '"></div>';
+
+      // Line swatch — shows the actual line style used in chart
+      lhtml += '<div class="sl-swatch">';
+      lhtml += '<div class="sl-line" style="background:' + a.color + '"></div>';
+      lhtml += '<div class="sl-dot-end" style="background:' + a.color + '"></div>';
+      lhtml += '<span style="font-size:11px;line-height:1">' + a.emoji + '</span>';
+      lhtml += '</div>';
+
+      // Label
+      lhtml += '<div class="sl-label">' + escHtml(a.label) + '</div>';
+
+      // Score + trend on same row
+      lhtml += '<div class="sl-score-row">';
+      lhtml += '<span class="sl-score" style="color:' + scoreCol + '">' + scoreStr + '</span>';
+      lhtml += '<span class="sl-trend" style="color:' + trendCol + '">' + trendArrow + '</span>';
+      lhtml += '</div>';
+
+      lhtml += '<div class="sl-toggle-hint">' + (hidden ? '⊕ click to show' : '⊖ click to hide') + '</div>';
+
+      lhtml += '</div>';
     });
     leg.innerHTML = lhtml;
   }

@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-05T12:55:03Z",
+  "lastUpdated": "2026-04-05T12:57:47Z",
   "warAlert": {
-    "timestamp": "2026-04-05T12:55:03Z",
+    "timestamp": "2026-04-05T12:57:47Z",
     "fuelImpact": [
+      "2026-04-05 Trump pushed Hormuz ultimatum to April 6 at 8 PM Eastern Time (April 7 10 AM AEST) following Iranian government request. Threatens massive attacks on Iranian energy sites if Hormuz not reopened. Iran rejected ultimatum as 'helpless and nervous'. Iran allowing Iraqi ships through Hormuz without restrictions. [CBS News] [HIGH]",
+      "2026-04-05 ~5,000 additional US Marines and sailors deploying to Middle East to support Iran war, per three US officials. 2,500 Marines from 31st Marine Expeditionary Unit already arrived. Total US regional presence ~50,000 as buildup continues ahead of potential ground operations. [Sino Defence Forum] [MEDIUM]",
+      "2026-04-05 US commandos conducted hot extraction of injured F-15E WSO deep inside Iran after heavy firefight. Black Hawk struck by Iranian fire but flew on with wounded crew. WSO used SERE training to evade capture. Trump: 'most daring operation in US history'. 2,500 Marines from 31st MEU arrived Middle East; ~5,000 more deploying. Total US regional presence ~50,000. [New York Times] [HIGH]",
+      "2026-04-05 Iranian drones struck Kuwait's Shuwaikh oil sector complex (housing KPC headquarters), two power/desalination plants, and Bahrain oil storage \u2014 significant damage, no casualties. Kuwait joins Saudi Arabia, UAE as regional states hit by Iran. Escalation of Iran's Gulf-state retaliation campaign. [Reuters] [HIGH]",
       "2026-04-05 Fuel reservoir hit at Russia's Primorsk, NORSI refinery on fire after drone attacks [Channel NewsAsia (CNA)] [MEDIUM]",
-      "2026-04-05 Commandos probed deep into Iran to rescue downed airman: US media [Channel NewsAsia (CNA)] [MEDIUM]",
-      "2026-04-05 Body found off Indonesia believed to be missing person from collision between vessels near Singapore's Southern Islands [Channel NewsAsia (CNA)] [MEDIUM]",
-      "2026-04-05 On Easter, Pope Leo urges world leaders to end wars, renounce conquest [Channel NewsAsia (CNA)] [MEDIUM]",
-      "2026-04-05 Iran military says destroyed US aircraft involved in search for airman [Channel NewsAsia (CNA)] [MEDIUM]",
-      "2026-04-05 US rescues airman from Iran as Trump, Israel ratchet up pressure [Channel NewsAsia (CNA)] [MEDIUM]"
+      "2026-04-05 Commandos probed deep into Iran to rescue downed airman: US media [Channel NewsAsia (CNA)] [MEDIUM]"
     ],
     "foodImpact": [
       "2026-04-05 Even if the Strait of Hormuz opened tomorrow, it could take months for fuel prices to come down [Sydney Morning Herald / The Age] [MEDIUM]",
@@ -18,17 +18,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-05 Approximately 90 Australian SAS troops deployed to Middle East \u2014 likely Al Minhad Air Base UAE. Government neither confirms nor denies. Deployment appears to have occurred almost immediately when Iran-US war began. [The Nightly] [MEDIUM]",
       "2026-04-05 Nearly 100 NSW service stations fined $1,100 each over misleading petrol prices amid fuel shortage crackdown [The Guardian Australia] [MEDIUM]",
       "2026-04-05 Asian countries assure Australia \u2018normal supply\u2019 of fuel will continue as Albanese focuses on averting shortages [The Guardian Australia] [MEDIUM]",
-      "2026-04-05 Asian leaders assure Australia normal supply of fuel will continue; fuel now sourced from US, Mexico as Albanese diversifies supply chains [The Guardian] [HIGH]",
-      "2026-04-05 Motorists encouraged to dob in servos as 93 locations fined for price gouging [9News Australia] [MEDIUM]"
+      "2026-04-05 Asian leaders assure Australia normal supply of fuel will continue; fuel now sourced from US, Mexico as Albanese diversifies supply chains [The Guardian] [HIGH]"
     ]
   },
   "servoOutages": {
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T12:55:03Z",
+    "updated": "2026-04-05T12:57:47Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,8 +1168,73 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T12:55:03Z",
+  "dbLastUpdated": "2026-04-05T12:57:47Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump pushed Hormuz ultimatum to April 6 at 8 PM Eastern Time (April 7 10 AM AEST) following Iranian government request. Threatens massive attacks on Iranian energy sites if Hormuz not reopened. Iran rejected ultimatum as 'helpless and nervous'. Iran allowing Iraqi ships through Hormuz without restrictions.",
+      "source": "CBS News",
+      "sourceUrl": "https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T12:56:11Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "~5,000 additional US Marines and sailors deploying to Middle East to support Iran war, per three US officials. 2,500 Marines from 31st Marine Expeditionary Unit already arrived. Total US regional presence ~50,000 as buildup continues ahead of potential ground operations.",
+      "source": "Sino Defence Forum",
+      "sourceUrl": "https://www.sinodefenceforum.com/t/2026-israel-us-vs-iran-conflict-military-updates-news-only.9231/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:56:11Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US commandos conducted hot extraction of injured F-15E WSO deep inside Iran after heavy firefight. Black Hawk struck by Iranian fire but flew on with wounded crew. WSO used SERE training to evade capture. Trump: 'most daring operation in US history'. 2,500 Marines from 31st MEU arrived Middle East; ~5,000 more deploying. Total US regional presence ~50,000.",
+      "source": "New York Times",
+      "sourceUrl": "https://www.nytimes.com/live/2026/04/04/world/iran-war-trump-news",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T12:55:49Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Approximately 90 Australian SAS troops deployed to Middle East \u2014 likely Al Minhad Air Base UAE. Government neither confirms nor denies. Deployment appears to have occurred almost immediately when Iran-US war began.",
+      "source": "The Nightly",
+      "sourceUrl": "https://thenightly.com.au/australia/sas-squadron-sent-to-middle-east-almost-as-soon-as-iran-us-war-began-c-22096258",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:55:49Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Iranian drones struck Kuwait's Shuwaikh oil sector complex (housing KPC headquarters), two power/desalination plants, and Bahrain oil storage \u2014 significant damage, no casualties. Kuwait joins Saudi Arabia, UAE as regional states hit by Iran. Escalation of Iran's Gulf-state retaliation campaign.",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/middle-east/fire-erupts-kuwaits-shuwaikh-oil-sector-complex-after-drone-attack-state-news-2026-04-05/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T12:55:36Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-05",
       "domain": "fuel",
@@ -3494,12 +3559,12 @@
     "petrol_reserves": "39 days",
     "jet_fuel_reserves": "30 days",
     "supply_ceiling": "mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless",
-    "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
+    "servo_outages": "~687 nationally \u2014 FuelRadar live 05/04/2026 11:16am \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T12:54:05Z",
-    "cron": "fran_ingest",
-    "summary": "Ingest run: 0 new events from 35 sources"
+    "sentAt": "2026-04-05T12:57:42Z",
+    "cron": "war-fuel-food",
+    "summary": "5 new events: WSO rescue (US ground raid Iran), 5,000 Marines deploying + 31st MEU arrived (US force ~50,000), ~90 Australian SAS deployed to UAE, Kuwait Shuwaikh oil complex hit by Iranian drones (3rd Gulf state attacked), Trump deadline pushed to Apr 7 10AM AEST"
   },
   "reviewPanels": {
     "feed": {
@@ -3858,7 +3923,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T12:55:03Z",
+    "updatedAt": "2026-04-05T12:57:47Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -4251,7 +4316,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T12:55:03Z",
+    "updatedAt": "2026-04-05T12:57:47Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
@@ -4260,7 +4325,7 @@
         "label": "Fuel Supply Risk",
         "emoji": "\ud83d\udee2\ufe0f",
         "color": "#ff3b3b",
-        "current": -1.51,
+        "current": -1.52,
         "trend": "stable",
         "series": [
           {
@@ -4330,8 +4395,8 @@
           },
           {
             "date": "2026-04-05",
-            "score": -1.51,
-            "count": 8
+            "score": -1.52,
+            "count": 9
           }
         ]
       },
@@ -4411,7 +4476,7 @@
           {
             "date": "2026-04-05",
             "score": -1.16,
-            "count": 38
+            "count": 41
           }
         ]
       },
@@ -4580,7 +4645,7 @@
         "label": "Australian Exposure",
         "emoji": "\ud83c\udde6\ud83c\uddfa",
         "color": "#00e87a",
-        "current": -0.15,
+        "current": -0.12,
         "trend": "stable",
         "series": [
           {
@@ -4645,13 +4710,13 @@
           },
           {
             "date": "2026-04-04",
-            "score": -0.07,
+            "score": -0.06,
             "count": 13
           },
           {
             "date": "2026-04-05",
-            "score": -0.15,
-            "count": 8
+            "score": -0.12,
+            "count": 9
           }
         ]
       }
