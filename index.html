@@ -696,8 +696,14 @@ function renderReviewPanels(data){
   // Troops review has its own rich renderer
   if(rp.troops) renderTroopsReview(rp.troops);
 
-  // All other panels use the generic renderer
-  ['supply','domino','markets','households'].forEach(function(key){
+  // Rich renderers for remaining tabs
+  if(rp.supply)     renderSupplyReview(rp.supply);
+  if(rp.domino)     renderDominoReview(rp.domino);
+  if(rp.markets)    renderMarketsReview(rp.markets);
+  if(rp.households) renderHouseholdsReview(rp.households);
+
+  // Fallback generic renderer (now only for any unlisted panels)
+  [].forEach(function(key){
     var box=rp[key]||{};
     var el=document.getElementById('review-content-'+key);
     if(!el) return;
@@ -1251,6 +1257,297 @@ function renderTroopsReview(tr){
     html+='</div>';
   }
 
+  el.innerHTML=html;
+}
+
+// ── Shared review helpers ──
+function reviewMLMD(fr){
+  var html='';
+  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">';
+  if(fr.mostLikelyCourse){
+    html+='<div style="border:1px solid rgba(0,232,122,0.2);background:rgba(0,232,122,0.05);border-radius:8px;padding:10px">';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--green);text-transform:uppercase;margin-bottom:5px">✓ Most Likely Course</div>';
+    html+='<div style="font-size:10px;line-height:1.55;color:var(--text-dim)">'+escHtml(fr.mostLikelyCourse)+'</div></div>';
+  }
+  if(fr.mostDangerousCourse){
+    html+='<div style="border:1px solid rgba(255,59,59,0.2);background:rgba(255,59,59,0.05);border-radius:8px;padding:10px">';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--red);text-transform:uppercase;margin-bottom:5px">⚠ Most Dangerous Course</div>';
+    html+='<div style="font-size:10px;line-height:1.55;color:var(--text-dim)">'+escHtml(fr.mostDangerousCourse)+'</div></div>';
+  }
+  html+='</div>';
+  return html;
+}
+function reviewBullets(fr, heading){
+  if(!fr.bullets||!fr.bullets.length) return '';
+  var html='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px">'+(heading||'Watch')+'</div>';
+  html+='<div style="display:flex;flex-direction:column;gap:6px">';
+  fr.bullets.forEach(function(b){
+    html+='<div style="display:flex;gap:8px;align-items:flex-start;font-size:10px;line-height:1.5;color:var(--text-muted)">';
+    html+='<span style="color:var(--amber);flex-shrink:0;margin-top:1px">▶</span><span>'+escHtml(b)+'</span></div>';
+  });
+  html+='</div>';
+  return html;
+}
+function reviewHeader(fr){
+  return '<div style="font-size:11px;line-height:1.6;color:var(--text-dim);margin-bottom:14px">'+escHtml(fr.summary||'')+'</div>';
+}
+function statusPill(status){
+  var col=status==='CLOSED'||status==='CRITICAL'||status==='STRESSED'?'var(--red)':
+          status==='RESTRICTED'||status==='AT THRESHOLD'||status==='TIGHT'?'var(--amber)':'var(--green)';
+  var bg=status==='CLOSED'||status==='CRITICAL'||status==='STRESSED'?'rgba(255,59,59,0.12)':
+         status==='RESTRICTED'||status==='AT THRESHOLD'||status==='TIGHT'?'rgba(245,158,11,0.12)':'rgba(0,232,122,0.10)';
+  return '<span style="font-size:8px;font-weight:700;padding:2px 6px;border-radius:10px;background:'+bg+';color:'+col+'">'+escHtml(status)+'</span>';
+}
+
+// ── SUPPLY REVIEW ──
+function renderSupplyReview(fr){
+  var el=document.getElementById('review-content-supply');
+  if(!el||!fr) return;
+  var html='';
+
+  // Key stats row
+  if(fr.keyStats&&fr.keyStats.length){
+    html+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px">';
+    fr.keyStats.forEach(function(s){
+      var col=s.status==='CRITICAL'||s.status==='STRESSED'?'var(--red)':s.status==='AT THRESHOLD'||s.status==='TIGHT'?'var(--amber)':'var(--green)';
+      html+='<div style="background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center">';
+      html+='<div style="font-size:18px;font-weight:700;color:'+col+'">'+escHtml(s.value)+'</div>';
+      html+='<div style="font-size:8px;color:var(--text-muted);margin-top:2px">'+escHtml(s.label)+'</div>';
+      html+=statusPill(s.status);
+      html+='</div>';
+    });
+    html+='</div>';
+  }
+
+  html+=reviewHeader(fr);
+
+  // Four-layer breakdown
+  if(fr.layers&&fr.layers.length){
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Four-Layer Supply Chain Assessment</div>';
+    fr.layers.forEach(function(l){
+      var sc=l.status==='CLOSED'||l.status==='STRESSED'?'var(--red)':l.status==='RESTRICTED'||l.status==='TIGHT'?'var(--amber)':'var(--green)';
+      html+='<div style="margin-bottom:8px;border:1px solid var(--border);border-left:3px solid '+sc+';border-radius:6px;overflow:hidden">';
+      html+='<div style="padding:7px 10px;background:rgba(0,0,0,0.15);display:flex;align-items:center;gap:8px">';
+      html+='<span style="font-size:10px;font-weight:700;color:var(--text);flex:1">'+escHtml(l.name)+'</span>';
+      html+=statusPill(l.status);
+      html+='<span style="font-size:9px;color:var(--text-muted)">'+escHtml(l.detail)+'</span></div>';
+      html+='<div style="padding:7px 10px;font-size:10px;line-height:1.5;color:var(--text-muted)">'+escHtml(l.impact)+'</div>';
+      html+='</div>';
+    });
+  }
+
+  // Government buffer
+  if(fr.govNote){
+    html+='<div style="padding:9px 12px;margin-bottom:12px;background:rgba(74,158,255,0.06);border:1px solid rgba(74,158,255,0.2);border-radius:8px">';
+    html+='<div style="font-size:9px;font-weight:700;color:var(--blue);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px">🏗️ Government Buffer</div>';
+    html+='<div style="font-size:10px;line-height:1.55;color:var(--text-dim)">'+escHtml(fr.govNote)+'</div></div>';
+  }
+
+  html+=reviewMLMD(fr);
+  html+=reviewBullets(fr,'Watch — Key Thresholds');
+  el.innerHTML=html;
+}
+
+// ── DOMINO REVIEW ──
+function renderDominoReview(fr){
+  var el=document.getElementById('review-content-domino');
+  if(!el||!fr) return;
+  var html='';
+
+  // Scenario probability bar + stats
+  if(fr.scenarios&&fr.scenarios.length){
+    html+='<div style="margin-bottom:14px">';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px">Scenario Probabilities — Next 6 Months</div>';
+    // Bar
+    html+='<div style="display:flex;border-radius:6px;overflow:hidden;height:20px;margin-bottom:8px">';
+    fr.scenarios.forEach(function(s){
+      html+='<div style="width:'+s.prob+'%;background:'+s.color+';display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#fff">'+(s.prob>=12?s.prob+'%':'')+'</div>';
+    });
+    html+='</div>';
+    // Cards
+    html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">';
+    fr.scenarios.forEach(function(s){
+      html+='<div style="border:1px solid '+s.color+'44;border-radius:6px;padding:8px;background:'+s.color+'0d">';
+      html+='<div style="font-size:9px;font-weight:700;color:'+s.color+';margin-bottom:3px">'+escHtml(s.label)+' — '+s.prob+'%</div>';
+      html+='<div style="font-size:9px;color:var(--text-muted)">GDP '+s.gdp+'%</div>';
+      html+='<div style="font-size:9px;color:var(--text-muted)">Food +'+s.food+'%</div>';
+      html+='<div style="font-size:9px;color:var(--text-muted)">Recovery: '+escHtml(s.recovery)+'</div>';
+      html+='</div>';
+    });
+    html+='</div></div>';
+  }
+
+  html+=reviewHeader(fr);
+
+  // Formula drivers
+  if(fr.drivers&&fr.drivers.length){
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">What Is Driving the Probabilities</div>';
+    fr.drivers.forEach(function(d){
+      var barCol=d.bar>0.7?'var(--red)':d.bar>0.4?'var(--amber)':'var(--green)';
+      html+='<div style="margin-bottom:9px">';
+      html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:3px">';
+      html+='<span style="font-size:9px;font-weight:700;color:var(--text);min-width:130px">'+escHtml(d.var)+'</span>';
+      html+='<div style="flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:3px">';
+      html+='<div style="width:'+(d.bar*100)+'%;height:100%;background:'+barCol+';border-radius:3px"></div></div>';
+      html+='<span style="font-size:9px;font-weight:700;color:'+barCol+';min-width:30px;text-align:right">'+escHtml(d.value)+'</span>';
+      html+='</div>';
+      html+='<div style="font-size:9px;line-height:1.5;color:var(--text-muted);padding-left:0">'+escHtml(d.meaning)+'</div>';
+      html+='</div>';
+    });
+  }
+
+  html+=reviewMLMD(fr);
+  html+=reviewBullets(fr,'Key Decision Points');
+  el.innerHTML=html;
+}
+
+// ── MARKETS REVIEW ──
+function renderMarketsReview(fr){
+  var el=document.getElementById('review-content-markets');
+  if(!el||!fr) return;
+  var html='';
+
+  // Price shock header
+  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">';
+  function cpiBlock(label,level,tier,peak,peakDate){
+    var col=tier==='CRISIS'?'var(--red)':tier==='EMERGENCY'?'#f97316':tier==='WARNING'?'var(--amber)':'var(--green)';
+    var html='<div style="border:1px solid '+col+'44;border-radius:8px;padding:10px;background:'+col+'0d">';
+    html+='<div style="font-size:8px;color:var(--text-muted);font-weight:700;text-transform:uppercase;margin-bottom:4px">'+escHtml(label)+'</div>';
+    html+='<div style="font-size:24px;font-weight:700;color:'+col+'">'+level+'%</div>';
+    html+=statusPill(tier);
+    html+='<div style="font-size:9px;color:var(--text-muted);margin-top:5px">Peak: '+peak+'% by '+escHtml(peakDate)+'</div>';
+    html+='</div>';
+    return html;
+  }
+  html+=cpiBlock('Metro Price Increase',fr.metroLevel,fr.metroTier,fr.metroPeak,fr.metroPeakDate);
+  html+=cpiBlock('Regional Price Increase',fr.regLevel,fr.regTier,fr.regPeak,fr.regPeakDate);
+  html+='</div>';
+
+  html+=reviewHeader(fr);
+
+  // State tiers
+  var sc=fr.stateCount||{};
+  if(sc.crisis||sc.emergency||sc.warning){
+    html+='<div style="margin-bottom:14px">';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">State-by-State Price Shock Status</div>';
+    if(fr.crisisStates&&fr.crisisStates.length){
+      html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">';
+      html+='<span style="font-size:9px;font-weight:700;color:var(--red);min-width:70px">CRISIS</span>';
+      html+='<div style="display:flex;gap:4px;flex-wrap:wrap">';
+      fr.crisisStates.forEach(function(s){html+='<span style="background:rgba(239,68,68,0.12);color:var(--red);border:1px solid rgba(239,68,68,0.3);padding:2px 7px;border-radius:4px;font-size:9px;font-weight:700">'+escHtml(s)+'</span>';});
+      html+='</div></div>';
+    }
+    if(fr.emergencyStates&&fr.emergencyStates.length){
+      html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">';
+      html+='<span style="font-size:9px;font-weight:700;color:#f97316;min-width:70px">EMERGENCY</span>';
+      html+='<div style="display:flex;gap:4px;flex-wrap:wrap">';
+      fr.emergencyStates.forEach(function(s){html+='<span style="background:rgba(249,115,22,0.1);color:#f97316;border:1px solid rgba(249,115,22,0.3);padding:2px 7px;border-radius:4px;font-size:9px;font-weight:700">'+escHtml(s)+'</span>';});
+      html+='</div></div>';
+    }
+    html+='</div>';
+  }
+
+  // Top price movers
+  if(fr.topItems&&fr.topItems.length){
+    html+='<div style="margin-bottom:14px">';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Top Price Movers Since War Began</div>';
+    var maxChange=fr.topItems[0].weeklyChange||1;
+    fr.topItems.forEach(function(item){
+      var pct=Math.round(item.weeklyChange/maxChange*100);
+      html+='<div style="margin-bottom:6px;display:flex;align-items:center;gap:8px">';
+      html+='<span style="font-size:10px;min-width:18px">'+escHtml(item.emoji||'')+'</span>';
+      html+='<span style="font-size:10px;color:var(--text);min-width:140px">'+escHtml(item.label)+'</span>';
+      html+='<div style="flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:3px">';
+      html+='<div style="width:'+pct+'%;height:100%;background:var(--red);border-radius:3px"></div></div>';
+      html+='<span style="font-size:10px;font-weight:700;color:var(--red);min-width:40px;text-align:right">+'+item.weeklyChange+'%</span>';
+      html+='</div>';
+    });
+    html+='</div>';
+  }
+
+  // Price increase drivers
+  if(fr.drivers&&fr.drivers.length){
+    html+='<div style="margin-bottom:14px">';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Price Increase Drivers (Percentage Points)</div>';
+    var maxD=Math.max.apply(null,fr.drivers.map(function(d){return d.contribution||0;}));
+    fr.drivers.forEach(function(d){
+      var pct=maxD?Math.round(d.contribution/maxD*100):0;
+      var col=d.label==='Transport'||d.label==='Fuel at pump'?'var(--red)':d.label==='Food'?'var(--amber)':'var(--blue)';
+      html+='<div style="margin-bottom:5px;display:flex;align-items:center;gap:8px">';
+      html+='<span style="font-size:10px;color:var(--text);min-width:150px">'+escHtml(d.emoji||'')+' '+escHtml(d.label)+'</span>';
+      html+='<div style="flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:3px">';
+      html+='<div style="width:'+pct+'%;height:100%;background:'+col+';border-radius:3px"></div></div>';
+      html+='<span style="font-size:10px;font-weight:700;color:'+col+';min-width:30px;text-align:right">+'+d.contribution+'pp</span>';
+      html+='</div>';
+    });
+    html+='</div>';
+  }
+
+  html+=reviewMLMD(fr);
+  html+=reviewBullets(fr,'Watch — Price Milestones');
+  el.innerHTML=html;
+}
+
+// ── HOUSEHOLDS REVIEW ──
+function renderHouseholdsReview(fr){
+  var el=document.getElementById('review-content-households');
+  if(!el||!fr) return;
+  var html='';
+
+  // Key stats
+  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:14px">';
+  var stats=[
+    {label:'Shortest runway', value:(fr.minRunway||0)+'mo', col:'var(--red)'},
+    {label:'Avg monthly extra', value:'A$'+(fr.avgExtra||0).toLocaleString(), col:'var(--amber)'},
+    {label:'Gov relief expires', value:escHtml(fr.govExpiry||'Jun 2026'), col:'var(--blue)'},
+  ];
+  stats.forEach(function(s){
+    html+='<div style="background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center">';
+    html+='<div style="font-size:18px;font-weight:700;color:'+s.col+'">'+s.value+'</div>';
+    html+='<div style="font-size:8px;color:var(--text-muted);margin-top:2px">'+s.label+'</div>';
+    html+='</div>';
+  });
+  html+='</div>';
+
+  html+=reviewHeader(fr);
+
+  // Tier runway chart
+  if(fr.tiers&&fr.tiers.length){
+    html+='<div style="margin-bottom:14px">';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Savings Runway by Household Tier</div>';
+    var maxRun=Math.max.apply(null,fr.tiers.map(function(t){return Math.min(t.runway,12);}));
+    fr.tiers.forEach(function(t){
+      var runCapped=Math.min(t.runway,12);
+      var pct=maxRun?Math.round(runCapped/maxRun*100):0;
+      var col=t.runway<=1?'var(--red)':t.runway<=3?'var(--amber)':t.runway<=6?'#f59e0b':'var(--green)';
+      html+='<div style="margin-bottom:7px">';
+      html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:2px">';
+      html+='<span style="font-size:10px;color:var(--text);min-width:175px">'+escHtml(t.name)+'</span>';
+      html+='<div style="flex:1;height:6px;background:rgba(255,255,255,0.06);border-radius:3px">';
+      html+='<div style="width:'+pct+'%;height:100%;background:'+col+';border-radius:3px"></div></div>';
+      html+='<span style="font-size:10px;font-weight:700;color:'+col+';min-width:30px;text-align:right">'+(t.runway>=12?'12+':t.runway)+'mo</span>';
+      html+='</div>';
+      html+='<div style="font-size:8px;color:var(--text-muted);padding-left:0">'
+           +'Monthly extra: A$'+escHtml(String(t.extra.toLocaleString()))
+           +' · Deficit: A$'+escHtml(String(Math.abs(t.deficit).toLocaleString()))
+           +' · Liquid savings: A$'+escHtml(String(t.savings.toLocaleString()))+'</div>';
+      html+='</div>';
+    });
+    html+='</div>';
+  }
+
+  // Government buffer timeline
+  html+='<div style="padding:10px 12px;margin-bottom:14px;background:rgba(74,158,255,0.06);border:1px solid rgba(74,158,255,0.2);border-radius:8px">';
+  html+='<div style="font-size:9px;font-weight:700;color:var(--blue);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px">🏗️ Government Relief Buffer</div>';
+  html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:9px;color:var(--text-muted)">';
+  html+='<div><strong style="color:var(--text)">Excise cut expires:</strong> '+escHtml(fr.govExpiry||'Jun 2026')+'<br>';
+  html+='After this date, pump prices spike by ~A$0.26/litre with no replacement mechanism announced.</div>';
+  html+='<div><strong style="color:var(--text)">Monthly fiscal burn:</strong> A$'+escHtml(String((fr.monthlyBurn||900).toLocaleString()))+'M<br>';
+  html+='At this rate, the full government buffer is exhausted before household stress peaks in June–July 2026.</div>';
+  html+='</div></div>';
+
+  html+=reviewMLMD(fr);
+  html+=reviewBullets(fr,'Watch — Stress Signals');
   el.innerHTML=html;
 }
 

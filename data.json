@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T13:40:15Z",
+  "lastUpdated": "2026-04-05T13:45:14Z",
   "warAlert": {
-    "timestamp": "2026-04-05T13:40:15Z",
+    "timestamp": "2026-04-05T13:45:14Z",
     "fuelImpact": [
       "2026-04-05 Iran attacks energy infrastructure across Gulf states [Channel NewsAsia (CNA)] [MEDIUM]",
       "2026-04-05 Trump threatens Iranian power plants, bridges in expletive-laden social media post [Channel NewsAsia (CNA)] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T13:40:15Z",
+    "updated": "2026-04-05T13:45:14Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,7 +1168,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T13:40:15Z",
+  "dbLastUpdated": "2026-04-05T13:45:14Z",
   "dbEvents": [
     {
       "dtg": "2026-04-05",
@@ -3614,14 +3614,14 @@
     "servo_outages": "~687 nationally \u2014 FuelRadar live 05/04/2026 11:16am \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T13:40:15Z",
-    "cron": "servo-tracker",
-    "summary": "No new data \u2014 687 confirmed (FuelRadar 05/04 11:16am); improving trend ongoing"
+    "sentAt": "2026-04-05T13:42:59Z",
+    "cron": "asian-refinery",
+    "summary": "No new Asian refinery utilisation data; Singapore force majeure (already known), Bahrain Bapco refinery strike (not AU supplier), Kuwait KPC attacks (not AU supplier). Australian supply chain unchanged this run."
   },
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-05T13:40:15Z",
+      "updatedAt": "2026-04-05T13:45:14Z",
       "window": 7,
       "totalEvents": 168,
       "activeSources": 81,
@@ -3765,56 +3765,311 @@
       ]
     },
     "supply": {
-      "title": "FRAN Review \u2014 Fuel Levels & Supply",
-      "updatedAt": "2026-04-03T05:24:04Z",
-      "summary": "Australia is still being supported by rerouted cargoes and reserve releases, but refinery weakness and route disruption keep the system tight.",
-      "bullets": [
-        "Fuel reserve depth is the key buffer, but not a long-run solution if refinery runs stay constrained.",
-        "Fleet arrivals buy time, yet route disruption raises replacement cost and timing risk.",
-        "Servo outages are the consumer-facing signal that wholesale stress is leaking into retail availability."
+      "title": "Supply Chain Status \u2014 Four-Layer Assessment",
+      "updatedAt": "2026-04-05T13:45:14Z",
+      "keyStats": [
+        {
+          "label": "Diesel reserve",
+          "value": "29d",
+          "status": "AT THRESHOLD"
+        },
+        {
+          "label": "Petrol reserve",
+          "value": "39d",
+          "status": "ADEQUATE"
+        },
+        {
+          "label": "Jet fuel reserve",
+          "value": "30d",
+          "status": "ADEQUATE"
+        },
+        {
+          "label": "Stations dry",
+          "value": "687",
+          "status": "STRESSED"
+        }
       ],
-      "mostLikelyCourse": "Supply remains tight but functioning, with rerouted cargoes and reserves preventing immediate collapse while outages and delays stay elevated.",
-      "mostDangerousCourse": "Replacement cargoes slip, Asian refinery output falls further, and servo outages broaden into sustained regional shortages before new imports land."
+      "layers": [
+        {
+          "name": "Chokepoints",
+          "status": "CLOSED",
+          "detail": "Hormuz CLOSED \u00b7 Bab el-Mandeb RESTRICTED \u00b7 Malacca OPEN",
+          "impact": "Hormuz closure blocks ~90% of Gulf crude reaching Asian refineries. Every additional week closed extends the Australian supply crisis by the same duration."
+        },
+        {
+          "name": "Asian Refineries",
+          "status": "STRESSED",
+          "detail": "Average utilisation 66% \u00b7 Southkorea 55% \u00b7 Singapore 60% \u00b7 Taiwan 70% \u00b7 Japan 80%",
+          "impact": "Australia sources over 90% of refined fuel from these refineries. At 66% average capacity, refined product volume is materially reduced from normal. Weakest link: southKorea at 55%."
+        },
+        {
+          "name": "Fleet & Shipments",
+          "status": "ACTIVE",
+          "detail": "5 vessels en route \u00b7 1 confirmed/arriving \u00b7 6 total tracked",
+          "impact": "Replacement cargoes from US and Europe via Cape of Good Hope are the primary supply buffer. Critical arrival window: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. Each vessel carries 1\u20133 days of national supply."
+        },
+        {
+          "name": "Domestic Retail",
+          "status": "STRESSED",
+          "detail": "687 stations dry nationally \u00b7 trend increasing",
+          "impact": "Station outages are the consumer-facing signal of wholesale stress. Heavy in regional NSW, QLD and WA where last-mile delivery networks are thinnest."
+        }
+      ],
+      "govNote": "3 emergency measures active: Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered. Diesel is 19 days above the 10-day rationing trigger. Government has used its immediate buffer tools \u2014 further escalation has no easy lever left.",
+      "summary": "Australia's fuel supply is supported by 5 replacement vessels en route from the US and Europe, rerouted via Cape of Good Hope (+14 days transit). Diesel stands at 29 days \u2014 19 days above the 10-day rationing trigger. Asian refineries are averaging 66% capacity, directly constraining the volume of refined product available to Australian importers. 687 service stations are dry nationally. The critical decision point is mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless: if incoming cargoes do not land before then, reserve drawdown accelerates past manageable thresholds.",
+      "mostLikelyCourse": "Replacement cargoes (5 vessels en route) arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless, stabilising diesel at 29 days and preventing a rationing trigger. Servo outages normalise as Easter demand pressure eases and distribution catches up. Asian refinery output stabilises at ~66% as operators work around Hormuz via alternative crude sources.",
+      "mostDangerousCourse": "One or more replacement cargoes are delayed, cancelled, or diverted to competing buyers. Diesel falls below the 10-day rationing trigger before the next cargo window opens. Concurrently, Asian refinery output drops below 56% as feedstock tightens further, eliminating any near-term recovery in import volume.",
+      "bullets": [
+        "Diesel at 29 days \u2014 19 days above the 10-day rationing trigger. Petrol at 39 days is more comfortable; jet fuel at 30 days requires monitoring.",
+        "687 stations nationally are dry (increasing trend). Regional and rural areas are hardest hit \u2014 diesel dependency for farming and freight leaves no substitution.",
+        "Asian refineries averaging 66% capacity. South Korea (55%) and Singapore (60%) are the critical supply nodes \u2014 watch for further force majeure declarations.",
+        "Critical supply ceiling: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If replacement cargoes from US/Europe slip beyond this date, government options narrow sharply."
+      ]
     },
     "markets": {
-      "title": "FRAN Review \u2014 Markets",
-      "updatedAt": "2026-04-03T05:24:04Z",
-      "summary": "Markets are now showing a two-layer shock: broad price increase acceleration plus sharp item-level inflation in fuel, fresh food, and transport-linked services.",
-      "bullets": [
-        "price increase projections imply the inflation wave is not finished even if spot panic eases.",
-        "Item inflation since Jan 1 is strongest where fuel, freight, or perishability matter most.",
-        "Household stress should be read as the dollar translation of these market moves, not a separate contradiction."
+      "title": "Markets \u2014 Price Shock Assessment",
+      "updatedAt": "2026-04-05T13:45:14Z",
+      "metroLevel": 7.2,
+      "metroTier": "WARNING",
+      "regLevel": 9.8,
+      "regTier": "EMERGENCY",
+      "metroPeak": 10.8,
+      "metroPeakDate": "2026-05-15",
+      "regPeak": 14.5,
+      "regPeakDate": "2026-05-20",
+      "stateCount": {
+        "crisis": 3,
+        "emergency": 3,
+        "warning": 2
+      },
+      "crisisStates": [
+        "QLD",
+        "SA",
+        "NT"
       ],
-      "mostLikelyCourse": "price increase continues climbing into May as fuel, freight, and perishables keep feeding through to retail prices even if the first panic spike eases.",
-      "mostDangerousCourse": "Inflation broadens from fuel and perishables into general goods and services, pushing regional price increase into crisis territory and locking in a longer second-round surge."
+      "emergencyStates": [
+        "NSW",
+        "VIC",
+        "WA"
+      ],
+      "topItems": [
+        {
+          "label": "Diesel",
+          "emoji": "\u26fd",
+          "category": "Transport fuel",
+          "weeklyChange": 79.3,
+          "basis": "War baseline: 180cpl \u2192 323cpl (pre-war late Feb \u2192 Apr 2026)"
+        },
+        {
+          "label": "LPG / Autogas",
+          "emoji": "\ud83d\udd25",
+          "category": "Energy",
+          "weeklyChange": 68.4,
+          "basis": "War baseline: 95cpl \u2192 160cpl (gas market disruption)"
+        },
+        {
+          "label": "Tomatoes",
+          "emoji": "\ud83c\udf45",
+          "category": "Fresh food",
+          "weeklyChange": 65.0,
+          "basis": "War baseline: freight + farm inputs surge (pre-war \u2192 Apr 2026)"
+        },
+        {
+          "label": "Courier freight",
+          "emoji": "\ud83d\udce6",
+          "category": "Services",
+          "weeklyChange": 55.5,
+          "basis": "War baseline: diesel surge \u2192 last-mile surcharge (pre-war \u2192 Apr 2026)"
+        },
+        {
+          "label": "Lettuce",
+          "emoji": "\ud83e\udd6c",
+          "category": "Fresh food",
+          "weeklyChange": 55.0,
+          "basis": "War baseline: distribution + spoilage (pre-war \u2192 Apr 2026)"
+        }
+      ],
+      "drivers": [
+        {
+          "label": "Transport",
+          "emoji": "\ud83d\ude9b",
+          "contribution": 3.2
+        },
+        {
+          "label": "Fuel at pump",
+          "emoji": "\ud83d\udee2\ufe0f",
+          "contribution": 2.8
+        },
+        {
+          "label": "Food",
+          "emoji": "\ud83c\udf3e",
+          "contribution": 1.9
+        },
+        {
+          "label": "Energy",
+          "emoji": "\u26a1",
+          "contribution": 1.4
+        },
+        {
+          "label": "Manufacturing",
+          "emoji": "\ud83d\udce6",
+          "contribution": 0.8
+        }
+      ],
+      "summary": "Australia is experiencing a two-layer price shock. Metro price increase sits at 7.2% (WARNING tier), 3.6 points below the projected May peak of 10.8%. Regional price increase at 9.8% (EMERGENCY tier) is already more severe, with 3 states in CRISIS and 3 in EMERGENCY. The dominant driver is Transport (3.2 percentage points). The worst is ahead: the food and fertiliser cascade has not yet fully fed through to retail prices.",
+      "mostLikelyCourse": "Metro price increase continues climbing from 7.2% toward the projected peak of 10.8% by 2026-05-15 as fuel and freight costs keep feeding through. Regional price increase (9.8%) is already in EMERGENCY tier and approaches the 14.5% peak by 2026-05-20. Price pressure is structural until Hormuz reopens and freight costs normalise.",
+      "mostDangerousCourse": "Price increase broadens from fuel and perishables into general manufactured goods and services, pushing metro price increase into EMERGENCY tier ahead of projections. NT regional (14.2%) and QLD regional already in CRISIS \u2014 the pattern spreads to VIC and NSW regional before the May peak, locking in second-round wage and cost pressures.",
+      "bullets": [
+        "Metro price increase (7.2%) is in WARNING tier, 3.6 points below projected peak of 10.8% by 2026-05-15. The worst is not yet priced in.",
+        "Regional price increase (9.8%) already in EMERGENCY tier. 3 states in CRISIS (QLD, SA, NT), 3 in EMERGENCY. Regional households face the sharpest squeeze.",
+        "Top price movers: Diesel +79.3% \u00b7 LPG / Autogas +68.4% \u00b7 Tomatoes +65.0%",
+        "Primary driver: Transport contributing 3.2 percentage points out of 10.1 total. Transport and fuel account for the bulk of the shock."
+      ]
     },
     "households": {
-      "title": "FRAN Review \u2014 Households",
-      "updatedAt": "2026-04-03T05:24:04Z",
-      "summary": "The household model shows that debt amplifies the inflation shock. Low-liquidity households fail first, but leveraged middle cohorts are structurally exposed once debt service dominates cash flow.",
-      "bullets": [
-        "Scenario A shows how inflation and debt compound into rapid savings depletion.",
-        "Scenario B isolates the pure cost-of-living shock and shows which groups remain vulnerable even without debt.",
-        "The key analytical question is not just who has low income, but who lacks enough buffer to absorb sustained item-price increases."
+      "title": "Household Stress \u2014 Savings Runway & Cost Cascade",
+      "updatedAt": "2026-04-05T13:45:14Z",
+      "minRunway": 1,
+      "avgExtra": 679.0,
+      "govExpiry": "2026-06-30",
+      "monthlyBurn": 900,
+      "tiers": [
+        {
+          "name": "Pensioner / Concession",
+          "runway": 2,
+          "extra": 325,
+          "deficit": -1383,
+          "savings": 2500
+        },
+        {
+          "name": "Low Income Worker",
+          "runway": 1,
+          "extra": 430,
+          "deficit": -1669,
+          "savings": 1200
+        },
+        {
+          "name": "Average Worker",
+          "runway": 2,
+          "extra": 700,
+          "deficit": -4450,
+          "savings": 6500
+        },
+        {
+          "name": "Middle Income",
+          "runway": 2,
+          "extra": 900,
+          "deficit": -8498,
+          "savings": 18000
+        },
+        {
+          "name": "High Income",
+          "runway": 5,
+          "extra": 1200,
+          "deficit": -8444,
+          "savings": 42000
+        },
+        {
+          "name": "Retiree (Super)",
+          "runway": 45,
+          "extra": 520,
+          "deficit": -850,
+          "savings": 38000
+        }
       ],
-      "mostLikelyCourse": "Low-buffer households continue depleting first, while highly leveraged middle cohorts deteriorate fastest once debt service and inflation compound together.",
-      "mostDangerousCourse": "A prolonged inflation pulse plus delayed supply normalisation pushes even initially resilient households into rapid depletion, forcing distress selling or arrears."
+      "summary": "The household model shows the fuel and food price shock cascading into savings depletion at different rates across income tiers. The most vulnerable cohort has 1 month(s) of liquid savings remaining. Average monthly crisis cost increase: A$679 per household. Government relief (excise cut + reserve releases, A$4.75bn total) expires 2026-06-30. After that date, households absorb the full cost increase without a fiscal buffer \u2014 coinciding with the projected June\u2013July peak in food prices.",
+      "mostLikelyCourse": "Low-income and no-buffer households exhaust savings first, triggering elevated mortgage arrears and credit stress from May onwards. Middle-income cohorts follow 1\u20132 months behind as debt service and inflation compound. Government excise cut (expires 2026-06-30) provides partial relief but does not cover the full monthly cost increase. Household distress peaks June\u2013July 2026.",
+      "mostDangerousCourse": "A prolonged price shock beyond the May peak projections, combined with a delayed supply normalisation, pushes all leveraged households into accelerated savings depletion. Distress selling of assets, mortgage default, and BNPL arrears rise simultaneously. Government buffer of A$4.75bn is exhausted before the crisis stabilises, removing the fiscal backstop precisely when household stress peaks.",
+      "bullets": [
+        "Most vulnerable: Low Income Worker \u2014 only 1 month(s) of liquid savings remaining against a monthly crisis cost increase of A$430.",
+        "Average monthly crisis surcharge across all household tiers: A$679. This is on top of existing debt service obligations that are already consuming a record share of income.",
+        "Government excise cut expires 2026-06-30 \u2014 at that point the A$0.263/litre relief disappears and pump prices spike again. Monthly fiscal burn rate: A$900M. Buffer extended version expires 2026-09-30.",
+        "Most resilient cohort: Retiree (Super) \u2014 45 months runway, lower debt service obligations. Even this group faces escalating health and utility costs as the cascade broadens."
+      ]
     },
     "domino": {
-      "title": "FRAN Review \u2014 Domino Cascade",
-      "updatedAt": "2026-04-04T06:09:01Z",
-      "summary": "The domino model translates the conflict into second- and third-order Australian effects over six months, linking military escalation to fuel, food, travel, and productivity outcomes.",
-      "mostLikelyCourse": "The base-case path remains a prolonged standoff where fuel and logistics stay disrupted long enough to drive inflation and slower productivity, but stop short of full systemic breakdown.",
-      "mostDangerousCourse": "A shift to ground war or a harder Hormuz closure forces the escalation path, making fuel rationing, essential-travel limits, and structurally higher food prices much more likely.",
+      "title": "Domino Cascade \u2014 Model Drivers & Scenario Probabilities",
+      "updatedAt": "2026-04-05T13:45:14Z",
+      "scenarios": [
+        {
+          "id": "base",
+          "label": "Base Case",
+          "prob": 41,
+          "gdp": -2.1,
+          "food": 20,
+          "recovery": "3\u20136 months",
+          "color": "#4a9eff"
+        },
+        {
+          "id": "escalation",
+          "label": "Escalation",
+          "prob": 36,
+          "gdp": -5.0,
+          "food": 40,
+          "recovery": "12\u201324 months",
+          "color": "#ff3b3b"
+        },
+        {
+          "id": "resolution",
+          "label": "Resolution",
+          "prob": 23,
+          "gdp": -1.0,
+          "food": 10,
+          "recovery": "1\u20133 months",
+          "color": "#00e87a"
+        }
+      ],
+      "drivers": [
+        {
+          "var": "H (Hormuz)",
+          "value": "1.00",
+          "bar": 1.0,
+          "meaning": "Hormuz is CLOSED. A score of 1.0 means maximum disruption \u2014 no Gulf crude reaching Asian refineries. This is the single largest driver in the model."
+        },
+        {
+          "var": "R (Refinery stress)",
+          "value": "0.46",
+          "bar": 0.46,
+          "meaning": "Asian refineries averaging 66% capacity. Score of 0.46 reflects the gap from normal operations. Refinery stress feeds directly into the volume of product available for Australian import."
+        },
+        {
+          "var": "S (Servo stress)",
+          "value": "0.69",
+          "bar": 0.69,
+          "meaning": "687 stations dry nationally maps to a stress score of 0.69. Consumer-level disruption feeds into the escalation probability by signalling that the wholesale shortage is reaching the retail network."
+        },
+        {
+          "var": "M (Price increase)",
+          "value": "0.65",
+          "bar": 0.65,
+          "meaning": "Regional price increase at 9.8% maps to stress score 0.65. Elevated price stress raises escalation probability by indicating the economic cascade is already embedding into the real economy."
+        },
+        {
+          "var": "T (Troop phase)",
+          "value": "0.10",
+          "bar": 0.1,
+          "meaning": "Troop phase PRE-DEPLOYMENT maps to 0.10. A low score means the conflict is not yet in a full ground war phase. If T reaches 1.0 (GROUND OPS), escalation probability rises sharply."
+        },
+        {
+          "var": "D (Diesel stress)",
+          "value": "0.05",
+          "bar": 0.05,
+          "meaning": "Diesel at 29 days maps to stress 0.05. A score approaching 1.0 would mean reserves near zero. Current diesel level keeps this input moderate \u2014 it rises if reserves erode."
+        }
+      ],
+      "summary": "The model currently shows Base Case \u2014 Stalemate as the most probable outcome at 41%, with Escalation at 36% and Resolution at 23%. The dominant input is H (Hormuz) at 1.00 \u2014 full closure \u2014 which is the single largest driver of escalation probability. Refinery stress (R=0.46) and servo outage pressure (S=0.69) are both elevated. The troop phase input (T=0.10) remains the key swing variable: a move to GROUND OPS would push escalation probability above base.",
+      "mostLikelyCourse": "The Base Case \u2014 Stalemate (41%) remains dominant. Hormuz closure continues as the primary stress driver but conflict stays aerial/special ops. Australian fuel supply tightens to the mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless ceiling then stabilises if replacement cargoes land. Food price cascade peaks May\u2013June 2026 at +20% before gradual easing.",
+      "mostDangerousCourse": "Escalation scenario (36%) activates if T (troop phase) jumps to GROUND OPS, driving escalation probability above base. GDP impact reaches {esc_sc.get(\"peakGdpImpact\",\"-5\")}%, food prices peak at +40%, and Australian rationing moves from contingency to active policy. Recovery timeline extends to 12\u201324 months.",
       "bullets": [
-        "Domino scenarios are useful because they connect tactical events to civilian economic outcomes.",
-        "The biggest swing factor is whether shipping disruption remains partial or becomes a sustained closure problem.",
-        "Watch trigger events closely: ground-force entry, refinery attrition, and transport rationing signals."
+        "Base case (41%) implies a managed disruption \u2014 painful but not structural. GDP impact peaks at -2.1%, food prices +20%, recovery in 3\u20136 months.",
+        "Escalation (36%) and Base (41%) are nearly tied \u2014 the model is close to a tipping point. A single large event (Hormuz attack, US ground commitment, second refinery strike) would shift the balance decisively toward escalation.",
+        "Resolution (23%) remains viable if the April 6 Hormuz ultimatum produces a back-channel deal. Every day without a ceasefire reduces this probability.",
+        "Watch T (troop phase input) \u2014 it is the lowest-value but highest-leverage variable. Ground operations would shift escalation probability by ~15\u201320 percentage points."
       ]
     },
     "troops": {
       "title": "Troop Disposition \u2014 Supply Chain Implications",
-      "updatedAt": "2026-04-05T13:40:15Z",
+      "updatedAt": "2026-04-05T13:45:14Z",
       "phase": "PRE-DEPLOYMENT",
       "invasionIndicator": "ELEVATED",
       "phaseReason": "US has 50,000+ troops in Middle East (+10,000 above normal). Ground troops have arrived. Spec ops and limited ground ops confirmed. Full invasion pending political decision. UK/Australia explicitly not committing ground forces. 35-nation coalition is naval blockade, not ground force.",
@@ -4114,7 +4369,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T13:40:15Z",
+    "updatedAt": "2026-04-05T13:45:14Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -4507,7 +4762,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T13:40:15Z",
+    "updatedAt": "2026-04-05T13:45:14Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
