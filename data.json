@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-05T01:43:48Z",
+  "lastUpdated": "2026-04-05T02:40:26Z",
   "warAlert": {
-    "timestamp": "2026-04-05T01:43:48Z",
+    "timestamp": "2026-04-05T02:40:26Z",
     "fuelImpact": [
+      "2026-04-05 Albanese: Australia will NOT send ground troops to Iran \u2014 purely defensive posture. On 10 March: 85 ADF personnel + Boeing E-7 Wedgetail + AMRAAM missiles deployed to UAE to defend Gulf states and ADF bases at UAE's request. Albanese government supports US-Israel effort but limits involvement to defensive. [Wikipedia] [HIGH]",
+      "2026-04-05 Iran's Hormuz 'Toll Booth': Iranian-approved route through territorial waters (Qeshm-Larak passage) active; Japanese co-owned tanker + 3 others crossed via southern alternative route April 3; 20,000 seafarers still stranded [Manila Times] [HIGH]",
+      "2026-04-05 Indian vessel + 3 others cross Strait of Hormuz via new Iranian-approved route through territorial waters; IRGC grants case-by-case permission, levies /barrel 'Tehran Toll' [NDTV] [HIGH]",
+      "2026-04-05 Tehran downs 2 US warplanes \u2014 April 5 live: Iran claims F-35I Adir shot down Russian-made Iranian Yak-130 over Tehran (first F-35 air-to-air kill); Israel bombs Lebanese bridges; IDF struck Basij HQ, missile pads, logistics directorate; IDF completed major strikes on military outpost housing soldiers [Al Jazeera] [HIGH]",
       "2026-04-05 Singapore refineries maintain stable operations but declaring force majeure on petrochemicals; Japan holds 254 days oil reserves, Korea 208 days [Wikipedia] [MEDIUM]",
-      "2026-04-04 Petronas cuts downstream planning horizon from 3 months to 45 days due to global energy supply uncertainty [Malay Mail] [HIGH]",
-      "2026-04-04 Ukraine allies ask Kyiv to pause drone attacks on Russian oil refineries to ease global fuel price surge from Iran war [Kyiv Independent] [MEDIUM]",
-      "2026-04-04 SE Asia fuel crisis: Vietnam bans fuel exports, Thailand bans jet fuel exports, Singapore and Indonesia petrochemical companies declare force majeure [Yahoo News Malaysia] [HIGH]",
-      "2026-04-04 Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role [Pravda Australia] [MEDIUM]",
-      "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]"
+      "2026-04-04 US troop buildup reaches unprecedented scale: 2,500 Marines (31st MEU) already in Middle East; 3-4,000 82nd Airborne and 11th Marine Expeditionary Group (~2,500) inbound; USS Harry S. Truman (Red Sea/Houthi ops) + USS Carl Vinson in region; USS Gerald R. Ford on way \u2014 potential 3-carrier group formation off Iran [Pravda Poland] [MEDIUM]"
     ],
     "foodImpact": [
       "2026-04-03 Guardian visual guide: Hormuz blockade disrupting Gulf fertiliser/urea exports; buyers waiting it out; supply bad but not catastrophic yet \u2014 worst case if conflict extends [The Guardian] [MEDIUM]",
@@ -16,17 +16,17 @@
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-05 Australia reserves as of April 5: 39 days petrol, 29 days diesel, 30 days jet fuel \u2014 diesel remains at/below critical 25-day threshold; experts warn of existential economic threat [Michael West] [HIGH]",
+      "2026-04-05 BBC: Hundreds of petrol stations across Australia have run out of fuel as Iran war disrupts global oil shipments; prices rising sharply; Easter travel adding demand pressure [BBC] [HIGH]",
       "2026-04-04 Xinhua: Bowen says Australia's fuel supply 'remains strong' \u2014 more petrol getting to service stations [Xinhua] [MEDIUM]",
-      "2026-04-04 Queensland canegrowers pushing E10 ethanol blend as diesel alternative amid fuel crisis; QLD fuel availability tightening; prices up [Queensland Country Life] [MEDIUM]",
-      "2026-04-04 Bowen: 312 stations without diesel nationally (down from 410 on Apr 3); fewer stations running dry as Easter demand peaks [MarketScreener/Chris Bowen] [HIGH]",
-      "2026-04-04 The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate [The Age] [HIGH]"
+      "2026-04-04 Queensland canegrowers pushing E10 ethanol blend as diesel alternative amid fuel crisis; QLD fuel availability tightening; prices up [Queensland Country Life] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T01:43:48Z",
+    "updated": "2026-04-05T02:40:26Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1166,8 +1166,86 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T01:43:48Z",
+  "dbLastUpdated": "2026-04-05T02:40:26Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Albanese: Australia will NOT send ground troops to Iran \u2014 purely defensive posture. On 10 March: 85 ADF personnel + Boeing E-7 Wedgetail + AMRAAM missiles deployed to UAE to defend Gulf states and ADF bases at UAE's request. Albanese government supports US-Israel effort but limits involvement to defensive.",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Australia_and_the_2026_Iran_war",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T02:39:07Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Iran's Hormuz 'Toll Booth': Iranian-approved route through territorial waters (Qeshm-Larak passage) active; Japanese co-owned tanker + 3 others crossed via southern alternative route April 3; 20,000 seafarers still stranded",
+      "source": "Manila Times",
+      "sourceUrl": "https://www.manilatimes.net/2026/04/05/news/national/strait-of-hormuz-now-irans-weapon-of-mass-disruption/2314284",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Indian vessel + 3 others cross Strait of Hormuz via new Iranian-approved route through territorial waters; IRGC grants case-by-case permission, levies /barrel 'Tehran Toll'",
+      "source": "NDTV",
+      "sourceUrl": "https://www.ndtv.com/india-news/iran-israel-war-oil-lpg-indian-3-other-vessels-cross-strait-of-hormuz-via-new-shipping-route-11308515",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Australia reserves as of April 5: 39 days petrol, 29 days diesel, 30 days jet fuel \u2014 diesel remains at/below critical 25-day threshold; experts warn of existential economic threat",
+      "source": "Michael West",
+      "sourceUrl": "https://michaelwest.com.au/how-australia-can-protect-against-future-fuel-shocks",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Tehran downs 2 US warplanes \u2014 April 5 live: Iran claims F-35I Adir shot down Russian-made Iranian Yak-130 over Tehran (first F-35 air-to-air kill); Israel bombs Lebanese bridges; IDF struck Basij HQ, missile pads, logistics directorate; IDF completed major strikes on military outpost housing soldiers",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/liveblog/2026/4/4/iran-war-live-tehran-downs-2-us-warplanes-israel-bombs-lebanon-bridges",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "BBC: Hundreds of petrol stations across Australia have run out of fuel as Iran war disrupts global oil shipments; prices rising sharply; Easter travel adding demand pressure",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/articles/c62l084kgk6o",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
     {
       "dtg": "2026-04-05",
       "domain": "fuel",
@@ -1180,6 +1258,71 @@
       "sent": false,
       "color": "#ff3b3b",
       "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "US troop buildup reaches unprecedented scale: 2,500 Marines (31st MEU) already in Middle East; 3-4,000 82nd Airborne and 11th Marine Expeditionary Group (~2,500) inbound; USS Harry S. Truman (Red Sea/Houthi ops) + USS Carl Vinson in region; USS Gerald R. Ford on way \u2014 potential 3-carrier group formation off Iran",
+      "source": "Pravda Poland",
+      "sourceUrl": "https://poland.news-pravda.com/en/world/2026/04/04/53542.html",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T02:39:07Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Australia secretly deployed SAS unit (~90 personnel) to Al Minhad Air Base near Dubai \u2014 secretive deployment confirmed by media; separate from official 85 ADF to UAE announced by Albanese",
+      "source": "Caliber.Az",
+      "sourceUrl": "https://caliber.az/en/post/media-australia-secretly-deploys-special-forces-to-middle-east-n",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T02:39:07Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "shipping",
+      "headline": "Five weeks, 21 attacks, 20,000 seafarers stranded aboard vessels unable to transit Hormuz \u2014 IMO Secretary-General warns of dwindling supplies; 40+ countries in crisis talks",
+      "source": "Container Magazine",
+      "sourceUrl": "https://container-mag.com/2026/04/04/strait-of-hormuz-seafarer-crisis-five-weeks/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "shipping",
+      "headline": "Iran signals possible Bab el-Mandeb blockade if US/Israel expand conflict to target Iranian territory including Kharg Island; Iran signals move if strategic islands threatened; Bab el-Mandeb = critical Europe/North America oil route via Suez",
+      "source": "The Federal",
+      "sourceUrl": "https://thefederal.com/category/international/iran-bab-el-mandeb-threat-hormuz-shipping-disruption-237537",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "shipping",
+      "headline": "Iran drops hint it could close Bab el-Mandeb after closing Hormuz; top official comment signals escalation intent; Bab el-Mandeb links Mediterranean to Indian Ocean via Suez \u2014 key energy export route for Gulf to Europe/North America",
+      "source": "India TV",
+      "sourceUrl": "https://www.indiatvnews.com/news/world/will-iran-close-bab-el-mandeb-strait-next-after-blocking-hormuz-top-official-drops-big-hint-2026-04-04-1036267",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T02:38:58Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
     },
     {
       "dtg": "2026-04-04",
@@ -2364,9 +2507,9 @@
     "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T01:43:45Z",
-    "cron": "asian-refinery",
-    "summary": "4 new events: Singapore petrochem force majeure, Malaysia net importer (45d planning horizon), Vietnam fuel export ban, Thailand jet fuel export ban; Thailand jet fuel ban + Malaysia net importer + Vietnam export ban narrow Australian import options for May-June"
+    "sentAt": "2026-04-05T02:40:21Z",
+    "cron": "war-fuel-food",
+    "summary": "11 new events: Iran Bab el-Mandeb threat, IRGC Toll Booth active (/barrel), 20k seafarers stranded, US troop buildup to 8k+/3 carriers (invasion scale), Albanese rules out ground troops, Australian SAS confirmed at Al Minhad, Israeli F-35I first air-to-air kill, Australian diesel at critical 29-day "
   },
   "reviewPanels": {
     "feed": {
@@ -2725,7 +2868,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T01:43:48Z",
+    "updatedAt": "2026-04-05T02:40:26Z",
     "formula": {
       "inputs": {
         "T": 0.1,
