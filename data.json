@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T12:57:47Z",
+  "lastUpdated": "2026-04-05T12:57:53Z",
   "warAlert": {
-    "timestamp": "2026-04-05T12:57:47Z",
+    "timestamp": "2026-04-05T12:57:53Z",
     "fuelImpact": [
       "2026-04-05 Trump pushed Hormuz ultimatum to April 6 at 8 PM Eastern Time (April 7 10 AM AEST) following Iranian government request. Threatens massive attacks on Iranian energy sites if Hormuz not reopened. Iran rejected ultimatum as 'helpless and nervous'. Iran allowing Iraqi ships through Hormuz without restrictions. [CBS News] [HIGH]",
       "2026-04-05 ~5,000 additional US Marines and sailors deploying to Middle East to support Iran war, per three US officials. 2,500 Marines from 31st Marine Expeditionary Unit already arrived. Total US regional presence ~50,000 as buildup continues ahead of potential ground operations. [Sino Defence Forum] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T12:57:47Z",
+    "updated": "2026-04-05T12:57:53Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,7 +1168,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T12:57:47Z",
+  "dbLastUpdated": "2026-04-05T12:57:53Z",
   "dbEvents": [
     {
       "dtg": "2026-04-05",
@@ -3923,7 +3923,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T12:57:47Z",
+    "updatedAt": "2026-04-05T12:57:53Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -4316,7 +4316,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T12:57:47Z",
+    "updatedAt": "2026-04-05T12:57:53Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
