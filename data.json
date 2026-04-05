@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-05T07:37:07Z",
+  "lastUpdated": "2026-04-05T07:43:49Z",
   "warAlert": {
-    "timestamp": "2026-04-05T07:37:07Z",
+    "timestamp": "2026-04-05T07:43:49Z",
     "fuelImpact": [
+      "2026-04-05 Singapore: oil price spikes worsen as Iran war enters second month; petrochem force majeure confirmed [The Straits Times] [MEDIUM]",
       "2026-04-05 Japan should lead efforts toward U.S.-Iran ceasefire [Japan Times] [MEDIUM]",
       "2026-04-05 U.S. rescues airman as Trump and Israel pressure Iran ahead of deadline [Japan Times] [MEDIUM]",
       "2026-04-05 Trump\u2019s victory rhetoric undercut by downed U.S. jet in Iran war [Japan Times] [MEDIUM]",
       "2026-04-05 Pharmaceutical logistics in demand as war rattles supply chains [Japan Times] [MEDIUM]",
-      "2026-04-05 Gasoline, diapers and drinks: Japan faces wide-ranging impact amid concern over oil [Japan Times] [MEDIUM]",
-      "2026-04-05 Iran says Iraqi ships are allowed to use Strait of Hormuz [Japan Times] [MEDIUM]"
+      "2026-04-05 Gasoline, diapers and drinks: Japan faces wide-ranging impact amid concern over oil [Japan Times] [MEDIUM]"
     ],
     "foodImpact": [
       "2026-04-05 Even if the Strait of Hormuz opened tomorrow, it could take months for fuel prices to come down [Sydney Morning Herald / The Age] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T07:37:07Z",
+    "updated": "2026-04-05T07:43:49Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,8 +1167,21 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T07:37:07Z",
+  "dbLastUpdated": "2026-04-05T07:43:49Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Singapore: oil price spikes worsen as Iran war enters second month; petrochem force majeure confirmed",
+      "source": "The Straits Times",
+      "sourceUrl": "https://www.straitstimes.com/singapore/what-has-become-pricier-in-singapore-amid-spiralling-oil-prices-caused-by-iran-war",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T07:43:30Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-05",
       "domain": "australia",
@@ -1506,6 +1519,45 @@
       "sent": false,
       "color": "#ff3b3b",
       "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Asian naphtha supply disrupted \u2014 petrochem firms cut output and declare force majeure as Middle East naphtha (50%+ of Asia supply) restricted",
+      "source": "CNN Business",
+      "sourceUrl": "https://edition.cnn.com/2026/04/04/business/global-oil-crisis-shortage-everything-intl-hnk-dst",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T07:43:30Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "South Coast Register: Fewer stations run dry but supply strength questioned \u2014 Bowen confirms 3.7bn litres booked April/May",
+      "source": "South Coast Register",
+      "sourceUrl": "https://www.southcoastregister.com.au/story/9214039/fewer-stations-run-dry-but-supply-strength-questioned/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T07:40:20Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Reuters: Hundreds of petrol stations dry across Australia, mostly rural, Easter travel urged despite outages",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/stick-easter-travel-australians-told-though-hundreds-petrol-stations-dry-2026-04-04/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T07:40:20Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
     },
     {
       "dtg": "2026-04-04",
@@ -2937,9 +2989,9 @@
     "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T07:37:02Z",
-    "cron": "shipment-validator",
-    "summary": "Guardian: US/Mexico fuel sourcing confirmed; 50+ ships en route; servo outages improving; STI Steadfast still in transit"
+    "sentAt": "2026-04-05T07:41:06Z",
+    "cron": "servo-tracker",
+    "summary": "No material change: FuelRadar ~687 stations dry, down from ~787 on Apr 3; improving trend held"
   },
   "reviewPanels": {
     "feed": {
@@ -3298,7 +3350,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T07:37:07Z",
+    "updatedAt": "2026-04-05T07:43:49Z",
     "formula": {
       "inputs": {
         "T": 0.1,
