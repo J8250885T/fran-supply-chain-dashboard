@@ -168,6 +168,19 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .rs-closed{background:var(--red-dim);color:var(--red)}
 .route-note{grid-column:1/-1;font-size:9px;color:var(--text-muted);padding-top:2px}
 
+/* ══ SENTIMENT CHART ══ */
+.sentiment-canvas{width:100%;height:240px;display:block;border-radius:6px;background:rgba(0,0,0,0.2)}
+.sentiment-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px}
+.sentiment-legend-item{display:flex;align-items:center;gap:5px;font-size:9px;color:var(--text-muted);cursor:pointer}
+.sentiment-legend-item .sl-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sentiment-legend-item .sl-score{font-weight:700;font-size:10px}
+.sentiment-legend-item .sl-trend{font-size:8px;opacity:0.7}
+.sentiment-current-row{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}
+.sentiment-current-cell{background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;padding:6px 8px;display:flex;flex-direction:column;gap:2px}
+.sc-emoji{font-size:12px;line-height:1}
+.sc-label{font-size:8px;color:var(--text-muted);line-height:1.2}
+.sc-score{font-size:14px;font-weight:700;line-height:1}
+.sc-trend{font-size:8px;opacity:0.7}
 /* ══ EVENTS FEED ══ */
 .events-feed{display:flex;flex-direction:column;gap:4px}
 .ev-row{display:flex;align-items:flex-start;gap:10px;padding:7px 9px;border-radius:6px;background:var(--surface-raised);border:1px solid var(--border)}
@@ -454,6 +467,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       <div id="review-content-feed"></div>
     </div>
 
+    <div class="panel" id="panel-sentiment">
+      <div class="p-hdr">
+        <span class="p-title">📊 Sentiment Index — 5 Areas</span>
+        <span class="p-dtg" id="sentiment-dtg"></span>
+      </div>
+      <div style="font-size:9px;color:var(--text-muted);margin-bottom:8px">14-day rolling score derived from event feed headlines. Scale: <span style="color:var(--red)">−10 extreme stress</span> → <span style="color:var(--text-muted)">0 neutral</span> → <span style="color:var(--green)">+10 recovery</span>. 3-day smoothed.</div>
+      <canvas id="sentimentCanvas" class="sentiment-canvas"></canvas>
+      <div class="sentiment-current-row" id="sentiment-current-row"></div>
+      <div class="sentiment-legend" id="sentiment-legend"></div>
+    </div>
+
     <div class="panel" id="panel-events">
       <div class="p-hdr">
         <span class="p-title">📡 Supply Chain Event Feed</span>
@@ -523,6 +547,9 @@ function showSection(id){
   // before we read canvas.offsetWidth inside the draw functions
   requestAnimationFrame(function(){
     requestAnimationFrame(function(){
+      if(id==='feed'&&_lastSentiment){
+        drawSentimentChart(_lastSentiment);
+      }
       if(id==='markets'   &&_lastInf){
         drawCPIChart(_lastInf);
         drawItemInflationChart(_lastInf);
@@ -696,6 +723,230 @@ function renderEvents(dbEvents,dbLastUpdated){
   });
   html+='</div>';
   el.innerHTML=html;
+}
+
+// ── SENTIMENT CHART ──
+var _lastSentiment = null;
+var _sentimentHidden = {}; // toggled lines
+
+function renderSentiment(sentiment) {
+  if (!sentiment || !sentiment.areas) return;
+  _lastSentiment = sentiment;
+
+  // DTG
+  var dtgEl = document.getElementById('sentiment-dtg');
+  if (dtgEl) dtgEl.textContent = fmtAESTDateTime(sentiment.updatedAt);
+
+  // Current score cells
+  var row = document.getElementById('sentiment-current-row');
+  if (row) {
+    var html = '';
+    sentiment.areas.forEach(function(a) {
+      var sc = a.current;
+      var col = sc >= 0 ? 'var(--green)' : sc > -3 ? 'var(--amber)' : 'var(--red)';
+      var trendArrow = a.trend === 'improving' ? '▲' : a.trend === 'deteriorating' ? '▼' : '→';
+      var trendCol   = a.trend === 'improving' ? 'var(--green)' : a.trend === 'deteriorating' ? 'var(--red)' : 'var(--text-muted)';
+      html += '<div class="sentiment-current-cell" style="border-color:' + a.color + '33">';
+      html += '<div class="sc-emoji">' + a.emoji + '</div>';
+      html += '<div class="sc-label">' + escHtml(a.label) + '</div>';
+      html += '<div class="sc-score" style="color:' + col + '">' + (sc >= 0 ? '+' : '') + sc.toFixed(1) + '</div>';
+      html += '<div class="sc-trend" style="color:' + trendCol + '">' + trendArrow + ' ' + escHtml(a.trend) + '</div>';
+      html += '</div>';
+    });
+    row.innerHTML = html;
+  }
+
+  // Legend
+  var leg = document.getElementById('sentiment-legend');
+  if (leg) {
+    var lhtml = '';
+    sentiment.areas.forEach(function(a) {
+      var hidden = _sentimentHidden[a.id];
+      var opacity = hidden ? '0.35' : '1';
+      lhtml += '<div class="sentiment-legend-item" style="opacity:' + opacity + '" onclick="toggleSentimentLine(\'' + a.id + '\')">'
+             + '<div class="sl-dot" style="background:' + a.color + '"></div>'
+             + '<span>' + a.emoji + ' ' + escHtml(a.label) + '</span>'
+             + '</div>';
+    });
+    leg.innerHTML = lhtml;
+  }
+
+  drawSentimentChart(sentiment);
+}
+
+function toggleSentimentLine(id) {
+  _sentimentHidden[id] = !_sentimentHidden[id];
+  if (_lastSentiment) renderSentiment(_lastSentiment);
+}
+
+function drawSentimentChart(sentiment) {
+  var canvas = document.getElementById('sentimentCanvas');
+  if (!canvas || !sentiment) return;
+  var dpr = window.devicePixelRatio || 1;
+  var W = canvas.offsetWidth, H = 240;
+  if (!W || W < 50) return;
+  canvas.width  = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width  = W + 'px';
+  canvas.style.height = H + 'px';
+  var ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  var PAD_L = 34, PAD_R = 56, PAD_T = 18, PAD_B = 32;
+  var cW = W - PAD_L - PAD_R;
+  var cH = H - PAD_T - PAD_B;
+
+  var Y_MIN = -10, Y_MAX = 10;
+  function xPos(i, total) { return PAD_L + (i / (total - 1)) * cW; }
+  function yPos(v) { return PAD_T + (1 - (v - Y_MIN) / (Y_MAX - Y_MIN)) * cH; }
+
+  // Background
+  ctx.fillStyle = 'rgba(0,0,0,0.18)';
+  ctx.beginPath();
+  ctx.roundRect(0, 0, W, H, 6);
+  ctx.fill();
+
+  // Stress zone (below 0) — subtle red
+  var y0 = yPos(0);
+  var grad = ctx.createLinearGradient(0, y0, 0, yPos(Y_MIN));
+  grad.addColorStop(0,   'rgba(255,59,59,0.0)');
+  grad.addColorStop(1,   'rgba(255,59,59,0.07)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(PAD_L, y0, cW, yPos(Y_MIN) - y0);
+
+  // Recovery zone (above 0) — subtle green
+  var grad2 = ctx.createLinearGradient(0, yPos(Y_MAX), 0, y0);
+  grad2.addColorStop(0,  'rgba(0,232,122,0.06)');
+  grad2.addColorStop(1,  'rgba(0,232,122,0.0)');
+  ctx.fillStyle = grad2;
+  ctx.fillRect(PAD_L, yPos(Y_MAX), cW, y0 - yPos(Y_MAX));
+
+  // Grid lines
+  ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+  ctx.lineWidth = 1;
+  [-8,-6,-4,-2,0,2,4,6,8].forEach(function(v) {
+    ctx.beginPath();
+    ctx.moveTo(PAD_L, yPos(v));
+    ctx.lineTo(PAD_L + cW, yPos(v));
+    ctx.stroke();
+  });
+
+  // Y-axis labels
+  ctx.fillStyle = 'rgba(122,148,176,0.7)';
+  ctx.font = '8px ui-monospace,monospace';
+  ctx.textAlign = 'right';
+  [-10,-5,0,5,10].forEach(function(v) {
+    ctx.fillText((v > 0 ? '+' : '') + v, PAD_L - 4, yPos(v) + 3);
+  });
+
+  // Zero line
+  ctx.strokeStyle = 'rgba(255,255,255,0.18)';
+  ctx.lineWidth = 1;
+  ctx.setLineDash([4, 3]);
+  ctx.beginPath();
+  ctx.moveTo(PAD_L, y0);
+  ctx.lineTo(PAD_L + cW, y0);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Zero label
+  ctx.fillStyle = 'rgba(255,255,255,0.3)';
+  ctx.font = '8px ui-monospace,monospace';
+  ctx.textAlign = 'left';
+  ctx.fillText('NEUTRAL', PAD_L + 3, y0 - 3);
+
+  // Get date labels from first area series
+  var dates = (sentiment.areas[0] && sentiment.areas[0].series) ?
+    sentiment.areas[0].series.map(function(p) { return p.date; }) : [];
+  var N = dates.length;
+  if (!N) return;
+
+  // X-axis date labels (every 3rd day)
+  ctx.fillStyle = 'rgba(122,148,176,0.6)';
+  ctx.font = '7px ui-monospace,monospace';
+  ctx.textAlign = 'center';
+  dates.forEach(function(d, i) {
+    if (i === 0 || i === N-1 || i % 3 === 0) {
+      var parts = d.split('-');
+      var label = (parts[1]||'') + '/' + (parts[2]||''); // MM/DD
+      ctx.fillText(label, xPos(i, N), H - PAD_B + 12);
+    }
+  });
+
+  // Draw lines per area
+  sentiment.areas.forEach(function(area) {
+    if (_sentimentHidden[area.id]) return;
+    var pts = area.series;
+    if (!pts || !pts.length) return;
+
+    // Gather valid segments (skip nulls)
+    var segments = [];
+    var current = [];
+    pts.forEach(function(p, i) {
+      if (p.score !== null && p.score !== undefined) {
+        current.push({ x: xPos(i, N), y: yPos(p.score), v: p.score });
+      } else {
+        if (current.length) { segments.push(current); current = []; }
+      }
+    });
+    if (current.length) segments.push(current);
+
+    segments.forEach(function(seg) {
+      if (seg.length < 2) return;
+
+      // Area fill under line
+      ctx.beginPath();
+      ctx.moveTo(seg[0].x, y0);
+      seg.forEach(function(pt, i) {
+        if (i === 0) { ctx.lineTo(pt.x, pt.y); return; }
+        var prev = seg[i-1];
+        var cpx = (prev.x + pt.x) / 2;
+        ctx.bezierCurveTo(cpx, prev.y, cpx, pt.y, pt.x, pt.y);
+      });
+      ctx.lineTo(seg[seg.length-1].x, y0);
+      ctx.closePath();
+      var aFill = ctx.createLinearGradient(0, PAD_T, 0, PAD_T + cH);
+      aFill.addColorStop(0, area.color + '22');
+      aFill.addColorStop(1, area.color + '05');
+      ctx.fillStyle = aFill;
+      ctx.fill();
+
+      // Line
+      ctx.beginPath();
+      ctx.moveTo(seg[0].x, seg[0].y);
+      seg.forEach(function(pt, i) {
+        if (i === 0) return;
+        var prev = seg[i-1];
+        var cpx = (prev.x + pt.x) / 2;
+        ctx.bezierCurveTo(cpx, prev.y, cpx, pt.y, pt.x, pt.y);
+      });
+      ctx.strokeStyle = area.color;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Data point dots
+      seg.forEach(function(pt) {
+        ctx.beginPath();
+        ctx.arc(pt.x, pt.y, 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = area.color;
+        ctx.fill();
+      });
+
+      // Endpoint label (right side)
+      var last = seg[seg.length-1];
+      var sc = last.v;
+      var labelTxt = (sc >= 0 ? '+' : '') + sc.toFixed(1);
+      ctx.font = 'bold 9px ui-monospace,monospace';
+      ctx.textAlign = 'left';
+      ctx.fillStyle = area.color;
+      ctx.fillText(labelTxt, last.x + 4, last.y + 3);
+    });
+  });
+
+  // Border frame
+  ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(PAD_L, PAD_T, cW, cH);
 }
 
 // ── SERVO ──
@@ -1694,6 +1945,7 @@ function refresh(){
     renderAlert(data);
     renderTrajectory(data.trajectory||null);
     renderEvents(data.dbEvents||[],data.dbLastUpdated);
+    renderSentiment(data.sentiment||null);
     renderReviewPanels(data);
     renderServo(data.servoOutages);
     renderFleet(data.shipments);

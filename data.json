@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T08:39:40Z",
+  "lastUpdated": "2026-04-05T12:19:09Z",
   "warAlert": {
-    "timestamp": "2026-04-05T08:39:40Z",
+    "timestamp": "2026-04-05T12:19:09Z",
     "fuelImpact": [
       "2026-04-05 US special forces ground raid inside Iran \u2014 WSO recovered after heavy firefight, two Black Hawks hit by small arms fire [EADaily] [HIGH]",
       "2026-04-05 Total US ground presence in region reaches ~50,000 \u2014 analysts assess ground invasion viability [Eurasia Review] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T08:39:40Z",
+    "updated": "2026-04-05T12:19:09Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,7 +1167,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T08:39:40Z",
+  "dbLastUpdated": "2026-04-05T12:19:09Z",
   "dbEvents": [
     {
       "dtg": "2026-04-05",
@@ -3402,7 +3402,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T08:39:40Z",
+    "updatedAt": "2026-04-05T12:19:09Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -3793,5 +3793,412 @@
         "resolution": "Stable"
       }
     }
+  },
+  "sentiment": {
+    "updatedAt": "2026-04-05T12:19:09Z",
+    "window": 14,
+    "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
+    "areas": [
+      {
+        "id": "fuel_supply",
+        "label": "Fuel Supply Risk",
+        "emoji": "\ud83d\udee2\ufe0f",
+        "color": "#ff3b3b",
+        "current": -1.35,
+        "trend": "stable",
+        "series": [
+          {
+            "date": "2026-03-23",
+            "score": 0.0,
+            "count": 0
+          },
+          {
+            "date": "2026-03-24",
+            "score": 0.0,
+            "count": 1
+          },
+          {
+            "date": "2026-03-25",
+            "score": 0.0,
+            "count": 1
+          },
+          {
+            "date": "2026-03-26",
+            "score": -1.5,
+            "count": 0
+          },
+          {
+            "date": "2026-03-27",
+            "score": -1.5,
+            "count": 1
+          },
+          {
+            "date": "2026-03-28",
+            "score": -1.5,
+            "count": 1
+          },
+          {
+            "date": "2026-03-29",
+            "score": 0.0,
+            "count": 0
+          },
+          {
+            "date": "2026-03-30",
+            "score": 0.0,
+            "count": 1
+          },
+          {
+            "date": "2026-03-31",
+            "score": -0.67,
+            "count": 1
+          },
+          {
+            "date": "2026-04-01",
+            "score": -0.93,
+            "count": 4
+          },
+          {
+            "date": "2026-04-02",
+            "score": -1.17,
+            "count": 9
+          },
+          {
+            "date": "2026-04-03",
+            "score": -1.22,
+            "count": 11
+          },
+          {
+            "date": "2026-04-04",
+            "score": -1.15,
+            "count": 7
+          },
+          {
+            "date": "2026-04-05",
+            "score": -1.35,
+            "count": 7
+          }
+        ]
+      },
+      {
+        "id": "geopolitical",
+        "label": "Geopolitical Tension",
+        "emoji": "\u2694\ufe0f",
+        "color": "#c084fc",
+        "current": -1.14,
+        "trend": "deteriorating",
+        "series": [
+          {
+            "date": "2026-03-23",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-24",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-25",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-26",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-27",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-28",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-29",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-30",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-31",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-04-01",
+            "score": 1.0,
+            "count": 0
+          },
+          {
+            "date": "2026-04-02",
+            "score": 0.22,
+            "count": 3
+          },
+          {
+            "date": "2026-04-03",
+            "score": -0.26,
+            "count": 7
+          },
+          {
+            "date": "2026-04-04",
+            "score": -0.95,
+            "count": 10
+          },
+          {
+            "date": "2026-04-05",
+            "score": -1.14,
+            "count": 12
+          }
+        ]
+      },
+      {
+        "id": "shipping_routes",
+        "label": "Shipping Route Risk",
+        "emoji": "\ud83d\udea2",
+        "color": "#4a9eff",
+        "current": -2.0,
+        "trend": "deteriorating",
+        "series": [
+          {
+            "date": "2026-03-23",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-24",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-25",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-26",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-27",
+            "score": -3.0,
+            "count": 0
+          },
+          {
+            "date": "2026-03-28",
+            "score": -3.0,
+            "count": 1
+          },
+          {
+            "date": "2026-03-29",
+            "score": -3.0,
+            "count": 0
+          },
+          {
+            "date": "2026-03-30",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-31",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-04-01",
+            "score": 0.0,
+            "count": 0
+          },
+          {
+            "date": "2026-04-02",
+            "score": 0.67,
+            "count": 1
+          },
+          {
+            "date": "2026-04-03",
+            "score": -0.11,
+            "count": 3
+          },
+          {
+            "date": "2026-04-04",
+            "score": -0.89,
+            "count": 3
+          },
+          {
+            "date": "2026-04-05",
+            "score": -2.0,
+            "count": 3
+          }
+        ]
+      },
+      {
+        "id": "food_chain",
+        "label": "Food Chain Stress",
+        "emoji": "\ud83c\udf3e",
+        "color": "#ffb020",
+        "current": 0.0,
+        "trend": "improving",
+        "series": [
+          {
+            "date": "2026-03-23",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-24",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-25",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-26",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-27",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-28",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-29",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-30",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-03-31",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-04-01",
+            "score": null,
+            "count": 0
+          },
+          {
+            "date": "2026-04-02",
+            "score": -6.5,
+            "count": 0
+          },
+          {
+            "date": "2026-04-03",
+            "score": -6.5,
+            "count": 2
+          },
+          {
+            "date": "2026-04-04",
+            "score": -3.25,
+            "count": 0
+          },
+          {
+            "date": "2026-04-05",
+            "score": 0.0,
+            "count": 1
+          }
+        ]
+      },
+      {
+        "id": "aus_exposure",
+        "label": "Australian Exposure",
+        "emoji": "\ud83c\udde6\ud83c\uddfa",
+        "color": "#00e87a",
+        "current": -0.12,
+        "trend": "stable",
+        "series": [
+          {
+            "date": "2026-03-23",
+            "score": -4.5,
+            "count": 0
+          },
+          {
+            "date": "2026-03-24",
+            "score": -2.25,
+            "count": 2
+          },
+          {
+            "date": "2026-03-25",
+            "score": -2.25,
+            "count": 1
+          },
+          {
+            "date": "2026-03-26",
+            "score": 1.0,
+            "count": 0
+          },
+          {
+            "date": "2026-03-27",
+            "score": 1.0,
+            "count": 1
+          },
+          {
+            "date": "2026-03-28",
+            "score": 1.0,
+            "count": 1
+          },
+          {
+            "date": "2026-03-29",
+            "score": -1.5,
+            "count": 0
+          },
+          {
+            "date": "2026-03-30",
+            "score": -1.5,
+            "count": 1
+          },
+          {
+            "date": "2026-03-31",
+            "score": -1.0,
+            "count": 1
+          },
+          {
+            "date": "2026-04-01",
+            "score": 0.17,
+            "count": 1
+          },
+          {
+            "date": "2026-04-02",
+            "score": 0.19,
+            "count": 4
+          },
+          {
+            "date": "2026-04-03",
+            "score": 0.22,
+            "count": 13
+          },
+          {
+            "date": "2026-04-04",
+            "score": -0.06,
+            "count": 13
+          },
+          {
+            "date": "2026-04-05",
+            "score": -0.12,
+            "count": 6
+          }
+        ]
+      }
+    ]
   }
 }
