@@ -495,11 +495,34 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
     <div class="panel" id="panel-events">
       <div class="p-hdr">
         <span class="p-title">🗣️ Latest News</span>
+        <span id="feed-result-count" style="font-size:9px;color:var(--text-muted);margin-left:auto"></span>
       </div>
+
+      <!-- Search bar -->
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <div style="position:relative;flex:1">
+          <span style="position:absolute;left:9px;top:50%;transform:translateY(-50%);font-size:12px;pointer-events:none;opacity:0.5">🔍</span>
+          <input id="feed-search" type="search" placeholder="Search headlines, sources, domains…"
+            style="width:100%;background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;
+                   color:var(--text);font:12px var(--font);padding:7px 10px 7px 30px;outline:none;box-sizing:border-box"
+            oninput="filterFeed(this.value)">
+        </div>
+        <button onclick="clearFeedSearch()" title="Clear search"
+          style="background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;
+                 color:var(--text-muted);font:11px var(--font);padding:6px 10px;cursor:pointer;white-space:nowrap">
+          Clear
+        </button>
+      </div>
+
+      <!-- Domain filter pills -->
+      <div id="feed-domain-pills" style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px"></div>
+
+      <!-- Live link notice -->
       <div style="display:flex;align-items:center;gap:6px;padding:6px 10px;margin-bottom:8px;background:rgba(74,158,255,0.08);border:1px solid rgba(74,158,255,0.2);border-radius:6px">
         <span style="font-size:12px">🔗</span>
         <span style="font-size:10px;color:var(--text-muted)">Headlines are <strong style="color:var(--blue)">live links</strong> — click any story to open the source article in a new tab.</span>
       </div>
+
       <div id="events-content"><div style="color:var(--text-muted);font-size:11px;padding:12px 0">Loading events...</div></div>
     </div>
 
@@ -809,21 +832,126 @@ function renderFeedReview(fr){
 }
 
 // ── EVENTS FEED ──
-function renderEvents(dbEvents,dbLastUpdated){
-  var el=document.getElementById('events-content');
+var _allEvents = [];      // 14-day feed display
+var _searchIndex = [];     // full DB — all events, used by search
+var _activeDomainFilter = null;
 
-  if(!dbEvents||!dbEvents.length){el.innerHTML='<div style="color:var(--text-muted);font-size:11px;padding:12px 0">No events in feed</div>';return;}
+function renderEvents(dbEvents,dbLastUpdated){
+  _allEvents = dbEvents || [];
+  applyFeedFilter();
+}
+
+function buildDomainPills(events){
+  var pillEl = document.getElementById('feed-domain-pills');
+  if(!pillEl) return;
+  var domainMeta = {
+    'FUEL':        {color:'#ff3b3b'},
+    'FOOD':        {color:'#ffb020'},
+    'SHIPPING':    {color:'#4a9eff'},
+    'AUSTRALIA':   {color:'#00e87a'},
+    'GEO':         {color:'#c084fc'},
+  };
+  var counts = {};
+  events.forEach(function(ev){
+    var lbl = (ev.label||ev.domain||'').toUpperCase();
+    counts[lbl] = (counts[lbl]||0) + 1;
+  });
+  var html = '<button onclick="setDomainFilter(null)" style="'+pillStyle(null===_activeDomainFilter)+'">All <span style="opacity:0.6">('+events.length+')</span></button>';
+  Object.keys(counts).sort().forEach(function(d){
+    var col = (domainMeta[d]||{}).color||'#7a94b0';
+    var active = _activeDomainFilter === d;
+    html += '<button onclick="setDomainFilter(\'' + d + '\')" style="'+pillStyle(active)+';border-color:'+col+'44;color:'+(active?'#fff':col)+';background:'+(active?col+'cc':col+'18')+'">';
+    html += escHtml(d)+' <span style="opacity:0.7">('+counts[d]+')</span></button>';
+  });
+  pillEl.innerHTML = html;
+}
+
+function pillStyle(active){
+  return 'background:'+(active?'rgba(255,255,255,0.12)':'var(--surface-raised)')
+       +';border:1px solid var(--border-bright);border-radius:12px;'
+       +'color:var(--text-muted);font:700 8px var(--font);letter-spacing:0.05em;'
+       +'padding:3px 8px;cursor:pointer;white-space:nowrap;text-transform:uppercase';
+}
+
+function setDomainFilter(domain){
+  _activeDomainFilter = domain;
+  buildDomainPills(_searchIndex);
+  applyFeedFilter();
+}
+
+function filterFeed(query){
+  applyFeedFilter(query);
+}
+
+function clearFeedSearch(){
+  var inp = document.getElementById('feed-search');
+  if(inp) inp.value = '';
+  _activeDomainFilter = null;
+  buildDomainPills(_allEvents);
+  applyFeedFilter('');
+}
+
+function applyFeedFilter(query){
+  var inp = document.getElementById('feed-search');
+  var q = (query !== undefined ? query : (inp ? inp.value : '')).toLowerCase().trim();
+  var el = document.getElementById('events-content');
+  var countEl = document.getElementById('feed-result-count');
+  if(!el) return;
+
+  // Use full search index when query or domain filter is active; recent feed otherwise
+  var pool = (q || _activeDomainFilter) ? _searchIndex : _allEvents;
+
+  var filtered = pool.filter(function(ev){
+    // Domain pill filter
+    if(_activeDomainFilter){
+      var lbl = (ev.label||ev.domain||'').toUpperCase();
+      if(lbl !== _activeDomainFilter) return false;
+    }
+    // Text search
+    if(!q) return true;
+    var haystack = [
+      ev.headline||'',
+      ev.source||'',
+      ev.label||ev.domain||'',
+      ev.dtg||'',
+      ev.confidence||'',
+    ].join(' ').toLowerCase();
+    return haystack.indexOf(q) !== -1;
+  });
+
+  if(countEl){
+    var isSearching = q || _activeDomainFilter;
+    if(!isSearching){
+      countEl.textContent = _allEvents.length + ' recent · ' + _searchIndex.length + ' total';
+    } else {
+      countEl.textContent = filtered.length + ' of ' + _searchIndex.length + ' events';
+    }
+  }
+
+  if(!filtered.length){
+    el.innerHTML='<div style="color:var(--text-muted);font-size:11px;padding:16px 0;text-align:center">No events match “'+escHtml(q)+'”</div>';
+    return;
+  }
+
   var html='<div class="events-feed">';
-  dbEvents.forEach(function(ev){
+  filtered.forEach(function(ev){
     var col=ev.color||'#7a94b0',conf=ev.confidence||'MEDIUM';
     var confCls='ev-conf-'+conf.charAt(0);
     var sentMark=ev.sent?'<span class="ev-sent">✓ reported</span>':'<span class="ev-new">● new</span>';
+    var headline = ev.headline||'';
+    // Highlight search term in headline
+    if(q){
+      var re = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+      headline = escHtml(headline).replace(re,'<mark style="background:rgba(255,176,32,0.3);color:var(--text);border-radius:2px">$1</mark>');
+    } else {
+      headline = escHtml(headline);
+    }
     html+='<div class="ev-row"><div class="ev-domain" style="background:'+col+'22;color:'+col+';border:1px solid '+col+'44">'+escHtml(ev.label||ev.domain)+'</div>';
     html+='<div class="ev-body">';
     if(ev.sourceUrl&&ev.sourceUrl.startsWith('http')){
-      html+='<div class="ev-headline"><a href="'+escHtml(ev.sourceUrl)+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">'+escHtml(ev.headline)+'</a></div>';
+      html+='<div class="ev-headline"><a href="'+escHtml(ev.sourceUrl)+'" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">'+headline+'</a></div>';
     } else {
-      html+='<div class="ev-headline">'+escHtml(ev.headline)+'</div>';
+      html+='<div class="ev-headline">'+headline+'</div>';
     }
     html+='<div class="ev-meta"><span>'+escHtml(ev.dtg||'')+'</span>';
     if(ev.source) html+='<span>'+escHtml(ev.source)+'</span>';
@@ -2252,7 +2380,9 @@ function refresh(){
     renderTier1(data);
     renderAlert(data);
     renderTrajectory(data.trajectory||null);
+    _searchIndex = data.searchIndex || data.dbEvents || [];
     renderEvents(data.dbEvents||[],data.dbLastUpdated);
+    buildDomainPills(_searchIndex);
     renderSentiment(data.sentiment||null);
     renderReviewPanels(data);
     renderServo(data.servoOutages);

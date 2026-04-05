@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T21:57:02Z",
+  "lastUpdated": "2026-04-05T22:01:52Z",
   "warAlert": {
-    "timestamp": "2026-04-05T21:57:02Z",
+    "timestamp": "2026-04-05T22:01:52Z",
     "fuelImpact": [
       "2026-04-06 Bab el-Mandeb remains only viable oil route; ~30 tankers near Saudi Yanbu within Houthi strike range; Houthis awaiting Iranian signal to resume attacks if Hormuz control weakens [Wikipedia] [MEDIUM]",
       "2026-04-06 Iran rejects Trump's 48-hour ultimatum as 'stupid and nervous'; Trump extended energy plant destruction deadline to April 6 8PM ET; Iran warns of 'big surprise' in response [NDTV] [HIGH]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T21:57:02Z",
+    "updated": "2026-04-05T22:01:52Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,7 +1168,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T21:57:02Z",
+  "dbLastUpdated": "2026-04-05T22:01:52Z",
   "dbEvents": [
     {
       "dtg": "2026-04-06",
@@ -4141,7 +4141,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-05T21:57:02Z",
+      "updatedAt": "2026-04-05T22:01:52Z",
       "window": 7,
       "totalEvents": 208,
       "activeSources": 91,
@@ -4286,7 +4286,7 @@
     },
     "supply": {
       "title": "Fuel Levels & Supply \u2014 Review",
-      "updatedAt": "2026-04-05T21:57:02Z",
+      "updatedAt": "2026-04-05T22:01:52Z",
       "summary": "Australia is holding, but the margin is thin. Diesel sits at 29 days \u2014 only 19 days above the 10-day rationing trigger \u2014 making it the tightest and most critical reserve. Petrol (39 days) and jet fuel (30 days) provide more headroom but remain below normal comfortable levels. 687 service stations are dry nationally (increasing trend), concentrated in regional NSW, QLD, and WA where last-mile diesel distribution is thinnest. The supply system is being kept alive by 5 replacement vessels en route from the US and Europe \u2014 rerouted via Cape of Good Hope at significant cost and a 14-day transit premium. Asian refineries, which normally supply over 90% of Australia's refined fuel, are averaging 66% capacity due to Hormuz-driven feedstock constraints. The weakest link is Southkorea at 55%. All of this converges on a single critical threshold: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If incoming cargoes do not land before that date, the government has no remaining buffer tools \u2014 reserve releases and the excise cut have already been deployed. Three emergency measures are active (Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered), but these are one-time levers, not ongoing supply.",
       "mostLikelyCourse": "5 replacement vessels arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless, keeping diesel above the 10-day rationing trigger. Easter demand normalises and servo outages ease as distribution catches up. Asian refinery output holds at ~66%, limiting recovery but preventing further deterioration. Supply remains stressed but rationing is avoided in the near term.",
       "mostDangerousCourse": "One or more replacement cargoes slip, are diverted to competing buyers, or arrive after mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. Diesel falls below 10 days \u2014 the formal rationing trigger. Simultaneously, Southkorea or Singapore refinery output drops further, eliminating any prospect of near-term recovery from the Asian supply chain. Servo outages spread from regional to suburban areas before new imports can offset the drawdown.",
@@ -4298,7 +4298,7 @@
     },
     "markets": {
       "title": "Markets \u2014 Price Shock Review",
-      "updatedAt": "2026-04-05T21:57:02Z",
+      "updatedAt": "2026-04-05T22:01:52Z",
       "summary": "The price shock is running ahead of where most Australians expect it to be. Metro price increase is at 7.2% (WARNING tier) \u2014 still 3.6 points below the projected peak of 10.8% by 2026-05-15. Regional price increase at 9.8% (EMERGENCY tier) is more severe, with 3 states in CRISIS (QLD,SA,NT) and 3 in EMERGENCY (NSW,VIC,WA). The dominant driver is Transport at 3.2 percentage points. The biggest item movers are Diesel (+79.3%), LPG / Autogas (+68.4%), and Tomatoes (+65.0%). The worst is still ahead: the food and fertiliser cascade has not fully fed through to retail, and the excise cut masking pump prices expires in June.",
       "mostLikelyCourse": "Metro price increase climbs to the projected peak of 10.8% by 2026-05-15 as fuel and freight costs keep feeding through, then plateaus as supply stabilises. Regional price increase peaks at 14.5% by 2026-05-20. Pressure eases in the second half of 2026 if Hormuz reopens and freight costs normalise.",
       "mostDangerousCourse": "Price increase broadens beyond fuel and food into manufactured goods and services, pushing metro price increase into EMERGENCY tier ahead of projections. Second-round wage and cost pressures lock in before the peak \u2014 extending the inflation episode well beyond the conflict itself and compressing real incomes for 12+ months.",
@@ -4311,7 +4311,7 @@
     },
     "households": {
       "title": "Households \u2014 Stress Review",
-      "updatedAt": "2026-04-05T21:57:02Z",
+      "updatedAt": "2026-04-05T22:01:52Z",
       "summary": "The fuel and food price shock is hitting household budgets unevenly, but the common thread is that most Australians had already depleted their savings buffers during the 2022\u20132025 rate cycle before this crisis began. The most vulnerable cohort \u2014 Low Income Worker \u2014 has only 1 month(s) of liquid savings remaining against a A$430 monthly crisis cost increase. Across all tiers, the average monthly surcharge is A$679. The government's relief package (excise cut + reserve releases, A$4.75bn total) expires 2026-06-30. After that, households absorb the full cost increase without any fiscal buffer \u2014 and this coincides with the June\u2013July peak in food prices, when the fertiliser and freight cascade fully transmits to retail grocery prices. The most resilient cohort is Retiree (Super) with 45 months of runway, but even this group faces compounding health and utility cost pressure as the crisis extends.",
       "mostLikelyCourse": "Low-buffer households exhaust savings first, with stress peaking May\u2013June 2026 as grocery prices catch up to fuel. Government excise relief provides partial offset until 2026-06-30, after which pump prices spike again. Middle and upper cohorts weather the immediate crisis but face structural cost-of-living elevation for 6\u201312 months.",
       "mostDangerousCourse": "Government buffer of A$4.75bn is exhausted before supply normalises. Excise cut lapses with no replacement \u2014 pump prices spike simultaneously with the grocery peak. Distress asset sales, mortgage arrears, and BNPL defaults rise together. Leveraged middle-income households \u2014 the largest cohort by number \u2014 face the sharpest deterioration as debt service consumes cash flow already compressed by inflation.",
@@ -4324,7 +4324,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-05T21:57:02Z",
+      "updatedAt": "2026-04-05T22:01:52Z",
       "summary": "The cascade model currently places Base Case \u2014 Stalemate as the most probable outcome at 41%, with Escalation at 36% and Resolution at 23%. The two scenarios are close \u2014 a single decisive event could shift the balance. The dominant driver is Hormuz (H=1.00): full closure is already priced into the model as maximum stress on the Gulf-to-Asia crude supply chain. Refinery stress (R=0.46) reflects Asian refineries running at 66% capacity, which directly constrains refined fuel volume arriving in Australia. The troop phase (PRE-DEPLOYMENT, T=0.10) is the key swing variable \u2014 a move to GROUND OPS would push escalation probability above base and activate the 6+ month conflict timeline that underpins the worst-case cascade: GDP impact at -5.0%, food prices +40%, and recovery measured in 12\u201324 months, not weeks.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (41%) holds. Conflict stays aerial and special operations. Supply tightens to the mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless ceiling then stabilises as replacement cargoes land. Food price cascade peaks May\u2013June 2026 at +20% before gradual easing. GDP impact limited to -2.1%. Recovery in 3\u20136 months.",
       "mostDangerousCourse": "Escalation (36%) activates on a ground invasion decision or major Iranian strike on Gulf infrastructure. All cascade pathways worsen simultaneously: Hormuz closure extends to 6\u201318 months, Asian refinery output stays suppressed, Australian rationing moves to active policy, food prices peak at +40%, and recovery extends to 12\u201324 months.",
@@ -4336,7 +4336,7 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Why It Matters",
-      "updatedAt": "2026-04-05T21:57:02Z",
+      "updatedAt": "2026-04-05T22:01:52Z",
       "summary": "Current disposition: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED. 12 units deployed, 6 en route. Troop build-up is tracked as the primary indicator of conflict duration \u2014 and duration is what determines whether Australia's fuel crisis is temporary or structural. Air strikes can be sustained indefinitely. A ground invasion cannot be quickly reversed. It means Hormuz stays closed for months, not weeks \u2014 Asian refineries stay feedstock-starved, import volumes stay suppressed, and government reserve releases run out before supply recovers. A confirmed ground war carries a 12\u201324 month impact horizon for Australia: diesel rationing in the first 3 months, food prices peaking at 30\u201340% above pre-war by month 6, and structural cost-of-living elevation persisting 12\u201318 months after hostilities end as Asian refinery capacity takes time to rebuild.",
       "mostLikelyCourse": "Current phase (PRE-DEPLOYMENT) holds \u2014 conflict remains aerial and special operations. A conventional ground invasion decision is deferred. Australian supply stays stressed but manageable if replacement cargoes arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. The 12\u201324 month consequence scenario is avoided, though short-term fuel and food price pressure persists for 3\u20136 months regardless.",
       "mostDangerousCourse": "Ground operations are authorised \u2014 triggered by a failed Hormuz ultimatum, an Iranian strike on a US asset requiring a ground response, or an IDF request for US infantry support. From that decision, the 12\u201324 month Australian impact horizon activates immediately. Reserve releases and rerouted cargoes become insufficient within 4\u20136 weeks. Rationing moves from contingency to active policy.",
@@ -4630,7 +4630,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T21:57:02Z",
+    "updatedAt": "2026-04-05T22:01:52Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -5097,7 +5097,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T21:57:02Z",
+    "updatedAt": "2026-04-05T22:01:52Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
@@ -5502,5 +5502,2277 @@
         ]
       }
     ]
-  }
+  },
+  "searchIndex": [
+    {
+      "dtg": "2026-04-06",
+      "domain": "shipping",
+      "headline": "Bab el-Mandeb remains only viable oil route; ~30 tankers near Saudi Yanbu within Houthi strike range; Houthis awaiting Iranian signal to resume attacks if Hormuz control weakens",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Houthi_strikes_on_Israel",
+      "confidence": "MEDIUM",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "geopolitical",
+      "headline": "Iran rejects Trump's 48-hour ultimatum as 'stupid and nervous'; Trump extended energy plant destruction deadline to April 6 8PM ET; Iran warns of 'big surprise' in response",
+      "source": "NDTV",
+      "sourceUrl": "https://www.ndtv.com/world-news/middle-east-war-unbalanced-stupid-iran-on-trumps-48-hour-ultimatum-for-peace-deal-11312544",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "geopolitical",
+      "headline": "Britain hosting 40+ nation security coalition on Hormuz; NATO chief Rutte visits Washington April 8-12 amid alliance strains; Pakistan offering to host US-Iran talks; Turkey opposes both US-Israel strikes and Iranian retaliation",
+      "source": "Times of India",
+      "sourceUrl": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-updates-middle-east-crisis-conflict-latest-news-iran-drone-missile-attack-gulf-dubai-qatar-news-strait-of-hormuz-crude-oil-impact-donald-trump/liveblog/130011222.cms",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "fuel",
+      "headline": "Trump's April 6 8PM ET Hormuz deadline critical; if Iran refuses, US strikes Iranian power plants \u2014 analysts warn reopening Hormuz by force would require weeks-months and likely ground troops; Iran has multiple ways to target ships",
+      "source": "Economic Times",
+      "sourceUrl": "https://economictimes.indiatimes.com/news/international/us/strait-of-hormuz-puzzle-and-donald-trump-threats-to-blow-up-power-plants-bridges-iran-war-braces-for-decisive-moment-as-deadline-nears/articleshow/130040251.cms",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "geopolitical",
+      "headline": "CIA deception campaign enabled US special forces ground insertion into Iran on April 3-4 to rescue downed F-35 airman; operation described as one of most daring SAR missions in US history",
+      "source": "Jerusalem Post",
+      "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-892079",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "fuel",
+      "headline": "Trump extends Hormuz deadline to April 6 8PM ET; threatens Iranian energy infrastructure if strait remains closed",
+      "source": "NBC News",
+      "sourceUrl": "https://www.nbcnews.com/world/iran/ahead-latest-strait-hormuz-deadline-trump-threatens-irans-energy-rcna266770",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "fuel",
+      "headline": "Saudi Arabia slashes April crude exports to South Korea, Japan, Indonesia, Thailand \u2014 Asia-wide oil shortage intensifying",
+      "source": "Travel And Tour World",
+      "sourceUrl": "https://www.travelandtourworld.com/news/article/south-korea-joins-india-china-thailand-japan-indonesia-malaysia-and-more-countries-in-asia-in-fighting-an-oil-shortage-and-travel-crisis-as-saudi-arabia-slashes-april-exports/",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "fuel",
+      "headline": "Gulf workaround routes fail: Saudi/UAE/Iraq exports plunge from 20M bbl/day to 8.4M bbl/day \u2014 Hormuz alternatives exposed as inadequate",
+      "source": "Ynet News",
+      "sourceUrl": "https://www.ynetnews.com/business/article/sk11ciy12bx",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "australia",
+      "headline": "Australia Fuel Crisis 2026: 53 ships with 3.7B litres en route; diesel reserves 29 days (critical threshold); 109 Victorian stations out; Chris Bowen confirms shortages; industry and farmers express ongoing concern",
+      "source": "International Business Times Australia",
+      "sourceUrl": "https://www.ibtimes.com.au/australia-fuel-crisis-2026-10-key-facts-diesel-shortages-reserves-rising-prices-1865467",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US set up improvised airfield inside Iran to rescue F-15 airman; thousands of troops assembling in region; Trump considering Kharg Island seizure to break Hormuz stranglehold",
+      "source": "Fortune",
+      "sourceUrl": "https://fortune.com/2026/04/05/rescue-f-15-airman-us-military-improvised-airfield-farp-iran-marines/",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israeli air strike hits crowd in Gaza City",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/israeli-air-strike-hits-crowd-in-gaza-city?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Hamas armed wing rejects disarmament while Israel continues attacks",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/hamas-armed-wing-rejects-disarmament-while-israel-continues-attacks?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Is war more profitable than peace? David Keen explains",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/talk-to-al-jazeera/2026/4/5/is-war-more-profitable-than-peace-david-keen-explains?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Heritage protection in the works for one of Australia's oldest skate parks",
+      "source": "ABC News Australia",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-06/heritage-protection-sought-geelong-corio-bowls-skate-park/106523592",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "OPEC+ agrees to boost oil output when Strait of Hormuz reopens",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/opec-agrees-boost-oil-output-when-strait-hormuz-reopens-6037826",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "China says ready to work with Russia to ease Middle East tensions",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/china-says-ready-work-russia-ease-middle-east-tensions-6037791",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Ex-player Cuellar backs Mexico to break 'fifth-game' curse, warns of immigration hurdles",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/sport/ex-player-cuellar-backs-mexico-break-fifth-game-curse-warns-immigration-hurdles-6037736",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump threatens Iran in expletive-filled social media post",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/trump-threatens-iran-in-expletive-filled-social-media-post?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israel continues deadly attacks on Gaza while striking Iran, Lebanon",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/israel-continues-deadly-attacks-on-gaza-while-striking-iran-lebanon?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Frustration grows as Iran\u2019s wartime internet shutdown breaks grim record",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/frustration-grows-as-irans-wartime-internet-shutdown-breaks-grim-record?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Video captures Iranian missile striking residential building in Haifa",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/video-captures-iranian-missile-striking-residential-building-in-haifa?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israeli air strikes, shelling across Lebanon add to rising death toll",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/israeli-air-strikes-shelling-across-lebanon-add-to-rising-death-toll?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "OPEC+ agrees to hike oil output, warns of slow recovery after attacks",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/opec-agrees-to-hike-oil-output-warns-of-slow-recovery-after-attacks?traffic_source=rss",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "At least 14 people killed in Israeli strikes across Lebanon",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/at-least-14-people-killed-in-israeli-strikes-across-lebanon?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Pope warns world is becoming \u2018indifferent\u2019 to violence",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/pope-warns-world-is-becoming-indifferent-to-violence?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iranian missile strikes industrial area in southern Israel",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/iranian-missile-strikes-industrial-area-in-southern-israel?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israel\u2019s Ben-Gvir details plans for Palestinian \u2018death row\u2019",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/israels-ben-gvir-details-plans-for-palestinian-death?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump threatens \u2018hell\u2019 for Iran over Hormuz Strait as deadline approaches",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/trump-threatens-hell-for-iran-over-hormuz-strait-as-deadline-approaches?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Mearsheimer: No signs of quick end to US-Israel war on Iran",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/the-bottom-line/2026/4/5/mearsheimer-no-signs-of-quick-end-to-us-israel-war-on-iran?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran\u2019s World Cup participation depends on relocation from US, minister says",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/sports/2026/4/5/irans-world-cup-participation-depends-on-relocation-from-us-minister-says?traffic_source=rss",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Why an attack on Bushehr nuclear plant would be catastrophic for the Gulf",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/why-an-attack-on-bushehr-nuclear-plant-would-be-catastrophic-for-the-gulf?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "food",
+      "headline": "How close a tree is planted can affect property prices, new report shows",
+      "source": "ABC News Australia",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-06/how-street-side-trees-could-impact-property-prices-explained/106408856",
+      "confidence": "MEDIUM",
+      "color": "#ffb020",
+      "label": "FOOD"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Petrol station staff and operators bare brunt of fuel price rise stress",
+      "source": "ABC News Australia",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-06/petrol-station-workers-bare-brunt-of-fuel-price-rise-stress/106517260",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump issues third 48-hour ultimatum to Iran: reopen Hormuz by April 6 8pm ET or face attacks on energy plants",
+      "source": "News18",
+      "sourceUrl": "https://www.news18.com/world/48-hours-to-make-a-deal-or-open-hormuz-trumps-reminds-iran-of-deadline-in-fresh-warning-ws-l-10014744.html",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran rejects Trump's ultimatum: 'Gates of hell will open for you'",
+      "source": "Times of India",
+      "sourceUrl": "https://timesofindia.indiatimes.com/world/middle-east/gates-of-hell-will-open-for-you-iran-rejects-trumps-helpless-48-hour-ultimatum-to-reopen-strait-of-hormuz/articleshow/130032108.cms",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump offers no concrete plan as Strait of Hormuz closure shocks Europe",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/trump-offers-no-concrete-plan-strait-hormuz-closure-shocks-europe",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israel renews strikes on Lebanon, forces Syria border crossing to close",
+      "source": "Channel NewsAsia",
+      "sourceUrl": "https://www.channelnewsasia.com/world/israel-renews-strikes-lebanon-forces-syria-border-crossing-close-5447616",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israel renews strikes on Lebanon, forces Syria border crossing to close",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/israel-strike-lebanon-syria-border-crossing-close-6037636",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump offers no concrete plan as Strait of Hormuz closure shocks Europe",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/quotable/2026/4/5/trump-offers-no-concrete-plan-as-strait-of-hormuz-closure-shocks-europe?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran attacks energy infrastructure across Gulf states",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-attack-energy-infrastructure-middle-east-6037606",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump threatens Iranian power plants, bridges in expletive-laden social media post",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-war-trump-threatens-power-plants-bridges-hormuz-6037596",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump pushed Hormuz ultimatum to April 6 at 8 PM Eastern Time (April 7 10 AM AEST) following Iranian government request. Threatens massive attacks on Iranian energy sites if Hormuz not reopened. Iran rejected ultimatum as 'helpless and nervous'. Iran allowing Iraqi ships through Hormuz without restrictions.",
+      "source": "CBS News",
+      "sourceUrl": "https://www.cbsnews.com/live-updates/iran-war-us-trump-warns-more-coming-oil-gas-strait-hormuz/",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "~5,000 additional US Marines and sailors deploying to Middle East to support Iran war, per three US officials. 2,500 Marines from 31st Marine Expeditionary Unit already arrived. Total US regional presence ~50,000 as buildup continues ahead of potential ground operations.",
+      "source": "Sino Defence Forum",
+      "sourceUrl": "https://www.sinodefenceforum.com/t/2026-israel-us-vs-iran-conflict-military-updates-news-only.9231/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US commandos conducted hot extraction of injured F-15E WSO deep inside Iran after heavy firefight. Black Hawk struck by Iranian fire but flew on with wounded crew. WSO used SERE training to evade capture. Trump: 'most daring operation in US history'. 2,500 Marines from 31st MEU arrived Middle East; ~5,000 more deploying. Total US regional presence ~50,000.",
+      "source": "New York Times",
+      "sourceUrl": "https://www.nytimes.com/live/2026/04/04/world/iran-war-trump-news",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Approximately 90 Australian SAS troops deployed to Middle East \u2014 likely Al Minhad Air Base UAE. Government neither confirms nor denies. Deployment appears to have occurred almost immediately when Iran-US war began.",
+      "source": "The Nightly",
+      "sourceUrl": "https://thenightly.com.au/australia/sas-squadron-sent-to-middle-east-almost-as-soon-as-iran-us-war-began-c-22096258",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Iranian drones struck Kuwait's Shuwaikh oil sector complex (housing KPC headquarters), two power/desalination plants, and Bahrain oil storage \u2014 significant damage, no casualties. Kuwait joins Saudi Arabia, UAE as regional states hit by Iran. Escalation of Iran's Gulf-state retaliation campaign.",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/middle-east/fire-erupts-kuwaits-shuwaikh-oil-sector-complex-after-drone-attack-state-news-2026-04-05/",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Fuel reservoir hit at Russia's Primorsk, NORSI refinery on fire after drone attacks",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/ukraine-war-russia-oil-reservoir-refinery-6037536",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Commandos probed deep into Iran to rescue downed airman: US media",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-war-us-rescue-f15-airman-commando-6037521",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Body found off Indonesia believed to be missing person from collision between vessels near Singapore's Southern Islands",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/singapore/southern-islands-man-missing-body-found-indonesia-6023051",
+      "confidence": "MEDIUM",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "On Easter, Pope Leo urges world leaders to end wars, renounce conquest",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/pope-leo-easter-message-end-war-6037471",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran military says destroyed US aircraft involved in search for airman",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-us-aircraft-destroyed-black-hawk-6037446",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US rescues airman from Iran as Trump, Israel ratchet up pressure",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-war-f15-rescue-airman-pilot-trump-6037286",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Pope Leo calls for peace, dialogue amid Ukraine, Iran wars in Easter mass",
+      "source": "South China Morning Post",
+      "sourceUrl": "https://www.scmp.com/news/world/europe/article/3349090/pope-leo-calls-peace-dialogue-amid-ukraine-iran-wars-easter-mass?utm_source=rss_feed",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "UAE, Bahrain and Kuwait lose water, energy infrastructure to Iran strikes",
+      "source": "South China Morning Post",
+      "sourceUrl": "https://www.scmp.com/news/world/middle-east/article/3349084/uae-bahrain-and-kuwait-lose-water-energy-infrastructure-iran-strikes?utm_source=rss_feed",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Pakistan drastically hikes fuel prices despite mediator role in Iran war",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-drastically-hikes-fuel-prices-despite-mediator-role-in-iran-war",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Data center security must change after Iran attacks: Microsoft president",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/editor-s-picks/interview/data-center-security-must-change-after-iran-attacks-microsoft-president",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump's reckless Iran war is cascading across the Indo-Pacific",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/opinion/trump-s-reckless-iran-war-is-cascading-across-the-indo-pacific",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Chinese coal miners eye comeback as Iran war shakes energy market",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/chinese-coal-miners-eye-comeback-as-iran-war-shakes-energy-market",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Nearly 100 NSW service stations fined $1,100 each over misleading petrol prices amid fuel shortage crackdown",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/05/nearly-100-nsw-service-stations-face-fines-over-misleading-petrol-prices-amid-fuel-shortage-crackdown",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Asian countries assure Australia \u2018normal supply\u2019 of fuel will continue as Albanese focuses on averting shortages",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/05/asian-leaders-assure-australia-normal-supply-of-fuel-will-continue-as-albanese-focuses-on-averting-shortages",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran\u2019s ex-FM Zarif proposes peace roadmap; Gulf points at erosion of trust",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/irans-former-fm-zarif-proposes-peace-roadmap-gulf-states-voice-exclusion?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Oman, Iran discuss smooth transit in Strait of Hormuz, Muscat says",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/oman-iran-discuss-smooth-transit-in-the-strait-of-hormuz-muscat-says?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US pilot from downed F-15E plane rescued in Iran: What we know",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/us-pilot-from-downed-f-15-plane-rescued-in-iran-what-we-know?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Footage shows Israeli military dog attacking Palestinian man inside mosque",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/footage-shows-idf-military-dog-attacking-palestinian-man-inside-mosque?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Ukraine hits port in Russia\u2019s Primorsk, oil refinery in Nizhny Novgorod",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/drone-attacks-hit-russian-oil-infrastructure-leak-and-fires-reported?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Kuwait\u2019s power, water plants damaged as Iran keeps attacking Gulf states",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/kuwait-says-power-water-facilities-hit-by-iran-as-gulf-attacks-continue?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israel\u2019s attack on UNRWA is central to its genocide of the Palestinians",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/opinions/2026/4/5/israels-attack-on-unrwa-is-central-to-its-genocide-of-the-palestinians?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Thousands rally in Iraq against \u2018senseless\u2019 US-Israel war on Iran",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/gallery/2026/4/5/thousands-rally-in-iraq-against-us-israeli-regional-aggression?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump seeks to end the war without it becoming \u2018an abject failure\u2019",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/quotable/2026/4/5/trump-seeks-to-end-the-war-without-it-becoming-an-abject?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Under Israeli restrictions, Palestinian Christians mark quiet Holy Week",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/features/2026/4/5/under-israeli-restrictions-palestinian-christians-mark-quiet-holy-week?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran war: What is happening on day 37 of US-Israeli attacks?",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/iran-war-what-is-happening-on-day-37-of-us-israeli-attacks?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Yemen\u2019s Houthis claim cluster missile attack on Israel\u2019s Ben Gurion airport",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/yemens-houthis-claim-cluster-missile-attack-on-israels-ben-gurion-airport?traffic_source=rss",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "\u2018Miraculous\u2019: US rescues second pilot downed in Iran, Trump confirms",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/us-rescues-airman-whose-f-15-was-downed-in-iran-trump-confirms?traffic_source=rss",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US rescues second fighter jet airman shot down over Iran",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/764a9cda-eda0-4332-a4ce-6a26afaf7597",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Countries must not hoard fuel during Iran war, warns IEA",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/9e47e3b8-fae1-4c1c-b79c-22dda42bc2b1",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Military briefing: How Iran keeps firing missiles under bombardment",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/bfa38b06-2877-48d2-857b-7f90d405159a",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Nelson Peltz\u2019s bidding war highlights $25bn wave of asset manager consolidation",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/e51d9d8f-ffaa-480e-b763-350ebace12c8",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US special forces ground raid inside Iran \u2014 WSO recovered after heavy firefight, two Black Hawks hit by small arms fire",
+      "source": "EADaily",
+      "sourceUrl": "https://eadaily.com/en/news/2026/04/05/american-special-forces-invaded-iran-and-joined-the-battle-military-correspondents",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Total US ground presence in region reaches ~50,000 \u2014 analysts assess ground invasion viability",
+      "source": "Eurasia Review",
+      "sourceUrl": "https://www.eurasiareview.com/05042026-assessing-the-viability-of-potential-us-ground-operations-in-iran-analysis/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Singapore: oil price spikes worsen as Iran war enters second month; petrochem force majeure confirmed",
+      "source": "The Straits Times",
+      "sourceUrl": "https://www.straitstimes.com/singapore/what-has-become-pricier-in-singapore-amid-spiralling-oil-prices-caused-by-iran-war",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Asian leaders assure Australia normal supply of fuel will continue; fuel now sourced from US, Mexico as Albanese diversifies supply chains",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/05/asian-leaders-assure-australia-normal-supply-of-fuel-will-continue",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Japan should lead efforts toward U.S.-Iran ceasefire",
+      "source": "Japan Times",
+      "sourceUrl": "https://www.japantimes.co.jp/news/2026/04/05/japan/politics/japan-efforts-us-iran-ceasefire/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "U.S. rescues airman as Trump and Israel pressure Iran ahead of deadline",
+      "source": "Japan Times",
+      "sourceUrl": "https://www.japantimes.co.jp/news/2026/04/05/world/trump-iran-deadline-attack-airman-rescued/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump\u2019s victory rhetoric undercut by downed U.S. jet in Iran war",
+      "source": "Japan Times",
+      "sourceUrl": "https://www.japantimes.co.jp/news/2026/04/05/world/trump-rhetoric-undercut-downed-jet/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Pharmaceutical logistics in demand as war rattles supply chains",
+      "source": "Japan Times",
+      "sourceUrl": "https://www.japantimes.co.jp/business/2026/04/05/markets/pharmaceutical-logistics-iran-war/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Gasoline, diapers and drinks: Japan faces wide-ranging impact amid concern over oil",
+      "source": "Japan Times",
+      "sourceUrl": "https://www.japantimes.co.jp/news/2026/04/05/japan/society/oil-what-happens-next/",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran says Iraqi ships are allowed to use Strait of Hormuz",
+      "source": "Japan Times",
+      "sourceUrl": "https://www.japantimes.co.jp/business/2026/04/05/iran-iraqi-ships-hormuz/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "U.S. deploys bulk of stealthy long-range missile for Iran war",
+      "source": "Japan Times",
+      "sourceUrl": "https://www.japantimes.co.jp/news/2026/04/05/world/us-iran-war-missiles-indopacific/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "OIL PRICE WATCH as of April 5, 2026",
+      "source": "Philippine Daily Inquirer",
+      "sourceUrl": "https://newsinfo.inquirer.net/2207095/oil-price-watch-as-of-april-5-2026",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "No price drop soon despite Hormuz pass for PH-bound oil",
+      "source": "Philippine Daily Inquirer",
+      "sourceUrl": "https://newsinfo.inquirer.net/2207014/no-price-drop-soon-despite-hormuz-pass-for-ph-bound-oil",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Refinery feels heat in DSI probe",
+      "source": "Bangkok Post",
+      "sourceUrl": "https://www.bangkokpost.com/thailand/general/3230788/refinery-feels-heat-in-dsi-probe",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US airman rescued from Iran; Tehran says 'enemy aircraft' destroyed during mission",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-war-f15-rescue-airman-pilot-6037286",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "South Korea asks Gulf nations for steady energy supply, safety of Korean vessels",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/east-asia/south-korea-gulf-envoys-strait-hormuz-oil-gas-flows-security-6037246",
+      "confidence": "MEDIUM",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump, Israel pressure Iran ahead of deadline as search continues for missing US airman",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/war-iran-deadline-trump-israel-pressure-6037021",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Motorists encouraged to dob in servos as 93 locations fined for price gouging",
+      "source": "9News Australia",
+      "sourceUrl": "https://www.9news.com.au/national/nsw-motorists-encouraged-to-dob-in-servos-as-93-locations-fined-for-price-gouging/8af78fb3-4803-4deb-a0e9-5cf512633c2c",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "food",
+      "headline": "Even if the Strait of Hormuz opened tomorrow, it could take months for fuel prices to come down",
+      "source": "Sydney Morning Herald / The Age",
+      "sourceUrl": "https://www.smh.com.au/business/markets/australia-s-high-petrol-prices-face-long-recovery-to-pre-war-levels-20260331-p5zkcy.html?ref=rss&utm_medium=rss&utm_source=rss_feed",
+      "confidence": "MEDIUM",
+      "color": "#ffb020",
+      "label": "FOOD"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Australians find joy amid global uncertainty in Easter celebrations",
+      "source": "ABC News Australia",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-05/australia-easter-egg-hunt-christianity-national-wrap-2026/106532532",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Japan assures Australia will get 'normal supply' of fuel",
+      "source": "ABC News Australia",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-05/japan-fuel-supply-assurance-sanae-takaichi-visit-planned/106532548",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "All WA regional stations must report fuel prices from May as FuelWatch scheme expands",
+      "source": "ABC News Australia",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-05/more-regional-retailers-ordered-to-join-fuelwatch-reporting/106532630",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Albanese: Australia will NOT send ground troops to Iran \u2014 purely defensive posture. On 10 March: 85 ADF personnel + Boeing E-7 Wedgetail + AMRAAM missiles deployed to UAE to defend Gulf states and ADF bases at UAE's request. Albanese government supports US-Israel effort but limits involvement to defensive.",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Australia_and_the_2026_Iran_war",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Iran's Hormuz 'Toll Booth': Iranian-approved route through territorial waters (Qeshm-Larak passage) active; Japanese co-owned tanker + 3 others crossed via southern alternative route April 3; 20,000 seafarers still stranded",
+      "source": "Manila Times",
+      "sourceUrl": "https://www.manilatimes.net/2026/04/05/news/national/strait-of-hormuz-now-irans-weapon-of-mass-disruption/2314284",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Indian vessel + 3 others cross Strait of Hormuz via new Iranian-approved route through territorial waters; IRGC grants case-by-case permission, levies /barrel 'Tehran Toll'",
+      "source": "NDTV",
+      "sourceUrl": "https://www.ndtv.com/india-news/iran-israel-war-oil-lpg-indian-3-other-vessels-cross-strait-of-hormuz-via-new-shipping-route-11308515",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Australia reserves as of April 5: 39 days petrol, 29 days diesel, 30 days jet fuel \u2014 diesel remains at/below critical 25-day threshold; experts warn of existential economic threat",
+      "source": "Michael West",
+      "sourceUrl": "https://michaelwest.com.au/how-australia-can-protect-against-future-fuel-shocks",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Tehran downs 2 US warplanes \u2014 April 5 live: Iran claims F-35I Adir shot down Russian-made Iranian Yak-130 over Tehran (first F-35 air-to-air kill); Israel bombs Lebanese bridges; IDF struck Basij HQ, missile pads, logistics directorate; IDF completed major strikes on military outpost housing soldiers",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/liveblog/2026/4/4/iran-war-live-tehran-downs-2-us-warplanes-israel-bombs-lebanon-bridges",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "BBC: Hundreds of petrol stations across Australia have run out of fuel as Iran war disrupts global oil shipments; prices rising sharply; Easter travel adding demand pressure",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/articles/c62l084kgk6o",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Singapore refineries maintain stable operations but declaring force majeure on petrochemicals; Japan holds 254 days oil reserves, Korea 208 days",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Iran_war_fuel_crisis",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Australia Fuel Supply Chain at Breaking Point \u2014 53 ships, 3.7B litres en route, but supply-demand gap of 800M litres/month means breaking point still approaching",
+      "source": "ainvest.com",
+      "sourceUrl": "https://www.ainvest.com/news/australia-fuel-supply-chain-breaking-point-53-ships-arrive-time-2604/",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "50+ fuel tankers en route to Australia \u2014 officials warn supply pressures may continue into May-June 2026; regional delivery shortfalls remain possible",
+      "source": "Travel and Tour World",
+      "sourceUrl": "https://www.travelandtourworld.com/news/article/australia-urges-travellers-to-stick-to-easter-travel-plans-despite-nationwide-fuel-shortages-and-petrol-station-outages-what-it-means-for-your-journey/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Energy Minister Chris Bowen confirms 53 fuel tankers en route from Asia, US, Mexico \u2014 April 4. Reserves confirmed: 39 days petrol, 29 days diesel, 30 days jet fuel. Rationing encouraged.",
+      "source": " Sana (Syrian state news \u2014 sourced from Australian government)",
+      "sourceUrl": "https://sana.sy/en/international/2307724/",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "UK deploying extra troops + air defence systems to Middle East \u2014 total UK personnel in Gulf/Cyprus ~1,000",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/articles/c7vq76g45rvo",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Israel strikes Mahshahr petrochemical zone \u2014 Fajr 1+2 utility plants destroyed, cutting gas/power/water to 50+ petrochem plants",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/2026/04/04/world/middleeast/israel-strikes-mahshahr-iran-oil.html",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Asian naphtha supply disrupted \u2014 petrochem firms cut output and declare force majeure as Middle East naphtha (50%+ of Asia supply) restricted",
+      "source": "CNN Business",
+      "sourceUrl": "https://edition.cnn.com/2026/04/04/business/global-oil-crisis-shortage-everything-intl-hnk-dst",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "South Coast Register: Fewer stations run dry but supply strength questioned \u2014 Bowen confirms 3.7bn litres booked April/May",
+      "source": "South Coast Register",
+      "sourceUrl": "https://www.southcoastregister.com.au/story/9214039/fewer-stations-run-dry-but-supply-strength-questioned/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Reuters: Hundreds of petrol stations dry across Australia, mostly rural, Easter travel urged despite outages",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/stick-easter-travel-australians-told-though-hundreds-petrol-stations-dry-2026-04-04/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Malaysians quietly stockpile staples as energy crisis fuelled by Iran war tests Anwar",
+      "source": "The Straits Times",
+      "sourceUrl": "https://www.straitstimes.com/asia/se-asia/malaysians-quietly-stockpile-staples-as-energy-crisis-fueled-by-iran-war-tests-anwar",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Taiwan says it has assurances over LNG supplies from \u2018major\u2019 country",
+      "source": "The Straits Times",
+      "sourceUrl": "https://www.straitstimes.com/asia/east-asia/taiwan-says-it-has-assurances-over-lng-supplies-from-major-country",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Thai contractors warn of wave of abandoned projects amid rising costs of raw materials, fuel",
+      "source": "The Straits Times",
+      "sourceUrl": "https://www.straitstimes.com/asia/se-asia/thai-contractors-warn-of-wave-of-abandoned-projects-amid-rising-costs-of-raw-materials-fuel",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Sri Lanka struggles to avert economic collapse over Middle East war",
+      "source": "The Straits Times",
+      "sourceUrl": "https://www.straitstimes.com/asia/south-asia/sri-lanka-struggles-to-avert-economic-collapse-over-mideast-war",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Israel warns of strike on Lebanon-Syria border crossing as attacks continue",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/israel-warns-strike-lebanon-syria-border-crossing-attacks-continue-6036991",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Pope Leo urges world not to grow numb to war at Easter vigil",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/pope-leo-urges-world-not-grow-numb-war-easter-vigil-6036986",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "How Australia can protect against future fuel shocks",
+      "source": "Michael West Media",
+      "sourceUrl": "https://michaelwest.com.au/how-australia-can-protect-against-future-fuel-shocks/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "This is not journalism. The Bowen beat-up and the Iran war",
+      "source": "Michael West Media",
+      "sourceUrl": "https://michaelwest.com.au/this-is-not-journalism-the-bowen-beat-up-and-the-iran-war/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "They Got away with Australia\u2019s own Watergate | The West Report",
+      "source": "Michael West Media",
+      "sourceUrl": "https://michaelwest.com.au/they-got-away-with-australias-own-watergate-the-west-report/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "US troop buildup reaches unprecedented scale: 2,500 Marines (31st MEU) already in Middle East; 3-4,000 82nd Airborne and 11th Marine Expeditionary Group (~2,500) inbound; USS Harry S. Truman (Red Sea/Houthi ops) + USS Carl Vinson in region; USS Gerald R. Ford on way \u2014 potential 3-carrier group formation off Iran",
+      "source": "Pravda Poland",
+      "sourceUrl": "https://poland.news-pravda.com/en/world/2026/04/04/53542.html",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Australia secretly deployed SAS unit (~90 personnel) to Al Minhad Air Base near Dubai \u2014 secretive deployment confirmed by media; separate from official 85 ADF to UAE announced by Albanese",
+      "source": "Caliber.Az",
+      "sourceUrl": "https://caliber.az/en/post/media-australia-secretly-deploys-special-forces-to-middle-east-n",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "shipping",
+      "headline": "Five weeks, 21 attacks, 20,000 seafarers stranded aboard vessels unable to transit Hormuz \u2014 IMO Secretary-General warns of dwindling supplies; 40+ countries in crisis talks",
+      "source": "Container Magazine",
+      "sourceUrl": "https://container-mag.com/2026/04/04/strait-of-hormuz-seafarer-crisis-five-weeks/",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "shipping",
+      "headline": "Iran signals possible Bab el-Mandeb blockade if US/Israel expand conflict to target Iranian territory including Kharg Island; Iran signals move if strategic islands threatened; Bab el-Mandeb = critical Europe/North America oil route via Suez",
+      "source": "The Federal",
+      "sourceUrl": "https://thefederal.com/category/international/iran-bab-el-mandeb-threat-hormuz-shipping-disruption-237537",
+      "confidence": "MEDIUM",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "shipping",
+      "headline": "Iran drops hint it could close Bab el-Mandeb after closing Hormuz; top official comment signals escalation intent; Bab el-Mandeb links Mediterranean to Indian Ocean via Suez \u2014 key energy export route for Gulf to Europe/North America",
+      "source": "India TV",
+      "sourceUrl": "https://www.indiatvnews.com/news/world/will-iran-close-bab-el-mandeb-strait-next-after-blocking-hormuz-top-official-drops-big-hint-2026-04-04-1036267",
+      "confidence": "MEDIUM",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Petronas cuts downstream planning horizon from 3 months to 45 days due to global energy supply uncertainty",
+      "source": "Malay Mail",
+      "sourceUrl": "https://www.malaymail.com/news/money/2026/04/04/petronas-cuts-planning-horizon-to-45-days-to-tackle-energy-supply-risks-says-president/215004",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Ukraine allies ask Kyiv to pause drone attacks on Russian oil refineries to ease global fuel price surge from Iran war",
+      "source": "Kyiv Independent",
+      "sourceUrl": "https://kyivindependent.com/ukraine-asked-to-ease-attacks-on-russian-oil-refineries-amid-iran-war-price-surge-budanov-says/",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "SE Asia fuel crisis: Vietnam bans fuel exports, Thailand bans jet fuel exports, Singapore and Indonesia petrochemical companies declare force majeure",
+      "source": "Yahoo News Malaysia",
+      "sourceUrl": "https://malaysia.news.yahoo.com/war-iran-economic-shockwaves-southeast-004455195.html",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Xinhua: Bowen says Australia's fuel supply 'remains strong' \u2014 more petrol getting to service stations",
+      "source": "Xinhua",
+      "sourceUrl": "https://english.news.cn/asiapacific/20260404/42cd2f14e10440eca25c52bb7c7aa58b/c.html",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role",
+      "source": "Pravda Australia",
+      "sourceUrl": "https://au.news-pravda.com/australia/2026/04/04/29556.html",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Queensland canegrowers pushing E10 ethanol blend as diesel alternative amid fuel crisis; QLD fuel availability tightening; prices up",
+      "source": "Queensland Country Life",
+      "sourceUrl": "https://www.queenslandcountrylife.com.au/story/9209911/australia-faces-fuel-crisis-canegrowers-pushes-e10-solution/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded",
+      "source": "IBT Australia",
+      "sourceUrl": "https://www.ibtimes.com.au/10-key-things-know-about-oil-petrol-prices-australia-right-now-2026-1865367",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Bowen: 312 stations without diesel nationally (down from 410 on Apr 3); fewer stations running dry as Easter demand peaks",
+      "source": "MarketScreener/Chris Bowen",
+      "sourceUrl": "https://www.marketscreener.com/news/stick-to-easter-travel-australians-told-though-hundreds-of-petrol-stations-dry-ce7e51d2db80f027",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "The Age live: Bowen says throughput balanced \u2014 fuel out to stations/farmers, fuel in to terminals/refineries; flat reserve draw rate",
+      "source": "The Age",
+      "sourceUrl": "https://www.theage.com.au/world/middle-east/us-iran-war-live-updates-us-fighter-jet-shot-down-by-iran-one-crew-member-rescued-iranian-speaker-mocks-search-trump-wants-1-5-trillion-defence-budget-20260403-p5zl9i.html",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Guardian: Bowen says fewer stations running dry \u2014 3.7bn litres booked for April and into May; industry confident in supply",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/04/fewer-service-stations-running-out-of-petrol-and-diesel-as-australias-fuel-supplies-remain-strong-energy-minister-says",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "ABC: Reserve stocks steady \u2014 39 days petrol, 29 days diesel, 30 days jet fuel; STI Steadfast jet fuel docking Victoria in coming days",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-04/fuel-shortage-fears-keep-demand-high-in-australia-despite-supply/106531446",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations",
+      "source": "Signals CV",
+      "sourceUrl": "https://signalscv.com/2026/04/us-deployments-fuel-speculation-of-ground-combat-against-iran/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Australians making DIY biodiesel from cooking oil as fuel crisis drags on \u2014 indicative of supply desperation at household level",
+      "source": "9News",
+      "sourceUrl": "https://www.9news.com.au/national/fuel-shortage-rising-petrol-prices-biodiesel-aussies-making-diesel-from-cooking-oil/3c203d33-f5c5-415c-8f9e-4edf636f64aa",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "australia",
+      "headline": "Bowen interview: 'There's a race' \u2014 Australia faces supply challenge beyond mid-April as Asian partners restrict exports, US/Mexico shipments en route",
+      "source": "The Saturday Paper",
+      "sourceUrl": "https://www.thesaturdaypaper.com.au/news/politics/2026/04/04/chris-bowen-fuel-supply-theres-race",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "food",
+      "headline": "Wake-up call: how Telstra\u2019s \u2018unreasonable\u2019 price rises may cause customers to hang up",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/business/2026/apr/04/telstra-price-rises-changes-starter-plan",
+      "confidence": "MEDIUM",
+      "color": "#ffb020",
+      "label": "FOOD"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Air China, Cathay Pacific among carriers raising fares as Middle East war pushes oil past $100 a barrel",
+      "source": "VnExpress International",
+      "sourceUrl": "https://e.vnexpress.net/news/news/traffic/air-china-cathay-pacific-among-carriers-raising-fares-as-middle-east-war-pushes-oil-past-100-a-barrel-5057776.html",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Japan PM plans Australia visit over rare earths: report",
+      "source": "Michael West Media",
+      "sourceUrl": "https://michaelwest.com.au/japan-pm-plans-australia-visit-over-rare-earths-report/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Excise cut softens blow for Easter road trippers",
+      "source": "Michael West Media",
+      "sourceUrl": "https://michaelwest.com.au/excise-cut-softens-blow-for-easter-road-trippers/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "40+ nations convene virtually Thu Apr 2 to launch multinational coalition dedicated to securing free passage through Strait of Hormuz",
+      "source": "QuantoSei News",
+      "sourceUrl": "https://news.quantosei.com/2026/04/03/over-40-countries-launch-coalition-to-secure-strait-of-hormuz/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "food",
+      "headline": "Guardian visual guide: Hormuz blockade disrupting Gulf fertiliser/urea exports; buyers waiting it out; supply bad but not catastrophic yet \u2014 worst case if conflict extends",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/world/2026/apr/03/visual-guide-gulf-fertiliser-blockade",
+      "confidence": "MEDIUM",
+      "color": "#ffb020",
+      "label": "FOOD"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "food",
+      "headline": "FAO: World food prices rise to 6-month high; if Iran war exceeds 40 days and input costs stay high, farmers may reduce fertiliser use, plant less, switch crops \u2014 threatening 2026/27 supply",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/markets/us/world-food-prices-extend-rise-march-united-nations-fao-says-2026-04-03/",
+      "confidence": "HIGH",
+      "color": "#ffb020",
+      "label": "FOOD"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "South Korea secures ~50 million barrels alternative crude; export caps + demand cuts in force amid Hormuz closure",
+      "source": "Korea Pro",
+      "sourceUrl": "https://koreapro.org/2026/04/south-korea-secures-50-million-barrels-as-oil-shock-forces-demand-cuts/",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/3/iran-war-what-is-happening-on-day-35-of-us-israeli-attacks",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "Government denies SAS deployment; Wong: Australia not taking offensive action against Iran, not deploying ground troops",
+      "source": "SBS",
+      "sourceUrl": "https://www.sbs.com.au/news/podcast-episode/government-denies-claims-australian-sas-troops-sent-to-the-middle-east-evening-news-bulletin-3-april-2026/zbophc6xa",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "Reports Australian SAS deployed to Middle East on standby; Albanese government refuses to confirm or deny",
+      "source": "Canberra Times",
+      "sourceUrl": "https://www.canberratimes.com.au/story/9213617/reports-sas-troops-sent-to-middle-east-region-by-australia/",
+      "confidence": "MEDIUM",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "UK deploys Rapid Sentry anti-drone air defence system to Kuwait \u2014 protecting British/Kuwaiti personnel and interests",
+      "source": "Middle East Eye",
+      "sourceUrl": "https://www.middleeasteye.net/news/uk-deploys-rapid-sentry-anti-drone-air-defence-system-kuwait",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "shipping",
+      "headline": "CMA CGM European container ship transits Strait of Hormuz \u2014 second European vessel through this week",
+      "source": "WorldCargo News",
+      "sourceUrl": "https://www.worldcargonews.com/news/2026/04/cma-cgm-container-ship-transits-strait-of-hormuz/",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "shipping",
+      "headline": "Japanese/French/Omani vessels cross Hormuz \u2014 Iran selectively allowing some transit including first outbound LNG tanker",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/japanese-owned-lng-tanker-crosses-strait-hormuz-2026-04-03/",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "India joins UK-convened 35+ nation summit on Hormuz; diplomatic efforts to reopen strait intensifying",
+      "source": "News Today",
+      "sourceUrl": "https://newstodaynet.com/2026/04/03/india-joins-uk-led-hormuz-talks-with-40-nations/",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "geopolitical",
+      "headline": "Trump sets April 6 deadline: Iran must reopen Hormuz or US strikes Iranian energy sites; more US troops to enter region",
+      "source": "UK Parliament Library",
+      "sourceUrl": "https://commonslibrary.parliament.uk/research-briefings/cbp-10521/",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait blames Iran for attack on power and desalination plants; Habshan gas facility fire from debris interception",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/2026/04/03/world/middleeast/infrastructure-attacked-gulf-kuwait-iran.html",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "shipping",
+      "headline": "Athe Nova (Iran-linked) struck by two drones near Hormuz after illegal crossing attempt; port worker killed, two hurt",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis",
+      "confidence": "MEDIUM",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australia has just over one month of diesel and petrol supplies if imports disrupted \u2014 government confirms in Parliament",
+      "source": "Beef Central",
+      "sourceUrl": "https://www.beefcentral.com/news/australias-diesel-reserves-sit-at-34-days-parliament-told/",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Iran hits Gulf refineries; Trump threatens Iranian bridges and power plants; Kuwait Mina al-Ahmadi still burning",
+      "source": "KPBS",
+      "sourceUrl": "https://www.kpbs.org/news/international/2026/04/03/iran-hits-gulf-refineries-as-trump-warns-u-s-will-attack-iranian-bridges-power-plants",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australia scrambling to diversify supply; 55 ships en route or arriving by end of April; Bowen says race to beat supply crunch",
+      "source": "HeadTopics",
+      "sourceUrl": "https://au.headtopics.com/news/australia-faces-fuel-crisis-impacts-across-sectors-and-81801811",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Brent hits .42/bbl on April 3 \u2014 new high of the war; WTI at .29",
+      "source": "Fortune",
+      "sourceUrl": "https://fortune.com/article/price-of-oil-04-03-2026/",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait Mina al-Ahmadi refinery drone strike: fires in multiple operating units, extent TBC",
+      "source": "The National",
+      "sourceUrl": "https://www.thenationalnews.com/news/mena/2026/04/03/kuwait-races-to-contain-damage-after-drone-strikes-oil-refinery/",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait Mina al-Ahmadi refinery + desalination plant struck; 12 injured in UAE from intercepted missiles",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/3/kuwait-desalination-plant-oil-refinery-hit-by-missile-and-drone-strikes",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australians cancel Easter travel as fuel crisis mounts \u2014 diesel above A/litre, petrol above A.50/litre",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/australians-cancel-easter-travel-worries-mount-over-fuel-crisis-2026-04-03/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Iran launches multi-front refinery strikes \u2014 hits Kuwait Mina al-Ahmadi, Saudi Arabia, UAE, Israel in coordinated retaliation",
+      "source": "NPR",
+      "sourceUrl": "https://www.npr.org/2026/04/03/g-s1-116314/iran-hits-gulf-refineries-as-trump-warns-u-s-will-attack-iranian-bridges-power-plants",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Australians cancel road trips as fuel costs hit A/litre diesel \u2014 Easter travel demand destruction begins",
+      "source": "Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/03/fuel-crisis-australia-travel-train-easter-break",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Pravda Singapore: Singapore refinery capacity utilization ~60% in March amid supply disruptions; China crude oil arrived via tanker New Merit from Dalian",
+      "source": "Pravda Singapore",
+      "sourceUrl": "https://singapore.news-pravda.com/singapore/2026/04/03/1749.html",
+      "confidence": "LOW",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "IBTimes: Australia imports >90% refined product from Asia; South Korea export caps, reduced refinery runs, cargo rerouting disrupting supply \u2014 mid-to-late April crunch still expected",
+      "source": "IBTimes Australia",
+      "sourceUrl": "https://www.ibtimes.com.au/australia-fuel-prices-ease-slightly-after-excise-cut-iran-war-keeps-oil-costs-high-aud-1865304",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "600+ stations out of fuel nationally as Easter travel spikes demand; trend reverses upward",
+      "source": "IBTimes Australia",
+      "sourceUrl": "https://www.ibtimes.com.au/more-600-service-stations-run-out-fuel-aussies-are-urged-again-not-panic-buy-1865301",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "WA servo chain dry at ALL locations; ASPI warns late April fuel crisis could trigger May food shortages",
+      "source": "PerthNow",
+      "sourceUrl": "https://www.perthnow.com.au/wa/fuelwatch-see-the-list-of-wa-service-stations-with-no-petrol-or-diesel--c-22090736",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "55 Australian-bound cargoes arrived or en route \u2014 more than previously scheduled; alternative sources secured from US, Europe",
+      "source": "Brisbane Times",
+      "sourceUrl": "https://www.brisbanetimes.com.au/business/markets/australia-scoured-the-world-for-fuel-supplies-it-s-working-20260403-p5zl5h.html",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "50+ tankers headed to Australian import terminals \u2014 major suppliers racing to head off shortfalls",
+      "source": "Sydney Morning Herald",
+      "sourceUrl": "https://www.smh.com.au/business/markets/australia-scoured-the-world-for-fuel-supplies-it-s-working-20260403-p5zl5h.html",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "fuel",
+      "headline": "Kuwait Mina al-Ahmadi refinery hit by drones \u2014 fires in operating units, damage extent unknown",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/middle-east/drones-hit-kuwaits-mina-al-ahmadi-refinery-fires-reported-no-injuries-2026-04-03/",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "Chris Bowen: 3.7bn litres of fuel confirmed en route to Australia; industry says not enough",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-03/chris-bowen-fuel-update-industry-concerned-not-enough/106530238",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "ABC live: 410 stations out of diesel, 145 out of petrol; Bowen confirms supply chain under stress but government says mid-April supply intact",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-03/iran-war-live-updates-us-trump-israel-australia/106529076",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-03",
+      "domain": "australia",
+      "headline": "STI Steadfast sailing east coast with South Korean jet fuel; South Korea caps exports at last-year levels, rules out redirect for now",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-03/asian-fuel-suppliers-restricting-exports-australia/106521808",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Easter holiday hunts closer to home as fuel prices bite",
+      "source": "Michael West Media",
+      "sourceUrl": "https://michaelwest.com.au/easter-holiday-hunts-closer-to-home-as-fuel-prices-bite/",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "australia",
+      "headline": "Australia faces \u2018sharp recession\u2019 if US escalates war",
+      "source": "Michael West Media",
+      "sourceUrl": "https://michaelwest.com.au/australia-faces-sharp-recession-if-us-escalates-war/",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "geopolitical",
+      "headline": "UN Hormuz vote delayed; China opposes authorisation of force; Britain hosted 40+ nation summit Thu Apr 2; resolution now expected next week",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/world/middle-east/bahrain-hopes-vote-revised-hormuz-resolution-friday-2026-04-02/",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "geopolitical",
+      "headline": "40+ nations launch coalition to secure Hormuz \u2014 post-war free passage agreement; Australia joined",
+      "source": "Euronews",
+      "sourceUrl": "https://www.euronews.com/my-europe/2026/04/02/over-40-countries-launch-coalition-to-secure-strait-of-hormuz-after-the-war",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "australia",
+      "headline": "Petrol prices fall ~20 cents across capitals after excise cut \u2014 first decline since crisis began; 53 ships still en route",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/live/2026/apr/02/anthony-albanese-fuel-crisis-angus-taylor-middle-east-labor-liberals-easter-travel-press-club-ntwnfb",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent hits .69/bbl April 2 after Trump warns of more Iran attacks; WTI up 11% to .60 \u2014 highest since March 9",
+      "source": "Guardian",
+      "sourceUrl": "https://www.theguardian.com/business/2026/apr/02/oil-price-rises-markets-slide-following-trump-iran-war-address",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "australia",
+      "headline": "Australia government may cut fuel quality standards AGAIN \u2014 without diplomacy, flights cut and diesel redistribution to vital corridors from late April",
+      "source": "Brisbane Times",
+      "sourceUrl": "https://www.brisbanetimes.com.au/business/markets/fuel-quality-standards-could-be-cut-again-to-stave-off-shortages-20260402-p5zkuh.html",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Iranian drone strikes Abu Dhabi Ruwais Industrial Complex \u2014 ADNOC refinery (922,000 bpd) shut; fire contained",
+      "source": "Wikipedia/ADNOC",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Iranian_strikes_on_the_United_Arab_Emirates",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent hits $111.69/bbl April 2 after Trump vows more Iran attacks; Citi sees $95/bbl H2 base case, $130 bull case; JPM sees $120-130 near-term",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/oil-prices-drop-hopes-us-pullback-iran-war-2026-04-02/",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent reaches $111.69/bbl April 2 \u2014 up $6.83 in one day, ~$41 above pre-war level",
+      "source": "Fortune",
+      "sourceUrl": "https://fortune.com/article/price-of-oil-04-02-2026/",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Brent international benchmark hits ~$109/bbl as Iran war escalates; oil prices rose after Trump threat",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/live/2026/04/02/world/iran-war-trump-news",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "geopolitical",
+      "headline": "Iran says it will oversee Strait of Hormuz traffic even in peacetime \u2014 selective transits for friendly nations only",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/2026/04/02/world/middleeast/iran-oman-hormuz-control.html",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "Singapore refineries exposed to Hormuz closure; SRC and ExxonMobil Jurong cutting runs; petrochemical sector warning of supply crunch",
+      "source": "ABC News",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-02/singapore-oil-refineries-energy-shock-response/106504438",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "ExxonMobil Jurong at 50% and SRC at 60%; Wood Mackenzie estimates 4-5 mbpd total Asian run cuts",
+      "source": "Morningstar",
+      "sourceUrl": "https://www.morningstar.com.au/markets/refinery-problem-different-kind-energy-crisis-2026",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "australia",
+      "headline": "FuelRadar live dashboard: 725 stations currently out of at least one fuel type (down from ~851 on Mar 31)",
+      "source": "FuelRadar.com.au",
+      "sourceUrl": "https://fuelradar.com.au/stations-running-dry",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "fuel",
+      "headline": "April Asian arrivals to Australia on track for sharper drop; gasoil flows particularly affected; US-Europe rerouting partially fills gap",
+      "source": "Argus Media",
+      "sourceUrl": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2808708-asia-fuel-crunch-pushes-australia-to-us-europe",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-02",
+      "domain": "shipping",
+      "headline": "Iranian IRGC strikes tanker off Dubai \u2014 kinetic escalation from deterrence to destruction",
+      "source": "NBC",
+      "sourceUrl": "seed://tanker-attack-dubai-2026-04-02",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "australia",
+      "headline": "Australia\u2019s land value has gone through the roof. Where does that leave young people who want to buy a home? | Greg Jericho",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/business/grogonomics/2026/apr/02/australia-land-grab-young-people-little-hope-buying-home",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "australia",
+      "headline": "Keep calm, but here comes the pain. Albanese\u2019s address presents Australians with a mixed message",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/01/keep-calm-but-here-comes-the-pain-albaneses-address-presents-australians-with-a-mixed-message",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "IEA Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted; oil supply crunch will worsen",
+      "source": "CNBC",
+      "sourceUrl": "https://www.cnbc.com/2026/04/01/oil-price-iea-fatih-birol-brent-iran-strait-hormuz.html",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "PetroChina supplies 2M barrels from China storage to Singapore Refining Co as feedstock shortage bites",
+      "source": "Reuters",
+      "sourceUrl": "https://www.reuters.com/business/energy/petrochina-plugs-singapore-plants-shortfall-with-crude-china-storage-trackers-2026-04-01/",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "australia",
+      "headline": "Guardian live dashboard: Australian fuel prices, servo outages and tanker shipments \u2014 data through Apr 1",
+      "source": "The Guardian",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/01/australia-fuel-crisis-petrol-prices-graphs",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "IEA chief Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted",
+      "source": "CNBC",
+      "sourceUrl": "seed://iea-april-worse-2026-04-01",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "fuel",
+      "headline": "US gasoline average tops $4/gallon \u2014 first time since 2022",
+      "source": "NBC",
+      "sourceUrl": "seed://us-gas-4dollar-2026-04-01",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-31",
+      "domain": "australia",
+      "headline": "Israel's ambassador defends investigation into death of Australian aid worker Zomi Frankcom - video",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/world/video/2026/mar/31/israels-ambassador-defends-investigation-into-death-of-australian-aid-worker-zomi-frankcom-video",
+      "confidence": "MEDIUM",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-31",
+      "domain": "fuel",
+      "headline": "South Korea to release strategic oil reserves to refiners via 2-month stockpile swap program (April-May)",
+      "source": "KED Global",
+      "sourceUrl": "https://www.kedglobal.com/business-politics/newsView/ked202603310008",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-31",
+      "domain": "australia",
+      "headline": "20% of national fuel reserves released; fuel excise halved 26.3c/litre for 3 months",
+      "source": "9News",
+      "sourceUrl": "seed://au-excise-halved-2026-03-31",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-30",
+      "domain": "fuel",
+      "headline": "South Korea revives Russian naphtha imports for first time in 4 years; LG Chem buys 27,000mt under US waiver",
+      "source": "The Moscow Times",
+      "sourceUrl": "https://www.themoscowtimes.com/2026/03/30/south-korea-revives-naphtha-imports-from-russia-amid-looming-shortage-a92375",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-30",
+      "domain": "australia",
+      "headline": "National Cabinet convenes on fuel \u2014 rationing rejected, voluntary demand reduction preferred",
+      "source": "ABC",
+      "sourceUrl": "seed://au-national-cabinet-2026-03-30",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-28",
+      "domain": "fuel",
+      "headline": "Asian refiners scrambling for non-Middle East crude as Hormuz flows halted; Singapore/South Korea actively sourcing alternatives",
+      "source": "Business Times Singapore",
+      "sourceUrl": "https://www.businesstimes.com.sg/international/asean/asian-refiners-scour-world-oil-hormuz-flows-halted",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-28",
+      "domain": "shipping",
+      "headline": "Houthis enter war \u2014 Bab el-Mandeb threatened, ~30 tankers idling near Yanbu",
+      "source": "Reuters",
+      "sourceUrl": "seed://houthi-war-2026-03-28",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-03-28",
+      "domain": "australia",
+      "headline": "Albanese government enacts new fuel security powers \u2014 EFIC amendment active",
+      "source": "Guardian",
+      "sourceUrl": "seed://albanese-fuel-powers-2026-03-28",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-27",
+      "domain": "fuel",
+      "headline": "South Korea imposes naphtha export ban + second-round gasoline price cap; naphtha <10% of refiner output but signals supply stress tightening",
+      "source": "Korea Joongang Daily",
+      "sourceUrl": "https://koreajoongangdaily.joins.com/news/2026-03-27/business/industry/Korea-imposes-naphtha-export-ban-sets-secondround-price-cap-on-gasoline-in-face-of-energy-disruptions/2554735",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-27",
+      "domain": "australia",
+      "headline": "PM secures 6 jet fuel tankers from China \u2014 arriving 28 Mar through 8 Apr",
+      "source": "SBS",
+      "sourceUrl": "seed://au-6-china-tankers-2026-03-27",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-25",
+      "domain": "fuel",
+      "headline": "Singapore + Malaysia refineries cutting output as crude supplies tighten from Hormuz closure; SRC at ~60% utilisation",
+      "source": "Media Selangor",
+      "sourceUrl": "https://mediaselangor.com/en/2026/03/347271",
+      "confidence": "MEDIUM",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-25",
+      "domain": "australia",
+      "headline": "China jet fuel export ban effective \u2014 removes key Australian backup supplier",
+      "source": "Reuters",
+      "sourceUrl": "seed://china-jet-ban-2026-03-25",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-24",
+      "domain": "fuel",
+      "headline": "South Korea caps fuel exports; Hyundai Oilbank reducing jet fuel exports due to Daesan 520kbd maintenance; Korean refiners already in tight run mode",
+      "source": "Argus Media",
+      "sourceUrl": "https://www.argusmedia.com/en/news-and-insights/latest-market-news/2801979-south-korea-caps-fuel-exports-to-safeguard-supply",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-24",
+      "domain": "australia",
+      "headline": "Seven charts: Australia unprepared for fuel crisis \u2014 service station dry rates surge",
+      "source": "Guardian",
+      "sourceUrl": "seed://au-guardian-unprepared-2026-03-24",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-24",
+      "domain": "australia",
+      "headline": "Australia lowers diesel standards to increase supply as stations run empty",
+      "source": "Guardian",
+      "sourceUrl": "seed://au-diesel-standard-lowered-2026-03-24",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-22",
+      "domain": "australia",
+      "headline": "Minister Bowen confirms 6 of 81 scheduled Asian ships cancelled \u2014 gap filled",
+      "source": "ABC",
+      "sourceUrl": "seed://bowen-6-cancelled-ships-2026-03-22",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-19",
+      "domain": "geopolitical",
+      "headline": "US Operation Epic Fury launched \u2014 attempting to reopen Strait of Hormuz",
+      "source": "Reuters",
+      "sourceUrl": "seed://us-epic-fury-2026-03-19",
+      "confidence": "HIGH",
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-03-19",
+      "domain": "australia",
+      "headline": "ExxonMobil, BP, Vitol charter largest US-to-Australia fuel shipments in 30 years",
+      "source": "Reuters",
+      "sourceUrl": "seed://exxon-bp-vitol-ships-2026-03-19",
+      "confidence": "HIGH",
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-03-16",
+      "domain": "fuel",
+      "headline": "Asian refineries and petchem firms cut runs \u2014 Middle East oil disruption",
+      "source": "Reuters",
+      "sourceUrl": "seed://asia-refineries-cut-run-2026-03-16",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-10",
+      "domain": "fuel",
+      "headline": "Southeast Asian refineries curb output \u2014 war-tightened crude supply",
+      "source": "Reuters",
+      "sourceUrl": "seed://asian-refineries-cut-2026-03-10",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-10",
+      "domain": "fuel",
+      "headline": "Singapore Refining Co (SRC) running at 60% utilisation \u2014 feedstock shortage",
+      "source": "Reuters",
+      "sourceUrl": "seed://sg-src-60pct-2026-03-10",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-10",
+      "domain": "fuel",
+      "headline": "Malaysia Pengerang 300k-bpd crude unit shut \u2014 derivative units halting",
+      "source": "Reuters",
+      "sourceUrl": "seed://malaysia-pengerang-shut-2026-03-10",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-04",
+      "domain": "shipping",
+      "headline": "Strait of Hormuz effectively closed \u2014 IRGC blockade begins",
+      "source": "Reuters",
+      "sourceUrl": "seed://hormuz-closed-2026-03-04",
+      "confidence": "HIGH",
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-03-04",
+      "domain": "fuel",
+      "headline": "Qatar LNG Ras Laffan declares force majeure \u2014 17% capacity impaired",
+      "source": "Reuters",
+      "sourceUrl": "seed://qatar-force-majeure-2026-03-04",
+      "confidence": "HIGH",
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    }
+  ]
 }
