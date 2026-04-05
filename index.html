@@ -1544,11 +1544,93 @@ function renderDominoModel(dm){
   });
   html+='</div>';
 
+  // ── Economic Impact — Saudi Export Cut (Tango) ──
+  var ei=dm.economicImpact||{};
+  if(ei.supplyGap){
+    var sg=ei.supplyGap||{}, pt=ei.priceTransmission||{}, fi2=ei.fuelPassThrough||[], av=ei.aviationImpact||{};
+    html+='<div style="margin-bottom:14px;">';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">💰 ECONOMIC IMPACT — SAUDI APRIL EXPORT CUTS (Tango)</div>';
+    html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.14);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;">';
+    html+='<div style="font-size:8px;color:var(--text-dim);margin-bottom:8px;">Saudi rerouting from Ras Tanura/Jubail (6.5M b/d) → Yanbu (1.5-2M b/d) — structural constraint. Confidence: '+escHtml(ei.confidence||'Medium')+'</div>';
+    html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;">';
+    var cn=sg.china||{}, in2=sg.india||{};
+    html+='<div style="padding:7px 9px;background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.2);border-radius:5px;">';
+    html+='<div style="font-size:8px;font-weight:700;color:rgba(220,38,38,0.9);margin-bottom:3px;">🇨🇳 China</div>';
+    html+='<div style="font-size:10px;color:var(--text);font-weight:700;margin-bottom:2px;">'+escHtml(cn.gap||'—')+'</div>';
+    html+='<div style="font-size:7px;color:var(--text-dim);">'+escHtml(cn.reduction||'')+' reduction</div>';
+    html+='</div>';
+    html+='<div style="padding:7px 9px;background:rgba(255,152,0,0.08);border:1px solid rgba(255,152,0,0.2);border-radius:5px;">';
+    html+='<div style="font-size:8px;font-weight:700;color:rgba(255,152,0,0.9);margin-bottom:3px;">🇮🇳 India</div>';
+    html+='<div style="font-size:10px;color:var(--text);font-weight:700;margin-bottom:2px;">'+escHtml(in2.gap||'—')+'</div>';
+    html+='<div style="font-size:7px;color:var(--text-dim);">'+escHtml(in2.reduction||'')+' reduction</div>';
+    html+='</div>';
+    html+='<div style="padding:7px 9px;background:rgba(74,158,255,0.08);border:1px solid rgba(74,158,255,0.2);border-radius:5px;">';
+    html+='<div style="font-size:8px;font-weight:700;color:rgba(74,158,255,0.9);margin-bottom:3px;">🌐 Combined</div>';
+    html+='<div style="font-size:10px;color:var(--text);font-weight:700;margin-bottom:2px;">'+escHtml(sg.combinedGap||'—')+'</div>';
+    html+='<div style="font-size:7px;color:var(--text-dim);">~0.4% of global supply</div>';
+    html+='</div>';
+    html+='</div>';
+    if(pt.crudeOilImmediate){
+      html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;">';
+      var ci=pt.crudeOilImmediate||{}, cq=pt.crudeOilQ2||{}, ce=pt.crudeOilEscalation||{};
+      html+='<div style="padding:7px 9px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:5px;">';
+      html+='<div style="font-size:8px;font-weight:700;color:rgba(245,158,11,0.9);margin-bottom:3px;">IMMEDIATE</div>';
+      html+='<div style="font-size:12px;color:var(--text);font-weight:700;margin-bottom:1px;">'+escHtml(ci.brentCentral||'—')+'</div>';
+      html+='<div style="font-size:7px;color:var(--text-dim);">range: '+escHtml(ci.brentRange||'')+'</div>';
+      html+='</div>';
+      html+='<div style="padding:7px 9px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.25);border-radius:5px;">';
+      html+='<div style="font-size:8px;font-weight:700;color:rgba(245,158,11,0.9);margin-bottom:3px;">Q2 SUSTAINED</div>';
+      html+='<div style="font-size:12px;color:var(--text);font-weight:700;margin-bottom:1px;">'+escHtml(cq.brentCentral||'—')+'</div>';
+      html+='<div style="font-size:7px;color:var(--text-dim);">range: '+escHtml(cq.brentRange||'')+'</div>';
+      html+='</div>';
+      html+='<div style="padding:7px 9px;background:rgba(220,38,38,0.10);border:1px solid rgba(220,38,38,0.25);border-radius:5px;">';
+      html+='<div style="font-size:8px;font-weight:700;color:rgba(220,38,38,0.9);margin-bottom:3px;">IF ESCALATION</div>';
+      html+='<div style="font-size:12px;color:var(--text);font-weight:700;margin-bottom:1px;">'+escHtml(ce.brentCentral||'—')+'</div>';
+      html+='<div style="font-size:7px;color:var(--text-dim);">range: '+escHtml(ce.brentRange||'')+'</div>';
+      html+='</div>';
+      html+='</div>';
+      html+='<div style="font-size:7px;color:var(--text-dim);margin-bottom:8px;">Base Brent ~$75-78 entering Q2 2026. 2022 spike peaked ~$130.</div>';
+    }
+    if(fi2.length){
+      html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:5px;">⏱ FUEL PRICE PASS-THROUGH TIMELINE</div>';
+      html+='<div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;">';
+      fi2.forEach(function(f){
+        html+='<div style="flex:1;min-width:90px;padding:7px 8px;background:rgba(0,0,0,0.12);border:1px solid var(--border);border-radius:5px;text-align:center;">';
+        html+='<div style="font-size:9px;font-weight:700;color:var(--text);margin-bottom:2px;">'+escHtml(f.product)+'</div>';
+        html+='<div style="font-size:7px;color:var(--amber);margin-bottom:1px;">'+escHtml(f.lag)+'</div>';
+        html+='<div style="font-size:7px;color:var(--text-dim);">from '+escHtml(f.effectiveFrom||'')+'</div>';
+        html+='</div>';
+      });
+      html+='</div>';
+    }
+    if(av.fuelShareOfCosts){
+      html+='<div style="margin-top:8px;padding:7px 9px;background:rgba(74,158,255,0.06);border:1px solid rgba(74,158,255,0.15);border-radius:5px;">';
+      html+='<div style="font-size:8px;font-weight:700;color:rgba(74,158,255,0.8);margin-bottom:3px;">✈️ AVIATION — JET FUEL = '+escHtml(av.fuelShareOfCosts)+' OF OPERATING COSTS</div>';
+      if(av.ticketImpact){
+        html+='<div style="font-size:8px;color:var(--text-dim);">Domestic: <span style="color:var(--amber);font-weight:700;">'+escHtml(av.ticketImpact.domestic)+'</span> · International: <span style="color:var(--amber);font-weight:700;">'+escHtml(av.ticketImpact.international)+'</span></div>';
+      }
+      html+='<div style="font-size:7px;color:var(--text-dim);margin-top:2px;">'+escHtml(av.note||'')+'</div>';
+      html+='</div>';
+    }
+    html+='</div></div>';
+  }
+
+  // ── Essential Travel Thresholds ──
+  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.15);border:1px solid var(--border);border-radius:6px;margin-bottom:0;">';
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:7px;">🚗 ESSENTIAL TRAVEL THRESHOLDS — AUSTRALIA DIESEL RESERVES</div>';
+  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">';
+  [{days:'10',label:'Non-essential\nrestricted',col:'rgba(245,158,11,0.85)',rgb:'245,158,11'},{days:'7',label:'Private vehicles\nlimit 50km/day',col:'rgba(220,38,38,0.75)',rgb:'220,38,38'},{days:'5',label:'Essential\nmovement only',col:'rgba(220,38,38,0.9)',rgb:'220,38,38'}].forEach(function(t){
+    html+='<div style="padding:8px;background:rgba(0,0,0,0.2);border-radius:5px;text-align:center;border:1px solid rgba(255,255,255,0.05);">';
+    html+='<div style="font-size:22px;font-weight:700;color:rgb('+t.rgb+');line-height:1;">'+t.days+'</div>';
+    html+='<div style="font-size:7px;color:var(--text-dim);margin:2px 0 3px;">days diesel</div>';
+    html+='<div style="font-size:8px;color:var(--text);font-weight:700;line-height:1.3;white-space:pre-line;">'+escHtml(t.label)+'</div>';
+    html+='</div>';
+  });
+  html+='</div></div>';
 
   html+='<div id="domino-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target.id==\'domino-modal\')document.getElementById(\'domino-modal\').style.display=\'none\'">';
   html+='<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:12px;max-width:520px;width:100%;padding:20px;max-height:80vh;overflow-y:auto;" id="domino-modal-content"></div>';
   html+='</div>';
-
   el.innerHTML=html;
 }
 window.selectDominoScenario=selectDominoScenario;
