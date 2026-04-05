@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T13:39:42Z",
+  "lastUpdated": "2026-04-05T13:40:15Z",
   "warAlert": {
-    "timestamp": "2026-04-05T13:39:42Z",
+    "timestamp": "2026-04-05T13:40:15Z",
     "fuelImpact": [
       "2026-04-05 Iran attacks energy infrastructure across Gulf states [Channel NewsAsia (CNA)] [MEDIUM]",
       "2026-04-05 Trump threatens Iranian power plants, bridges in expletive-laden social media post [Channel NewsAsia (CNA)] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T13:39:42Z",
+    "updated": "2026-04-05T13:40:15Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,7 +1168,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T13:39:42Z",
+  "dbLastUpdated": "2026-04-05T13:40:15Z",
   "dbEvents": [
     {
       "dtg": "2026-04-05",
@@ -3614,14 +3614,14 @@
     "servo_outages": "~687 nationally \u2014 FuelRadar live 05/04/2026 11:16am \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T13:39:25Z",
-    "cron": "fran_ingest",
-    "summary": "Ingest run: 0 new events from 35 sources"
+    "sentAt": "2026-04-05T13:40:15Z",
+    "cron": "servo-tracker",
+    "summary": "No new data \u2014 687 confirmed (FuelRadar 05/04 11:16am); improving trend ongoing"
   },
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-05T13:39:42Z",
+      "updatedAt": "2026-04-05T13:40:15Z",
       "window": 7,
       "totalEvents": 168,
       "activeSources": 81,
@@ -3814,7 +3814,7 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Supply Chain Implications",
-      "updatedAt": "2026-04-05T13:39:42Z",
+      "updatedAt": "2026-04-05T13:40:15Z",
       "phase": "PRE-DEPLOYMENT",
       "invasionIndicator": "ELEVATED",
       "phaseReason": "US has 50,000+ troops in Middle East (+10,000 above normal). Ground troops have arrived. Spec ops and limited ground ops confirmed. Full invasion pending political decision. UK/Australia explicitly not committing ground forces. 35-nation coalition is naval blockade, not ground force.",
@@ -4114,7 +4114,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T13:39:42Z",
+    "updatedAt": "2026-04-05T13:40:15Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -4507,7 +4507,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T13:39:42Z",
+    "updatedAt": "2026-04-05T13:40:15Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
