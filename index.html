@@ -1158,31 +1158,7 @@ function renderTroopsReview(tr){
   var el=document.getElementById('review-content-troops');
   if(!el||!tr) return;
   var html='';
-
-  // ── Why troop disposition is a focal point ──
-  if(tr.whyItMatters){
-    html+='<div style="margin-bottom:14px">';
-    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px">Why Troop Disposition Is a Focal Point</div>';
-    html+='<div style="font-size:11px;line-height:1.65;color:var(--text-dim)">'+escHtml(tr.whyItMatters)+'</div>';
-    html+='</div>';
-  }
-
-  // ── Why ground invasion is the decisive event ──
-  if(tr.decisiveEvent){
-    html+='<div style="margin-bottom:14px">';
-    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--amber);text-transform:uppercase;margin-bottom:6px">⚠️ Ground Invasion Is the Decisive Event</div>';
-    html+='<div style="font-size:11px;line-height:1.65;color:var(--text-dim)">'+escHtml(tr.decisiveEvent)+'</div>';
-    html+='</div>';
-  }
-
-  // ── 12-24 month Australian consequence ──
-  if(tr.auConsequence12_24){
-    html+='<div style="padding:12px 14px;margin-bottom:14px;border:1px solid rgba(0,232,122,0.2);background:rgba(0,232,122,0.04);border-radius:8px">';
-    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--green);text-transform:uppercase;margin-bottom:6px">🇦🇺 12–24 Month Impact on Australia</div>';
-    html+='<div style="font-size:11px;line-height:1.65;color:var(--text-dim)">'+escHtml(tr.auConsequence12_24)+'</div>';
-    html+='</div>';
-  }
-
+  html+=reviewHeader(tr);
   html+=reviewMLMD(tr);
   html+=reviewBullets(tr,'Current Disposition — What to Watch');
   el.innerHTML=html;

@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T13:47:32Z",
+  "lastUpdated": "2026-04-05T13:51:09Z",
   "warAlert": {
-    "timestamp": "2026-04-05T13:47:32Z",
+    "timestamp": "2026-04-05T13:51:09Z",
     "fuelImpact": [
       "2026-04-05 Iran attacks energy infrastructure across Gulf states [Channel NewsAsia (CNA)] [MEDIUM]",
       "2026-04-05 Trump threatens Iranian power plants, bridges in expletive-laden social media post [Channel NewsAsia (CNA)] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T13:47:32Z",
+    "updated": "2026-04-05T13:51:09Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,7 +1168,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T13:47:32Z",
+  "dbLastUpdated": "2026-04-05T13:51:09Z",
   "dbEvents": [
     {
       "dtg": "2026-04-05",
@@ -3621,7 +3621,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-05T13:47:32Z",
+      "updatedAt": "2026-04-05T13:51:09Z",
       "window": 7,
       "totalEvents": 168,
       "activeSources": 81,
@@ -3766,7 +3766,7 @@
     },
     "supply": {
       "title": "Supply Chain Status \u2014 Four-Layer Assessment",
-      "updatedAt": "2026-04-05T13:47:32Z",
+      "updatedAt": "2026-04-05T13:51:09Z",
       "keyStats": [
         {
           "label": "Diesel reserve",
@@ -3828,7 +3828,7 @@
     },
     "markets": {
       "title": "Markets \u2014 Price Shock Assessment",
-      "updatedAt": "2026-04-05T13:47:32Z",
+      "updatedAt": "2026-04-05T13:51:09Z",
       "metroLevel": 7.2,
       "metroTier": "WARNING",
       "regLevel": 9.8,
@@ -3928,7 +3928,7 @@
     },
     "households": {
       "title": "Household Stress \u2014 Savings Runway & Cost Cascade",
-      "updatedAt": "2026-04-05T13:47:32Z",
+      "updatedAt": "2026-04-05T13:51:09Z",
       "minRunway": 1,
       "avgExtra": 679.0,
       "govExpiry": "2026-06-30",
@@ -3989,7 +3989,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Model Drivers & Scenario Probabilities",
-      "updatedAt": "2026-04-05T13:47:32Z",
+      "updatedAt": "2026-04-05T13:51:09Z",
       "scenarios": [
         {
           "id": "base",
@@ -4069,18 +4069,15 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Why It Matters",
-      "updatedAt": "2026-04-05T13:47:32Z",
-      "whyItMatters": "Troop disposition is tracked because it is the most reliable leading indicator of how long this conflict will last \u2014 and conflict duration is the single variable that determines whether Australia's fuel crisis is manageable or structural. Air strikes and naval blockades can be sustained indefinitely at relatively low cost. A ground invasion is a fundamentally different commitment: it requires months of planning, logistics pre-positioning, and political authorisation. Once committed, it is very difficult to reverse quickly. A ground war means Hormuz stays closed not for weeks, but for 6\u201318 months. That timeline changes everything for Australia.",
-      "decisiveEvent": "The transition to ground operations is the decisive event because it converts a temporary supply disruption into a structural one. Under a sustained ground war: Asian refineries cannot restore normal output because Gulf crude \u2014 which feeds Singapore, South Korea, and Japan \u2014 remains cut off. Australian fuel imports cannot recover to pre-war levels because the source refineries are operating at 55\u201380% of normal capacity for the duration. Government reserve releases and rerouted cargoes \u2014 the tools that are currently keeping the system running \u2014 are one-time buffers, not ongoing supply. They buy time. Ground operations eliminate the time they are buying.",
-      "auConsequence12_24": "A ground war scenario carries a 12\u201324 month impact horizon for Australia. In the first 3 months: diesel rationing is introduced for non-essential users; fuel prices remain structurally elevated at 60\u201380% above pre-war levels; freight costs embed permanently into grocery and manufactured goods prices. By 6 months: food price increases peak at 30\u201340% above pre-war baseline as the fertiliser and farm input cascade fully transmits to retail; regional and rural households face the most acute stress with no viable substitution for diesel. By 12\u201324 months: even if the conflict ends, refinery investment cycles mean Asian refinery capacity does not fully recover for 12\u201318 months after hostilities cease; Australian fuel import costs remain structurally higher; household cost-of-living remains elevated well beyond the end of active conflict.",
+      "updatedAt": "2026-04-05T13:51:09Z",
+      "summary": "Current disposition: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED. 12 units deployed, 6 en route. Troop build-up is tracked as the primary indicator of conflict duration \u2014 and duration is what determines whether Australia's fuel crisis is temporary or structural. Air strikes can be sustained indefinitely. A ground invasion cannot be quickly reversed. It means Hormuz stays closed for months, not weeks \u2014 Asian refineries stay feedstock-starved, import volumes stay suppressed, and government reserve releases run out before supply recovers. A confirmed ground war carries a 12\u201324 month impact horizon for Australia: diesel rationing in the first 3 months, food prices peaking at 30\u201340% above pre-war by month 6, and structural cost-of-living elevation persisting 12\u201318 months after hostilities end as Asian refinery capacity takes time to rebuild.",
       "mostLikelyCourse": "Current phase (PRE-DEPLOYMENT) holds \u2014 conflict remains aerial and special operations. A conventional ground invasion decision is deferred. Australian supply stays stressed but manageable if replacement cargoes arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. The 12\u201324 month consequence scenario is avoided, though short-term fuel and food price pressure persists for 3\u20136 months regardless.",
       "mostDangerousCourse": "Ground operations are authorised \u2014 triggered by a failed Hormuz ultimatum, an Iranian strike on a US asset requiring a ground response, or an IDF request for US infantry support. From that decision, the 12\u201324 month Australian impact horizon activates immediately. Reserve releases and rerouted cargoes become insufficient within 4\u20136 weeks. Rationing moves from contingency to active policy.",
       "bullets": [
         "Current phase: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED \u00b7 US has 50,000+ troops in Middle East (+10,000 above normal). Ground troops have arrived. Spec ops and limited ground ops",
         "12 units deployed \u00b7 6 en route. Watch for logistics units (medical, engineering, supply) entering theatre \u2014 they typically precede infantry by 2\u20134 weeks.",
         "Earliest ground ops: Now \u2014 spec ops are already operating inside Iran (Al Arabiya/Wiki). Conventional ground invasion: decision pending.. The April 6 Hormuz ultimatum is the next critical decision point."
-      ],
-      "summary": "The troop panel tracks whether the conflict is moving from coercive signalling into a posture consistent with sustained offensive operations or direct intervention."
+      ]
     }
   },
   "troopDeployments": {
@@ -4366,7 +4363,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T13:47:32Z",
+    "updatedAt": "2026-04-05T13:51:09Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -4759,7 +4756,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T13:47:32Z",
+    "updatedAt": "2026-04-05T13:51:09Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
