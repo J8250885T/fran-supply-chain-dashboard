@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-05T19:44:03Z",
+  "lastUpdated": "2026-04-05T20:40:28Z",
   "warAlert": {
-    "timestamp": "2026-04-05T19:44:03Z",
+    "timestamp": "2026-04-05T20:40:28Z",
     "fuelImpact": [
-      "2026-04-06 Saudi Arabia slashes April crude exports to South Korea, Japan, Indonesia, Thailand \u2014 Asia-wide oil shortage intensifying [Travel And Tour World] [MEDIUM]",
-      "2026-04-06 Gulf workaround routes fail: Saudi/UAE/Iraq exports plunge from 20M bbl/day to 8.4M bbl/day \u2014 Hormuz alternatives exposed as inadequate [Ynet News] [MEDIUM]",
-      "2026-04-05 OPEC+ agrees to boost oil output when Strait of Hormuz reopens [Channel NewsAsia (CNA)] [HIGH]",
-      "2026-04-05 China says ready to work with Russia to ease Middle East tensions [Channel NewsAsia (CNA)] [MEDIUM]",
-      "2026-04-05 Ex-player Cuellar backs Mexico to break 'fifth-game' curse, warns of immigration hurdles [Channel NewsAsia (CNA)] [MEDIUM]",
-      "2026-04-05 Trump threatens Iran in expletive-filled social media post [Al Jazeera] [MEDIUM]"
+      "2026-04-06 Bab el-Mandeb remains only viable oil route; ~30 tankers near Saudi Yanbu within Houthi strike range; Houthis awaiting Iranian signal to resume attacks if Hormuz control weakens [Wikipedia] [MEDIUM]",
+      "2026-04-06 Iran rejects Trump's 48-hour ultimatum as 'stupid and nervous'; Trump extended energy plant destruction deadline to April 6 8PM ET; Iran warns of 'big surprise' in response [NDTV] [HIGH]",
+      "2026-04-06 Britain hosting 40+ nation security coalition on Hormuz; NATO chief Rutte visits Washington April 8-12 amid alliance strains; Pakistan offering to host US-Iran talks; Turkey opposes both US-Israel strikes and Iranian retaliation [Times of India] [MEDIUM]",
+      "2026-04-06 Trump's April 6 8PM ET Hormuz deadline critical; if Iran refuses, US strikes Iranian power plants \u2014 analysts warn reopening Hormuz by force would require weeks-months and likely ground troops; Iran has multiple ways to target ships [Economic Times] [HIGH]",
+      "2026-04-06 CIA deception campaign enabled US special forces ground insertion into Iran on April 3-4 to rescue downed F-35 airman; operation described as one of most daring SAR missions in US history [Jerusalem Post] [HIGH]",
+      "2026-04-06 Trump extends Hormuz deadline to April 6 8PM ET; threatens Iranian energy infrastructure if strait remains closed [NBC News] [HIGH]"
     ],
     "foodImpact": [
       "2026-04-05 How close a tree is planted can affect property prices, new report shows [ABC News Australia] [MEDIUM]",
@@ -19,16 +19,16 @@
     "australiaRisk": "HIGH",
     "watch": [
       "2026-04-06 Australia Fuel Crisis 2026: 53 ships with 3.7B litres en route; diesel reserves 29 days (critical threshold); 109 Victorian stations out; Chris Bowen confirms shortages; industry and farmers express ongoing concern [International Business Times Australia] [HIGH]",
+      "2026-04-05 Heritage protection in the works for one of Australia's oldest skate parks [ABC News Australia] [MEDIUM]",
       "2026-04-05 Approximately 90 Australian SAS troops deployed to Middle East \u2014 likely Al Minhad Air Base UAE. Government neither confirms nor denies. Deployment appears to have occurred almost immediately when Iran-US war began. [The Nightly] [MEDIUM]",
-      "2026-04-05 Nearly 100 NSW service stations fined $1,100 each over misleading petrol prices amid fuel shortage crackdown [The Guardian Australia] [MEDIUM]",
-      "2026-04-05 Asian countries assure Australia \u2018normal supply\u2019 of fuel will continue as Albanese focuses on averting shortages [The Guardian Australia] [MEDIUM]"
+      "2026-04-05 Nearly 100 NSW service stations fined $1,100 each over misleading petrol prices amid fuel shortage crackdown [The Guardian Australia] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T19:44:03Z",
+    "updated": "2026-04-05T20:40:28Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,8 +1168,86 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T19:44:03Z",
+  "dbLastUpdated": "2026-04-05T20:40:28Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-06",
+      "domain": "shipping",
+      "headline": "Bab el-Mandeb remains only viable oil route; ~30 tankers near Saudi Yanbu within Houthi strike range; Houthis awaiting Iranian signal to resume attacks if Hormuz control weakens",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Houthi_strikes_on_Israel",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T20:39:08Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "geopolitical",
+      "headline": "Iran rejects Trump's 48-hour ultimatum as 'stupid and nervous'; Trump extended energy plant destruction deadline to April 6 8PM ET; Iran warns of 'big surprise' in response",
+      "source": "NDTV",
+      "sourceUrl": "https://www.ndtv.com/world-news/middle-east-war-unbalanced-stupid-iran-on-trumps-48-hour-ultimatum-for-peace-deal-11312544",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T20:38:57Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "geopolitical",
+      "headline": "Britain hosting 40+ nation security coalition on Hormuz; NATO chief Rutte visits Washington April 8-12 amid alliance strains; Pakistan offering to host US-Iran talks; Turkey opposes both US-Israel strikes and Iranian retaliation",
+      "source": "Times of India",
+      "sourceUrl": "https://timesofindia.indiatimes.com/world/middle-east/us-israel-iran-war-news-live-updates-middle-east-crisis-conflict-latest-news-iran-drone-missile-attack-gulf-dubai-qatar-news-strait-of-hormuz-crude-oil-impact-donald-trump/liveblog/130011222.cms",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T20:38:57Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "fuel",
+      "headline": "Trump's April 6 8PM ET Hormuz deadline critical; if Iran refuses, US strikes Iranian power plants \u2014 analysts warn reopening Hormuz by force would require weeks-months and likely ground troops; Iran has multiple ways to target ships",
+      "source": "Economic Times",
+      "sourceUrl": "https://economictimes.indiatimes.com/news/international/us/strait-of-hormuz-puzzle-and-donald-trump-threats-to-blow-up-power-plants-bridges-iran-war-braces-for-decisive-moment-as-deadline-nears/articleshow/130040251.cms",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T20:38:57Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "geopolitical",
+      "headline": "CIA deception campaign enabled US special forces ground insertion into Iran on April 3-4 to rescue downed F-35 airman; operation described as one of most daring SAR missions in US history",
+      "source": "Jerusalem Post",
+      "sourceUrl": "https://www.jpost.com/middle-east/iran-news/article-892079",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T20:38:57Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-06",
+      "domain": "fuel",
+      "headline": "Trump extends Hormuz deadline to April 6 8PM ET; threatens Iranian energy infrastructure if strait remains closed",
+      "source": "NBC News",
+      "sourceUrl": "https://www.nbcnews.com/world/iran/ahead-latest-strait-hormuz-deadline-trump-threatens-irans-energy-rcna266770",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T20:38:57Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-06",
       "domain": "fuel",
@@ -1205,6 +1283,71 @@
       "impact": "",
       "confidence": "HIGH",
       "addedAt": "2026-04-05T19:37:06Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US set up improvised airfield inside Iran to rescue F-15 airman; thousands of troops assembling in region; Trump considering Kharg Island seizure to break Hormuz stranglehold",
+      "source": "Fortune",
+      "sourceUrl": "https://fortune.com/2026/04/05/rescue-f-15-airman-us-military-improvised-airfield-farp-iran-marines/",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T20:38:57Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israeli air strike hits crowd in Gaza City",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/israeli-air-strike-hits-crowd-in-gaza-city?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T20:37:34Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Hamas armed wing rejects disarmament while Israel continues attacks",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/hamas-armed-wing-rejects-disarmament-while-israel-continues-attacks?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T20:37:34Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Is war more profitable than peace? David Keen explains",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/talk-to-al-jazeera/2026/4/5/is-war-more-profitable-than-peace-david-keen-explains?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T20:37:34Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Heritage protection in the works for one of Australia's oldest skate parks",
+      "source": "ABC News Australia",
+      "sourceUrl": "https://www.abc.net.au/news/2026-04-06/heritage-protection-sought-geelong-corio-bowls-skate-park/106523592",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T20:37:34Z",
       "sent": false,
       "color": "#00e87a",
       "label": "AUSTRALIA"
@@ -3991,38 +4134,38 @@
     "bab_el_mandeb_status": "THREATENED \u2014 Iran parliament speaker signals expansion of maritime blockade beyond Hormuz; ~30 Houthi tankers near Saudi Yanbu within strike range; Bab el-Mandeb already high-risk from prior Houthi attacks 2026-04-05"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T19:43:55Z",
-    "cron": "asian-refinery",
-    "summary": "Saudi Arabia slashed April exports to Asia; Gulf workaround routes fail \u2014 exports down from 20M to 8.4M bbl/day; Singapore SRC force majeure + South Korea and Japan seeking alternative crude"
+    "sentAt": "2026-04-05T20:40:17Z",
+    "cron": "war-fuel-food",
+    "summary": "7 new events: Trump April 6 Hormuz deadline rejected by Iran; US special forces ground insertion (Apr 3-4 SAR); Kharg Island seizure considered; 40+ nation UK coalition; NATO strain; Bab el-Mandeb ~30 tankers in Houthi range; diesel reserves 29 days at critical threshold"
   },
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-05T19:44:03Z",
+      "updatedAt": "2026-04-05T20:40:28Z",
       "window": 7,
-      "totalEvents": 197,
-      "activeSources": 88,
+      "totalEvents": 208,
+      "activeSources": 91,
       "domainCounts": {
         "geopolitical": {
-          "count": 85,
+          "count": 92,
           "label": "Geopolitical Tension",
           "emoji": "\u2694\ufe0f",
           "color": "#c084fc"
         },
         "fuel": {
-          "count": 46,
+          "count": 48,
           "label": "Fuel Supply",
           "emoji": "\ud83d\udee2\ufe0f",
           "color": "#ff3b3b"
         },
         "australia": {
-          "count": 49,
+          "count": 50,
           "label": "Australian Exposure",
           "emoji": "\ud83c\udde6\ud83c\uddfa",
           "color": "#00e87a"
         },
         "shipping": {
-          "count": 12,
+          "count": 13,
           "label": "Shipping Routes",
           "emoji": "\ud83d\udea2",
           "color": "#4a9eff"
@@ -4040,36 +4183,36 @@
           "label": "Geopolitical Tension",
           "emoji": "\u2694\ufe0f",
           "color": "#c084fc",
-          "headline": "OPEC+ agrees to hike oil output, warns of slow recovery after attacks",
-          "source": "Al Jazeera",
-          "dtg": "2026-04-05"
+          "headline": "Iran rejects Trump's 48-hour ultimatum as 'stupid and nervous'; Trump extended energy plant destruction deadline to April 6 8PM ET; Iran warns of 'big surprise' in response",
+          "source": "NDTV",
+          "dtg": "2026-04-06"
         },
         {
           "domain": "geopolitical",
           "label": "Geopolitical Tension",
           "emoji": "\u2694\ufe0f",
           "color": "#c084fc",
-          "headline": "Iran\u2019s World Cup participation depends on relocation from US, minister says",
-          "source": "Al Jazeera",
-          "dtg": "2026-04-05"
+          "headline": "CIA deception campaign enabled US special forces ground insertion into Iran on April 3-4 to rescue downed F-35 airman; operation described as one of most daring SAR missions in US history",
+          "source": "Jerusalem Post",
+          "dtg": "2026-04-06"
         },
         {
           "domain": "fuel",
           "label": "Fuel Supply",
           "emoji": "\ud83d\udee2\ufe0f",
           "color": "#ff3b3b",
-          "headline": "OPEC+ agrees to boost oil output when Strait of Hormuz reopens",
-          "source": "Channel NewsAsia (CNA)",
-          "dtg": "2026-04-05"
+          "headline": "Trump's April 6 8PM ET Hormuz deadline critical; if Iran refuses, US strikes Iranian power plants \u2014 analysts warn reopening Hormuz by force would require weeks-months and likely ground troops; Iran has multiple ways to target ships",
+          "source": "Economic Times",
+          "dtg": "2026-04-06"
         },
         {
           "domain": "fuel",
           "label": "Fuel Supply",
           "emoji": "\ud83d\udee2\ufe0f",
           "color": "#ff3b3b",
-          "headline": "Iranian drones struck Kuwait's Shuwaikh oil sector complex (housing KPC headquarters), two power/desalination plants, and Bahrain oil storage \u2014 significant damage, no casualties. Kuwait joins Saudi Arabia, UAE as regional states hit by Iran. Escalation of Iran's Gulf-state retaliation campaign.",
-          "source": "Reuters",
-          "dtg": "2026-04-05"
+          "headline": "Trump extends Hormuz deadline to April 6 8PM ET; threatens Iranian energy infrastructure if strait remains closed",
+          "source": "NBC News",
+          "dtg": "2026-04-06"
         },
         {
           "domain": "australia",
@@ -4130,11 +4273,11 @@
         "travel": "Domestic airfares up ~49% from pre-war baseline. Jet fuel constraints mean thin margins for regional routes. Easter travel is completing without cancellations, but further escalation would pressure route availability.",
         "household": "Estimated 3\u20135% monthly spending increase across transport, food, and utilities for the average Australian household. Low-income and regional households are hardest hit \u2014 diesel dependency for heating, farming, and long-distance commuting leaves no easy substitution."
       },
-      "summary": "Over the past 7 days Fran has ingested 197 events from 88 active sources across the APAC/SEA/ANZ network. The feed is dominated by Geopolitical Tension signals (85 events), with Australian domestic exposure (49 events) and direct fuel signals (46 events) close behind. Current reserves stand at Diesel 29d \u00b7 Petrol 39d \u00b7 Jet fuel 30d. 687 service stations nationally are dry. Route status: Hormuz CLOSED \u00b7 Bab el-Mandeb THREATENED \u00b7 Malacca OPEN.",
-      "mostLikelyCourse": "The feed is dominated by geopolitical signals (85 events in 7 days). Supply remains under sustained pressure but not in freefall \u2014 rerouted cargoes and reserve releases continue to buffer the immediate shortage. The critical test is whether the mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless supply ceiling holds as Easter demand normalises and replacement cargoes arrive.",
+      "summary": "Over the past 7 days Fran has ingested 208 events from 91 active sources across the APAC/SEA/ANZ network. The feed is dominated by Geopolitical Tension signals (92 events), with Australian domestic exposure (50 events) and direct fuel signals (48 events) close behind. Current reserves stand at Diesel 29d \u00b7 Petrol 39d \u00b7 Jet fuel 30d. 687 service stations nationally are dry. Route status: Hormuz CLOSED \u00b7 Bab el-Mandeb THREATENED \u00b7 Malacca OPEN.",
+      "mostLikelyCourse": "The feed is dominated by geopolitical signals (92 events in 7 days). Supply remains under sustained pressure but not in freefall \u2014 rerouted cargoes and reserve releases continue to buffer the immediate shortage. The critical test is whether the mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless supply ceiling holds as Easter demand normalises and replacement cargoes arrive.",
       "mostDangerousCourse": "A step-change escalation \u2014 US strikes on Iranian energy sites after the April 6 ultimatum, Iranian closure of Bab el-Mandeb in addition to Hormuz, or further Asian refinery force majeure declarations \u2014 would compress the mid-April supply window and push servo outages from isolated regional shortages into sustained metro shortfalls before replacement cargoes can land.",
       "bullets": [
-        "Geopolitical events (85) are outpacing direct fuel signals (46) in the feed \u2014 the conflict is driving supply risk faster than markets are pricing it.",
+        "Geopolitical events (92) are outpacing direct fuel signals (48) in the feed \u2014 the conflict is driving supply risk faster than markets are pricing it.",
         "Diesel at 29 days is the tightest reserve \u2014 below or at the critical 25\u201330 day threshold. Regional farming and freight operations are the first to be affected.",
         "687 service stations nationally are currently dry. The distribution of outages (heavy in NSW, QLD) signals the wholesale stress point is the last-mile delivery network, not terminal stock itself.",
         "Watch the April 6 Hormuz ultimatum deadline (10 AM AEST April 7). If Iran does not reopen and the US strikes energy infrastructure, the mid-April supply ceiling collapses and rationing moves from contingency to likely.",
@@ -4143,7 +4286,7 @@
     },
     "supply": {
       "title": "Fuel Levels & Supply \u2014 Review",
-      "updatedAt": "2026-04-05T19:44:03Z",
+      "updatedAt": "2026-04-05T20:40:28Z",
       "summary": "Australia is holding, but the margin is thin. Diesel sits at 29 days \u2014 only 19 days above the 10-day rationing trigger \u2014 making it the tightest and most critical reserve. Petrol (39 days) and jet fuel (30 days) provide more headroom but remain below normal comfortable levels. 687 service stations are dry nationally (increasing trend), concentrated in regional NSW, QLD, and WA where last-mile diesel distribution is thinnest. The supply system is being kept alive by 5 replacement vessels en route from the US and Europe \u2014 rerouted via Cape of Good Hope at significant cost and a 14-day transit premium. Asian refineries, which normally supply over 90% of Australia's refined fuel, are averaging 66% capacity due to Hormuz-driven feedstock constraints. The weakest link is Southkorea at 55%. All of this converges on a single critical threshold: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If incoming cargoes do not land before that date, the government has no remaining buffer tools \u2014 reserve releases and the excise cut have already been deployed. Three emergency measures are active (Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered), but these are one-time levers, not ongoing supply.",
       "mostLikelyCourse": "5 replacement vessels arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless, keeping diesel above the 10-day rationing trigger. Easter demand normalises and servo outages ease as distribution catches up. Asian refinery output holds at ~66%, limiting recovery but preventing further deterioration. Supply remains stressed but rationing is avoided in the near term.",
       "mostDangerousCourse": "One or more replacement cargoes slip, are diverted to competing buyers, or arrive after mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. Diesel falls below 10 days \u2014 the formal rationing trigger. Simultaneously, Southkorea or Singapore refinery output drops further, eliminating any prospect of near-term recovery from the Asian supply chain. Servo outages spread from regional to suburban areas before new imports can offset the drawdown.",
@@ -4155,7 +4298,7 @@
     },
     "markets": {
       "title": "Markets \u2014 Price Shock Review",
-      "updatedAt": "2026-04-05T19:44:03Z",
+      "updatedAt": "2026-04-05T20:40:28Z",
       "summary": "The price shock is running ahead of where most Australians expect it to be. Metro price increase is at 7.2% (WARNING tier) \u2014 still 3.6 points below the projected peak of 10.8% by 2026-05-15. Regional price increase at 9.8% (EMERGENCY tier) is more severe, with 3 states in CRISIS (QLD,SA,NT) and 3 in EMERGENCY (NSW,VIC,WA). The dominant driver is Transport at 3.2 percentage points. The biggest item movers are Diesel (+79.3%), LPG / Autogas (+68.4%), and Tomatoes (+65.0%). The worst is still ahead: the food and fertiliser cascade has not fully fed through to retail, and the excise cut masking pump prices expires in June.",
       "mostLikelyCourse": "Metro price increase climbs to the projected peak of 10.8% by 2026-05-15 as fuel and freight costs keep feeding through, then plateaus as supply stabilises. Regional price increase peaks at 14.5% by 2026-05-20. Pressure eases in the second half of 2026 if Hormuz reopens and freight costs normalise.",
       "mostDangerousCourse": "Price increase broadens beyond fuel and food into manufactured goods and services, pushing metro price increase into EMERGENCY tier ahead of projections. Second-round wage and cost pressures lock in before the peak \u2014 extending the inflation episode well beyond the conflict itself and compressing real incomes for 12+ months.",
@@ -4168,7 +4311,7 @@
     },
     "households": {
       "title": "Households \u2014 Stress Review",
-      "updatedAt": "2026-04-05T19:44:03Z",
+      "updatedAt": "2026-04-05T20:40:28Z",
       "summary": "The fuel and food price shock is hitting household budgets unevenly, but the common thread is that most Australians had already depleted their savings buffers during the 2022\u20132025 rate cycle before this crisis began. The most vulnerable cohort \u2014 Low Income Worker \u2014 has only 1 month(s) of liquid savings remaining against a A$430 monthly crisis cost increase. Across all tiers, the average monthly surcharge is A$679. The government's relief package (excise cut + reserve releases, A$4.75bn total) expires 2026-06-30. After that, households absorb the full cost increase without any fiscal buffer \u2014 and this coincides with the June\u2013July peak in food prices, when the fertiliser and freight cascade fully transmits to retail grocery prices. The most resilient cohort is Retiree (Super) with 45 months of runway, but even this group faces compounding health and utility cost pressure as the crisis extends.",
       "mostLikelyCourse": "Low-buffer households exhaust savings first, with stress peaking May\u2013June 2026 as grocery prices catch up to fuel. Government excise relief provides partial offset until 2026-06-30, after which pump prices spike again. Middle and upper cohorts weather the immediate crisis but face structural cost-of-living elevation for 6\u201312 months.",
       "mostDangerousCourse": "Government buffer of A$4.75bn is exhausted before supply normalises. Excise cut lapses with no replacement \u2014 pump prices spike simultaneously with the grocery peak. Distress asset sales, mortgage arrears, and BNPL defaults rise together. Leveraged middle-income households \u2014 the largest cohort by number \u2014 face the sharpest deterioration as debt service consumes cash flow already compressed by inflation.",
@@ -4181,7 +4324,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-05T19:44:03Z",
+      "updatedAt": "2026-04-05T20:40:28Z",
       "summary": "The cascade model currently places Base Case \u2014 Stalemate as the most probable outcome at 41%, with Escalation at 36% and Resolution at 23%. The two scenarios are close \u2014 a single decisive event could shift the balance. The dominant driver is Hormuz (H=1.00): full closure is already priced into the model as maximum stress on the Gulf-to-Asia crude supply chain. Refinery stress (R=0.46) reflects Asian refineries running at 66% capacity, which directly constrains refined fuel volume arriving in Australia. The troop phase (PRE-DEPLOYMENT, T=0.10) is the key swing variable \u2014 a move to GROUND OPS would push escalation probability above base and activate the 6+ month conflict timeline that underpins the worst-case cascade: GDP impact at -5.0%, food prices +40%, and recovery measured in 12\u201324 months, not weeks.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (41%) holds. Conflict stays aerial and special operations. Supply tightens to the mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless ceiling then stabilises as replacement cargoes land. Food price cascade peaks May\u2013June 2026 at +20% before gradual easing. GDP impact limited to -2.1%. Recovery in 3\u20136 months.",
       "mostDangerousCourse": "Escalation (36%) activates on a ground invasion decision or major Iranian strike on Gulf infrastructure. All cascade pathways worsen simultaneously: Hormuz closure extends to 6\u201318 months, Asian refinery output stays suppressed, Australian rationing moves to active policy, food prices peak at +40%, and recovery extends to 12\u201324 months.",
@@ -4193,7 +4336,7 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Why It Matters",
-      "updatedAt": "2026-04-05T19:44:03Z",
+      "updatedAt": "2026-04-05T20:40:28Z",
       "summary": "Current disposition: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED. 12 units deployed, 6 en route. Troop build-up is tracked as the primary indicator of conflict duration \u2014 and duration is what determines whether Australia's fuel crisis is temporary or structural. Air strikes can be sustained indefinitely. A ground invasion cannot be quickly reversed. It means Hormuz stays closed for months, not weeks \u2014 Asian refineries stay feedstock-starved, import volumes stay suppressed, and government reserve releases run out before supply recovers. A confirmed ground war carries a 12\u201324 month impact horizon for Australia: diesel rationing in the first 3 months, food prices peaking at 30\u201340% above pre-war by month 6, and structural cost-of-living elevation persisting 12\u201318 months after hostilities end as Asian refinery capacity takes time to rebuild.",
       "mostLikelyCourse": "Current phase (PRE-DEPLOYMENT) holds \u2014 conflict remains aerial and special operations. A conventional ground invasion decision is deferred. Australian supply stays stressed but manageable if replacement cargoes arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. The 12\u201324 month consequence scenario is avoided, though short-term fuel and food price pressure persists for 3\u20136 months regardless.",
       "mostDangerousCourse": "Ground operations are authorised \u2014 triggered by a failed Hormuz ultimatum, an Iranian strike on a US asset requiring a ground response, or an IDF request for US infantry support. From that decision, the 12\u201324 month Australian impact horizon activates immediately. Reserve releases and rerouted cargoes become insufficient within 4\u20136 weeks. Rationing moves from contingency to active policy.",
@@ -4487,7 +4630,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T19:44:03Z",
+    "updatedAt": "2026-04-05T20:40:28Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -4880,7 +5023,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T19:44:03Z",
+    "updatedAt": "2026-04-05T20:40:28Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
@@ -4969,7 +5112,7 @@
         "label": "Geopolitical Tension",
         "emoji": "\u2694\ufe0f",
         "color": "#c084fc",
-        "current": -1.25,
+        "current": -1.24,
         "trend": "deteriorating",
         "series": [
           {
@@ -5039,8 +5182,8 @@
           },
           {
             "date": "2026-04-05",
-            "score": -1.25,
-            "count": 65
+            "score": -1.24,
+            "count": 69
           }
         ]
       },
@@ -5209,7 +5352,7 @@
         "label": "Australian Exposure",
         "emoji": "\ud83c\udde6\ud83c\uddfa",
         "color": "#00e87a",
-        "current": 0.02,
+        "current": 0.04,
         "trend": "stable",
         "series": [
           {
@@ -5274,13 +5417,13 @@
           },
           {
             "date": "2026-04-04",
-            "score": 0.04,
+            "score": 0.05,
             "count": 16
           },
           {
             "date": "2026-04-05",
-            "score": 0.02,
-            "count": 9
+            "score": 0.04,
+            "count": 10
           }
         ]
       }
