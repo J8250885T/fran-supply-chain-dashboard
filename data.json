@@ -1,33 +1,34 @@
 {
-  "lastUpdated": "2026-04-05T12:19:09Z",
+  "lastUpdated": "2026-04-05T12:55:03Z",
   "warAlert": {
-    "timestamp": "2026-04-05T12:19:09Z",
+    "timestamp": "2026-04-05T12:55:03Z",
     "fuelImpact": [
-      "2026-04-05 US special forces ground raid inside Iran \u2014 WSO recovered after heavy firefight, two Black Hawks hit by small arms fire [EADaily] [HIGH]",
-      "2026-04-05 Total US ground presence in region reaches ~50,000 \u2014 analysts assess ground invasion viability [Eurasia Review] [MEDIUM]",
-      "2026-04-05 Singapore: oil price spikes worsen as Iran war enters second month; petrochem force majeure confirmed [The Straits Times] [MEDIUM]",
-      "2026-04-05 Japan should lead efforts toward U.S.-Iran ceasefire [Japan Times] [MEDIUM]",
-      "2026-04-05 U.S. rescues airman as Trump and Israel pressure Iran ahead of deadline [Japan Times] [MEDIUM]",
-      "2026-04-05 Trump\u2019s victory rhetoric undercut by downed U.S. jet in Iran war [Japan Times] [MEDIUM]"
+      "2026-04-05 Fuel reservoir hit at Russia's Primorsk, NORSI refinery on fire after drone attacks [Channel NewsAsia (CNA)] [MEDIUM]",
+      "2026-04-05 Commandos probed deep into Iran to rescue downed airman: US media [Channel NewsAsia (CNA)] [MEDIUM]",
+      "2026-04-05 Body found off Indonesia believed to be missing person from collision between vessels near Singapore's Southern Islands [Channel NewsAsia (CNA)] [MEDIUM]",
+      "2026-04-05 On Easter, Pope Leo urges world leaders to end wars, renounce conquest [Channel NewsAsia (CNA)] [MEDIUM]",
+      "2026-04-05 Iran military says destroyed US aircraft involved in search for airman [Channel NewsAsia (CNA)] [MEDIUM]",
+      "2026-04-05 US rescues airman from Iran as Trump, Israel ratchet up pressure [Channel NewsAsia (CNA)] [MEDIUM]"
     ],
     "foodImpact": [
       "2026-04-05 Even if the Strait of Hormuz opened tomorrow, it could take months for fuel prices to come down [Sydney Morning Herald / The Age] [MEDIUM]",
+      "2026-04-03 Wake-up call: how Telstra\u2019s \u2018unreasonable\u2019 price rises may cause customers to hang up [The Guardian Australia] [MEDIUM]",
       "2026-04-03 Guardian visual guide: Hormuz blockade disrupting Gulf fertiliser/urea exports; buyers waiting it out; supply bad but not catastrophic yet \u2014 worst case if conflict extends [The Guardian] [MEDIUM]",
       "2026-04-03 FAO: World food prices rise to 6-month high; if Iran war exceeds 40 days and input costs stay high, farmers may reduce fertiliser use, plant less, switch crops \u2014 threatening 2026/27 supply [Reuters] [HIGH]"
     ],
     "australiaRisk": "HIGH",
     "watch": [
+      "2026-04-05 Nearly 100 NSW service stations fined $1,100 each over misleading petrol prices amid fuel shortage crackdown [The Guardian Australia] [MEDIUM]",
+      "2026-04-05 Asian countries assure Australia \u2018normal supply\u2019 of fuel will continue as Albanese focuses on averting shortages [The Guardian Australia] [MEDIUM]",
       "2026-04-05 Asian leaders assure Australia normal supply of fuel will continue; fuel now sourced from US, Mexico as Albanese diversifies supply chains [The Guardian] [HIGH]",
-      "2026-04-05 Motorists encouraged to dob in servos as 93 locations fined for price gouging [9News Australia] [MEDIUM]",
-      "2026-04-05 Australians find joy amid global uncertainty in Easter celebrations [ABC News Australia] [MEDIUM]",
-      "2026-04-05 Japan assures Australia will get 'normal supply' of fuel [ABC News Australia] [MEDIUM]"
+      "2026-04-05 Motorists encouraged to dob in servos as 93 locations fined for price gouging [9News Australia] [MEDIUM]"
     ]
   },
   "servoOutages": {
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T12:19:09Z",
+    "updated": "2026-04-05T12:55:03Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,8 +1168,411 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T12:19:09Z",
+  "dbLastUpdated": "2026-04-05T12:55:03Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Fuel reservoir hit at Russia's Primorsk, NORSI refinery on fire after drone attacks",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/ukraine-war-russia-oil-reservoir-refinery-6037536",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:53Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Commandos probed deep into Iran to rescue downed airman: US media",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-war-us-rescue-f15-airman-commando-6037521",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Body found off Indonesia believed to be missing person from collision between vessels near Singapore's Southern Islands",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/singapore/southern-islands-man-missing-body-found-indonesia-6023051",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:53Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "On Easter, Pope Leo urges world leaders to end wars, renounce conquest",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/pope-leo-easter-message-end-war-6037471",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran military says destroyed US aircraft involved in search for airman",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-us-aircraft-destroyed-black-hawk-6037446",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US rescues airman from Iran as Trump, Israel ratchet up pressure",
+      "source": "Channel NewsAsia (CNA)",
+      "sourceUrl": "https://www.channelnewsasia.com/world/iran-war-f15-rescue-airman-pilot-trump-6037286",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:53Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Pope Leo calls for peace, dialogue amid Ukraine, Iran wars in Easter mass",
+      "source": "South China Morning Post",
+      "sourceUrl": "https://www.scmp.com/news/world/europe/article/3349090/pope-leo-calls-peace-dialogue-amid-ukraine-iran-wars-easter-mass?utm_source=rss_feed",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:52Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "UAE, Bahrain and Kuwait lose water, energy infrastructure to Iran strikes",
+      "source": "South China Morning Post",
+      "sourceUrl": "https://www.scmp.com/news/world/middle-east/article/3349084/uae-bahrain-and-kuwait-lose-water-energy-infrastructure-iran-strikes?utm_source=rss_feed",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:52Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Pakistan drastically hikes fuel prices despite mediator role in Iran war",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/pakistan-drastically-hikes-fuel-prices-despite-mediator-role-in-iran-war",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:50Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Data center security must change after Iran attacks: Microsoft president",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/editor-s-picks/interview/data-center-security-must-change-after-iran-attacks-microsoft-president",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:50Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump's reckless Iran war is cascading across the Indo-Pacific",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/opinion/trump-s-reckless-iran-war-is-cascading-across-the-indo-pacific",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:50Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Chinese coal miners eye comeback as Iran war shakes energy market",
+      "source": "Nikkei Asia",
+      "sourceUrl": "https://asia.nikkei.com/spotlight/iran-tensions/iran-war/chinese-coal-miners-eye-comeback-as-iran-war-shakes-energy-market",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:50Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Nearly 100 NSW service stations fined $1,100 each over misleading petrol prices amid fuel shortage crackdown",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/05/nearly-100-nsw-service-stations-face-fines-over-misleading-petrol-prices-amid-fuel-shortage-crackdown",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:49Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "australia",
+      "headline": "Asian countries assure Australia \u2018normal supply\u2019 of fuel will continue as Albanese focuses on averting shortages",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/05/asian-leaders-assure-australia-normal-supply-of-fuel-will-continue-as-albanese-focuses-on-averting-shortages",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:49Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran\u2019s ex-FM Zarif proposes peace roadmap; Gulf points at erosion of trust",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/irans-former-fm-zarif-proposes-peace-roadmap-gulf-states-voice-exclusion?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Oman, Iran discuss smooth transit in Strait of Hormuz, Muscat says",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/oman-iran-discuss-smooth-transit-in-the-strait-of-hormuz-muscat-says?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US pilot from downed F-15E plane rescued in Iran: What we know",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/us-pilot-from-downed-f-15-plane-rescued-in-iran-what-we-know?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Footage shows Israeli military dog attacking Palestinian man inside mosque",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/footage-shows-idf-military-dog-attacking-palestinian-man-inside-mosque?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "shipping",
+      "headline": "Ukraine hits port in Russia\u2019s Primorsk, oil refinery in Nizhny Novgorod",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/drone-attacks-hit-russian-oil-infrastructure-leak-and-fires-reported?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#4a9eff",
+      "label": "SHIPPING"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Kuwait\u2019s power, water plants damaged as Iran keeps attacking Gulf states",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/kuwait-says-power-water-facilities-hit-by-iran-as-gulf-attacks-continue?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Israel\u2019s attack on UNRWA is central to its genocide of the Palestinians",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/opinions/2026/4/5/israels-attack-on-unrwa-is-central-to-its-genocide-of-the-palestinians?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Thousands rally in Iraq against \u2018senseless\u2019 US-Israel war on Iran",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/gallery/2026/4/5/thousands-rally-in-iraq-against-us-israeli-regional-aggression?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Trump seeks to end the war without it becoming \u2018an abject failure\u2019",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/quotable/2026/4/5/trump-seeks-to-end-the-war-without-it-becoming-an-abject?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Under Israeli restrictions, Palestinian Christians mark quiet Holy Week",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/features/2026/4/5/under-israeli-restrictions-palestinian-christians-mark-quiet-holy-week?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Iran war: What is happening on day 37 of US-Israeli attacks?",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/iran-war-what-is-happening-on-day-37-of-us-israeli-attacks?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Yemen\u2019s Houthis claim cluster missile attack on Israel\u2019s Ben Gurion airport",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/video/newsfeed/2026/4/5/yemens-houthis-claim-cluster-missile-attack-on-israels-ben-gurion-airport?traffic_source=rss",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "\u2018Miraculous\u2019: US rescues second pilot downed in Iran, Trump confirms",
+      "source": "Al Jazeera",
+      "sourceUrl": "https://www.aljazeera.com/news/2026/4/5/us-rescues-airman-whose-f-15-was-downed-in-iran-trump-confirms?traffic_source=rss",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T12:52:48Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US rescues second fighter jet airman shot down over Iran",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/764a9cda-eda0-4332-a4ce-6a26afaf7597",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:47Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Countries must not hoard fuel during Iran war, warns IEA",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/9e47e3b8-fae1-4c1c-b79c-22dda42bc2b1",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T12:52:47Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Military briefing: How Iran keeps firing missiles under bombardment",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/bfa38b06-2877-48d2-857b-7f90d405159a",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:47Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Nelson Peltz\u2019s bidding war highlights $25bn wave of asset manager consolidation",
+      "source": "Financial Times",
+      "sourceUrl": "https://www.ft.com/content/e51d9d8f-ffaa-480e-b763-350ebace12c8",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:47Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
     {
       "dtg": "2026-04-05",
       "domain": "geopolitical",
@@ -1977,6 +2381,19 @@
     },
     {
       "dtg": "2026-04-03",
+      "domain": "food",
+      "headline": "Wake-up call: how Telstra\u2019s \u2018unreasonable\u2019 price rises may cause customers to hang up",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/business/2026/apr/04/telstra-price-rises-changes-starter-plan",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:49Z",
+      "sent": false,
+      "color": "#ffb020",
+      "label": "FOOD"
+    },
+    {
+      "dtg": "2026-04-03",
       "domain": "fuel",
       "headline": "Air China, Cathay Pacific among carriers raising fares as Middle East war pushes oil past $100 a barrel",
       "source": "VnExpress International",
@@ -2666,6 +3083,32 @@
     },
     {
       "dtg": "2026-04-01",
+      "domain": "australia",
+      "headline": "Australia\u2019s land value has gone through the roof. Where does that leave young people who want to buy a home? | Greg Jericho",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/business/grogonomics/2026/apr/02/australia-land-grab-young-people-little-hope-buying-home",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:49Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-01",
+      "domain": "australia",
+      "headline": "Keep calm, but here comes the pain. Albanese\u2019s address presents Australians with a mixed message",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/australia-news/2026/apr/01/keep-calm-but-here-comes-the-pain-albaneses-address-presents-australians-with-a-mixed-message",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:49Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
+    },
+    {
+      "dtg": "2026-04-01",
       "domain": "fuel",
       "headline": "IEA Birol: April will be much worse than March \u2014 pre-war cargo buffers depleted; oil supply crunch will worsen",
       "source": "CNBC",
@@ -2728,6 +3171,19 @@
       "sent": true,
       "color": "#ff3b3b",
       "label": "FUEL"
+    },
+    {
+      "dtg": "2026-03-31",
+      "domain": "australia",
+      "headline": "Israel's ambassador defends investigation into death of Australian aid worker Zomi Frankcom - video",
+      "source": "The Guardian Australia",
+      "sourceUrl": "https://www.theguardian.com/world/video/2026/mar/31/israels-ambassador-defends-investigation-into-death-of-australian-aid-worker-zomi-frankcom-video",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T12:52:49Z",
+      "sent": false,
+      "color": "#00e87a",
+      "label": "AUSTRALIA"
     },
     {
       "dtg": "2026-03-31",
@@ -3041,9 +3497,9 @@
     "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T08:39:34Z",
-    "cron": "war-fuel-food",
-    "summary": "US ground raid inside Iran confirmed; 50K US troops in region; UK reinforcing; Mahshahr petrochemical zone struck; invasion phase now active"
+    "sentAt": "2026-04-05T12:54:05Z",
+    "cron": "fran_ingest",
+    "summary": "Ingest run: 0 new events from 35 sources"
   },
   "reviewPanels": {
     "feed": {
@@ -3402,7 +3858,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T12:19:09Z",
+    "updatedAt": "2026-04-05T12:55:03Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -3795,7 +4251,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T12:19:09Z",
+    "updatedAt": "2026-04-05T12:55:03Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
@@ -3804,7 +4260,7 @@
         "label": "Fuel Supply Risk",
         "emoji": "\ud83d\udee2\ufe0f",
         "color": "#ff3b3b",
-        "current": -1.35,
+        "current": -1.51,
         "trend": "stable",
         "series": [
           {
@@ -3869,13 +4325,13 @@
           },
           {
             "date": "2026-04-04",
-            "score": -1.15,
+            "score": -1.25,
             "count": 7
           },
           {
             "date": "2026-04-05",
-            "score": -1.35,
-            "count": 7
+            "score": -1.51,
+            "count": 8
           }
         ]
       },
@@ -3884,7 +4340,7 @@
         "label": "Geopolitical Tension",
         "emoji": "\u2694\ufe0f",
         "color": "#c084fc",
-        "current": -1.14,
+        "current": -1.16,
         "trend": "deteriorating",
         "series": [
           {
@@ -3949,13 +4405,13 @@
           },
           {
             "date": "2026-04-04",
-            "score": -0.95,
+            "score": -0.96,
             "count": 10
           },
           {
             "date": "2026-04-05",
-            "score": -1.14,
-            "count": 12
+            "score": -1.16,
+            "count": 38
           }
         ]
       },
@@ -3964,7 +4420,7 @@
         "label": "Shipping Route Risk",
         "emoji": "\ud83d\udea2",
         "color": "#4a9eff",
-        "current": -2.0,
+        "current": -1.53,
         "trend": "deteriorating",
         "series": [
           {
@@ -4029,13 +4485,13 @@
           },
           {
             "date": "2026-04-04",
-            "score": -0.89,
+            "score": -0.58,
             "count": 3
           },
           {
             "date": "2026-04-05",
-            "score": -2.0,
-            "count": 3
+            "score": -1.53,
+            "count": 5
           }
         ]
       },
@@ -4099,17 +4555,17 @@
           },
           {
             "date": "2026-04-02",
-            "score": -6.5,
+            "score": -5.0,
             "count": 0
           },
           {
             "date": "2026-04-03",
-            "score": -6.5,
-            "count": 2
+            "score": -5.0,
+            "count": 3
           },
           {
             "date": "2026-04-04",
-            "score": -3.25,
+            "score": -2.5,
             "count": 0
           },
           {
@@ -4124,7 +4580,7 @@
         "label": "Australian Exposure",
         "emoji": "\ud83c\udde6\ud83c\uddfa",
         "color": "#00e87a",
-        "current": -0.12,
+        "current": -0.15,
         "trend": "stable",
         "series": [
           {
@@ -4170,12 +4626,12 @@
           {
             "date": "2026-03-31",
             "score": -1.0,
-            "count": 1
+            "count": 2
           },
           {
             "date": "2026-04-01",
             "score": 0.17,
-            "count": 1
+            "count": 3
           },
           {
             "date": "2026-04-02",
@@ -4189,13 +4645,13 @@
           },
           {
             "date": "2026-04-04",
-            "score": -0.06,
+            "score": -0.07,
             "count": 13
           },
           {
             "date": "2026-04-05",
-            "score": -0.12,
-            "count": 6
+            "score": -0.15,
+            "count": 8
           }
         ]
       }
