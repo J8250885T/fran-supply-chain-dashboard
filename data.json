@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T02:40:26Z",
+  "lastUpdated": "2026-04-05T06:49:09Z",
   "warAlert": {
-    "timestamp": "2026-04-05T02:40:26Z",
+    "timestamp": "2026-04-05T06:49:09Z",
     "fuelImpact": [
       "2026-04-05 Albanese: Australia will NOT send ground troops to Iran \u2014 purely defensive posture. On 10 March: 85 ADF personnel + Boeing E-7 Wedgetail + AMRAAM missiles deployed to UAE to defend Gulf states and ADF bases at UAE's request. Albanese government supports US-Israel effort but limits involvement to defensive. [Wikipedia] [HIGH]",
       "2026-04-05 Iran's Hormuz 'Toll Booth': Iranian-approved route through territorial waters (Qeshm-Larak passage) active; Japanese co-owned tanker + 3 others crossed via southern alternative route April 3; 20,000 seafarers still stranded [Manila Times] [HIGH]",
@@ -26,7 +26,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T02:40:26Z",
+    "updated": "2026-04-05T06:49:09Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -221,9 +221,9 @@
     }
   },
   "reserves": {
-    "diesel": 25,
-    "petrol": 27,
-    "jetFuel": 26,
+    "diesel": 29,
+    "petrol": 39,
+    "jetFuel": 30,
     "rationingRedLine": 10,
     "governmentActions": [
       "Excise halved (-26.3c/L from Apr 1)",
@@ -1166,7 +1166,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T02:40:26Z",
+  "dbLastUpdated": "2026-04-05T06:49:09Z",
   "dbEvents": [
     {
       "dtg": "2026-04-05",
@@ -2500,9 +2500,9 @@
     "hormuz_status": "CLOSED \u2014 IRGC blockade + kinetic attacks on vessels",
     "bab_el_mandeb_status": "THREATENED \u2014 Houthis active, ~30 tankers near Saudi Yanbu",
     "malacca_status": "OPEN",
-    "diesel_reserves": "25-32 days (at CRITICAL threshold)",
-    "petrol_reserves": "27-36 days",
-    "jet_fuel_reserves": "26-29 days",
+    "diesel_reserves": "29 days (at CRITICAL threshold)",
+    "petrol_reserves": "39 days",
+    "jet_fuel_reserves": "30 days",
     "supply_ceiling": "mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless",
     "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
@@ -2868,7 +2868,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T02:40:26Z",
+    "updatedAt": "2026-04-05T06:49:09Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -2876,15 +2876,15 @@
         "R": 0.46,
         "S": 0.69,
         "M": 0.65,
-        "D": 0.25,
-        "P": 0.15,
-        "J": 0.2,
+        "D": 0.05,
+        "P": 0.0,
+        "J": 0.0,
         "routeStress": 0.86,
         "avgRefineryCapacity": 66.2,
         "servoOutages": 687,
-        "dieselDays": 25,
-        "petrolDays": 27,
-        "jetFuelDays": 26,
+        "dieselDays": 29,
+        "petrolDays": 39,
+        "jetFuelDays": 30,
         "regionalPriceIncrease": 9.8,
         "troopPhase": "PRE-DEPLOYMENT",
         "hormuzStatus": "closed"
@@ -2929,22 +2929,22 @@
           "summary": "Mobility shifts into managed constraint: freight first, patchy regional fuel access, reduced discretionary travel, and persistent aviation disruption.",
           "scores": {
             "freight": {
-              "value": 0.49,
+              "value": 0.42,
               "label": "Constrained",
               "band": "yellow"
             },
             "household": {
-              "value": 0.4,
+              "value": 0.34,
               "label": "Constrained",
               "band": "yellow"
             },
             "aviation": {
-              "value": 0.43,
+              "value": 0.34,
               "label": "Constrained",
               "band": "yellow"
             },
             "rationing": {
-              "value": 0.36,
+              "value": 0.26,
               "label": "Constrained",
               "band": "yellow"
             }
@@ -3015,22 +3015,22 @@
           "summary": "Mobility risk becomes systemic. Freight gets protected, aviation shrinks, regional access degrades, and rationing becomes a live policy option.",
           "scores": {
             "freight": {
-              "value": 0.55,
-              "label": "Restricted",
-              "band": "amber"
+              "value": 0.48,
+              "label": "Constrained",
+              "band": "yellow"
             },
             "household": {
-              "value": 0.53,
-              "label": "Restricted",
-              "band": "amber"
+              "value": 0.47,
+              "label": "Constrained",
+              "band": "yellow"
             },
             "aviation": {
-              "value": 0.6,
+              "value": 0.51,
               "label": "Restricted",
               "band": "amber"
             },
             "rationing": {
-              "value": 0.42,
+              "value": 0.32,
               "label": "Constrained",
               "band": "yellow"
             }
@@ -3101,24 +3101,24 @@
           "summary": "Mobility remains stressed but functional. Expect delays, higher prices, and selective conservation rather than formal restrictions.",
           "scores": {
             "freight": {
-              "value": 0.45,
+              "value": 0.38,
               "label": "Constrained",
               "band": "yellow"
             },
             "household": {
-              "value": 0.33,
+              "value": 0.27,
               "label": "Constrained",
               "band": "yellow"
             },
             "aviation": {
-              "value": 0.35,
+              "value": 0.26,
               "label": "Constrained",
               "band": "yellow"
             },
             "rationing": {
-              "value": 0.32,
-              "label": "Constrained",
-              "band": "yellow"
+              "value": 0.22,
+              "label": "Normal pressure",
+              "band": "green"
             }
           },
           "consequences": [
@@ -3129,8 +3129,8 @@
           ],
           "failureOrder": [
             "Regional freight reliability",
-            "Domestic aviation and airfreight",
             "Household/private vehicle mobility",
+            "Domestic aviation and airfreight",
             "Formal rationing controls"
           ]
         },
