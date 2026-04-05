@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-05T07:43:49Z",
+  "lastUpdated": "2026-04-05T08:39:40Z",
   "warAlert": {
-    "timestamp": "2026-04-05T07:43:49Z",
+    "timestamp": "2026-04-05T08:39:40Z",
     "fuelImpact": [
+      "2026-04-05 US special forces ground raid inside Iran \u2014 WSO recovered after heavy firefight, two Black Hawks hit by small arms fire [EADaily] [HIGH]",
+      "2026-04-05 Total US ground presence in region reaches ~50,000 \u2014 analysts assess ground invasion viability [Eurasia Review] [MEDIUM]",
       "2026-04-05 Singapore: oil price spikes worsen as Iran war enters second month; petrochem force majeure confirmed [The Straits Times] [MEDIUM]",
       "2026-04-05 Japan should lead efforts toward U.S.-Iran ceasefire [Japan Times] [MEDIUM]",
       "2026-04-05 U.S. rescues airman as Trump and Israel pressure Iran ahead of deadline [Japan Times] [MEDIUM]",
-      "2026-04-05 Trump\u2019s victory rhetoric undercut by downed U.S. jet in Iran war [Japan Times] [MEDIUM]",
-      "2026-04-05 Pharmaceutical logistics in demand as war rattles supply chains [Japan Times] [MEDIUM]",
-      "2026-04-05 Gasoline, diapers and drinks: Japan faces wide-ranging impact amid concern over oil [Japan Times] [MEDIUM]"
+      "2026-04-05 Trump\u2019s victory rhetoric undercut by downed U.S. jet in Iran war [Japan Times] [MEDIUM]"
     ],
     "foodImpact": [
       "2026-04-05 Even if the Strait of Hormuz opened tomorrow, it could take months for fuel prices to come down [Sydney Morning Herald / The Age] [MEDIUM]",
@@ -27,7 +27,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T07:43:49Z",
+    "updated": "2026-04-05T08:39:40Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1167,8 +1167,34 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T07:43:49Z",
+  "dbLastUpdated": "2026-04-05T08:39:40Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "US special forces ground raid inside Iran \u2014 WSO recovered after heavy firefight, two Black Hawks hit by small arms fire",
+      "source": "EADaily",
+      "sourceUrl": "https://eadaily.com/en/news/2026/04/05/american-special-forces-invaded-iran-and-joined-the-battle-military-correspondents",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T08:38:45Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-05",
+      "domain": "geopolitical",
+      "headline": "Total US ground presence in region reaches ~50,000 \u2014 analysts assess ground invasion viability",
+      "source": "Eurasia Review",
+      "sourceUrl": "https://www.eurasiareview.com/05042026-assessing-the-viability-of-potential-us-ground-operations-in-iran-analysis/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T08:38:45Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
     {
       "dtg": "2026-04-05",
       "domain": "fuel",
@@ -1516,6 +1542,32 @@
       "impact": "",
       "confidence": "MEDIUM",
       "addedAt": "2026-04-05T01:43:06Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "geopolitical",
+      "headline": "UK deploying extra troops + air defence systems to Middle East \u2014 total UK personnel in Gulf/Cyprus ~1,000",
+      "source": "BBC",
+      "sourceUrl": "https://www.bbc.com/news/articles/c7vq76g45rvo",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T08:38:45Z",
+      "sent": false,
+      "color": "#c084fc",
+      "label": "GEO"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Israel strikes Mahshahr petrochemical zone \u2014 Fajr 1+2 utility plants destroyed, cutting gas/power/water to 50+ petrochem plants",
+      "source": "NYT",
+      "sourceUrl": "https://www.nytimes.com/2026/04/04/world/middleeast/israel-strikes-mahshahr-iran-oil.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T08:38:36Z",
       "sent": false,
       "color": "#ff3b3b",
       "label": "FUEL"
@@ -2989,9 +3041,9 @@
     "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T07:41:06Z",
-    "cron": "servo-tracker",
-    "summary": "No material change: FuelRadar ~687 stations dry, down from ~787 on Apr 3; improving trend held"
+    "sentAt": "2026-04-05T08:39:34Z",
+    "cron": "war-fuel-food",
+    "summary": "US ground raid inside Iran confirmed; 50K US troops in region; UK reinforcing; Mahshahr petrochemical zone struck; invasion phase now active"
   },
   "reviewPanels": {
     "feed": {
@@ -3350,7 +3402,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T07:43:49Z",
+    "updatedAt": "2026-04-05T08:39:40Z",
     "formula": {
       "inputs": {
         "T": 0.1,
