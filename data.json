@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-04-05T01:40:42Z",
+  "lastUpdated": "2026-04-05T01:43:48Z",
   "warAlert": {
-    "timestamp": "2026-04-05T01:40:42Z",
+    "timestamp": "2026-04-05T01:43:48Z",
     "fuelImpact": [
+      "2026-04-05 Singapore refineries maintain stable operations but declaring force majeure on petrochemicals; Japan holds 254 days oil reserves, Korea 208 days [Wikipedia] [MEDIUM]",
+      "2026-04-04 Petronas cuts downstream planning horizon from 3 months to 45 days due to global energy supply uncertainty [Malay Mail] [HIGH]",
+      "2026-04-04 Ukraine allies ask Kyiv to pause drone attacks on Russian oil refineries to ease global fuel price surge from Iran war [Kyiv Independent] [MEDIUM]",
+      "2026-04-04 SE Asia fuel crisis: Vietnam bans fuel exports, Thailand bans jet fuel exports, Singapore and Indonesia petrochemical companies declare force majeure [Yahoo News Malaysia] [HIGH]",
       "2026-04-04 Australia deployed SAS unit to Al Minhad Air Base near Dubai; 90 ADF personnel in region for diplomatic evacuation ops \u2014 Marles denies combat role [Pravda Australia] [MEDIUM]",
-      "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]",
-      "2026-04-04 US considering 10,000 additional troops deployment to region; Marines/82nd Airborne scenario for nuclear facility ground operations [Signals CV] [MEDIUM]",
-      "2026-04-03 40+ nations convene virtually Thu Apr 2 to launch multinational coalition dedicated to securing free passage through Strait of Hormuz [QuantoSei News] [MEDIUM]",
-      "2026-04-03 South Korea secures ~50 million barrels alternative crude; export caps + demand cuts in force amid Hormuz closure [Korea Pro] [HIGH]",
-      "2026-04-03 USS Gerald R. Ford departs Croatia after fire repairs \u2014 destination undisclosed; IDF 70+ strikes on Iran in 24hrs including Tehran [Al Jazeera] [HIGH]"
+      "2026-04-04 Early Apr 4: unleaded A$2.23-$2.44/litre in capitals; diesel near/under A$3/litre in many areas after fuel excise cut relief; some stations briefly dipped below A$2 for unleaded [IBT Australia] [MEDIUM]"
     ],
     "foodImpact": [
       "2026-04-03 Guardian visual guide: Hormuz blockade disrupting Gulf fertiliser/urea exports; buyers waiting it out; supply bad but not catastrophic yet \u2014 worst case if conflict extends [The Guardian] [MEDIUM]",
@@ -26,7 +26,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T01:40:42Z",
+    "updated": "2026-04-05T01:43:48Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1166,8 +1166,60 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T01:40:42Z",
+  "dbLastUpdated": "2026-04-05T01:43:48Z",
   "dbEvents": [
+    {
+      "dtg": "2026-04-05",
+      "domain": "fuel",
+      "headline": "Singapore refineries maintain stable operations but declaring force majeure on petrochemicals; Japan holds 254 days oil reserves, Korea 208 days",
+      "source": "Wikipedia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/2026_Iran_war_fuel_crisis",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T01:43:06Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Petronas cuts downstream planning horizon from 3 months to 45 days due to global energy supply uncertainty",
+      "source": "Malay Mail",
+      "sourceUrl": "https://www.malaymail.com/news/money/2026/04/04/petronas-cuts-planning-horizon-to-45-days-to-tackle-energy-supply-risks-says-president/215004",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T01:43:06Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "Ukraine allies ask Kyiv to pause drone attacks on Russian oil refineries to ease global fuel price surge from Iran war",
+      "source": "Kyiv Independent",
+      "sourceUrl": "https://kyivindependent.com/ukraine-asked-to-ease-attacks-on-russian-oil-refineries-amid-iran-war-price-surge-budanov-says/",
+      "impact": "",
+      "confidence": "MEDIUM",
+      "addedAt": "2026-04-05T01:43:06Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
+    {
+      "dtg": "2026-04-04",
+      "domain": "fuel",
+      "headline": "SE Asia fuel crisis: Vietnam bans fuel exports, Thailand bans jet fuel exports, Singapore and Indonesia petrochemical companies declare force majeure",
+      "source": "Yahoo News Malaysia",
+      "sourceUrl": "https://malaysia.news.yahoo.com/war-iran-economic-shockwaves-southeast-004455195.html",
+      "impact": "",
+      "confidence": "HIGH",
+      "addedAt": "2026-04-05T01:43:06Z",
+      "sent": false,
+      "color": "#ff3b3b",
+      "label": "FUEL"
+    },
     {
       "dtg": "2026-04-04",
       "domain": "australia",
@@ -2312,9 +2364,9 @@
     "servo_outages": "~687 nationally (FuelRadar live, 05/04/2026 11:16am) \u2014 DOWN from ~787 on Apr 3; improving trend as Easter demand normalises"
   },
   "lastReport": {
-    "sentAt": "2026-04-05T01:40:42Z",
-    "cron": "servo-tracker",
-    "summary": "FuelRadar live: 687 stations affected (\u2193 from 787 on Apr 3); diesel outages halved to 162 nationally; improving trend confirmed"
+    "sentAt": "2026-04-05T01:43:45Z",
+    "cron": "asian-refinery",
+    "summary": "4 new events: Singapore petrochem force majeure, Malaysia net importer (45d planning horizon), Vietnam fuel export ban, Thailand jet fuel export ban; Thailand jet fuel ban + Malaysia net importer + Vietnam export ban narrow Australian import options for May-June"
   },
   "reviewPanels": {
     "feed": {
@@ -2673,7 +2725,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T01:40:42Z",
+    "updatedAt": "2026-04-05T01:43:48Z",
     "formula": {
       "inputs": {
         "T": 0.1,
