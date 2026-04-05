@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-05T13:51:09Z",
+  "lastUpdated": "2026-04-05T13:53:45Z",
   "warAlert": {
-    "timestamp": "2026-04-05T13:51:09Z",
+    "timestamp": "2026-04-05T13:53:45Z",
     "fuelImpact": [
       "2026-04-05 Iran attacks energy infrastructure across Gulf states [Channel NewsAsia (CNA)] [MEDIUM]",
       "2026-04-05 Trump threatens Iranian power plants, bridges in expletive-laden social media post [Channel NewsAsia (CNA)] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-05T13:51:09Z",
+    "updated": "2026-04-05T13:53:45Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -1168,7 +1168,7 @@
       }
     ]
   },
-  "dbLastUpdated": "2026-04-05T13:51:09Z",
+  "dbLastUpdated": "2026-04-05T13:53:45Z",
   "dbEvents": [
     {
       "dtg": "2026-04-05",
@@ -3621,7 +3621,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-05T13:51:09Z",
+      "updatedAt": "2026-04-05T13:53:45Z",
       "window": 7,
       "totalEvents": 168,
       "activeSources": 81,
@@ -3765,70 +3765,20 @@
       ]
     },
     "supply": {
-      "title": "Supply Chain Status \u2014 Four-Layer Assessment",
-      "updatedAt": "2026-04-05T13:51:09Z",
-      "keyStats": [
-        {
-          "label": "Diesel reserve",
-          "value": "29d",
-          "status": "AT THRESHOLD"
-        },
-        {
-          "label": "Petrol reserve",
-          "value": "39d",
-          "status": "ADEQUATE"
-        },
-        {
-          "label": "Jet fuel reserve",
-          "value": "30d",
-          "status": "ADEQUATE"
-        },
-        {
-          "label": "Stations dry",
-          "value": "687",
-          "status": "STRESSED"
-        }
-      ],
-      "layers": [
-        {
-          "name": "Chokepoints",
-          "status": "CLOSED",
-          "detail": "Hormuz CLOSED \u00b7 Bab el-Mandeb RESTRICTED \u00b7 Malacca OPEN",
-          "impact": "Hormuz closure blocks ~90% of Gulf crude reaching Asian refineries. Every additional week closed extends the Australian supply crisis by the same duration."
-        },
-        {
-          "name": "Asian Refineries",
-          "status": "STRESSED",
-          "detail": "Average utilisation 66% \u00b7 Southkorea 55% \u00b7 Singapore 60% \u00b7 Taiwan 70% \u00b7 Japan 80%",
-          "impact": "Australia sources over 90% of refined fuel from these refineries. At 66% average capacity, refined product volume is materially reduced from normal. Weakest link: southKorea at 55%."
-        },
-        {
-          "name": "Fleet & Shipments",
-          "status": "ACTIVE",
-          "detail": "5 vessels en route \u00b7 1 confirmed/arriving \u00b7 6 total tracked",
-          "impact": "Replacement cargoes from US and Europe via Cape of Good Hope are the primary supply buffer. Critical arrival window: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. Each vessel carries 1\u20133 days of national supply."
-        },
-        {
-          "name": "Domestic Retail",
-          "status": "STRESSED",
-          "detail": "687 stations dry nationally \u00b7 trend increasing",
-          "impact": "Station outages are the consumer-facing signal of wholesale stress. Heavy in regional NSW, QLD and WA where last-mile delivery networks are thinnest."
-        }
-      ],
-      "govNote": "3 emergency measures active: Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered. Diesel is 19 days above the 10-day rationing trigger. Government has used its immediate buffer tools \u2014 further escalation has no easy lever left.",
-      "summary": "Australia's fuel supply is supported by 5 replacement vessels en route from the US and Europe, rerouted via Cape of Good Hope (+14 days transit). Diesel stands at 29 days \u2014 19 days above the 10-day rationing trigger. Asian refineries are averaging 66% capacity, directly constraining the volume of refined product available to Australian importers. 687 service stations are dry nationally. The critical decision point is mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless: if incoming cargoes do not land before then, reserve drawdown accelerates past manageable thresholds.",
-      "mostLikelyCourse": "Replacement cargoes (5 vessels en route) arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless, stabilising diesel at 29 days and preventing a rationing trigger. Servo outages normalise as Easter demand pressure eases and distribution catches up. Asian refinery output stabilises at ~66% as operators work around Hormuz via alternative crude sources.",
-      "mostDangerousCourse": "One or more replacement cargoes are delayed, cancelled, or diverted to competing buyers. Diesel falls below the 10-day rationing trigger before the next cargo window opens. Concurrently, Asian refinery output drops below 56% as feedstock tightens further, eliminating any near-term recovery in import volume.",
+      "title": "Fuel Levels & Supply \u2014 Review",
+      "updatedAt": "2026-04-05T13:53:45Z",
+      "summary": "Australia is holding, but the margin is thin. Diesel sits at 29 days \u2014 only 19 days above the 10-day rationing trigger \u2014 making it the tightest and most critical reserve. Petrol (39 days) and jet fuel (30 days) provide more headroom but remain below normal comfortable levels. 687 service stations are dry nationally (increasing trend), concentrated in regional NSW, QLD, and WA where last-mile diesel distribution is thinnest. The supply system is being kept alive by 5 replacement vessels en route from the US and Europe \u2014 rerouted via Cape of Good Hope at significant cost and a 14-day transit premium. Asian refineries, which normally supply over 90% of Australia's refined fuel, are averaging 66% capacity due to Hormuz-driven feedstock constraints. The weakest link is Southkorea at 55%. All of this converges on a single critical threshold: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If incoming cargoes do not land before that date, the government has no remaining buffer tools \u2014 reserve releases and the excise cut have already been deployed. Three emergency measures are active (Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered), but these are one-time levers, not ongoing supply.",
+      "mostLikelyCourse": "5 replacement vessels arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless, keeping diesel above the 10-day rationing trigger. Easter demand normalises and servo outages ease as distribution catches up. Asian refinery output holds at ~66%, limiting recovery but preventing further deterioration. Supply remains stressed but rationing is avoided in the near term.",
+      "mostDangerousCourse": "One or more replacement cargoes slip, are diverted to competing buyers, or arrive after mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. Diesel falls below 10 days \u2014 the formal rationing trigger. Simultaneously, Southkorea or Singapore refinery output drops further, eliminating any prospect of near-term recovery from the Asian supply chain. Servo outages spread from regional to suburban areas before new imports can offset the drawdown.",
       "bullets": [
-        "Diesel at 29 days \u2014 19 days above the 10-day rationing trigger. Petrol at 39 days is more comfortable; jet fuel at 30 days requires monitoring.",
-        "687 stations nationally are dry (increasing trend). Regional and rural areas are hardest hit \u2014 diesel dependency for farming and freight leaves no substitution.",
-        "Asian refineries averaging 66% capacity. South Korea (55%) and Singapore (60%) are the critical supply nodes \u2014 watch for further force majeure declarations.",
-        "Critical supply ceiling: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If replacement cargoes from US/Europe slip beyond this date, government options narrow sharply."
+        "Diesel at 29d is 19 days above the 10-day rationing trigger \u2014 watch daily reserve drawdown rate as Easter demand normalises.",
+        "Asian refineries at 66% average capacity. Southkorea (55%) is the highest-risk node \u2014 any further force majeure declaration narrows the import window.",
+        "Critical date: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If the {len(en_route)} en-route vessels arrive on schedule, the immediate crisis is bridged. If they slip, government has no lever left to pull."
       ]
     },
     "markets": {
       "title": "Markets \u2014 Price Shock Assessment",
-      "updatedAt": "2026-04-05T13:51:09Z",
+      "updatedAt": "2026-04-05T13:53:45Z",
       "metroLevel": 7.2,
       "metroTier": "WARNING",
       "regLevel": 9.8,
@@ -3928,7 +3878,7 @@
     },
     "households": {
       "title": "Household Stress \u2014 Savings Runway & Cost Cascade",
-      "updatedAt": "2026-04-05T13:51:09Z",
+      "updatedAt": "2026-04-05T13:53:45Z",
       "minRunway": 1,
       "avgExtra": 679.0,
       "govExpiry": "2026-06-30",
@@ -3989,7 +3939,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Model Drivers & Scenario Probabilities",
-      "updatedAt": "2026-04-05T13:51:09Z",
+      "updatedAt": "2026-04-05T13:53:45Z",
       "scenarios": [
         {
           "id": "base",
@@ -4069,7 +4019,7 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Why It Matters",
-      "updatedAt": "2026-04-05T13:51:09Z",
+      "updatedAt": "2026-04-05T13:53:45Z",
       "summary": "Current disposition: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED. 12 units deployed, 6 en route. Troop build-up is tracked as the primary indicator of conflict duration \u2014 and duration is what determines whether Australia's fuel crisis is temporary or structural. Air strikes can be sustained indefinitely. A ground invasion cannot be quickly reversed. It means Hormuz stays closed for months, not weeks \u2014 Asian refineries stay feedstock-starved, import volumes stay suppressed, and government reserve releases run out before supply recovers. A confirmed ground war carries a 12\u201324 month impact horizon for Australia: diesel rationing in the first 3 months, food prices peaking at 30\u201340% above pre-war by month 6, and structural cost-of-living elevation persisting 12\u201318 months after hostilities end as Asian refinery capacity takes time to rebuild.",
       "mostLikelyCourse": "Current phase (PRE-DEPLOYMENT) holds \u2014 conflict remains aerial and special operations. A conventional ground invasion decision is deferred. Australian supply stays stressed but manageable if replacement cargoes arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. The 12\u201324 month consequence scenario is avoided, though short-term fuel and food price pressure persists for 3\u20136 months regardless.",
       "mostDangerousCourse": "Ground operations are authorised \u2014 triggered by a failed Hormuz ultimatum, an Iranian strike on a US asset requiring a ground response, or an IDF request for US infantry support. From that decision, the 12\u201324 month Australian impact horizon activates immediately. Reserve releases and rerouted cargoes become insufficient within 4\u20136 weeks. Rationing moves from contingency to active policy.",
@@ -4363,7 +4313,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-05T13:51:09Z",
+    "updatedAt": "2026-04-05T13:53:45Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -4756,7 +4706,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-05T13:51:09Z",
+    "updatedAt": "2026-04-05T13:53:45Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [

@@ -1208,45 +1208,7 @@ function renderSupplyReview(fr){
   var el=document.getElementById('review-content-supply');
   if(!el||!fr) return;
   var html='';
-
-  // Key stats row
-  if(fr.keyStats&&fr.keyStats.length){
-    html+='<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px">';
-    fr.keyStats.forEach(function(s){
-      var col=s.status==='CRITICAL'||s.status==='STRESSED'?'var(--red)':s.status==='AT THRESHOLD'||s.status==='TIGHT'?'var(--amber)':'var(--green)';
-      html+='<div style="background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center">';
-      html+='<div style="font-size:18px;font-weight:700;color:'+col+'">'+escHtml(s.value)+'</div>';
-      html+='<div style="font-size:8px;color:var(--text-muted);margin-top:2px">'+escHtml(s.label)+'</div>';
-      html+=statusPill(s.status);
-      html+='</div>';
-    });
-    html+='</div>';
-  }
-
   html+=reviewHeader(fr);
-
-  // Four-layer breakdown
-  if(fr.layers&&fr.layers.length){
-    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px">Four-Layer Supply Chain Assessment</div>';
-    fr.layers.forEach(function(l){
-      var sc=l.status==='CLOSED'||l.status==='STRESSED'?'var(--red)':l.status==='RESTRICTED'||l.status==='TIGHT'?'var(--amber)':'var(--green)';
-      html+='<div style="margin-bottom:8px;border:1px solid var(--border);border-left:3px solid '+sc+';border-radius:6px;overflow:hidden">';
-      html+='<div style="padding:7px 10px;background:rgba(0,0,0,0.15);display:flex;align-items:center;gap:8px">';
-      html+='<span style="font-size:10px;font-weight:700;color:var(--text);flex:1">'+escHtml(l.name)+'</span>';
-      html+=statusPill(l.status);
-      html+='<span style="font-size:9px;color:var(--text-muted)">'+escHtml(l.detail)+'</span></div>';
-      html+='<div style="padding:7px 10px;font-size:10px;line-height:1.5;color:var(--text-muted)">'+escHtml(l.impact)+'</div>';
-      html+='</div>';
-    });
-  }
-
-  // Government buffer
-  if(fr.govNote){
-    html+='<div style="padding:9px 12px;margin-bottom:12px;background:rgba(74,158,255,0.06);border:1px solid rgba(74,158,255,0.2);border-radius:8px">';
-    html+='<div style="font-size:9px;font-weight:700;color:var(--blue);letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px">🏗️ Government Buffer</div>';
-    html+='<div style="font-size:10px;line-height:1.55;color:var(--text-dim)">'+escHtml(fr.govNote)+'</div></div>';
-  }
-
   html+=reviewMLMD(fr);
   html+=reviewBullets(fr,'Watch — Key Thresholds');
   el.innerHTML=html;
