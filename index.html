@@ -46,10 +46,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .nav-fade{position:absolute;top:0;bottom:0;width:40px;pointer-events:none;z-index:2;transition:opacity 0.2s}
 .nav-fade-right{right:0;background:linear-gradient(to right,transparent,var(--bg-primary) 80%)}
 .nav-fade-left{left:0;background:linear-gradient(to left,transparent,var(--bg-primary) 80%)}
-.nav-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;font-size:14px;color:var(--text-muted);pointer-events:none;animation:navPulse 1.5s ease-in-out infinite}
-.nav-arrow-right{right:6px}
-.nav-arrow-left{left:6px}
-@keyframes navPulse{0%,100%{opacity:0.4;transform:translateY(-50%) translateX(0)}50%{opacity:1;transform:translateY(-50%) translateX(3px)}}
+.nav-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;font-size:22px;color:#ffffff;pointer-events:none;animation:navPulse 1.2s ease-in-out infinite;text-shadow:0 0 8px rgba(255,255,255,0.6),0 0 16px rgba(255,255,255,0.3)}
+.nav-arrow-right{right:8px}
+.nav-arrow-left{left:8px}
+@keyframes navPulse{0%,100%{opacity:0.6;transform:translateY(-50%) translateX(0)}50%{opacity:1;transform:translateY(-50%) translateX(5px)}}
 .nav-tab{background:none;border:none;border-bottom:3px solid transparent;color:var(--text-muted);font:700 10px/1 var(--font);letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:all 0.15s;flex-shrink:0;border-radius:6px 6px 0 0}
 .nav-tab:hover{color:var(--text)}
 .nav-tab.active{color:var(--text);border-bottom-color:var(--amber)}
