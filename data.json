@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-06T01:14:45Z",
+  "lastUpdated": "2026-04-06T01:22:06Z",
   "warAlert": {
-    "timestamp": "2026-04-06T01:14:45Z",
+    "timestamp": "2026-04-06T01:22:06Z",
     "fuelImpact": [
       "2026-04-06 Bab el-Mandeb remains only viable oil route; ~30 tankers near Saudi Yanbu within Houthi strike range; Houthis awaiting Iranian signal to resume attacks if Hormuz control weakens [Wikipedia] [MEDIUM]",
       "2026-04-06 Iran rejects Trump's 48-hour ultimatum as 'stupid and nervous'; Trump extended energy plant destruction deadline to April 6 8PM ET; Iran warns of 'big surprise' in response [NDTV] [HIGH]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-06T01:14:45Z",
+    "updated": "2026-04-06T01:22:06Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -474,7 +474,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-04-06T01:14:45Z",
+    "lastUpdated": "2026-04-06T01:22:06Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -1298,7 +1298,7 @@
       "updatedAt": "2026-04-06T01:12:27Z"
     }
   },
-  "dbLastUpdated": "2026-04-06T01:14:45Z",
+  "dbLastUpdated": "2026-04-06T01:22:06Z",
   "dbEvents": [
     {
       "dtg": "2026-04-06",
@@ -4371,7 +4371,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-06T01:14:45Z",
+      "updatedAt": "2026-04-06T01:22:06Z",
       "window": 7,
       "totalEvents": 213,
       "activeSources": 91,
@@ -4516,7 +4516,7 @@
     },
     "supply": {
       "title": "Fuel Levels & Supply \u2014 Review",
-      "updatedAt": "2026-04-06T01:14:45Z",
+      "updatedAt": "2026-04-06T01:22:06Z",
       "summary": "Australia is holding, but the margin is thin. Diesel sits at 29 days \u2014 only 19 days above the 10-day rationing trigger \u2014 making it the tightest and most critical reserve. Petrol (39 days) and jet fuel (30 days) provide more headroom but remain below normal comfortable levels. 687 service stations are dry nationally (increasing trend), concentrated in regional NSW, QLD, and WA where last-mile diesel distribution is thinnest. The supply system is being kept alive by 5 replacement vessels en route from the US and Europe \u2014 rerouted via Cape of Good Hope at significant cost and a 14-day transit premium. Asian refineries, which normally supply over 90% of Australia's refined fuel, are averaging 66% capacity due to Hormuz-driven feedstock constraints. The weakest link is Southkorea at 55%. All of this converges on a single critical threshold: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If incoming cargoes do not land before that date, the government has no remaining buffer tools \u2014 reserve releases and the excise cut have already been deployed. Three emergency measures are active (Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered), but these are one-time levers, not ongoing supply.",
       "mostLikelyCourse": "5 replacement vessels arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless, keeping diesel above the 10-day rationing trigger. Easter demand normalises and servo outages ease as distribution catches up. Asian refinery output holds at ~66%, limiting recovery but preventing further deterioration. Supply remains stressed but rationing is avoided in the near term.",
       "mostDangerousCourse": "One or more replacement cargoes slip, are diverted to competing buyers, or arrive after mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. Diesel falls below 10 days \u2014 the formal rationing trigger. Simultaneously, Southkorea or Singapore refinery output drops further, eliminating any prospect of near-term recovery from the Asian supply chain. Servo outages spread from regional to suburban areas before new imports can offset the drawdown.",
@@ -4528,7 +4528,7 @@
     },
     "markets": {
       "title": "Markets \u2014 Price Shock Review",
-      "updatedAt": "2026-04-06T01:14:45Z",
+      "updatedAt": "2026-04-06T01:22:06Z",
       "summary": "The price shock is running ahead of where most Australians expect it to be. Metro price increase is at 7.8% (WARNING tier) \u2014 still 3.0 points below the projected peak of 10.8% by 2026-05-15. Regional price increase at 10.6% (EMERGENCY tier) is more severe, with 3 states in CRISIS (QLD,SA,NT) and 3 in EMERGENCY (NSW,VIC,WA). The dominant driver is Transport at 3.2 percentage points. The biggest item movers are LPG / Autogas (+51.3%), Diesel (pump) (+42.7%), and Domestic airfares (+42.7%). The worst is still ahead: the food and fertiliser cascade has not fully fed through to retail, and the excise cut masking pump prices expires in June.",
       "mostLikelyCourse": "Metro price increase climbs to the projected peak of 10.8% by 2026-05-15 as fuel and freight costs keep feeding through, then plateaus as supply stabilises. Regional price increase peaks at 14.5% by 2026-05-20. Pressure eases in the second half of 2026 if Hormuz reopens and freight costs normalise.",
       "mostDangerousCourse": "Price increase broadens beyond fuel and food into manufactured goods and services, pushing metro price increase into EMERGENCY tier ahead of projections. Second-round wage and cost pressures lock in before the peak \u2014 extending the inflation episode well beyond the conflict itself and compressing real incomes for 12+ months.",
@@ -4541,7 +4541,7 @@
     },
     "households": {
       "title": "Households \u2014 Stress Review",
-      "updatedAt": "2026-04-06T01:14:45Z",
+      "updatedAt": "2026-04-06T01:22:06Z",
       "summary": "The fuel and food price shock is hitting household budgets unevenly, but the common thread is that most Australians had already depleted their savings buffers during the 2022\u20132025 rate cycle before this crisis began. The most vulnerable cohort \u2014 Low Income Worker \u2014 has only 1 month(s) of liquid savings remaining against a A$430 monthly crisis cost increase. Across all tiers, the average monthly surcharge is A$679. The government's relief package (excise cut + reserve releases, A$4.75bn total) expires 2026-06-30. After that, households absorb the full cost increase without any fiscal buffer \u2014 and this coincides with the June\u2013July peak in food prices, when the fertiliser and freight cascade fully transmits to retail grocery prices. The most resilient cohort is Retiree (Super) with 45 months of runway, but even this group faces compounding health and utility cost pressure as the crisis extends.",
       "mostLikelyCourse": "Low-buffer households exhaust savings first, with stress peaking May\u2013June 2026 as grocery prices catch up to fuel. Government excise relief provides partial offset until 2026-06-30, after which pump prices spike again. Middle and upper cohorts weather the immediate crisis but face structural cost-of-living elevation for 6\u201312 months.",
       "mostDangerousCourse": "Government buffer of A$4.75bn is exhausted before supply normalises. Excise cut lapses with no replacement \u2014 pump prices spike simultaneously with the grocery peak. Distress asset sales, mortgage arrears, and BNPL defaults rise together. Leveraged middle-income households \u2014 the largest cohort by number \u2014 face the sharpest deterioration as debt service consumes cash flow already compressed by inflation.",
@@ -4554,7 +4554,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-06T01:14:45Z",
+      "updatedAt": "2026-04-06T01:22:06Z",
       "summary": "The cascade model currently places Base Case \u2014 Stalemate as the most probable outcome at 41%, with Escalation at 36% and Resolution at 23%. The two scenarios are close \u2014 a single decisive event could shift the balance. The dominant driver is Hormuz (H=1.00): full closure is already priced into the model as maximum stress on the Gulf-to-Asia crude supply chain. Refinery stress (R=0.46) reflects Asian refineries running at 66% capacity, which directly constrains refined fuel volume arriving in Australia. The troop phase (PRE-DEPLOYMENT, T=0.10) is the key swing variable \u2014 a move to GROUND OPS would push escalation probability above base and activate the 6+ month conflict timeline that underpins the worst-case cascade: GDP impact at -5.0%, food prices +40%, and recovery measured in 12\u201324 months, not weeks.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (41%) holds. Conflict stays aerial and special operations. Supply tightens to the mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless ceiling then stabilises as replacement cargoes land. Food price cascade peaks May\u2013June 2026 at +20% before gradual easing. GDP impact limited to -2.1%. Recovery in 3\u20136 months.",
       "mostDangerousCourse": "Escalation (36%) activates on a ground invasion decision or major Iranian strike on Gulf infrastructure. All cascade pathways worsen simultaneously: Hormuz closure extends to 6\u201318 months, Asian refinery output stays suppressed, Australian rationing moves to active policy, food prices peak at +40%, and recovery extends to 12\u201324 months.",
@@ -4566,7 +4566,7 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Why It Matters",
-      "updatedAt": "2026-04-06T01:14:45Z",
+      "updatedAt": "2026-04-06T01:22:06Z",
       "summary": "Current disposition: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED. 12 units deployed, 6 en route. Troop build-up is tracked as the primary indicator of conflict duration \u2014 and duration is what determines whether Australia's fuel crisis is temporary or structural. Air strikes can be sustained indefinitely. A ground invasion cannot be quickly reversed. It means Hormuz stays closed for months, not weeks \u2014 Asian refineries stay feedstock-starved, import volumes stay suppressed, and government reserve releases run out before supply recovers. A confirmed ground war carries a 12\u201324 month impact horizon for Australia: diesel rationing in the first 3 months, food prices peaking at 30\u201340% above pre-war by month 6, and structural cost-of-living elevation persisting 12\u201318 months after hostilities end as Asian refinery capacity takes time to rebuild.",
       "mostLikelyCourse": "Current phase (PRE-DEPLOYMENT) holds \u2014 conflict remains aerial and special operations. A conventional ground invasion decision is deferred. Australian supply stays stressed but manageable if replacement cargoes arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. The 12\u201324 month consequence scenario is avoided, though short-term fuel and food price pressure persists for 3\u20136 months regardless.",
       "mostDangerousCourse": "Ground operations are authorised \u2014 triggered by a failed Hormuz ultimatum, an Iranian strike on a US asset requiring a ground response, or an IDF request for US infantry support. From that decision, the 12\u201324 month Australian impact horizon activates immediately. Reserve releases and rerouted cargoes become insufficient within 4\u20136 weeks. Rationing moves from contingency to active policy.",
@@ -4860,7 +4860,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-06T01:14:45Z",
+    "updatedAt": "2026-04-06T01:22:06Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -5327,7 +5327,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-06T01:14:45Z",
+    "updatedAt": "2026-04-06T01:22:06Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
