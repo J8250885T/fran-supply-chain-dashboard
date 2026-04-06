@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-06T04:36:04Z",
+  "lastUpdated": "2026-04-06T04:41:28Z",
   "warAlert": {
-    "timestamp": "2026-04-06T04:36:04Z",
+    "timestamp": "2026-04-06T04:41:28Z",
     "fuelImpact": [
       "2026-04-06 Asia markets brace for Trump's promised assault on Iranian infrastructure [Channel NewsAsia (CNA)] [MEDIUM]",
       "2026-04-06 Vietnam\u2019s gig workers slammed by rising fuel costs amid fallout of Iran war [Al Jazeera] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-06T04:36:04Z",
+    "updated": "2026-04-06T04:41:28Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -474,7 +474,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-04-06T04:36:04Z",
+    "lastUpdated": "2026-04-06T04:41:28Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -1290,7 +1290,7 @@
       "updatedAt": "2026-04-06T02:01:50Z"
     }
   },
-  "dbLastUpdated": "2026-04-06T04:36:04Z",
+  "dbLastUpdated": "2026-04-06T04:41:28Z",
   "dbEvents": [
     {
       "dtg": "2026-04-06",
@@ -4533,7 +4533,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-06T04:36:04Z",
+      "updatedAt": "2026-04-06T04:41:28Z",
       "window": 7,
       "totalEvents": 225,
       "activeSources": 97,
@@ -4678,7 +4678,7 @@
     },
     "supply": {
       "title": "Fuel Levels & Supply \u2014 Review",
-      "updatedAt": "2026-04-06T04:36:04Z",
+      "updatedAt": "2026-04-06T04:41:28Z",
       "summary": "Australia is holding, but the margin is thin. Diesel sits at 29 days \u2014 only 19 days above the 10-day rationing trigger \u2014 making it the tightest and most critical reserve. Petrol (39 days) and jet fuel (30 days) provide more headroom but remain below normal comfortable levels. 687 service stations are dry nationally (increasing trend), concentrated in regional NSW, QLD, and WA where last-mile diesel distribution is thinnest. The supply system is being kept alive by 5 replacement vessels en route from the US and Europe \u2014 rerouted via Cape of Good Hope at significant cost and a 14-day transit premium. Asian refineries, which normally supply over 90% of Australia's refined fuel, are averaging 66% capacity due to Hormuz-driven feedstock constraints. The weakest link is Southkorea at 55%. All of this converges on a single critical threshold: May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026. If incoming cargoes do not land before that date, the government has no remaining buffer tools \u2014 reserve releases and the excise cut have already been deployed. Three emergency measures are active (Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered), but these are one-time levers, not ongoing supply.",
       "mostLikelyCourse": "5 replacement vessels arrive before May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026, keeping diesel above the 10-day rationing trigger. Easter demand normalises and servo outages ease as distribution catches up. Asian refinery output holds at ~66%, limiting recovery but preventing further deterioration. Supply remains stressed but rationing is avoided in the near term.",
       "mostDangerousCourse": "One or more replacement cargoes slip, are diverted to competing buyers, or arrive after May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026. Diesel falls below 10 days \u2014 the formal rationing trigger. Simultaneously, Southkorea or Singapore refinery output drops further, eliminating any prospect of near-term recovery from the Asian supply chain. Servo outages spread from regional to suburban areas before new imports can offset the drawdown.",
@@ -4690,7 +4690,7 @@
     },
     "markets": {
       "title": "Hyperinflation Risk Assessment",
-      "updatedAt": "2026-04-06T04:36:04Z",
+      "updatedAt": "2026-04-06T04:41:28Z",
       "summary": "HIGH INFLATION. Australia is experiencing a supply-side price shock driven by external commodity pass-through following the Hormuz closure. Metro price increase at 30.4%, Regional at 34.5% \u2014 trajectory is decelerating. The dominant mechanism is external cost-push transmission (war-driven energy prices flowing through fuel, freight, and food chains), with secondary fiscal erosion as real tax receipts compress under collection lags. Top movers since W39 2025: Diesel (pump) (+74.3%), Sea freight (+55.9%), Domestic airfares (+49.0%). 2 states in CRISIS, 6 in EMERGENCY. This is not classical demand-pull inflation \u2014 it is a supply-shock price spiral with commodity pass-through as the primary transmission mechanism.",
       "mostLikelyCourse": "SCENARIO A \u2014 Stabilisation. Historical precedent: 1973 oil shock (OECD economies) \u2014 supply-driven price spikes resolved within 12\u201318 months when supply constraints eased. Metro price increase climbs to projected peak of 35.0% as fuel and freight costs continue feeding through with a 4\u20138 week structural lag. Regional peaks at 39.7% driven by diesel dependence and food freight costs. If Hormuz reopens or ceasefire holds, peak arrives W35\u2013W39 then plateaus. Required conditions: conflict resolution, freight normalisation, excise policy clarity. Residual damage: 6\u201312 months of elevated food prices due to supply chain lag.",
       "scenarioB": "SCENARIO B \u2014 Partial stabilisation. Historical precedent: 1979 second oil shock \u2014 premature easing after initial shock led to reinflation within 12 months. Conflict pauses but does not resolve. Hormuz partially reopens under naval escort, reducing freight premiums by 30\u201340% but not eliminating them. Metro price increase retreats to 21\u201324% but stalls as structural costs (insurance, rerouting, inventory hoarding) persist. Government extends excise cut beyond June but at reduced rate, creating policy uncertainty. Reinflation risk: high if conflict reignites or AUD weakens below 0.62. This scenario produces the longest consumer stress period \u2014 not the sharpest peak but the slowest recovery.",
@@ -4707,24 +4707,25 @@
     },
     "households": {
       "title": "Household Stress Assessment",
-      "updatedAt": "2026-04-06T04:36:04Z",
-      "summary": "Balance sheet analysis across 6 household tiers using ABS HES data, ATO 2025-26 tax tables, and Services Australia transfer rates. Crisis surcharge linked to Markets tab: average +$350/mo per household. 1 of 6 tiers are in monthly deficit (spending > income). Most stressed: Average Worker with burn rate $+67/mo (Phase 1 \u2014 Discretionary cut). Key finding: debt service \u2014 not the fuel crisis \u2014 is the primary financial threat for mortgage-holding tiers. The Average Worker has a TDSR of 43.7%, well above the 40% danger threshold. Australian social transfers (pension, FTB, rent assistance) provide a strong floor for lower-income tiers \u2014 the Pensioner and Low Income tiers remain in surplus despite the crisis surcharge.",
-      "mostLikelyCourse": "Crisis surcharge peaks June\u2013July 2026 as food prices catch up to fuel. Average Worker enters Phase 1 discretionary compression \u2014 cuts streaming, dining, and non-essential driving first. Middle and High Income absorb the surcharge from larger buffers. Government excise relief expires June 30 \u2014 if extended, all tiers stabilise. If not, Average Worker burn rate doubles and runway shortens to ~6 months.",
-      "scenarioB": "Excise cut extended at reduced rate (50% of current relief). Average Worker burn rate drops from $67 to ~$0/mo. Stress persists but depletion pushed beyond W39. Middle Income returns to surplus. However, food prices remain elevated through Q3 2026, and BNPL/credit card balances continue growing for households in Phase 2+ compression.",
-      "mostDangerousCourse": "Excise cut lapses June 30 with no replacement. Pump prices spike +15 cpl simultaneously with the grocery peak. Average Worker enters Phase 2 (variable compression \u2014 cutting grocery quality, deferring healthcare). Credit card balances grow as households fund consumption with revolving debt \u2014 this is the terminal warning signal. If RBA raises rates in response to inflation, mortgage stress cascades: every 25bp adds ~$130/mo to the Average Worker mortgage and ~$200/mo to Middle Income.",
+      "updatedAt": "2026-04-06T04:41:28Z",
+      "summary": "Balance sheet analysis across 8 household tiers built from ABS HES 6530.0 expenditure data (CPI-adjusted to 2025-26), ATO individual tax tables, and Services Australia transfer rates. Mortgage repayments calculated at RBA variable rate 6.35%. Crisis surcharge of avg $350/mo per household is live-linked to the Markets tab commodity prices (groceries +10.8%, fuel +54.6%). SCENARIO A (with current debt): 1 of 8 tiers in monthly deficit, 2 within $100 of tipping. Most stressed: Average Worker at $+67/mo (Phase 1 \u2014 Discretionary cut), TDSR 44%. SCENARIO B (zero non-mortgage debt): 0 tiers in deficit \u2014 all survive. The gap between scenarios shows debt service is the primary vulnerability, not the crisis surcharge alone. Tier summary: Pensioner: surplus $216/mo, TDSR 1%; Low Income: surplus $73/mo (razor thin), TDSR 10%; Single Worker: surplus $544/mo, TDSR 4%; Single Professional: surplus $60/mo (razor thin), TDSR 39%; Average Worker: deficit $+67/mo, TDSR 44%; Middle Income: surplus $478/mo, TDSR 37%; High Income: surplus $1,681/mo, TDSR 31%; Retiree (Self-funded): surplus $2,085/mo, TDSR 1%.",
+      "mostLikelyCourse": "SCENARIO A trajectory: crisis surcharge peaks June\u2013July 2026 as the food price cascade catches up to fuel (4\u20138 week lag). Average Worker is the only tier in deficit at $+67/mo \u2014 entering Phase 1 discretionary compression (cutting streaming, dining out, non-essential driving). 2 tiers are within $100 of tipping: Low Income, Single Professional. These tiers survive only if the crisis surcharge does not escalate further. Government excise relief expires June 30 \u2014 if extended, all tiers stabilise. If not, fuel spend increases ~$65/mo per household, pushing Low Income, Single Professional into deficit. SCENARIO B confirms that without non-mortgage debt (personal loans, credit cards, BNPL), every tier survives the crisis comfortably. High Income shows the largest improvement: $+1,330/mo swing when debt is removed.",
+      "scenarioB": "Partial relief scenario: excise cut extended at reduced rate (50% of current relief) and RBA holds rates steady. Average Worker burn rate drops from $+67 to approximately $+0/mo. Razor-thin tiers (Low Income, Single Professional) move back to safe surplus. However, food prices remain elevated through Q3 2026, and households that have already entered discretionary compression do not restore spending immediately \u2014 retail and hospitality sectors continue to feel demand destruction for 3\u20136 months after household finances stabilise. Credit card balances accumulated during the deficit period take 6\u201312 months to unwind at minimum repayment rates.",
+      "mostDangerousCourse": "Excise cut lapses June 30 with no replacement, coinciding with the grocery price peak. Average Worker burn rate doubles to ~$+134/mo, entering Phase 2 (variable compression \u2014 trading down groceries, deferring healthcare, reducing childcare days). Low Income, Single Professional tip into deficit simultaneously. Credit card balances grow as households fund consumption with revolving debt at 20% pa \u2014 the CC feedback loop accelerates: higher balance \u2192 higher minimum \u2192 higher burn rate \u2192 more CC usage. This is the terminal distress signal identified in the RBA Financial Stability Review. If RBA raises rates in response to inflation (+25bp), mortgage repayments increase: +$121/mo for Average Worker, +$121/mo for Average Worker. A rate hike during a supply shock is the scenario that triggers mortgage arrears and distress selling \u2014 historically rare in Australia but structurally possible when TDSR exceeds 40%.",
       "bullets": [
-        "Average Worker TDSR 43.7% \u2014 above 40% danger threshold.",
-        "Crisis surcharge avg +$350/mo \u2014 linked to Markets commodity data.",
-        "Excise cut expiry June 30 \u2014 adds ~$65/mo for average fuel user.",
-        "Pensioner and Low Income remain in surplus \u2014 social transfers provide floor.",
-        "Watch: credit card balance growth \u2014 terminal distress signal per RBA FSR."
+        "Average Worker TDSR 44% \u2014 above 40% danger threshold (RBA FSR).",
+        "Low Income, Single Professional within $100 of deficit \u2014 one rate hike tips them.",
+        "Crisis surcharge avg +$350/mo \u2014 fuel accounts for ~55% of the increase.",
+        "Scenario B: zero non-mortgage debt = all 8 tiers survive. Debt is the amplifier.",
+        "CC feedback loop active for deficit tiers \u2014 balance grows at 20% pa compounding.",
+        "Excise cut expiry June 30 \u2014 adds ~$65/mo for average fuel user if not extended."
       ],
       "confidence": "HIGH",
-      "confidenceReason": "Balance sheet model uses ABS, ATO, and RBA published data. Crisis surcharge derived from live commodity prices."
+      "confidenceReason": "Balance sheets sourced from ABS HES 6530.0, ATO 2025-26, RBA mortgage calc. Crisis surcharge live from Markets commodity data."
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-06T04:36:04Z",
+      "updatedAt": "2026-04-06T04:41:28Z",
       "summary": "The cascade model currently places Base Case \u2014 Stalemate as the most probable outcome at 41%, with Escalation at 38% and Resolution at 21%. The two scenarios are close \u2014 a single decisive event could shift the balance. The dominant driver is Hormuz (H=1.00): full closure is already priced into the model as maximum stress on the Gulf-to-Asia crude supply chain. Refinery stress (R=0.46) reflects Asian refineries running at 66% capacity, which directly constrains refined fuel volume arriving in Australia. The troop phase (PRE-DEPLOYMENT, T=0.10) is the key swing variable \u2014 a move to GROUND OPS would push escalation probability above base and activate the 6+ month conflict timeline that underpins the worst-case cascade: GDP impact at -5.0%, food prices +40%, and recovery measured in 12\u201324 months, not weeks.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (41%) holds. Conflict stays aerial and special operations. Supply tightens to the May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026 ceiling then stabilises as replacement cargoes land. Food price cascade peaks May\u2013June 2026 at +20% before gradual easing. GDP impact limited to -2.1%. Recovery in 3\u20136 months.",
       "mostDangerousCourse": "Escalation (38%) activates on a ground invasion decision or major Iranian strike on Gulf infrastructure. All cascade pathways worsen simultaneously: Hormuz closure extends to 6\u201318 months, Asian refinery output stays suppressed, Australian rationing moves to active policy, food prices peak at +40%, and recovery extends to 12\u201324 months.",
@@ -4736,7 +4737,7 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Why It Matters",
-      "updatedAt": "2026-04-06T04:36:04Z",
+      "updatedAt": "2026-04-06T04:41:28Z",
       "summary": "Current disposition: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED. 12 units deployed, 6 en route. Troop build-up is tracked as the primary indicator of conflict duration \u2014 and duration is what determines whether Australia's fuel crisis is temporary or structural. Air strikes can be sustained indefinitely. A ground invasion cannot be quickly reversed. It means Hormuz stays closed for months, not weeks \u2014 Asian refineries stay feedstock-starved, import volumes stay suppressed, and government reserve releases run out before supply recovers. A confirmed ground war carries a 12\u201324 month impact horizon for Australia: diesel rationing in the first 3 months, food prices peaking at 30\u201340% above pre-war by month 6, and structural cost-of-living elevation persisting 12\u201318 months after hostilities end as Asian refinery capacity takes time to rebuild.",
       "mostLikelyCourse": "Current phase (PRE-DEPLOYMENT) holds \u2014 conflict remains aerial and special operations. A conventional ground invasion decision is deferred. Australian supply stays stressed but manageable if replacement cargoes arrive before May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026. The 12\u201324 month consequence scenario is avoided, though short-term fuel and food price pressure persists for 3\u20136 months regardless.",
       "mostDangerousCourse": "Ground operations are authorised \u2014 triggered by a failed Hormuz ultimatum, an Iranian strike on a US asset requiring a ground response, or an IDF request for US infantry support. From that decision, the 12\u201324 month Australian impact horizon activates immediately. Reserve releases and rerouted cargoes become insufficient within 4\u20136 weeks. Rationing moves from contingency to active policy.",
@@ -5030,7 +5031,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-06T04:36:04Z",
+    "updatedAt": "2026-04-06T04:41:28Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -5497,7 +5498,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-06T04:36:04Z",
+    "updatedAt": "2026-04-06T04:41:28Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
