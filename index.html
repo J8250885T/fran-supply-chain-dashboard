@@ -1595,6 +1595,7 @@ function renderRefineries(data){
       html+='<div style="padding:4px 8px 6px;font-size:8px;color:var(--text-muted);line-height:1.4">';
       if(r.currentThroughputBPD) html+='<div>'+(r.currentThroughputBPD||0).toLocaleString()+' bpd throughput</div>';
       if(r.exportNote) html+='<div>'+escHtml(r.exportNote)+'</div>';
+      if(r.crudeProfile){var cp=r.crudeProfile;html+='<div><strong>Crude:</strong> '+escHtml(cp.crudeType)+' \u2014 '+escHtml(cp.primaryOrigin)+'</div>';html+='<div><strong>Hormuz:</strong> '+cp.hormuzExposure+'%</div>';html+='<div><strong>US crude:</strong> '+escHtml(cp.canProcessUSCrude)+'</div>';}
       if(r.keyRisk) html+='<div style="color:var(--amber)">\u26a0 '+escHtml(r.keyRisk)+'</div>';
       html+='</div></div>';
     });
