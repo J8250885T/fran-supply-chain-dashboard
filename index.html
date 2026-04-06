@@ -1549,6 +1549,17 @@ function renderTroopDeployments(td){
 
   html+='</div>';
 
+  // Totals bar
+  var tots=td.totals||{};
+  if(tots.totalPersonnel){
+    html+='<div style="display:flex;gap:12px;margin-bottom:10px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:rgba(0,0,0,0.15);flex-wrap:wrap">';
+    html+='<div><span style="font-size:18px;font-weight:700;color:var(--text)">'+tots.deployed+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:4px">units deployed</span></div>';
+    html+='<div><span style="font-size:18px;font-weight:700;color:var(--amber)">'+tots.enRoute+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:4px">en route</span></div>';
+    html+='<div><span style="font-size:18px;font-weight:700;color:var(--red)">'+(tots.totalPersonnel||0).toLocaleString()+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:4px">personnel</span></div>';
+    if(td.updatedAt) html+='<div style="margin-left:auto;font-size:8px;color:var(--text-muted);align-self:center">Updated '+fmtAESTDateTime(td.updatedAt)+'</div>';
+    html+='</div>';
+  }
+
   // Timeline bar
   var tl=td.invasionTimeline||{};
   html+='<div style="margin-bottom:10px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;background:rgba(0,0,0,0.15)">';
@@ -1563,8 +1574,8 @@ function renderTroopDeployments(td){
 
   // Countries grid
   var countries=td.countries||{};
-  var countryKeys=['us','uk','australia','israel','saudi','uae','other'];
-  var labels={'us':'🇺🇸 United States','uk':'🇬🇧 United Kingdom','australia':'🇦🇺 Australia','israel':'🇮🇱 Israel','saudi':'🇸🇦 Saudi Arabia','uae':'🇦🇪 UAE','other':'🌐 Coalition'};
+  var countryKeys=['us','uk','australia','israel','iran','saudi','uae','coalition'];
+  var labels={'us':'🇺🇸 United States','uk':'🇬🇧 United Kingdom','australia':'🇦🇺 Australia','israel':'🇮🇱 Israel','iran':'🇮🇷 Iran','saudi':'🇸🇦 Saudi Arabia','uae':'🇦🇪 UAE','coalition':'🌐 Coalition'};
 
   html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">';
 
@@ -1576,9 +1587,11 @@ function renderTroopDeployments(td){
     html+='<div style="border:1px solid var(--border);border-radius:8px;overflow:hidden;">';
 
     // Country header
+    var cName=(c.flag?c.flag+' ':'')+escHtml(c.name||labels[key]||key);
+    var cPers=0;(c.deployed||[]).concat(c.enRoute||[]).forEach(function(u){cPers+=u.personnel||0;});
     html+='<div style="padding:7px 10px;background:'+sbg+';border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">';
-    html+='<div style="font-size:11px;font-weight:700;color:var(--text);">'+escHtml(labels[key]||key)+'</div>';
-    html+='<div style="font-size:8px;font-weight:700;color:'+sc+';background:'+sbg+';padding:2px 7px;border-radius:10px;border:1px solid '+sc+';">'+c.status+'</div>';
+    html+='<div style="font-size:11px;font-weight:700;color:var(--text);">'+cName+'</div>';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);">'+cPers.toLocaleString()+' pers</div>';
     html+='</div>';
 
     var allUnits=[];
@@ -1609,7 +1622,8 @@ function renderTroopDeployments(td){
         }
         html+='<div style="padding:6px 10px;background:'+bgColor+';border-left:2px solid '+borderColor+';border-bottom:1px solid rgba(255,255,255,0.03)">';
         html+='<div style="font-size:9px;font-weight:700;color:var(--text);">'+label+' '+escHtml(u.unit||'')+typeBadge+'</div>';
-        html+='<div style="font-size:8px;color:var(--text-muted);">'+escHtml(u.count||'')+' · '+escHtml(u.location||'')+'</div>';
+        var pStr=u.personnel?u.personnel.toLocaleString()+' pers':''; var dStr=u.date||u.eta||'';
+        html+='<div style="font-size:8px;color:var(--text-muted);">'+(pStr?pStr+' · ':'')+escHtml(u.location||u.eta||'')+'</div>';
         if(u.status){
           html+='<div style="font-size:8px;color:'+sc+';font-style:italic;">'+escHtml(u.status)+'</div>';
         }
