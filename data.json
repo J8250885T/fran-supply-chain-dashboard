@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-06T06:23:19Z",
+  "lastUpdated": "2026-04-06T06:25:30Z",
   "warAlert": {
-    "timestamp": "2026-04-06T06:23:19Z",
+    "timestamp": "2026-04-06T06:25:30Z",
     "fuelImpact": [
       "2026-04-06 Asia markets brace for Trump's promised assault on Iranian infrastructure [Channel NewsAsia (CNA)] [MEDIUM]",
       "2026-04-06 Vietnam\u2019s gig workers slammed by rising fuel costs amid fallout of Iran war [Al Jazeera] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-06T06:23:19Z",
+    "updated": "2026-04-06T06:25:30Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -474,7 +474,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-04-06T06:23:19Z",
+    "lastUpdated": "2026-04-06T06:25:30Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -1290,7 +1290,7 @@
       "updatedAt": "2026-04-06T02:01:50Z"
     }
   },
-  "dbLastUpdated": "2026-04-06T06:23:19Z",
+  "dbLastUpdated": "2026-04-06T06:25:30Z",
   "dbEvents": [
     {
       "dtg": "2026-04-06",
@@ -4539,7 +4539,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-06T06:23:19Z",
+      "updatedAt": "2026-04-06T06:25:30Z",
       "window": 7,
       "totalEvents": 225,
       "activeSources": 97,
@@ -4683,7 +4683,7 @@
     },
     "supply": {
       "title": "AustraFlow Prime \u2014 Supply Assessment",
-      "updatedAt": "2026-04-06T06:23:19Z",
+      "updatedAt": "2026-04-06T06:25:30Z",
       "summary": "Diesel 29d (19d above 10d rationing trigger). Petrol 39d. Jet 30d. 687 stations dry (increasing). 5 vessels en route via Cape of Good Hope. Asian refineries 66% capacity. Domestic refining covers ~20% of demand (Lytton + Geelong). 80% import-dependent on foreign-flagged tankers with no obligation to prioritise Australia. Critical date: May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026.",
       "mostLikelyCourse": "5 cargoes land before May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026. Diesel holds above 10d. Regional servos restock as distribution catches up. Lytton and Geelong maintain output. Stressed but no rationing.",
       "scenarioB": "Some cargoes land, others divert to higher bidders. Metro stabilises. Regional stays short \u2014 last-mile tanker frequency reduced. NT, remote WA, Cape York most exposed. Mining operations on emergency fuel management. National aggregate looks adequate but local distribution fails.",
@@ -4699,7 +4699,7 @@
     },
     "markets": {
       "title": "Hyperinflation Risk Assessment",
-      "updatedAt": "2026-04-06T06:23:19Z",
+      "updatedAt": "2026-04-06T06:25:30Z",
       "summary": "HIGH INFLATION. Supply-side price shock via commodity pass-through. Metro 30.4%, Regional 34.5% \u2014 decelerating. Top movers: Diesel (pump) (+74.3%), Sea freight (+55.9%), Domestic airfares (+49.0%). 2 states CRISIS, 6 EMERGENCY. Not demand-pull \u2014 war-driven commodity pass-through.",
       "mostLikelyCourse": "Stabilisation. 1973 oil shock precedent \u2014 resolved 12\u201318 months when supply eased. Metro peaks 35.0%, Regional 39.7%. Peak W35\u2013W39 if Hormuz reopens. Residual: 6\u201312 months elevated food prices.",
       "scenarioB": "Partial stabilisation. 1979 precedent \u2014 premature easing led to reinflation. Conflict pauses, Hormuz partially reopens under escort. Metro retreats to 21\u201324% but stalls. Excise extended at reduced rate. Not the sharpest peak but the slowest recovery.",
@@ -4715,7 +4715,7 @@
     },
     "households": {
       "title": "Household Stress Assessment",
-      "updatedAt": "2026-04-06T06:23:19Z",
+      "updatedAt": "2026-04-06T06:25:30Z",
       "summary": "1 of 8 households in deficit. 2 more within $100 of tipping. The war-driven crisis adds avg $350/mo per household (fuel +54.6%, groceries +10.8%), but it is not the primary threat. Debt service is. Average Worker has a TDSR of 44% \u2014 above the 40% danger line. Remove non-mortgage debt and every tier survives.",
       "mostLikelyCourse": "Average Worker enters discretionary compression \u2014 streaming, dining, non-essential driving cut first. Low Income, Single Professional hold but have no buffer left. Excise relief expires June 30. If extended, all tiers stabilise. If not, fuel adds ~$65/mo and tips the razor-thin tiers into deficit.",
       "scenarioB": "Excise extended at 50%, RBA holds. Average Worker burn rate drops to near zero. Low Income, Single Professional return to safe surplus. Food stays elevated through Q3 2026. Households already in compression don't restore spending for 3\u20136 months \u2014 retail and hospitality feel the drag. CC balances accumulated during the deficit take 6\u201312 months to clear.",
@@ -4731,7 +4731,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-06T06:23:19Z",
+      "updatedAt": "2026-04-06T06:25:30Z",
       "summary": "Base Case \u2014 Stalemate at 41%. Escalation 38%. Resolution 21%. The two leading scenarios are close \u2014 one event shifts the balance. Troop phase (PRE-DEPLOYMENT) is the swing variable. Ground ops would push escalation above base and lock in a 6+ month conflict: GDP -5.0%, food +40%, recovery 12\u201324 months.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (41%) holds. Aerial conflict only. Supply tightens to May 2026 \u2014 53 ships with 3.7B litres confirmed arriving April; supply ceiling extended from mid-April to May 2026 \u2014 source: Bowen/AAP April 6 2026 then stabilises. Food peaks +20% May\u2013June. GDP -2.1%. Recovery 3\u20136 months.",
       "mostDangerousCourse": "Escalation (38%). Ground invasion or major Gulf strike. Hormuz closed 6\u201318 months. Rationing active. Food +40%. Recovery 12\u201324 months.",
@@ -4743,7 +4743,7 @@
     },
     "troops": {
       "title": "J2 \u2014 Friendly Disposition & Iran TCVs",
-      "updatedAt": "2026-04-06T06:23:19Z",
+      "updatedAt": "2026-04-06T06:25:30Z",
       "summary": "BATTLESPACE: PRE-DEPLOYMENT. Friendly 45,905 pers (27 units) vs Iran 60,000 pers. Force ratio 0.8:1. IRAN TCVs \u2014 Troops: 50,000 ground (3 divs + 2 reserve), 5,000 IRGC Navy (Hormuz denial), 2,000 Quds Force (proxy ops). Capabilities: Hormuz mine/ASM barrier, Shaheed drone swarms, ballistic missile TELs (Emad, Sejjil), proxy network across 4 theatres. Vulnerabilities: no credible air defence vs F-35, logistics on single western corridor, proxy C2 fragile under comms disruption.",
       "mostLikelyCourse": "Iran maintains Hormuz denial posture. IRGC Navy holds mine barrier and fast attack screen. No ground commitment beyond border provinces. Drone/missile strikes at current tempo. Proxies sustain harassment, no escalation. Friendly coalition holds air superiority and naval escort. PRE-DEPLOYMENT holds.",
       "scenarioB": "Iran partially reopens Hormuz under pressure \u2014 escort corridor established but mine threat remains. Ground divisions hold defensive. Missile strikes reduced. Proxy tempo decreases if Quds Force C2 disrupted. Friendly posture shifts from strike to containment.",
@@ -5175,7 +5175,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-06T06:23:19Z",
+    "updatedAt": "2026-04-06T06:25:30Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -5642,7 +5642,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-06T06:23:19Z",
+    "updatedAt": "2026-04-06T06:25:30Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [

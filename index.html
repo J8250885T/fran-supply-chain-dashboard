@@ -1285,7 +1285,7 @@ function renderFleet(data){
 
   var html='';
   // Summary
-  html+='<div style="display:flex;gap:10px;margin-bottom:8px;padding:6px 8px;background:rgba(0,0,0,0.15);border-radius:6px;flex-wrap:wrap;font-size:9px">';
+  html+='<div style="display:flex;gap:10px;margin-bottom:8px;padding:6px 8px;background:rgba(0,0,0,0.15);border-radius:6px;flex-wrap:wrap;font-size:8px">';
   html+='<div><span style="font-weight:700;color:var(--text)">'+enRoute.length+'</span> <span style="color:var(--text-muted)">en route</span></div>';
   html+='<div><span style="font-weight:700;color:var(--text)">'+producing.length+'</span> <span style="color:var(--text-muted)">refineries</span></div>';
   if(totalML) html+='<div><span style="font-weight:700;color:var(--amber)">'+totalML+'</span> <span style="color:var(--text-muted)">ML fuel capacity</span></div>';
@@ -1304,12 +1304,12 @@ function renderFleet(data){
       html+='<div style="border:1px solid var(--border);border-radius:6px;margin-bottom:4px;overflow:hidden">';
       html+='<div style="padding:5px 8px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.1)">';
       html+='<div style="display:flex;align-items:center;gap:5px">';
-      html+='<span style="font-size:11px">'+(s.flag||'')+'</span>';
-      html+='<span style="font-size:9px;font-weight:700;color:var(--text)">'+escHtml(s.name)+'</span>';
-      html+='<span style="font-size:7px;color:var(--text-muted)">'+escHtml(s.type)+'</span>';
+      html+='<span style="font-size:10px">'+(s.flag||'')+'</span>';
+      html+='<span style="font-size:10px;font-weight:700;color:var(--text)">'+escHtml(s.name)+'</span>';
+      html+='<span style="font-size:8px;color:var(--text-muted)">'+escHtml(s.type)+'</span>';
       html+='</div>';
       html+='<div style="display:flex;align-items:center;gap:6px">';
-      if(s._d>=0) html+='<span style="font-size:11px;font-weight:700;color:'+daysCol+'">'+(s._d===0?'TODAY':s._d+'D')+'</span>';
+      if(s._d>=0) html+='<span style="font-size:10px;font-weight:700;color:'+daysCol+'">'+(s._d===0?'TODAY':s._d+'D')+'</span>';
       else html+='<span style="font-size:8px;font-weight:700;color:var(--green)">ACTIVE</span>';
       html+='</div></div>';
       // Detail row
@@ -1558,7 +1558,7 @@ function renderRefineries(data){
     var html='';
 
     // Summary bar
-    html+='<div style="display:flex;gap:10px;margin-bottom:8px;padding:6px 8px;background:rgba(0,0,0,0.15);border-radius:6px;flex-wrap:wrap;font-size:9px">';
+    html+='<div style="display:flex;gap:10px;margin-bottom:8px;padding:6px 8px;background:rgba(0,0,0,0.15);border-radius:6px;flex-wrap:wrap;font-size:8px">';
     html+='<div><span style="font-weight:700;color:var(--text)">'+(data.totalThroughputBPD||0).toLocaleString()+'</span> <span style="color:var(--text-muted)">bpd throughput</span></div>';
     html+='<div><span style="font-weight:700;color:var(--green)">'+(data.auAccessibleBPD||0).toLocaleString()+'</span> <span style="color:var(--text-muted)">AU-accessible</span></div>';
     html+='<div><span style="font-weight:700;color:var(--red)">'+(Math.round((data.totalThroughputBPD||0)-(data.auAccessibleBPD||0))).toLocaleString()+'</span> <span style="color:var(--text-muted)">blocked/domestic</span></div>';
