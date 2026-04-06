@@ -492,9 +492,19 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       <div id="review-content-households"></div>
     </div>
 
-    <div class="panel" id="panel-bank">
-      <div class="p-hdr"><span class="p-title">🏦 Household Savings Trajectory — W1→W26</span></div>
-      <div id="bank-content"></div>
+    <div class="panel" id="panel-hh-overview">
+      <div class="p-hdr"><span class="p-title">🏦 Household Balance Sheets</span></div>
+      <div id="hh-overview-content"></div>
+    </div>
+
+    <div class="panel" id="panel-hh-scenario-a">
+      <div class="p-hdr"><span class="p-title">📉 Scenario A — With Current Debt</span></div>
+      <div id="hh-scenario-a-content"></div>
+    </div>
+
+    <div class="panel" id="panel-hh-scenario-b">
+      <div class="p-hdr"><span class="p-title">📈 Scenario B — Zero Non-Mortgage Debt</span></div>
+      <div id="hh-scenario-b-content"></div>
     </div>
 
   </section>
@@ -597,9 +607,14 @@ function showSection(id){
         drawCPIChart(_lastInf);
         drawItemInflationChart(_lastInf);
       }
-      if(id==='households'&&_lastBankTiers){
-        drawCFChart('cfCanvasA',_lastBankTiers,false);
-        if(_lastBankTiersND) drawCFChart('cfCanvasB',_lastBankTiersND,true);
+      if(id==='households'){
+        if(window._lastHHModel){
+          drawHHTrajectory('hhCanvas-hh-scenario-a-content', window._lastHHModel.scenarioA.tiers, window._lastHHModel);
+          drawHHTrajectory('hhCanvas-hh-scenario-b-content', window._lastHHModel.scenarioB.tiers, window._lastHHModel);
+        } else if(_lastBankTiers){
+          drawCFChart('cfCanvasA',_lastBankTiers,false);
+          if(_lastBankTiersND) drawCFChart('cfCanvasB',_lastBankTiersND,true);
+        }
       }
     });
   });
@@ -1455,8 +1470,21 @@ function renderHouseholdsReview(fr){
   if(!el||!fr) return;
   var html='';
   html+=reviewHeader(fr);
-  html+=reviewMLMD(fr);
-  html+=reviewBullets(fr,'Watch — Stress Signals');
+  // Confidence badge
+  if(fr.confidence){
+    var confCol=fr.confidence==='HIGH'?'var(--green)':fr.confidence==='LOW'?'var(--red)':'var(--amber)';
+    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">';
+    html+='<span style="font-size:8px;font-weight:700;letter-spacing:0.08em;color:'+confCol+';background:rgba(255,255,255,0.04);border:1px solid '+confCol+';border-radius:4px;padding:2px 8px">CONFIDENCE: '+escHtml(fr.confidence)+'</span>';
+    if(fr.confidenceReason) html+='<span style="font-size:8px;color:var(--text-muted)">'+escHtml(fr.confidenceReason)+'</span>';
+    html+='</div>';
+  }
+  // Three scenarios
+  html+='<div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px">';
+  if(fr.mostLikelyCourse) html+='<div style="border:1px solid rgba(0,232,122,0.2);background:rgba(0,232,122,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--green);text-transform:uppercase;margin-bottom:4px">Most Likely Course of Action</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.mostLikelyCourse)+'</div></div>';
+  if(fr.scenarioB) html+='<div style="border:1px solid rgba(255,176,32,0.2);background:rgba(255,176,32,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--amber);text-transform:uppercase;margin-bottom:4px">Partial Relief</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.scenarioB)+'</div></div>';
+  if(fr.mostDangerousCourse) html+='<div style="border:1px solid rgba(255,59,59,0.2);background:rgba(255,59,59,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--red);text-transform:uppercase;margin-bottom:4px">Most Dangerous Course of Action</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.mostDangerousCourse)+'</div></div>';
+  html+='</div>';
+  html+=reviewBullets(fr,'Watch');
   el.innerHTML=html;
 }
 
@@ -2427,6 +2455,198 @@ function buildAssumptions(tiers,noDebt){
 
 // ── BANK ──
 var _lastBankTiers=null,_lastBankTiersND=null;
+// ── NEW HOUSEHOLD MODEL RENDERER ──
+function renderHouseholdModel(hm){
+  if(!hm||!hm.scenarioA) return;
+  var tiersA=hm.scenarioA.tiers||[], tiersB=hm.scenarioB.tiers||[];
+
+  // ── Overview panel: balance sheet cards ──
+  var oEl=document.getElementById('hh-overview-content');
+  if(oEl){
+    var oh='<div style="font-size:9px;color:var(--text-muted);margin-bottom:10px">Full balance sheets derived from ABS HES, ATO 2025-26 tax tables, Services Australia transfer rates. Crisis surcharge linked to Markets tab commodity data.</div>';
+    oh+='<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px">';
+    tiersA.forEach(function(t){
+      var burnCol=t.burnRate>0?'var(--red)':'var(--green)';
+      var phaseCol=t.phase>=3?'var(--red)':t.phase>=2?'var(--amber)':t.phase>=1?'var(--amber)':'var(--green)';
+      oh+='<div style="border:1px solid var(--border);border-radius:8px;padding:10px;background:rgba(255,255,255,0.02);border-left:3px solid '+t.colour+'">';
+      oh+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">';
+      oh+='<div style="font-size:12px;font-weight:700;color:'+t.colour+'">'+escHtml(t.name)+'</div>';
+      oh+='<div style="font-size:8px;color:'+phaseCol+';font-weight:700;background:rgba(255,255,255,0.04);border:1px solid '+phaseCol+';border-radius:3px;padding:1px 6px">'+escHtml(t.phaseLabel)+'</div>';
+      oh+='</div>';
+      oh+='<div style="font-size:8px;color:var(--text-muted);margin-bottom:8px">'+escHtml(t.description)+'</div>';
+      // Key metrics row
+      oh+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:6px">';
+      oh+='<div style="text-align:center"><div style="font-size:14px;font-weight:700;color:var(--text)">$'+(t.availableMonthly||0).toLocaleString()+'</div><div style="font-size:7px;color:var(--text-muted)">INCOME/MO</div></div>';
+      oh+='<div style="text-align:center"><div style="font-size:14px;font-weight:700;color:var(--text)">$'+(t.totalSpend||0).toLocaleString()+'</div><div style="font-size:7px;color:var(--text-muted)">SPEND/MO</div></div>';
+      oh+='<div style="text-align:center"><div style="font-size:14px;font-weight:700;color:'+burnCol+'">'+(t.burnRate>=0?'-$':'+$')+Math.abs(t.burnRate||0).toLocaleString()+'</div><div style="font-size:7px;color:var(--text-muted)">BURN RATE</div></div>';
+      oh+='</div>';
+      // Cost breakdown bar
+      var total=t.fixedCosts+t.variableCosts+t.discretionaryCosts;
+      if(total>0){
+        var fPct=Math.round(t.fixedCosts/total*100), vPct=Math.round(t.variableCosts/total*100), dPct=100-fPct-vPct;
+        oh+='<div style="display:flex;height:6px;border-radius:3px;overflow:hidden;margin-bottom:4px">';
+        oh+='<div style="width:'+fPct+'%;background:#ff3b3b" title="Fixed $'+(t.fixedCosts||0).toLocaleString()+'"></div>';
+        oh+='<div style="width:'+vPct+'%;background:#ffb020" title="Variable $'+(t.variableCosts||0).toLocaleString()+'"></div>';
+        oh+='<div style="width:'+dPct+'%;background:#4a9eff" title="Discretionary $'+(t.discretionaryCosts||0).toLocaleString()+'"></div>';
+        oh+='</div>';
+        oh+='<div style="display:flex;gap:8px;font-size:7px;color:var(--text-muted)">';
+        oh+='<span>\u25a0 Fixed $'+(t.fixedCosts||0).toLocaleString()+'</span>';
+        oh+='<span style="color:#ffb020">\u25a0 Variable $'+(t.variableCosts||0).toLocaleString()+'</span>';
+        oh+='<span style="color:#4a9eff">\u25a0 Discr. $'+(t.discretionaryCosts||0).toLocaleString()+'</span>';
+        oh+='</div>';
+      }
+      // Crisis surcharge
+      if(t.crisisExtra>0){
+        oh+='<div style="font-size:8px;color:var(--red);margin-top:6px;padding-top:4px;border-top:1px solid var(--border)">\u26a0 Crisis surcharge: +$'+t.crisisExtra.toLocaleString()+'/mo from war-driven price increases</div>';
+      }
+      // Bottom stats
+      oh+='<div style="display:flex;justify-content:space-between;margin-top:6px;padding-top:4px;border-top:1px solid var(--border);font-size:8px;color:var(--text-muted)">';
+      oh+='<span>Savings: $'+(t.liquidSavings||0).toLocaleString()+'</span>';
+      oh+='<span>TDSR: '+t.tdsr+'%'+(t.tdsr>40?' \u26a0':'')+'</span>';
+      oh+='<span>Runway: '+(t.runway>=999?'\u221e':t.runway+'mo')+'</span>';
+      oh+='</div></div>';
+    });
+    oh+='</div>';
+    oEl.innerHTML=oh;
+  }
+
+  // ── Scenario panels: trajectory chart + depletion table ──
+  function renderScenario(tiers, elId, scenario){
+    var el=document.getElementById(elId);
+    if(!el) return;
+    var html='';
+    html+='<div style="font-size:9px;color:var(--text-muted);margin-bottom:8px">'+escHtml(scenario.description)+'</div>';
+    // Trajectory chart
+    html+='<canvas id="hhCanvas-'+elId+'" style="width:100%;height:220px;display:block;border-radius:6px;background:rgba(0,0,0,0.15);margin-bottom:8px"></canvas>';
+    // Legend
+    html+='<div style="display:flex;flex-wrap:wrap;gap:5px 14px;margin-bottom:12px">';
+    tiers.forEach(function(t){
+      var last=t.trajectory?t.trajectory.filter(function(p){return !p.projected;}):[];
+      var bal=last.length?last[last.length-1].balance:0;
+      html+='<div style="display:flex;align-items:center;gap:5px">';
+      html+='<div style="width:14px;height:2px;background:'+t.colour+';border-radius:2px"></div>';
+      html+='<span style="font-size:8px;color:var(--text-muted)">'+escHtml(t.name)+'</span>';
+      html+='<span style="font-size:8px;font-weight:700;color:'+(bal>=0?'var(--green)':'var(--red)')+'">$'+Math.abs(bal).toLocaleString()+'</span>';
+      html+='</div>';
+    });
+    html+='</div>';
+    // Depletion table
+    html+='<div class="table-scroll"><table class="bank-table"><thead><tr>';
+    html+='<th>Tier</th><th class="num">Income</th><th class="num">Spend</th><th class="num">Crisis+</th><th class="num">Burn Rate</th><th class="num">Savings</th><th class="num">Runway</th><th>Phase</th>';
+    html+='</tr></thead><tbody>';
+    tiers.forEach(function(t){
+      var burnCol=t.burnRate>0?'var(--red)':'var(--green)';
+      var rcls=t.phase>=3?'crit-row':t.phase>=1?'warn-row':'';
+      html+='<tr class="'+rcls+'">';
+      html+='<td style="color:'+t.colour+';font-weight:700">'+escHtml(t.name)+'</td>';
+      html+='<td class="num">$'+(t.availableMonthly||0).toLocaleString()+'</td>';
+      html+='<td class="num">$'+(t.totalSpend||0).toLocaleString()+'</td>';
+      html+='<td class="num" style="color:var(--red)">+$'+(t.crisisExtra||0).toLocaleString()+'</td>';
+      html+='<td class="num" style="color:'+burnCol+';font-weight:700">'+(t.burnRate>=0?'-$':'+$')+Math.abs(t.burnRate||0).toLocaleString()+'</td>';
+      html+='<td class="num">$'+(t.liquidSavings||0).toLocaleString()+'</td>';
+      html+='<td class="num" style="font-weight:700;color:'+(t.depletionWeek?'var(--red)':'var(--green)')+'">'+(t.depletionWeek?'W'+t.depletionWeek:(t.runway>=999?'\u221e':t.runway+'mo'))+'</td>';
+      html+='<td style="font-size:8px;color:'+(t.phase>=3?'var(--red)':t.phase>=1?'var(--amber)':'var(--green)')+'">'+escHtml(t.phaseLabel)+'</td>';
+      html+='</tr>';
+    });
+    html+='</tbody></table></div>';
+    el.innerHTML=html;
+    // Draw trajectory chart
+    requestAnimationFrame(function(){requestAnimationFrame(function(){
+      drawHHTrajectory('hhCanvas-'+elId, tiers, hm);
+    });});
+  }
+
+  renderScenario(tiersA, 'hh-scenario-a-content', hm.scenarioA);
+  renderScenario(tiersB, 'hh-scenario-b-content', hm.scenarioB);
+}
+
+function drawHHTrajectory(canvasId, tiers, hm){
+  var canvas=document.getElementById(canvasId);
+  if(!canvas||!tiers.length) return;
+  var dpr=window.devicePixelRatio||1,W=canvas.offsetWidth,H=220;
+  if(!W||W<50) return;
+  canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';
+  var ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  var pL=50,pR=10,pT=16,pB=26,cW=W-pL-pR,cH=H-pT-pB;
+
+  var TOTAL_W=hm.totalWeeks||33, WAR_W=hm.warWeek||24, NOW_W=hm.currentWeek||29;
+  var W1_DATE=new Date('2025-09-22T00:00:00');
+
+  // Find min/max balance
+  var minB=0,maxB=0;
+  tiers.forEach(function(t){
+    (t.trajectory||[]).forEach(function(p){minB=Math.min(minB,p.balance);maxB=Math.max(maxB,p.balance);});
+  });
+  var pad=(maxB-minB)*0.08;
+  minB=Math.floor((minB-pad)/1000)*1000;
+  maxB=Math.ceil((maxB+pad)/1000)*1000;
+
+  function toX(w){return pL+((w-1)/(TOTAL_W-1))*cW;}
+  function toY(v){return pT+cH-((v-minB)/(maxB-minB))*cH;}
+  function calLabel(w){
+    var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var d=new Date(W1_DATE.getTime()+(w-1)*7*86400000);
+    return MO[d.getMonth()]+' '+d.getDate();
+  }
+  function fmtK(v){return v>=0?'$'+(v/1000).toFixed(0)+'k':'-$'+(Math.abs(v)/1000).toFixed(0)+'k';}
+
+  ctx.fillStyle='rgba(0,0,0,0.15)';ctx.fillRect(0,0,W,H);
+
+  // Y grid
+  var yStep=Math.max(1000,Math.ceil((maxB-minB)/6/5000)*5000);
+  for(var gv=minB;gv<=maxB;gv+=yStep){
+    ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pL,toY(gv));ctx.lineTo(pL+cW,toY(gv));ctx.stroke();
+    ctx.fillStyle='rgba(122,148,176,0.7)';ctx.font='8px ui-monospace';ctx.textAlign='right';
+    ctx.fillText(fmtK(gv),pL-4,toY(gv)+3);
+  }
+  // Zero line
+  if(minB<0){
+    ctx.strokeStyle='rgba(255,59,59,0.3)';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(pL,toY(0));ctx.lineTo(pL+cW,toY(0));ctx.stroke();
+    ctx.fillStyle='rgba(255,59,59,0.5)';ctx.font='bold 7px ui-monospace';ctx.textAlign='left';
+    ctx.fillText('DEPLETED',pL+3,toY(0)-3);
+  }
+  // X labels
+  for(var gw=1;gw<=TOTAL_W;gw++){
+    if(gw===1||gw%4===1||gw===TOTAL_W){
+      ctx.fillStyle='rgba(122,148,176,0.6)';ctx.font='7px ui-monospace';ctx.textAlign='center';
+      ctx.fillText(calLabel(gw),toX(gw),H-6);
+    }
+  }
+  // WAR + NOW markers
+  var warX=toX(WAR_W),nowX=toX(NOW_W);
+  ctx.save();ctx.strokeStyle='rgba(255,176,32,0.6)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  ctx.beginPath();ctx.moveTo(warX,pT);ctx.lineTo(warX,pT+cH);ctx.stroke();ctx.setLineDash([]);ctx.restore();
+  ctx.fillStyle='rgba(255,176,32,0.9)';ctx.font='bold 7px ui-monospace';ctx.textAlign='center';ctx.fillText('\u26a0 WAR',warX,pT+9);
+  ctx.save();ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1;ctx.setLineDash([2,2]);
+  ctx.beginPath();ctx.moveTo(nowX,pT);ctx.lineTo(nowX,pT+cH);ctx.stroke();ctx.setLineDash([]);ctx.restore();
+  ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='bold 7px ui-monospace';ctx.textAlign='center';ctx.fillText('NOW \u25ba',nowX,pT+9);
+
+  // Draw lines
+  tiers.forEach(function(t){
+    var pts=t.trajectory||[];
+    if(!pts.length) return;
+    var actual=pts.filter(function(p){return !p.projected;});
+    var proj=pts.filter(function(p){return !!p.projected;});
+    if(actual.length&&proj.length) proj=[actual[actual.length-1]].concat(proj);
+    if(actual.length>1){
+      ctx.beginPath();
+      actual.forEach(function(p,i){i===0?ctx.moveTo(toX(p.w),toY(p.balance)):ctx.lineTo(toX(p.w),toY(p.balance));});
+      ctx.strokeStyle=t.colour;ctx.lineWidth=1.8;ctx.stroke();
+    }
+    if(proj.length>1){
+      ctx.save();ctx.strokeStyle=t.colour;ctx.lineWidth=1.2;ctx.setLineDash([4,3]);
+      ctx.beginPath();
+      proj.forEach(function(p,i){i===0?ctx.moveTo(toX(p.w),toY(p.balance)):ctx.lineTo(toX(p.w),toY(p.balance));});
+      ctx.stroke();ctx.restore();
+    }
+    var last=actual[actual.length-1];
+    if(last){ctx.fillStyle=t.colour;ctx.beginPath();ctx.arc(toX(last.w),toY(last.balance),3,0,Math.PI*2);ctx.fill();}
+  });
+}
+
+// ── LEGACY BANK RENDERER (fallback) ──
 function renderBank(be){
   if(!be||!be.household) return;
   var el=document.getElementById('bank-content');
@@ -2561,7 +2781,8 @@ function refresh(){
     window._itemSeries26w = data.itemSeries26w || null;
     renderCPI(data.inflation);
 
-    renderBank(data.bankEmpty);
+    if(data.householdModel){ window._lastHHModel=data.householdModel; renderHouseholdModel(data.householdModel); }
+    else if(data.bankEmpty) renderBank(data.bankEmpty);
   }).catch(function(e){console.error('Refresh error:',e);});
 }
 refresh();
