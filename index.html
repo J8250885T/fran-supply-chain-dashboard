@@ -42,7 +42,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 /* Row 2: nav tabs */
 .hdr-nav{height:40px;display:flex;align-items:stretch;padding:0 12px;gap:2px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hdr-nav::-webkit-scrollbar{display:none}
-.nav-tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--text-muted);font:700 10px/1 var(--font);letter-spacing:0.08em;text-transform:uppercase;padding:0 14px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:color 0.15s,border-color 0.15s;flex-shrink:0}
+.nav-tab{background:none;border:none;border-bottom:3px solid transparent;color:var(--text-muted);font:700 10px/1 var(--font);letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:all 0.15s;flex-shrink:0;border-radius:6px 6px 0 0}
 .nav-tab:hover{color:var(--text)}
 .nav-tab.active{color:var(--text);border-bottom-color:var(--amber)}
 .nav-tab[data-section="feed"]{--tab-color:#4a9eff}
@@ -51,9 +51,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .nav-tab[data-section="households"]{--tab-color:#00e87a}
 .nav-tab[data-section="troops"]{--tab-color:#ff3b3b}
 .nav-tab[data-section="domino"]{--tab-color:#c084fc}
-.nav-tab{border-bottom:2px solid transparent}
-.nav-tab:hover{color:var(--tab-color,var(--text))}
-.nav-tab.active{color:var(--tab-color,var(--text));border-bottom-color:var(--tab-color,var(--amber))}
+.nav-tab:hover{color:var(--tab-color,var(--text));background:rgba(255,255,255,0.03)}
+.nav-tab.active{color:var(--tab-color,var(--text));border-bottom:3px solid var(--tab-color,var(--amber));background:rgba(255,255,255,0.05);box-shadow:0 2px 8px rgba(0,0,0,0.2),inset 0 -1px 0 var(--tab-color,var(--amber))}
 .nav-tab .tab-dot{width:6px;height:6px;border-radius:50%;background:var(--tab-color,currentColor);flex-shrink:0;opacity:0.7}
 .nav-tab.active .tab-dot{opacity:1}
 .nav-tab .tab-badge{background:var(--red);color:#fff;font-size:8px;font-weight:700;padding:1px 4px;border-radius:8px;min-width:14px;text-align:center;line-height:14px}
