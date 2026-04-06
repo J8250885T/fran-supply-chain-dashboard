@@ -1727,60 +1727,148 @@ window.openDominoScenario=openDominoScenario;
 function drawCPIChart(inf){
   var canvas=document.getElementById('cpiCanvas');
   if(!canvas||!inf) return;
+  var ld = window._itemSeries26w;
+  if(!ld||!ld.series||!ld.series.length) return;
+
   var dpr=window.devicePixelRatio||1,W=canvas.offsetWidth,H=240;
-  if(!W||W<50) return; // canvas is hidden — bail
+  if(!W||W<50) return;
   canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';
   var ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
-  var pL=38,pR=10,pT=12,pB=26,tW=W-pL-pR,cH=H-pT-pB;
-  var totalDays=180;
-  var m=inf.metro||{}, r=inf.regional||{};
-  var mC=m.current||7.2, rC=r.current||9.8;
-  var mPeak=m.peakMetro||10.8, rPeak=r.peakRegional||14.5;
-  var maxY=Math.max(15,mPeak,rPeak)*1.12;
-  maxY=Math.ceil(maxY/2)*2;
-  function toX(d){return pL+(d/totalDays)*tW;} function toY(v){return pT+cH-(v/maxY)*cH;}
-  var bands=[{l:5,c:'rgba(245,158,11,0.09)'},{l:7,c:'rgba(249,115,22,0.10)'},{l:9,c:'rgba(239,68,68,0.12)'},{l:12,c:'rgba(220,38,38,0.14)'}];
-  var prev=pT+cH;
-  bands.forEach(function(b){var y=toY(b.l);if(y>pT){ctx.fillStyle=b.c;ctx.fillRect(pL,y,tW,prev-y);prev=y;}});
-  ctx.strokeStyle='#1f2937';ctx.lineWidth=0.5;
-  for(var gv=0;gv<=maxY;gv+=2){
-    var gy=toY(gv);ctx.beginPath();ctx.moveTo(pL,gy);ctx.lineTo(pL+tW,gy);ctx.stroke();
-    ctx.fillStyle='#4a6278';ctx.font='9px ui-monospace';ctx.textAlign='right';ctx.fillText(gv+'%',pL-3,gy+3);
+  var pL=36,pR=10,pT=16,pB=26,cW=W-pL-pR,cH=H-pT-pB;
+
+  var TOTAL_W = ld.totalWeeks||33;
+  var WAR_W   = ld.warWeek||24;
+  var NOW_W   = ld.currentWeek||29;
+  var W1_DATE = ld.w1Date ? new Date(ld.w1Date+'T00:00:00') : new Date('2025-09-22');
+
+  // Compute category averages per week
+  var fuelItems=[], foodItems=[], svcItems=[];
+  ld.series.forEach(function(s){
+    if(/Fuel/i.test(s.category)) fuelItems.push(s);
+    else if(/Food|Utilities/i.test(s.category)) foodItems.push(s);
+    else svcItems.push(s);
+  });
+  function avgByWeek(items){
+    var byW={};
+    items.forEach(function(s){
+      (s.points||[]).forEach(function(p){
+        if(!byW[p.w]) byW[p.w]={sum:0,n:0,projected:p.projected};
+        byW[p.w].sum+=p.v; byW[p.w].n++;
+      });
+    });
+    var arr=[];
+    for(var w in byW) arr.push({w:parseInt(w), v:byW[w].n?byW[w].sum/byW[w].n:0, projected:byW[w].projected});
+    arr.sort(function(a,b){return a.w-b.w;});
+    return arr;
   }
-  var tlines=[{l:5,c:'rgba(245,158,11,0.5)',lbl:'5% Alert'},{l:7,c:'rgba(249,115,22,0.55)',lbl:'7% Warn'},{l:9,c:'rgba(239,68,68,0.6)',lbl:'9% Emerg'},{l:12,c:'rgba(220,38,38,0.6)',lbl:'12% Crisis'}];
-  tlines.forEach(function(t){ if(t.l>maxY) return; var y=toY(t.l);ctx.save();ctx.strokeStyle=t.c;ctx.lineWidth=1;ctx.setLineDash([2,3]);ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+tW,y);ctx.stroke();ctx.setLineDash([]);ctx.restore();ctx.fillStyle=t.c;ctx.font='bold 8px ui-monospace';ctx.textAlign='left';ctx.fillText(t.lbl,pL+3,y-2);});
+  var fuelAvg=avgByWeek(fuelItems), foodAvg=avgByWeek(foodItems), svcAvg=avgByWeek(svcItems);
 
-  var mPeakDay=103; // May 15 from Feb 1 baseline
-  var rPeakDay=108; // May 20 from Feb 1 baseline
-  var todayDay=61;
-  function lerp(a,day){if(day<=a[0].d)return a[0].v;if(day>=a[a.length-1].d)return a[a.length-1].v;for(var i=0;i<a.length-1;i++)if(day>=a[i].d&&day<=a[i+1].d){var t=(day-a[i].d)/(a[i+1].d-a[i].d);return a[i].v+t*(a[i+1].v-a[i+1>=a.length?i:i].v);}return a[a.length-1].v;}
-  function interp(a,day){if(day<=a[0].d)return a[0].v;if(day>=a[a.length-1].d)return a[a.length-1].v;for(var i=0;i<a.length-1;i++){if(day>=a[i].d&&day<=a[i+1].d){var t=(day-a[i].d)/(a[i+1].d-a[i].d);return a[i].v+t*(a[i+1].v-a[i].v);}}return a[a.length-1].v;}
-  var mHist=[{d:0,v:m['60daysAgo']||0.8},{d:30,v:m['30daysAgo']||2.1},{d:todayDay,v:mC}];
-  var rHist=[{d:0,v:r['60daysAgo']||1.1},{d:30,v:r['30daysAgo']||3.4},{d:todayDay,v:rC}];
-  var mProj=[{d:todayDay,v:mC},{d:mPeakDay,v:mPeak},{d:180,v:Math.max(mC,mPeak-0.5)}];
-  var rProj=[{d:todayDay,v:rC},{d:rPeakDay,v:rPeak},{d:180,v:Math.max(rC,rPeak-0.7)}];
-  function fill(a,endD,col){ctx.beginPath();for(var d=0;d<=endD;d++){var x=toX(d),y=toY(interp(a,d));d===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.lineTo(toX(endD),pT+cH);ctx.lineTo(toX(0),pT+cH);ctx.closePath();ctx.fillStyle=col;ctx.fill();}
-  function line(a,startD,endD,col,w,dash){ctx.save();if(dash)ctx.setLineDash(dash);ctx.beginPath();for(var d=startD;d<=endD;d++){var x=toX(d),y=toY(interp(a,d));d===startD?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.strokeStyle=col;ctx.lineWidth=w;ctx.stroke();ctx.restore();}
-  fill(mHist,todayDay,'rgba(74,158,255,0.08)');fill(rHist,todayDay,'rgba(255,176,32,0.08)');
-  line(mHist,0,todayDay,'#4a9eff',1.8);line(rHist,0,todayDay,'#ffb020',1.8);
-  line(mProj,todayDay,180,'rgba(74,158,255,0.72)',1.5,[4,3]);
-  line(rProj,todayDay,180,'rgba(255,176,32,0.72)',1.5,[4,3]);
+  // Composite weighted index
+  var compositeByW={};
+  function addToComposite(arr,weight){
+    arr.forEach(function(p){
+      if(!compositeByW[p.w]) compositeByW[p.w]={sum:0,tw:0,projected:p.projected};
+      compositeByW[p.w].sum+=p.v*weight; compositeByW[p.w].tw+=weight;
+    });
+  }
+  addToComposite(fuelAvg,0.40); addToComposite(foodAvg,0.35); addToComposite(svcAvg,0.25);
+  var composite=[];
+  for(var w in compositeByW){
+    var c=compositeByW[w];
+    composite.push({w:parseInt(w), v:c.tw?c.sum/c.tw:0, projected:c.projected});
+  }
+  composite.sort(function(a,b){return a.w-b.w;});
 
-  var wL=toX(27);
-  ctx.strokeStyle='rgba(255,176,32,0.5)';ctx.lineWidth=1.5;ctx.setLineDash([3,3]);
-  ctx.beginPath();ctx.moveTo(wL,pT);ctx.lineTo(wL,pT+cH);ctx.stroke();ctx.setLineDash([]);
-  ctx.fillStyle='rgba(255,176,32,0.8)';ctx.font='bold 8px ui-monospace';ctx.textAlign='center';ctx.fillText('⚡ WAR',wL,pT+18);
+  // Y range
+  var maxY=0,minY=0;
+  [fuelAvg,foodAvg,svcAvg].forEach(function(arr){arr.forEach(function(p){maxY=Math.max(maxY,p.v);minY=Math.min(minY,p.v);});});
+  minY=Math.floor(minY/5)*5;
+  maxY=Math.ceil(maxY*1.15/5)*5||10;
 
-  var tx=toX(todayDay);ctx.save();ctx.strokeStyle='rgba(255,255,255,0.2)';ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.beginPath();ctx.moveTo(tx,pT);ctx.lineTo(tx,pT+cH);ctx.stroke();ctx.setLineDash([]);ctx.restore();
-  ctx.fillStyle='rgba(255,255,255,0.4)';ctx.font='bold 8px ui-monospace';ctx.textAlign='center';
-  ctx.fillText('TODAY',tx,pT+10);ctx.fillText('PROJECTED',pL+tW-45,pT+10);
+  function toX(w){return pL+((w-1)/(TOTAL_W-1))*cW;}
+  function toY(v){return pT+cH-((v-minY)/(maxY-minY))*cH;}
+  function calLabel(w){
+    var MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var d=new Date(W1_DATE.getTime()+(w-1)*7*86400000);
+    return MO[d.getMonth()]+' '+d.getDate();
+  }
 
-  var mpX=toX(mPeakDay), rpX=toX(rPeakDay);
-  ctx.fillStyle='rgba(74,158,255,0.85)';ctx.font='bold 8px ui-monospace';ctx.fillText('Metro peak '+mPeak+'%',Math.min(W-50,mpX+20),toY(mPeak)-4);
-  ctx.fillStyle='rgba(255,176,32,0.9)';ctx.fillText('Regional peak '+rPeak+'%',Math.min(W-58,rpX+22),toY(rPeak)+12);
+  // Background
+  ctx.fillStyle='rgba(0,0,0,0.15)';ctx.fillRect(0,0,W,H);
 
-  ctx.fillStyle='#4a6278';ctx.font='8px ui-monospace';ctx.textAlign='center';
-  [{d:0,l:'Feb 1'},{d:30,l:'Mar 3'},{d:60,l:'Apr 2'},{d:90,l:'May 1'},{d:120,l:'May 31'},{d:150,l:'Jun 30'},{d:180,l:'Jul 30'}].forEach(function(x){ctx.fillText(x.l,toX(x.d),H-8);});
+  // Y grid
+  var yStep=Math.max(5,Math.ceil((maxY-minY)/6/5)*5);
+  for(var gv=minY;gv<=maxY;gv+=yStep){
+    ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pL,toY(gv));ctx.lineTo(pL+cW,toY(gv));ctx.stroke();
+    ctx.fillStyle='rgba(122,148,176,0.7)';ctx.font='8px ui-monospace';ctx.textAlign='right';ctx.fillText(gv+'%',pL-3,toY(gv)+3);
+  }
+  if(minY<0){ctx.strokeStyle='rgba(255,255,255,0.12)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pL,toY(0));ctx.lineTo(pL+cW,toY(0));ctx.stroke();}
+
+  // X labels
+  for(var gw=1;gw<=TOTAL_W;gw++){
+    if(gw===1||gw%4===1||gw===TOTAL_W){
+      ctx.fillStyle='rgba(122,148,176,0.6)';ctx.font='7px ui-monospace';ctx.textAlign='center';
+      ctx.fillText(calLabel(gw),toX(gw),H-6);
+    }
+  }
+
+  // WAR + NOW markers
+  var warX=toX(WAR_W), nowX=toX(NOW_W);
+  ctx.save();ctx.strokeStyle='rgba(255,176,32,0.6)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+  ctx.beginPath();ctx.moveTo(warX,pT);ctx.lineTo(warX,pT+cH);ctx.stroke();ctx.setLineDash([]);ctx.restore();
+  ctx.fillStyle='rgba(255,176,32,0.9)';ctx.font='bold 7px ui-monospace';ctx.textAlign='center';ctx.fillText('\u26a0 WAR',warX,pT+9);
+
+  ctx.save();ctx.strokeStyle='rgba(255,255,255,0.3)';ctx.lineWidth=1;ctx.setLineDash([2,2]);
+  ctx.beginPath();ctx.moveTo(nowX,pT);ctx.lineTo(nowX,pT+cH);ctx.stroke();ctx.setLineDash([]);ctx.restore();
+  ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='bold 7px ui-monospace';ctx.textAlign='center';ctx.fillText('NOW \u25ba',nowX,pT+9);
+
+  ctx.fillStyle='rgba(255,176,32,0.05)';ctx.fillRect(warX,pT,Math.max(0,nowX-warX),cH);
+  ctx.fillStyle='rgba(74,158,255,0.03)';ctx.fillRect(nowX,pT,Math.max(0,toX(TOTAL_W)-nowX),cH);
+
+  // Draw: Fuel (red), Food (green), Services (blue), Composite (white)
+  var lineData=[
+    {arr:fuelAvg, col:'#ff3b3b', label:'\u26fd Fuel',      lw:1.8},
+    {arr:foodAvg, col:'#00e87a', label:'\ud83c\udf3e Food',      lw:1.5},
+    {arr:svcAvg,  col:'#4a9eff', label:'\u2708\ufe0f Services',  lw:1.5},
+    {arr:composite,col:'#ffffff',label:'\u25c9 Composite', lw:2.2},
+  ];
+  lineData.forEach(function(ln){
+    var arr=ln.arr; if(!arr.length) return;
+    var actual=arr.filter(function(p){return !p.projected;});
+    var proj=arr.filter(function(p){return !!p.projected;});
+    if(actual.length&&proj.length) proj=[actual[actual.length-1]].concat(proj);
+    if(actual.length>1){
+      ctx.beginPath();
+      actual.forEach(function(p,i){i===0?ctx.moveTo(toX(p.w),toY(p.v)):ctx.lineTo(toX(p.w),toY(p.v));});
+      ctx.strokeStyle=ln.col;ctx.lineWidth=ln.lw;ctx.stroke();
+    }
+    if(proj.length>1){
+      ctx.save();ctx.strokeStyle=ln.col;ctx.lineWidth=ln.lw*0.7;ctx.setLineDash([4,3]);
+      ctx.beginPath();
+      proj.forEach(function(p,i){i===0?ctx.moveTo(toX(p.w),toY(p.v)):ctx.lineTo(toX(p.w),toY(p.v));});
+      ctx.stroke();ctx.restore();
+    }
+    var last=actual[actual.length-1];
+    if(last){ctx.fillStyle=ln.col;ctx.beginPath();ctx.arc(toX(last.w),toY(last.v),3,0,Math.PI*2);ctx.fill();}
+  });
+
+  // Legend
+  var legEl=document.getElementById('cpiChartLegend');
+  if(legEl){
+    var lhtml='';
+    lineData.forEach(function(ln){
+      var last=ln.arr.filter(function(p){return !p.projected;});
+      var cur=last.length?last[last.length-1].v:0;
+      var chgCol=cur>=0?'var(--red)':'var(--green)';
+      lhtml+='<div style="display:flex;align-items:center;gap:5px">';
+      lhtml+='<div style="width:16px;height:'+(ln.lw>2?'3':'2')+'px;background:'+ln.col+';border-radius:2px;flex-shrink:0"></div>';
+      lhtml+='<span style="font-size:9px;color:var(--text-muted)">'+ln.label+'</span>';
+      lhtml+='<span style="font-size:9px;font-weight:700;color:'+chgCol+'">'+(cur>=0?'+':'')+cur.toFixed(1)+'%</span>';
+      lhtml+='</div>';
+    });
+    legEl.innerHTML=lhtml;
+  }
 }
 
 // ── ITEM INFLATION CANVAS ──
@@ -1936,38 +2024,10 @@ function renderCPI(inf){
   if(!inf) return;_lastInf=inf;
   var el=document.getElementById('cpi-content');
 
-  var m=inf.metro||{},r=inf.regional||{};
-  function tier(v){return v>=12?'crisis':v>=9?'emerg':v>=7?'warn':'ok';}
-  function tierCls(t){return t==='emerg'||t==='crisis'?'tier-emerg':t==='warn'?'tier-warn':'tier-ok';}
-  function tierLbl(t){return{ok:'OK',warn:'WARNING',emerg:'EMERGENCY',crisis:'CRISIS'}[t]||t.toUpperCase();}
-  var mT=tier(m.current||0),rT=tier(r.current||0);
   var html='';
-  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.14);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;">';
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:6px;">FORMULA — MARKETS</div>';
-  html+='<div style="font-size:8px;color:var(--text-dim);line-height:1.6;margin-bottom:6px">';
-  html+='Price shock chart uses historical points at 60d ago, 30d ago, and today, then projects to peak dates from the live data file.<br>';
-  html+='Metro projection: current '+(m.current||0)+'% → peak '+(m.peakMetro||0)+'% by '+escHtml((m.peakMetroDate||'').replace('2026-',''))+'. '; 
-  html+='Regional projection: current '+(r.current||0)+'% → peak '+(r.peakRegional||0)+'% by '+escHtml((r.peakRegionalDate||'').replace('2026-',''))+'.';
-  html+='</div>';
-  html+='<div style="display:flex;flex-direction:column;gap:4px;font-size:8px;color:var(--text-muted)">';
-  html+='<div>• Y-axis max = 1.12 × max(15, projected metro peak, projected regional peak)</div>';
-  html+='<div>• Historical item lines = cumulative % increase since Jan 1</div>';
-  html+='<div>• Dashed projection = 4 weeks ahead at current level</div>';
-  html+='</div></div>';
-  html+='<div class="cpi-curr">';
-  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:'+(mT==='warn'?'var(--amber)':mT==='emerg'||mT==='crisis'?'var(--red)':'var(--green)')+'">'+m.current+'%</div><div class="cpi-tier '+tierCls(mT)+'">'+tierLbl(mT)+'</div></div>';
-  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Regional</div><div class="cpi-stat-val" style="color:'+(rT==='warn'?'var(--amber)':rT==='emerg'||rT==='crisis'?'var(--red)':'var(--green)')+'">'+r.current+'%</div><div class="cpi-tier '+tierCls(rT)+'">'+tierLbl(rT)+'</div></div>';
-  html+='</div><canvas id="cpiCanvas" class="cpi-canvas"></canvas>';
-  html+='<div class="cpi-legend"><div class="cpi-leg-item"><div class="cpi-leg-line" style="background:#4a9eff"></div>Metro</div><div class="cpi-leg-item"><div class="cpi-leg-line" style="background:#ffb020"></div>Regional</div><div class="cpi-leg-item"><div class="cpi-leg-line" style="background:rgba(255,100,100,0.5)"></div>Projection</div></div>';
-  var states=inf.states||[];
-  html+='<div class="cpi-states">';
-  states.forEach(function(s){
-    var t=s.tier||'ok',bg=t==='crisis'?'rgba(255,59,59,0.2)':t==='emergency'?'rgba(255,59,59,0.1)':t==='warning'?'rgba(255,176,32,0.1)':'rgba(74,158,255,0.08)';
-    var col=t==='crisis'||t==='emergency'?'var(--red)':t==='warning'?'var(--amber)':'var(--green)';
-    var tArr=s.trend>=0.6?'▲▲':s.trend>=0.3?'▲':'➡';
-    html+='<span class="cpi-st" style="background:'+bg+';color:'+col+'">'+s.state+' '+(s.regional!==null?s.regional+'%':'—')+' '+tArr+'</span>';
-  });
-  html+='</div>';
+  html+='<div style="font-size:9px;color:var(--text-muted);margin-bottom:8px;">Aggregate price shock since W39 2025 (Sep 22). Fuel, Food, and Services averaged by category, weighted into a composite index. Same data source as the item charts below.</div>';
+  html+='<canvas id="cpiCanvas" class="cpi-canvas" style="height:240px"></canvas>';
+  html+='<div id="cpiChartLegend" style="display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:8px"></div>';
   
   el.innerHTML=html;
 
