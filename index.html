@@ -434,7 +434,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
     </div>
     <div class="panel">
       <div class="p-hdr">
-        <span class="p-title">🎯 Invasion Watch — Troop Deployments</span>
+        <span class="p-title">🎯 Troop Disposition</span>
         <span id="troop-phase-badge" class="crisis-badge crisis-2" style="font-size:10px;padding:2px 8px;border-radius:4px;margin-left:8px;">PRE-DEPLOYMENT</span>
       </div>
       <div id="troop-content"></div>
@@ -1539,37 +1539,10 @@ function renderTroopDeployments(td){
     return 'rgba(75,85,99,0.06)';
   }
 
-  var html=disclaimerHtml+'<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px;">';
+  var html=disclaimerHtml;
 
-  // Phase
-  html+='<div style="border:1px solid var(--border);border-radius:8px;padding:9px 10px;background:'+phaseColor+'">';
-  html+='<div style="font-size:8px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;margin-bottom:3px;">CURRENT PHASE</div>';
-  html+='<div style="font-size:12px;font-weight:700;color:var(--text);">'+phase+'</div>';
-  html+='<div style="font-size:8px;color:var(--text-muted);margin-top:3px;">'+escHtml((td.phaseReason||'').substring(0,100))+'</div></div>';
-
-  // Invasion indicator
-  html+='<div style="border:1px solid var(--border);border-radius:8px;padding:9px 10px;background:rgba(239,68,68,0.06)">';
-  html+='<div style="font-size:8px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;margin-bottom:3px;">INVASION INDICATOR</div>';
-  html+='<div style="font-size:18px;font-weight:700;color:'+invColor+';">'+invInd+'</div>';
-  html+='<div style="font-size:8px;color:var(--text-muted);margin-top:3px;">'+escHtml((td.invasionIndicatorReason||'').substring(0,100))+'</div></div>';
-
-  // Supply chain signal
-  html+='<div style="border:1px solid var(--border);border-radius:8px;padding:9px 10px;background:rgba(34,211,238,0.04)">';
-  html+='<div style="font-size:8px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;margin-bottom:3px;">SUPPLY CHAIN SIGNAL</div>';
-  html+='<div style="font-size:9px;color:var(--text);">'+escHtml(td.supplyChainImplication||'')+'</div></div>';
-
-  html+='</div>';
-
-  // Totals bar
+  // Totals extracted for header
   var tots=td.totals||{};
-  if(tots.totalPersonnel){
-    html+='<div style="display:flex;gap:12px;margin-bottom:10px;padding:8px 12px;border:1px solid var(--border);border-radius:8px;background:rgba(0,0,0,0.15);flex-wrap:wrap">';
-    html+='<div><span style="font-size:18px;font-weight:700;color:var(--text)">'+tots.deployed+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:4px">units deployed</span></div>';
-    html+='<div><span style="font-size:18px;font-weight:700;color:var(--amber)">'+tots.enRoute+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:4px">en route</span></div>';
-    html+='<div><span style="font-size:18px;font-weight:700;color:var(--red)">'+(tots.totalPersonnel||0).toLocaleString()+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:4px">personnel</span></div>';
-    if(td.updatedAt) html+='<div style="margin-left:auto;font-size:8px;color:var(--text-muted);align-self:center">Updated '+fmtAESTDateTime(td.updatedAt)+'</div>';
-    html+='</div>';
-  }
 
   // ── INVASION WATCH PANEL ──
   var iw=td.invasionWatch||{};
@@ -1584,13 +1557,19 @@ function renderTroopDeployments(td){
   html+='<div style="margin-bottom:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:rgba(0,0,0,0.15)">';
 
   // Header bar with overall score
-  html+='<div style="padding:10px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border)">';
-  html+='<div style="text-align:center;min-width:60px"><div style="font-size:28px;font-weight:700;color:'+iwCol+'">'+iwScore+'</div><div style="font-size:7px;font-weight:700;color:'+iwCol+';letter-spacing:0.1em">'+iwLabel+'</div></div>';
-  html+='<div style="flex:1"><div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:2px">Ground Operations Probability</div>';
-  html+='<div style="font-size:8px;color:var(--text-muted)">Earliest window: '+escHtml(tl.earliestGroundOps||'TBD')+' · Logistics window: '+escHtml(tl.logisticsWindowOpens||'TBD')+'</div></div>';
-  // Score bar
-  html+='<div style="width:120px"><div style="height:6px;background:var(--surface-high);border-radius:3px;overflow:hidden">';
-  html+='<div style="height:100%;width:'+iwScore+'%;background:'+iwCol+';border-radius:3px;transition:width 0.3s"></div></div></div>';
+  // Totals + score header
+  html+='<div style="padding:10px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);flex-wrap:wrap">';
+  html+='<div style="text-align:center;min-width:50px"><div style="font-size:28px;font-weight:700;color:'+iwCol+'">'+iwScore+'</div><div style="font-size:7px;font-weight:700;color:'+iwCol+';letter-spacing:0.1em">'+iwLabel+'</div></div>';
+  html+='<div style="height:30px;width:1px;background:var(--border)"></div>';
+  if(tots.totalPersonnel){
+    html+='<div><span style="font-size:16px;font-weight:700;color:var(--text)">'+tots.deployed+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:3px">deployed</span></div>';
+    html+='<div><span style="font-size:16px;font-weight:700;color:var(--amber)">'+tots.enRoute+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:3px">en route</span></div>';
+    html+='<div><span style="font-size:16px;font-weight:700;color:var(--red)">'+(tots.totalPersonnel||0).toLocaleString()+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:3px">personnel</span></div>';
+  }
+  html+='<div style="flex:1"></div>';
+  html+='<div style="width:100px"><div style="height:5px;background:var(--surface-high);border-radius:3px;overflow:hidden">';
+  html+='<div style="height:100%;width:'+iwScore+'%;background:'+iwCol+';border-radius:3px"></div></div></div>';
+  if(td.updatedAt) html+='<div style="font-size:8px;color:var(--text-muted)">'+fmtAESTDateTime(td.updatedAt)+'</div>';
   html+='</div>';
 
   // Individual indicators
