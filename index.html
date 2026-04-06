@@ -402,6 +402,11 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       <div id="reserves-content"></div>
     </div>
 
+    <div class="panel" id="panel-fuel-projection">
+      <div class="p-hdr"><span class="p-title">📉 Reserve Projection</span></div>
+      <div id="fuel-projection-content"></div>
+    </div>
+
     <div class="panel-row panel-row-2">
       <div class="panel" id="panel-fleet">
         <div class="p-hdr"><span class="p-title">🛢️ Fleet Arrivals</span></div>
@@ -1310,6 +1315,170 @@ function renderFleet(data){
     });
   }
   el.innerHTML=html;
+}
+
+// ── FUEL PROJECTION ──
+function renderFuelProjection(fl){
+  if(!fl||!fl.fuels) return;
+  var el=document.getElementById('fuel-projection-content');
+  if(!el) return;
+
+  var html='';
+  var fuels=['diesel','petrol','jetFuel'];
+  var fuelColors={'diesel':'#ff3b3b','petrol':'#ffb020','jetFuel':'#4a9eff'};
+  var fuelNames={'diesel':'Diesel','petrol':'Petrol','jetFuel':'Jet Fuel'};
+
+  // Status cards
+  html+='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">';
+  fuels.forEach(function(f){
+    var d=fl.fuels[f]; if(!d) return;
+    var col=fuelColors[f];
+    var statusCol=d.status==='CRITICAL'?'var(--red)':d.status==='WARNING'?'var(--amber)':'var(--green)';
+    html+='<div style="border:1px solid var(--border);border-radius:8px;padding:10px;border-top:3px solid '+col+';background:rgba(0,0,0,0.1)">';
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin-bottom:4px">'+fuelNames[f].toUpperCase()+'</div>';
+    html+='<div style="font-size:24px;font-weight:700;color:'+col+'">'+d.currentDays+'<span style="font-size:10px;color:var(--text-muted)">d</span></div>';
+    html+='<div style="font-size:8px;font-weight:700;color:'+statusCol+';margin:2px 0">'+d.status+'</div>';
+    html+='<div style="font-size:7px;color:var(--text-muted)">Consume '+d.consumptionMLDay+' ML/d</div>';
+    html+='<div style="font-size:7px;color:var(--text-muted)">Produce '+d.productionMLDay+' ML/d</div>';
+    html+='<div style="font-size:7px;color:var(--red)">Net draw '+d.netDrawdownMLDay+' ML/d</div>';
+    if(d.rationingDate) html+='<div style="font-size:8px;font-weight:700;color:var(--red);margin-top:4px">⚠ Rationing: '+d.rationingDate.replace('2026-','')+'</div>';
+    else html+='<div style="font-size:8px;color:var(--green);margin-top:4px">✓ Rationing avoided</div>';
+    html+='<div style="font-size:7px;color:var(--text-dim)">Min: '+d.minDays+'d on '+(d.minDate||'').replace('2026-','')+'</div>';
+    html+='</div>';
+  });
+  html+='</div>';
+
+  // Projection chart
+  html+='<canvas id="fuelProjectionCanvas" style="width:100%;height:200px;display:block;border-radius:6px;background:rgba(0,0,0,0.15);margin-bottom:8px"></canvas>';
+  // Legend
+  html+='<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px">';
+  fuels.forEach(function(f){
+    var d=fl.fuels[f]; if(!d) return;
+    html+='<div style="display:flex;align-items:center;gap:4px"><div style="width:14px;height:2px;background:'+fuelColors[f]+';border-radius:1px"></div><span style="font-size:8px;color:var(--text-muted)">'+fuelNames[f]+' ('+d.currentDays+'d)</span></div>';
+  });
+  html+='<div style="display:flex;align-items:center;gap:4px"><div style="width:14px;height:2px;background:var(--red);border-radius:1px;opacity:0.5"></div><span style="font-size:8px;color:var(--text-muted)">Rationing trigger ('+fl.rationingTrigger+'d)</span></div>';
+  html+='</div>';
+
+  // Cargo arrivals
+  var ic=fl.incomingCargoes||{};
+  if(ic.cargoes&&ic.cargoes.length){
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin-bottom:4px">INCOMING CARGOES</div>';
+    ic.cargoes.forEach(function(c){
+      var eta=new Date(c.eta);var daysOut=Math.max(0,Math.ceil((eta-Date.now())/86400000));
+      var col=daysOut<=3?'var(--red)':daysOut<=7?'var(--amber)':'var(--green)';
+      html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:3px;font-size:8px">';
+      html+='<span style="font-weight:700;color:'+col+';min-width:24px">'+daysOut+'D</span>';
+      html+='<span style="color:var(--text);flex:1">'+escHtml(c.name)+'</span>';
+      if(c.diesel_ml) html+='<span style="color:#ff3b3b">'+c.diesel_ml+' ML diesel</span>';
+      if(c.petrol_ml) html+='<span style="color:#ffb020;margin-left:6px">'+c.petrol_ml+' ML petrol</span>';
+      html+='</div>';
+    });
+  }
+
+  el.innerHTML=html;
+
+  // Draw projection chart
+  requestAnimationFrame(function(){requestAnimationFrame(function(){
+    drawFuelProjection(fl);
+  });});
+}
+
+function drawFuelProjection(fl){
+  var canvas=document.getElementById('fuelProjectionCanvas');
+  if(!canvas||!fl) return;
+  var dpr=window.devicePixelRatio||1,W=canvas.offsetWidth,H=200;
+  if(!W||W<50) return;
+  canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';
+  var ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+  var pL=36,pR=10,pT=12,pB=24,cW=W-pL-pR,cH=H-pT-pB;
+
+  var fuels=['diesel','petrol','jetFuel'];
+  var colors={'diesel':'#ff3b3b','petrol':'#ffb020','jetFuel':'#4a9eff'};
+
+  // Find date range and Y range
+  var allPts=[],allDates=[];
+  fuels.forEach(function(f){
+    var d=fl.fuels[f]; if(!d) return;
+    (d.projection||[]).forEach(function(p){allPts.push(p.days_cover);allDates.push(p.date);});
+  });
+  var minY=Math.min.apply(null,allPts.concat([0]));
+  var maxY=Math.max.apply(null,allPts);
+  minY=Math.floor(minY/5)*5;
+  maxY=Math.ceil(maxY*1.1/5)*5||50;
+  var dates=[...new Set(allDates)].sort();
+  var N=dates.length;
+  if(!N) return;
+
+  function toX(i){return pL+(i/(N-1))*cW;}
+  function toY(v){return pT+cH-((v-minY)/(maxY-minY))*cH;}
+
+  ctx.fillStyle='rgba(0,0,0,0.15)';ctx.fillRect(0,0,W,H);
+
+  // Y grid
+  var yStep=Math.max(5,Math.ceil((maxY-minY)/5/5)*5);
+  for(var gv=minY;gv<=maxY;gv+=yStep){
+    ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pL,toY(gv));ctx.lineTo(pL+cW,toY(gv));ctx.stroke();
+    ctx.fillStyle='rgba(122,148,176,0.7)';ctx.font='8px ui-monospace';ctx.textAlign='right';
+    ctx.fillText(gv+'d',pL-3,toY(gv)+3);
+  }
+
+  // Rationing trigger line
+  var rtY=toY(fl.rationingTrigger);
+  ctx.strokeStyle='rgba(255,59,59,0.5)';ctx.lineWidth=2;
+  ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(pL,rtY);ctx.lineTo(pL+cW,rtY);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='rgba(255,59,59,0.6)';ctx.font='bold 7px ui-monospace';ctx.textAlign='left';
+  ctx.fillText('RATIONING '+fl.rationingTrigger+'d',pL+3,rtY-3);
+
+  // Zero line
+  if(minY<0){
+    ctx.strokeStyle='rgba(255,255,255,0.1)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pL,toY(0));ctx.lineTo(pL+cW,toY(0));ctx.stroke();
+  }
+
+  // X labels
+  dates.forEach(function(d,i){
+    if(i===0||i===N-1||i%Math.max(1,Math.floor(N/6))===0){
+      ctx.fillStyle='rgba(122,148,176,0.6)';ctx.font='7px ui-monospace';ctx.textAlign='center';
+      var parts=d.split('-');ctx.fillText(parts[1]+'/'+parts[2],toX(i),H-6);
+    }
+  });
+
+  // Draw each fuel line
+  fuels.forEach(function(f){
+    var d=fl.fuels[f]; if(!d||!d.projection) return;
+    var pts=d.projection;
+    ctx.beginPath();
+    pts.forEach(function(p,i){
+      var di=dates.indexOf(p.date);
+      if(di<0) return;
+      i===0?ctx.moveTo(toX(di),toY(p.days_cover)):ctx.lineTo(toX(di),toY(p.days_cover));
+    });
+    ctx.strokeStyle=colors[f];ctx.lineWidth=2;ctx.stroke();
+
+    // End dot + label
+    var last=pts[pts.length-1];
+    if(last){
+      var li=dates.indexOf(last.date);
+      if(li>=0){
+        ctx.fillStyle=colors[f];ctx.beginPath();ctx.arc(toX(li),toY(last.days_cover),3,0,Math.PI*2);ctx.fill();
+        ctx.font='bold 8px ui-monospace';ctx.textAlign='left';
+        ctx.fillText(last.days_cover+'d',toX(li)+5,toY(last.days_cover)+3);
+      }
+    }
+
+    // Cargo arrival markers
+    pts.forEach(function(p){
+      if(p.cargo_arrived>0){
+        var ci=dates.indexOf(p.date);
+        if(ci>=0){
+          ctx.fillStyle=colors[f];ctx.globalAlpha=0.3;
+          ctx.fillRect(toX(ci)-2,toY(p.days_cover),4,toY(0)-toY(p.days_cover));
+          ctx.globalAlpha=1;
+        }
+      }
+    });
+  });
 }
 
 // ── RESERVES ──
@@ -2864,6 +3033,7 @@ function refresh(){
     renderReviewPanels(data);
     renderServo(data.servoOutagesLive||data.servoOutages);
     renderFleet(data.fleetStatus||data.shipments);
+    if(data.fuelLevels) renderFuelProjection(data.fuelLevels);
     renderReserves(data.reserves);
     renderRefineries(data.refineries);
     renderRoutes(data.shippingRoutes);
