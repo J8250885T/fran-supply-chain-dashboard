@@ -1501,19 +1501,65 @@ function renderReserves(data){
 function renderRefineries(data){
   if(!data) return;
   var el=document.getElementById('refineries-content');
-  var regions=[{key:'singapore',flag:'🇸🇬'},{key:'southKorea',flag:'🇰🇷'},{key:'taiwan',flag:'🇹🇼'},{key:'japan',flag:'🇯🇵'}];
-  var html='<div class="ref-list">';
-  var caps=[];
-  regions.forEach(function(r){
-    var d=data[r.key]||{},cap=d.capacity||0;caps.push(cap);
-    var col=cap<60?'var(--red)':cap<75?'var(--amber)':'var(--green)';
-    var tArr=d.trend==='decreasing'?' ▼':d.trend==='increasing'?' ▲':' ➡';
-    html+='<div class="ref-row"><span class="ref-flag">'+r.flag+'</span><div class="ref-bar-wrap"><div class="ref-bar-fill" style="width:'+cap+'%;background:'+col+'"></div></div><span class="ref-cap" style="color:'+col+'">'+cap+'%'+tArr+'</span></div>';
-    html+='<div class="ref-note">'+escHtml(d.note||'')+'</div>';
-  });
-  var avg=caps.reduce(function(a,b){return a+b;},0)/caps.length;
-  html+='<div class="ref-summary">Regional avg: <strong>~'+Math.round(avg)+'%</strong> — imports <strong>TIGHT</strong></div>';
-  el.innerHTML=html;
+
+  // Handle new live format (data.refineries is object keyed by country)
+  var refs=data.refineries||data;
+  var isLive=!!data.auAccessibleBPD;
+
+  if(isLive){
+    var order=['southKorea','singapore','india','malaysia','japan','china','australia'];
+    var html='';
+
+    // Summary bar
+    html+='<div style="display:flex;gap:10px;margin-bottom:8px;padding:6px 8px;background:rgba(0,0,0,0.15);border-radius:6px;flex-wrap:wrap;font-size:9px">';
+    html+='<div><span style="font-weight:700;color:var(--text)">'+(data.totalThroughputBPD||0).toLocaleString()+'</span> <span style="color:var(--text-muted)">bpd throughput</span></div>';
+    html+='<div><span style="font-weight:700;color:var(--green)">'+(data.auAccessibleBPD||0).toLocaleString()+'</span> <span style="color:var(--text-muted)">AU-accessible</span></div>';
+    html+='<div><span style="font-weight:700;color:var(--red)">'+(Math.round((data.totalThroughputBPD||0)-(data.auAccessibleBPD||0))).toLocaleString()+'</span> <span style="color:var(--text-muted)">blocked/domestic</span></div>';
+    html+='</div>';
+
+    order.forEach(function(key){
+      var r=refs[key]; if(!r) return;
+      var cap=r.currentUtilisation||0;
+      var col=cap<60?'var(--red)':cap<75?'var(--amber)':'var(--green)';
+      var expCol=r.exportStatus==='SUSPENDED'?'var(--red)':r.exportStatus==='CAPPED'||r.exportStatus==='RESTRICTED'?'var(--amber)':r.exportStatus==='REDIRECTING'?'#22d3ee':'var(--green)';
+      var tArr=r.trend==='decreasing'?' \u25bc':r.trend==='increasing'?' \u25b2':' \u2014';
+
+      html+='<div style="border:1px solid var(--border);border-radius:6px;margin-bottom:6px;overflow:hidden">';
+      // Header
+      html+='<div style="padding:6px 8px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.1)">';
+      html+='<div style="display:flex;align-items:center;gap:6px">';
+      html+='<span style="font-size:14px">'+(r.flag||'')+'</span>';
+      html+='<span style="font-size:10px;font-weight:700;color:var(--text)">'+escHtml(r.name)+'</span>';
+      html+='</div>';
+      html+='<div style="display:flex;align-items:center;gap:6px">';
+      html+='<span style="font-size:12px;font-weight:700;color:'+col+'">'+cap+'%'+tArr+'</span>';
+      html+='<span style="font-size:7px;font-weight:700;padding:2px 5px;border-radius:3px;border:1px solid '+expCol+';color:'+expCol+'">'+escHtml(r.exportStatus)+'</span>';
+      html+='</div></div>';
+      // Capacity bar
+      html+='<div style="padding:0 8px"><div style="height:4px;background:var(--surface-high);border-radius:2px;overflow:hidden;margin:4px 0">';
+      html+='<div style="height:100%;width:'+cap+'%;background:'+col+';border-radius:2px"></div></div></div>';
+      // Details
+      html+='<div style="padding:4px 8px 6px;font-size:8px;color:var(--text-muted);line-height:1.4">';
+      if(r.currentThroughputBPD) html+='<div>'+(r.currentThroughputBPD||0).toLocaleString()+' bpd throughput</div>';
+      if(r.exportNote) html+='<div>'+escHtml(r.exportNote)+'</div>';
+      if(r.keyRisk) html+='<div style="color:var(--amber)">\u26a0 '+escHtml(r.keyRisk)+'</div>';
+      html+='</div></div>';
+    });
+
+    el.innerHTML=html;
+  } else {
+    // Legacy format
+    var regions=[{key:'singapore',flag:'\ud83c\uddf8\ud83c\uddec'},{key:'southKorea',flag:'\ud83c\uddf0\ud83c\uddf7'},{key:'taiwan',flag:'\ud83c\uddf9\ud83c\uddfc'},{key:'japan',flag:'\ud83c\uddef\ud83c\uddf5'}];
+    var html='<div class="ref-list">';
+    var caps=[];
+    regions.forEach(function(r){
+      var d=refs[r.key]||{},cap=d.capacity||0;caps.push(cap);
+      var col=cap<60?'var(--red)':cap<75?'var(--amber)':'var(--green)';
+      html+='<div class="ref-row"><span class="ref-flag">'+r.flag+'</span><div class="ref-bar-wrap"><div class="ref-bar-fill" style="width:'+cap+'%;background:'+col+'"></div></div><span class="ref-cap" style="color:'+col+'">'+cap+'%</span></div>';
+      html+='<div class="ref-note">'+escHtml(d.note||'')+'</div>';
+    });
+    el.innerHTML=html;
+  }
 }
 
 // ── ROUTES ──
@@ -3032,7 +3078,7 @@ function refresh(){
     renderFleet(data.fleetStatus||data.shipments);
     if(data.fuelLevels) renderFuelProjection(data.fuelLevels);
     renderReserves(data.reserves);
-    renderRefineries(data.refineries);
+    renderRefineries(data.refineriesLive||data.refineries);
     renderRoutes(data.shippingRoutes);
     renderTroopDeployments(data.troopDeployments);
     renderDominoModel(data.dominoModel);
