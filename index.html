@@ -40,8 +40,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
 
 /* Row 2: nav tabs */
+.hdr-nav-wrap{position:relative}
 .hdr-nav{height:40px;display:flex;align-items:stretch;padding:0 12px;gap:2px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .hdr-nav::-webkit-scrollbar{display:none}
+.nav-fade{position:absolute;top:0;bottom:0;width:40px;pointer-events:none;z-index:2;transition:opacity 0.2s}
+.nav-fade-right{right:0;background:linear-gradient(to right,transparent,var(--bg-primary) 80%)}
+.nav-fade-left{left:0;background:linear-gradient(to left,transparent,var(--bg-primary) 80%)}
+.nav-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;font-size:14px;color:var(--text-muted);pointer-events:none;animation:navPulse 1.5s ease-in-out infinite}
+.nav-arrow-right{right:6px}
+.nav-arrow-left{left:6px}
+@keyframes navPulse{0%,100%{opacity:0.4;transform:translateY(-50%) translateX(0)}50%{opacity:1;transform:translateY(-50%) translateX(3px)}}
 .nav-tab{background:none;border:none;border-bottom:3px solid transparent;color:var(--text-muted);font:700 10px/1 var(--font);letter-spacing:0.08em;text-transform:uppercase;padding:4px 14px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:all 0.15s;flex-shrink:0;border-radius:6px 6px 0 0}
 .nav-tab:hover{color:var(--text)}
 .nav-tab.active{color:var(--text);border-bottom-color:var(--amber)}
@@ -313,7 +321,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   </div>
 
   <!-- Row 2: nav tabs -->
-  <nav class="hdr-nav">
+  <div class="hdr-nav-wrap">
+  <div class="nav-fade nav-fade-left" id="navFadeLeft" style="opacity:0"></div>
+  <div class="nav-fade nav-fade-right" id="navFadeRight"></div>
+  <span class="nav-arrow nav-arrow-right" id="navArrowRight">▶</span>
+  <span class="nav-arrow nav-arrow-left" id="navArrowLeft" style="display:none">◀</span>
+  <nav class="hdr-nav" id="hdrNav">
     <button class="nav-tab active" data-section="feed">
       <span class="tab-dot"></span> 📡 FEED <span class="tab-badge" id="feed-badge" style="display:none">0</span>
     </button>
@@ -333,6 +346,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       <span class="tab-dot"></span> 🁢 DOMINO
     </button>
   </nav>
+  </div>
 
 </header>
 
@@ -2488,6 +2502,32 @@ function syncHeaderHeight(){
   if(main) main.style.paddingTop=Math.ceil(h)+'px';
 }
 syncHeaderHeight();
+
+// Nav scroll indicators
+(function(){
+  var nav=document.getElementById('hdrNav');
+  var fadeL=document.getElementById('navFadeLeft');
+  var fadeR=document.getElementById('navFadeRight');
+  var arrowL=document.getElementById('navArrowLeft');
+  var arrowR=document.getElementById('navArrowRight');
+  if(!nav) return;
+  function updateNav(){
+    var sl=nav.scrollLeft, maxSl=nav.scrollWidth-nav.clientWidth;
+    if(fadeL) fadeL.style.opacity=sl>10?'1':'0';
+    if(fadeR) fadeR.style.opacity=sl<maxSl-10?'1':'0';
+    if(arrowL) arrowL.style.display=sl>10?'':'none';
+    if(arrowR) arrowR.style.display=sl<maxSl-10?'':'none';
+  }
+  nav.addEventListener('scroll',updateNav);
+  window.addEventListener('resize',updateNav);
+  setTimeout(updateNav,100);
+  // Auto-hide arrow after first interaction
+  nav.addEventListener('scroll',function once(){
+    setTimeout(function(){if(arrowR)arrowR.style.animation='none';},2000);
+    nav.removeEventListener('scroll',once);
+  });
+})();
+
 window.addEventListener('resize',function(){
   syncHeaderHeight();
   clearTimeout(window._rt);
