@@ -461,7 +461,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
         <div id="cpi-content"></div>
       </div>
       <div class="panel" id="panel-drivers">
-        <div class="p-hdr"><span class="p-title">🛒 Highest Item Inflation Since Jan 1</span></div>
+        <div class="p-hdr"><span class="p-title">🛒 Price Increase Since W39 2025</span></div>
         <div id="drivers-content"></div>
       </div>
     </div>
@@ -1793,10 +1793,10 @@ function drawCPIChart(inf){
 function drawItemInflationChart(inf){
   // Use 26-week live series if available, fall back to static weeklyItemSeries
   var liveData = window._itemSeries26w || null;
-  var TOTAL_W  = liveData ? (liveData.totalWeeks||18) : 18;
-  var WAR_W    = liveData ? (liveData.warWeek||9) : 9;
-  var NOW_W    = liveData ? (liveData.currentWeek||14) : 14;
-  var W1_DATE  = new Date('2026-01-05');
+  var TOTAL_W  = liveData ? (liveData.totalWeeks||31) : 31;
+  var WAR_W    = liveData ? (liveData.warWeek||24) : 24;
+  var NOW_W    = liveData ? (liveData.currentWeek||28) : 28;
+  var W1_DATE  = liveData && liveData.w1Date ? new Date(liveData.w1Date+'T00:00:00') : new Date('2025-09-22');
 
   function calLabel(w){
     var MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -1980,7 +1980,7 @@ function renderCPI(inf){
   var dEl = document.getElementById('drivers-content');
   var items = (inf.weeklyItems&&inf.weeklyItems.length)?inf.weeklyItems:null;
   if(dEl && items){
-    var dHtml = '<div style="font-size:10px;color:var(--text-muted);margin-bottom:8px;">Observed retail price increases since Jan 1, 2026. Not an official ABS index — these are market price movements. Y-axis = % change since Jan 1.</div>';
+    var dHtml = '<div style="font-size:10px;color:var(--text-muted);margin-bottom:8px;">Observed price increases since W39 2025 (Sep 22). Derived from real weekly commodity prices (Yahoo Finance). Y-axis = % change from W39 baseline.</div>';
     dHtml += '<div style="display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px;">';
     dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:10px;background:rgba(255,255,255,0.02);margin-bottom:6px"><canvas id="itemInflationCanvas-fuel" class="cpi-canvas" style="height:160px"></canvas><div id="itemInflationLegend-fuel" style="display:flex;flex-wrap:wrap;gap:5px 12px;margin-top:8px"></div></div>';
     dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:10px;background:rgba(255,255,255,0.02);margin-bottom:6px"><canvas id="itemInflationCanvas-food" class="cpi-canvas" style="height:160px"></canvas><div id="itemInflationLegend-food" style="display:flex;flex-wrap:wrap;gap:5px 12px;margin-top:8px"></div></div>';
@@ -2004,7 +2004,7 @@ function renderCPI(inf){
       dHtml += '<div style="height:100%;background:'+col+';width:'+pct+'%;border-radius:3px;"></div>';
       dHtml += '</div></div></div>';
     });
-    dHtml += '</div><div style="font-size:10px;color:var(--text-muted);margin-top:12px;padding-top:8px;border-top:1px solid var(--border);">Historical + 4-week outlook. Solid lines = actual observed price change since Jan 1. Dashed lines = 4-week projection (holds current level). <strong>⚠ WAR</strong> = Iran conflict start (W9, Mar 2). <strong>NOW ►</strong> = current week. Legends below each chart.</div>';
+    dHtml += '</div><div style="font-size:10px;color:var(--text-muted);margin-top:12px;padding-top:8px;border-top:1px solid var(--border);">Price increase since W39 2025 (Sep 22). Solid lines = actual commodity-derived price change. Dashed = 4-week projection (flat hold). <strong>⚠ WAR</strong> = Iran conflict start (W9, Mar 2). <strong>NOW ►</strong> = current week. Legends below each chart.</div>';
     dEl.innerHTML = dHtml;
   } else if(dEl && inf.drivers && inf.drivers.length){
     var dHtml2 = '<div style="display:flex;flex-direction:column;gap:8px;">';
