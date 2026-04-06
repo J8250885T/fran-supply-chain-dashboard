@@ -1793,9 +1793,9 @@ function drawCPIChart(inf){
 function drawItemInflationChart(inf){
   // Use 26-week live series if available, fall back to static weeklyItemSeries
   var liveData = window._itemSeries26w || null;
-  var TOTAL_W  = 26;
+  var TOTAL_W  = liveData ? (liveData.totalWeeks||18) : 18;
   var WAR_W    = liveData ? (liveData.warWeek||9) : 9;
-  var NOW_W    = liveData ? (liveData.currentWeek||13) : 13;
+  var NOW_W    = liveData ? (liveData.currentWeek||14) : 14;
   var W1_DATE  = new Date('2026-01-05');
 
   function calLabel(w){
@@ -1958,7 +1958,7 @@ function renderCPI(inf){
   html+='<div style="display:flex;flex-direction:column;gap:4px;font-size:8px;color:var(--text-muted)">';
   html+='<div>• Y-axis max = 1.12 × max(15, projected metro peak, projected regional peak)</div>';
   html+='<div>• Historical item lines = cumulative % increase since Jan 1</div>';
-  html+='<div>• Dashed projection = holds at current level, eases from W18 (26-week view)</div>';
+  html+='<div>• Dashed projection = 4 weeks ahead at current level</div>';
   html+='</div></div>';
   html+='<div class="cpi-curr">';
   html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:'+(mT==='warn'?'var(--amber)':mT==='emerg'||mT==='crisis'?'var(--red)':'var(--green)')+'">'+m.current+'%</div><div class="cpi-tier '+tierCls(mT)+'">'+tierLbl(mT)+'</div></div>';
@@ -2004,7 +2004,7 @@ function renderCPI(inf){
       dHtml += '<div style="height:100%;background:'+col+';width:'+pct+'%;border-radius:3px;"></div>';
       dHtml += '</div></div></div>';
     });
-    dHtml += '</div><div style="font-size:10px;color:var(--text-muted);margin-top:12px;padding-top:8px;border-top:1px solid var(--border);">26-week calendar view (Jan 5 → Jul 6, 2026). Solid lines = actual observed price change since Jan 1. Dashed lines = projected trajectory (holds current level, eases from W18). <strong>⚠ WAR</strong> = Iran conflict start (W9, Mar 2). <strong>NOW ►</strong> = current week. Legends below each chart.</div>';
+    dHtml += '</div><div style="font-size:10px;color:var(--text-muted);margin-top:12px;padding-top:8px;border-top:1px solid var(--border);">Historical + 4-week outlook. Solid lines = actual observed price change since Jan 1. Dashed lines = 4-week projection (holds current level). <strong>⚠ WAR</strong> = Iran conflict start (W9, Mar 2). <strong>NOW ►</strong> = current week. Legends below each chart.</div>';
     dEl.innerHTML = dHtml;
   } else if(dEl && inf.drivers && inf.drivers.length){
     var dHtml2 = '<div style="display:flex;flex-direction:column;gap:8px;">';
