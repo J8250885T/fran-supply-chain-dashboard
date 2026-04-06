@@ -455,7 +455,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       </div>
       <div id="live-inputs-content"><div style="color:var(--text-muted);font-size:10px">Loading live data…</div></div>
     </div>
-    <div class="panel-row panel-row-2">
+    <div class="panel" id="panel-commodity-history">
+      <div class="p-hdr">
+        <span class="p-title">📈 12-Month Commodity Price History</span>
+        <span id="commodity-history-dtg" style="font-size:9px;color:var(--text-muted)"></span>
+      </div>
+      <div style="font-size:9px;color:var(--text-muted);margin-bottom:8px">Indexed to 100 at start of period — all commodities on a common scale. Dotted lines mark key events. Click legend to toggle series.</div>
+      <canvas id="commodityHistoryCanvas" style="width:100%;height:280px;display:block;border-radius:6px;background:rgba(0,0,0,0.2)"></canvas>
+      <div id="commodity-history-legend" style="display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:10px"></div>
+    </div>
+
+        <div class="panel-row panel-row-2">
       <div class="panel" id="panel-cpi">
         <div class="p-hdr"><span class="p-title">📊 Price Shock Monitor</span></div>
         <div id="cpi-content"></div>
@@ -575,6 +585,9 @@ function showSection(id){
     requestAnimationFrame(function(){
       if(id==='feed'&&_lastSentiment){
         drawSentimentChart(_lastSentiment);
+      }
+      if(id==='markets'&&_lastCommodityHistory){
+        drawCommodityHistory(_lastCommodityHistory);
       }
       if(id==='markets'   &&_lastInf){
         drawCPIChart(_lastInf);
@@ -1902,6 +1915,152 @@ function drawItemInflationChart(inf){
 }
 
 // ── PRICE SHOCK PANEL ──
+// ── 12-MONTH COMMODITY HISTORY CHART ──
+var _lastCommodityHistory = null;
+var _hiddenCommodities = {};
+
+function renderCommodityHistory(ch){
+  if(!ch||!ch.series) return;
+  _lastCommodityHistory = ch;
+
+  var dtgEl = document.getElementById('commodity-history-dtg');
+  if(dtgEl) dtgEl.textContent = 'Updated '+fmtAESTDateTime(ch.updatedAt);
+
+  // Build legend
+  var leg = document.getElementById('commodity-history-legend');
+  if(leg){
+    var lhtml = '';
+    ch.series.forEach(function(s){
+      var hidden = !!_hiddenCommodities[s.id];
+      var chgCol = s.chgPct >= 0 ? 'var(--red)' : 'var(--green)';
+      lhtml += '<div onclick="toggleCommodity(\'' + s.id + '\')" style="display:flex;align-items:center;gap:5px;cursor:pointer;opacity:'+(hidden?'0.3':'1')+'">';
+      lhtml += '<div style="width:18px;height:2px;background:'+s.color+';border-radius:2px;flex-shrink:0"></div>';
+      lhtml += '<span style="font-size:8px;color:var(--text-muted)">'+escHtml(s.label)+'</span>';
+      lhtml += '<span style="font-size:8px;font-weight:700;color:'+chgCol+'">'+(s.chgPct>=0?'+':'')+s.chgPct.toFixed(1)+'%</span>';
+      lhtml += '</div>';
+    });
+    leg.innerHTML = lhtml;
+  }
+
+  drawCommodityHistory(ch);
+}
+
+function toggleCommodity(id){
+  _hiddenCommodities[id] = !_hiddenCommodities[id];
+  if(_lastCommodityHistory) renderCommodityHistory(_lastCommodityHistory);
+}
+
+function drawCommodityHistory(ch){
+  var canvas = document.getElementById('commodityHistoryCanvas');
+  if(!canvas||!ch||!ch.series) return;
+  var dpr = window.devicePixelRatio||1;
+  var W = canvas.offsetWidth, H = 280;
+  if(!W||W<50) return;
+  canvas.width=W*dpr; canvas.height=H*dpr;
+  canvas.style.width=W+'px'; canvas.style.height=H+'px';
+  var ctx = canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+
+  var PAD_L=36, PAD_R=12, PAD_T=16, PAD_B=28;
+  var cW=W-PAD_L-PAD_R, cH=H-PAD_T-PAD_B;
+
+  // Find min/max index values across all visible series
+  var allVals = [];
+  ch.series.forEach(function(s){
+    if(_hiddenCommodities[s.id]) return;
+    s.series.forEach(function(p){ allVals.push(p.idx); });
+  });
+  if(!allVals.length) return;
+  var yMin = Math.min.apply(null, allVals);
+  var yMax = Math.max.apply(null, allVals);
+  var yPad = (yMax-yMin)*0.08;
+  yMin = Math.floor((yMin-yPad)/10)*10;
+  yMax = Math.ceil((yMax+yPad)/10)*10;
+
+  // Date range from first series
+  var dates = ch.series[0] ? ch.series[0].series.map(function(p){return p.date;}) : [];
+  var N = dates.length;
+  if(!N) return;
+
+  function xPos(i){ return PAD_L + (i/(N-1))*cW; }
+  function yPos(v){ return PAD_T + (1-(v-yMin)/(yMax-yMin))*cH; }
+
+  // Background
+  ctx.fillStyle='rgba(0,0,0,0.18)';
+  ctx.beginPath(); ctx.roundRect(0,0,W,H,6); ctx.fill();
+
+  // Grid
+  ctx.strokeStyle='rgba(255,255,255,0.04)'; ctx.lineWidth=1;
+  var yStep = Math.ceil((yMax-yMin)/6/10)*10;
+  for(var gv=yMin; gv<=yMax; gv+=yStep){
+    ctx.beginPath(); ctx.moveTo(PAD_L,yPos(gv)); ctx.lineTo(PAD_L+cW,yPos(gv)); ctx.stroke();
+    ctx.fillStyle='rgba(122,148,176,0.6)'; ctx.font='8px ui-monospace';
+    ctx.textAlign='right'; ctx.fillText(gv.toFixed(0),PAD_L-3,yPos(gv)+3);
+  }
+
+  // Baseline 100 line
+  if(yMin<=100&&yMax>=100){
+    ctx.strokeStyle='rgba(255,255,255,0.15)'; ctx.lineWidth=1;
+    ctx.setLineDash([3,3]);
+    ctx.beginPath(); ctx.moveTo(PAD_L,yPos(100)); ctx.lineTo(PAD_L+cW,yPos(100)); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='rgba(255,255,255,0.25)'; ctx.font='7px ui-monospace';
+    ctx.textAlign='left'; ctx.fillText('100 BASE',PAD_L+3,yPos(100)-3);
+  }
+
+  // Key event markers
+  var dateToX = {};
+  dates.forEach(function(d,i){ dateToX[d]=xPos(i); });
+  (ch.keyEvents||[]).forEach(function(ev){
+    // Find closest date
+    var evDate = ev.date;
+    var closest = dates.reduce(function(a,b){ return Math.abs(new Date(b)-new Date(evDate))<Math.abs(new Date(a)-new Date(evDate))?b:a; });
+    var x = dateToX[closest];
+    if(!x) return;
+    ctx.strokeStyle = (ev.color||'#ffb020')+'aa'; ctx.lineWidth=1;
+    ctx.setLineDash([2,2]);
+    ctx.beginPath(); ctx.moveTo(x,PAD_T); ctx.lineTo(x,PAD_T+cH); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle=ev.color||'#ffb020'; ctx.font='bold 7px ui-monospace';
+    ctx.textAlign='center'; ctx.fillText(ev.label,x,PAD_T-3);
+  });
+
+  // X-axis date labels
+  ctx.fillStyle='rgba(122,148,176,0.6)'; ctx.font='7px ui-monospace'; ctx.textAlign='center';
+  dates.forEach(function(d,i){
+    if(i===0||i===N-1||i%8===0){
+      var parts=d.split('-');
+      ctx.fillText(parts[1]+'/'+parts[2].slice(0,2),xPos(i),H-PAD_B+11);
+    }
+  });
+
+  // Draw each series
+  ch.series.forEach(function(s){
+    if(_hiddenCommodities[s.id]) return;
+    var pts = s.series;
+    if(!pts||pts.length<2) return;
+
+    // Line
+    ctx.beginPath();
+    pts.forEach(function(p,i){
+      var x=xPos(i), y=yPos(p.idx);
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.strokeStyle=s.color; ctx.lineWidth=1.5; ctx.stroke();
+
+    // End dot + label
+    var last=pts[pts.length-1];
+    ctx.beginPath(); ctx.arc(xPos(pts.length-1),yPos(last.idx),3,0,Math.PI*2);
+    ctx.fillStyle=s.color; ctx.fill();
+    ctx.font='bold 8px ui-monospace'; ctx.textAlign='left'; ctx.fillStyle=s.color;
+    ctx.fillText((s.chgPct>=0?'+':'')+s.chgPct.toFixed(1)+'%',xPos(pts.length-1)+5,yPos(last.idx)+3);
+  });
+
+  // Border
+  ctx.strokeStyle='rgba(255,255,255,0.04)'; ctx.lineWidth=1;
+  ctx.strokeRect(PAD_L,PAD_T,cW,cH);
+}
+
 function renderCPI(inf){
   if(!inf) return;_lastInf=inf;
   var el=document.getElementById('cpi-content');
@@ -2336,6 +2495,7 @@ window.addEventListener('resize',function(){
     if(_lastBankTiers) drawCFChart('cfCanvasA',_lastBankTiers,false);
     if(_lastBankTiersND) drawCFChart('cfCanvasB',_lastBankTiersND,true);
     if(_lastSentiment) drawSentimentChart(_lastSentiment);
+    if(_lastCommodityHistory) drawCommodityHistory(_lastCommodityHistory);
   },150);
 });
 
@@ -2360,6 +2520,7 @@ function refresh(){
     renderDominoModel(data.dominoModel);
     renderCPI(data.inflation);
     renderLiveInputs(data.inflation);
+    renderCommodityHistory(data.commodityHistory||null);
     renderBank(data.bankEmpty);
   }).catch(function(e){console.error('Refresh error:',e);});
 }
