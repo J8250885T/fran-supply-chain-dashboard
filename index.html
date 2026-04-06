@@ -1803,10 +1803,10 @@ function drawCPIChart(inf){
 
   // Threshold bands
   var bands=[
-    {l:5,c:'rgba(245,158,11,0.09)',lbl:'5% Alert'},
-    {l:7,c:'rgba(249,115,22,0.10)',lbl:'7% Warn'},
-    {l:9,c:'rgba(239,68,68,0.12)',lbl:'9% Emerg'},
-    {l:12,c:'rgba(220,38,38,0.14)',lbl:'12% Crisis'}
+    {l:8,c:'rgba(245,158,11,0.06)',lbl:'8% Alert'},
+    {l:15,c:'rgba(249,115,22,0.08)',lbl:'15% Warn'},
+    {l:25,c:'rgba(239,68,68,0.10)',lbl:'25% Emerg'},
+    {l:40,c:'rgba(220,38,38,0.12)',lbl:'40% Crisis'}
   ];
   bands.forEach(function(b){
     if(b.l>maxY||b.l<minY) return;
@@ -2053,7 +2053,7 @@ function renderCPI(inf){
   var el=document.getElementById('cpi-content');
 
   var m=inf.metro||{},r=inf.regional||{};
-  function tier(v){return v>=12?'crisis':v>=9?'emerg':v>=7?'warn':'ok';}
+  function tier(v){return v>=40?'crisis':v>=25?'emerg':v>=15?'warn':'ok';}
   function tierCls(t){return t==='emerg'||t==='crisis'?'tier-emerg':t==='warn'?'tier-warn':'tier-ok';}
   function tierLbl(t){return{ok:'OK',warn:'WARNING',emerg:'EMERGENCY',crisis:'CRISIS'}[t]||t.toUpperCase();}
   var mT=tier(m.current||0),rT=tier(r.current||0);
