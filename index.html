@@ -1351,8 +1351,13 @@ function renderMarketsReview(fr){
     if(fr.confidenceReason) html+='<span style="font-size:8px;color:var(--text-muted)">'+escHtml(fr.confidenceReason)+'</span>';
     html+='</div>';
   }
-  html+=reviewMLMD(fr);
-  html+=reviewBullets(fr,'Watch — Key Indicators');
+  // Three scenarios: A (MLCOA), B (Partial), C (MDCOA)
+  html+='<div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px">';
+  if(fr.mostLikelyCourse) html+='<div style="border:1px solid rgba(0,232,122,0.2);background:rgba(0,232,122,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--green);text-transform:uppercase;margin-bottom:4px">Most Likely Course of Action</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.mostLikelyCourse)+'</div></div>';
+  if(fr.scenarioB) html+='<div style="border:1px solid rgba(255,176,32,0.2);background:rgba(255,176,32,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--amber);text-transform:uppercase;margin-bottom:4px">Partial Stabilisation</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.scenarioB)+'</div></div>';
+  if(fr.mostDangerousCourse) html+='<div style="border:1px solid rgba(255,59,59,0.2);background:rgba(255,59,59,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--red);text-transform:uppercase;margin-bottom:4px">Most Dangerous Course of Action</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.mostDangerousCourse)+'</div></div>';
+  html+='</div>';
+  html+=reviewBullets(fr,'Watch');
   el.innerHTML=html;
 }
 
