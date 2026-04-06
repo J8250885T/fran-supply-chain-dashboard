@@ -1844,13 +1844,6 @@ function drawCPIChart(inf){
     var actual=arr.filter(function(p){return !p.projected;});
     var proj=arr.filter(function(p){return !!p.projected;});
     if(actual.length&&proj.length) proj=[actual[actual.length-1]].concat(proj);
-    // Fill under actual
-    if(actual.length>1){
-      ctx.beginPath();
-      actual.forEach(function(p,i){i===0?ctx.moveTo(toX(p.w),toY(p.v)):ctx.lineTo(toX(p.w),toY(p.v));});
-      ctx.lineTo(toX(actual[actual.length-1].w),toY(0));ctx.lineTo(toX(actual[0].w),toY(0));ctx.closePath();
-      ctx.fillStyle=col.replace('1)','0.06)').replace(')',',0.06)');ctx.fill();
-    }
     // Solid line
     if(actual.length>1){
       ctx.beginPath();
@@ -1869,20 +1862,20 @@ function drawCPIChart(inf){
     if(last){ctx.fillStyle=col;ctx.beginPath();ctx.arc(toX(last.w),toY(last.v),3.5,0,Math.PI*2);ctx.fill();}
   }
 
-  drawLine(metro,'#4a9eff',2);
-  drawLine(regional,'#ffb020',2);
+  drawLine(metro,'#ffb020',2);
+  drawLine(regional,'#ff3b3b',2);
 
   // Current value labels at end dots
   var mLast=metro.filter(function(p){return !p.projected;});
   var rLast=regional.filter(function(p){return !p.projected;});
   if(mLast.length){
     var ml=mLast[mLast.length-1];
-    ctx.fillStyle='#4a9eff';ctx.font='bold 9px ui-monospace';ctx.textAlign='left';
+    ctx.fillStyle='#ffb020';ctx.font='bold 9px ui-monospace';ctx.textAlign='left';
     ctx.fillText('Metro '+(ml.v>=0?'+':'')+ml.v.toFixed(1)+'%',toX(ml.w)+6,toY(ml.v)+3);
   }
   if(rLast.length){
     var rl=rLast[rLast.length-1];
-    ctx.fillStyle='#ffb020';ctx.font='bold 9px ui-monospace';ctx.textAlign='left';
+    ctx.fillStyle='#ff3b3b';ctx.font='bold 9px ui-monospace';ctx.textAlign='left';
     ctx.fillText('Regional '+(rl.v>=0?'+':'')+rl.v.toFixed(1)+'%',toX(rl.w)+6,toY(rl.v)+3);
   }
 
@@ -1892,8 +1885,8 @@ function drawCPIChart(inf){
     var mCur=mLast.length?mLast[mLast.length-1].v:0;
     var rCur=rLast.length?rLast[rLast.length-1].v:0;
     legEl.innerHTML=
-      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#4a9eff;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Metro CPI</span><span style="font-size:9px;font-weight:700;color:#4a9eff">'+(mCur>=0?'+':'')+mCur.toFixed(1)+'%</span></div>'+
-      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#ffb020;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Regional CPI</span><span style="font-size:9px;font-weight:700;color:#ffb020">'+(rCur>=0?'+':'')+rCur.toFixed(1)+'%</span></div>'+
+      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#ffb020;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Metro CPI</span><span style="font-size:9px;font-weight:700;color:#ffb020">'+(mCur>=0?'+':'')+mCur.toFixed(1)+'%</span></div>'+
+      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#ff3b3b;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Regional CPI</span><span style="font-size:9px;font-weight:700;color:#ff3b3b">'+(rCur>=0?'+':'')+rCur.toFixed(1)+'%</span></div>'+
       '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:2px;background:rgba(255,255,255,0.3);border-radius:2px;border:1px dashed rgba(255,255,255,0.3)"></div><span style="font-size:9px;color:var(--text-muted)">Projection</span></div>';
   }
 }
@@ -2070,8 +2063,8 @@ function renderCPI(inf){
   html+='<div>• Dashed projection = 4 weeks ahead at current level</div>';
   html+='</div></div>';
   html+='<div class="cpi-curr">';
-  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:'+(mT==='warn'?'var(--amber)':mT==='emerg'||mT==='crisis'?'var(--red)':'var(--green)')+'">'+m.current+'%</div><div class="cpi-tier '+tierCls(mT)+'">'+tierLbl(mT)+'</div></div>';
-  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Regional</div><div class="cpi-stat-val" style="color:'+(rT==='warn'?'var(--amber)':rT==='emerg'||rT==='crisis'?'var(--red)':'var(--green)')+'">'+r.current+'%</div><div class="cpi-tier '+tierCls(rT)+'">'+tierLbl(rT)+'</div></div>';
+  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:#ffb020">'+m.current+'%</div><div class="cpi-tier '+tierCls(mT)+'">'+tierLbl(mT)+'</div></div>';
+  html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Regional</div><div class="cpi-stat-val" style="color:#ff3b3b">'+r.current+'%</div><div class="cpi-tier '+tierCls(rT)+'">'+tierLbl(rT)+'</div></div>';
   html+='</div><canvas id="cpiCanvas" class="cpi-canvas"></canvas>';
   html+='<div id="cpiChartLegend" style="display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:8px"></div>';
   var states=inf.states||[];
