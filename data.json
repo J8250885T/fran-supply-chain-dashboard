@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-06T00:29:48Z",
+  "lastUpdated": "2026-04-06T00:39:51Z",
   "warAlert": {
-    "timestamp": "2026-04-06T00:29:48Z",
+    "timestamp": "2026-04-06T00:39:51Z",
     "fuelImpact": [
       "2026-04-06 Bab el-Mandeb remains only viable oil route; ~30 tankers near Saudi Yanbu within Houthi strike range; Houthis awaiting Iranian signal to resume attacks if Hormuz control weakens [Wikipedia] [MEDIUM]",
       "2026-04-06 Iran rejects Trump's 48-hour ultimatum as 'stupid and nervous'; Trump extended energy plant destruction deadline to April 6 8PM ET; Iran warns of 'big surprise' in response [NDTV] [HIGH]",
@@ -28,7 +28,7 @@
     "total": 687,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-06T00:29:48Z",
+    "updated": "2026-04-06T00:39:51Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -305,7 +305,7 @@
             "indirect": 50
           },
           "savingsSource": "RBA 2024 Bulletin: many lower-income households hold liquid assets less than their fortnightly income. 65-74 median cash $15,829 (Westpac 2025) but pensioners face assets test constraints and 5yr cost-of-living erosion. Estimate: 2\u20133 weeks accessible cash buffer.",
-          "monthlyExtraLive": 193.0
+          "monthlyExtraLive": 192.0
         },
         {
           "name": "Low Income Worker",
@@ -334,7 +334,7 @@
             "indirect": 80
           },
           "savingsSource": "Savings.com.au 2025: 50.2% of renters have less than $5,000; 27.4% have less than $1,000. Westpac 2025 median 30-34 = $1,104. After 5yrs of rental increases (20-30%+ in major cities), near-zero buffer is the norm for min wage renters.",
-          "monthlyExtraLive": 193.0
+          "monthlyExtraLive": 192.0
         },
         {
           "name": "Average Worker",
@@ -363,7 +363,7 @@
             "indirect": 105
           },
           "savingsSource": "Westpac 2025: median 35-44 liquid cash = $811. Mortgage holder average $38,692 (Money.com.au 2025) but this includes offset/redraw \u2014 not freely accessible. RBA: mortgagors drew down savings buffers 2022-2025 under 4.35% rate pressure. Accessible cash estimate: $5-8k.",
-          "monthlyExtraLive": 193.0
+          "monthlyExtraLive": 192.0
         },
         {
           "name": "Middle Income",
@@ -392,7 +392,7 @@
             "indirect": 180
           },
           "savingsSource": "ABS 2021-22 distribution; Money.com.au 2025 mortgage holder average $38,692. Adjusted down ~50% for 2022-2025 drawdown: high debt service at 4.35% on $1M+ mortgage consumed cash reserves. Dual income helped maintain some buffer vs lower brackets.",
-          "monthlyExtraLive": 193.0
+          "monthlyExtraLive": 192.0
         },
         {
           "name": "High Income",
@@ -421,7 +421,7 @@
             "indirect": 230
           },
           "savingsSource": "Money.com.au 2025: mortgage holders average $38,692. High income bracket adjusted upward but constrained by $10,553/mo debt service on investment property ($1.18M). Asset-rich, cash-constrained. Some recovery after 2025 RBA rate cuts. Estimate: $40-50k accessible cash.",
-          "monthlyExtraLive": 193.0
+          "monthlyExtraLive": 192.0
         },
         {
           "name": "Retiree (Super)",
@@ -450,7 +450,7 @@
             "indirect": 60
           },
           "savingsSource": "Morningstar Nov 2025: 15% of 65+ carry housing debt (double 1990 rate). Jacaranda/NAB 2024: 9% have active mortgage; 39% of 65+ carry outstanding credit card balance (highest of any age group). RBA: avg credit card balance $3,300. HILDA: 55+ household debt quadrupled 20yrs to $242k. Revised from $0 to $32k: residual mortgage $22k + credit card $7k + BNPL/personal $3k.",
-          "monthlyExtraLive": 193.0
+          "monthlyExtraLive": 192.0
         }
       ],
       "computed": true
@@ -474,7 +474,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-04-06T00:29:48Z",
+    "lastUpdated": "2026-04-06T00:39:51Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -512,7 +512,7 @@
       }
     ],
     "metro": {
-      "current": 7.9,
+      "current": 7.8,
       "currentTier": "warning",
       "30daysAgo": 2.1,
       "60daysAgo": 0.8,
@@ -655,95 +655,121 @@
         "label": "LPG / Autogas",
         "emoji": "\ud83d\udd25",
         "category": "Energy",
-        "weeklyChange": 51.9,
-        "basis": "Crude (Brent YTD +79.8%) \u00d7 65% LPG sensitivity"
+        "weeklyChange": 51.4,
+        "preWar": 31.1,
+        "warDriven": 10.6,
+        "basis": "Crude-linked. Brent: pre-war +47.8% (OPEC discipline + demand recovery), war +16.3% (Hormuz). LPG at 65% crude sensitivity."
       },
       {
         "label": "Diesel (pump)",
         "emoji": "\u26fd",
         "category": "Fuel",
-        "weeklyChange": 43.1,
-        "basis": "Yahoo HO futures YTD +109.5% (AUD-adj) \u2192 pump +43.1%"
+        "weeklyChange": 42.9,
+        "preWar": 39.9,
+        "warDriven": 12.4,
+        "basis": "Crude oil: pre-war +47.8% then war +16.3%. Pump price: pre-war +40% (tensions building), war +12% (Hormuz closure + Cape rerouting)."
       },
       {
         "label": "Domestic airfares",
         "emoji": "\u2708\ufe0f",
         "category": "Services",
-        "weeklyChange": 43.0,
-        "basis": "Jet fuel YTD +109.5% (AUD-adj) \u00d7 32% ticket cost + capacity"
+        "weeklyChange": 42.9,
+        "preWar": 21.3,
+        "warDriven": 14.6,
+        "basis": "Jet fuel (HO): pre-war +66.5% then war +20.7% (AUD-adj). Fuel is 32% of airline cost. War adds ~8% capacity premium (routes cut, demand shift)."
       },
       {
         "label": "Sea freight",
         "emoji": "\ud83d\udea2",
         "category": "Logistics",
-        "weeklyChange": 34.9,
-        "basis": "Crude +79.8% + war risk / Cape rerouting premium"
+        "weeklyChange": 34.8,
+        "preWar": 7.2,
+        "warDriven": 19.1,
+        "basis": "Pre-war: modest crude increase. War: Cape of Good Hope rerouting adds 14+ days and VLCC war risk premium. Hormuz closure is the primary driver here."
       },
       {
         "label": "Fresh tomatoes",
         "emoji": "\ud83c\udf45",
         "category": "Fresh produce",
-        "weeklyChange": 33.5,
-        "basis": "Cold chain diesel + farm inputs + freight"
+        "weeklyChange": 33.3,
+        "preWar": 14.0,
+        "warDriven": 19.3,
+        "basis": "Cold chain diesel 35% + farm diesel 20% + freight 15%. Pre-war energy cost already rising. War-period adds Cape freight premium and farm input costs."
       },
       {
         "label": "Petrol (ULP)",
         "emoji": "\u26fd",
         "category": "Fuel",
-        "weeklyChange": 30.4,
-        "basis": "Yahoo RBOB futures YTD +81.9% (AUD-adj) \u2192 pump +30.4%"
+        "weeklyChange": 30.0,
+        "preWar": 31.3,
+        "warDriven": 6.0,
+        "basis": "RBOB futures: pre-war +57.0% then war +10.8% (AUD-adj). Pump: pre-war ~31%, war ~6%. Excise cut partially offset war increase."
       },
       {
         "label": "Fresh lettuce",
         "emoji": "\ud83e\udd6c",
         "category": "Fresh produce",
-        "weeklyChange": 27.4,
-        "basis": "Cold chain diesel + farm inputs + freight"
+        "weeklyChange": 27.2,
+        "preWar": 12.0,
+        "warDriven": 15.2,
+        "basis": "Cold chain diesel + farm energy + distribution. Similar to tomatoes. Pre-war cost base was already rising on diesel/energy pressures."
       },
       {
         "label": "Courier freight",
         "emoji": "\ud83d\udce6",
         "category": "Logistics",
-        "weeklyChange": 16.4,
-        "basis": "Diesel pump +43.1% \u00d7 38% road freight cost share"
+        "weeklyChange": 16.3,
+        "preWar": 15.2,
+        "warDriven": 4.7,
+        "basis": "Diesel pump +42.9% \u00d7 38% road freight cost share. Split mirrors diesel: pre-war tensions 15%, war 5%."
       },
       {
         "label": "Packaged groceries",
         "emoji": "\ud83d\uded2",
         "category": "Grocery",
-        "weeklyChange": 11.1,
-        "basis": "Wheat +13.8% + crude packaging + freight +16.4%"
+        "weeklyChange": 11.0,
+        "preWar": 3.0,
+        "warDriven": 8.0,
+        "basis": "Wheat +13.8% + crude packaging + freight +16.3%. Pre-war grain + energy rises dominate; war adds freight and packaging cost."
       },
       {
         "label": "Bread",
         "emoji": "\ud83c\udf5e",
         "category": "Staples",
         "weeklyChange": 7.7,
-        "basis": "Wheat YTD +13.8% (AUD-adj) + energy + freight"
+        "preWar": 4.0,
+        "warDriven": -0.1,
+        "basis": "Wheat: pre-war +15.9% (Ukraine war \u2192 Black Sea disruption, El Ni\u00f1o crop damage), war adds only -6.3% more. Bread increase is ~90% pre-war agricultural factors."
       },
       {
         "label": "Electricity",
         "emoji": "\u26a1",
         "category": "Utilities",
-        "weeklyChange": 4.6,
-        "basis": "Gas-linked gen (natgas YTD -24.5%) + crude uplift"
+        "weeklyChange": 4.5,
+        "preWar": 9.8,
+        "warDriven": 4.5,
+        "basis": "Gas-linked generation: natgas -24.5% YTD (pre-war decline offsets crude). Renewables buffer limits electricity impact. War adds modest crude uplift."
       },
       {
         "label": "Chicken",
         "emoji": "\ud83d\udc14",
         "category": "Protein",
-        "weeklyChange": 4.0,
-        "basis": "Grain feed (corn -0.3%, soy +9.7%) + transport"
+        "weeklyChange": 3.9,
+        "preWar": 2.1,
+        "warDriven": 1.8,
+        "basis": "Grain feed: soy +9.7% (pre-war South American harvest), corn -0.4%. Grain moves were largely pre-war; war adds little to feed costs."
       },
       {
         "label": "Dairy / Milk",
         "emoji": "\ud83e\udd5b",
         "category": "Protein",
-        "weeklyChange": 3.1,
-        "basis": "Feed corn -0.3% + refrigeration + freight"
+        "weeklyChange": 3.0,
+        "preWar": 0,
+        "warDriven": 3.3,
+        "basis": "Feed grain (corn -0.4% YTD mostly pre-war) + refrigeration energy + freight. Modest increase \u2014 renewables buffer electricity, AUD partial offset."
       }
     ],
-    "weeklyItemsUpdated": "2026-04-06T00:29:36Z",
+    "weeklyItemsUpdated": "2026-04-06T00:39:31Z",
     "weeklyItemSeries": [
       {
         "label": "Diesel",
@@ -1217,14 +1243,14 @@
       "updatedAt": "2026-04-06T00:04:31Z"
     },
     "liveInputs": {
-      "updatedAt": "2026-04-06T00:29:36Z",
+      "updatedAt": "2026-04-06T00:39:31Z",
       "brent": {
-        "value": 111.11,
+        "value": 110.67,
         "unit": "USD/bbl",
         "label": "Brent Crude"
       },
       "wti": {
-        "value": 112.96,
+        "value": 112.55,
         "unit": "USD/bbl",
         "label": "WTI Crude"
       },
@@ -1242,16 +1268,16 @@
         "value": 230.0,
         "unit": "cpl",
         "label": "Petrol (AU)",
-        "change": "+30.4% vs pre-war"
+        "change": "+30.0% vs pre-war"
       },
       "diesel_cpl": {
         "value": 0.2,
         "unit": "cpl",
         "label": "Diesel (AU)",
-        "change": "+43.1% vs pre-war"
+        "change": "+42.9% vs pre-war"
       },
       "cpi_fuel": {
-        "value": 2.02,
+        "value": 2.0,
         "unit": "pp",
         "label": "CPI fuel contrib"
       },
@@ -1269,10 +1295,10 @@
       "brent_stress": "48%",
       "aud_weakness": "-6%",
       "source": "fran_market.py",
-      "updatedAt": "2026-04-06T00:29:36Z"
+      "updatedAt": "2026-04-06T00:39:31Z"
     }
   },
-  "dbLastUpdated": "2026-04-06T00:29:48Z",
+  "dbLastUpdated": "2026-04-06T00:39:51Z",
   "dbEvents": [
     {
       "dtg": "2026-04-06",
@@ -4305,33 +4331,35 @@
     "diesel_cpl": ".20 nationally; Sydney Northern Beaches .39; sources: 9news/ibtimes/April 6 2026",
     "petrol_cpl": "Capitals ~230-250c ULP avg (Sydney/Melbourne ~.40; Brisbane cheapest 219.5c; Perth cheapest 205.3c) \u2014 stabilising in major cities per ibtimes April 6",
     "servo_outages": "~687 nationally (FuelRadar 06/04/2026) \u2014 unchanged from Apr 5; improving trend from ~787 on Apr 3",
-    "brent_usd": "111.11 USD/bbl [2026-04-06]",
-    "wti_usd": "112.96 USD/bbl [2026-04-06]",
+    "brent_usd": "110.67 USD/bbl [2026-04-06]",
+    "wti_usd": "112.55 USD/bbl [2026-04-06]",
     "nat_gas_usd": "2.8450 USD/MMBtu [2026-04-06]",
     "aud_usd": "0.6893 [2026-04-06]",
-    "heating_oil_usd_gal": "4.4961 USD/gal [2026-04-06]",
-    "rbob_usd_gal": "3.1427 USD/gal [2026-04-06]",
+    "heating_oil_usd_gal": "4.4864 USD/gal [2026-04-06]",
+    "rbob_usd_gal": "3.1295 USD/gal [2026-04-06]",
     "bdi": "1200 [2026-04-06]",
-    "calc_petrol_cpl": "223.6 cpl (formula) [2026-04-06]",
-    "calc_diesel_cpl": "280.6 cpl (formula) [2026-04-06]",
-    "petrol_chg_war_pct": "+30.4% vs pre-war",
-    "diesel_chg_war_pct": "+43.1% vs pre-war",
-    "metro_cpi": "7.9% \u2014 warning \u2014 model [2026-04-06]",
+    "calc_petrol_cpl": "223.0 cpl (formula) [2026-04-06]",
+    "calc_diesel_cpl": "280.2 cpl (formula) [2026-04-06]",
+    "petrol_chg_war_pct": "+30.0% vs pre-war",
+    "diesel_chg_war_pct": "+42.9% vs pre-war",
+    "metro_cpi": "7.8% \u2014 warning \u2014 model [2026-04-06]",
     "regional_cpi": "10.6% \u2014 emergency \u2014 model [2026-04-06]",
-    "cpi_fuel_contrib": "2.02pp",
+    "cpi_fuel_contrib": "2.0pp",
     "cpi_food_contrib": "1.75pp",
-    "food_price_rise_est": "25.2% estimated",
+    "food_price_rise_est": "25.1% estimated",
     "model_H": "1.0",
     "model_R": "0.46",
     "model_S": "0.69",
     "model_M": "0.6",
     "brent_stress_pct": "48%",
     "aud_weakness_pct": "-6%",
-    "hh_monthly_extra_aud": "193",
-    "hh_direct_fuel_aud": "57",
-    "market_last_updated": "2026-04-06T00:29:36Z",
-    "weekly_items_json": "[{\"label\": \"LPG / Autogas\", \"emoji\": \"\\ud83d\\udd25\", \"category\": \"Energy\", \"weeklyChange\": 51.9, \"basis\": \"Crude (Brent YTD +79.8%) \\u00d7 65% LPG sensitivity\"}, {\"label\": \"Diesel (pump)\", \"emoji\": \"\\u26fd\", \"category\": \"Fuel\", \"weeklyChange\": 43.1, \"basis\": \"Yahoo HO futures YTD +109.5% (AUD-adj) \\u2192 pump +43.1%\"}, {\"label\": \"Domestic airfares\", \"emoji\": \"\\u2708\\ufe0f\", \"category\": \"Services\", \"weeklyChange\": 43.0, \"basis\": \"Jet fuel YTD +109.5% (AUD-adj) \\u00d7 32% ticket cost + capacity\"}, {\"label\": \"Sea freight\", \"emoji\": \"\\ud83d\\udea2\", \"category\": \"Logistics\", \"weeklyChange\": 34.9, \"basis\": \"Crude +79.8% + war risk / Cape rerouting premium\"}, {\"label\": \"Fresh tomatoes\", \"emoji\": \"\\ud83c\\udf45\", \"category\": \"Fresh produce\", \"weeklyChange\": 33.5, \"basis\": \"Cold chain diesel + farm inputs + freight\"}, {\"label\": \"Petrol (ULP)\", \"emoji\": \"\\u26fd\", \"category\": \"Fuel\", \"weeklyChange\": 30.4, \"basis\": \"Yahoo RBOB futures YTD +81.9% (AUD-adj) \\u2192 pump +30.4%\"}, {\"label\": \"Fresh lettuce\", \"emoji\": \"\\ud83e\\udd6c\", \"category\": \"Fresh produce\", \"weeklyChange\": 27.4, \"basis\": \"Cold chain diesel + farm inputs + freight\"}, {\"label\": \"Courier freight\", \"emoji\": \"\\ud83d\\udce6\", \"category\": \"Logistics\", \"weeklyChange\": 16.4, \"basis\": \"Diesel pump +43.1% \\u00d7 38% road freight cost share\"}, {\"label\": \"Packaged groceries\", \"emoji\": \"\\ud83d\\uded2\", \"category\": \"Grocery\", \"weeklyChange\": 11.1, \"basis\": \"Wheat +13.8% + crude packaging + freight +16.4%\"}, {\"label\": \"Bread\", \"emoji\": \"\\ud83c\\udf5e\", \"category\": \"Staples\", \"weeklyChange\": 7.7, \"basis\": \"Wheat YTD +13.8% (AUD-adj) + energy + freight\"}, {\"label\": \"Electricity\", \"emoji\": \"\\u26a1\", \"category\": \"Utilities\", \"weeklyChange\": 4.6, \"basis\": \"Gas-linked gen (natgas YTD -24.5%) + crude uplift\"}, {\"label\": \"Chicken\", \"emoji\": \"\\ud83d\\udc14\", \"category\": \"Protein\", \"weeklyChange\": 4.0, \"basis\": \"Grain feed (corn -0.3%, soy +9.7%) + transport\"}, {\"label\": \"Dairy / Milk\", \"emoji\": \"\\ud83e\\udd5b\", \"category\": \"Protein\", \"weeklyChange\": 3.1, \"basis\": \"Feed corn -0.3% + refrigeration + freight\"}]",
-    "weekly_items_updated": "2026-04-06T00:29:36Z"
+    "hh_monthly_extra_aud": "192",
+    "hh_direct_fuel_aud": "56",
+    "market_last_updated": "2026-04-06T00:39:31Z",
+    "weekly_items_json": "[{\"label\": \"LPG / Autogas\", \"emoji\": \"\\ud83d\\udd25\", \"category\": \"Energy\", \"weeklyChange\": 51.4, \"preWar\": 31.1, \"warDriven\": 10.6, \"basis\": \"Crude-linked. Brent: pre-war +47.8% (OPEC discipline + demand recovery), war +16.3% (Hormuz). LPG at 65% crude sensitivity.\"}, {\"label\": \"Diesel (pump)\", \"emoji\": \"\\u26fd\", \"category\": \"Fuel\", \"weeklyChange\": 42.9, \"preWar\": 39.9, \"warDriven\": 12.4, \"basis\": \"Crude oil: pre-war +47.8% then war +16.3%. Pump price: pre-war +40% (tensions building), war +12% (Hormuz closure + Cape rerouting).\"}, {\"label\": \"Domestic airfares\", \"emoji\": \"\\u2708\\ufe0f\", \"category\": \"Services\", \"weeklyChange\": 42.9, \"preWar\": 21.3, \"warDriven\": 14.6, \"basis\": \"Jet fuel (HO): pre-war +66.5% then war +20.7% (AUD-adj). Fuel is 32% of airline cost. War adds ~8% capacity premium (routes cut, demand shift).\"}, {\"label\": \"Sea freight\", \"emoji\": \"\\ud83d\\udea2\", \"category\": \"Logistics\", \"weeklyChange\": 34.8, \"preWar\": 7.2, \"warDriven\": 19.1, \"basis\": \"Pre-war: modest crude increase. War: Cape of Good Hope rerouting adds 14+ days and VLCC war risk premium. Hormuz closure is the primary driver here.\"}, {\"label\": \"Fresh tomatoes\", \"emoji\": \"\\ud83c\\udf45\", \"category\": \"Fresh produce\", \"weeklyChange\": 33.3, \"preWar\": 14.0, \"warDriven\": 19.3, \"basis\": \"Cold chain diesel 35% + farm diesel 20% + freight 15%. Pre-war energy cost already rising. War-period adds Cape freight premium and farm input costs.\"}, {\"label\": \"Petrol (ULP)\", \"emoji\": \"\\u26fd\", \"category\": \"Fuel\", \"weeklyChange\": 30.0, \"preWar\": 31.3, \"warDriven\": 6.0, \"basis\": \"RBOB futures: pre-war +57.0% then war +10.8% (AUD-adj). Pump: pre-war ~31%, war ~6%. Excise cut partially offset war increase.\"}, {\"label\": \"Fresh lettuce\", \"emoji\": \"\\ud83e\\udd6c\", \"category\": \"Fresh produce\", \"weeklyChange\": 27.2, \"preWar\": 12.0, \"warDriven\": 15.2, \"basis\": \"Cold chain diesel + farm energy + distribution. Similar to tomatoes. Pre-war cost base was already rising on diesel/energy pressures.\"}, {\"label\": \"Courier freight\", \"emoji\": \"\\ud83d\\udce6\", \"category\": \"Logistics\", \"weeklyChange\": 16.3, \"preWar\": 15.2, \"warDriven\": 4.7, \"basis\": \"Diesel pump +42.9% \\u00d7 38% road freight cost share. Split mirrors diesel: pre-war tensions 15%, war 5%.\"}, {\"label\": \"Packaged groceries\", \"emoji\": \"\\ud83d\\uded2\", \"category\": \"Grocery\", \"weeklyChange\": 11.0, \"preWar\": 3.0, \"warDriven\": 8.0, \"basis\": \"Wheat +13.8% + crude packaging + freight +16.3%. Pre-war grain + energy rises dominate; war adds freight and packaging cost.\"}, {\"label\": \"Bread\", \"emoji\": \"\\ud83c\\udf5e\", \"category\": \"Staples\", \"weeklyChange\": 7.7, \"preWar\": 4.0, \"warDriven\": -0.1, \"basis\": \"Wheat: pre-war +15.9% (Ukraine war \\u2192 Black Sea disruption, El Ni\\u00f1o crop damage), war adds only -6.3% more. Bread increase is ~90% pre-war agricultural factors.\"}, {\"label\": \"Electricity\", \"emoji\": \"\\u26a1\", \"category\": \"Utilities\", \"weeklyChange\": 4.5, \"preWar\": 9.8, \"warDriven\": 4.5, \"basis\": \"Gas-linked generation: natgas -24.5% YTD (pre-war decline offsets crude). Renewables buffer limits electricity impact. War adds modest crude uplift.\"}, {\"label\": \"Chicken\", \"emoji\": \"\\ud83d\\udc14\", \"category\": \"Protein\", \"weeklyChange\": 3.9, \"preWar\": 2.1, \"warDriven\": 1.8, \"basis\": \"Grain feed: soy +9.7% (pre-war South American harvest), corn -0.4%. Grain moves were largely pre-war; war adds little to feed costs.\"}, {\"label\": \"Dairy / Milk\", \"emoji\": \"\\ud83e\\udd5b\", \"category\": \"Protein\", \"weeklyChange\": 3.0, \"preWar\": 0, \"warDriven\": 3.3, \"basis\": \"Feed grain (corn -0.4% YTD mostly pre-war) + refrigeration energy + freight. Modest increase \\u2014 renewables buffer electricity, AUD partial offset.\"}]",
+    "weekly_items_updated": "2026-04-06T00:39:31Z",
+    "war_start_date": "2026-03-04",
+    "commodity_splits_json": "{\"updatedAt\": \"2026-04-06T00:39:31Z\", \"warStart\": \"2026-03-04\", \"brent\": {\"pre\": 47.8, \"war\": 16.3, \"ytd\": 79.1}, \"ho\": {\"pre\": 66.5, \"war\": 20.7, \"ytd\": 109.0}, \"rbob\": {\"pre\": 57.0, \"war\": 10.8, \"ytd\": 81.2}, \"wheat\": {\"pre\": 15.9, \"war\": -6.3, \"ytd\": 13.8}, \"natgas\": {\"pre\": -16.7, \"war\": -13.8, \"ytd\": -24.5}, \"corn\": {\"pre\": -2.6, \"war\": -2.6, \"ytd\": -0.4}, \"soy\": {\"pre\": 10.4, \"war\": -5.1, \"ytd\": 9.7}}"
   },
   "lastReport": {
     "sentAt": "2026-04-06T00:04:31Z",
@@ -4341,7 +4369,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-06T00:29:48Z",
+      "updatedAt": "2026-04-06T00:39:51Z",
       "window": 7,
       "totalEvents": 213,
       "activeSources": 91,
@@ -4486,7 +4514,7 @@
     },
     "supply": {
       "title": "Fuel Levels & Supply \u2014 Review",
-      "updatedAt": "2026-04-06T00:29:48Z",
+      "updatedAt": "2026-04-06T00:39:51Z",
       "summary": "Australia is holding, but the margin is thin. Diesel sits at 29 days \u2014 only 19 days above the 10-day rationing trigger \u2014 making it the tightest and most critical reserve. Petrol (39 days) and jet fuel (30 days) provide more headroom but remain below normal comfortable levels. 687 service stations are dry nationally (increasing trend), concentrated in regional NSW, QLD, and WA where last-mile diesel distribution is thinnest. The supply system is being kept alive by 5 replacement vessels en route from the US and Europe \u2014 rerouted via Cape of Good Hope at significant cost and a 14-day transit premium. Asian refineries, which normally supply over 90% of Australia's refined fuel, are averaging 66% capacity due to Hormuz-driven feedstock constraints. The weakest link is Southkorea at 55%. All of this converges on a single critical threshold: mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. If incoming cargoes do not land before that date, the government has no remaining buffer tools \u2014 reserve releases and the excise cut have already been deployed. Three emergency measures are active (Excise halved (-26.3c/L from Apr 1); 762M litres released from reserves; Diesel standard lowered), but these are one-time levers, not ongoing supply.",
       "mostLikelyCourse": "5 replacement vessels arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless, keeping diesel above the 10-day rationing trigger. Easter demand normalises and servo outages ease as distribution catches up. Asian refinery output holds at ~66%, limiting recovery but preventing further deterioration. Supply remains stressed but rationing is avoided in the near term.",
       "mostDangerousCourse": "One or more replacement cargoes slip, are diverted to competing buyers, or arrive after mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. Diesel falls below 10 days \u2014 the formal rationing trigger. Simultaneously, Southkorea or Singapore refinery output drops further, eliminating any prospect of near-term recovery from the Asian supply chain. Servo outages spread from regional to suburban areas before new imports can offset the drawdown.",
@@ -4498,12 +4526,12 @@
     },
     "markets": {
       "title": "Markets \u2014 Price Shock Review",
-      "updatedAt": "2026-04-06T00:29:48Z",
-      "summary": "The price shock is running ahead of where most Australians expect it to be. Metro price increase is at 7.9% (WARNING tier) \u2014 still 2.9 points below the projected peak of 10.8% by 2026-05-15. Regional price increase at 10.6% (EMERGENCY tier) is more severe, with 3 states in CRISIS (QLD,SA,NT) and 3 in EMERGENCY (NSW,VIC,WA). The dominant driver is Transport at 3.2 percentage points. The biggest item movers are LPG / Autogas (+51.9%), Diesel (pump) (+43.1%), and Domestic airfares (+43.0%). The worst is still ahead: the food and fertiliser cascade has not fully fed through to retail, and the excise cut masking pump prices expires in June.",
+      "updatedAt": "2026-04-06T00:39:51Z",
+      "summary": "The price shock is running ahead of where most Australians expect it to be. Metro price increase is at 7.8% (WARNING tier) \u2014 still 3.0 points below the projected peak of 10.8% by 2026-05-15. Regional price increase at 10.6% (EMERGENCY tier) is more severe, with 3 states in CRISIS (QLD,SA,NT) and 3 in EMERGENCY (NSW,VIC,WA). The dominant driver is Transport at 3.2 percentage points. The biggest item movers are LPG / Autogas (+51.4%), Diesel (pump) (+42.9%), and Domestic airfares (+42.9%). The worst is still ahead: the food and fertiliser cascade has not fully fed through to retail, and the excise cut masking pump prices expires in June.",
       "mostLikelyCourse": "Metro price increase climbs to the projected peak of 10.8% by 2026-05-15 as fuel and freight costs keep feeding through, then plateaus as supply stabilises. Regional price increase peaks at 14.5% by 2026-05-20. Pressure eases in the second half of 2026 if Hormuz reopens and freight costs normalise.",
       "mostDangerousCourse": "Price increase broadens beyond fuel and food into manufactured goods and services, pushing metro price increase into EMERGENCY tier ahead of projections. Second-round wage and cost pressures lock in before the peak \u2014 extending the inflation episode well beyond the conflict itself and compressing real incomes for 12+ months.",
       "bullets": [
-        "Metro is 2.9 points below its projected peak \u2014 the shock is not over.",
+        "Metro is 3.0 points below its projected peak \u2014 the shock is not over.",
         "Regional already in EMERGENCY tier, 3.9 points below its peak of 14.5% by 2026-05-20.",
         "Excise cut expires June 2026 \u2014 pump prices will spike again without a replacement measure.",
         "Food and fertiliser cascade peaks June\u2013July 2026 \u2014 lagging fuel by 4\u20138 weeks."
@@ -4511,7 +4539,7 @@
     },
     "households": {
       "title": "Households \u2014 Stress Review",
-      "updatedAt": "2026-04-06T00:29:48Z",
+      "updatedAt": "2026-04-06T00:39:51Z",
       "summary": "The fuel and food price shock is hitting household budgets unevenly, but the common thread is that most Australians had already depleted their savings buffers during the 2022\u20132025 rate cycle before this crisis began. The most vulnerable cohort \u2014 Low Income Worker \u2014 has only 1 month(s) of liquid savings remaining against a A$430 monthly crisis cost increase. Across all tiers, the average monthly surcharge is A$679. The government's relief package (excise cut + reserve releases, A$4.75bn total) expires 2026-06-30. After that, households absorb the full cost increase without any fiscal buffer \u2014 and this coincides with the June\u2013July peak in food prices, when the fertiliser and freight cascade fully transmits to retail grocery prices. The most resilient cohort is Retiree (Super) with 45 months of runway, but even this group faces compounding health and utility cost pressure as the crisis extends.",
       "mostLikelyCourse": "Low-buffer households exhaust savings first, with stress peaking May\u2013June 2026 as grocery prices catch up to fuel. Government excise relief provides partial offset until 2026-06-30, after which pump prices spike again. Middle and upper cohorts weather the immediate crisis but face structural cost-of-living elevation for 6\u201312 months.",
       "mostDangerousCourse": "Government buffer of A$4.75bn is exhausted before supply normalises. Excise cut lapses with no replacement \u2014 pump prices spike simultaneously with the grocery peak. Distress asset sales, mortgage arrears, and BNPL defaults rise together. Leveraged middle-income households \u2014 the largest cohort by number \u2014 face the sharpest deterioration as debt service consumes cash flow already compressed by inflation.",
@@ -4524,7 +4552,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-06T00:29:48Z",
+      "updatedAt": "2026-04-06T00:39:51Z",
       "summary": "The cascade model currently places Base Case \u2014 Stalemate as the most probable outcome at 41%, with Escalation at 36% and Resolution at 23%. The two scenarios are close \u2014 a single decisive event could shift the balance. The dominant driver is Hormuz (H=1.00): full closure is already priced into the model as maximum stress on the Gulf-to-Asia crude supply chain. Refinery stress (R=0.46) reflects Asian refineries running at 66% capacity, which directly constrains refined fuel volume arriving in Australia. The troop phase (PRE-DEPLOYMENT, T=0.10) is the key swing variable \u2014 a move to GROUND OPS would push escalation probability above base and activate the 6+ month conflict timeline that underpins the worst-case cascade: GDP impact at -5.0%, food prices +40%, and recovery measured in 12\u201324 months, not weeks.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (41%) holds. Conflict stays aerial and special operations. Supply tightens to the mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless ceiling then stabilises as replacement cargoes land. Food price cascade peaks May\u2013June 2026 at +20% before gradual easing. GDP impact limited to -2.1%. Recovery in 3\u20136 months.",
       "mostDangerousCourse": "Escalation (36%) activates on a ground invasion decision or major Iranian strike on Gulf infrastructure. All cascade pathways worsen simultaneously: Hormuz closure extends to 6\u201318 months, Asian refinery output stays suppressed, Australian rationing moves to active policy, food prices peak at +40%, and recovery extends to 12\u201324 months.",
@@ -4536,7 +4564,7 @@
     },
     "troops": {
       "title": "Troop Disposition \u2014 Why It Matters",
-      "updatedAt": "2026-04-06T00:29:48Z",
+      "updatedAt": "2026-04-06T00:39:51Z",
       "summary": "Current disposition: PRE-DEPLOYMENT \u00b7 Invasion indicator: ELEVATED. 12 units deployed, 6 en route. Troop build-up is tracked as the primary indicator of conflict duration \u2014 and duration is what determines whether Australia's fuel crisis is temporary or structural. Air strikes can be sustained indefinitely. A ground invasion cannot be quickly reversed. It means Hormuz stays closed for months, not weeks \u2014 Asian refineries stay feedstock-starved, import volumes stay suppressed, and government reserve releases run out before supply recovers. A confirmed ground war carries a 12\u201324 month impact horizon for Australia: diesel rationing in the first 3 months, food prices peaking at 30\u201340% above pre-war by month 6, and structural cost-of-living elevation persisting 12\u201318 months after hostilities end as Asian refinery capacity takes time to rebuild.",
       "mostLikelyCourse": "Current phase (PRE-DEPLOYMENT) holds \u2014 conflict remains aerial and special operations. A conventional ground invasion decision is deferred. Australian supply stays stressed but manageable if replacement cargoes arrive before mid-April 2026 \u2014 55 cargoes arriving/en route but Easter demand surge + servo outage deterioration signal supply will be exhausted within 2-3 weeks regardless. The 12\u201324 month consequence scenario is avoided, though short-term fuel and food price pressure persists for 3\u20136 months regardless.",
       "mostDangerousCourse": "Ground operations are authorised \u2014 triggered by a failed Hormuz ultimatum, an Iranian strike on a US asset requiring a ground response, or an IDF request for US infantry support. From that decision, the 12\u201324 month Australian impact horizon activates immediately. Reserve releases and rerouted cargoes become insufficient within 4\u20136 weeks. Rationing moves from contingency to active policy.",
@@ -4830,7 +4858,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-06T00:29:48Z",
+    "updatedAt": "2026-04-06T00:39:51Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -5297,7 +5325,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-06T00:29:48Z",
+    "updatedAt": "2026-04-06T00:39:51Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
