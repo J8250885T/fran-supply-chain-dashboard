@@ -1343,8 +1343,16 @@ function renderMarketsReview(fr){
   if(!el||!fr) return;
   var html='';
   html+=reviewHeader(fr);
+  // Confidence badge
+  if(fr.confidence){
+    var confCol=fr.confidence==='HIGH'?'var(--green)':fr.confidence==='LOW'?'var(--red)':'var(--amber)';
+    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">';
+    html+='<span style="font-size:8px;font-weight:700;letter-spacing:0.08em;color:'+confCol+';background:rgba(255,255,255,0.04);border:1px solid '+confCol+';border-radius:4px;padding:2px 8px">CONFIDENCE: '+escHtml(fr.confidence)+'</span>';
+    if(fr.confidenceReason) html+='<span style="font-size:8px;color:var(--text-muted)">'+escHtml(fr.confidenceReason)+'</span>';
+    html+='</div>';
+  }
   html+=reviewMLMD(fr);
-  html+=reviewBullets(fr,'Watch — Price Milestones');
+  html+=reviewBullets(fr,'Watch — Key Indicators');
   el.innerHTML=html;
 }
 
