@@ -1205,17 +1205,54 @@ function renderServo(data){
   if(!data) return;
   var el=document.getElementById('servo-content');
 
-  var total=data.total||0,trend=data.trend||'—',byS=data.byState||{};
+  var total=data.total||0,trend=data.trend||'\u2014';
+  var byS=data.byState||{};
   var states=['NSW','QLD','VIC','SA','WA','NT','ACT','TAS'];
-  var maxS=Math.max.apply(null,states.map(function(s){return byS[s]||0;}));
-  var html='<div class="servo-hero"><div class="servo-num">'+total.toLocaleString()+'</div><div class="servo-lbl">stations dry nationally</div><div class="servo-trend">▲ '+trend+' — '+(data.mostAffectedFuel||'PDSL')+' worst hit</div></div>';
+  // Handle both old (number) and new (object) format
+  function stateTotal(s){var v=byS[s]; return typeof v==='object'?(v.total||0):(v||0);}
+  function stateDiesel(s){var v=byS[s]; return typeof v==='object'?(v.diesel||0):0;}
+  function stateTrend(s){var v=byS[s]; return typeof v==='object'?(v.trend||''):'';} 
+  function stateHotspots(s){var v=byS[s]; return typeof v==='object'?(v.hotspots||[]):[];}
+
+  var maxS=Math.max.apply(null,states.map(stateTotal));
+  var trendIcon=trend==='increasing'?'\u25b2':trend==='decreasing'?'\u25bc':'\u2014';
+  var trendCol=trend==='increasing'?'var(--red)':trend==='decreasing'?'var(--green)':'var(--text-muted)';
+
+  var html='<div class="servo-hero"><div class="servo-num" style="color:var(--red)">'+total.toLocaleString()+'</div><div class="servo-lbl">stations dry nationally</div><div class="servo-trend" style="color:'+trendCol+'">'+trendIcon+' '+trend+' \u2014 '+(data.mostAffectedFuel||'diesel')+' worst hit</div></div>';
+
   html+='<div class="servo-states">';
   states.forEach(function(s){
-    var v=byS[s]||0;if(!v) return;
+    var v=stateTotal(s);if(!v) return;
+    var d=stateDiesel(s);
     var pct=maxS?(v/maxS*100):0;
-    html+='<div class="servo-st"><span class="servo-st-n">'+s+'</span><div class="servo-bar"><div class="servo-bar-fill" style="width:'+pct+'%"></div></div><span class="servo-st-v">'+v+'</span></div>';
+    var st=stateTrend(s);
+    var stIcon=st==='increasing'?'\u25b2':st==='decreasing'?'\u25bc':'';
+    var stCol=st==='increasing'?'color:var(--red)':'';
+    html+='<div class="servo-st"><span class="servo-st-n">'+s+'</span><div class="servo-bar"><div class="servo-bar-fill" style="width:'+pct+'%"></div></div><span class="servo-st-v" style="'+stCol+'">'+v;
+    if(d) html+=' <span style="font-size:7px;color:var(--text-muted)">('+d+' diesel)</span>';
+    if(stIcon) html+=' <span style="font-size:7px;'+stCol+'">'+stIcon+'</span>';
+    html+='</span></div>';
   });
-  html+='</div><div class="servo-src">Source: '+(data.source||'FuelRadar')+' · '+fmtDTG(data.updated)+'</div>';
+  html+='</div>';
+
+  // Weekly history chart if available
+  var hist=data.weeklyHistory||[];
+  if(hist.length>1){
+    html+='<div style="font-size:7px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin:8px 0 4px">WEEKLY TREND</div>';
+    var maxH=Math.max.apply(null,hist.map(function(h){return h.total||0;}));
+    html+='<div style="display:flex;align-items:flex-end;gap:3px;height:40px">';
+    hist.forEach(function(h){
+      var pct=maxH?(h.total/maxH*100):0;
+      var col=h.total>500?'var(--red)':h.total>300?'var(--amber)':'var(--green)';
+      html+='<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:1px">';
+      html+='<div style="width:100%;background:'+col+';border-radius:2px 2px 0 0;height:'+pct+'%"></div>';
+      html+='<div style="font-size:6px;color:var(--text-muted);white-space:nowrap">'+h.week.split(' ')[0]+'</div>';
+      html+='</div>';
+    });
+    html+='</div>';
+  }
+
+  html+='<div class="servo-src">Source: '+(data.source||'FuelRadar')+' \u00b7 '+fmtDTG(data.updated)+'</div>';
   el.innerHTML=html;
 }
 
@@ -1223,21 +1260,55 @@ function renderServo(data){
 function renderFleet(data){
   if(!data) return;
   var el=document.getElementById('fleet-content');
-  var ships=(data.ships||[]).map(function(s){var e=new Date(s.eta);s._d=Math.max(0,Math.ceil((e-Date.now())/86400000));return s;}).sort(function(a,b){return a._d-b._d;});
-  var urgent=ships.filter(function(s){return s._d<=7;});
-  var enRoute=ships.filter(function(s){return s.status==='en_route';});
+  // Handle both old (data.ships) and new (data.vessels) format
+  var ships=(data.vessels||data.ships||[]).map(function(s){
+    var eta=s.eta||'';
+    if(eta&&eta!=='Continuous'){var e=new Date(eta);s._d=Math.max(0,Math.ceil((e-Date.now())/86400000));}
+    else{s._d=-1;}
+    return s;
+  }).sort(function(a,b){return a._d-b._d;});
+
+  var enRoute=ships.filter(function(s){return s.status==='EN_ROUTE'||s.status==='en_route';});
+  var producing=ships.filter(function(s){return s.status==='PRODUCING';});
+  var urgent=enRoute.filter(function(s){return s._d>=0&&s._d<=7;});
+  var totalML=data.totalCapacityML||0;
+
   var html='';
-  if(urgent.length){
-    html+='<div class="fleet-arr">⚠️ Arriving soon</div>';
-    urgent.slice(0,3).forEach(function(s){
-      html+='<div class="fleet-ship urg"><span class="fleet-days urg">'+(s._d===0?'TODAY':s._d+'D')+'</span><div class="fleet-body"><div class="fleet-name">'+escHtml(s.name)+'</div><div class="fleet-route">'+escHtml(s.destination||'Australia')+'</div></div><div class="fleet-meta">'+s.eta.replace('2026-','')+'</div></div>';
+  // Summary bar
+  html+='<div style="display:flex;gap:10px;margin-bottom:8px;padding:6px 8px;background:rgba(0,0,0,0.15);border-radius:6px;flex-wrap:wrap;font-size:9px">';
+  html+='<div><span style="font-weight:700;color:var(--text)">'+enRoute.length+'</span> <span style="color:var(--text-muted)">en route</span></div>';
+  html+='<div><span style="font-weight:700;color:var(--text)">'+producing.length+'</span> <span style="color:var(--text-muted)">refineries</span></div>';
+  if(totalML) html+='<div><span style="font-weight:700;color:var(--amber)">'+totalML+'</span> <span style="color:var(--text-muted)">ML capacity</span></div>';
+  if(data.avgDelayDays) html+='<div><span style="font-weight:700;color:var(--red)">+'+data.avgDelayDays+'d</span> <span style="color:var(--text-muted)">avg delay</span></div>';
+  html+='</div>';
+
+  // Vessels
+  enRoute.forEach(function(s){
+    var daysCol=s._d<=3?'var(--red)':s._d<=7?'var(--amber)':'var(--green)';
+    var riskCol=s.risk&&s.risk.indexOf('HIGH')>=0?'var(--red)':s.risk&&s.risk.indexOf('MEDIUM')>=0?'var(--amber)':'var(--green)';
+    html+='<div style="border:1px solid var(--border);border-radius:6px;padding:8px;margin-bottom:6px;border-left:3px solid '+daysCol+'">';
+    html+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">';
+    html+='<div style="font-size:10px;font-weight:700;color:var(--text)">'+(s.flag||'\ud83d\udea2')+' '+escHtml(s.name)+'</div>';
+    html+='<div style="font-size:11px;font-weight:700;color:'+daysCol+'">'+(s._d===0?'TODAY':s._d+'D')+'</div>';
+    html+='</div>';
+    html+='<div style="font-size:8px;color:var(--text-muted);margin-bottom:2px">'+escHtml(s.type)+' \u00b7 '+escHtml(s.operator||'')+' \u00b7 '+escHtml(s.cargo||'')+'</div>';
+    html+='<div style="font-size:8px;color:var(--text-muted)">'+escHtml(s.origin)+' \u2192 '+escHtml(s.destination||'Australia')+'</div>';
+    if(s.position) html+='<div style="font-size:8px;color:var(--text-dim);font-style:italic;margin-top:2px">\ud83d\udccd '+escHtml(s.position)+'</div>';
+    if(s.capacity_ml) html+='<div style="font-size:8px;color:var(--amber);margin-top:2px">'+s.capacity_ml+' ML \u00b7 +'+s.delayDays+'d delay \u00b7 Risk: <span style="color:'+riskCol+'">'+escHtml(s.risk||'')+'</span></div>';
+    html+='</div>';
+  });
+
+  // Domestic refineries
+  if(producing.length){
+    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin:8px 0 4px">DOMESTIC REFINERIES</div>';
+    producing.forEach(function(s){
+      html+='<div style="border:1px solid var(--border);border-radius:6px;padding:6px 8px;margin-bottom:4px;border-left:3px solid var(--green)">';
+      html+='<div style="font-size:9px;font-weight:700;color:var(--text)">\ud83c\udfed '+escHtml(s.name)+'</div>';
+      html+='<div style="font-size:8px;color:var(--text-muted)">'+escHtml(s.cargo)+' \u00b7 '+s.capacity_ml+' ML/week \u00b7 '+escHtml(s.destination||'')+'</div>';
+      if(s.risk) html+='<div style="font-size:7px;color:var(--amber);margin-top:2px">'+escHtml(s.risk)+'</div>';
+      html+='</div>';
     });
   }
-  html+='<div class="fleet-arr">En route</div>';
-  enRoute.slice(0,4).forEach(function(s){
-    html+='<div class="fleet-ship"><span class="fleet-days ok">'+s._d+'D</span><div class="fleet-body"><div class="fleet-name">'+escHtml(s.name)+'</div><div class="fleet-route">'+escHtml(s.positionNote||s.destination||'')+'</div></div><div class="fleet-meta"><div>'+s.eta.replace('2026-','')+'</div><div style="color:var(--text-muted)">'+escHtml(s.operator||'')+'</div></div></div>';
-  });
-  html+='<div class="fleet-sum"><strong>'+ships.length+'</strong> ships · '+urgent.length+' arriving · '+enRoute.length+' en route</div>';
   el.innerHTML=html;
 }
 
@@ -2791,8 +2862,8 @@ function refresh(){
     buildDomainPills(_searchIndex);
     renderSentiment(data.sentiment||null);
     renderReviewPanels(data);
-    renderServo(data.servoOutages);
-    renderFleet(data.shipments);
+    renderServo(data.servoOutagesLive||data.servoOutages);
+    renderFleet(data.fleetStatus||data.shipments);
     renderReserves(data.reserves);
     renderRefineries(data.refineries);
     renderRoutes(data.shippingRoutes);
