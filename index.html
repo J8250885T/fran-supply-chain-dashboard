@@ -1508,41 +1508,27 @@ function renderShippingDelays(data){
   var delays=data.delayTable||[];
   var html='';
 
-  // Hazard zones
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin-bottom:6px">ACTIVE HAZARDS</div>';
+  // Simple list — same style as refineries
   hazards.forEach(function(h){
     var sevCol=h.severity==='CRITICAL'?'var(--red)':h.severity==='HIGH'?'var(--amber)':h.severity==='MEDIUM'?'#facc15':'var(--green)';
-    var typeIcon=h.type==='CONFLICT'?'\u26a0':h.type==='WEATHER'?'\ud83c\udf0a':h.type==='CONGESTION'?'\u23f3':'\u2693';
-    html+='<div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;padding:5px 8px;border-radius:5px;border-left:3px solid '+sevCol+';background:rgba(0,0,0,0.1)">';
-    html+='<div style="font-size:12px;min-width:16px">'+typeIcon+'</div>';
-    html+='<div style="flex:1">';
-    html+='<div style="display:flex;justify-content:space-between;align-items:center">';
-    html+='<span style="font-size:9px;font-weight:700;color:var(--text)">'+escHtml(h.zone)+'</span>';
-    html+='<span style="font-size:7px;font-weight:700;color:'+sevCol+';border:1px solid '+sevCol+';border-radius:3px;padding:1px 4px">'+escHtml(h.status)+'</span>';
+    var statusCol=h.status==='CLOSED'||h.status==='CRITICAL'?'var(--red)':h.status==='THREATENED'||h.status==='ELEVATED'?'var(--amber)':'var(--green)';
+
+    html+='<div style="border:1px solid var(--border);border-radius:6px;margin-bottom:6px;overflow:hidden">';
+    // Header
+    html+='<div style="padding:6px 8px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.1)">';
+    html+='<span style="font-size:10px;font-weight:700;color:var(--text)">'+escHtml(h.zone)+'</span>';
+    html+='<span style="font-size:7px;font-weight:700;padding:2px 5px;border-radius:3px;border:1px solid '+statusCol+';color:'+statusCol+'">'+escHtml(h.status)+'</span>';
     html+='</div>';
-    html+='<div style="font-size:8px;color:var(--text-muted);margin-top:2px">'+escHtml(h.impact)+'</div>';
+    // Bar
+    var barPct=h.severity==='CRITICAL'?100:h.severity==='HIGH'?75:h.severity==='MEDIUM'?50:25;
+    html+='<div style="padding:0 8px"><div style="height:4px;background:var(--surface-high);border-radius:2px;overflow:hidden;margin:4px 0">';
+    html+='<div style="height:100%;width:'+barPct+'%;background:'+sevCol+';border-radius:2px"></div></div></div>';
+    // Detail
+    html+='<div style="padding:4px 8px 6px;font-size:8px;color:var(--text-muted);line-height:1.4">';
+    html+='<div>'+escHtml(h.impact)+'</div>';
     html+='</div></div>';
   });
 
-  // Delay table
-  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin:10px 0 6px">VESSEL DELAY TABLE</div>';
-  html+='<div class="table-scroll"><table class="bank-table"><thead><tr>';
-  html+='<th>Vessel</th><th class="num">Normal</th><th class="num">Actual</th><th class="num">Delay</th><th>Cause</th><th>Risk</th>';
-  html+='</tr></thead><tbody>';
-  delays.forEach(function(d){
-    var riskCol=d.riskLevel==='HIGH'?'var(--red)':d.riskLevel==='MEDIUM'?'var(--amber)':'var(--green)';
-    html+='<tr>';
-    html+='<td style="font-weight:700;color:var(--text)">'+escHtml(d.vessel)+'</td>';
-    html+='<td class="num">'+d.normalDays+'d</td>';
-    html+='<td class="num">'+d.actualDays+'d</td>';
-    html+='<td class="num" style="color:var(--red);font-weight:700">+'+d.delayDays+'d</td>';
-    html+='<td style="font-size:8px">'+escHtml(d.cause)+'</td>';
-    html+='<td style="color:'+riskCol+';font-weight:700;font-size:8px">'+escHtml(d.riskLevel)+'</td>';
-    html+='</tr>';
-  });
-  html+='</tbody></table></div>';
-
-  if(data.updatedAt) html+='<div style="font-size:7px;color:var(--text-muted);margin-top:6px">Updated '+fmtAESTDateTime(data.updatedAt)+'</div>';
   el.innerHTML=html;
 }
 
