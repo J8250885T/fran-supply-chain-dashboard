@@ -1791,113 +1791,149 @@ function drawCPIChart(inf){
 
 // ── ITEM INFLATION CANVAS ──
 function drawItemInflationChart(inf){
-  var series=inf&&inf.weeklyItemSeries?inf.weeklyItemSeries:[];
-  if(!series.length) return;
+  // Use 26-week live series if available, fall back to static weeklyItemSeries
+  var liveData = window._itemSeries26w || null;
+  var TOTAL_W  = 26;
+  var WAR_W    = liveData ? (liveData.warWeek||9) : 9;
+  var NOW_W    = liveData ? (liveData.currentWeek||13) : 13;
+  var W1_DATE  = new Date('2026-01-05');
+
+  function calLabel(w){
+    var MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var d=new Date(W1_DATE.getTime()+(w-1)*7*86400000);
+    return MONTHS[d.getMonth()]+' '+d.getDate();
+  }
 
   var groups=[
-    {key:'fuel', title:'Fuel / Energy', match:function(s){return /Diesel|LPG|Electricity/i.test(s.label||'');}, colors:['#ff3b3b','#ffb020','#facc15']},
-    {key:'food', title:'Food', match:function(s){return /Tomatoes|Lettuce|Bread/i.test(s.label||'');}, colors:['#00e87a','#22d3ee','#4ade80']},
-    {key:'services', title:'Services', match:function(s){return /airfares|freight/i.test(s.label||'');}, colors:['#4a9eff','#c084fc','#f472b6']}
+    {key:'fuel',     match:function(s){return /Diesel|Petrol|LPG|Electricity|Autogas/i.test(s.label||'');},     colors:['#ff3b3b','#f97316','#ffb020','#facc15','#4a9eff']},
+    {key:'food',     match:function(s){return /Tomato|Lettuce|Bread|Dairy|Chicken|Packaged|grocery/i.test(s.label||'');}, colors:['#00e87a','#22d3ee','#4ade80','#a3e635','#34d399','#6ee7b7']},
+    {key:'services', match:function(s){return /airfare|freight|Sea/i.test(s.label||'');},                       colors:['#4a9eff','#c084fc','#f472b6']}
   ];
+
+  function getGroupSeries(g){
+    if(liveData&&liveData.series&&liveData.series.length){
+      return liveData.series.filter(function(s){return g.match(s);});
+    }
+    var old=inf&&inf.weeklyItemSeries?inf.weeklyItemSeries:[];
+    return old.filter(g.match);
+  }
 
   groups.forEach(function(g){
     var canvas=document.getElementById('itemInflationCanvas-'+g.key);
     if(!canvas) return;
-    var subset=series.filter(g.match);
+    var subset=getGroupSeries(g);
     if(!subset.length) return;
-    var dpr=window.devicePixelRatio||1,W=canvas.offsetWidth,H=150;
+    var dpr=window.devicePixelRatio||1,W=canvas.offsetWidth,H=160;
     if(!W||W<50) return;
     canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+'px';canvas.style.height=H+'px';
     var ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
-    var pL=28,pR=8,pT=12,pB=22,cW=W-pL-pR,cH=H-pT-pB;
-    var maxW=15;
+    var pL=30,pR=10,pT=16,pB=26,cW=W-pL-pR,cH=H-pT-pB;
+
+    // Y-axis max from all points
     var maxY=0;
     subset.forEach(function(s){
-      var pts=s.points||[];
-      pts.forEach(function(p){maxY=Math.max(maxY,p.v||0);});
-      if(pts.length>=2){
-        var last=pts[pts.length-1], prev=pts[pts.length-2];
-        var step=(last.v||0)-(prev.v||0);
-        maxY=Math.max(maxY,(last.v||0)+step*2);
-      }
+      (s.points||[]).forEach(function(p){maxY=Math.max(maxY,p.v||0);});
     });
-    maxY=Math.ceil((maxY+1)/2)*2;
-    function toX(w){return pL+((w-1)/(maxW-1))*cW;}
+    maxY=Math.ceil((maxY*1.12)/5)*5||10;
+
+    function toX(w){return pL+((w-1)/(TOTAL_W-1))*cW;}
     function toY(v){return pT+cH-(v/maxY)*cH;}
 
-    ctx.strokeStyle='#1f2937';ctx.lineWidth=0.5;
-    for(var gy=0;gy<=maxY;gy+=Math.max(2,Math.ceil(maxY/5/2)*2)){
-      var y=toY(gy);
-      ctx.beginPath();ctx.moveTo(pL,y);ctx.lineTo(pL+cW,y);ctx.stroke();
-      ctx.fillStyle='#4a6278';ctx.font='8px ui-monospace';ctx.textAlign='right';ctx.fillText(gy+'%',pL-3,y+3);
-    }
-    for(var gw=1;gw<=maxW;gw++){
-      var x=toX(gw);
-      ctx.strokeStyle=gw>13?'rgba(74,98,120,0.35)':'rgba(28,42,62,0.45)';ctx.lineWidth=0.5;
-      ctx.beginPath();ctx.moveTo(x,pT);ctx.lineTo(x,pT+cH);ctx.stroke();
-      ctx.fillStyle='#4a6278';ctx.font='7px ui-monospace';ctx.textAlign='center';ctx.fillText('W'+gw,x,H-7);
-    }
-    var warX=toX(9);
-    var nowW=13, nowX=toX(nowW), projW=15, projX=toX(projW);
+    // Background
+    ctx.fillStyle='rgba(0,0,0,0.15)';
+    ctx.fillRect(0,0,W,H);
 
-    ctx.fillStyle='rgba(255,176,32,0.08)';
+    // Y-axis grid + labels
+    var yStep=Math.max(5,Math.ceil(maxY/5/5)*5);
+    for(var gy=0;gy<=maxY;gy+=yStep){
+      ctx.strokeStyle='rgba(255,255,255,0.04)';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(pL,toY(gy));ctx.lineTo(pL+cW,toY(gy));ctx.stroke();
+      ctx.fillStyle='rgba(122,148,176,0.7)';ctx.font='8px ui-monospace';
+      ctx.textAlign='right';ctx.fillText(gy+'%',pL-3,toY(gy)+3);
+    }
+
+    // X-axis: every 4 weeks with calendar date label
+    for(var gw=1;gw<=TOTAL_W;gw++){
+      var x=toX(gw);
+      ctx.strokeStyle=gw>NOW_W?'rgba(74,98,120,0.20)':'rgba(255,255,255,0.03)';
+      ctx.lineWidth=0.5;
+      ctx.beginPath();ctx.moveTo(x,pT);ctx.lineTo(x,pT+cH);ctx.stroke();
+      if(gw===1||gw%4===1||gw===TOTAL_W){
+        ctx.fillStyle='rgba(122,148,176,0.6)';ctx.font='7px ui-monospace';
+        ctx.textAlign='center';ctx.fillText(calLabel(gw),x,H-6);
+      }
+    }
+
+    // Shaded zones
+    var warX=toX(WAR_W), nowX=toX(NOW_W);
+    ctx.fillStyle='rgba(255,176,32,0.07)';
     ctx.fillRect(warX,pT,Math.max(0,nowX-warX),cH);
     ctx.fillStyle='rgba(74,158,255,0.04)';
-    ctx.fillRect(nowX,pT,Math.max(0,projX-nowX),cH);
+    ctx.fillRect(nowX,pT,Math.max(0,toX(TOTAL_W)-nowX),cH);
 
-    ctx.save();ctx.strokeStyle='rgba(255,176,32,0.8)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
+    // WAR marker
+    ctx.save();ctx.strokeStyle='rgba(255,176,32,0.7)';ctx.lineWidth=1;ctx.setLineDash([3,3]);
     ctx.beginPath();ctx.moveTo(warX,pT);ctx.lineTo(warX,pT+cH);ctx.stroke();ctx.restore();
-    ctx.fillStyle='rgba(255,176,32,0.95)';ctx.font='bold 7px ui-monospace';ctx.textAlign='center';ctx.fillText('WAR',warX,pT+8);
+    ctx.fillStyle='rgba(255,176,32,0.9)';ctx.font='bold 7px ui-monospace';
+    ctx.textAlign='center';ctx.fillText('⚠ WAR',warX,pT+9);
 
-    ctx.save();ctx.strokeStyle='rgba(255,255,255,0.55)';ctx.lineWidth=1;ctx.setLineDash([2,2]);
+    // NOW marker
+    ctx.save();ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=1;ctx.setLineDash([2,2]);
     ctx.beginPath();ctx.moveTo(nowX,pT);ctx.lineTo(nowX,pT+cH);ctx.stroke();ctx.restore();
-    ctx.fillStyle='rgba(255,255,255,0.85)';ctx.font='bold 7px ui-monospace';ctx.textAlign='center';ctx.fillText('NOW W13',nowX,pT+18);
-    ctx.fillStyle='rgba(74,158,255,0.8)';ctx.fillText('PROJ W15',projX,pT+8);
+    ctx.fillStyle='rgba(255,255,255,0.7)';ctx.font='bold 7px ui-monospace';
+    ctx.textAlign='center';ctx.fillText('NOW ►',nowX,pT+9);
+    ctx.fillStyle='rgba(74,158,255,0.7)';ctx.font='7px ui-monospace';
+    ctx.fillText('PROJ ▶',toX(NOW_W+2),pT+9);
 
+    // Draw lines
     subset.forEach(function(s,idx){
       var pts=s.points||[], col=g.colors[idx%g.colors.length];
       if(!pts.length) return;
-      ctx.beginPath();
-      pts.forEach(function(p,i){ var x=toX(p.w), y=toY(p.v||0); i===0?ctx.moveTo(x,y):ctx.lineTo(x,y); });
-      ctx.strokeStyle=col;ctx.lineWidth=1.8;ctx.stroke();
-      pts.forEach(function(p){ var x=toX(p.w), y=toY(p.v||0); ctx.fillStyle=col; ctx.beginPath(); ctx.arc(x,y,2,0,Math.PI*2); ctx.fill(); });
+      var actualPts=pts.filter(function(p){return !p.projected;});
+      var projPts  =pts.filter(function(p){return !!p.projected;});
+      // Add the last actual point as the start of the projected line for continuity
+      var lastActual=actualPts[actualPts.length-1];
+      if(lastActual) projPts=[lastActual].concat(projPts);
 
-      var lp=pts[pts.length-1], lx=toX(lp.w), ly=toY(lp.v||0);
-      ctx.fillStyle=col; ctx.beginPath(); ctx.arc(lx,ly,3,0,Math.PI*2); ctx.fill();
-      var lineLbl=(s.emoji?s.emoji+' ':'')+(s.label||'');
-      var valLbl=(lp.v||0).toFixed(1)+'%';
-      ctx.font='bold 8px ui-monospace';
-      var lineTw=ctx.measureText(lineLbl).width;
-      var valTw=ctx.measureText(valLbl).width;
-      var boxW=Math.max(lineTw,valTw)+6;
-      var bx=Math.min(W-boxW-10, lx+6), by=Math.max(pT+10, Math.min(H-18, ly-10));
-      ctx.fillStyle='rgba(8,12,18,0.88)';
-      ctx.fillRect(bx-3,by-15,boxW,18);
-      ctx.fillStyle=col; ctx.textAlign='left'; ctx.fillText(lineLbl,bx,by-6);
-      ctx.fillText(valLbl,bx,by+2);
-
-      if(pts.length>=2){
-        var prev=pts[pts.length-2], last=pts[pts.length-1];
-        var step=(last.v||0)-(prev.v||0);
-        var p14=Math.max(0,(last.v||0)+step);
-        var p15=Math.max(0,(last.v||0)+step*2);
-        ctx.save();
-        ctx.strokeStyle=col;ctx.lineWidth=1.4;ctx.setLineDash([4,3]);
+      // Actual line (solid)
+      if(actualPts.length){
         ctx.beginPath();
-        ctx.moveTo(toX(last.w),toY(last.v||0));
-        ctx.lineTo(toX(14),toY(p14));
-        ctx.lineTo(toX(15),toY(p15));
-        ctx.stroke();
-        ctx.restore();
-        ctx.fillStyle=col; ctx.beginPath(); ctx.arc(toX(15),toY(p15),2.4,0,Math.PI*2); ctx.fill();
-        var plbl='→ '+p15.toFixed(1)+'%';
-        var ptw=ctx.measureText(plbl).width;
-        var pbx=Math.min(W-ptw-10, toX(15)+6), pby=Math.max(pT+10, Math.min(H-8, toY(p15)-2));
-        ctx.fillStyle='rgba(8,12,18,0.82)';
-        ctx.fillRect(pbx-3,pby-8,ptw+6,11);
-        ctx.fillStyle=col; ctx.textAlign='left'; ctx.fillText(plbl,pbx,pby);
+        actualPts.forEach(function(p,i){
+          i===0?ctx.moveTo(toX(p.w),toY(p.v||0)):ctx.lineTo(toX(p.w),toY(p.v||0));
+        });
+        ctx.strokeStyle=col;ctx.lineWidth=1.8;ctx.stroke();
+      }
+      // Projected line (dashed)
+      if(projPts.length>1){
+        ctx.save();ctx.strokeStyle=col;ctx.lineWidth=1.2;ctx.setLineDash([4,3]);
+        ctx.beginPath();
+        projPts.forEach(function(p,i){
+          i===0?ctx.moveTo(toX(p.w),toY(p.v||0)):ctx.lineTo(toX(p.w),toY(p.v||0));
+        });
+        ctx.stroke();ctx.restore();
+      }
+      // End dot on last actual point
+      if(lastActual){
+        ctx.fillStyle=col;ctx.beginPath();
+        ctx.arc(toX(lastActual.w),toY(lastActual.v||0),3,0,Math.PI*2);ctx.fill();
       }
     });
+
+    // Populate HTML legend below canvas
+    var legEl=document.getElementById('itemInflationLegend-'+g.key);
+    if(legEl){
+      var lhtml='';
+      subset.forEach(function(s,idx){
+        var col=g.colors[idx%g.colors.length];
+        var cur=s.current||((s.points&&s.points.length)?s.points.filter(function(p){return !p.projected;}).reduce(function(a,b){return b;},{}).v:0)||0;
+        lhtml+='<div style="display:flex;align-items:center;gap:5px">';
+        lhtml+='<div style="width:16px;height:2px;background:'+col+';border-radius:2px;flex-shrink:0"></div>';
+        lhtml+='<span style="font-size:9px;color:var(--text-muted)">'+(s.emoji?s.emoji+' ':'')+escHtml(s.label||'')+'</span>';
+        lhtml+='<span style="font-size:9px;font-weight:700;color:'+col+'">'+(cur>=0?'+':'')+cur.toFixed(1)+'%</span>';
+        lhtml+='</div>';
+      });
+      legEl.innerHTML=lhtml;
+    }
   });
 }
 
@@ -1922,7 +1958,7 @@ function renderCPI(inf){
   html+='<div style="display:flex;flex-direction:column;gap:4px;font-size:8px;color:var(--text-muted)">';
   html+='<div>• Y-axis max = 1.12 × max(15, projected metro peak, projected regional peak)</div>';
   html+='<div>• Historical item lines = cumulative % increase since Jan 1</div>';
-  html+='<div>• 2-week dashed item projection = last weekly slope extended to W15</div>';
+  html+='<div>• Dashed projection = holds at current level, eases from W18 (26-week view)</div>';
   html+='</div></div>';
   html+='<div class="cpi-curr">';
   html+='<div class="cpi-stat"><div class="cpi-stat-lbl">Metro</div><div class="cpi-stat-val" style="color:'+(mT==='warn'?'var(--amber)':mT==='emerg'||mT==='crisis'?'var(--red)':'var(--green)')+'">'+m.current+'%</div><div class="cpi-tier '+tierCls(mT)+'">'+tierLbl(mT)+'</div></div>';
@@ -1946,9 +1982,9 @@ function renderCPI(inf){
   if(dEl && items){
     var dHtml = '<div style="font-size:10px;color:var(--text-muted);margin-bottom:8px;">Observed retail price increases since Jan 1, 2026. Not an official ABS index — these are market price movements. Y-axis = % change since Jan 1.</div>';
     dHtml += '<div style="display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:10px;">';
-    dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:8px;background:rgba(255,255,255,0.02)"><div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:6px;">⛽ Fuel / Energy</div><canvas id="itemInflationCanvas-fuel" class="cpi-canvas" style="height:150px"></canvas></div>';
-    dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:8px;background:rgba(255,255,255,0.02)"><div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:6px;">🥬 Food</div><canvas id="itemInflationCanvas-food" class="cpi-canvas" style="height:150px"></canvas></div>';
-    dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:8px;background:rgba(255,255,255,0.02)"><div style="font-size:10px;font-weight:700;color:var(--text);margin-bottom:6px;">✈️ Services / Utilities</div><canvas id="itemInflationCanvas-services" class="cpi-canvas" style="height:150px"></canvas></div>';
+    dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:10px;background:rgba(255,255,255,0.02);margin-bottom:6px"><canvas id="itemInflationCanvas-fuel" class="cpi-canvas" style="height:160px"></canvas><div id="itemInflationLegend-fuel" style="display:flex;flex-wrap:wrap;gap:5px 12px;margin-top:8px"></div></div>';
+    dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:10px;background:rgba(255,255,255,0.02);margin-bottom:6px"><canvas id="itemInflationCanvas-food" class="cpi-canvas" style="height:160px"></canvas><div id="itemInflationLegend-food" style="display:flex;flex-wrap:wrap;gap:5px 12px;margin-top:8px"></div></div>';
+    dHtml += '<div style="border:1px solid var(--border);border-radius:8px;padding:10px;background:rgba(255,255,255,0.02);margin-bottom:6px"><canvas id="itemInflationCanvas-services" class="cpi-canvas" style="height:160px"></canvas><div id="itemInflationLegend-services" style="display:flex;flex-wrap:wrap;gap:5px 12px;margin-top:8px"></div></div>';
     dHtml += '</div>';
     dHtml += '<div style="display:flex;flex-direction:column;gap:8px;">';
     var maxC = Math.max.apply(null, items.map(function(d){return d.weeklyChange||0;}));
@@ -1968,7 +2004,7 @@ function renderCPI(inf){
       dHtml += '<div style="height:100%;background:'+col+';width:'+pct+'%;border-radius:3px;"></div>';
       dHtml += '</div></div></div>';
     });
-    dHtml += '</div><div style="font-size:10px;color:var(--text-muted);margin-top:12px;padding-top:8px;border-top:1px solid var(--border);">Item trajectories show <strong>cumulative price increases since Jan 1, 2026</strong>. <strong>WAR</strong> marks the disruption point, <strong>NOW W13</strong> marks the current week, the amber band shows the post-war inflation acceleration window, and the <strong>dashed line projects two weeks forward to W15</strong>. The Households tab converts these item-level % increases into <strong>monthly dollar impact</strong> for each demographic basket.</div>';
+    dHtml += '</div><div style="font-size:10px;color:var(--text-muted);margin-top:12px;padding-top:8px;border-top:1px solid var(--border);">26-week calendar view (Jan 5 → Jul 6, 2026). Solid lines = actual observed price change since Jan 1. Dashed lines = projected trajectory (holds current level, eases from W18). <strong>⚠ WAR</strong> = Iran conflict start (W9, Mar 2). <strong>NOW ►</strong> = current week. Legends below each chart.</div>';
     dEl.innerHTML = dHtml;
   } else if(dEl && inf.drivers && inf.drivers.length){
     var dHtml2 = '<div style="display:flex;flex-direction:column;gap:8px;">';
@@ -2358,6 +2394,7 @@ function refresh(){
     renderRoutes(data.shippingRoutes);
     renderTroopDeployments(data.troopDeployments);
     renderDominoModel(data.dominoModel);
+    window._itemSeries26w = data.itemSeries26w || null;
     renderCPI(data.inflation);
     renderLiveInputs(data.inflation);
     renderBank(data.bankEmpty);
