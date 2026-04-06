@@ -448,13 +448,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       <div id="review-content-markets"></div>
     </div>
 
-    <div class="panel" id="panel-live-inputs">
-      <div class="p-hdr">
-        <span class="p-title">📡 Live Market Inputs</span>
-        <span id="market-inputs-dtg" style="font-size:9px;color:var(--text-muted)"></span>
-      </div>
-      <div id="live-inputs-content"><div style="color:var(--text-muted);font-size:10px">Loading live data…</div></div>
-    </div>
+
     <div class="panel-row panel-row-2">
       <div class="panel" id="panel-cpi">
         <div class="p-hdr"><span class="p-title">📊 Price Shock Monitor</span></div>
@@ -2396,7 +2390,7 @@ function refresh(){
     renderDominoModel(data.dominoModel);
     window._itemSeries26w = data.itemSeries26w || null;
     renderCPI(data.inflation);
-    renderLiveInputs(data.inflation);
+
     renderBank(data.bankEmpty);
   }).catch(function(e){console.error('Refresh error:',e);});
 }
