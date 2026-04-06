@@ -686,6 +686,7 @@ function renderTier1(data){
 function renderAlert(data){
   var dbEv=data.dbEvents||[],war=data.warAlert||{};
   var el=document.getElementById('alert-content');
+  if(!el) return;
 
   var html='';
   var fuelEvs=dbEv.filter(function(e){return e.domain==='fuel'||e.domain==='shipping'||e.domain==='geopolitical';}).slice(0,5);
@@ -716,6 +717,7 @@ function renderAlert(data){
 // ── TRAJECTORY ──
 function renderTrajectory(traj){
   var el=document.getElementById('traj-content');
+  if(!el) return;
   if(!traj){el.innerHTML='';return;}
   var html='<div class="traj-section"><div class="traj-hdr">📈 Trajectory Analysis</div>';
   if(traj.trend) html+='<div class="traj-row"><span class="traj-lbl">Trend</span><span class="traj-val">'+escHtml(traj.trend)+'</span></div>';
@@ -1206,6 +1208,7 @@ function drawSentimentChart(sentiment) {
 function renderServo(data){
   if(!data) return;
   var el=document.getElementById('servo-content');
+  if(!el) return;
 
   var total=data.total||0,trend=data.trend||'\u2014';
   var byS=data.byState||{};
@@ -1262,6 +1265,7 @@ function renderServo(data){
 function renderFleet(data){
   if(!data) return;
   var el=document.getElementById('fleet-content');
+  if(!el) return;
   var ships=(data.vessels||data.ships||[]).map(function(s){
     var eta=s.eta||'';
     if(eta&&eta!=='Continuous'){var e=new Date(eta);s._d=Math.max(0,Math.ceil((e-Date.now())/86400000));}
@@ -1494,6 +1498,7 @@ function drawFuelProjection(fl){
 function renderReserves(data){
   if(!data) return;
   var el=document.getElementById('reserves-content');
+  if(!el) return;
 
   var rl=data.rationingRedLine||10,maxD=50;
   function gaugeRow(lbl,emoji,days){
@@ -1548,6 +1553,7 @@ function renderShippingDelays(data){
 function renderRefineries(data){
   if(!data) return;
   var el=document.getElementById('refineries-content');
+  if(!el) return;
 
   // Handle new live format (data.refineries is object keyed by country)
   var refs=data.refineries||data;
@@ -1613,6 +1619,7 @@ function renderRefineries(data){
 function renderRoutes(data){
   if(!data) return;
   var el=document.getElementById('routes-content');
+  if(!el) return;
   var routes=[
     {key:'hormuz',name:'STRAIT OF HORMUZ',icon:'🌊',note:'IRGC blockade · kinetic attacks on vessels'},
     {key:'babMandeb',name:'BAB EL-MANDEB',icon:'🌊',note:'Houthis active · +14d Cape route'},
@@ -2457,6 +2464,7 @@ function drawItemInflationChart(inf){
 function renderCPI(inf){
   if(!inf) return;_lastInf=inf;
   var el=document.getElementById('cpi-content');
+  if(!el) return;
 
   var m=inf.metro||{},r=inf.regional||{};
   function tier(v){return v>=40?'crisis':v>=25?'emerg':v>=15?'warn':'ok';}
@@ -3000,6 +3008,7 @@ function drawHHTrajectory(canvasId, tiers, hm){
 function renderBank(be){
   if(!be||!be.household) return;
   var el=document.getElementById('bank-content');
+  if(!el) return;
 
   var tiers=be.household.tiers||[],gov=be.government||{};
   var hasRetiree=tiers.some(function(t){return t.name.indexOf('Retiree')>=0;});
