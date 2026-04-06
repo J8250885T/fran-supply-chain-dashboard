@@ -1572,44 +1572,6 @@ function renderTroopDeployments(td){
   if(td.updatedAt) html+='<div style="font-size:8px;color:var(--text-muted)">'+fmtAESTDateTime(td.updatedAt)+'</div>';
   html+='</div>';
 
-  // Individual indicators
-  if(iwIndicators.length){
-    html+='<div style="padding:8px 12px">';
-    iwIndicators.forEach(function(ind){
-      var indCol=ind.score>=70?'var(--red)':ind.score>=45?'var(--amber)':ind.score>=25?'#facc15':'var(--green)';
-      var trendIcon=ind.trend==='rising'?'▲':ind.trend==='falling'?'▼':'—';
-      var trendCol=ind.trend==='rising'?'var(--red)':ind.trend==='falling'?'var(--green)':'var(--text-muted)';
-
-      html+='<div style="margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.03)">';
-      // Name + score + trend
-      html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">';
-      html+='<div style="font-size:14px;font-weight:700;color:'+indCol+';min-width:28px;text-align:right">'+ind.score+'</div>';
-      html+='<div style="flex:1;font-size:9px;font-weight:700;color:var(--text)">'+escHtml(ind.name)+'</div>';
-      html+='<div style="font-size:9px;font-weight:700;color:'+trendCol+'">'+trendIcon+'</div>';
-      html+='</div>';
-      // Score bar
-      html+='<div style="height:4px;background:var(--surface-high);border-radius:2px;overflow:hidden;margin-bottom:4px">';
-      html+='<div style="height:100%;width:'+ind.score+'%;background:'+indCol+';border-radius:2px"></div></div>';
-      // Evidence
-      html+='<div style="font-size:8px;color:var(--text-muted);line-height:1.4">'+escHtml(ind.evidence||'')+'</div>';
-      // Threshold
-      if(ind.threshold) html+='<div style="font-size:7px;color:var(--text-dim);margin-top:2px;font-style:italic">↑ '+escHtml(ind.threshold)+'</div>';
-      html+='</div>';
-    });
-    html+='</div>';
-  }
-
-  // Decision triggers
-  var triggers=tl.decisionTriggers||[];
-  if(triggers.length){
-    html+='<div style="padding:6px 12px 10px;border-top:1px solid var(--border)">';
-    html+='<div style="font-size:7px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:4px">DECISION TRIGGERS</div>';
-    triggers.forEach(function(t){
-      html+='<div style="font-size:8px;color:var(--text-dim);display:flex;gap:5px;margin-bottom:2px"><span style="color:var(--red)">⚡</span>'+escHtml(t)+'</div>';
-    });
-    html+='</div>';
-  }
-
   html+='</div>';
 
   // Countries grid
