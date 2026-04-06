@@ -416,9 +416,9 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
     </div>
 
     <div class="panel-row panel-row-2">
-      <div class="panel" id="panel-routes">
-        <div class="p-hdr"><span class="p-title">🚢 Supply Routes / Chokepoints</span></div>
-        <div id="routes-content"></div>
+      <div class="panel" id="panel-shipping-delays">
+        <div class="p-hdr"><span class="p-title">⛵ Shipping Delays & Hazards</span></div>
+        <div id="shipping-delays-content"></div>
       </div>
       <div class="panel" id="panel-refineries">
         <div class="p-hdr"><span class="p-title">🏭 Asian Refineries</span></div>
@@ -1494,6 +1494,55 @@ function renderReserves(data){
   html+='<div class="res-actions">';
   (data.governmentActions||[]).forEach(function(a){html+='<span class="res-badge">✅ '+escHtml(a)+'</span>';});
   html+='</div>';
+  el.innerHTML=html;
+}
+
+// ── REFINERIES ──
+// ── SHIPPING DELAYS & HAZARDS ──
+function renderShippingDelays(data){
+  if(!data) return;
+  var el=document.getElementById('shipping-delays-content');
+  if(!el) return;
+
+  var hazards=data.hazards||[];
+  var delays=data.delayTable||[];
+  var html='';
+
+  // Hazard zones
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin-bottom:6px">ACTIVE HAZARDS</div>';
+  hazards.forEach(function(h){
+    var sevCol=h.severity==='CRITICAL'?'var(--red)':h.severity==='HIGH'?'var(--amber)':h.severity==='MEDIUM'?'#facc15':'var(--green)';
+    var typeIcon=h.type==='CONFLICT'?'\u26a0':h.type==='WEATHER'?'\ud83c\udf0a':h.type==='CONGESTION'?'\u23f3':'\u2693';
+    html+='<div style="display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;padding:5px 8px;border-radius:5px;border-left:3px solid '+sevCol+';background:rgba(0,0,0,0.1)">';
+    html+='<div style="font-size:12px;min-width:16px">'+typeIcon+'</div>';
+    html+='<div style="flex:1">';
+    html+='<div style="display:flex;justify-content:space-between;align-items:center">';
+    html+='<span style="font-size:9px;font-weight:700;color:var(--text)">'+escHtml(h.zone)+'</span>';
+    html+='<span style="font-size:7px;font-weight:700;color:'+sevCol+';border:1px solid '+sevCol+';border-radius:3px;padding:1px 4px">'+escHtml(h.status)+'</span>';
+    html+='</div>';
+    html+='<div style="font-size:8px;color:var(--text-muted);margin-top:2px">'+escHtml(h.impact)+'</div>';
+    html+='</div></div>';
+  });
+
+  // Delay table
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin:10px 0 6px">VESSEL DELAY TABLE</div>';
+  html+='<div class="table-scroll"><table class="bank-table"><thead><tr>';
+  html+='<th>Vessel</th><th class="num">Normal</th><th class="num">Actual</th><th class="num">Delay</th><th>Cause</th><th>Risk</th>';
+  html+='</tr></thead><tbody>';
+  delays.forEach(function(d){
+    var riskCol=d.riskLevel==='HIGH'?'var(--red)':d.riskLevel==='MEDIUM'?'var(--amber)':'var(--green)';
+    html+='<tr>';
+    html+='<td style="font-weight:700;color:var(--text)">'+escHtml(d.vessel)+'</td>';
+    html+='<td class="num">'+d.normalDays+'d</td>';
+    html+='<td class="num">'+d.actualDays+'d</td>';
+    html+='<td class="num" style="color:var(--red);font-weight:700">+'+d.delayDays+'d</td>';
+    html+='<td style="font-size:8px">'+escHtml(d.cause)+'</td>';
+    html+='<td style="color:'+riskCol+';font-weight:700;font-size:8px">'+escHtml(d.riskLevel)+'</td>';
+    html+='</tr>';
+  });
+  html+='</tbody></table></div>';
+
+  if(data.updatedAt) html+='<div style="font-size:7px;color:var(--text-muted);margin-top:6px">Updated '+fmtAESTDateTime(data.updatedAt)+'</div>';
   el.innerHTML=html;
 }
 
@@ -3077,6 +3126,7 @@ function refresh(){
     renderServo(data.servoOutagesLive||data.servoOutages);
     renderFleet(data.fleetStatus||data.shipments);
     if(data.fuelLevels) renderFuelProjection(data.fuelLevels);
+    if(data.shippingHazards) renderShippingDelays(data.shippingHazards);
     renderReserves(data.reserves);
     renderRefineries(data.refineriesLive||data.refineries);
     renderRoutes(data.shippingRoutes);
