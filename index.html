@@ -1262,7 +1262,6 @@ function renderServo(data){
 function renderFleet(data){
   if(!data) return;
   var el=document.getElementById('fleet-content');
-  // Handle both old (data.ships) and new (data.vessels) format
   var ships=(data.vessels||data.ships||[]).map(function(s){
     var eta=s.eta||'';
     if(eta&&eta!=='Continuous'){var e=new Date(eta);s._d=Math.max(0,Math.ceil((e-Date.now())/86400000));}
@@ -1270,47 +1269,60 @@ function renderFleet(data){
     return s;
   }).sort(function(a,b){return a._d-b._d;});
 
+  var categories=[
+    {key:'FUEL', label:'\u26fd FUEL TANKERS', colour:'#ff3b3b'},
+    {key:'LPG',  label:'\ud83d\udd25 LPG / LNG', colour:'#ffb020'},
+    {key:'CARGO',label:'\ud83d\udce6 CARGO / CONTAINER', colour:'#4a9eff'},
+    {key:'BULK', label:'\ud83d\udea2 BULK COMMODITY', colour:'#c084fc'},
+    {key:'DOMESTIC',label:'\ud83c\udfed DOMESTIC REFINERIES', colour:'#00e87a'},
+  ];
+
   var enRoute=ships.filter(function(s){return s.status==='EN_ROUTE'||s.status==='en_route';});
   var producing=ships.filter(function(s){return s.status==='PRODUCING';});
-  var urgent=enRoute.filter(function(s){return s._d>=0&&s._d<=7;});
-  var totalML=data.totalCapacityML||0;
+  var totalML=0;enRoute.forEach(function(s){totalML+=s.capacity_ml||0;});
+  var totalDelay=0;enRoute.forEach(function(s){totalDelay+=s.delayDays||0;});
+  var avgDelay=enRoute.length?Math.round(totalDelay/enRoute.length*10)/10:0;
 
   var html='';
-  // Summary bar
+  // Summary
   html+='<div style="display:flex;gap:10px;margin-bottom:8px;padding:6px 8px;background:rgba(0,0,0,0.15);border-radius:6px;flex-wrap:wrap;font-size:9px">';
   html+='<div><span style="font-weight:700;color:var(--text)">'+enRoute.length+'</span> <span style="color:var(--text-muted)">en route</span></div>';
   html+='<div><span style="font-weight:700;color:var(--text)">'+producing.length+'</span> <span style="color:var(--text-muted)">refineries</span></div>';
-  if(totalML) html+='<div><span style="font-weight:700;color:var(--amber)">'+totalML+'</span> <span style="color:var(--text-muted)">ML capacity</span></div>';
-  if(data.avgDelayDays) html+='<div><span style="font-weight:700;color:var(--red)">+'+data.avgDelayDays+'d</span> <span style="color:var(--text-muted)">avg delay</span></div>';
+  if(totalML) html+='<div><span style="font-weight:700;color:var(--amber)">'+totalML+'</span> <span style="color:var(--text-muted)">ML fuel capacity</span></div>';
+  if(avgDelay) html+='<div><span style="font-weight:700;color:var(--red)">+'+avgDelay+'d</span> <span style="color:var(--text-muted)">avg delay</span></div>';
   html+='</div>';
 
-  // Vessels
-  enRoute.forEach(function(s){
-    var daysCol=s._d<=3?'var(--red)':s._d<=7?'var(--amber)':'var(--green)';
-    var riskCol=s.risk&&s.risk.indexOf('HIGH')>=0?'var(--red)':s.risk&&s.risk.indexOf('MEDIUM')>=0?'var(--amber)':'var(--green)';
-    html+='<div style="border:1px solid var(--border);border-radius:6px;padding:8px;margin-bottom:6px;border-left:3px solid '+daysCol+'">';
-    html+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">';
-    html+='<div style="font-size:10px;font-weight:700;color:var(--text)">'+(s.flag||'\ud83d\udea2')+' '+escHtml(s.name)+'</div>';
-    html+='<div style="font-size:11px;font-weight:700;color:'+daysCol+'">'+(s._d===0?'TODAY':s._d+'D')+'</div>';
-    html+='</div>';
-    html+='<div style="font-size:8px;color:var(--text-muted);margin-bottom:2px">'+escHtml(s.type)+' \u00b7 '+escHtml(s.operator||'')+' \u00b7 '+escHtml(s.cargo||'')+'</div>';
-    html+='<div style="font-size:8px;color:var(--text-muted)">'+escHtml(s.origin)+' \u2192 '+escHtml(s.destination||'Australia')+'</div>';
-    if(s.position) html+='<div style="font-size:8px;color:var(--text-dim);font-style:italic;margin-top:2px">\ud83d\udccd '+escHtml(s.position)+'</div>';
-    if(s.capacity_ml) html+='<div style="font-size:8px;color:var(--amber);margin-top:2px">'+s.capacity_ml+' ML \u00b7 +'+s.delayDays+'d delay \u00b7 Risk: <span style="color:'+riskCol+'">'+escHtml(s.risk||'')+'</span></div>';
-    html+='</div>';
+  // Group by category
+  categories.forEach(function(cat){
+    var group=ships.filter(function(s){return (s.category||'FUEL')===cat.key;});
+    if(!group.length) return;
+
+    html+='<div style="font-size:8px;font-weight:700;color:'+cat.colour+';letter-spacing:0.06em;margin:10px 0 4px">'+cat.label+' ('+group.length+')</div>';
+
+    group.forEach(function(s){
+      var daysCol=s._d<0?'var(--green)':s._d<=3?'var(--red)':s._d<=7?'var(--amber)':'var(--green)';
+      html+='<div style="border:1px solid var(--border);border-radius:6px;margin-bottom:4px;overflow:hidden">';
+      html+='<div style="padding:5px 8px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,0.1)">';
+      html+='<div style="display:flex;align-items:center;gap:5px">';
+      html+='<span style="font-size:11px">'+(s.flag||'')+'</span>';
+      html+='<span style="font-size:9px;font-weight:700;color:var(--text)">'+escHtml(s.name)+'</span>';
+      html+='<span style="font-size:7px;color:var(--text-muted)">'+escHtml(s.type)+'</span>';
+      html+='</div>';
+      html+='<div style="display:flex;align-items:center;gap:6px">';
+      if(s._d>=0) html+='<span style="font-size:11px;font-weight:700;color:'+daysCol+'">'+(s._d===0?'TODAY':s._d+'D')+'</span>';
+      else html+='<span style="font-size:8px;font-weight:700;color:var(--green)">ACTIVE</span>';
+      html+='</div></div>';
+      // Detail row
+      html+='<div style="padding:4px 8px 5px;font-size:8px;color:var(--text-muted);display:flex;gap:6px;flex-wrap:wrap">';
+      html+='<span>'+escHtml(s.cargo)+'</span>';
+      html+='<span>\u00b7</span>';
+      html+='<span>'+escHtml(s.origin)+' \u2192 '+escHtml(s.destination)+'</span>';
+      if(s.delayDays>0) html+='<span>\u00b7 <span style="color:var(--red)">+'+s.delayDays+'d delay</span></span>';
+      if(s.capacity_ml>0) html+='<span>\u00b7 '+s.capacity_ml+' ML</span>';
+      html+='</div></div>';
+    });
   });
 
-  // Domestic refineries
-  if(producing.length){
-    html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.06em;margin:8px 0 4px">DOMESTIC REFINERIES</div>';
-    producing.forEach(function(s){
-      html+='<div style="border:1px solid var(--border);border-radius:6px;padding:6px 8px;margin-bottom:4px;border-left:3px solid var(--green)">';
-      html+='<div style="font-size:9px;font-weight:700;color:var(--text)">\ud83c\udfed '+escHtml(s.name)+'</div>';
-      html+='<div style="font-size:8px;color:var(--text-muted)">'+escHtml(s.cargo)+' \u00b7 '+s.capacity_ml+' ML/week \u00b7 '+escHtml(s.destination||'')+'</div>';
-      if(s.risk) html+='<div style="font-size:7px;color:var(--amber);margin-top:2px">'+escHtml(s.risk)+'</div>';
-      html+='</div>';
-    });
-  }
   el.innerHTML=html;
 }
 
