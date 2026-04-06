@@ -1891,35 +1891,7 @@ function renderTroopDeployments(td){
   // Totals extracted for header
   var tots=td.totals||{};
 
-  // ── INVASION WATCH PANEL ──
-  var iw=td.invasionWatch||{};
-  var tl=td.invasionTimeline||{};
-  var iwIndicators=iw.indicators||[];
-  var iwScore=iw.overallScore||0;
 
-  // Score colour
-  var iwCol=iwScore>=70?'var(--red)':iwScore>=45?'var(--amber)':iwScore>=25?'#facc15':'var(--green)';
-  var iwLabel=iwScore>=70?'HIGH':iwScore>=45?'ELEVATED':iwScore>=25?'GUARDED':'LOW';
-
-  html+='<div style="margin-bottom:10px;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:rgba(0,0,0,0.15)">';
-
-  // Header bar with overall score
-  // Totals + score header
-  html+='<div style="padding:10px 12px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--border);flex-wrap:wrap">';
-  html+='<div style="text-align:center;min-width:50px"><div style="font-size:28px;font-weight:700;color:'+iwCol+'">'+iwScore+'</div><div style="font-size:7px;font-weight:700;color:'+iwCol+';letter-spacing:0.1em">'+iwLabel+'</div></div>';
-  html+='<div style="height:30px;width:1px;background:var(--border)"></div>';
-  if(tots.totalPersonnel){
-    html+='<div><span style="font-size:16px;font-weight:700;color:var(--text)">'+tots.deployed+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:3px">deployed</span></div>';
-    html+='<div><span style="font-size:16px;font-weight:700;color:var(--amber)">'+tots.enRoute+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:3px">en route</span></div>';
-    html+='<div><span style="font-size:16px;font-weight:700;color:var(--red)">'+(tots.totalPersonnel||0).toLocaleString()+'</span><span style="font-size:8px;color:var(--text-muted);margin-left:3px">personnel</span></div>';
-  }
-  html+='<div style="flex:1"></div>';
-  html+='<div style="width:100px"><div style="height:5px;background:var(--surface-high);border-radius:3px;overflow:hidden">';
-  html+='<div style="height:100%;width:'+iwScore+'%;background:'+iwCol+';border-radius:3px"></div></div></div>';
-  if(td.updatedAt) html+='<div style="font-size:8px;color:var(--text-muted)">'+fmtAESTDateTime(td.updatedAt)+'</div>';
-  html+='</div>';
-
-  html+='</div>';
 
   // Countries grid
   var countries=td.countries||{};
