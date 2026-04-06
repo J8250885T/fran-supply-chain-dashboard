@@ -1369,8 +1369,19 @@ function renderSupplyReview(fr){
   if(!el||!fr) return;
   var html='';
   html+=reviewHeader(fr);
-  html+=reviewMLMD(fr);
-  html+=reviewBullets(fr,'Watch — Key Thresholds');
+  if(fr.confidence){
+    var confCol=fr.confidence==='HIGH'?'var(--green)':fr.confidence==='LOW'?'var(--red)':'var(--amber)';
+    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">';
+    html+='<span style="font-size:8px;font-weight:700;letter-spacing:0.08em;color:'+confCol+';background:rgba(255,255,255,0.04);border:1px solid '+confCol+';border-radius:4px;padding:2px 8px">CONFIDENCE: '+escHtml(fr.confidence)+'</span>';
+    if(fr.confidenceReason) html+='<span style="font-size:8px;color:var(--text-muted)">'+escHtml(fr.confidenceReason)+'</span>';
+    html+='</div>';
+  }
+  html+='<div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px">';
+  if(fr.mostLikelyCourse) html+='<div style="border:1px solid rgba(0,232,122,0.2);background:rgba(0,232,122,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--green);text-transform:uppercase;margin-bottom:4px">Most Likely Course of Action</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.mostLikelyCourse)+'</div></div>';
+  if(fr.scenarioB) html+='<div style="border:1px solid rgba(255,176,32,0.2);background:rgba(255,176,32,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--amber);text-transform:uppercase;margin-bottom:4px">Partial Relief</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.scenarioB)+'</div></div>';
+  if(fr.mostDangerousCourse) html+='<div style="border:1px solid rgba(255,59,59,0.2);background:rgba(255,59,59,0.05);border-radius:8px;padding:8px"><div style="font-size:9px;font-weight:700;letter-spacing:0.06em;color:var(--red);text-transform:uppercase;margin-bottom:4px">Most Dangerous Course of Action</div><div style="font-size:10px;line-height:1.5;color:var(--text-dim)">'+escHtml(fr.mostDangerousCourse)+'</div></div>';
+  html+='</div>';
+  html+=reviewBullets(fr,'Watch');
   el.innerHTML=html;
 }
 
