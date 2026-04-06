@@ -45,7 +45,17 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
 .nav-tab{background:none;border:none;border-bottom:2px solid transparent;color:var(--text-muted);font:700 10px/1 var(--font);letter-spacing:0.08em;text-transform:uppercase;padding:0 14px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px;transition:color 0.15s,border-color 0.15s;flex-shrink:0}
 .nav-tab:hover{color:var(--text)}
 .nav-tab.active{color:var(--text);border-bottom-color:var(--amber)}
-.nav-tab .tab-dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0}
+.nav-tab[data-section="feed"]{--tab-color:#4a9eff}
+.nav-tab[data-section="supply"]{--tab-color:#f97316}
+.nav-tab[data-section="markets"]{--tab-color:#facc15}
+.nav-tab[data-section="households"]{--tab-color:#00e87a}
+.nav-tab[data-section="troops"]{--tab-color:#ff3b3b}
+.nav-tab[data-section="domino"]{--tab-color:#c084fc}
+.nav-tab{border-bottom:2px solid transparent}
+.nav-tab:hover{color:var(--tab-color,var(--text))}
+.nav-tab.active{color:var(--tab-color,var(--text));border-bottom-color:var(--tab-color,var(--amber))}
+.nav-tab .tab-dot{width:6px;height:6px;border-radius:50%;background:var(--tab-color,currentColor);flex-shrink:0;opacity:0.7}
+.nav-tab.active .tab-dot{opacity:1}
 .nav-tab .tab-badge{background:var(--red);color:#fff;font-size:8px;font-weight:700;padding:1px 4px;border-radius:8px;min-width:14px;text-align:center;line-height:14px}
 
 /* ══ SECTIONS ══ */
@@ -306,22 +316,22 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
   <!-- Row 2: nav tabs -->
   <nav class="hdr-nav">
     <button class="nav-tab active" data-section="feed">
-      📡 FEED <span class="tab-badge" id="feed-badge" style="display:none">0</span>
+      <span class="tab-dot"></span> 📡 FEED <span class="tab-badge" id="feed-badge" style="display:none">0</span>
     </button>
     <button class="nav-tab" data-section="supply">
-      ⛽ FUEL LEVELS &amp; SUPPLY
+      <span class="tab-dot"></span> ⛽ SUPPLY
     </button>
     <button class="nav-tab" data-section="markets">
-      📊 MARKETS
+      <span class="tab-dot"></span> 📊 MARKETS
     </button>
     <button class="nav-tab" data-section="households">
-      🏦 HOUSEHOLDS
+      <span class="tab-dot"></span> 🏦 HOUSEHOLDS
     </button>
     <button class="nav-tab" data-section="troops">
-      🎯 DISPOSITION
+      <span class="tab-dot"></span> 🎯 DISPOSITION
     </button>
     <button class="nav-tab" data-section="domino">
-      🁢 DOMINO
+      <span class="tab-dot"></span> 🁢 DOMINO
     </button>
   </nav>
 
