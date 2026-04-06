@@ -447,6 +447,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13
       <div class="p-hdr"><span class="p-title">🧠 Review</span></div>
       <div id="review-content-markets"></div>
     </div>
+
+    <div class="panel" id="panel-live-inputs">
+      <div class="p-hdr">
+        <span class="p-title">📡 Live Market Inputs</span>
+        <span id="market-inputs-dtg" style="font-size:9px;color:var(--text-muted)"></span>
+      </div>
+      <div id="live-inputs-content"><div style="color:var(--text-muted);font-size:10px">Loading live data…</div></div>
+    </div>
     <div class="panel-row panel-row-2">
       <div class="panel" id="panel-cpi">
         <div class="p-hdr"><span class="p-title">📊 Price Shock Monitor</span></div>
@@ -1343,6 +1351,71 @@ function renderMarketsReview(fr){
   html+=reviewHeader(fr);
   html+=reviewMLMD(fr);
   html+=reviewBullets(fr,'Watch — Price Milestones');
+  el.innerHTML=html;
+}
+
+function renderLiveInputs(inf){
+  var el=document.getElementById('live-inputs-content');
+  if(!el||!inf) return;
+  var li=inf.liveInputs||{};
+  var mi=inf.modelInputs||{};
+  var dtgEl=document.getElementById('market-inputs-dtg');
+  if(dtgEl&&li.updatedAt) dtgEl.textContent='Updated '+fmtAESTDateTime(li.updatedAt);
+
+  if(!li.brent&&!li.petrol_cpl){ el.innerHTML='<div style="color:var(--text-muted);font-size:10px">Market data not yet fetched — runs daily at 7 AM AEST</div>'; return; }
+
+  // Commodity tiles
+  var tiles=[
+    {label:'Brent Crude',    value:li.brent&&li.brent.value?'$'+li.brent.value.toFixed(2):'—',  sub:'USD/bbl',  col:li.brent&&li.brent.value>100?'var(--red)':'var(--amber)'},
+    {label:'WTI Crude',      value:li.wti&&li.wti.value?'$'+li.wti.value.toFixed(2):'—',    sub:'USD/bbl',  col:li.wti&&li.wti.value>100?'var(--red)':'var(--amber)'},
+    {label:'AUD / USD',      value:li.aud_usd&&li.aud_usd.value?li.aud_usd.value.toFixed(4):'—', sub:'exchange', col:'var(--blue)'},
+    {label:'Baltic Dry',     value:li.bdi&&li.bdi.value?li.bdi.value.toFixed(0):'—',        sub:'index',    col:'var(--text-dim)'},
+    {label:'Petrol (AU)',    value:li.petrol_cpl&&li.petrol_cpl.value?li.petrol_cpl.value.toFixed(0)+' cpl':'—', sub:li.petrol_cpl&&li.petrol_cpl.change||'', col:'var(--amber)'},
+    {label:'Diesel (AU)',    value:li.diesel_cpl&&li.diesel_cpl.value?li.diesel_cpl.value.toFixed(0)+' cpl':'—', sub:li.diesel_cpl&&li.diesel_cpl.change||'', col:'var(--red)'},
+  ];
+
+  var html='<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px">';
+  tiles.forEach(function(t){
+    html+='<div style="background:var(--surface-raised);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center">';
+    html+='<div style="font-size:16px;font-weight:700;color:'+t.col+'">'+escHtml(t.value)+'</div>';
+    html+='<div style="font-size:8px;color:var(--text-muted);margin-top:2px">'+escHtml(t.label)+'</div>';
+    if(t.sub) html+='<div style="font-size:8px;color:var(--text-dim)">'+escHtml(t.sub)+'</div>';
+    html+='</div>';
+  });
+  html+='</div>';
+
+  // CPI contribution breakdown
+  var fc=li.cpi_fuel&&li.cpi_fuel.value, fd=li.cpi_food&&li.cpi_food.value;
+  if(fc||fd){
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.07em;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px">CPI Contribution Breakdown (Model)</div>';
+    var contribs=[
+      {label:'Fuel at pump',    val:fc||0,   col:'var(--red)'},
+      {label:'Food (lagged)',   val:fd||0,   col:'var(--amber)'},
+      {label:'Transport svcs',  val:0.5,     col:'var(--blue)'},
+      {label:'Energy/utilities',val:0.8,     col:'#22d3ee'},
+    ];
+    var maxC=Math.max.apply(null,contribs.map(function(c){return c.val;}));
+    contribs.forEach(function(c){
+      var pct=maxC?Math.round(c.val/maxC*100):0;
+      html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">';
+      html+='<span style="font-size:9px;color:var(--text);min-width:130px">'+escHtml(c.label)+'</span>';
+      html+='<div style="flex:1;height:5px;background:rgba(255,255,255,0.05);border-radius:3px">';
+      html+='<div style="width:'+pct+'%;height:100%;background:'+c.col+';border-radius:3px"></div></div>';
+      html+='<span style="font-size:9px;font-weight:700;color:'+c.col+';min-width:30px;text-align:right">+'+c.val.toFixed(2)+'pp</span>';
+      html+='</div>';
+    });
+  }
+
+  // Model inputs if available
+  if(mi&&mi.H!==undefined){
+    html+='<div style="margin-top:10px;padding:8px 10px;background:rgba(0,0,0,0.15);border:1px solid var(--border);border-radius:6px;font-size:9px;color:var(--text-muted)">';
+    html+='<span style="font-weight:700;color:var(--text-dim)">Scenario formula inputs (live): </span>';
+    html+='H='+escHtml(String(mi.H))+' · R='+escHtml(String(mi.R))+' · S='+escHtml(String(mi.S))+' · M='+escHtml(String(mi.M));
+    if(mi.brent_stress) html+=' · Brent stress +'+escHtml(mi.brent_stress);
+    if(mi.updatedAt)    html+='<span style="float:right">'+fmtAESTDateTime(mi.updatedAt)+'</span>';
+    html+='</div>';
+  }
+
   el.innerHTML=html;
 }
 
@@ -2286,6 +2359,7 @@ function refresh(){
     renderTroopDeployments(data.troopDeployments);
     renderDominoModel(data.dominoModel);
     renderCPI(data.inflation);
+    renderLiveInputs(data.inflation);
     renderBank(data.bankEmpty);
   }).catch(function(e){console.error('Refresh error:',e);});
 }
