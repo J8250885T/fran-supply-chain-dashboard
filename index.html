@@ -1389,7 +1389,7 @@ function renderLiveInputs(inf){
   // CPI contribution breakdown
   var fc=li.cpi_fuel&&li.cpi_fuel.value, fd=li.cpi_food&&li.cpi_food.value;
   if(fc||fd){
-    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.07em;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px">CPI Contribution Breakdown (Model)</div>';
+    html+='<div style="font-size:9px;font-weight:700;letter-spacing:0.07em;color:var(--text-muted);text-transform:uppercase;margin-bottom:6px">Price Increase Breakdown (Model)</div>';
     var contribs=[
       {label:'Fuel at pump',    val:fc||0,   col:'var(--red)'},
       {label:'Food (lagged)',   val:fd||0,   col:'var(--amber)'},
@@ -1893,8 +1893,8 @@ function drawCPIChart(inf){
     var mCur=mLast.length?mLast[mLast.length-1].v:0;
     var rCur=rLast.length?rLast[rLast.length-1].v:0;
     legEl.innerHTML=
-      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#ffb020;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Metro CPI</span><span style="font-size:9px;font-weight:700;color:#ffb020">'+(mCur>=0?'+':'')+mCur.toFixed(1)+'%</span></div>'+
-      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#ff3b3b;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Regional CPI</span><span style="font-size:9px;font-weight:700;color:#ff3b3b">'+(rCur>=0?'+':'')+rCur.toFixed(1)+'%</span></div>'+
+      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#ffb020;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Metro Price Increase</span><span style="font-size:9px;font-weight:700;color:#ffb020">'+(mCur>=0?'+':'')+mCur.toFixed(1)+'%</span></div>'+
+      '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:3px;background:#ff3b3b;border-radius:2px"></div><span style="font-size:9px;color:var(--text-muted)">Regional Price Increase</span><span style="font-size:9px;font-weight:700;color:#ff3b3b">'+(rCur>=0?'+':'')+rCur.toFixed(1)+'%</span></div>'+
       '<div style="display:flex;align-items:center;gap:5px"><div style="width:16px;height:2px;background:rgba(255,255,255,0.3);border-radius:2px;border:1px dashed rgba(255,255,255,0.3)"></div><span style="font-size:9px;color:var(--text-muted)">Projection</span></div>';
   }
 }
@@ -2061,7 +2061,7 @@ function renderCPI(inf){
   html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.14);border:1px solid var(--border);border-radius:6px;margin-bottom:10px;">';
   html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:6px;">FORMULA — MARKETS</div>';
   html+='<div style="font-size:8px;color:var(--text-dim);line-height:1.6;margin-bottom:6px">';
-  html+='Metro and Regional CPI derived from commodity-weighted item baskets since W39 2025 (Sep 22). Metro is more fuel/transport-weighted; Regional heavier on food, diesel, and freight.<br>';
+  html+='Metro and Regional price increase derived from commodity-weighted item baskets since W39 2025 (Sep 22). Metro is more fuel/transport-weighted; Regional heavier on food, diesel, and freight.<br>';
   html+='Metro projection: current '+(m.current||0)+'% → peak '+(m.peakMetro||0)+'% by '+escHtml((m.peakMetroDate||'').replace('2026-',''))+'. '; 
   html+='Regional projection: current '+(r.current||0)+'% → peak '+(r.peakRegional||0)+'% by '+escHtml((r.peakRegionalDate||'').replace('2026-',''))+'.';
   html+='</div>';
