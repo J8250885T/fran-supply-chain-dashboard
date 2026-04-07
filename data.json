@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-07T19:46:34Z",
+  "lastUpdated": "2026-04-07T20:07:23Z",
   "warAlert": {
-    "timestamp": "2026-04-07T19:46:34Z",
+    "timestamp": "2026-04-07T20:07:23Z",
     "fuelImpact": [
       "2026-04-07 South Korea envoy visiting Kazakhstan, Oman, Saudi Arabia to lock in crude and naphtha as Hormuz disruption bites [Reuters] [HIGH]",
       "2026-04-07 South Korea secures 110M barrels alternative crude for Apr-May as Hormuz disruption forces feedstock diversification (Saudi Arabia, US, UAE, Brazil, Canada) [UPI] [HIGH]",
@@ -28,7 +28,7 @@
     "total": 274,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-07T19:46:34Z",
+    "updated": "2026-04-07T20:07:23Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -474,7 +474,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-04-07T19:46:34Z",
+    "lastUpdated": "2026-04-07T20:07:23Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -1290,7 +1290,7 @@
       "updatedAt": "2026-04-06T21:10:45Z"
     }
   },
-  "dbLastUpdated": "2026-04-07T19:46:34Z",
+  "dbLastUpdated": "2026-04-07T20:07:23Z",
   "dbEvents": [
     {
       "dtg": "2026-04-07",
@@ -9804,7 +9804,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-07T19:46:34Z",
+      "updatedAt": "2026-04-07T20:07:23Z",
       "window": 7,
       "totalEvents": 578,
       "activeSources": 134,
@@ -9948,7 +9948,7 @@
     },
     "supply": {
       "title": "AustraFlow Prime \u2014 Supply Assessment",
-      "updatedAt": "2026-04-07T19:46:34Z",
+      "updatedAt": "2026-04-07T20:07:23Z",
       "summary": "Diesel 29d (19d above 10d rationing trigger). Petrol 39d. Jet 30d. 274 stations dry (increasing). 5 vessels en route via Cape of Good Hope. Asian refineries 66% capacity. Domestic refining covers ~20% of demand (Lytton + Geelong). 80% import-dependent on foreign-flagged tankers with no obligation to prioritise Australia. Critical date: Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026.",
       "mostLikelyCourse": "5 cargoes land before Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026. Diesel holds above 10d. Regional servos restock as distribution catches up. Lytton and Geelong maintain output. Stressed but no rationing.",
       "scenarioB": "Some cargoes land, others divert to higher bidders. Metro stabilises. Regional stays short \u2014 last-mile tanker frequency reduced. NT, remote WA, Cape York most exposed. Mining operations on emergency fuel management. National aggregate looks adequate but local distribution fails.",
@@ -9964,7 +9964,7 @@
     },
     "markets": {
       "title": "Hyperinflation Risk Assessment",
-      "updatedAt": "2026-04-07T19:46:34Z",
+      "updatedAt": "2026-04-07T20:07:23Z",
       "summary": "HIGH INFLATION. Supply-side price shock via commodity pass-through. Metro 29.3%, Regional 32.7% \u2014 decelerating. Top movers: Diesel (pump) (+69.1%), Sea freight (+52.5%), Domestic airfares (+47.1%). 1 states CRISIS, 7 EMERGENCY. Not demand-pull \u2014 war-driven commodity pass-through.",
       "mostLikelyCourse": "Stabilisation. 1973 oil shock precedent \u2014 resolved 12\u201318 months when supply eased. Metro peaks 33.7%, Regional 37.6%. Peak W35\u2013W39 if Hormuz reopens. Residual: 6\u201312 months elevated food prices.",
       "scenarioB": "Partial stabilisation. 1979 precedent \u2014 premature easing led to reinflation. Conflict pauses, Hormuz partially reopens under escort. Metro retreats to 21\u201323% but stalls. Excise extended at reduced rate. Not the sharpest peak but the slowest recovery.",
@@ -9980,7 +9980,7 @@
     },
     "households": {
       "title": "Household Stress Assessment",
-      "updatedAt": "2026-04-07T19:46:34Z",
+      "updatedAt": "2026-04-07T20:07:23Z",
       "summary": "1 of 8 households in deficit. 2 more within $100 of tipping. The war-driven crisis adds avg $337/mo per household (fuel +52.7%, groceries +10.2%), but it is not the primary threat. Debt service is. Average Worker has a TDSR of 44% \u2014 above the 40% danger line. Remove non-mortgage debt and every tier survives.",
       "mostLikelyCourse": "Average Worker enters discretionary compression \u2014 streaming, dining, non-essential driving cut first. Low Income, Single Professional hold but have no buffer left. Excise relief expires June 30. If extended, all tiers stabilise. If not, fuel adds ~$65/mo and tips the razor-thin tiers into deficit.",
       "scenarioB": "Excise extended at 50%, RBA holds. Average Worker burn rate drops to near zero. Low Income, Single Professional return to safe surplus. Food stays elevated through Q3 2026. Households already in compression don't restore spending for 3\u20136 months \u2014 retail and hospitality feel the drag. CC balances accumulated during the deficit take 6\u201312 months to clear.",
@@ -9996,7 +9996,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-07T19:46:34Z",
+      "updatedAt": "2026-04-07T20:07:23Z",
       "summary": "Base Case \u2014 Stalemate at 40%. Escalation 35%. Resolution 25%. The two leading scenarios are close \u2014 one event shifts the balance. Troop phase (DEPLOYMENT) is the swing variable. Ground ops would push escalation above base and lock in a 6+ month conflict: GDP -5.0%, food +40%, recovery 12\u201324 months.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (40%) holds. Aerial conflict only. Supply tightens to Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026 then stabilises. Food peaks +20% May\u2013June. GDP -2.1%. Recovery 3\u20136 months.",
       "mostDangerousCourse": "Escalation (35%). Ground invasion or major Gulf strike. Hormuz closed 6\u201318 months. Rationing active. Food +40%. Recovery 12\u201324 months.",
@@ -10008,7 +10008,7 @@
     },
     "troops": {
       "title": "J2 \u2014 Friendly Disposition & Iran TCVs",
-      "updatedAt": "2026-04-07T19:46:34Z",
+      "updatedAt": "2026-04-07T20:07:23Z",
       "summary": "BATTLESPACE: DEPLOYMENT. Friendly 52,845 pers (30 units) vs Iran 60,000 pers. Force ratio 0.9:1. IRAN TCVs \u2014 Troops: 50,000 ground (3 divs + 2 reserve), 5,000 IRGC Navy (Hormuz denial), 2,000 Quds Force (proxy ops). Capabilities: Hormuz mine/ASM barrier, Shaheed drone swarms, ballistic missile TELs (Emad, Sejjil), proxy network across 4 theatres. Vulnerabilities: no credible air defence vs F-35, logistics on single western corridor, proxy C2 fragile under comms disruption.",
       "mostLikelyCourse": "Iran maintains Hormuz denial posture. IRGC Navy holds mine barrier and fast attack screen. No ground commitment beyond border provinces. Drone/missile strikes at current tempo. Proxies sustain harassment, no escalation. Friendly coalition holds air superiority and naval escort. DEPLOYMENT holds.",
       "scenarioB": "Iran partially reopens Hormuz under pressure \u2014 escort corridor established but mine threat remains. Ground divisions hold defensive. Missile strikes reduced. Proxy tempo decreases if Quds Force C2 disrupted. Friendly posture shifts from strike to containment.",
@@ -10465,7 +10465,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-07T19:46:34Z",
+    "updatedAt": "2026-04-07T20:07:23Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -10932,7 +10932,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-07T19:46:34Z",
+    "updatedAt": "2026-04-07T20:07:23Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
@@ -30636,25 +30636,25 @@
     ]
   },
   "socialSentiment": {
-    "updatedAt": "2026-04-07T19:46:34Z",
+    "updatedAt": "2026-04-07T20:07:23Z",
     "threads": {
       "war_iran": {
         "label": "War / Iran",
         "emoji": "\ud83c\uddee\ud83c\uddf7",
         "color": "#ff3b3b",
         "current": {
-          "score": 40,
-          "volume": 2,
+          "score": -31,
+          "volume": 11,
           "auScore": 0,
           "auVolume": 0,
-          "trend": "\u2192",
-          "anomaly": false
+          "trend": "\u2193",
+          "anomaly": true
         },
         "series": [
           {
             "date": "2026-04-07",
-            "score": 40,
-            "volume": 2,
+            "score": -31,
+            "volume": 11,
             "auScore": 0
           }
         ],
@@ -30668,6 +30668,14 @@
           {
             "score": -1.0,
             "text": "Iran just shot down another US jet. This is getting terrifying. World War 3 incoming? #IranWar"
+          },
+          {
+            "score": -0.9,
+            "text": "I really came to this conclusion when he's talking about extreme elimination. If Trump drops a nuclear warhead on Iran, it may not lead to nuclear war, but the world as a whole would be drastically di"
+          },
+          {
+            "score": -0.8,
+            "text": "The war on Iran cost the US .7bn by day six. Trump flirts with the idea of a ground invasion while paradoxically declaring the war will be over very shortly. Official sources give scant reliable updat"
           }
         ]
       },
@@ -30676,31 +30684,47 @@
         "emoji": "\ud83c\udde6\ud83c\uddfa",
         "color": "#00e87a",
         "current": {
-          "score": -47,
-          "volume": 2,
-          "auScore": -100,
-          "auVolume": 1,
-          "trend": "\u2192",
-          "anomaly": false
+          "score": 0,
+          "volume": 12,
+          "auScore": 4,
+          "auVolume": 6,
+          "trend": "\u2191",
+          "anomaly": true
         },
         "series": [
           {
             "date": "2026-04-07",
-            "score": -47,
-            "volume": 2,
-            "auScore": -100
+            "score": 0,
+            "volume": 12,
+            "auScore": 4
           }
         ],
         "topPositive": [
           {
             "score": 0.9,
             "text": "Credit where it's due - the excise cut is actually helping at the pump. Saved 7 on my last fill. Good job Albo."
+          },
+          {
+            "score": 0.4,
+            "text": "83% of Australians approve of the Albanese Government's temporary three month cut to the fuel excise on petrol and diesel. This will leave the Govt with less tax and still higher fuel prices."
+          },
+          {
+            "score": 0.3,
+            "text": "The sharp rise in fuel prices - eased only temporarily by .5 billion in excise relief - will cause a nightmarish spike in inflation. Albanese's chosen this moment to jettison his political caution. It"
           }
         ],
         "topNegative": [
           {
             "score": -1.0,
             "text": "Albanese has been absolutely useless during this fuel crisis. Servos dry everywhere in regional NSW and he says dont panic buy. Pathetic."
+          },
+          {
+            "score": -0.3,
+            "text": "Just like most western countries, we could have easily avoided this fuel crisis if our voters voted for politicians who looked after the majority!"
+          },
+          {
+            "score": -0.3,
+            "text": "The Coalition called for a candidate with the qualifications of a military general to lead the country's fuel crisis taskforce, but Anthony Albanese instead chose a career climate change bureaucrat. P"
           }
         ]
       },
@@ -30709,18 +30733,18 @@
         "emoji": "\ud83c\uddfa\ud83c\uddf8",
         "color": "#4a9eff",
         "current": {
-          "score": -42,
-          "volume": 2,
+          "score": -11,
+          "volume": 11,
           "auScore": 0,
           "auVolume": 0,
-          "trend": "\u2192",
-          "anomaly": false
+          "trend": "\u2191",
+          "anomaly": true
         },
         "series": [
           {
             "date": "2026-04-07",
-            "score": -42,
-            "volume": 2,
+            "score": -11,
+            "volume": 11,
             "auScore": 0
           }
         ],
@@ -30728,12 +30752,20 @@
           {
             "score": 0.7,
             "text": "Trump is the only leader with the guts to stand up to Iran. Decisive leadership. The world needs this."
+          },
+          {
+            "score": 0.3,
+            "text": "Trump supporters are evenly split. Some see it as a betrayal of the no new wars promise, while others think Iran was actually capable of reaching the mainland US so attacking them was necessary. More "
           }
         ],
         "topNegative": [
           {
             "score": -1.0,
             "text": "Trump threatening to bring HELL to Iran is absolutely unhinged. This maniac is going to start WW3 over his ego. Dangerous reckless idiot."
+          },
+          {
+            "score": -0.3,
+            "text": "Amazed that there are Iranian people over there who will shelter and help our downed pilots and trapped citizens when big Donny J is ranting on Twitter like this and bombing the hell out of them. So t"
           }
         ]
       },
@@ -30742,18 +30774,18 @@
         "emoji": "\ud83c\udde8\ud83c\uddf3",
         "color": "#facc15",
         "current": {
-          "score": -80,
-          "volume": 1,
+          "score": -22,
+          "volume": 11,
           "auScore": 0,
           "auVolume": 0,
-          "trend": "\u2192",
-          "anomaly": false
+          "trend": "\u2191",
+          "anomaly": true
         },
         "series": [
           {
             "date": "2026-04-07",
-            "score": -80,
-            "volume": 1,
+            "score": -22,
+            "volume": 11,
             "auScore": 0
           }
         ],
@@ -30762,16 +30794,32 @@
           {
             "score": -0.8,
             "text": "China vetoing the UN resolution to reopen Hormuz shows exactly whose side they're on. Hostile authoritarian regime enabling Iran."
+          },
+          {
+            "score": -0.3,
+            "text": "China aims to show global leadership with Iran war diplomacy. US appears uninterested. Iran and US have been in direct contact in recent days."
+          },
+          {
+            "score": -0.3,
+            "text": "China's Xi is staying silent as Trump stumbles in Iran. Media compilation shows delusions that Iran War is some genius grand plan against China are crumbling."
           }
         ]
       }
     },
     "australiaPulse": {
-      "score": -35,
-      "volume": 1,
+      "score": 1,
+      "volume": 6,
       "trend": "\u2192",
       "summary": ""
     },
-    "alerts": []
+    "alerts": [
+      {
+        "thread": "war_iran",
+        "type": "panic",
+        "message": "War / Iran: PANIC SIGNAL \u2014 score -31, 8 panic-keyword posts detected",
+        "dtg": "2026-04-07T20:07:11Z",
+        "shift": -31
+      }
+    ]
   }
 }
