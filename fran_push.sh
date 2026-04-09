@@ -20,7 +20,7 @@ echo "[fran_push] data.json exported"
 
 # ── 2. Git commit + push (keeps GitHub as source of truth) ───────────────────
 cd "$SCRIPT_DIR"
-git add data.json index.html 2>/dev/null || true
+git add data.json index.html logo.webp 2>/dev/null || true
 if ! git diff --cached --quiet 2>/dev/null; then
   git commit -m "data: $REASON [$(date -u '+%Y-%m-%dT%H:%MZ')]" 2>/dev/null || true
   git push origin main 2>&1 | tail -3
