@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-09T19:47:37Z",
+  "lastUpdated": "2026-04-09T20:05:11Z",
   "warAlert": {
-    "timestamp": "2026-04-09T19:47:37Z",
+    "timestamp": "2026-04-09T20:05:11Z",
     "fuelImpact": [
       "2026-04-09 Asia refineries reducing run rates rather than drawing inventories amid supply uncertainty \u2014 StoneX; naphtha and petrochemical feedstock shortages force output cuts across Asia [StoneX] [MEDIUM]",
       "2026-04-09 Asia refined fuel prices retreat from peaks but supply stress persists \u2014 seaborne crude imports estimated at 19.22m bpd April (Kpler); refiners struggling to secure sufficient oil [Reuters] [MEDIUM]",
@@ -28,7 +28,7 @@
     "total": 216,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-09T19:47:37Z",
+    "updated": "2026-04-09T20:05:11Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -474,7 +474,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-04-09T19:47:37Z",
+    "lastUpdated": "2026-04-09T20:05:11Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -1281,7 +1281,7 @@
       "updatedAt": "2026-04-08T21:07:15Z"
     }
   },
-  "dbLastUpdated": "2026-04-09T19:47:37Z",
+  "dbLastUpdated": "2026-04-09T20:05:11Z",
   "dbEvents": [
     {
       "dtg": "2026-04-09",
@@ -15257,7 +15257,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-09T19:47:37Z",
+      "updatedAt": "2026-04-09T20:05:11Z",
       "window": 7,
       "totalEvents": 965,
       "activeSources": 188,
@@ -15401,7 +15401,7 @@
     },
     "supply": {
       "title": "AustraFlow Prime \u2014 Supply Assessment",
-      "updatedAt": "2026-04-09T19:47:37Z",
+      "updatedAt": "2026-04-09T20:05:11Z",
       "summary": "Diesel 29d (19d above 10d rationing trigger). Petrol 39d. Jet 30d. 216 stations dry (increasing). 5 vessels en route via Cape of Good Hope. Asian refineries 66% capacity. Domestic refining covers ~20% of demand (Lytton + Geelong). 80% import-dependent on foreign-flagged tankers with no obligation to prioritise Australia. Critical date: Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026.",
       "mostLikelyCourse": "5 cargoes land before Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026. Diesel holds above 10d. Regional servos restock as distribution catches up. Lytton and Geelong maintain output. Stressed but no rationing.",
       "scenarioB": "Some cargoes land, others divert to higher bidders. Metro stabilises. Regional stays short \u2014 last-mile tanker frequency reduced. NT, remote WA, Cape York most exposed. Mining operations on emergency fuel management. National aggregate looks adequate but local distribution fails.",
@@ -15433,7 +15433,7 @@
     },
     "households": {
       "title": "Household Stress Assessment",
-      "updatedAt": "2026-04-09T19:47:37Z",
+      "updatedAt": "2026-04-09T20:05:11Z",
       "summary": "0 of 8 households in deficit. 1 more within $100 of tipping. The war-driven crisis adds avg $239/mo per household (fuel +36.9%, groceries +5.8%), but it is not the primary threat. Debt service is. Average Worker has a TDSR of 44% \u2014 above the 40% danger line. Remove non-mortgage debt and every tier survives.",
       "mostLikelyCourse": "Average Worker enters discretionary compression \u2014 streaming, dining, non-essential driving cut first. Average Worker hold but have no buffer left. Excise relief expires June 30. If extended, all tiers stabilise. If not, fuel adds ~$65/mo and tips the razor-thin tiers into deficit.",
       "scenarioB": "Excise extended at 50%, RBA holds. Average Worker burn rate drops to near zero. Average Worker return to safe surplus. Food stays elevated through Q3 2026. Households already in compression don't restore spending for 3\u20136 months \u2014 retail and hospitality feel the drag. CC balances accumulated during the deficit take 6\u201312 months to clear.",
@@ -15449,7 +15449,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-09T19:47:37Z",
+      "updatedAt": "2026-04-09T20:05:11Z",
       "summary": "Resolution \u2014 Ceasefire at 37%. Escalation 27%. Resolution 37%. The two leading scenarios are close \u2014 one event shifts the balance. Troop phase (DEPLOYMENT) is the swing variable. Ground ops would push escalation above base and lock in a 6+ month conflict: GDP -5.0%, food +40%, recovery 12\u201324 months.",
       "mostLikelyCourse": "Resolution \u2014 Ceasefire (37%) holds. Aerial conflict only. Supply tightens to Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026 then stabilises. Food peaks +20% May\u2013June. GDP -2.1%. Recovery 3\u20136 months.",
       "mostDangerousCourse": "Escalation (27%). Ground invasion or major Gulf strike. Hormuz closed 6\u201318 months. Rationing active. Food +40%. Recovery 12\u201324 months.",
@@ -15461,7 +15461,7 @@
     },
     "troops": {
       "title": "J2 \u2014 Friendly Disposition & Iran TCVs",
-      "updatedAt": "2026-04-09T19:47:37Z",
+      "updatedAt": "2026-04-09T20:05:11Z",
       "summary": "BATTLESPACE: DEPLOYMENT. Friendly 53,275 pers (32 units) vs Iran 60,000 pers. Force ratio 0.9:1. IRAN TCVs \u2014 Troops: 50,000 ground (3 divs + 2 reserve), 5,000 IRGC Navy (Hormuz denial), 2,000 Quds Force (proxy ops). Capabilities: Hormuz mine/ASM barrier, Shaheed drone swarms, ballistic missile TELs (Emad, Sejjil), proxy network across 4 theatres. Vulnerabilities: no credible air defence vs F-35, logistics on single western corridor, proxy C2 fragile under comms disruption.",
       "mostLikelyCourse": "Iran maintains Hormuz denial posture. IRGC Navy holds mine barrier and fast attack screen. No ground commitment beyond border provinces. Drone/missile strikes at current tempo. Proxies sustain harassment, no escalation. Friendly coalition holds air superiority and naval escort. DEPLOYMENT holds.",
       "scenarioB": "Iran partially reopens Hormuz under pressure \u2014 escort corridor established but mine threat remains. Ground divisions hold defensive. Missile strikes reduced. Proxy tempo decreases if Quds Force C2 disrupted. Friendly posture shifts from strike to containment.",
@@ -15934,7 +15934,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-09T19:47:37Z",
+    "updatedAt": "2026-04-09T20:05:11Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -16401,7 +16401,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-09T19:47:37Z",
+    "updatedAt": "2026-04-09T20:05:12Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
@@ -40340,18 +40340,18 @@
     ]
   },
   "socialSentiment": {
-    "updatedAt": "2026-04-09T19:47:37Z",
+    "updatedAt": "2026-04-09T20:05:12Z",
     "threads": {
       "war_iran": {
         "label": "War / Iran",
         "emoji": "\ud83c\uddee\ud83c\uddf7",
         "color": "#ff3b3b",
         "current": {
-          "score": null,
-          "volume": 0,
-          "auScore": null,
+          "score": -12,
+          "volume": 9,
+          "auScore": 0,
           "auVolume": 0,
-          "trend": "\u2192",
+          "trend": "\u2191",
           "anomaly": false
         },
         "series": [
@@ -40366,21 +40366,45 @@
             "score": -20,
             "volume": 5,
             "auScore": 0
+          },
+          {
+            "date": "2026-04-09",
+            "score": -12,
+            "volume": 9,
+            "auScore": 0
           }
         ],
-        "topPositive": [],
-        "topNegative": []
+        "topPositive": [
+          {
+            "score": 0.6,
+            "text": "Iran's Supreme National Security Council says it has accepted a two-week ceasefire. Yeah, with a statement like this I feel the ceasefire will be VERY short lived. It's like two schoolyard bullies on "
+          }
+        ],
+        "topNegative": [
+          {
+            "score": -0.8,
+            "text": "We don't care about the Strait of Hormuz and we're going to wind down the war. Also if you don't reopen the strait, we will massively escalate the war. Iran almost certainly will not blink on Hormuz. "
+          },
+          {
+            "score": -0.6,
+            "text": "Open the f***in' Strait: Trump threatens to bomb Iran's power plants, bridges. I saw post about this over on r/Conservative earlier and one of the comments was stating Trump was just using sarcasm whi"
+          },
+          {
+            "score": -0.5,
+            "text": "Strait of Hormuz is not closed. Ships hesitate because insurers fear the war of choice you initiated\u2014not Iran. No insurer\u2014and no Iranian\u2014will be swayed by more threats. Try respect. Freedom of Navigat"
+          }
+        ]
       },
       "albanese": {
         "label": "Albanese / AU Gov",
         "emoji": "\ud83c\udde6\ud83c\uddfa",
         "color": "#00e87a",
         "current": {
-          "score": null,
-          "volume": 0,
-          "auScore": null,
-          "auVolume": 0,
-          "trend": "\u2192",
+          "score": 6,
+          "volume": 5,
+          "auScore": 6,
+          "auVolume": 5,
+          "trend": "\u2191",
           "anomaly": false
         },
         "series": [
@@ -40395,19 +40419,35 @@
             "score": 0,
             "volume": 3,
             "auScore": 0
+          },
+          {
+            "date": "2026-04-09",
+            "score": 6,
+            "volume": 5,
+            "auScore": 6
           }
         ],
-        "topPositive": [],
-        "topNegative": []
+        "topPositive": [
+          {
+            "score": 0.5,
+            "text": "Australia's fuel shipments secured 'well into' May, energy minister says. 649 votes, 147 comments. Energy Minister Chris Bowen says fuel shipments to Australia are now secured 'well into' May, as the "
+          }
+        ],
+        "topNegative": [
+          {
+            "score": -0.4,
+            "text": "Fuel rationing begins in Australia sparking fears of petrol shortages and expected price rises. 157 votes, 353 comments. Fuel wholesalers have begun rationing petrol and diesel supplies across their A"
+          }
+        ]
       },
       "trump": {
         "label": "Trump",
         "emoji": "\ud83c\uddfa\ud83c\uddf8",
         "color": "#4a9eff",
         "current": {
-          "score": null,
-          "volume": 0,
-          "auScore": null,
+          "score": -9,
+          "volume": 7,
+          "auScore": 0,
           "auVolume": 0,
           "trend": "\u2192",
           "anomaly": false
@@ -40424,22 +40464,42 @@
             "score": 0,
             "volume": 5,
             "auScore": 70
+          },
+          {
+            "date": "2026-04-09",
+            "score": -9,
+            "volume": 7,
+            "auScore": 0
           }
         ],
-        "topPositive": [],
-        "topNegative": []
+        "topPositive": [
+          {
+            "score": 0.3,
+            "text": "Iran's official response to ceasefire acceptance. The provision of US support for electricity generation at Iran's Bushehr civil nuclear plant. That's only 10, but that's what was reportedly included."
+          }
+        ],
+        "topNegative": [
+          {
+            "score": -0.3,
+            "text": "Evil F***ing B*tch: 47 Of The Most Ruthless Tweets About Trump And His Latest Threat On Iran. It's like the whole world woke up today and realized elections have consequences lol."
+          },
+          {
+            "score": -0.3,
+            "text": "Israel strikes Beirut after saying Iran ceasefire does not apply there. Trump really shot himself in the foot with messaging on this with the holy war shit. Now Iran can absolutely say it applies here"
+          }
+        ]
       },
       "china": {
         "label": "China",
         "emoji": "\ud83c\udde8\ud83c\uddf3",
         "color": "#facc15",
         "current": {
-          "score": null,
-          "volume": 0,
-          "auScore": null,
+          "score": -38,
+          "volume": 6,
+          "auScore": 0,
           "auVolume": 0,
-          "trend": "\u2192",
-          "anomaly": false
+          "trend": "\u2193",
+          "anomaly": true
         },
         "series": [
           {
@@ -40453,15 +40513,34 @@
             "score": -5,
             "volume": 5,
             "auScore": 0
+          },
+          {
+            "date": "2026-04-09",
+            "score": -38,
+            "volume": 6,
+            "auScore": 0
           }
         ],
         "topPositive": [],
-        "topNegative": []
+        "topNegative": [
+          {
+            "score": -1.0,
+            "text": "Increase in Chinese Military Near Taiwan. China announces major military drills around Taiwan in 'serious warning' against any push for independence. Invasion of Taiwan has been postponed further. (2 "
+          },
+          {
+            "score": -0.5,
+            "text": "A Perfect Storm for Taiwan in 2026? A military defeat in Taiwan (or in the strait against the Japanese and Filipinos even if the US doesn't get involved) would essentially end China's global ambitions"
+          },
+          {
+            "score": -0.3,
+            "text": "How China hopes to win from the war: Never interrupt your enemy when he is making a mistake. China's long term strategy is to boil the western frog. Now Trump is so mean Europe can't decide whether it"
+          }
+        ]
       }
     },
     "australiaPulse": {
-      "score": 0,
-      "volume": 0,
+      "score": 2,
+      "volume": 5,
       "trend": "\u2192",
       "summary": ""
     },
