@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-04-10T08:41:42Z",
+  "lastUpdated": "2026-04-10T11:34:07Z",
   "warAlert": {
-    "timestamp": "2026-04-10T08:41:42Z",
+    "timestamp": "2026-04-10T11:34:07Z",
     "fuelImpact": [
       "2026-04-10 Shipping in Strait of Hormuz at a trickle despite US-Iran ceasefire \u2014 ADNOC CEO: Strait is not open. Iranian alert about mines laid keeping companies fearful. Only trickle of ships since ceasefire announcement. [Al Jazeera] [HIGH]",
       "2026-04-10 Islamabad talks FAIL: Iran rejected 15-point US peace plan; Iran formally charges ships toll to transit Hormuz; ceasefire framework collapsing [AP News] [HIGH]",
@@ -28,7 +28,7 @@
     "total": 216,
     "trend": "increasing",
     "source": "FuelRadar Australia",
-    "updated": "2026-04-10T08:41:42Z",
+    "updated": "2026-04-10T11:34:07Z",
     "byState": {
       "NSW": 326,
       "QLD": 176,
@@ -474,7 +474,7 @@
     }
   },
   "inflation": {
-    "lastUpdated": "2026-04-10T08:41:42Z",
+    "lastUpdated": "2026-04-10T11:34:07Z",
     "trendDays": 90,
     "currentStatus": "warning",
     "cpiAlertTiers": [
@@ -1281,7 +1281,7 @@
       "updatedAt": "2026-04-10T08:40:18Z"
     }
   },
-  "dbLastUpdated": "2026-04-10T08:41:42Z",
+  "dbLastUpdated": "2026-04-10T11:34:07Z",
   "dbEvents": [
     {
       "dtg": "2026-04-10",
@@ -16519,7 +16519,7 @@
   "reviewPanels": {
     "feed": {
       "title": "Fran Feed Review",
-      "updatedAt": "2026-04-10T08:41:42Z",
+      "updatedAt": "2026-04-10T11:34:07Z",
       "window": 7,
       "totalEvents": 1026,
       "activeSources": 203,
@@ -16663,7 +16663,7 @@
     },
     "supply": {
       "title": "AustraFlow Prime \u2014 Supply Assessment",
-      "updatedAt": "2026-04-10T08:41:42Z",
+      "updatedAt": "2026-04-10T11:34:07Z",
       "summary": "Diesel 29d (19d above 10d rationing trigger). Petrol 39d. Jet 30d. 216 stations dry (decreasing). 5 vessels en route via Cape of Good Hope. Asian refineries 66% capacity. Domestic refining covers ~20% of demand (Lytton + Geelong). 80% import-dependent on foreign-flagged tankers with no obligation to prioritise Australia. Critical date: Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026.",
       "mostLikelyCourse": "5 cargoes land before Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026. Diesel holds above 10d. Regional servos restock as distribution catches up. Lytton and Geelong maintain output. Stressed but no rationing.",
       "scenarioB": "Some cargoes land, others divert to higher bidders. Metro stabilises. Regional stays short \u2014 last-mile tanker frequency reduced. NT, remote WA, Cape York most exposed. Mining operations on emergency fuel management. National aggregate looks adequate but local distribution fails.",
@@ -16679,24 +16679,24 @@
     },
     "markets": {
       "title": "Hyperinflation Risk Assessment",
-      "updatedAt": "2026-04-09T21:05:00Z",
-      "summary": "Australia is in an EMERGENCY inflation phase \u2014 a fuel supply-shock driven inflation event, NOT classical hyperinflation. The war has injected ~+9.06pp directly into CPI from fuel alone. Model-computed metro CPI of 20.6% and regional 23.2% represent emergency-phase figures derived from live commodity data and AUD transmission. The weekly item series (W39/2025\u2013W29) shows a sharp acceleration from W24 (war start): diesel pump +52.2%, LPG +27.8%, domestic airfares +30.9%, sea freight +37.8%. Pre-war (W1\u2013W23) was already elevated on crude tensions. The trajectory is now DECELERATING from W27 peak \u2014 the ceasefire has eased the acceleration, but price levels remain emergency-high. Diesel at 322-329 cpp in major cities (record) is the critical signal. Food price second wave is building: Coles/Woolworths suppliers pushing increases, grain producers warning +20% by Anzac Day. The grocery lag means the food hit is still propagating through supply chains \u2014 the worst is ahead, not behind.",
+      "updatedAt": "2026-04-10T11:34:07Z",
+      "summary": "Australia is in a warning-phase inflation event driven by supply-side commodity pass-through, not classical hyperinflation. Live model: Metro 21.5%, Regional 24.2% \u2014 decelerating. Top movers: Diesel (pump) (+54.1%), Sea freight (+39.3%), Petrol (ULP) (+34.8%). 0 states CRISIS, 5 EMERGENCY. Not demand-pull \u2014 war-driven commodity pass-through.",
       "mostLikelyCourse": "Prices plateau at current emergency levels through May as Cape-rerouted cargoes arrive (Largo Eagle Apr 10, Nord Ventura Apr 12). Diesel holds 310-330 cpp nationally, grocery index rises +10-15% more by May. Metro CPI settles 19-23% range. No new Hormuz escalation. Ceasefire holds 2-week window. Household stress peaks Q2 2026 for compression-Phase 1 households (Average Worker with mortgage already in deficit). Food prices accelerate through Apr-May growing season. RBA 4.10% cash rate adding mortgage pressure. MLCOA: 19-23% metro CPI through mid-2026.",
+      "scenarioB": "Partial stabilisation. 1979 precedent \u2014 premature easing led to reinflation. Conflict pauses, Hormuz partially reopens under escort. Metro retreats to 15\u201317% but stalls. Excise extended at reduced rate. Not the sharpest peak but the slowest recovery.",
       "mostDangerousCourse": "Ground war extension beyond current ceasefire window (talks fail Apr 11). Hormuz closure extends into May. Diesel rationing May 5 triggers scarcity premium compounding baseline. Food price second wave (fertiliser/transport cost) hits May-June. Mortgage defaults rise as RBA rate hikes meet fuel shock. A second chokepoint (Malacca threat or South Korean refinery feedstock failure) stacks on top. Scenarios push metro CPI to 28-35% by mid-2026. Equivalent to 1970s oil shock. Scarcity premium on diesel could push pump prices to 350-380 cpp in a full shortage scenario.",
       "bullets": [
-        "Diesel pump: 322-329 cpp major cities Apr 9 (record). Wholesale +5c Thursday despite ceasefire \u2014 supply still tight",
-        "Servo outages: 216 diesel-out nationally (down from 274 peak) \u2014 post-Easter demand destruction, not supply improvement",
-        "Food: Coles/Woolworths suppliers pushing price increases. Lag means Apr-May shoppers feel full impact. Grain producers warn +20% by Anzac Day",
-        "Weekly item series W29: diesel +52.2%, LPG +27.8%, airfares +30.9%, sea freight +37.8% vs pre-war W1. trajectory decelerating from W27 peak",
-        "Metro CPI model: 20.6% (W29). Regional 23.2%. RBA cash rate 4.10%. Household extra cost A$177/month average",
-        "Jet fuel: rationing projected Apr 29. China export suspension ongoing. No replacement at scale from other suppliers"
+        "Live Price Shock Monitor anchor: Metro 21.5% \u2192 peak 24.7%. Regional 24.2% \u2192 27.8%.",
+        "Current phase by shared threshold map: WARNING.",
+        "0 states CRISIS, 5 EMERGENCY.",
+        "AUD below 0.60 accelerates pass-through. Excise expiry June adds ~15 cpl.",
+        "Fair Work Q3 wage decision \u2014 indexation trigger."
       ],
       "confidence": "HIGH",
       "confidenceReason": "Model-computed CPI from live market data (WTI, Brent, RBOB, AUD/USD) is consistent with ground-truth servo outages, fuel level projections, and confirmed pump prices from MotorMouth/Guardian. Item-level weekly series empirically derived from commodity movements. Food lag confirmed by 7News/SBS reporting. Confidence tempered by uncertainty around Cape reroute timing and ceasefire durability."
     },
     "households": {
       "title": "Household Stress Assessment",
-      "updatedAt": "2026-04-10T08:41:42Z",
+      "updatedAt": "2026-04-10T11:34:07Z",
       "summary": "0 of 8 households in deficit. 1 more within $100 of tipping. The war-driven crisis adds avg $244/mo per household (fuel +29.0%, groceries +9.1%), but it is not the primary threat. Debt service is. Average Worker has a TDSR of 44% \u2014 above the 40% danger line. Remove non-mortgage debt and every tier survives.",
       "mostLikelyCourse": "Average Worker enters discretionary compression \u2014 streaming, dining, non-essential driving cut first. Average Worker hold but have no buffer left. Excise relief expires June 30. If extended, all tiers stabilise. If not, fuel adds ~$65/mo and tips the razor-thin tiers into deficit.",
       "scenarioB": "Excise extended at 50%, RBA holds. Average Worker burn rate drops to near zero. Average Worker return to safe surplus. Food stays elevated through Q3 2026. Households already in compression don't restore spending for 3\u20136 months \u2014 retail and hospitality feel the drag. CC balances accumulated during the deficit take 6\u201312 months to clear.",
@@ -16712,7 +16712,7 @@
     },
     "domino": {
       "title": "Domino Cascade \u2014 Review",
-      "updatedAt": "2026-04-10T08:41:42Z",
+      "updatedAt": "2026-04-10T11:34:07Z",
       "summary": "Base Case \u2014 Stalemate at 40%. Escalation 35%. Resolution 25%. The two leading scenarios are close \u2014 one event shifts the balance. Troop phase (DEPLOYMENT) is the swing variable. Ground ops would push escalation above base and lock in a 6+ month conflict: GDP -5.0%, food +40%, recovery 12\u201324 months.",
       "mostLikelyCourse": "Base Case \u2014 Stalemate (40%) holds. Aerial conflict only. Supply tightens to Extended to May 2026 \u2014 53 ships with 3.7B litres confirmed; Bowen confirms no cancellations; original mid-April supply ceiling now pushed out \u2014 source: Bowen/AAP 06/04/2026 then stabilises. Food peaks +20% May\u2013June. GDP -2.1%. Recovery 3\u20136 months.",
       "mostDangerousCourse": "Escalation (35%). Ground invasion or major Gulf strike. Hormuz closed 6\u201318 months. Rationing active. Food +40%. Recovery 12\u201324 months.",
@@ -16724,7 +16724,7 @@
     },
     "troops": {
       "title": "J2 \u2014 Friendly Disposition & Iran TCVs",
-      "updatedAt": "2026-04-10T08:41:42Z",
+      "updatedAt": "2026-04-10T11:34:07Z",
       "summary": "BATTLESPACE: DEPLOYMENT. Friendly 53,275 pers (32 units) vs Iran 60,000 pers. Force ratio 0.9:1. IRAN TCVs \u2014 Troops: 50,000 ground (3 divs + 2 reserve), 5,000 IRGC Navy (Hormuz denial), 2,000 Quds Force (proxy ops). Capabilities: Hormuz mine/ASM barrier, Shaheed drone swarms, ballistic missile TELs (Emad, Sejjil), proxy network across 4 theatres. Vulnerabilities: no credible air defence vs F-35, logistics on single western corridor, proxy C2 fragile under comms disruption.",
       "mostLikelyCourse": "Iran maintains Hormuz denial posture. IRGC Navy holds mine barrier and fast attack screen. No ground commitment beyond border provinces. Drone/missile strikes at current tempo. Proxies sustain harassment, no escalation. Friendly coalition holds air superiority and naval escort. DEPLOYMENT holds.",
       "scenarioB": "Iran partially reopens Hormuz under pressure \u2014 escort corridor established but mine threat remains. Ground divisions hold defensive. Missile strikes reduced. Proxy tempo decreases if Quds Force C2 disrupted. Friendly posture shifts from strike to containment.",
@@ -17197,7 +17197,7 @@
   },
   "dominoModel": {
     "title": "Iran War Cascade \u2014 3-Scenario Model",
-    "updatedAt": "2026-04-10T08:41:42Z",
+    "updatedAt": "2026-04-10T11:34:07Z",
     "formula": {
       "inputs": {
         "T": 0.1,
@@ -17663,7 +17663,7 @@
       }
     },
     "probabilityHistory": {
-      "updatedAt": "2026-04-10T08:41:42Z",
+      "updatedAt": "2026-04-10T11:34:07Z",
       "window": 7,
       "series": [
         {
@@ -17712,7 +17712,7 @@
     }
   },
   "sentiment": {
-    "updatedAt": "2026-04-10T08:41:42Z",
+    "updatedAt": "2026-04-10T11:34:07Z",
     "window": 14,
     "description": "5-area sentiment index scored from event headlines. Scale: -10 (extreme stress) to +10 (full recovery). 3-day smoothed daily average.",
     "areas": [
@@ -42511,7 +42511,7 @@
     ]
   },
   "socialSentiment": {
-    "updatedAt": "2026-04-10T08:41:42Z",
+    "updatedAt": "2026-04-10T11:34:07Z",
     "threads": {
       "war_iran": {
         "label": "War / Iran",
