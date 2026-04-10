@@ -2045,6 +2045,12 @@ function renderDominoModel(dm){
   });
   html+='</div></div>';
 
+  html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.12);border:1px solid var(--border);border-radius:6px;margin-bottom:14px;">';
+  html+='<div style="font-size:8px;font-weight:700;color:var(--text-muted);letter-spacing:0.08em;margin-bottom:6px;">ROLLING PROBABILITY HISTORY — LAST 7 DAYS</div>';
+  html+='<div style="font-size:8px;color:var(--text-dim);line-height:1.5;margin-bottom:8px;">Daily scenario probability shifts. <span style="color:rgb(245,158,11)">Base</span>, <span style="color:rgb(220,38,38)">Escalation</span>, <span style="color:rgb(34,197,94)">Resolution</span>.</div>';
+  html+='<canvas id="dominoProbHistoryCanvas" style="width:100%;height:180px;display:block"></canvas>';
+  html+='</div>';
+
   html+='<div style="padding:10px 12px;background:rgba(0,0,0,0.14);border:1px solid var(--border);border-left:3px solid rgb('+dominoRGB(selected.id)+');border-radius:6px;margin-bottom:14px;">';
   html+='<div style="font-size:8px;font-weight:700;letter-spacing:0.08em;color:rgb('+dominoRGB(selected.id)+');margin-bottom:4px;">ACTIVE SCENARIO</div>';
   html+='<div style="font-size:11px;font-weight:700;color:var(--text);margin-bottom:3px;">'+escHtml(selected.name)+' ('+selected.probability+'%)</div>';
@@ -2119,6 +2125,68 @@ function renderDominoModel(dm){
   html+='<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:12px;max-width:520px;width:100%;padding:20px;max-height:80vh;overflow-y:auto;" id="domino-modal-content"></div>';
   html+='</div>';
   el.innerHTML=html;
+  drawDominoProbabilityHistory(dm);
+}
+
+function drawDominoProbabilityHistory(dm){
+  var hist=((dm||{}).probabilityHistory||{}).series||[];
+  var canvas=document.getElementById('dominoProbHistoryCanvas');
+  if(!canvas) return;
+  var dpr=window.devicePixelRatio||1, W=canvas.offsetWidth||300, H=180;
+  canvas.width=W*dpr; canvas.height=H*dpr; canvas.style.width=W+'px'; canvas.style.height=H+'px';
+  var ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  ctx.clearRect(0,0,W,H);
+
+  if(!hist.length){
+    ctx.fillStyle='rgba(157,180,204,0.8)';
+    ctx.font='11px system-ui';
+    ctx.fillText('Not enough history yet — daily series will populate over time.', 12, 26);
+    return;
+  }
+
+  var pL=34,pR=12,pT=10,pB=24,cW=W-pL-pR,cH=H-pT-pB;
+  function x(i){ return pL + (hist.length===1 ? cW/2 : i*(cW/(hist.length-1))); }
+  function y(v){ return pT + cH - (v/100)*cH; }
+
+  ctx.strokeStyle='rgba(157,180,204,0.14)';
+  ctx.lineWidth=1;
+  [0,25,50,75,100].forEach(function(v){
+    var yy=y(v);
+    ctx.beginPath(); ctx.moveTo(pL,yy); ctx.lineTo(W-pR,yy); ctx.stroke();
+    ctx.fillStyle='rgba(157,180,204,0.8)';
+    ctx.font='10px system-ui';
+    ctx.fillText(v+'%', 4, yy+3);
+  });
+
+  function drawSeries(key, rgb){
+    ctx.beginPath();
+    hist.forEach(function(pt,i){
+      var xx=x(i), yy=y(pt[key]||0);
+      if(i===0) ctx.moveTo(xx,yy); else ctx.lineTo(xx,yy);
+    });
+    ctx.strokeStyle='rgb('+rgb+')';
+    ctx.lineWidth=2;
+    ctx.stroke();
+    hist.forEach(function(pt,i){
+      var xx=x(i), yy=y(pt[key]||0);
+      ctx.beginPath(); ctx.arc(xx,yy,2.8,0,Math.PI*2);
+      ctx.fillStyle='rgb('+rgb+')'; ctx.fill();
+      ctx.strokeStyle='rgba(7,11,20,0.9)'; ctx.lineWidth=1; ctx.stroke();
+    });
+  }
+
+  drawSeries('base','245,158,11');
+  drawSeries('escalation','220,38,38');
+  drawSeries('resolution','34,197,94');
+
+  ctx.fillStyle='rgba(157,180,204,0.85)';
+  ctx.font='9px system-ui';
+  hist.forEach(function(pt,i){
+    var xx=x(i);
+    var lbl=(pt.date||'').slice(5).replace('-', '/');
+    ctx.fillText(lbl, xx-12, H-8);
+  });
 }
 window.selectDominoScenario=selectDominoScenario;
 window.openDominoScenario=openDominoScenario;
